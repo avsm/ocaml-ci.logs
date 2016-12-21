@@ -1,0 +1,33 @@
+=== Building base image for opam archive (2ded46) (7abd24)
+[2016-12-21 11:18.43] Starting...
+Sending build context to Docker daemon 2.048 kB
+Step 1/4 : FROM ocaml/opam:alpine_ocaml-4.03.0
+ ---> 4d1e8432fde5
+Step 2/4 : WORKDIR /home/opam/opam-repository
+ ---> 7c4d97db4d21
+Removing intermediate container 8e658175dc87
+Step 3/4 : RUN git pull origin master &&   git checkout 2ded463f5a7681ca7b94aa44027077addf5d2c0f
+ ---> Running in 714ba7e74d15
+[91mFrom git://github.com/ocaml/opam-repository
+ * branch            master     -> FETCH_HEAD
+[0mAlready up-to-date.
+[91mNote: checking out '2ded463f5a7681ca7b94aa44027077addf5d2c0f'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 2ded463... Merge pull request #8124 from c-cube/opam-publish/containers.0.22
+[0m ---> 208ada2e0bb7
+Removing intermediate container 714ba7e74d15
+Step 4/4 : LABEL "com.docker.datakit.builton" '1482319123.83' "com.docker.datakit.digest" '7abd248ee72078e5227e6b8096054a0c'
+ ---> Running in 2cf814c7a095
+ ---> 6c1f978be168
+Removing intermediate container 2cf814c7a095
+Successfully built 6c1f978be168
+Recorded container (sha256:6c1f978be168acd88a075616b0ce48040eea330affd600bdbe2e19f18c4e25f2)[2016-12-21 11:18.57] Success
