@@ -1,0 +1,65 @@
+=== Building base image for opam archive (4fce34) (57f6a3)
+[2016-12-21 23:55.56] Starting...
+Sending build context to Docker daemon 2.048 kB
+Step 1/4 : FROM ocaml/opam:alpine_ocaml-4.03.0
+ ---> 4d1e8432fde5
+Step 2/4 : WORKDIR /home/opam/opam-repository
+ ---> 7cef0600b862
+Removing intermediate container ad77e05002f0
+Step 3/4 : RUN git pull origin master &&   git checkout 4fce34ea471a0fd2c753066c46e614322e1dece7 &&   opam update -uy
+ ---> Running in 96a2746672f5
+[91mFrom git://github.com/ocaml/opam-repository
+ * branch            master     -> FETCH_HEAD
+[0m[91m   c32ba76..4fce34e  master     -> origin/master
+[0mUpdating c32ba76..4fce34e
+Fast-forward
+ compilers/4.05.0/4.05.0+pr941/4.05.0+pr941.descr   |   1 -
+ .../4.05.0+pr981.comp}                             |   2 +-
+ compilers/4.05.0/4.05.0+pr981/4.05.0+pr981.descr   |   1 +
+ packages/delimcc/delimcc.0/files/ocaml.4.04.patch  | 121 +++++++++++++++++++++
+ packages/delimcc/delimcc.0/opam                    |   5 +-
+ packages/eliom/eliom.6.1.0/descr                   |  10 ++
+ packages/eliom/eliom.6.1.0/opam                    |  22 ++++
+ packages/eliom/eliom.6.1.0/url                     |   2 +
+ .../ppx_jsobject_conv.0.3.7/descr                  |   8 ++
+ .../ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/opam |  23 ++++
+ .../ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/url  |   3 +
+ 11 files changed, 194 insertions(+), 4 deletions(-)
+ delete mode 100644 compilers/4.05.0/4.05.0+pr941/4.05.0+pr941.descr
+ rename compilers/4.05.0/{4.05.0+pr941/4.05.0+pr941.comp => 4.05.0+pr981/4.05.0+pr981.comp} (77%)
+ create mode 100644 compilers/4.05.0/4.05.0+pr981/4.05.0+pr981.descr
+ create mode 100644 packages/delimcc/delimcc.0/files/ocaml.4.04.patch
+ create mode 100644 packages/eliom/eliom.6.1.0/descr
+ create mode 100644 packages/eliom/eliom.6.1.0/opam
+ create mode 100644 packages/eliom/eliom.6.1.0/url
+ create mode 100644 packages/ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/descr
+ create mode 100644 packages/ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/opam
+ create mode 100644 packages/ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/url
+[91mNote: checking out '4fce34ea471a0fd2c753066c46e614322e1dece7'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 4fce34e... Merge pull request #8138 from yallop/delimcc-404
+[0m
+=-=- Updating package repositories =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[default: local] Command started
+[default: local] Command started
+[default: local] Command started
+[default] /home/opam/opam-repository synchronized
+
+Already up-to-date.
+ ---> 49581f081ab2
+Removing intermediate container 96a2746672f5
+Step 4/4 : LABEL "com.docker.datakit.builton" '1482364556.87' "com.docker.datakit.digest" '57f6a3ad08f141debc9d6363c4de801d'
+ ---> Running in 396994db1f42
+ ---> c1021be6bc71
+Removing intermediate container 396994db1f42
+Successfully built c1021be6bc71
+Recorded container (sha256:c1021be6bc71d94aff68ae28203bf4796f627e9b814e2a4087cee54c43242f32)[2016-12-21 23:56.32] Success
