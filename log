@@ -1,0 +1,62 @@
+=== Building base image for opam archive (2ded46) (0ad8ed)
+[2016-12-21 18:05.55] Starting...
+Sending build context to Docker daemon 2.048 kB
+Step 1/4 : FROM ocaml/opam:alpine_ocaml-4.03.0
+ ---> 4d1e8432fde5
+Step 2/4 : WORKDIR /home/opam/opam-repository
+ ---> 053c63c9e1a7
+Removing intermediate container 40b186085637
+Step 3/4 : RUN git pull origin master &&   git checkout 2ded463f5a7681ca7b94aa44027077addf5d2c0f &&   opam update -uy
+ ---> Running in 5a27cfb42bf9
+[91mFrom git://github.com/ocaml/opam-repository
+ * branch            master     -> FETCH_HEAD
+[0m[91m   c32ba76..04b85a2  master     -> origin/master
+[0mUpdating c32ba76..04b85a2
+Fast-forward
+ compilers/4.05.0/4.05.0+pr941/4.05.0+pr941.descr   |  1 -
+ .../4.05.0+pr981.comp}                             |  2 +-
+ compilers/4.05.0/4.05.0+pr981/4.05.0+pr981.descr   |  1 +
+ packages/eliom/eliom.6.1.0/descr                   | 10 ++++++++++
+ packages/eliom/eliom.6.1.0/opam                    | 22 +++++++++++++++++++++
+ packages/eliom/eliom.6.1.0/url                     |  2 ++
+ .../ppx_jsobject_conv.0.3.7/descr                  |  8 ++++++++
+ .../ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/opam | 23 ++++++++++++++++++++++
+ .../ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/url  |  3 +++
+ 9 files changed, 70 insertions(+), 2 deletions(-)
+ delete mode 100644 compilers/4.05.0/4.05.0+pr941/4.05.0+pr941.descr
+ rename compilers/4.05.0/{4.05.0+pr941/4.05.0+pr941.comp => 4.05.0+pr981/4.05.0+pr981.comp} (77%)
+ create mode 100644 compilers/4.05.0/4.05.0+pr981/4.05.0+pr981.descr
+ create mode 100644 packages/eliom/eliom.6.1.0/descr
+ create mode 100644 packages/eliom/eliom.6.1.0/opam
+ create mode 100644 packages/eliom/eliom.6.1.0/url
+ create mode 100644 packages/ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/descr
+ create mode 100644 packages/ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/opam
+ create mode 100644 packages/ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/url
+[91mNote: checking out '2ded463f5a7681ca7b94aa44027077addf5d2c0f'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 2ded463... Merge pull request #8124 from c-cube/opam-publish/containers.0.22
+[0m
+=-=- Updating package repositories =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[default: local] Command started
+[default: local] Command started
+[default: local] Command started
+[default] /home/opam/opam-repository synchronized
+
+Already up-to-date.
+ ---> d59d6b155ae2
+Removing intermediate container 5a27cfb42bf9
+Step 4/4 : LABEL "com.docker.datakit.digest" '0ad8ed0b8daaa5de2d61c84e5f2445d9' "com.docker.datakit.builton" '1482343555.12'
+ ---> Running in d5a2e0596454
+ ---> c3f774e4a331
+Removing intermediate container d5a2e0596454
+Successfully built c3f774e4a331
+Recorded container (sha256:c3f774e4a331a61283fa90f75babaf704a8456dedb3e82d6b178743f801133c9)[2016-12-21 18:06.21] Success
