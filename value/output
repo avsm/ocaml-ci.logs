@@ -1,0 +1,57 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install syslog 1.4
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [syslog.1.4: dl]
+[syslog.1.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [syslog: make reallyall]
++ make "reallyall" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/syslog.1.4)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/syslog.1.4'
+- making ._bcdi/syslog.di from syslog.mli
+- making ._d/syslog.d from syslog.ml
+- ocamlfind ocamlc -package unix -c syslog.mli
+- ocamlfind ocamlc -package unix -c syslog.ml
+- File "syslog.ml", line 47, characters 8-24:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -a             \
+- 			  -o syslog.cma  syslog.cmo
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/syslog.1.4'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/syslog.1.4'
+- making ._ncdi/syslog.di from syslog.mli
+- ocamlfind ocamlopt -package unix -c syslog.ml
+- File "syslog.ml", line 47, characters 8-24:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -a               \
+- 			 -o syslog.cmxa syslog.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/syslog.1.4'
+-> compiled  syslog.1.4
+Processing  2/2: [syslog: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/syslog.1.4)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/syslog.1.4'
+- make[1]: 'syslog.cma' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/syslog.1.4'
+- 
+- Installing library with ocamlfind
+- ocamlfind install syslog META syslog.mli syslog.cmi syslog.cma syslog.cmx syslog.cmxa syslog.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/syslog/syslog.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/syslog/syslog.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/syslog/syslog.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/syslog/syslog.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/syslog/syslog.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/syslog/syslog.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/syslog/META
+- 
+- Installation successful.
+-> installed syslog.1.4
+Done.
+# Run eval `opam env` to update the current shell environment
