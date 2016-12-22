@@ -1,0 +1,282 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install react 1.2.0                                         [required by rtime]
+  - install rtime 0.9.3
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [react.1.2.0: dl]
+Processing  2/2: [react.1.2.0: dl] [rtime.0.9.3: dl]
+[rtime.0.9.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [react.1.2.0: dl]
+[react.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [react: ocaml]
++ ocaml "pkg/git.ml" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/react.1.2.0)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/react.1.2.0)
+- ocamlfind ocamldep -modules src/react.ml > src/react.ml.depends
+- ocamlfind ocamldep -modules src/react.mli > src/react.mli.depends
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/react.cmi src/react.mli
+- ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/react.cmx src/react.ml
+- ocamlfind ocamlopt -a src/react.cmx -o src/react.cmxa
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/react.cmo src/react.ml
+- ocamlfind ocamlc -a src/react.cmo -o src/react.cma
+- ocamlfind ocamlopt -shared src/react.cmx -o src/react.cmxs
+- ocamlfind ocamldep -package compiler-libs.toplevel -modules src/react_top.ml > src/react_top.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -package compiler-libs.toplevel -I src -I test -o src/react_top.cmo src/react_top.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -package compiler-libs.toplevel -I src -I test -o src/react_top.cmo src/react_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -annot -bin-annot -package compiler-libs.toplevel -I src -I test -o src/react_top.cmx src/react_top.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -package compiler-libs.toplevel -I src -I test -o src/react_top.cmx src/react_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package compiler-libs.toplevel src/react_top.cmx -o src/react_top.cmxa
+- + ocamlfind ocamlopt -a -package compiler-libs.toplevel src/react_top.cmx -o src/react_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a -package compiler-libs.toplevel src/react_top.cmo -o src/react_top.cma
+- + ocamlfind ocamlc -a -package compiler-libs.toplevel src/react_top.cmo -o src/react_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared -package compiler-libs.toplevel src/react_top.cmx -o src/react_top.cmxs
+- + ocamlfind ocamlopt -shared -package compiler-libs.toplevel src/react_top.cmx -o src/react_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+-> compiled  react.1.2.0
+-> installed react.1.2.0
+Processing  3/4: [rtime: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/rtime.0.9.3)
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 57, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 87, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/PropList.ml", line 99, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 94, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 99, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISLibrary.ml", line 402, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 217, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 218, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 219, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 220, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ rtime
+- Package version: ..................................... 0.9.3
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_react: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/react
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_threads: ......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/rtime.0.9.3)
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 57, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 87, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/PropList.ml", line 99, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 94, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 99, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISLibrary.ml", line 402, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 217, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 218, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 219, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 220, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package react -modules src/rtime.mli > src/rtime.mli.depends
+- ocamlfind ocamlc -c -g -package react -I src -o src/rtime.cmi src/rtime.mli
+- ocamlfind ocamldep -package react -modules src/rtime.ml > src/rtime.ml.depends
+- ocamlfind ocamlc -c -g -package react -I src -o src/rtime.cmo src/rtime.ml
+- ocamlfind ocamlc -a src/rtime.cmo -o src/rtime.cma
+- ocamlfind ocamlopt -c -g -package react -I src -o src/rtime.cmx src/rtime.ml
+- ocamlfind ocamlopt -a src/rtime.cmx -o src/rtime.cmxa
+- ocamlfind ocamlopt -shared src/rtime.cmx -o src/rtime.cmxs
+- ocamlfind ocamldep -package unix -package threads -package react -modules test/examples.ml > test/examples.ml.depends
+- ocamlfind ocamlc -c -g -I src -package unix -package threads -package react -thread -I test -I src -o test/examples.cmo test/examples.ml
+- ocamlfind ocamlopt -c -g -I src -package unix -package threads -package react -thread -I test -I src -o test/examples.cmx test/examples.ml
+- ocamlfind ocamlopt -g -linkpkg -package unix -package threads -package react -thread src/rtime.cmxa test/examples.cmx -o test/examples.native
+- ocamlfind ocamldep -package unix -package threads -package react -modules test/test.ml > test/test.ml.depends
+- ocamlfind ocamlc -c -g -I src -package unix -package threads -package react -thread -I test -I src -o test/test.cmo test/test.ml
+- ocamlfind ocamlopt -c -g -I src -package unix -package threads -package react -thread -I test -I src -o test/test.cmx test/test.ml
+- ocamlfind ocamlopt -g -linkpkg -package unix -package threads -package react -thread src/rtime.cmxa test/examples.cmx test/test.cmx -o test/test.native
+-> compiled  rtime.0.9.3
+Processing  4/4: [rtime: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/rtime.0.9.3)
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 57, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 87, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/PropList.ml", line 99, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 94, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 99, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISLibrary.ml", line 402, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 217, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 218, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 219, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 220, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rtime/rtime.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rtime/rtime.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rtime/rtime.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rtime/rtime.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rtime/rtime.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rtime/rtime.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rtime/rtime.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rtime/META
+-> installed rtime.0.9.3
+Done.
+# Run eval `opam env` to update the current shell environment
