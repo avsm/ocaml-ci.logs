@@ -1,0 +1,70 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 xstrp4 /home/opam/opam-repository/cache
+[2016-12-22 16:19.06] Starting...
+[2016-12-22 16:19.06] Waiting for free pool slot to run
+[2016-12-22 17:22.17] Pool slot obtained, starting run
+[2016-12-22 17:22.17] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 xstrp4
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install xstrp4 1.8
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [xstrp4.1.8: dl]
+[xstrp4.1.8] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [xstrp4: patch]
+Processing  1/2: [xstrp4: ./configure]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xstrp4.1.8)
+- Welcome to Xstrp4 version 1.8
+- Checking for findlib... found
+- Checking for camlp4... 3.10 style
+- Writing Makefile.conf
+- 
+- Please check Makefile.conf.
+- 
+- You can now compile Xstrp4 by invoking
+-    make all
+- for the bytecode compiler, and optionally by invoking
+-    make opt
+- for the native-code compiler (if supported on your architecture).
+- Finally, a
+-    make install
+- will install the package(s).
+Processing  1/2: [xstrp4: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xstrp4.1.8)
+- ocamlfind ocamlc  -package camlp4 -syntax camlp4o -ppopt pa_extend.cmo -ppopt q_MLast.cmo -c xstrp4_here_types.ml
+- File "xstrp4_here_types.ml", line 6, characters 5-11:
+- Error: Unbound module Camlp4
+- Makefile:74: recipe for target 'xstrp4_here_types.cmo' failed
+- make: *** [xstrp4_here_types.cmo] Error 2
+[ERROR] The compilation of xstrp4 failed at "make all".
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build xstrp4 1.8
++- 
+- No changes have been performed
+
+#=== ERROR while compiling xstrp4.1.8 =========================================#
+# command              make all
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xstrp4.1.8
+# exit-code            2
+# env-file             /home/opam/.opam/log/xstrp4-1-a00279.env
+# output-file          /home/opam/.opam/log/xstrp4-1-a00279.out
+### output ###
+# ocamlfind ocamlc  -package camlp4 -syntax camlp4o -ppopt pa_extend.cmo -ppopt q_MLast.cmo -c xstrp4_here_types.ml
+# File "xstrp4_here_types.ml", line 6, characters 5-11:
+# Error: Unbound module Camlp4
+# Makefile:74: recipe for target 'xstrp4_here_types.cmo' failed
+# make: *** [xstrp4_here_types.cmo] Error 2
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 xstrp4' failed.
+[2016-12-22 17:22.31] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "xstrp4" exited with status 4
