@@ -1,0 +1,104 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libaio-dev
+#  - m4
+# The following new OS packages need to be installed: libaio-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libaio-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libaio1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libaio1_0.3.110-2_amd64.deb ...
+Unpacking libaio1:amd64 (0.3.110-2) ...
+Selecting previously unselected package libaio-dev.
+Preparing to unpack .../libaio-dev_0.3.110-2_amd64.deb ...
+Unpacking libaio-dev (0.3.110-2) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libaio1:amd64 (0.3.110-2) ...
+Setting up libaio-dev (0.3.110-2) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install aio 0.0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [aio.0.0.3: dl]
+[aio.0.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [aio: patch]
+Processing  1/2: [aio: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/aio.0.0.3)
+- make -C lib all
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/aio.0.0.3/lib'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/aio.0.0.3/lib'
+- ocamldep aio.mli > ._bcdi/aio.di
+- ocamldep aio.ml > ._d/aio.d
+- ocamldep aio_buffer.ml > ._d/aio_buffer.d
+- ocamlc -c -cc "cc" -ccopt "-fPIC -O2 -g -W -Wall \
+- 			-DPIC   \
+- 			    -o aio_stubs.o " aio_stubs.c
+- aio_stubs.c: In function 'caml_aio_run':
+- aio_stubs.c:272:3: warning: ignoring return value of 'read', declared with attribute warn_unused_result [-Wunused-result]
+-    (void)read(ctx->fd, &num, sizeof(num));
+-    ^
+- ocamlc -c -cc "cc" -ccopt "-fPIC -O2 -g -W -Wall \
+- 			-DPIC   \
+- 			    -o aio_buffer_stubs.o " aio_buffer_stubs.c
+- ar rcs libaio_stubs.a  aio_stubs.o aio_buffer_stubs.o
+- ocamlc -c aio_buffer.ml
+- ocamlc -c aio.mli
+- ocamlc -c aio.ml
+- ocamlmklib         \
+- 			-o aio_stubs  aio_stubs.o aio_buffer_stubs.o -laio  \
+- 			
+- ocamlc -a -cclib -laio_stubs -cclib -laio   -dllib dllaio_stubs.so -custom             -o aio.cma aio_buffer.cmo aio.cmo
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/aio.0.0.3/lib'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/aio.0.0.3/lib'
+- ocamldep -native aio.mli > ._ncdi/aio.di
+- make[2]: 'libaio_stubs.a' is up to date.
+- ocamlopt -c aio_buffer.ml
+- ocamlopt -c aio.ml
+- ocamlopt -a -cclib -laio_stubs -cclib -laio               -o aio.cmxa aio_buffer.cmx aio.cmx
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/aio.0.0.3/lib'
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/aio.0.0.3/lib'
+-> compiled  aio.0.0.3
+Processing  2/2: [aio: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/aio.0.0.3)
+- make -C lib install
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/aio.0.0.3/lib'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/aio.0.0.3/lib'
+- make[2]: 'libaio_stubs.a' is up to date.
+- ocamlc -a -cclib -laio_stubs -cclib -laio   -dllib dllaio_stubs.so -custom             -o aio.cma aio_buffer.cmo aio.cmo
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/aio.0.0.3/lib'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/aio.0.0.3/lib'
+- make[2]: 'libaio_stubs.a' is up to date.
+- make[2]: 'aio.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/aio.0.0.3/lib'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  aio META aio.mli aio.cmi aio.cma aio.cmxa aio.a libaio_stubs.a dllaio_stubs.so
+- Installed /home/opam/.opam/default/lib/aio/libaio_stubs.a
+- Installed /home/opam/.opam/default/lib/aio/aio.a
+- Installed /home/opam/.opam/default/lib/aio/aio.cmxa
+- Installed /home/opam/.opam/default/lib/aio/aio.cma
+- Installed /home/opam/.opam/default/lib/aio/aio.cmi
+- Installed /home/opam/.opam/default/lib/aio/aio.mli
+- Installed /home/opam/.opam/default/lib/aio/META
+- Installed /home/opam/.opam/default/lib/stublibs/dllaio_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllaio_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/aio.0.0.3/lib'
+-> installed aio.0.0.3
+Done.
+# Run eval `opam env` to update the current shell environment
