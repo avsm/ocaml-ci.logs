@@ -1,0 +1,193 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ppx_import /home/opam/opam-repository/cache
+[2016-12-22 16:20.20] Starting...
+[2016-12-22 16:20.20] Waiting for free pool slot to run
+[2016-12-22 18:13.54] Pool slot obtained, starting run
+[2016-12-22 18:13.54] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ppx_import
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_tools  5.0                                      [required by ppx_import]
+  - install cppo       1.4.0                                    [required by ppx_import]
+  - install ppx_import 1.1  
+===== 3 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/3: [cppo.1.4.0: dl]
+Processing  2/3: [cppo.1.4.0: dl] [ppx_import.1.1: dl]
+Processing  3/3: [cppo.1.4.0: dl] [ppx_import.1.1: dl] [ppx_tools.5.0: dl]
+[cppo.1.4.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3: [ppx_import.1.1: dl] [ppx_tools.5.0: dl]
+[ppx_import.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3: [ppx_tools.5.0: dl]
+[ppx_tools.5.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/6: [cppo: make]
+Processing  2/6: [cppo: make] [ppx_tools: make all]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.0)
+- echo 'let cppo_version = "1.4.0"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlopt -o cppo -dtypes unix.cmxa str.cmxa cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+- echo 'let cppo_version = "1.4.0"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlopt -o cppo -dtypes unix.cmxa str.cmxa cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+-> compiled  cppo.1.4.0
+Processing  2/6: [ppx_tools: make all]
+Processing  3/6: [ppx_tools: make all] [cppo: make install-lib]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+-> compiled  ppx_tools.5.0
+Processing  3/6: [cppo: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.0)
+- ocamlfind install -patch-version 1.4.0 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/META
+-> installed cppo.1.4.0
+Processing  4/6: [ppx_tools: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/META
+-> installed ppx_tools.5.0
+Processing  5/6: [ppx_import: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_import.1.1)
+- ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- cppo -V OCAML:4.04.0 -o src/ppx_import.ml src/ppx_import.cppo.ml
+- ocamlfind ocamldep -package ppx_tools.metaquot -modules src/ppx_import.ml > src/ppx_import.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_import.cmo src/ppx_import.ml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_import.cmo src/ppx_import.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "src/ppx_import.cppo.ml", line 36, characters 29-48:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "src/ppx_import.cppo.ml", line 143, characters 28-39:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_import.cmx src/ppx_import.ml
+- + ocamlfind ocamlopt -c -bin-annot -safe-string -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_import.cmx src/ppx_import.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "src/ppx_import.cppo.ml", line 36, characters 29-48:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "src/ppx_import.cppo.ml", line 143, characters 28-39:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- ocamlfind ocamlopt -linkpkg -package ppx_tools.metaquot src/ppx_import.cmx -o src/ppx_import.native
+- + ocamlfind ocamlopt -linkpkg -package ppx_tools.metaquot src/ppx_import.cmx -o src/ppx_import.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- + ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Ocamlbuild_cppo, and its interface was not compiled with -opaque
+-> compiled  ppx_import.1.1
+[WARNING] Errors in /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/install/ppx_import.install, some fields have been ignored:
+            - At /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/install/ppx_import.install:8:0:
+              Duplicate field libexec
+
+
+#=== ERROR while installing ppx_import.1.1 ====================================#
+Cannot install to /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_import: it is a directory.
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - install ppx_import 1.1
++- 
++- The following changes have been performed
+| - install cppo      1.4.0
+| - install ppx_tools 5.0  
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/backup/state-20161222181404.export"
+'opam install --verbose --yes --jobs=2 ppx_import' failed.
+[2016-12-22 18:14.12] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191" "opam" "depext" "-ivyj" "2" "ppx_import" exited with status 4
