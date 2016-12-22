@@ -1,0 +1,253 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ocb-stubblr /home/opam/opam-repository/cache
+[2016-12-22 16:20.07] Starting...
+[2016-12-22 16:20.07] Waiting for free pool slot to run
+[2016-12-22 18:06.03] Pool slot obtained, starting run
+[2016-12-22 18:06.03] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ocb-stubblr
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install result      1.2                                     [required by topkg]
+  - install topkg       0.8.1                                   [required by ocb-stubblr]
+  - install astring     0.8.3                                   [required by ocb-stubblr]
+  - install ocb-stubblr 0.1.0
+===== 4 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [astring.0.8.3: dl]
+Processing  2/4: [astring.0.8.3: dl] [ocb-stubblr.0.1.0: dl]
+Processing  3/4: [astring.0.8.3: dl] [ocb-stubblr.0.1.0: dl] [result.1.2: dl]
+[astring.0.8.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/4: [ocb-stubblr.0.1.0: dl] [result.1.2: dl]
+[ocb-stubblr.0.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/4: [result.1.2: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/4:
+Processing  4/4: [topkg.0.8.1: dl]
+[topkg.0.8.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/8: [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+-> installed result.1.2
+Processing  3/8: [topkg: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pkg-name" "topkg" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/topkg.0.8.1)
+- File "src/topkg_conf.ml", line 19, characters 8-30:
+- Warning 3: deprecated: Topkg_string.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.ml > src/topkg.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.mli > src/topkg.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmi src/topkg.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.ml > src/topkg_build.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.mli > src/topkg_build.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.mli > src/topkg_cmd.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.mli > src/topkg_fpath.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmi src/topkg_fpath.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.mli > src/topkg_codec.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmi src/topkg_cmd.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.mli > src/topkg_result.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmi src/topkg_result.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.mli > src/topkg_conf.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmi src/topkg_codec.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmi src/topkg_conf.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmi src/topkg_build.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.ml > src/topkg_cmd.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.ml > src/topkg_fpath.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.ml > src/topkg_string.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.mli > src/topkg_string.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmi src/topkg_string.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmx src/topkg_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmx src/topkg_fpath.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.ml > src/topkg_codec.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmx src/topkg_cmd.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.ml > src/topkg_os.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.mli > src/topkg_os.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmi src/topkg_os.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.ml > src/topkg_log.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.mli > src/topkg_log.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmi src/topkg_log.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.ml > src/topkg_result.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmx src/topkg_result.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmx src/topkg_log.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmx src/topkg_os.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.ml > src/topkg_conf.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.ml > src/topkg_vcs.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.mli > src/topkg_vcs.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmi src/topkg_vcs.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmx src/topkg_vcs.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmx src/topkg_codec.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmx src/topkg_conf.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.ml > src/topkg_distrib.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.mli > src/topkg_distrib.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmi src/topkg_distrib.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.ml > src/topkg_opam.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.mli > src/topkg_opam.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmi src/topkg_opam.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmx src/topkg_opam.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.ml > src/topkg_fexts.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.mli > src/topkg_fexts.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmi src/topkg_fexts.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.ml > src/topkg_install.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.mli > src/topkg_install.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.mli > src/topkg_test.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmi src/topkg_test.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmi src/topkg_install.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmx src/topkg_fexts.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.ml > src/topkg_test.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmx src/topkg_test.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.ml > src/topkg_ipc.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.mli > src/topkg_ipc.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.mli > src/topkg_pkg.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.mli > src/topkg_publish.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmi src/topkg_publish.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmi src/topkg_pkg.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmi src/topkg_ipc.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.ml > src/topkg_pkg.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmx src/topkg_build.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmx src/topkg_distrib.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.ml > src/topkg_publish.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmx src/topkg_publish.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmx src/topkg_pkg.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.ml > src/topkg_main.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.mli > src/topkg_main.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmi src/topkg_main.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmx src/topkg_ipc.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmx src/topkg_main.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmx src/topkg.ml
+- ocamlfind ocamlopt -a -package 'bytes result' src/topkg_string.cmx src/topkg_fpath.cmx src/topkg_cmd.cmx src/topkg_result.cmx src/topkg_log.cmx src/topkg_os.cmx src/topkg_codec.cmx src/topkg_vcs.cmx src/topkg_conf.cmx src/topkg_build.cmx src/topkg_opam.cmx src/topkg_distrib.cmx src/topkg_fexts.cmx src/topkg_test.cmx src/topkg_install.cmx src/topkg_publish.cmx src/topkg_pkg.cmx src/topkg_ipc.cmx src/topkg_main.cmx src/topkg.cmx -o src/topkg.cmxa
+- ocamlfind ocamlopt -shared -package 'bytes result' src/topkg.cmx -o src/topkg.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmo src/topkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmo src/topkg_build.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmo src/topkg_cmd.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmo src/topkg_codec.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmo src/topkg_conf.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmo src/topkg_distrib.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmo src/topkg_fexts.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmo src/topkg_fpath.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmo src/topkg_ipc.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmo src/topkg_log.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmo src/topkg_main.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmo src/topkg_opam.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmo src/topkg_os.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmo src/topkg_pkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmo src/topkg_publish.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmo src/topkg_result.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmo src/topkg_string.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmo src/topkg_test.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmo src/topkg_vcs.ml
+- ocamlfind ocamlc -a -package 'bytes result' src/topkg_string.cmo src/topkg_fpath.cmo src/topkg_cmd.cmo src/topkg_result.cmo src/topkg_log.cmo src/topkg_os.cmo src/topkg_codec.cmo src/topkg_vcs.cmo src/topkg_conf.cmo src/topkg_build.cmo src/topkg_opam.cmo src/topkg_distrib.cmo src/topkg_fexts.cmo src/topkg_test.cmo src/topkg_install.cmo src/topkg_publish.cmo src/topkg_pkg.cmo src/topkg_ipc.cmo src/topkg_main.cmo src/topkg.cmo -o src/topkg.cma
+-> compiled  topkg.0.8.1
+-> installed topkg.0.8.1
+Processing  5/8: [astring: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/astring.0.8.3)
+- ocamlfind ocamldep -package bytes -modules src/astring_unsafe.ml > src/astring_unsafe.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_unsafe.cmo src/astring_unsafe.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_base.ml > src/astring_base.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_base.cmo src/astring_base.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_unsafe.cmx src/astring_unsafe.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_escape.ml > src/astring_escape.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_escape.cmo src/astring_escape.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_char.ml > src/astring_char.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_char.cmo src/astring_char.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_escape.cmx src/astring_escape.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_sub.ml > src/astring_sub.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_sub.cmo src/astring_sub.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_base.cmx src/astring_base.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_char.cmx src/astring_char.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_string.ml > src/astring_string.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_string.cmo src/astring_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_sub.cmx src/astring_sub.ml
+- ocamlfind ocamldep -package bytes -modules src/astring.ml > src/astring.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/astring.mli > src/astring.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring.cmi src/astring.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_string.cmx src/astring_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring.cmx src/astring.ml
+- ocamlfind ocamlopt -a -package bytes src/astring_unsafe.cmx src/astring_base.cmx src/astring_escape.cmx src/astring_char.cmx src/astring_sub.cmx src/astring_string.cmx src/astring.cmx -o src/astring.cmxa
+- ocamlfind ocamlopt -shared -package bytes src/astring.cmx -o src/astring.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring.cmo src/astring.ml
+- ocamlfind ocamlc -a -package bytes src/astring_unsafe.cmo src/astring_base.cmo src/astring_escape.cmo src/astring_char.cmo src/astring_sub.cmo src/astring_string.cmo src/astring.cmo -o src/astring.cma
+- ocamlfind ocamldep -package compiler-libs.toplevel -package bytes -modules src/astring_top.ml > src/astring_top.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package bytes -I src -I test -o src/astring_top.cmo src/astring_top.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package bytes -I src -I test -o src/astring_top.cmo src/astring_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package bytes -I src -I test -o src/astring_top.cmx src/astring_top.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package bytes -I src -I test -o src/astring_top.cmx src/astring_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package compiler-libs.toplevel -package bytes src/astring_top.cmx -o src/astring_top.cmxa
+- + ocamlfind ocamlopt -a -package compiler-libs.toplevel -package bytes src/astring_top.cmx -o src/astring_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package bytes src/astring_top.cmx -o src/astring_top.cmxs
+- + ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package bytes src/astring_top.cmx -o src/astring_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a -package compiler-libs.toplevel -package bytes src/astring_top.cmo -o src/astring_top.cma
+- + ocamlfind ocamlc -a -package compiler-libs.toplevel -package bytes src/astring_top.cmo -o src/astring_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+-> compiled  astring.0.8.3
+-> installed astring.0.8.3
+Processing  7/8: [ocb-stubblr: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" "--tests" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocb-stubblr.0.1.0)
+- ocamlfind ocamldep -package ocamlbuild -package astring -package bytes -modules src/ocb_stubblr.ml > src/ocb_stubblr.ml.depends
+- ocamlfind ocamldep -package ocamlbuild -package astring -package bytes -modules src/ocb_stubblr.mli > src/ocb_stubblr.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package ocamlbuild -package astring -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src -I src-topkg -o src/ocb_stubblr.cmi src/ocb_stubblr.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package ocamlbuild -package astring -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src -I src-topkg -o src/ocb_stubblr.cmx src/ocb_stubblr.ml
+- ocamlfind ocamlopt -a -package bytes src/ocb_stubblr.cmx -o src/ocb-stubblr.cmxa
+- ocamlfind ocamlopt -shared -linkall -package bytes src/ocb-stubblr.cmxa -o src/ocb-stubblr.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package ocamlbuild -package astring -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src -I src-topkg -o src/ocb_stubblr.cmo src/ocb_stubblr.ml
+- ocamlfind ocamlc -a -package bytes src/ocb_stubblr.cmo -o src/ocb-stubblr.cma
+- ocamlfind ocamldep -package topkg -package bytes -modules src-topkg/ocb_stubblr_topkg.ml > src-topkg/ocb_stubblr_topkg.ml.depends
+- ocamlfind ocamldep -package topkg -package bytes -modules src-topkg/ocb_stubblr_topkg.mli > src-topkg/ocb_stubblr_topkg.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package topkg -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src-topkg -I src -o src-topkg/ocb_stubblr_topkg.cmi src-topkg/ocb_stubblr_topkg.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package topkg -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src-topkg -I src -o src-topkg/ocb_stubblr_topkg.cmx src-topkg/ocb_stubblr_topkg.ml
+- ocamlfind ocamlopt -a -package bytes src-topkg/ocb_stubblr_topkg.cmx -o src-topkg/ocb-stubblr-topkg.cmxa
+- ocamlfind ocamlopt -shared -linkall -package bytes src-topkg/ocb-stubblr-topkg.cmxa -o src-topkg/ocb-stubblr-topkg.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package topkg -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src-topkg -I src -o src-topkg/ocb_stubblr_topkg.cmo src-topkg/ocb_stubblr_topkg.ml
+- ocamlfind ocamlc -a -package bytes src-topkg/ocb_stubblr_topkg.cmo -o src-topkg/ocb-stubblr-topkg.cma
+-> compiled  ocb-stubblr.0.1.0
+-> installed ocb-stubblr.0.1.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:06.23] Success
