@@ -1,0 +1,1120 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 unix-sys-stat /home/opam/opam-repository/cache
+[2016-12-22 16:20.37] Starting...
+[2016-12-22 16:20.37] Waiting for free pool slot to run
+[2016-12-22 18:25.01] Pool slot obtained, starting run
+[2016-12-22 18:25.01] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 unix-sys-stat
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+#  - pkg-config
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install unix-type-representations 0.1.0                     [required by unix-sys-stat]
+  - install conf-pkg-config           1.0                       [required by ctypes]
+  - install base-bytes                base                      [required by unix-sys-stat]
+  - install result                    1.2                       [required by unix-errno]
+  - install ctypes                    0.11.2                    [required by unix-sys-stat]
+  - install unix-errno                0.5.1                     [required by unix-sys-stat]
+  - install posix-types               0.1.0                     [required by unix-sys-stat]
+  - install unix-sys-stat             0.5.1 
+===== 8 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  3/8: [ctypes.0.11.2: dl]
+Processing  4/8: [ctypes.0.11.2: dl] [posix-types.0.1.0: dl]
+Processing  5/8: [ctypes.0.11.2: dl] [posix-types.0.1.0: dl] [result.1.2: dl]
+[posix-types.0.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/8: [ctypes.0.11.2: dl] [result.1.2: dl]
+[ctypes.0.11.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/8: [result.1.2: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/8:
+Processing  6/8: [unix-errno.0.5.1: dl]
+Processing  7/8: [unix-errno.0.5.1: dl] [unix-sys-stat.0.5.1: dl]
+Processing  8/8: [unix-errno.0.5.1: dl] [unix-sys-stat.0.5.1: dl] [unix-type-representations.0.1.0: dl]
+[unix-errno.0.5.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/8: [unix-sys-stat.0.5.1: dl] [unix-type-representations.0.1.0: dl]
+[unix-sys-stat.0.5.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/8: [unix-type-representations.0.1.0: dl]
+[unix-type-representations.0.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/8:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/16: [conf-pkg-config: pkg-config]
+Processing  3/16: [conf-pkg-config: pkg-config] [result: make]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-pkg-config.1.0)
+- Usage:
+-   pkg-config [OPTION...]
+- 
+- Help Options:
+-   -h, --help                              Show help options
+- 
+- Application Options:
+-   --version                               output version of pkg-config
+-   --modversion                            output version for package
+-   --atleast-pkgconfig-version=VERSION     require given version of pkg-config
+-   --libs                                  output all linker flags
+-   --static                                output linker flags for static linking
+-   --short-errors                          print short errors
+-   --libs-only-l                           output -l flags
+-   --libs-only-other                       output other libs (e.g. -pthread)
+-   --libs-only-L                           output -L flags
+-   --cflags                                output all pre-processor and compiler flags
+-   --cflags-only-I                         output -I flags
+-   --cflags-only-other                     output cflags not covered by the cflags-only-I option
+-   --variable=NAME                         get the value of variable named NAME
+-   --define-variable=NAME=VALUE            set variable NAME to VALUE
+-   --exists                                return 0 if the module(s) exist
+-   --print-variables                       output list of variables defined by the module
+-   --uninstalled                           return 0 if the uninstalled version of one or more module(s) or their dependencies will be used
+-   --atleast-version=VERSION               return 0 if the module is at least version VERSION
+-   --exact-version=VERSION                 return 0 if the module is at exactly version VERSION
+-   --max-version=VERSION                   return 0 if the module is at no newer than version VERSION
+-   --list-all                              list all known packages
+-   --debug                                 show verbose debug information
+-   --print-errors                          show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)
+-   --silence-errors                        be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)
+-   --errors-to-stdout                      print errors from --print-errors to stdout not stderr
+-   --print-provides                        print which packages the package provides
+-   --print-requires                        print which packages the package requires
+-   --print-requires-private                print which packages the package requires for static linking
+-   --validate                              validate a package's .pc file
+-   --define-prefix                         try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --dont-define-prefix                    don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --prefix-variable=PREFIX                set the name of the variable that pkg-config automatically sets
+- 
+- Usage:
+-   pkg-config [OPTION...]
+- 
+- Help Options:
+-   -h, --help                              Show help options
+- 
+- Application Options:
+-   --version                               output version of pkg-config
+-   --modversion                            output version for package
+-   --atleast-pkgconfig-version=VERSION     require given version of pkg-config
+-   --libs                                  output all linker flags
+-   --static                                output linker flags for static linking
+-   --short-errors                          print short errors
+-   --libs-only-l                           output -l flags
+-   --libs-only-other                       output other libs (e.g. -pthread)
+-   --libs-only-L                           output -L flags
+-   --cflags                                output all pre-processor and compiler flags
+-   --cflags-only-I                         output -I flags
+-   --cflags-only-other                     output cflags not covered by the cflags-only-I option
+-   --variable=NAME                         get the value of variable named NAME
+-   --define-variable=NAME=VALUE            set variable NAME to VALUE
+-   --exists                                return 0 if the module(s) exist
+-   --print-variables                       output list of variables defined by the module
+-   --uninstalled                           return 0 if the uninstalled version of one or more module(s) or their dependencies will be used
+-   --atleast-version=VERSION               return 0 if the module is at least version VERSION
+-   --exact-version=VERSION                 return 0 if the module is at exactly version VERSION
+-   --max-version=VERSION                   return 0 if the module is at no newer than version VERSION
+-   --list-all                              list all known packages
+-   --debug                                 show verbose debug information
+-   --print-errors                          show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)
+-   --silence-errors                        be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)
+-   --errors-to-stdout                      print errors from --print-errors to stdout not stderr
+-   --print-provides                        print which packages the package provides
+-   --print-requires                        print which packages the package requires
+-   --print-requires-private                print which packages the package requires for static linking
+-   --validate                              validate a package's .pc file
+-   --define-prefix                         try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --dont-define-prefix                    don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --prefix-variable=PREFIX                set the name of the variable that pkg-config automatically sets
+- 
+-> compiled  conf-pkg-config.1.0
+Processing  3/16: [result: make]
+Processing  4/16: [result: make] [unix-type-representations: ./configure]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+Processing  4/16: [unix-type-representations: ./configure]
+-> installed base-bytes.base
+Processing  5/16: [unix-type-representations: ./configure]
+-> installed conf-pkg-config.1.0
+Processing  6/16: [unix-type-representations: ./configure]
+Processing  7/16: [ctypes: touch libffi.config] [unix-type-representations: ./configure]
++ ./configure "--prefix=/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/unix-type-representations.0.1.0)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ unix-type-representations
+- Package version: ..................................... 0.1.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- 
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ unix-type-representations
+- Package version: ..................................... 0.1.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- 
+Processing  7/16: [ctypes: touch libffi.config] [unix-type-representations: make]
++ touch "libffi.config" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2)
+Processing  7/16: [ctypes: make ctypes-base] [unix-type-representations: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/unix-type-representations.0.1.0)
+- ocaml setup.ml -build 
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 23, characters 31-41:
+- Warning: the tag "pkg_ctypes" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 24, characters 31-49:
+- Warning: the tag "pkg_ctypes.foreign" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 25, characters 31-40:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 28, characters 23-33:
+- Warning: the tag "pkg_ctypes" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 29, characters 23-41:
+- Warning: the tag "pkg_ctypes.foreign" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 30, characters 23-32:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -c lib/unix_type_representation_stubs.c
+- mv unix_type_representation_stubs.o lib/unix_type_representation_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlmklib -o lib/unix_type_representations_stubs lib/unix_type_representation_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -modules lib/unix_representations.mli > lib/unix_representations.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package unix -I lib -o lib/unix_representations.cmi lib/unix_representations.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -modules lib/unix_representations.ml > lib/unix_representations.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package unix -I lib -o lib/unix_representations.cmo lib/unix_representations.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -dllib -lunix_type_representations_stubs -cclib -lunix_type_representations_stubs lib/unix_representations.cmo -o lib/unix_type_representations.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package unix -I lib -o lib/unix_representations.cmx lib/unix_representations.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -cclib -lunix_type_representations_stubs lib/unix_representations.cmx -o lib/unix_type_representations.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -I lib/ lib/unix_type_representations.cmxa lib/unix_representations.cmx -o lib/unix_type_representations.cmxs
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocaml setup.ml -build 
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 23, characters 31-41:
+- Warning: the tag "pkg_ctypes" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 24, characters 31-49:
+- Warning: the tag "pkg_ctypes.foreign" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 25, characters 31-40:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 28, characters 23-33:
+- Warning: the tag "pkg_ctypes" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 29, characters 23-41:
+- Warning: the tag "pkg_ctypes.foreign" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 30, characters 23-32:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -c lib/unix_type_representation_stubs.c
+- mv unix_type_representation_stubs.o lib/unix_type_representation_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlmklib -o lib/unix_type_representations_stubs lib/unix_type_representation_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -modules lib/unix_representations.mli > lib/unix_representations.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package unix -I lib -o lib/unix_representations.cmi lib/unix_representations.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -modules lib/unix_representations.ml > lib/unix_representations.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package unix -I lib -o lib/unix_representations.cmo lib/unix_representations.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -dllib -lunix_type_representations_stubs -cclib -lunix_type_representations_stubs lib/unix_representations.cmo -o lib/unix_type_representations.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package unix -I lib -o lib/unix_representations.cmx lib/unix_representations.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -cclib -lunix_type_representations_stubs lib/unix_representations.cmx -o lib/unix_type_representations.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -I lib/ lib/unix_type_representations.cmxa lib/unix_representations.cmx -o lib/unix_type_representations.cmxs
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+-> compiled  unix-type-representations.0.1.0
+Processing  7/16: [ctypes: make ctypes-base]
+-> installed result.1.2
+Processing  8/16: [ctypes: make ctypes-base]
+Processing  9/16: [ctypes: make ctypes-base] [unix-type-representations: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/unix-type-representations.0.1.0)
+- ocaml setup.ml -install 
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_representations.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/libunix_type_representations_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_type_representations.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_type_representations.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_type_representations.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_type_representations.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_representations.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_representations.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_representations.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_representations.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_representations.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllunix_type_representations_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllunix_type_representations_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- ocaml setup.ml -install 
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_representations.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/libunix_type_representations_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_type_representations.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_type_representations.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_type_representations.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_type_representations.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_representations.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_representations.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_representations.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_representations.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/unix_representations.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-type-representations/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllunix_type_representations_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllunix_type_representations_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+-> installed unix-type-representations.0.1.0
+Processing  9/16: [ctypes: make ctypes-base]
++ make "XEN=disable" "ctypes-base" "ctypes-stubs" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2)
+- ./src/discover/determine_as_needed_flags.sh >> asneeded.config
+- ocamlfind  ocamlc -o gen_c_primitives -package str,bytes -linkpkg src/configure/extract_from_c.ml src/configure/gen_c_primitives.ml -I src/configure
+- ./gen_c_primitives > src/ctypes/ctypes_primitives.ml 2> gen_c_primitives.log || (rm src/ctypes/ctypes_primitives.ml && cat gen_c_primitives.log || false)
+- ocamlfind  ocamlc -o gen_libffi_abi -package str,bytes -linkpkg src/configure/extract_from_c.ml src/configure/gen_libffi_abi.ml -I src/configure
+- ./gen_libffi_abi > src/ctypes-foreign-base/libffi_abi.ml 2> gen_c_primitives.log || (rm src/ctypes-foreign-base/libffi_abi.ml && cat gen_c_primitives.log || false)
+- cp src/ctypes-foreign-base/dl.ml.unix src/ctypes-foreign-base/dl.ml
+- cp src/ctypes-foreign-base/dl_stubs.c.unix src/ctypes-foreign-base/dl_stubs.c
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_path.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_path.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_path.cmo -I _build/src/ctypes  src/ctypes/ctypes_path.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/lDouble.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/lDouble.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/lDouble.cmo -I _build/src/ctypes  src/ctypes/lDouble.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/unsigned.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/unsigned.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/unsigned.cmo -I _build/src/ctypes  src/ctypes/unsigned.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/signed.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/signed.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/signed.cmo -I _build/src/ctypes  src/ctypes/signed.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_ptr.cmo -I _build/src/ctypes  src/ctypes/ctypes_ptr.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_bigarray_stubs.cmo -I _build/src/ctypes  src/ctypes/ctypes_bigarray_stubs.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/complexL.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/complexL.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/complexL.cmo -I _build/src/ctypes  src/ctypes/complexL.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_primitive_types.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_primitive_types.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_primitive_types.cmo -I _build/src/ctypes  src/ctypes/ctypes_primitive_types.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_primitives.cmo -I _build/src/ctypes  src/ctypes/ctypes_primitives.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_roots_stubs.cmo -I _build/src/ctypes  src/ctypes/ctypes_roots_stubs.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_value_printing_stubs.cmo -I _build/src/ctypes  src/ctypes/ctypes_value_printing_stubs.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_memory_stubs.cmo -I _build/src/ctypes  src/ctypes/ctypes_memory_stubs.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_bigarray.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_bigarray.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_bigarray.cmo -I _build/src/ctypes  src/ctypes/ctypes_bigarray.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_static.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_static.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_static.cmo -I _build/src/ctypes  src/ctypes/ctypes_static.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_std_view_stubs.cmo -I _build/src/ctypes  src/ctypes/ctypes_std_view_stubs.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_structs.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_structs.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_structs.cmo -I _build/src/ctypes  src/ctypes/ctypes_structs.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_structs_computed.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_structs_computed.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_structs_computed.cmo -I _build/src/ctypes  src/ctypes/ctypes_structs_computed.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_type_printing.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_type_printing.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_type_printing.cmo -I _build/src/ctypes  src/ctypes/ctypes_type_printing.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_memory.cmo -I _build/src/ctypes  src/ctypes/ctypes_memory.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_coerce.cmo -I _build/src/ctypes  src/ctypes/ctypes_coerce.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_std_views.cmo -I _build/src/ctypes  src/ctypes/ctypes_std_views.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_value_printing.cmo -I _build/src/ctypes  src/ctypes/ctypes_value_printing.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_types.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_types.mli
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes.cmo -I _build/src/ctypes  src/ctypes/ctypes.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/posixTypes.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/posixTypes.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/posixTypes.cmo -I _build/src/ctypes  src/ctypes/posixTypes.ml
+- ocamlfind  ocamlc -a -principal -short-paths -g  -cclib -lctypes_stubs -dllib -lctypes_stubs -package str -package bigarray -package bytes   -o _build/ctypes.cma _build/src/ctypes/ctypes_path.cmo _build/src/ctypes/lDouble.cmo _build/src/ctypes/unsigned.cmo _build/src/ctypes/signed.cmo _build/src/ctypes/ctypes_ptr.cmo _build/src/ctypes/ctypes_bigarray_stubs.cmo _build/src/ctypes/complexL.cmo _build/src/ctypes/ctypes_primitive_types.cmo _build/src/ctypes/ctypes_primitives.cmo _build/src/ctypes/ctypes_roots_stubs.cmo _build/src/ctypes/ctypes_value_printing_stubs.cmo _build/src/ctypes/ctypes_memory_stubs.cmo _build/src/ctypes/ctypes_bigarray.cmo _build/src/ctypes/ctypes_static.cmo _build/src/ctypes/ctypes_std_view_stubs.cmo _build/src/ctypes/ctypes_structs.cmo _build/src/ctypes/ctypes_structs_computed.cmo _build/src/ctypes/ctypes_type_printing.cmo _build/src/ctypes/ctypes_memory.cmo _build/src/ctypes/ctypes_coerce.cmo _build/src/ctypes/ctypes_std_views.cmo _build/src/ctypes/ctypes_value_printing.cmo _build/src/ctypes/ctypes.cmo _build/src/ctypes/posixTypes.cmo -cclib -Wl,--no-as-needed
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o complex_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/complex_stubs.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o ctypes_bigarrays.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/ctypes_bigarrays.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o ctypes_roots.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/ctypes_roots.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o ldouble_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/ldouble_stubs.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o managed_buffer_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/managed_buffer_stubs.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o posix_types_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/posix_types_stubs.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o raw_pointer_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/raw_pointer_stubs.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o type_info_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/type_info_stubs.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o unsigned_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/unsigned_stubs.c
+- ocamlfind  ocamlmklib -o _build/ctypes_stubs _build/src/ctypes/complex_stubs.o _build/src/ctypes/ctypes_bigarrays.o _build/src/ctypes/ctypes_roots.o _build/src/ctypes/ldouble_stubs.o _build/src/ctypes/managed_buffer_stubs.o _build/src/ctypes/posix_types_stubs.o _build/src/ctypes/raw_pointer_stubs.o _build/src/ctypes/type_info_stubs.o _build/src/ctypes/unsigned_stubs.o 
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_path.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_path.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/lDouble.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/lDouble.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/unsigned.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/unsigned.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/signed.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/signed.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_ptr.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_ptr.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_bigarray_stubs.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_bigarray_stubs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/complexL.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/complexL.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_primitive_types.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_primitive_types.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_primitives.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_primitives.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_roots_stubs.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_roots_stubs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_value_printing_stubs.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_value_printing_stubs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_memory_stubs.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_memory_stubs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_bigarray.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_bigarray.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_static.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_static.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_std_view_stubs.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_std_view_stubs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_structs.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_structs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_structs_computed.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_structs_computed.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_type_printing.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_type_printing.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_memory.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_memory.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_coerce.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_coerce.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_std_views.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_std_views.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_value_printing.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_value_printing.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/posixTypes.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/posixTypes.ml
+- ocamlfind  opt -a -linkall -principal -short-paths -g  -package str -package bigarray -package bytes   -cclib -lctypes_stubs -o _build/ctypes.cmxa _build/src/ctypes/ctypes_path.cmx _build/src/ctypes/lDouble.cmx _build/src/ctypes/unsigned.cmx _build/src/ctypes/signed.cmx _build/src/ctypes/ctypes_ptr.cmx _build/src/ctypes/ctypes_bigarray_stubs.cmx _build/src/ctypes/complexL.cmx _build/src/ctypes/ctypes_primitive_types.cmx _build/src/ctypes/ctypes_primitives.cmx _build/src/ctypes/ctypes_roots_stubs.cmx _build/src/ctypes/ctypes_value_printing_stubs.cmx _build/src/ctypes/ctypes_memory_stubs.cmx _build/src/ctypes/ctypes_bigarray.cmx _build/src/ctypes/ctypes_static.cmx _build/src/ctypes/ctypes_std_view_stubs.cmx _build/src/ctypes/ctypes_structs.cmx _build/src/ctypes/ctypes_structs_computed.cmx _build/src/ctypes/ctypes_type_printing.cmx _build/src/ctypes/ctypes_memory.cmx _build/src/ctypes/ctypes_coerce.cmx _build/src/ctypes/ctypes_std_views.cmx _build/src/ctypes/ctypes_value_printing.cmx _build/src/ctypes/ctypes.cmx _build/src/ctypes/posixTypes.cmx -cclib -Wl,--no-as-needed
+- ocamlfind  opt -shared -linkall -principal -short-paths -g  -package str -package bigarray -package bytes   -o _build/ctypes.cmxs _build/src/ctypes/ctypes_path.cmx _build/src/ctypes/lDouble.cmx _build/src/ctypes/unsigned.cmx _build/src/ctypes/signed.cmx _build/src/ctypes/ctypes_ptr.cmx _build/src/ctypes/ctypes_bigarray_stubs.cmx _build/src/ctypes/complexL.cmx _build/src/ctypes/ctypes_primitive_types.cmx _build/src/ctypes/ctypes_primitives.cmx _build/src/ctypes/ctypes_roots_stubs.cmx _build/src/ctypes/ctypes_value_printing_stubs.cmx _build/src/ctypes/ctypes_memory_stubs.cmx _build/src/ctypes/ctypes_bigarray.cmx _build/src/ctypes/ctypes_static.cmx _build/src/ctypes/ctypes_std_view_stubs.cmx _build/src/ctypes/ctypes_structs.cmx _build/src/ctypes/ctypes_structs_computed.cmx _build/src/ctypes/ctypes_type_printing.cmx _build/src/ctypes/ctypes_memory.cmx _build/src/ctypes/ctypes_coerce.cmx _build/src/ctypes/ctypes_std_views.cmx _build/src/ctypes/ctypes_value_printing.cmx _build/src/ctypes/ctypes.cmx _build/src/ctypes/posixTypes.cmx _build/src/ctypes/complex_stubs.o _build/src/ctypes/ctypes_bigarrays.o _build/src/ctypes/ctypes_roots.o _build/src/ctypes/ldouble_stubs.o _build/src/ctypes/managed_buffer_stubs.o _build/src/ctypes/posix_types_stubs.o _build/src/ctypes/raw_pointer_stubs.o _build/src/ctypes/type_info_stubs.o _build/src/ctypes/unsigned_stubs.o -cclib -Wl,--no-as-needed
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes-top/ctypes_printers.cmi -package compiler-libs    -principal -short-paths -g -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/ctypes_printers.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  ocamlc -package compiler-libs   -principal -short-paths -g   -c -o _build/src/ctypes-top/ctypes_printers.cmo -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/ctypes_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  ocamlc -package compiler-libs   -principal -short-paths -g   -c -o _build/src/ctypes-top/install_ctypes_printers.cmo -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/install_ctypes_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  ocamlc -a -principal -short-paths -g   -package compiler-libs   -o _build/ctypes-top.cma _build/src/ctypes-top/ctypes_printers.cmo _build/src/ctypes-top/install_ctypes_printers.cmo -cclib -Wl,--no-as-needed
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-top/ctypes_printers.cmx -package compiler-libs   -principal -short-paths -g  -package compiler-libs    -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/ctypes_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-top/install_ctypes_printers.cmx -package compiler-libs   -principal -short-paths -g  -package compiler-libs    -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/install_ctypes_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind  opt -a -linkall -principal -short-paths -g  -package compiler-libs    -o _build/ctypes-top.cmxa _build/src/ctypes-top/ctypes_printers.cmx _build/src/ctypes-top/install_ctypes_printers.cmx -cclib -Wl,--no-as-needed
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  opt -shared -linkall -principal -short-paths -g  -package compiler-libs   -o _build/ctypes-top.cmxs _build/src/ctypes-top/ctypes_printers.cmx _build/src/ctypes-top/install_ctypes_printers.cmx  -cclib -Wl,--no-as-needed
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_analysis.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_analysis.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_analysis.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_analysis.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_errors.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_errors.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_errors.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_errors.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_internals.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_internals.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_internals.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_internals.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_public_name.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_public_name.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_public_name.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_public_name.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_generate_ml.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_ml.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_generate_ml.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_ml.ml
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_c_language.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_c_language.ml
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_emit_c.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_emit_c.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_generate_c.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_c.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_generate_c.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_c.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_inverted.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_inverted.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_inverted.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_inverted.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_structs.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_structs.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_structs.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_structs.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs.ml
+- ocamlfind  ocamlc -a -principal -short-paths -g   -package str -package bytes   -o _build/cstubs.cma _build/src/cstubs/cstubs_analysis.cmo _build/src/cstubs/cstubs_errors.cmo _build/src/cstubs/cstubs_internals.cmo _build/src/cstubs/cstubs_public_name.cmo _build/src/cstubs/cstubs_generate_ml.cmo _build/src/cstubs/cstubs_c_language.cmo _build/src/cstubs/cstubs_emit_c.cmo _build/src/cstubs/cstubs_generate_c.cmo _build/src/cstubs/cstubs_inverted.cmo _build/src/cstubs/cstubs_structs.cmo _build/src/cstubs/cstubs.cmo -cclib -Wl,--no-as-needed
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_analysis.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_analysis.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_errors.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_errors.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_internals.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_internals.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_public_name.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_public_name.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_generate_ml.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_ml.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_c_language.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_c_language.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_emit_c.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_emit_c.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_generate_c.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_c.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_inverted.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_inverted.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_structs.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_structs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs.ml
+- ocamlfind  opt -a -linkall -principal -short-paths -g  -package str -package bytes    -o _build/cstubs.cmxa _build/src/cstubs/cstubs_analysis.cmx _build/src/cstubs/cstubs_errors.cmx _build/src/cstubs/cstubs_internals.cmx _build/src/cstubs/cstubs_public_name.cmx _build/src/cstubs/cstubs_generate_ml.cmx _build/src/cstubs/cstubs_c_language.cmx _build/src/cstubs/cstubs_emit_c.cmx _build/src/cstubs/cstubs_generate_c.cmx _build/src/cstubs/cstubs_inverted.cmx _build/src/cstubs/cstubs_structs.cmx _build/src/cstubs/cstubs.cmx -cclib -Wl,--no-as-needed
+- ocamlfind  opt -shared -linkall -principal -short-paths -g  -package str -package bytes   -o _build/cstubs.cmxs _build/src/cstubs/cstubs_analysis.cmx _build/src/cstubs/cstubs_errors.cmx _build/src/cstubs/cstubs_internals.cmx _build/src/cstubs/cstubs_public_name.cmx _build/src/cstubs/cstubs_generate_ml.cmx _build/src/cstubs/cstubs_c_language.cmx _build/src/cstubs/cstubs_emit_c.cmx _build/src/cstubs/cstubs_generate_c.cmx _build/src/cstubs/cstubs_inverted.cmx _build/src/cstubs/cstubs_structs.cmx _build/src/cstubs/cstubs.cmx  -cclib -Wl,--no-as-needed
+-> compiled  ctypes.0.11.2
+Processing 10/16: [ctypes: make install]
++ make "install" "XEN=disable" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2)
+- ocamlfind  install ctypes META CHANGES.md
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/CHANGES.md
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/META
+- ocamlfind  install -add ctypes -optional  _build/ctypes.cma _build/dllctypes_stubs.so  _build/ctypes.cmxa _build/ctypes.cmxs _build/libctypes_stubs.a  _build/ctypes.a src/ctypes/unsigned.mli src/ctypes/signed.mli src/ctypes/lDouble.mli src/ctypes/complexL.mli src/ctypes/ctypes.mli src/ctypes/posixTypes.mli src/ctypes/ctypes_types.mli _build/src/ctypes/unsigned.cmi _build/src/ctypes/signed.cmi _build/src/ctypes/lDouble.cmi _build/src/ctypes/complexL.cmi _build/src/ctypes/ctypes.cmi _build/src/ctypes/posixTypes.cmi _build/src/ctypes/ctypes_types.cmi _build/src/ctypes/ctypes_static.cmi _build/src/ctypes/ctypes_primitive_types.cmi _build/src/ctypes/ctypes_structs.cmi _build/src/ctypes/unsigned.cmt _build/src/ctypes/signed.cmt _build/src/ctypes/lDouble.cmt _build/src/ctypes/complexL.cmt _build/src/ctypes/ctypes.cmt _build/src/ctypes/posixTypes.cmt _build/src/ctypes/ctypes_types.cmt _build/src/ctypes/unsigned.cmti _build/src/ctypes/signed.cmti _build/src/ctypes/lDouble.cmti _build/src/ctypes/complexL.cmti _build/src/ctypes/ctypes.cmti _build/src/ctypes/posixTypes.cmti _build/src/ctypes/ctypes_types.cmti src/ctypes/ctypes_cstubs_internals.h src/ctypes/cstubs_internals.h src/ctypes/ctypes_managed_buffer_stubs.h src/ctypes/ctypes_ldouble_stubs.h src/ctypes/ctypes_type_info_stubs.h src/ctypes/ctypes_complex_stubs.h src/ctypes/ctypes_primitives.h src/ctypes/ctypes_raw_pointer.h src/ctypes/ctypes_unsigned_stubs.h _build/src/ctypes/ctypes_path.cmx _build/src/ctypes/lDouble.cmx _build/src/ctypes/unsigned.cmx _build/src/ctypes/signed.cmx _build/src/ctypes/ctypes_ptr.cmx _build/src/ctypes/ctypes_bigarray_stubs.cmx _build/src/ctypes/complexL.cmx _build/src/ctypes/ctypes_primitive_types.cmx _build/src/ctypes/ctypes_primitives.cmx _build/src/ctypes/ctypes_roots_stubs.cmx _build/src/ctypes/ctypes_value_printing_stubs.cmx _build/src/ctypes/ctypes_memory_stubs.cmx _build/src/ctypes/ctypes_bigarray.cmx _build/src/ctypes/ctypes_static.cmx _build/src/ctypes/ctypes_std_view_stubs.cmx _build/src/ctypes/ctypes_structs.cmx _build/src/ctypes/ctypes_structs_computed.cmx _build/src/ctypes/ctypes_type_printing.cmx _build/src/ctypes/ctypes_memory.cmx _build/src/ctypes/ctypes_coerce.cmx _build/src/ctypes/ctypes_std_views.cmx _build/src/ctypes/ctypes_value_printing.cmx _build/src/ctypes/ctypes.cmx _build/src/ctypes/posixTypes.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/posixTypes.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_value_printing.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_std_views.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_coerce.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_memory.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_type_printing.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_structs_computed.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_structs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_std_view_stubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_static.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_bigarray.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_memory_stubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_value_printing_stubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_roots_stubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_primitives.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_primitive_types.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/complexL.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_bigarray_stubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_ptr.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/signed.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/unsigned.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/lDouble.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_path.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_unsigned_stubs.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_raw_pointer.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_primitives.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_complex_stubs.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_type_info_stubs.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_ldouble_stubs.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_managed_buffer_stubs.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_internals.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_cstubs_internals.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_types.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/posixTypes.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/complexL.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/lDouble.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/signed.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/unsigned.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/posixTypes.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/complexL.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/lDouble.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/signed.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/unsigned.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_structs.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_primitive_types.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_static.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_types.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/posixTypes.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/complexL.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/lDouble.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/signed.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/unsigned.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_types.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/posixTypes.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/complexL.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/lDouble.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/signed.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/unsigned.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/libctypes_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllctypes_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllctypes_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- ocamlfind  install -add ctypes -optional  _build/ctypes-top.cma   _build/ctypes-top.cmxa _build/ctypes-top.cmxs   _build/ctypes-top.a src/ctypes-top/ctypes_printers.mli _build/src/ctypes-top/ctypes_printers.cmi  _build/src/ctypes-top/ctypes_printers.cmt _build/src/ctypes-top/ctypes_printers.cmti  _build/src/ctypes-top/ctypes_printers.cmx _build/src/ctypes-top/install_ctypes_printers.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/install_ctypes_printers.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_printers.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_printers.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_printers.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_printers.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_printers.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-top.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-top.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-top.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-top.cma
+- ocamlfind  install -add ctypes -optional  _build/ctypes-foreign-base.cma _build/dllctypes-foreign-base_stubs.so  _build/ctypes-foreign-base.cmxa _build/ctypes-foreign-base.cmxs _build/libctypes-foreign-base_stubs.a  _build/ctypes-foreign-base.a src/ctypes-foreign-base/dl.mli src/ctypes-foreign-base/libffi_abi.mli _build/src/ctypes-foreign-base/dl.cmi _build/src/ctypes-foreign-base/libffi_abi.cmi  _build/src/ctypes-foreign-base/dl.cmt _build/src/ctypes-foreign-base/libffi_abi.cmt _build/src/ctypes-foreign-base/dl.cmti _build/src/ctypes-foreign-base/libffi_abi.cmti  _build/src/ctypes-foreign-base/ctypes_closure_properties.cmx _build/src/ctypes-foreign-base/ctypes_ffi_stubs.cmx _build/src/ctypes-foreign-base/ctypes_weak_ref.cmx _build/src/ctypes-foreign-base/dl.cmx _build/src/ctypes-foreign-base/libffi_abi.cmx _build/src/ctypes-foreign-base/ctypes_ffi.cmx _build/src/ctypes-foreign-base/ctypes_foreign_basis.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/libffi_abi.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/dl.mli
+- ocamlfind  install -add ctypes -optional  _build/ctypes-foreign-threaded.cma _build/dllctypes-foreign-threaded_stubs.so  _build/ctypes-foreign-threaded.cmxa _build/ctypes-foreign-threaded.cmxs _build/libctypes-foreign-threaded_stubs.a  _build/ctypes-foreign-threaded.a src/ctypes-foreign-threaded/foreign.mli _build/src/ctypes-foreign-threaded/foreign.cmi  _build/src/ctypes-foreign-threaded/foreign.cmt _build/src/ctypes-foreign-threaded/foreign.cmti  
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.mli
+- ocamlfind  install -add ctypes -optional  _build/ctypes-foreign-unthreaded.cma   _build/ctypes-foreign-unthreaded.cmxa _build/ctypes-foreign-unthreaded.cmxs   _build/ctypes-foreign-unthreaded.a src/ctypes-foreign-unthreaded/foreign.mli _build/src/ctypes-foreign-unthreaded/foreign.cmi  _build/src/ctypes-foreign-unthreaded/foreign.cmt _build/src/ctypes-foreign-unthreaded/foreign.cmti  
+- ocamlfind: [WARNING] Overwriting file /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.mli
+- ocamlfind  install -add ctypes -optional  _build/cstubs.cma   _build/cstubs.cmxa _build/cstubs.cmxs   _build/cstubs.a src/cstubs/cstubs_structs.mli src/cstubs/cstubs.mli src/cstubs/cstubs_inverted.mli _build/src/cstubs/cstubs_structs.cmi _build/src/cstubs/cstubs.cmi _build/src/cstubs/cstubs_inverted.cmi _build/src/cstubs/cstubs_internals.cmi _build/src/cstubs/cstubs_structs.cmt _build/src/cstubs/cstubs.cmt _build/src/cstubs/cstubs_inverted.cmt _build/src/cstubs/cstubs_structs.cmti _build/src/cstubs/cstubs.cmti _build/src/cstubs/cstubs_inverted.cmti  _build/src/cstubs/cstubs_analysis.cmx _build/src/cstubs/cstubs_errors.cmx _build/src/cstubs/cstubs_internals.cmx _build/src/cstubs/cstubs_public_name.cmx _build/src/cstubs/cstubs_generate_ml.cmx _build/src/cstubs/cstubs_c_language.cmx _build/src/cstubs/cstubs_emit_c.cmx _build/src/cstubs/cstubs_generate_c.cmx _build/src/cstubs/cstubs_inverted.cmx _build/src/cstubs/cstubs_structs.cmx _build/src/cstubs/cstubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_structs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_inverted.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_generate_c.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_emit_c.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_c_language.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_generate_ml.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_public_name.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_internals.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_errors.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_analysis.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_inverted.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_structs.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_inverted.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_structs.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_internals.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_inverted.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_structs.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_inverted.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_structs.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cma
+-> installed ctypes.0.11.2
+Processing 11/16: [posix-types: make]
+Processing 12/16: [posix-types: make] [unix-errno: make build]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/posix-types.0.1.0)
+- CTYPES_LIB_DIR=/home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes ocamlbuild -use-ocamlfind -classic-display posix_types.cma posix_types.cmxa libposix_types_stubs.a dllposix_types_stubs.so
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package ctypes -modules lib/posix_types.mli > lib/posix_types.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -package ctypes -w A-37-4 -I lib -o lib/posix_types.cmi lib/posix_types.mli
+- ocamlfind ocamldep -package ctypes -modules lib/posix_types.ml > lib/posix_types.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -package ctypes -w A-37-4 -I lib -o lib/posix_types.cmo lib/posix_types.ml
+- ocamlfind ocamlc -a -dllib -lposix_types_stubs -package ctypes lib/posix_types.cmo -o lib/posix_types.cma
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -package ctypes -w A-37-4 -I lib -o lib/posix_types.cmx lib/posix_types.ml
+- ocamlfind ocamlopt -a -cclib -lposix_types_stubs -package ctypes lib/posix_types.cmx -o lib/posix_types.cmxa
+- ocamlfind ocamlc -g -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes -package ctypes -c lib/posix_types_stubs.c
+- mv posix_types_stubs.o lib/posix_types_stubs.o
+- ocamlfind ocamlmklib -o lib/posix_types_stubs lib/posix_types_stubs.o
+- CTYPES_LIB_DIR=/home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes ocamlbuild -use-ocamlfind -classic-display posix_types.cma posix_types.cmxa libposix_types_stubs.a dllposix_types_stubs.so
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package ctypes -modules lib/posix_types.mli > lib/posix_types.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -package ctypes -w A-37-4 -I lib -o lib/posix_types.cmi lib/posix_types.mli
+- ocamlfind ocamldep -package ctypes -modules lib/posix_types.ml > lib/posix_types.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -package ctypes -w A-37-4 -I lib -o lib/posix_types.cmo lib/posix_types.ml
+- ocamlfind ocamlc -a -dllib -lposix_types_stubs -package ctypes lib/posix_types.cmo -o lib/posix_types.cma
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -package ctypes -w A-37-4 -I lib -o lib/posix_types.cmx lib/posix_types.ml
+- ocamlfind ocamlopt -a -cclib -lposix_types_stubs -package ctypes lib/posix_types.cmx -o lib/posix_types.cmxa
+- ocamlfind ocamlc -g -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes -package ctypes -c lib/posix_types_stubs.c
+- mv posix_types_stubs.o lib/posix_types_stubs.o
+- ocamlfind ocamlmklib -o lib/posix_types_stubs lib/posix_types_stubs.o
+-> compiled  posix-types.0.1.0
+Processing 12/16: [unix-errno: make build]
+Processing 13/16: [unix-errno: make build] [posix-types: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/posix-types.0.1.0)
+- ocamlfind install posix-types META \
+- 	_build/lib/posix_types.mli _build/lib/posix_types.cmi _build/lib/posix_types.cmti _build/lib/posix_types.cma _build/lib/posix_types.cmxa \
+- 	-dll _build/lib/dllposix_types_stubs.so \
+- 	-nodll _build/lib/libposix_types_stubs.a \
+- 	_build/lib/posix_types.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/posix_types.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/posix_types.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/posix_types.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/posix_types.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/posix_types.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/posix_types.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/libposix_types_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllposix_types_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllposix_types_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- ocamlfind install posix-types META \
+- 	_build/lib/posix_types.mli _build/lib/posix_types.cmi _build/lib/posix_types.cmti _build/lib/posix_types.cma _build/lib/posix_types.cmxa \
+- 	-dll _build/lib/dllposix_types_stubs.so \
+- 	-nodll _build/lib/libposix_types_stubs.a \
+- 	_build/lib/posix_types.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/posix_types.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/posix_types.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/posix_types.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/posix_types.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/posix_types.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/posix_types.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/libposix_types_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/posix-types/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllposix_types_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllposix_types_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+-> installed posix-types.0.1.0
+Processing 13/16: [unix-errno: make build]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/unix-errno.0.5.1)
+- CTYPES_LIB_DIR=/home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes OCAML_LIB_DIR=/home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml ocamlbuild -use-ocamlfind -classic-display errno_.cma errno_.cmxa unix_errno.cma unix_errno.cmxa libunix_errno_stubs.a dllunix_errno_stubs.so errno_map.byte
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package ctypes -package bytes -package result -modules lib/errno.mli > lib/errno.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes -package bytes -package result -w @5@8@10@11@12@14@23@24@26@29 -I lib -I unix -I src -o lib/errno.cmi lib/errno.mli
+- ocamlfind ocamldep -package ctypes -package bytes -package result -modules lib/errno.ml > lib/errno.ml.depends
+- ocamlfind ocamldep -package ctypes -package bytes -package result -modules lib/errno_host.mli > lib/errno_host.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes -package bytes -package result -w @5@8@10@11@12@14@23@24@26@29 -I lib -I unix -I src -o lib/errno_host.cmi lib/errno_host.mli
+- ocamlfind ocamldep -package ctypes -package bytes -package result -modules lib/errno_host.ml > lib/errno_host.ml.depends
+- ocamlfind ocamldep -package ctypes -modules src/errno_srcgen.ml > src/errno_srcgen.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes -w @5@8@10@11@12@14@23@24@26@29 -I src -I unix -I lib -o src/errno_srcgen.cmo src/errno_srcgen.ml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes -w @5@8@10@11@12@14@23@24@26@29 -I src -I unix -I lib -o src/errno_srcgen.cmo src/errno_srcgen.ml
+- File "src/errno_srcgen.ml", line 34, characters 27-43:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes -package bytes -package result -w @5@8@10@11@12@14@23@24@26@29 -I lib -I unix -I src -o lib/errno.cmo lib/errno.ml
+- ocamlfind ocamlc -linkpkg -package ctypes lib/errno.cmo src/errno_srcgen.cmo -o src/errno_srcgen.byte
+- src/errno_srcgen.byte < maps/linux_4_4_6 > lib/errno_map_linux_4_4_6.ml
+- ocamlfind ocamldep -package ctypes -package bytes -package result -modules lib/errno_map_linux_4_4_6.ml > lib/errno_map_linux_4_4_6.ml.depends
+- src/errno_srcgen.byte < maps/osx_10_11_4 > lib/errno_map_osx_10_11_4.ml
+- ocamlfind ocamldep -package ctypes -package bytes -package result -modules lib/errno_map_osx_10_11_4.ml > lib/errno_map_osx_10_11_4.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes -package bytes -package result -w @5@8@10@11@12@14@23@24@26@29 -I lib -I unix -I src -o lib/errno_map_linux_4_4_6.cmo lib/errno_map_linux_4_4_6.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes -package bytes -package result -w @5@8@10@11@12@14@23@24@26@29 -I lib -I unix -I src -o lib/errno_map_osx_10_11_4.cmo lib/errno_map_osx_10_11_4.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes -package bytes -package result -w @5@8@10@11@12@14@23@24@26@29 -I lib -I unix -I src -o lib/errno_host.cmo lib/errno_host.ml
+- ocamlfind ocamlc -a lib/errno.cmo lib/errno_map_linux_4_4_6.cmo lib/errno_map_osx_10_11_4.cmo lib/errno_host.cmo -o lib/errno_.cma
+- ocamlfind ocamlopt -c -bin-annot -safe-string -principal -strict-sequence -package ctypes -package bytes -package result -w @5@8@10@11@12@14@23@24@26@29 -I lib -I unix -I src -o lib/errno.cmx lib/errno.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -principal -strict-sequence -package ctypes -package bytes -package result -w @5@8@10@11@12@14@23@24@26@29 -I lib -I unix -I src -o lib/errno_map_linux_4_4_6.cmx lib/errno_map_linux_4_4_6.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -principal -strict-sequence -package ctypes -package bytes -package result -w @5@8@10@11@12@14@23@24@26@29 -I lib -I unix -I src -o lib/errno_map_osx_10_11_4.cmx lib/errno_map_osx_10_11_4.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -principal -strict-sequence -package ctypes -package bytes -package result -w @5@8@10@11@12@14@23@24@26@29 -I lib -I unix -I src -o lib/errno_host.cmx lib/errno_host.ml
+- ocamlfind ocamlopt -a lib/errno.cmx lib/errno_map_linux_4_4_6.cmx lib/errno_map_osx_10_11_4.cmx lib/errno_host.cmx -o lib/errno_.cmxa
+- ocamlfind ocamldep -package ctypes.stubs -modules lib_gen/unix_errno_bindgen.ml > lib_gen/unix_errno_bindgen.ml.depends
+- ocamlfind ocamldep -package ctypes.stubs -modules lib_gen/unix_errno_bindings.ml > lib_gen/unix_errno_bindings.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I lib_gen -I unix -I lib -I src -o lib_gen/unix_errno_bindings.cmo lib_gen/unix_errno_bindings.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I lib_gen -I unix -I lib -I src -o lib_gen/unix_errno_bindgen.cmo lib_gen/unix_errno_bindgen.ml
+- ocamlfind ocamlc -linkpkg -package ctypes.stubs lib_gen/unix_errno_bindings.cmo lib_gen/unix_errno_bindgen.cmo -o lib_gen/unix_errno_bindgen.byte
+- lib_gen/unix_errno_bindgen.byte
+- ocamlfind ocamlc -ccopt -I/usr/local/include -c unix/unix_errno_util.c
+- mv unix_errno_util.o unix/unix_errno_util.o
+- ocamlfind ocamlc -ccopt -I/usr/local/include -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes -c unix/unix_errno_stubs.c
+- mv unix_errno_stubs.o unix/unix_errno_stubs.o
+- ocamlfind ocamlmklib -o unix/unix_errno_stubs -L/usr/local/lib unix/unix_errno_util.o unix/unix_errno_stubs.o
+- ocamlfind ocamldep -package ctypes.stubs -package bytes -modules unix/errno_unix.mli > unix/errno_unix.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lib -I src -o unix/errno_unix.cmi unix/errno_unix.mli
+- ocamlfind ocamldep -package ctypes.stubs -package bytes -modules unix/errno_unix.ml > unix/errno_unix.ml.depends
+- cp -p lib_gen/unix_errno_bindings.ml unix/unix_errno_bindings.ml
+- ocamlfind ocamldep -package ctypes.stubs -package bytes -modules unix/unix_errno_bindings.ml > unix/unix_errno_bindings.ml.depends
+- ocamlfind ocamldep -package ctypes.stubs -package bytes -modules unix/unix_errno_generated.ml > unix/unix_errno_generated.ml.depends
+- cp -p lib_gen/unix_errno_types.ml unix/unix_errno_types.ml
+- ocamlfind ocamldep -package ctypes.stubs -package bytes -modules unix/unix_errno_types.ml > unix/unix_errno_types.ml.depends
+- ocamlfind ocamldep -package ctypes.stubs -modules lib_gen/unix_errno_typegen.ml > lib_gen/unix_errno_typegen.ml.depends
+- ocamlfind ocamldep -package ctypes.stubs -modules lib_gen/unix_errno_types.ml > lib_gen/unix_errno_types.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I lib_gen -I unix -I lib -I src -o lib_gen/unix_errno_types.cmo lib_gen/unix_errno_types.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I lib_gen -I unix -I lib -I src -o lib_gen/unix_errno_typegen.cmo lib_gen/unix_errno_typegen.ml
+- ocamlfind ocamlc -linkpkg -package ctypes.stubs lib_gen/unix_errno_types.cmo lib_gen/unix_errno_typegen.cmo -o lib_gen/unix_errno_typegen.byte
+- lib_gen/unix_errno_typegen.byte
+- cc -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml -o lib_gen/unix_errno_types_detect lib_gen/unix_errno_types_detect.c
+- lib_gen/unix_errno_types_detect > unix/unix_errno_types_detected.ml
+- ocamlfind ocamldep -package ctypes.stubs -package bytes -modules unix/unix_errno_types_detected.ml > unix/unix_errno_types_detected.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lib -I src -o unix/unix_errno_bindings.cmo unix/unix_errno_bindings.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lib -I src -o unix/unix_errno_generated.cmo unix/unix_errno_generated.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lib -I src -o unix/unix_errno_types.cmo unix/unix_errno_types.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lib -I src -o unix/unix_errno_types_detected.cmo unix/unix_errno_types_detected.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lib -I src -o unix/errno_unix.cmo unix/errno_unix.ml
+- ocamlfind ocamlc -a -dllib -lunix_errno_stubs unix/unix_errno_bindings.cmo unix/unix_errno_generated.cmo unix/unix_errno_types.cmo unix/unix_errno_types_detected.cmo unix/errno_unix.cmo -o unix/unix_errno.cma
+- ocamlfind ocamlopt -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lib -I src -o unix/unix_errno_bindings.cmx unix/unix_errno_bindings.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lib -I src -o unix/unix_errno_generated.cmx unix/unix_errno_generated.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lib -I src -o unix/unix_errno_types.cmx unix/unix_errno_types.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lib -I src -o unix/unix_errno_types_detected.cmx unix/unix_errno_types_detected.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -principal -strict-sequence -package ctypes.stubs -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lib -I src -o unix/errno_unix.cmx unix/errno_unix.ml
+- ocamlfind ocamlopt -a -cclib -lunix_errno_stubs unix/unix_errno_bindings.cmx unix/unix_errno_generated.cmx unix/unix_errno_types.cmx unix/unix_errno_types_detected.cmx unix/errno_unix.cmx -o unix/unix_errno.cmxa
+- ocamlfind ocamldep -package ctypes -package ctypes.stubs -modules src/errno_map.ml > src/errno_map.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package ctypes -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I src -I unix -I lib -o src/errno_map.cmo src/errno_map.ml
+- ocamlfind ocamlc -linkpkg -dllib -lunix_errno_stubs -I unix -package ctypes -package ctypes.stubs lib/errno.cmo unix/unix_errno_bindings.cmo unix/unix_errno_generated.cmo unix/unix_errno_types.cmo unix/unix_errno_types_detected.cmo unix/errno_unix.cmo src/errno_map.cmo -o src/errno_map.byte
+-> compiled  unix-errno.0.5.1
+Processing 14/16: [unix-errno: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/unix-errno.0.5.1)
+- ocamlfind install unix-errno META _build/lib/errno.mli _build/lib/errno.cmi _build/lib/errno.cmti _build/lib/errno_host.mli _build/lib/errno_host.cmi _build/lib/errno_host.cmti _build/lib/errno_.cma _build/lib/errno_.cmxa _build/unix/errno_unix.mli _build/unix/errno_unix.cmi _build/unix/errno_unix.cmti _build/unix/unix_errno.cma _build/unix/unix_errno.cmxa _build/lib/errno_.a -dll _build/unix/dllunix_errno_stubs.so -nodll _build/unix/libunix_errno_stubs.a _build/unix/unix_errno.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/errno_.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/unix_errno.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/unix_errno.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/errno_unix.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/errno_unix.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/errno_unix.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/errno_.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/errno_.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/errno_host.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/errno_host.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/errno_host.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/errno.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/errno.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/errno.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/unix_errno.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/libunix_errno_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-errno/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllunix_errno_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllunix_errno_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+-> installed unix-errno.0.5.1
+Processing 15/16: [unix-sys-stat: make build]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/unix-sys-stat.0.5.1)
+- ocamlfind: Package `lwt' not found
+- CTYPES_LIB_DIR=/home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes LWT_LIB_DIR= OCAML_LIB_DIR=/home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml ocamlbuild -use-ocamlfind -classic-display sys_stat.cma sys_stat.cmxa unix_sys_stat.cma unix_sys_stat.cmxa libunix_sys_stat_stubs.a dllunix_sys_stat_stubs.so sys_stat_map.byte
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package bytes -modules lib/sys_stat.mli > lib/sys_stat.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -I src -o lib/sys_stat.cmi lib/sys_stat.mli
+- ocamlfind ocamldep -package bytes -modules lib/sys_stat.ml > lib/sys_stat.ml.depends
+- ocamlfind ocamldep -package bytes -modules lib/sys_stat_host.mli > lib/sys_stat_host.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -I src -o lib/sys_stat_host.cmi lib/sys_stat_host.mli
+- ocamlfind ocamldep -package bytes -modules lib/sys_stat_host.ml > lib/sys_stat_host.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/sys_stat_srcgen.ml > src/sys_stat_srcgen.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I src -I lwt -I unix -I lib -o src/sys_stat_srcgen.cmo src/sys_stat_srcgen.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -I src -o lib/sys_stat.cmo lib/sys_stat.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -I src -o lib/sys_stat.cmo lib/sys_stat.ml
+- File "lib/sys_stat.ml", line 236, characters 11-25:
+- Warning 3: deprecated: Char.uppercase
+- Use Char.uppercase_ascii instead.
+- ocamlfind ocamlc -linkpkg -g -package bytes lib/sys_stat.cmo src/sys_stat_srcgen.cmo -o src/sys_stat_srcgen.byte
+- src/sys_stat_srcgen.byte < maps/linux_4_1_12_musl_1_1_12 > lib/sys_stat_map_linux_4_1_12_musl_1_1_12.ml
+- ocamlfind ocamldep -package bytes -modules lib/sys_stat_map_linux_4_1_12_musl_1_1_12.ml > lib/sys_stat_map_linux_4_1_12_musl_1_1_12.ml.depends
+- src/sys_stat_srcgen.byte < maps/osx_10_11_2 > lib/sys_stat_map_osx_10_11_2.ml
+- ocamlfind ocamldep -package bytes -modules lib/sys_stat_map_osx_10_11_2.ml > lib/sys_stat_map_osx_10_11_2.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -I src -o lib/sys_stat_map_linux_4_1_12_musl_1_1_12.cmo lib/sys_stat_map_linux_4_1_12_musl_1_1_12.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -I src -o lib/sys_stat_map_osx_10_11_2.cmo lib/sys_stat_map_osx_10_11_2.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -I src -o lib/sys_stat_host.cmo lib/sys_stat_host.ml
+- ocamlfind ocamlc -a -package bytes lib/sys_stat.cmo lib/sys_stat_map_linux_4_1_12_musl_1_1_12.cmo lib/sys_stat_map_osx_10_11_2.cmo lib/sys_stat_host.cmo -o lib/sys_stat.cma
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -I src -o lib/sys_stat.cmx lib/sys_stat.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -I src -o lib/sys_stat.cmx lib/sys_stat.ml
+- File "lib/sys_stat.ml", line 236, characters 11-25:
+- Warning 3: deprecated: Char.uppercase
+- Use Char.uppercase_ascii instead.
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -I src -o lib/sys_stat_map_linux_4_1_12_musl_1_1_12.cmx lib/sys_stat_map_linux_4_1_12_musl_1_1_12.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -I src -o lib/sys_stat_map_osx_10_11_2.cmx lib/sys_stat_map_osx_10_11_2.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -I src -o lib/sys_stat_host.cmx lib/sys_stat_host.ml
+- ocamlfind ocamlopt -a -package bytes lib/sys_stat.cmx lib/sys_stat_map_linux_4_1_12_musl_1_1_12.cmx lib/sys_stat_map_osx_10_11_2.cmx lib/sys_stat_host.cmx -o lib/sys_stat.cmxa
+- ocamlfind ocamldep -package posix-types -package ctypes.stubs -modules lib_gen/unix_sys_stat_bindgen.ml > lib_gen/unix_sys_stat_bindgen.ml.depends
+- ocamlfind ocamldep -package posix-types -package ctypes.stubs -modules lib_gen/unix_sys_stat_bindings.ml > lib_gen/unix_sys_stat_bindings.ml.depends
+- ocamlfind ocamldep -package posix-types -package ctypes.stubs -modules lib_gen/unix_sys_stat_types.ml > lib_gen/unix_sys_stat_types.ml.depends
+- ocamlfind ocamldep -package posix-types -package ctypes.stubs -modules lib_gen/unix_sys_stat_typegen.ml > lib_gen/unix_sys_stat_typegen.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I lib_gen -I lwt -I unix -I lib -I src -o lib_gen/unix_sys_stat_types.cmo lib_gen/unix_sys_stat_types.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I lib_gen -I lwt -I unix -I lib -I src -o lib_gen/unix_sys_stat_typegen.cmo lib_gen/unix_sys_stat_typegen.ml
+- ocamlfind ocamlc -linkpkg -g -package posix-types -package ctypes.stubs lib_gen/unix_sys_stat_types.cmo lib_gen/unix_sys_stat_typegen.cmo -o lib_gen/unix_sys_stat_typegen.byte
+- lib_gen/unix_sys_stat_typegen.byte
+- cc -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml -o lib_gen/unix_sys_stat_types_detect lib_gen/unix_sys_stat_types_detect.c
+- lib_gen/unix_sys_stat_types_detect > unix/unix_sys_stat_types_detected.ml
+- ocamlfind ocamldep -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -modules unix/unix_sys_stat_types_detected.ml > unix/unix_sys_stat_types_detected.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/unix_sys_stat_types_detected.cmo unix/unix_sys_stat_types_detected.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I lib_gen -I lwt -I unix -I lib -I src -o lib_gen/unix_sys_stat_bindings.cmo lib_gen/unix_sys_stat_bindings.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I lib_gen -I lwt -I unix -I lib -I src -o lib_gen/unix_sys_stat_bindgen.cmo lib_gen/unix_sys_stat_bindgen.ml
+- ocamlfind ocamlc -linkpkg -g -package posix-types -package ctypes.stubs lib_gen/unix_sys_stat_types.cmo unix/unix_sys_stat_types_detected.cmo lib_gen/unix_sys_stat_bindings.cmo lib_gen/unix_sys_stat_bindgen.cmo -o lib_gen/unix_sys_stat_bindgen.byte
+- lib_gen/unix_sys_stat_bindgen.byte --c-file unix/unix_sys_stat_stubs.c --ml-file unix/unix_sys_stat_generated.ml
+- ocamlfind ocamlc -g -ccopt -I/usr/local/include -g -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -c unix/unix_sys_stat_util.c
+- mv unix_sys_stat_util.o unix/unix_sys_stat_util.o
+- ocamlfind ocamlc -g -ccopt -I/usr/local/include -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes -g -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -c unix/unix_sys_stat_stubs.c
+- mv unix_sys_stat_stubs.o unix/unix_sys_stat_stubs.o
+- ocamlfind ocamlmklib -o unix/unix_sys_stat_stubs -L/usr/local/lib unix/unix_sys_stat_util.o unix/unix_sys_stat_stubs.o
+- ocamlfind ocamldep -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -modules unix/sys_stat_unix.mli > unix/sys_stat_unix.mli.depends
+- cp -p lib_gen/unix_sys_stat_bindings.ml unix/unix_sys_stat_bindings.ml
+- ocamlfind ocamldep -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -modules unix/unix_sys_stat_bindings.ml > unix/unix_sys_stat_bindings.ml.depends
+- cp -p lib_gen/unix_sys_stat_types.ml unix/unix_sys_stat_types.ml
+- ocamlfind ocamldep -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -modules unix/unix_sys_stat_types.ml > unix/unix_sys_stat_types.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/unix_sys_stat_types.cmo unix/unix_sys_stat_types.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/unix_sys_stat_bindings.cmo unix/unix_sys_stat_bindings.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/sys_stat_unix.cmi unix/sys_stat_unix.mli
+- ocamlfind ocamldep -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -modules unix/sys_stat_unix.ml > unix/sys_stat_unix.ml.depends
+- ocamlfind ocamldep -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -modules unix/unix_sys_stat_generated.ml > unix/unix_sys_stat_generated.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/unix_sys_stat_generated.cmo unix/unix_sys_stat_generated.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/sys_stat_unix.cmo unix/sys_stat_unix.ml
+- ocamlfind ocamlc -a -dllib -lunix_sys_stat_stubs -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs unix/unix_sys_stat_types.cmo unix/unix_sys_stat_types_detected.cmo unix/unix_sys_stat_bindings.cmo unix/unix_sys_stat_generated.cmo unix/sys_stat_unix.cmo -o unix/unix_sys_stat.cma
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/unix_sys_stat_types.cmx unix/unix_sys_stat_types.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/unix_sys_stat_types.cmx unix/unix_sys_stat_types.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Posix_types, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/unix_sys_stat_types_detected.cmx unix/unix_sys_stat_types_detected.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/unix_sys_stat_bindings.cmx unix/unix_sys_stat_bindings.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/unix_sys_stat_bindings.cmx unix/unix_sys_stat_bindings.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Posix_types, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/unix_sys_stat_generated.cmx unix/unix_sys_stat_generated.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/sys_stat_unix.cmx unix/sys_stat_unix.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I unix -I lwt -I lib -I src -o unix/sys_stat_unix.cmx unix/sys_stat_unix.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Errno_unix, and its interface was not compiled with -opaque
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Posix_types, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -cclib -lunix_sys_stat_stubs -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs unix/unix_sys_stat_types.cmx unix/unix_sys_stat_types_detected.cmx unix/unix_sys_stat_bindings.cmx unix/unix_sys_stat_generated.cmx unix/sys_stat_unix.cmx -o unix/unix_sys_stat.cmxa
+- ocamlfind ocamldep -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -modules src/sys_stat_map.ml > src/sys_stat_map.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs -w @5@8@10@11@12@14@23@24@26@29 -I src -I lwt -I unix -I lib -o src/sys_stat_map.cmo src/sys_stat_map.ml
+- ocamlfind ocamlc -linkpkg -g -dllib -lunix_sys_stat_stubs -I unix/ -package unix-type-representations -package unix-errno.unix -package bytes -package posix-types -package ctypes.stubs lib/sys_stat.cmo unix/unix_sys_stat_types.cmo unix/unix_sys_stat_types_detected.cmo unix/unix_sys_stat_bindings.cmo unix/unix_sys_stat_generated.cmo unix/sys_stat_unix.cmo src/sys_stat_map.cmo -o src/sys_stat_map.byte
+-> compiled  unix-sys-stat.0.5.1
+Processing 16/16: [unix-sys-stat: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/unix-sys-stat.0.5.1)
+- ocamlfind install unix-sys-stat META \
+- 	_build/lib/sys_stat.mli _build/lib/sys_stat.cmi _build/lib/sys_stat.cmti _build/lib/sys_stat_host.mli _build/lib/sys_stat_host.cmi _build/lib/sys_stat_host.cmti _build/lib/sys_stat.cma _build/lib/sys_stat.cmxa _build/unix/sys_stat_unix.mli _build/unix/sys_stat_unix.cmi _build/unix/sys_stat_unix.cmti _build/unix/unix_sys_stat.cma _build/unix/unix_sys_stat.cmxa \
+- 	-dll _build/unix/dllunix_sys_stat_stubs.so \
+- 	-nodll _build/unix/libunix_sys_stat_stubs.a \
+- 	_build/lib/sys_stat.a _build/unix/unix_sys_stat.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/unix_sys_stat.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/unix_sys_stat.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/sys_stat_unix.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/sys_stat_unix.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/sys_stat_unix.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/sys_stat.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/sys_stat.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/sys_stat_host.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/sys_stat_host.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/sys_stat_host.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/sys_stat.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/sys_stat.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/sys_stat.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/unix_sys_stat.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/sys_stat.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/libunix_sys_stat_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-sys-stat/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllunix_sys_stat_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllunix_sys_stat_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+-> installed unix-sys-stat.0.5.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:25.37] Success
