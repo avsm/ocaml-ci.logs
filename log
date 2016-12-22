@@ -1,0 +1,48 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 nonstd /home/opam/opam-repository/cache
+[2016-12-22 16:20.02] Starting...
+[2016-12-22 16:20.02] Waiting for free pool slot to run
+[2016-12-22 18:03.52] Pool slot obtained, starting run
+[2016-12-22 18:03.52] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 nonstd
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install nonstd 0.0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [nonstd.0.0.1: dl]
+[nonstd.0.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [nonstd: ocaml please.ml]
++ ocaml "please.ml" "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/nonstd.0.0.1)
+- Please-> Building
+- ! cp ../nonstd.ml .
+- ! ocamlfind ocamlc  -c nonstd.ml -o nonstd.cmo
+- ! ocamlfind ocamlopt  -c nonstd.ml  -annot -bin-annot -o nonstd.cmx
+- ! ocamlc nonstd.cmo -a -o nonstd.cma
+- ! ocamlopt nonstd.cmx -a -o nonstd.cmxa
+- ! ocamlopt nonstd.cmxa nonstd.a -shared -o nonstd.cmxs
+- Please-> Done.
+-> compiled  nonstd.0.0.1
+Processing  2/2: [nonstd: ocaml please.ml]
++ ocaml "please.ml" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/nonstd.0.0.1)
+- Please-> Installing
+- ! ocamlfind install nonstd ../META nonstd.cmx nonstd.cmo nonstd.cma nonstd.cmi nonstd.cmxa nonstd.cmxs nonstd.a nonstd.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/META
+- Please-> Done.
+-> installed nonstd.0.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:04.07] Success
