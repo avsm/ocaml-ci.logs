@@ -1,0 +1,64 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 ocamlscript /home/opam/opam-repository/cache
+[2016-12-22 16:18.30] Starting...
+[2016-12-22 16:18.30] Waiting for free pool slot to run
+[2016-12-22 17:01.40] Pool slot obtained, starting run
+[2016-12-22 17:01.40] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 ocamlscript
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocamlscript 2.0.4
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ocamlscript.2.0.4: dl]
+[ocamlscript.2.0.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocamlscript: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlscript.2.0.4)
+- echo 'let version = "2.0.4"' > version.ml
+- echo 'version = "2.0.4"' > META
+- cat META.in >> META
+- ocamlc -pp 'camlp4orf -loc _loc' -c \
+- 	-I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlp4 pa_opt310.ml && \
+- 	cp pa_opt310.cmo pa_opt.cmo && \
+- 	cp pa_opt310.cmi pa_opt.cmi
+- File "pa_opt310.ml", line 6, characters 5-19:
+- Error: Unbound module Camlp4
+- Makefile:40: recipe for target 'common' failed
+- make: *** [common] Error 2
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build ocamlscript 2.0.4
++- 
+- No changes have been performed
+[ERROR] The compilation of ocamlscript failed at "make".
+
+#=== ERROR while compiling ocamlscript.2.0.4 ==================================#
+# command              make
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlscript.2.0.4
+# exit-code            2
+# env-file             /home/opam/.opam/log/ocamlscript-1-ad8886.env
+# output-file          /home/opam/.opam/log/ocamlscript-1-ad8886.out
+### output ###
+# echo 'let version = "2.0.4"' > version.ml
+# echo 'version = "2.0.4"' > META
+# cat META.in >> META
+# ocamlc -pp 'camlp4orf -loc _loc' -c \
+# 	-I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlp4 pa_opt310.ml && \
+# 	cp pa_opt310.cmo pa_opt.cmo && \
+# 	cp pa_opt310.cmi pa_opt.cmi
+# File "pa_opt310.ml", line 6, characters 5-19:
+# Error: Unbound module Camlp4
+# Makefile:40: recipe for target 'common' failed
+# make: *** [common] Error 2
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 ocamlscript' failed.
+[2016-12-22 17:01.53] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "ocamlscript" exited with status 4
