@@ -1,0 +1,147 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 curses /home/opam/opam-repository/cache
+[2016-12-22 16:19.31] Starting...
+[2016-12-22 16:19.31] Waiting for free pool slot to run
+[2016-12-22 17:44.17] Pool slot obtained, starting run
+[2016-12-22 17:44.17] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 curses
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libncurses-dev
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install curses 1.0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [curses.1.0.3: dl]
+[curses.1.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [curses: ./configure]
++ ./configure "--enable-widec" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/curses.1.0.3)
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking whether gcc and cc understand -c and -o together... yes
+- checking for ranlib... ranlib
+- checking how to run the C preprocessor... gcc -E
+- checking for grep that handles long lines and -e... /bin/grep
+- checking for egrep... /bin/grep -E
+- checking for ANSI C header files... yes
+- checking for sys/types.h... yes
+- checking for sys/stat.h... yes
+- checking for stdlib.h... yes
+- checking for string.h... yes
+- checking for memory.h... yes
+- checking for strings.h... yes
+- checking for inttypes.h... yes
+- checking for stdint.h... 
+- yes
+- checking for unistd.h... yes
+- checking termios.h usability... yes
+- checking termios.h presence... yes
+- checking for termios.h... yes
+- checking sys/ioctl.h usability... yes
+- checking sys/ioctl.h presence... yes
+- checking for sys/ioctl.h... yes
+- checking windows.h usability... no
+- checking windows.h presence... no
+- checking for windows.h... no
+- checking for working ncurses library... found in -lncurses
+- checking for term.h... found in <term.h>
+- checking for wide character support in ncurses library... no
+- checking for resizeterm... yes
+- checking for resize_term... yes
+- configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: creating config.ml
+- config.status: creating config.h
+Processing  1/2: [curses: make byte]
++ make "OCAMLMAKEFILE=OCamlMakefile" "byte" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/curses.1.0.3)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/curses.1.0.3'
+- ocamldep curses.mli > ._bcdi/curses.di
+- ocamldep -pp "gcc -x c -E " curses.ml > ._d/curses.d
+- ocamldep keys.ml > ._d/keys.d
+- ocamlc -c -cc "gcc" -ccopt "-fPIC -g -Wall -DHAVE_CONFIG_H \
+- 			-DPIC   \
+- 			    -o ml_curses.o " ml_curses.c
+- functions.c: In function 'mlcurses_unctrl':
+- functions.c:596:5: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+-  ML1(unctrl,string,chtype)
+-      ^
+- ml_curses.c:77:15: note: in definition of macro 'r_string'
+-    { char *ret=f; \
+-                ^
+- functions.c:596:1: note: in expansion of macro 'ML1'
+-  ML1(unctrl,string,chtype)
+-  ^
+- functions.c: In function 'mlcurses_keyname':
+- functions.c:597:5: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+-  ML1(keyname,string,int)
+-      ^
+- ml_curses.c:77:15: note: in definition of macro 'r_string'
+-    { char *ret=f; \
+-                ^
+- functions.c:597:1: note: in expansion of macro 'ML1'
+-  ML1(keyname,string,int)
+-  ^
+- ar rcs libcurses_stubs.a  ml_curses.o
+- ocamlc -c keys.ml
+- ocamlc -c curses.mli
+- ocamlc -c -pp "gcc -x c -E " curses.ml
+- ocamlmklib         \
+- 			-o curses_stubs  ml_curses.o -lncurses  \
+- 			
+- ocamlc -a -dllib dllcurses_stubs.so -custom             -cclib -lcurses_stubs -cclib -lncurses   -o curses.cma keys.cmo curses.cmo
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/curses.1.0.3'
+- sed \
+-   -e 's/@PACKAGE@/curses/' \
+-   -e 's/@VERSION@/1.0.3/' \
+-   -e 's/@CURSES@/ncurses/' \
+-   < META.in > META
+- ranlib *.a
+Processing  1/2: [curses: make opt]
++ make "OCAMLMAKEFILE=OCamlMakefile" "opt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/curses.1.0.3)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/curses.1.0.3'
+- ocamldep -native curses.mli > ._ncdi/curses.di
+- make[1]: 'libcurses_stubs.a' is up to date.
+- ocamlopt -c keys.ml
+- ocamlopt -c -pp "gcc -x c -E " curses.ml
+- ocamlopt -a             -cclib -lcurses_stubs -cclib -lncurses   -o curses.cmxa keys.cmx curses.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/curses.1.0.3'
+- ranlib *.a
+-> compiled  curses.1.0.3
+Processing  2/2: [curses: make install]
++ make "OCAMLMAKEFILE=OCamlMakefile" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/curses.1.0.3)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/curses.1.0.3'
+- make[1]: 'libcurses_stubs.a' is up to date.
+- ocamlc -a -dllib dllcurses_stubs.so -custom             -cclib -lcurses_stubs -cclib -lncurses   -o curses.cma keys.cmo curses.cmo
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/curses.1.0.3'
+- ranlib *.a
+- 
+- Installing library with ocamlfind
+- ocamlfind install  curses META curses.mli curses.cmi keys.cmi curses.cma curses.cmxa curses.a libcurses_stubs.a dllcurses_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/curses/libcurses_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/curses/curses.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/curses/curses.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/curses/curses.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/curses/keys.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/curses/curses.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/curses/curses.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/curses/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllcurses_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllcurses_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+-> installed curses.1.0.3
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:44.36] Success
