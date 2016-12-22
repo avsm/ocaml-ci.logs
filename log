@@ -1,0 +1,1636 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 piqi /home/opam/opam-repository/cache
+[2016-12-22 16:20.17] Starting...
+[2016-12-22 16:20.17] Waiting for free pool slot to run
+[2016-12-22 18:12.01] Pool slot obtained, starting run
+[2016-12-22 18:12.01] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 piqi
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes  base                                    [required by piqi]
+  - install optcomp     1.6                                     [required by piqilib]
+  - install xmlm        1.2.0                                   [required by piqilib]
+  - install easy-format 1.2.0                                   [required by piqilib]
+  - install result      1.2                                     [required by topkg]
+  - install ulex        1.1                                     [required by piqilib]
+  - install topkg       0.8.1                                   [required by base64]
+  - install base64      2.1.2                                   [required by piqilib]
+  - install piqilib     0.6.13                                  [required by piqi]
+  - install piqi        0.7.5 
+===== 10 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/10: [base64.2.1.2: dl]
+Processing  3/10: [base64.2.1.2: dl] [easy-format.1.2.0: dl]
+Processing  4/10: [base64.2.1.2: dl] [easy-format.1.2.0: dl] [optcomp.1.6: dl]
+[base64.2.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/10: [easy-format.1.2.0: dl] [optcomp.1.6: dl]
+[easy-format.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/10: [optcomp.1.6: dl]
+Processing  5/10: [optcomp.1.6: dl] [piqi.0.7.5: dl]
+[optcomp.1.6] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/10: [piqi.0.7.5: dl]
+Processing  6/10: [piqi.0.7.5: dl] [piqilib.0.6.13: dl]
+Processing  7/10: [piqi.0.7.5: dl] [piqilib.0.6.13: dl] [result.1.2: dl]
+[piqi.0.7.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/10: [piqilib.0.6.13: dl] [result.1.2: dl]
+[piqilib.0.6.13] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/10: [result.1.2: dl]
+Processing  8/10: [result.1.2: dl] [topkg.0.8.1: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/10: [topkg.0.8.1: dl]
+Processing  9/10: [topkg.0.8.1: dl] [ulex.1.1: dl]
+Processing 10/10: [topkg.0.8.1: dl] [ulex.1.1: dl] [xmlm.1.2.0: dl]
+[topkg.0.8.1] downloaded from file:///home/opam/opam-repository/cache
+Processing 10/10: [ulex.1.1: dl] [xmlm.1.2.0: dl]
+[ulex.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing 10/10: [xmlm.1.2.0: dl]
+[xmlm.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing 10/10:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/20: [easy-format: make]
+Processing  3/20: [easy-format: make] [optcomp: ./configure]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/easy-format.1.2.0)
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlc -c -dtypes easy_format.ml
+- touch bytecode
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlopt -c -dtypes easy_format.ml
+- ocamlfind ocamlopt -I . -shared -linkall \
+-   -o easy_format.cmxs easy_format.cmx
+- touch nativecode
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlc -c -dtypes easy_format.ml
+- touch bytecode
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlopt -c -dtypes easy_format.ml
+- ocamlfind ocamlopt -I . -shared -linkall \
+-   -o easy_format.cmxs easy_format.cmx
+- touch nativecode
+-> compiled  easy-format.1.2.0
+Processing  3/20: [optcomp: ./configure]
+Processing  4/20: [optcomp: ./configure] [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+Processing  4/20: [optcomp: ./configure]
+Processing  5/20: [optcomp: ./configure] [ulex: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ulex.1.1)
+- ocamlbuild -byte-plugin pa_ulex.cma ulexing.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt unix.cma -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cma myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmo -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -pp camlp4orf -modules pa_ulex.ml > pa_ulex.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules cset.ml > cset.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulex.mli > ulex.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o cset.cmo cset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulex.cmi ulex.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmo pa_ulex.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmo pa_ulex.ml
+- File "pa_ulex.ml", line 60, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulex.ml > ulex.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulex.cmo ulex.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -a cset.cmo ulex.cmo pa_ulex.cmo -o pa_ulex.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulexing.mli > ulexing.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulexing.cmi ulexing.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulexing.ml > ulexing.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules utf8.mli > utf8.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o utf8.cmi utf8.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulexing.cmo ulexing.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulexing.cmo ulexing.ml
+- File "ulexing.ml", line 45, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 123, characters 19-31:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 190, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "ulexing.ml", line 191, characters 26-80:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules utf8.ml > utf8.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o utf8.cmo utf8.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o utf8.cmo utf8.ml
+- File "utf8.ml", line 92, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "utf8.ml", line 113, characters 20-21:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -a utf8.cmo ulexing.cmo -o ulexing.cma
+- ocamlbuild -byte-plugin pa_ulex.cma ulexing.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt unix.cma -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cma myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmo -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -pp camlp4orf -modules pa_ulex.ml > pa_ulex.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules cset.ml > cset.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulex.mli > ulex.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o cset.cmo cset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulex.cmi ulex.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmo pa_ulex.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmo pa_ulex.ml
+- File "pa_ulex.ml", line 60, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulex.ml > ulex.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulex.cmo ulex.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -a cset.cmo ulex.cmo pa_ulex.cmo -o pa_ulex.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulexing.mli > ulexing.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulexing.cmi ulexing.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulexing.ml > ulexing.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules utf8.mli > utf8.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o utf8.cmi utf8.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulexing.cmo ulexing.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulexing.cmo ulexing.ml
+- File "ulexing.ml", line 45, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 123, characters 19-31:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 190, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "ulexing.ml", line 191, characters 26-80:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules utf8.ml > utf8.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o utf8.cmo utf8.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o utf8.cmo utf8.ml
+- File "utf8.ml", line 92, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "utf8.ml", line 113, characters 20-21:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -a utf8.cmo ulexing.cmo -o ulexing.cma
+Processing  5/20: [optcomp: ./configure] [ulex: make all.opt]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/optcomp.1.6)
+- File "./setup.ml", line 252, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 325, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 334, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 334, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 337, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 375, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 481, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 2507, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 5857, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5858, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5859, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5860, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5925, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5926, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5927, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5928, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ optcomp
+- Package version: ..................................... 1.6
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Build binaries: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_camlp4: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_quotations_o: ............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_lib: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+- File "./setup.ml", line 252, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 325, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 334, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 334, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 337, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 375, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 481, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 2507, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 5857, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5858, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5859, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5860, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5925, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5926, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5927, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5928, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ optcomp
+- Package version: ..................................... 1.6
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Build binaries: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_camlp4: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_quotations_o: ............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_lib: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+Processing  5/20: [optcomp: make] [ulex: make all.opt]
++ make "all.opt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ulex.1.1)
+- ocamlbuild -byte-plugin pa_ulex.cma ulexing.cma pa_ulex.cmxa ulexing.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o cset.cmx cset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o ulex.cmx ulex.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmx pa_ulex.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmx pa_ulex.ml
+- File "pa_ulex.ml", line 60, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -a cset.cmx ulex.cmx pa_ulex.cmx -o pa_ulex.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o utf8.cmx utf8.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o utf8.cmx utf8.ml
+- File "utf8.ml", line 92, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "utf8.ml", line 113, characters 20-21:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o ulexing.cmx ulexing.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o ulexing.cmx ulexing.ml
+- File "ulexing.ml", line 45, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 123, characters 19-31:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 190, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "ulexing.ml", line 191, characters 26-80:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -a utf8.cmx ulexing.cmx -o ulexing.cmxa
+- ocamlbuild -byte-plugin pa_ulex.cma ulexing.cma pa_ulex.cmxa ulexing.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o cset.cmx cset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o ulex.cmx ulex.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmx pa_ulex.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmx pa_ulex.ml
+- File "pa_ulex.ml", line 60, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -a cset.cmx ulex.cmx pa_ulex.cmx -o pa_ulex.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o utf8.cmx utf8.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o utf8.cmx utf8.ml
+- File "utf8.ml", line 92, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "utf8.ml", line 113, characters 20-21:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o ulexing.cmx ulexing.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o ulexing.cmx ulexing.ml
+- File "ulexing.ml", line 45, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 123, characters 19-31:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 190, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "ulexing.ml", line 191, characters 26-80:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -a utf8.cmx ulexing.cmx -o ulexing.cmxa
+-> compiled  ulex.1.1
+Processing  5/20: [optcomp: make]
+Processing  6/20: [optcomp: make] [xmlm: ./pkg/pkg-git]
++ ./pkg/pkg-git  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0)
+Processing  6/20: [optcomp: make] [xmlm: ./pkg/build true]
++ ./pkg/build "true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0)
+- ocamlfind ocamldep -modules src/xmlm.mli > src/xmlm.mli.depends
+- ocamlfind ocamlc -c -I src -I test -o src/xmlm.cmi src/xmlm.mli
+- ocamlfind ocamldep -modules src/xmlm.ml > src/xmlm.ml.depends
+- ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -a src/xmlm.cmo -o src/xmlm.cma
+- ocamlfind ocamlopt -a src/xmlm.cmx -o src/xmlm.cmxa
+- ocamlfind ocamlopt -shared src/xmlm.cmx -o src/xmlm.cmxs
+- ocamlfind ocamldep -modules test/xmltrip.ml > test/xmltrip.ml.depends
+- ocamlfind ocamldep -modules test/xhtml.ml > test/xhtml.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xhtml.cmo test/xhtml.ml
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xhtml.cmx test/xhtml.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -linkpkg src/xmlm.cmx test/xhtml.cmx test/xmltrip.cmx -o test/xmltrip.native
+- ocamlfind ocamldep -modules src/xmlm.mli > src/xmlm.mli.depends
+- ocamlfind ocamlc -c -I src -I test -o src/xmlm.cmi src/xmlm.mli
+- ocamlfind ocamldep -modules src/xmlm.ml > src/xmlm.ml.depends
+- ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -a src/xmlm.cmo -o src/xmlm.cma
+- ocamlfind ocamlopt -a src/xmlm.cmx -o src/xmlm.cmxa
+- ocamlfind ocamlopt -shared src/xmlm.cmx -o src/xmlm.cmxs
+- ocamlfind ocamldep -modules test/xmltrip.ml > test/xmltrip.ml.depends
+- ocamlfind ocamldep -modules test/xhtml.ml > test/xhtml.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xhtml.cmo test/xhtml.ml
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xhtml.cmx test/xhtml.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -linkpkg src/xmlm.cmx test/xhtml.cmx test/xmltrip.cmx -o test/xmltrip.native
+-> compiled  xmlm.1.2.0
+Processing  6/20: [optcomp: make]
+-> installed base-bytes.base
+Processing  7/20: [optcomp: make]
+Processing  8/20: [optcomp: make] [easy-format: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/easy-format.1.2.0)
+- echo "version = \"1.2.0\"" > META; cat META.tpl >> META
+- INSTALL_FILES="META easy_format.cmi easy_format.mli"; \
+- 	if test -f bytecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmo"; \
+- 	fi; \
+- 	if test -f nativecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmx easy_format.o easy_format.cmxs"; \
+- 	fi; \
+- 	ocamlfind install easy-format $INSTALL_FILES
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/META
+- echo "version = \"1.2.0\"" > META; cat META.tpl >> META
+- INSTALL_FILES="META easy_format.cmi easy_format.mli"; \
+- 	if test -f bytecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmo"; \
+- 	fi; \
+- 	if test -f nativecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmx easy_format.o easy_format.cmxs"; \
+- 	fi; \
+- 	ocamlfind install easy-format $INSTALL_FILES
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/META
+-> installed easy-format.1.2.0
+Processing  8/20: [optcomp: make]
+-> installed result.1.2
+Processing  9/20: [optcomp: make]
+Processing 10/20: [optcomp: make] [topkg: ocaml build]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/optcomp.1.6)
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- File "setup.ml", line 252, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 325, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 334, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 334, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 337, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 375, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 481, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 2507, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 5857, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5858, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5859, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5860, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5925, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5926, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5927, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5928, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- rm -f setup.cmx setup.cmi setup.o setup.obj setup.cmo
+- ./setup.exe -configure  
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ optcomp
+- Package version: ..................................... 1.6
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Build binaries: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_camlp4: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_quotations_o: ............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_lib: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+- ./setup.exe -build 
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/pa_optcomp.mli > src/pa_optcomp.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/pa_optcomp.cmi src/pa_optcomp.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -modules src/pa_optcomp.ml > src/pa_optcomp.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -I src -o src/pa_optcomp.cmo src/pa_optcomp.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/pa_optcomp.cmo -o src/optcomp.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -I src -o src/pa_optcomp.cmx src/pa_optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -I src -o src/pa_optcomp.cmx src/pa_optcomp.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/pa_optcomp.cmx -o src/optcomp.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/optcomp.cmxa src/pa_optcomp.cmx -o src/optcomp.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/optcomp_o.ml > src/optcomp_o.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/optcomp.ml > src/optcomp.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmo src/optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmo src/optcomp.ml
+- File "src/optcomp.ml", line 87, characters 26-39:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_o.cmo src/optcomp_o.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmx src/optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmx src/optcomp.ml
+- File "src/optcomp.ml", line 87, characters 26-39:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_o.cmx src/optcomp_o.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_o.cmx src/optcomp_o.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 camlp4fulllib.cmxa -g -linkpkg -package camlp4 -package camlp4.lib -package camlp4.quotations.o src/optcomp.cmxa src/optcomp.cmx src/optcomp_o.cmx -o src/optcomp_o.native
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/optcomp_r.ml > src/optcomp_r.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_r.cmo src/optcomp_r.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_r.cmx src/optcomp_r.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_r.cmx src/optcomp_r.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 camlp4fulllib.cmxa -g -linkpkg -package camlp4 -package camlp4.lib -package camlp4.quotations.o src/optcomp.cmxa src/optcomp.cmx src/optcomp_r.cmx -o src/optcomp_r.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 507, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 520, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- File "setup.ml", line 252, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 325, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 334, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 334, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 337, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 375, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 481, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 2507, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 5857, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5858, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5859, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5860, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5925, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5926, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5927, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5928, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- rm -f setup.cmx setup.cmi setup.o setup.obj setup.cmo
+- ./setup.exe -configure  
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ optcomp
+- Package version: ..................................... 1.6
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Build binaries: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_camlp4: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_quotations_o: ............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_lib: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+- ./setup.exe -build 
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/pa_optcomp.mli > src/pa_optcomp.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/pa_optcomp.cmi src/pa_optcomp.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -modules src/pa_optcomp.ml > src/pa_optcomp.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -I src -o src/pa_optcomp.cmo src/pa_optcomp.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/pa_optcomp.cmo -o src/optcomp.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -I src -o src/pa_optcomp.cmx src/pa_optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -I src -o src/pa_optcomp.cmx src/pa_optcomp.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/pa_optcomp.cmx -o src/optcomp.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/optcomp.cmxa src/pa_optcomp.cmx -o src/optcomp.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/optcomp_o.ml > src/optcomp_o.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/optcomp.ml > src/optcomp.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmo src/optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmo src/optcomp.ml
+- File "src/optcomp.ml", line 87, characters 26-39:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_o.cmo src/optcomp_o.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmx src/optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmx src/optcomp.ml
+- File "src/optcomp.ml", line 87, characters 26-39:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_o.cmx src/optcomp_o.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_o.cmx src/optcomp_o.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 camlp4fulllib.cmxa -g -linkpkg -package camlp4 -package camlp4.lib -package camlp4.quotations.o src/optcomp.cmxa src/optcomp.cmx src/optcomp_o.cmx -o src/optcomp_o.native
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/optcomp_r.ml > src/optcomp_r.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_r.cmo src/optcomp_r.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_r.cmx src/optcomp_r.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_r.cmx src/optcomp_r.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 camlp4fulllib.cmxa -g -linkpkg -package camlp4 -package camlp4.lib -package camlp4.quotations.o src/optcomp.cmxa src/optcomp.cmx src/optcomp_r.cmx -o src/optcomp_r.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 507, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 520, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+-> compiled  optcomp.1.6
+Processing 10/20: [topkg: ocaml build]
+Processing 11/20: [topkg: ocaml build] [optcomp: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/optcomp.1.6)
+- ./setup.exe -install 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/pa_optcomp.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/pa_optcomp.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/pa_optcomp.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/META
+- ./setup.exe -install 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/pa_optcomp.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/pa_optcomp.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/pa_optcomp.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/META
+-> installed optcomp.1.6
+Processing 11/20: [topkg: ocaml build]
+Processing 12/20: [topkg: ocaml build] [ulex: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ulex.1.1)
+- ocamlbuild -byte-plugin pa_ulex.cma ulexing.cma
+- cd _build && make -f ../Makefile realinstall
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ulex.1.1/_build'
+- ocamlfind install ulex ../META ulexing.mli utf8.mli ulexing.cmi utf8.cmi ulexing.cmx utf8.cmx pa_ulex.cma ulexing.a ulexing.cma ulexing.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/pa_ulex.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/utf8.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/utf8.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/utf8.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/META
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ulex.1.1/_build'
+- ocamlbuild -byte-plugin pa_ulex.cma ulexing.cma
+- cd _build && make -f ../Makefile realinstall
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ulex.1.1/_build'
+- ocamlfind install ulex ../META ulexing.mli utf8.mli ulexing.cmi utf8.cmi ulexing.cmx utf8.cmx pa_ulex.cma ulexing.a ulexing.cma ulexing.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/pa_ulex.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/utf8.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/utf8.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/utf8.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/META
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ulex.1.1/_build'
+-> installed ulex.1.1
+Processing 12/20: [topkg: ocaml build]
+[WARNING] Errors in /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0/xmlm.install, some fields have been ignored:
+            - At /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0/xmlm.install:1:0:
+              Invalid field opam-version
+
+-> installed xmlm.1.2.0
+Processing 13/20: [topkg: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pkg-name" "topkg" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/topkg.0.8.1)
+- File "src/topkg_conf.ml", line 19, characters 8-30:
+- Warning 3: deprecated: Topkg_string.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.ml > src/topkg.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.mli > src/topkg.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmi src/topkg.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.ml > src/topkg_build.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.mli > src/topkg_build.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.mli > src/topkg_cmd.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.mli > src/topkg_fpath.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmi src/topkg_fpath.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.mli > src/topkg_codec.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmi src/topkg_cmd.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.mli > src/topkg_result.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmi src/topkg_result.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.mli > src/topkg_conf.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmi src/topkg_codec.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmi src/topkg_conf.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmi src/topkg_build.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.ml > src/topkg_cmd.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.ml > src/topkg_fpath.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.ml > src/topkg_string.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.mli > src/topkg_string.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmi src/topkg_string.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmx src/topkg_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmx src/topkg_fpath.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.ml > src/topkg_codec.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmx src/topkg_cmd.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.ml > src/topkg_os.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.mli > src/topkg_os.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmi src/topkg_os.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.ml > src/topkg_log.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.mli > src/topkg_log.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmi src/topkg_log.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.ml > src/topkg_result.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmx src/topkg_result.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmx src/topkg_log.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmx src/topkg_os.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.ml > src/topkg_conf.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.ml > src/topkg_vcs.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.mli > src/topkg_vcs.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmi src/topkg_vcs.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmx src/topkg_vcs.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmx src/topkg_codec.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmx src/topkg_conf.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.ml > src/topkg_distrib.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.mli > src/topkg_distrib.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmi src/topkg_distrib.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.ml > src/topkg_opam.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.mli > src/topkg_opam.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmi src/topkg_opam.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmx src/topkg_opam.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.ml > src/topkg_fexts.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.mli > src/topkg_fexts.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmi src/topkg_fexts.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.ml > src/topkg_install.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.mli > src/topkg_install.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.mli > src/topkg_test.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmi src/topkg_test.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmi src/topkg_install.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmx src/topkg_fexts.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.ml > src/topkg_test.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmx src/topkg_test.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.ml > src/topkg_ipc.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.mli > src/topkg_ipc.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.mli > src/topkg_pkg.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.mli > src/topkg_publish.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmi src/topkg_publish.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmi src/topkg_pkg.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmi src/topkg_ipc.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.ml > src/topkg_pkg.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmx src/topkg_build.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmx src/topkg_distrib.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.ml > src/topkg_publish.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmx src/topkg_publish.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmx src/topkg_pkg.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.ml > src/topkg_main.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.mli > src/topkg_main.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmi src/topkg_main.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmx src/topkg_ipc.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmx src/topkg_main.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmx src/topkg.ml
+- ocamlfind ocamlopt -a -package 'bytes result' src/topkg_string.cmx src/topkg_fpath.cmx src/topkg_cmd.cmx src/topkg_result.cmx src/topkg_log.cmx src/topkg_os.cmx src/topkg_codec.cmx src/topkg_vcs.cmx src/topkg_conf.cmx src/topkg_build.cmx src/topkg_opam.cmx src/topkg_distrib.cmx src/topkg_fexts.cmx src/topkg_test.cmx src/topkg_install.cmx src/topkg_publish.cmx src/topkg_pkg.cmx src/topkg_ipc.cmx src/topkg_main.cmx src/topkg.cmx -o src/topkg.cmxa
+- ocamlfind ocamlopt -shared -package 'bytes result' src/topkg.cmx -o src/topkg.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmo src/topkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmo src/topkg_build.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmo src/topkg_cmd.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmo src/topkg_codec.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmo src/topkg_conf.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmo src/topkg_distrib.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmo src/topkg_fexts.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmo src/topkg_fpath.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmo src/topkg_ipc.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmo src/topkg_log.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmo src/topkg_main.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmo src/topkg_opam.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmo src/topkg_os.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmo src/topkg_pkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmo src/topkg_publish.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmo src/topkg_result.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmo src/topkg_string.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmo src/topkg_test.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmo src/topkg_vcs.ml
+- ocamlfind ocamlc -a -package 'bytes result' src/topkg_string.cmo src/topkg_fpath.cmo src/topkg_cmd.cmo src/topkg_result.cmo src/topkg_log.cmo src/topkg_os.cmo src/topkg_codec.cmo src/topkg_vcs.cmo src/topkg_conf.cmo src/topkg_build.cmo src/topkg_opam.cmo src/topkg_distrib.cmo src/topkg_fexts.cmo src/topkg_test.cmo src/topkg_install.cmo src/topkg_publish.cmo src/topkg_pkg.cmo src/topkg_ipc.cmo src/topkg_main.cmo src/topkg.cmo -o src/topkg.cma
+-> compiled  topkg.0.8.1
+-> installed topkg.0.8.1
+Processing 15/20: [base64: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" "--tests" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/base64.2.1.2)
+- ocamlfind ocamldep -package bytes -modules src/b64.ml > src/b64.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/b64.mli > src/b64.mli.depends
+- ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -principal -package bytes -I src -I test -o src/b64.cmi src/b64.mli
+- ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -principal -package bytes -I src -I test -o src/b64.cmx src/b64.ml
+- ocamlfind ocamlopt -a -package bytes src/b64.cmx -o src/b64.cmxa
+- ocamlfind ocamlopt -shared -package bytes src/b64.cmx -o src/b64.cmxs
+- ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -principal -package bytes -I src -I test -o src/b64.cmo src/b64.ml
+- ocamlfind ocamlc -a -package bytes src/b64.cmo -o src/b64.cma
+-> compiled  base64.2.1.2
+-> installed base64.2.1.2
+Processing 17/20: [piqilib: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13)
+- found ocamlfind: /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- detected linux OCaml toolchain
+- checking whether necessary dependencies are already installed...
+- xmlm is installed in /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xmlm
+- ulex is installed in /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex
+- easy-format is installed in /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format
+- optcomp is installed in /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp
+- base64 is installed in /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/base64
+- bytes is installed in /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bytes
+- ocaml version: 4.04.0
+- configure OK
+Processing 17/20: [piqilib: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13)
+- set -e; \
+- for dir in piqilib src; do \
+- 	make -C $dir ; \
+- done
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- echo "let version = \"`head -1 ../VERSION`\"" >piqi_version.ml
+- echo "version = \"`head -1 ../VERSION`\"" >META
+- cat META.in >>META
+- ocamllex  piqi_json_parser.mll
+- 91 states, 1087 transitions, table size 4894 bytes
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- ocamlfind ocamldep -native piqi_xml_type.mli > ._ncdi/piqi_xml_type.di
+- ocamlfind ocamldep -native piqi_json_type.mli > ._ncdi/piqi_json_type.di
+- ocamlfind ocamldep -native piqi_c.mli > ._ncdi/piqi_c.di
+- ocamlfind ocamldep piqi_json_parser.ml > ._d/piqi_json_parser.d
+- ocamlfind ocamldep piqi_getopt.ml > ._d/piqi_getopt.d
+- ocamlfind ocamldep piqi_light.ml > ._d/piqi_light.d
+- ocamlfind ocamldep piqi_compile.ml > ._d/piqi_compile.d
+- ocamlfind ocamldep piqi_convert.ml > ._d/piqi_convert.d
+- ocamlfind ocamldep piqobj_of_xml.ml > ._d/piqobj_of_xml.d
+- ocamlfind ocamldep piqobj_to_xml.ml > ._d/piqobj_to_xml.d
+- ocamlfind ocamldep piqi_xml.ml > ._d/piqi_xml.d
+- ocamlfind ocamldep piqobj_of_json.ml > ._d/piqobj_of_json.d
+- ocamlfind ocamldep piqobj_to_json.ml > ._d/piqobj_to_json.d
+- ocamlfind ocamldep piqi_base64.ml > ._d/piqi_base64.d
+- ocamlfind ocamldep piqi_json.ml > ._d/piqi_json.d
+- ocamlfind ocamldep piqi_json_gen.ml > ._d/piqi_json_gen.d
+- ocamlfind ocamldep piqi_pp.ml > ._d/piqi_pp.d
+- ocamlfind ocamldep piqi.ml > ._d/piqi.d
+- ocamlfind ocamldep piq.ml > ._d/piq.d
+- ocamlfind ocamldep piqobj_of_piq.ml > ._d/piqobj_of_piq.d
+- ocamlfind ocamldep piqobj_to_piq.ml > ._d/piqobj_to_piq.d
+- ocamlfind ocamldep piqobj_of_protobuf.ml > ._d/piqobj_of_protobuf.d
+- ocamlfind ocamldep piqobj_to_protobuf.ml > ._d/piqobj_to_protobuf.d
+- ocamlfind ocamldep piqobj_common.ml > ._d/piqobj_common.d
+- ocamlfind ocamldep piqobj.ml > ._d/piqobj.d
+- ocamlfind ocamldep piqi_objstore.ml > ._d/piqi_objstore.d
+- ocamlfind ocamldep piq_gen.ml > ._d/piq_gen.d
+- ocamlfind ocamldep piq_parser.ml > ._d/piq_parser.d
+- ocamlfind ocamldep -pp "camlp4o -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex pa_ulex.cma " piq_lexer.ml > ._d/piq_lexer.d
+- ocamlfind ocamldep piqi_db.ml > ._d/piqi_db.d
+- ocamlfind ocamldep piqi_protobuf.ml > ._d/piqi_protobuf.d
+- ocamlfind ocamldep piqi_command.ml > ._d/piqi_command.d
+- ocamlfind ocamldep piqi_file.ml > ._d/piqi_file.d
+- ocamlfind ocamldep -pp "camlp4o -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp optcomp.cma " piqi_common.ml > ._d/piqi_common.d
+- ocamlfind ocamldep piqi_name.ml > ._d/piqi_name.d
+- ocamlfind ocamldep piqi_iolist.ml > ._d/piqi_iolist.d
+- ocamlfind ocamldep piqi_config.ml > ._d/piqi_config.d
+- ocamlfind ocamldep piqi_c.ml > ._d/piqi_c.d
+- ocamlfind ocamldep piqi_boot.ml > ._d/piqi_boot.d
+- ocamlfind ocamldep piqi_impl_piqi.ml > ._d/piqi_impl_piqi.d
+- ocamlfind ocamldep piq_ast.ml > ._d/piq_ast.d
+- ocamlfind ocamldep piqloc.ml > ._d/piqloc.d
+- ocamlfind ocamldep piqi_util.ml > ._d/piqi_util.d
+- ocamlfind ocamldep piqi_piqi.ml > ._d/piqi_piqi.d
+- ocamlfind ocamldep piqi_piqirun.ml > ._d/piqi_piqirun.d
+- ocamlfind ocamldep piqi_version.ml > ._d/piqi_version.d
+- ocamlfind ocamlc -c -ccopt "-fPIC  \
+- 			-DPIC -DNATIVE_CODE   \
+- 			    -o piqi_c_impl.o " piqi_c_impl.c
+- ar rcs libpiqilib_stubs.a  piqi_c_impl.o
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_version.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_piqirun.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_piqi.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_util.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqloc.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piq_ast.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_impl_piqi.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_boot.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_c.mli
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_c.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_config.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_iolist.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_name.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c -pp "camlp4o -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp optcomp.cma " piqi_common.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_file.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_command.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_protobuf.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_db.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c -pp "camlp4o -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex pa_ulex.cma " piq_lexer.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piq_parser.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piq_gen.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_json_type.mli
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_xml_type.mli
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_objstore.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqobj.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqobj_common.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqobj_to_protobuf.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqobj_of_protobuf.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqobj_to_piq.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqobj_of_piq.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piq.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_pp.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_json_parser.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_json_gen.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_json.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_base64.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqobj_to_json.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqobj_of_json.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_xml.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqobj_to_xml.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqobj_of_xml.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_convert.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_compile.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_light.ml
+- ocamlfind ocamlopt -package ulex,easy-format,xmlm,base64,bytes -c piqi_getopt.ml
+- ocamlfind ocamlopt -a             -cclib -lpiqilib_stubs    -o piqilib.cmxa piqi_version.cmx piqi_piqirun.cmx piqi_piqi.cmx piqi_util.cmx piqloc.cmx piq_ast.cmx piqi_impl_piqi.cmx piqi_boot.cmx piqi_c.cmx piqi_config.cmx piqi_iolist.cmx piqi_name.cmx piqi_common.cmx piqi_file.cmx piqi_command.cmx piqi_protobuf.cmx piqi_db.cmx piq_lexer.cmx piq_parser.cmx piq_gen.cmx piqi_objstore.cmx piqobj.cmx piqobj_common.cmx piqobj_to_protobuf.cmx piqobj_of_protobuf.cmx piqobj_to_piq.cmx piqobj_of_piq.cmx piq.cmx piqi.cmx piqi_pp.cmx piqi_json_parser.cmx piqi_json_gen.cmx piqi_json.cmx piqi_base64.cmx piqobj_to_json.cmx piqobj_of_json.cmx piqi_xml.cmx piqobj_to_xml.cmx piqobj_of_xml.cmx piqi_convert.cmx piqi_compile.cmx piqi_light.cmx piqi_getopt.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/src'
+- unset RESULTDEPS PACKS LIBS INCDIRS DINCDIRS REAL_OCAMLFIND && make -C ../piqilib 
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- make[3]: 'libpiqilib_stubs.a' is up to date.
+- make[3]: 'piqilib.cmxa' is up to date.
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/src'
+- ocamlfind ocamldep -I ../piqilib run.ml > ._d/run.d
+- ocamlfind ocamldep -I ../piqilib call.ml > ._d/call.d
+- ocamlfind ocamldep -I ../piqilib server.ml > ._d/server.d
+- ocamlfind ocamldep -I ../piqilib piqi_rpc.ml > ._d/piqi_rpc.d
+- ocamlfind ocamldep -pp "camlp4o -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex pa_ulex.cma " -I ../piqilib piqi_http.ml > ._d/piqi_http.d
+- ocamlfind ocamldep -pp "camlp4o -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex pa_ulex.cma " -I ../piqilib of_proto.ml > ._d/of_proto.d
+- ocamlfind ocamldep -I ../piqilib to_proto.ml > ._d/to_proto.d
+- ocamlfind ocamldep -I ../piqilib pp.ml > ._d/pp.d
+- ocamlfind ocamldep -I ../piqilib json_pp.ml > ._d/json_pp.d
+- ocamlfind ocamldep -I ../piqilib cc.ml > ._d/cc.d
+- ocamlfind ocamldep -I ../piqilib compile.ml > ._d/compile.d
+- ocamlfind ocamldep -I ../piqilib getopt.ml > ._d/getopt.d
+- ocamlfind ocamldep -I ../piqilib light.ml > ._d/light.d
+- ocamlfind ocamldep -I ../piqilib expand.ml > ._d/expand.d
+- ocamlfind ocamldep -I ../piqilib check.ml > ._d/check.d
+- ocamlfind ocamldep -I ../piqilib convert.ml > ._d/convert.d
+- ocamlfind ocamldep -I ../piqilib main.ml > ._d/main.d
+- ocamlfind ocamldep -I ../piqilib piqi_rpc_piqi.ml > ._d/piqi_rpc_piqi.d
+- ocamlfind ocamldep -I ../piqilib piqi_tools_piqi.ml > ._d/piqi_tools_piqi.d
+- ocamlfind ocamldep -I ../piqilib descriptor_piqi.ml > ._d/descriptor_piqi.d
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib descriptor_piqi.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib piqi_tools_piqi.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib piqi_rpc_piqi.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib main.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib convert.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib check.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib expand.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib light.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib getopt.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib compile.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib cc.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib json_pp.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib pp.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib to_proto.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -pp "camlp4o -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex pa_ulex.cma " -I ../piqilib of_proto.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -pp "camlp4o -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex pa_ulex.cma " -I ../piqilib piqi_http.ml
+- File "piqi_http.ml", line 190, characters 27-43:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib piqi_rpc.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib server.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib call.ml
+- ocamlfind ocamlopt -package unix,ulex,easy-format,xmlm,base64,bytes -c -I ../piqilib run.ml
+- ocamlfind ocamlopt \
+- 			-package unix,ulex,easy-format,xmlm,base64,bytes -linkpkg \
+- 			    -I ../piqilib        ../piqilib/piqilib.cmxa    -o piqi \
+- 			descriptor_piqi.cmx piqi_tools_piqi.cmx piqi_rpc_piqi.cmx main.cmx convert.cmx check.cmx expand.cmx light.cmx getopt.cmx compile.cmx cc.cmx json_pp.cmx pp.cmx to_proto.cmx of_proto.cmx piqi_http.cmx piqi_rpc.cmx server.cmx call.cmx run.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/src'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/src'
+Processing 17/20: [piqilib: make ocaml]
++ make "ocaml" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13)
+- make -C piqilib bcl
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- ocamlfind ocamldep piqi_xml_type.mli > ._bcdi/piqi_xml_type.di
+- ocamlfind ocamldep piqi_json_type.mli > ._bcdi/piqi_json_type.di
+- ocamlfind ocamldep piqi_c.mli > ._bcdi/piqi_c.di
+- make[2]: 'libpiqilib_stubs.a' is up to date.
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_version.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_piqirun.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_piqi.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_util.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqloc.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piq_ast.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_impl_piqi.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_boot.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_c.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_config.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_iolist.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_name.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c -pp "camlp4o -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp optcomp.cma " piqi_common.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_file.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_command.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_protobuf.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_db.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c -pp "camlp4o -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex pa_ulex.cma " piq_lexer.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piq_parser.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piq_gen.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_objstore.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqobj.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqobj_common.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqobj_to_protobuf.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqobj_of_protobuf.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqobj_to_piq.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqobj_of_piq.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piq.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_pp.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_json_parser.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_json_gen.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_json.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_base64.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqobj_to_json.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqobj_of_json.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_xml.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqobj_to_xml.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqobj_of_xml.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_convert.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_compile.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_light.ml
+- ocamlfind ocamlc -package ulex,easy-format,xmlm,base64,bytes -c piqi_getopt.ml
+- ocamlmklib         \
+- 			-o piqilib_stubs  piqi_c_impl.o   \
+- 			
+- ocamlfind ocamlc -a -dllib dllpiqilib_stubs.so -custom             -cclib -lpiqilib_stubs    -o piqilib.cma piqi_version.cmo piqi_piqirun.cmo piqi_piqi.cmo piqi_util.cmo piqloc.cmo piq_ast.cmo piqi_impl_piqi.cmo piqi_boot.cmo piqi_c.cmo piqi_config.cmo piqi_iolist.cmo piqi_name.cmo piqi_common.cmo piqi_file.cmo piqi_command.cmo piqi_protobuf.cmo piqi_db.cmo piq_lexer.cmo piq_parser.cmo piq_gen.cmo piqi_objstore.cmo piqobj.cmo piqobj_common.cmo piqobj_to_protobuf.cmo piqobj_of_protobuf.cmo piqobj_to_piq.cmo piqobj_of_piq.cmo piq.cmo piqi.cmo piqi_pp.cmo piqi_json_parser.cmo piqi_json_gen.cmo piqi_json.cmo piqi_base64.cmo piqobj_to_json.cmo piqobj_of_json.cmo piqi_xml.cmo piqobj_to_xml.cmo piqobj_of_xml.cmo piqi_convert.cmo piqi_compile.cmo piqi_light.cmo piqi_getopt.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+-> compiled  piqilib.0.6.13
+Processing 18/20: [piqilib: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/bin
+- install src/piqi /home/opam/.opam/ocaml-base-compiler.4.04.0/bin
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/share/man/man1
+- install -m 644 doc/piqi.1 /home/opam/.opam/ocaml-base-compiler.4.04.0/share/man/man1
+Processing 18/20: [piqilib: make ocaml-install]
++ make "ocaml-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13)
+- make -C deps uninstall
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/deps'
+- set -e; \
+- for dir in ; do \
+- 	make -C $dir uninstall; \
+- done
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/deps'
+- make -C piqilib uninstall
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- 
+- Uninstalling library with ocamlfind
+- ocamlfind remove  piqilib
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib
+- 
+- Uninstallation successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- test -d  || mkdir -p 
+- make -C deps install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/deps'
+- set -e; \
+- for dir in ; do \
+- 	make -C $dir install; \
+- done
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/deps'
+- make -C piqilib install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- 
+- Uninstalling library with ocamlfind
+- ocamlfind remove  piqilib
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib
+- 
+- Uninstallation successful.
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- make[2]: 'libpiqilib_stubs.a' is up to date.
+- ocamlfind ocamlopt -a             -cclib -lpiqilib_stubs    -o piqilib.cmxa piqi_version.cmx piqi_piqirun.cmx piqi_piqi.cmx piqi_util.cmx piqloc.cmx piq_ast.cmx piqi_impl_piqi.cmx piqi_boot.cmx piqi_c.cmx piqi_config.cmx piqi_iolist.cmx piqi_name.cmx piqi_common.cmx piqi_file.cmx piqi_command.cmx piqi_protobuf.cmx piqi_db.cmx piq_lexer.cmx piq_parser.cmx piq_gen.cmx piqi_objstore.cmx piqobj.cmx piqobj_common.cmx piqobj_to_protobuf.cmx piqobj_of_protobuf.cmx piqobj_to_piq.cmx piqobj_of_piq.cmx piq.cmx piqi.cmx piqi_pp.cmx piqi_json_parser.cmx piqi_json_gen.cmx piqi_json.cmx piqi_base64.cmx piqobj_to_json.cmx piqobj_of_json.cmx piqi_xml.cmx piqobj_to_xml.cmx piqobj_of_xml.cmx piqi_convert.cmx piqi_compile.cmx piqi_light.cmx piqi_getopt.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  piqilib META piqilib.cma piqilib.cmxa piqilib.a libpiqilib_stubs.a dllpiqilib_stubs.so piqi_json.cmi piqi_file.cmi piqi_util.cmi piqi_piqirun.cmi piq_lexer.cmi piqi_xml.cmi piqi_c.cmi piqi_compile.cmi piqi_common.cmi piqi_pp.cmi piqobj_of_json.cmi piqobj_of_piq.cmi piqobj.cmi piqobj_common.cmi piqi_light.cmi piqobj_to_xml.cmi piqi_config.cmi piqi_convert.cmi piqi_piqi.cmi piqobj_of_xml.cmi piqi_iolist.cmi piqi_boot.cmi piq_gen.cmi piqobj_of_protobuf.cmi piqi_protobuf.cmi piqi_base64.cmi piq_parser.cmi piqi_name.cmi piqi_objstore.cmi piqobj_to_piq.cmi piqi_getopt.cmi piq.cmi piqi.cmi piqobj_to_protobuf.cmi piqi_command.cmi piqi_json_type.cmi piqi_json_gen.cmi piqi_version.cmi piqi_impl_piqi.cmi piqi_json_parser.cmi piqloc.cmi piqobj_to_json.cmi piqi_db.cmi piq_ast.cmi piqi_xml_type.cmi 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_xml_type.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piq_ast.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_db.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqobj_to_json.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqloc.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_json_parser.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_impl_piqi.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_version.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_json_gen.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_json_type.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_command.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqobj_to_protobuf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piq.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_getopt.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqobj_to_piq.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_objstore.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_name.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piq_parser.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_base64.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_protobuf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqobj_of_protobuf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piq_gen.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_boot.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_iolist.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqobj_of_xml.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_piqi.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_convert.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_config.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqobj_to_xml.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_light.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqobj_common.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqobj.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqobj_of_piq.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqobj_of_json.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_pp.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_common.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_compile.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_c.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_xml.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piq_lexer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_piqirun.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_util.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_file.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqi_json.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/libpiqilib_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqilib.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqilib.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/piqilib.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqilib/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllpiqilib_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllpiqilib_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqilib.0.6.13/piqilib'
+-> installed piqilib.0.6.13
+Processing 19/20: [piqi: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5)
+- set -e; \
+- for dir in piqirun piqic-ocaml; do \
+- 	make -C $dir ; \
+- done
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqirun'
+- echo "version = \"`head -1 ../VERSION`\"" >META
+- cat META.in >>META
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqirun'
+- ocamlfind ocamldep piqirun_ext.mli > ._bcdi/piqirun_ext.di
+- ocamlfind ocamldep piqirun_ext.ml > ._d/piqirun_ext.d
+- ocamlfind ocamldep piqirun.ml > ._d/piqirun.d
+- ocamlfind ocamlc -package piqilib,bytes -c piqirun.ml
+- ocamlfind ocamlc -package piqilib,bytes -c piqirun_ext.mli
+- ocamlfind ocamlc -package piqilib,bytes -c piqirun_ext.ml
+- ocamlfind ocamlc -a                -o piqirun.cma piqirun.cmo piqirun_ext.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqirun'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqirun'
+- ocamlfind ocamldep -native piqirun_ext.mli > ._ncdi/piqirun_ext.di
+- ocamlfind ocamlopt -package piqilib,bytes -c piqirun.ml
+- ocamlfind ocamlopt -package piqilib,bytes -c piqirun_ext.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Piqi, and its interface was not compiled with -opaque
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Piqi_convert, and its interface was not compiled with -opaque
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Piqi_db, and its interface was not compiled with -opaque
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Piqi_piqirun, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a                -o piqirun.cmxa piqirun.cmx piqirun_ext.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqirun'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqirun'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqic-ocaml'
+- echo "let version = \"`head -1 ../VERSION`\"" >piqic_ocaml_version.ml
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqic-ocaml'
+- ocamlfind ocamldep piqic_ocaml.ml > ._d/piqic_ocaml.d
+- ocamlfind ocamldep piqic_ocaml_version.ml > ._d/piqic_ocaml_version.d
+- ocamlfind ocamldep piqic_ocaml_ext.ml > ._d/piqic_ocaml_ext.d
+- ocamlfind ocamldep piqic_ocaml_defaults.ml > ._d/piqic_ocaml_defaults.d
+- ocamlfind ocamldep piqic_ocaml_in.ml > ._d/piqic_ocaml_in.d
+- ocamlfind ocamldep piqic_ocaml_out.ml > ._d/piqic_ocaml_out.d
+- ocamlfind ocamldep piqic_ocaml_types.ml > ._d/piqic_ocaml_types.d
+- ocamlfind ocamldep piqic_common.ml > ._d/piqic_common.d
+- ocamlfind ocamldep piqic_piqi.ml > ._d/piqic_piqi.d
+- ocamlfind ocamlopt -package piqilib,bytes -c -I ../piqirun piqic_piqi.ml
+- ocamlfind ocamlopt -package piqilib,bytes -c -I ../piqirun piqic_common.ml
+- File "piqic_common.ml", line 522, characters 2-21:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "piqic_common.ml", line 526, characters 2-19:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Piqi_common, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -package piqilib,bytes -c -I ../piqirun piqic_ocaml_types.ml
+- File "piqic_ocaml_types.ml", line 110, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "piqic_ocaml_types.ml", line 221, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind ocamlopt -package piqilib,bytes -c -I ../piqirun piqic_ocaml_out.ml
+- File "piqic_ocaml_out.ml", line 111, characters 14-31:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind ocamlopt -package piqilib,bytes -c -I ../piqirun piqic_ocaml_in.ml
+- File "piqic_ocaml_in.ml", line 138, characters 14-31:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind ocamlopt -package piqilib,bytes -c -I ../piqirun piqic_ocaml_defaults.ml
+- File "piqic_ocaml_defaults.ml", line 148, characters 14-31:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind ocamlopt -package piqilib,bytes -c -I ../piqirun piqic_ocaml_ext.ml
+- ocamlfind ocamlopt -package piqilib,bytes -c -I ../piqirun piqic_ocaml_version.ml
+- ocamlfind ocamlopt -package piqilib,bytes -c -I ../piqirun piqic_ocaml.ml
+- File "piqic_ocaml.ml", line 153, characters 14-33:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "piqic_ocaml.ml", line 164, characters 14-33:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Piqi_command, and its interface was not compiled with -opaque
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Piqi_compile, and its interface was not compiled with -opaque
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Piqi_version, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt \
+- 			-package piqilib,bytes -linkpkg \
+- 			    -I ../piqirun        ../piqirun/piqirun.cmxa    -o piqic-ocaml \
+- 			piqic_piqi.cmx piqic_common.cmx piqic_ocaml_types.cmx piqic_ocaml_out.cmx piqic_ocaml_in.cmx piqic_ocaml_defaults.cmx piqic_ocaml_ext.cmx piqic_ocaml_version.cmx piqic_ocaml.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqic-ocaml'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqic-ocaml'
+-> compiled  piqi.0.7.5
+Processing 20/20: [piqi: make install]
++ make "DESTDIR=/home/opam/.opam/ocaml-base-compiler.4.04.0" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5)
+- make -C piqirun install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqirun'
+- 
+- Uninstalling library with ocamlfind
+- ocamlfind remove  piqirun
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqirun
+- 
+- Uninstallation successful.
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqirun'
+- ocamlfind ocamlc -a                -o piqirun.cma piqirun.cmo piqirun_ext.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqirun'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqirun'
+- make[2]: 'piqirun.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqirun'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  piqirun META piqirun.cmi piqirun.cmo piqirun.cmx piqirun.o piqirun_ext.mli piqirun_ext.cmi piqirun_ext.cmo piqirun_ext.cmx piqirun_ext.o piqirun.ml 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqirun/piqirun.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqirun/piqirun_ext.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqirun/piqirun_ext.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqirun/piqirun_ext.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqirun/piqirun_ext.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqirun/piqirun_ext.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqirun/piqirun.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqirun/piqirun.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqirun/piqirun.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqirun/piqirun.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/piqirun/META
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/piqi.0.7.5/piqirun'
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/bin
+- install piqic-ocaml/piqic-ocaml /home/opam/.opam/ocaml-base-compiler.4.04.0/bin
+-> installed piqi.0.7.5
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:12.37] Success
