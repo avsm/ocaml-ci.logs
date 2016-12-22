@@ -1,0 +1,81 @@
+=== docker run sha256:baae8cbcbadfc0d5381d7244a36991c67b3da998435aa31fd7a72f42ebbe85ce opam depext -ivyj 2 more-ocaml /home/opam/opam-repository/cache
+[2016-12-22 14:57.18] Starting...
+[2016-12-22 14:57.18] Waiting for free pool slot to run
+[2016-12-22 15:46.22] Pool slot obtained, starting run
+[2016-12-22 15:46.22] docker run sha256:baae8cbcbadfc0d5381d7244a36991c67b3da998435aa31fd7a72f42ebbe85ce opam depext -ivyj 2 more-ocaml
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install more-ocaml 1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [more-ocaml.1.0: http]
+[more-ocaml.1.0] downloaded from https://github.com/johnwhitington/more-ocaml/archive/v1.0.tar.gz
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [more-ocaml: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0)
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- ocamldep -native more.mli > ._ncdi/more.di
+- ocamldep more.ml > ._d/more.d
+- ocamlc -c more.mli
+- ocamlopt -c -g more.ml
+- ocamlopt -a         -g       -o more.cmxa more.cmx
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- ocamldep more.mli > ._bcdi/more.di
+- ocamlc -c -g more.ml
+- ocamlc -a        -g        -o more.cma more.cmo
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- ocamlopt \
+- 			  \
+- 			        -g        -o more \
+- 			more.cmx
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: 'more' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- ocamlmktop \
+- 			  \
+- 			       -g        -o more.top \
+- 			more.cmo
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+-> compiled  more-ocaml.1.0
+Processing  2/2: [more-ocaml: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0)
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: 'more.cmxa' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: 'more.cma' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: 'more' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: 'more' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- make[1]: 'more.top' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/more-ocaml.1.0'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  more META more.mli more.cmi more.cma more.cmxa more.a 
+- Installed /home/opam/.opam/default/lib/more/more.a
+- Installed /home/opam/.opam/default/lib/more/more.cmxa
+- Installed /home/opam/.opam/default/lib/more/more.cma
+- Installed /home/opam/.opam/default/lib/more/more.cmi
+- Installed /home/opam/.opam/default/lib/more/more.mli
+- Installed /home/opam/.opam/default/lib/more/META
+- 
+- Installation successful.
+-> installed more-ocaml.1.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 15:46.37] Success
