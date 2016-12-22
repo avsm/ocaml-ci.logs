@@ -1,0 +1,442 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ISO8601   0.2.5                                     [required by gpx]
+  - install xml-light 2.4                                       [required by gpx]
+  - install gpx       1.1.1
+===== 3 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/3: [gpx.1.1.1: dl]
+Processing  2/3: [gpx.1.1.1: dl] [ISO8601.0.2.5: dl]
+Processing  3/3: [gpx.1.1.1: dl] [ISO8601.0.2.5: dl] [xml-light.2.4: dl]
+[ISO8601.0.2.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3: [gpx.1.1.1: dl] [xml-light.2.4: dl]
+[gpx.1.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3: [xml-light.2.4: dl]
+[xml-light.2.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/6: [ISO8601: make build]
+Processing  2/6: [ISO8601: make build]
+Processing  3/6: [ISO8601: make build] [xml-light: make install_ocamlfind]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ISO8601.0.2.5)
+- Makefile:34: warning: overriding recipe for target 'clean'
+- Makefile:31: warning: ignoring old recipe for target 'clean'
+- ocamlbuild -I src ISO8601.a
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules src/ISO8601.ml > src/ISO8601.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules src/ISO8601.mli > src/ISO8601.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I src -o src/ISO8601.cmi src/ISO8601.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamllex.opt -q src/ISO8601_lexer.mll
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules src/ISO8601_lexer.ml > src/ISO8601_lexer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I src -o src/ISO8601_lexer.cmo src/ISO8601_lexer.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I src -o src/ISO8601_lexer.cmo src/ISO8601_lexer.ml
+- File "src/ISO8601_lexer.mll", line 69, characters 11-12:
+- Warning 26: unused variable y.
+- File "src/ISO8601_lexer.mll", line 69, characters 27-28:
+- Warning 26: unused variable w.
+- File "src/ISO8601_lexer.mll", line 74, characters 11-12:
+- Warning 26: unused variable y.
+- File "src/ISO8601_lexer.mll", line 74, characters 27-28:
+- Warning 26: unused variable w.
+- File "src/ISO8601_lexer.mll", line 74, characters 43-44:
+- Warning 26: unused variable d.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I src -o src/ISO8601_lexer.cmx src/ISO8601_lexer.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I src -o src/ISO8601_lexer.cmx src/ISO8601_lexer.ml
+- File "src/ISO8601_lexer.mll", line 69, characters 11-12:
+- Warning 26: unused variable y.
+- File "src/ISO8601_lexer.mll", line 69, characters 27-28:
+- Warning 26: unused variable w.
+- File "src/ISO8601_lexer.mll", line 74, characters 11-12:
+- Warning 26: unused variable y.
+- File "src/ISO8601_lexer.mll", line 74, characters 27-28:
+- Warning 26: unused variable w.
+- File "src/ISO8601_lexer.mll", line 74, characters 43-44:
+- Warning 26: unused variable d.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I src -o src/ISO8601.cmx src/ISO8601.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -a src/ISO8601_lexer.cmx src/ISO8601.cmx -o src/ISO8601.cmxa
+- ocamlbuild -I src ISO8601.cmxa
+- ocamlbuild -I src ISO8601.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I src -o src/ISO8601.cmo src/ISO8601.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -a src/ISO8601_lexer.cmo src/ISO8601.cmo -o src/ISO8601.cma
+- ocamlbuild -I src ISO8601.cmi
+- Makefile:34: warning: overriding recipe for target 'clean'
+- Makefile:31: warning: ignoring old recipe for target 'clean'
+- ocamlbuild -I src ISO8601.a
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules src/ISO8601.ml > src/ISO8601.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules src/ISO8601.mli > src/ISO8601.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I src -o src/ISO8601.cmi src/ISO8601.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamllex.opt -q src/ISO8601_lexer.mll
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules src/ISO8601_lexer.ml > src/ISO8601_lexer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I src -o src/ISO8601_lexer.cmo src/ISO8601_lexer.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I src -o src/ISO8601_lexer.cmo src/ISO8601_lexer.ml
+- File "src/ISO8601_lexer.mll", line 69, characters 11-12:
+- Warning 26: unused variable y.
+- File "src/ISO8601_lexer.mll", line 69, characters 27-28:
+- Warning 26: unused variable w.
+- File "src/ISO8601_lexer.mll", line 74, characters 11-12:
+- Warning 26: unused variable y.
+- File "src/ISO8601_lexer.mll", line 74, characters 27-28:
+- Warning 26: unused variable w.
+- File "src/ISO8601_lexer.mll", line 74, characters 43-44:
+- Warning 26: unused variable d.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I src -o src/ISO8601_lexer.cmx src/ISO8601_lexer.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I src -o src/ISO8601_lexer.cmx src/ISO8601_lexer.ml
+- File "src/ISO8601_lexer.mll", line 69, characters 11-12:
+- Warning 26: unused variable y.
+- File "src/ISO8601_lexer.mll", line 69, characters 27-28:
+- Warning 26: unused variable w.
+- File "src/ISO8601_lexer.mll", line 74, characters 11-12:
+- Warning 26: unused variable y.
+- File "src/ISO8601_lexer.mll", line 74, characters 27-28:
+- Warning 26: unused variable w.
+- File "src/ISO8601_lexer.mll", line 74, characters 43-44:
+- Warning 26: unused variable d.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I src -o src/ISO8601.cmx src/ISO8601.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -a src/ISO8601_lexer.cmx src/ISO8601.cmx -o src/ISO8601.cmxa
+- ocamlbuild -I src ISO8601.cmxa
+- ocamlbuild -I src ISO8601.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I src -o src/ISO8601.cmo src/ISO8601.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -a src/ISO8601_lexer.cmo src/ISO8601.cmo -o src/ISO8601.cma
+- ocamlbuild -I src ISO8601.cmi
+-> compiled  ISO8601.0.2.5
+Processing  3/6: [xml-light: make install_ocamlfind]
++ make "install_ocamlfind" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xml-light.2.4)
+- ocamlyacc xml_parser.mly
+- ocamlc  xml.mli
+- ocamlc  dtd.mli
+- ocamlc  xml_parser.mli
+- ocamlc  -c xml_parser.ml
+- ocamllex xml_lexer.mll
+- 248 states, 1238 transitions, table size 6440 bytes
+- ocamlc  xml_lexer.mli
+- ocamlc  -c xml_lexer.ml
+- File "xml_lexer.mll", line 279, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "xml_lexer.mll", line 287, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlc  -c dtd.ml
+- File "dtd.ml", line 233, characters 14-30:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 235, characters 17-33:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 237, characters 14-30:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 244, characters 27-43:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 281, characters 30-46:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 308, characters 21-37:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 413, characters 13-29:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 414, characters 44-60:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlc  xmlParser.mli
+- ocamlc  -c xmlParser.ml
+- ocamlc  -c xml.ml
+- File "xml.ml", line 127, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "xml.ml", line 128, characters 32-48:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlc -o xml-light.cma -a  xml_parser.cmo xml_lexer.cmo dtd.cmo xmlParser.cmo xml.cmo
+- ocamlc xml-light.cma test.ml -o test.exe
+- mkdir doc
+- ocamldoc -sort -html -d doc xml.mli dtd.mli xmlParser.mli
+- ocamlopt  -c xml_parser.ml
+- ocamlopt  -c xml_lexer.ml
+- File "xml_lexer.mll", line 279, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "xml_lexer.mll", line 287, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlopt  -c dtd.ml
+- File "dtd.ml", line 233, characters 14-30:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 235, characters 17-33:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 237, characters 14-30:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 244, characters 27-43:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 281, characters 30-46:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 308, characters 21-37:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 413, characters 13-29:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "dtd.ml", line 414, characters 44-60:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlopt  -c xmlParser.ml
+- ocamlopt  -c xml.ml
+- File "xml.ml", line 127, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "xml.ml", line 128, characters 32-48:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlopt -o xml-light.cmxa -a  xml_parser.cmx xml_lexer.cmx dtd.cmx xmlParser.cmx xml.cmx
+- ocamlopt -shared -linkall -I . -o xml-light.cmxs xml-light.cmxa
+- ocamlopt xml-light.cmxa test.ml -o test_opt.exe
+- cp META.in META
+- sed -itmp "s|@VERSION@|2.4|g" META
+- rm -rf METAtmp
+- ocamlfind install xml-light META xml-light.a xml-light.cma xml-light.cmxa xml-light.cmxs xml.cmx dtd.cmx xmlParser.cmx xml.mli xmlParser.mli dtd.mli xml.cmi xmlParser.cmi dtd.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/dtd.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/xmlParser.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/xml.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/dtd.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/xmlParser.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/xml.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/xmlParser.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/dtd.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/xml.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/xml-light.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/xml-light.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/xml-light.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/xml-light.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xml-light/META
+-> installed xml-light.2.4
+Processing  4/6: [ISO8601: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ISO8601.0.2.5)
+- Makefile:34: warning: overriding recipe for target 'clean'
+- Makefile:31: warning: ignoring old recipe for target 'clean'
+- ocamlbuild -I src ISO8601.a
+- ocamlbuild -I src ISO8601.cmxa
+- ocamlbuild -I src ISO8601.cma
+- ocamlbuild -I src ISO8601.cmi
+- ocamlfind install ISO8601 META _build/src/ISO8601.a _build/src/ISO8601.cmxa _build/src/ISO8601.cma _build/src/ISO8601.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ISO8601/ISO8601.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ISO8601/ISO8601.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ISO8601/ISO8601.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ISO8601/ISO8601.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ISO8601/META
+-> installed ISO8601.0.2.5
+Processing  5/6: [gpx: make src]
++ make "-C" "src" "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/gpx.1.1.1)
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/gpx.1.1.1/src'
+- ocamlfind ocamlc -package str -package xml-light -package ISO8601 -c gpx.mli
+- File "gpx.mli", line 31, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and metadata.
+- File "gpx.mli", line 37, characters 3-26:
+- Warning 30: the label time is defined in both types metadata and wpt.
+- File "gpx.mli", line 41, characters 3-23:
+- Warning 30: the label name is defined in both types metadata and wpt.
+- File "gpx.mli", line 43, characters 3-23:
+- Warning 30: the label desc is defined in both types metadata and wpt.
+- File "gpx.mli", line 45, characters 3-19:
+- Warning 30: the label link is defined in both types metadata and wpt.
+- File "gpx.mli", line 55, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and wpt.
+- File "gpx.mli", line 59, characters 3-23:
+- Warning 30: the label name is defined in both types metadata and rte.
+- File "gpx.mli", line 60, characters 3-22:
+- Warning 30: the label cmt is defined in both types wpt and rte.
+- File "gpx.mli", line 61, characters 3-23:
+- Warning 30: the label desc is defined in both types metadata and rte.
+- File "gpx.mli", line 62, characters 3-22:
+- Warning 30: the label src is defined in both types wpt and rte.
+- File "gpx.mli", line 63, characters 3-19:
+- Warning 30: the label link is defined in both types metadata and rte.
+- File "gpx.mli", line 65, characters 3-22:
+- Warning 30: the label typ is defined in both types wpt and rte.
+- File "gpx.mli", line 66, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and rte.
+- File "gpx.mli", line 71, characters 3-23:
+- Warning 30: the label name is defined in both types metadata and trk.
+- File "gpx.mli", line 72, characters 3-22:
+- Warning 30: the label cmt is defined in both types wpt and trk.
+- File "gpx.mli", line 73, characters 3-23:
+- Warning 30: the label desc is defined in both types metadata and trk.
+- File "gpx.mli", line 74, characters 3-22:
+- Warning 30: the label src is defined in both types wpt and trk.
+- File "gpx.mli", line 75, characters 3-19:
+- Warning 30: the label link is defined in both types metadata and trk.
+- File "gpx.mli", line 76, characters 3-22:
+- Warning 30: the label number is defined in both types rte and trk.
+- File "gpx.mli", line 77, characters 3-22:
+- Warning 30: the label typ is defined in both types wpt and trk.
+- File "gpx.mli", line 78, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and trk.
+- File "gpx.mli", line 86, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and trkseg.
+- File "gpx.mli", line 90, characters 3-18:
+- Warning 30: the label author is defined in both types metadata and copyright.
+- File "gpx.mli", line 98, characters 3-22:
+- Warning 30: the label typ is defined in both types wpt and link.
+- File "gpx.mli", line 107, characters 3-23:
+- Warning 30: the label name is defined in both types metadata and person.
+- File "gpx.mli", line 109, characters 3-21:
+- Warning 30: the label link is defined in both types metadata and person.
+- ocamlfind ocamlc -package str -package xml-light -package ISO8601 -a -o gpx.cma gpx.ml
+- File "gpx.ml", line 20, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and metadata.
+- File "gpx.ml", line 26, characters 3-26:
+- Warning 30: the label time is defined in both types metadata and wpt.
+- File "gpx.ml", line 30, characters 3-23:
+- Warning 30: the label name is defined in both types metadata and wpt.
+- File "gpx.ml", line 32, characters 3-23:
+- Warning 30: the label desc is defined in both types metadata and wpt.
+- File "gpx.ml", line 34, characters 3-19:
+- Warning 30: the label link is defined in both types metadata and wpt.
+- File "gpx.ml", line 44, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and wpt.
+- File "gpx.ml", line 48, characters 3-23:
+- Warning 30: the label name is defined in both types metadata and rte.
+- File "gpx.ml", line 49, characters 3-22:
+- Warning 30: the label cmt is defined in both types wpt and rte.
+- File "gpx.ml", line 50, characters 3-23:
+- Warning 30: the label desc is defined in both types metadata and rte.
+- File "gpx.ml", line 51, characters 3-22:
+- Warning 30: the label src is defined in both types wpt and rte.
+- File "gpx.ml", line 52, characters 3-19:
+- Warning 30: the label link is defined in both types metadata and rte.
+- File "gpx.ml", line 54, characters 3-22:
+- Warning 30: the label typ is defined in both types wpt and rte.
+- File "gpx.ml", line 55, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and rte.
+- File "gpx.ml", line 60, characters 3-23:
+- Warning 30: the label name is defined in both types metadata and trk.
+- File "gpx.ml", line 61, characters 3-22:
+- Warning 30: the label cmt is defined in both types wpt and trk.
+- File "gpx.ml", line 62, characters 3-23:
+- Warning 30: the label desc is defined in both types metadata and trk.
+- File "gpx.ml", line 63, characters 3-22:
+- Warning 30: the label src is defined in both types wpt and trk.
+- File "gpx.ml", line 64, characters 3-19:
+- Warning 30: the label link is defined in both types metadata and trk.
+- File "gpx.ml", line 65, characters 3-22:
+- Warning 30: the label number is defined in both types rte and trk.
+- File "gpx.ml", line 66, characters 3-22:
+- Warning 30: the label typ is defined in both types wpt and trk.
+- File "gpx.ml", line 67, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and trk.
+- File "gpx.ml", line 75, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and trkseg.
+- File "gpx.ml", line 79, characters 3-18:
+- Warning 30: the label author is defined in both types metadata and copyright.
+- File "gpx.ml", line 87, characters 3-22:
+- Warning 30: the label typ is defined in both types wpt and link.
+- File "gpx.ml", line 96, characters 3-23:
+- Warning 30: the label name is defined in both types metadata and person.
+- File "gpx.ml", line 98, characters 3-21:
+- Warning 30: the label link is defined in both types metadata and person.
+- File "gpx.ml", line 152, characters 24-162:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a case that is not matched:
+- ""
+- File "gpx.ml", line 331, characters 10-47:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a case that is not matched:
+- PCData _
+- File "gpx.ml", line 335, characters 10-47:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a case that is not matched:
+- PCData _
+- ocamlfind ocamlopt -package str -package xml-light -package ISO8601 -a -o gpx.cmxa gpx.ml
+- File "gpx.ml", line 20, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and metadata.
+- File "gpx.ml", line 26, characters 3-26:
+- Warning 30: the label time is defined in both types metadata and wpt.
+- File "gpx.ml", line 30, characters 3-23:
+- Warning 30: the label name is defined in both types metadata and wpt.
+- File "gpx.ml", line 32, characters 3-23:
+- Warning 30: the label desc is defined in both types metadata and wpt.
+- File "gpx.ml", line 34, characters 3-19:
+- Warning 30: the label link is defined in both types metadata and wpt.
+- File "gpx.ml", line 44, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and wpt.
+- File "gpx.ml", line 48, characters 3-23:
+- Warning 30: the label name is defined in both types metadata and rte.
+- File "gpx.ml", line 49, characters 3-22:
+- Warning 30: the label cmt is defined in both types wpt and rte.
+- File "gpx.ml", line 50, characters 3-23:
+- Warning 30: the label desc is defined in both types metadata and rte.
+- File "gpx.ml", line 51, characters 3-22:
+- Warning 30: the label src is defined in both types wpt and rte.
+- File "gpx.ml", line 52, characters 3-19:
+- Warning 30: the label link is defined in both types metadata and rte.
+- File "gpx.ml", line 54, characters 3-22:
+- Warning 30: the label typ is defined in both types wpt and rte.
+- File "gpx.ml", line 55, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and rte.
+- File "gpx.ml", line 60, characters 3-23:
+- Warning 30: the label name is defined in both types metadata and trk.
+- File "gpx.ml", line 61, characters 3-22:
+- Warning 30: the label cmt is defined in both types wpt and trk.
+- File "gpx.ml", line 62, characters 3-23:
+- Warning 30: the label desc is defined in both types metadata and trk.
+- File "gpx.ml", line 63, characters 3-22:
+- Warning 30: the label src is defined in both types wpt and trk.
+- File "gpx.ml", line 64, characters 3-19:
+- Warning 30: the label link is defined in both types metadata and trk.
+- File "gpx.ml", line 65, characters 3-22:
+- Warning 30: the label number is defined in both types rte and trk.
+- File "gpx.ml", line 66, characters 3-22:
+- Warning 30: the label typ is defined in both types wpt and trk.
+- File "gpx.ml", line 67, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and trk.
+- File "gpx.ml", line 75, characters 3-32:
+- Warning 30: the label extensions is defined in both types gpx and trkseg.
+- File "gpx.ml", line 79, characters 3-18:
+- Warning 30: the label author is defined in both types metadata and copyright.
+- File "gpx.ml", line 87, characters 3-22:
+- Warning 30: the label typ is defined in both types wpt and link.
+- File "gpx.ml", line 96, characters 3-23:
+- Warning 30: the label name is defined in both types metadata and person.
+- File "gpx.ml", line 98, characters 3-21:
+- Warning 30: the label link is defined in both types metadata and person.
+- File "gpx.ml", line 152, characters 24-162:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a case that is not matched:
+- ""
+- File "gpx.ml", line 331, characters 10-47:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a case that is not matched:
+- PCData _
+- File "gpx.ml", line 335, characters 10-47:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a case that is not matched:
+- PCData _
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module ISO8601, and its interface was not compiled with -opaque
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/gpx.1.1.1/src'
+-> compiled  gpx.1.1.1
+Processing  6/6: [gpx: make src]
++ make "-C" "src" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/gpx.1.1.1)
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/gpx.1.1.1/src'
+- ocamlfind install gpx META gpx.cmi gpx.cma gpx.cmxa gpx.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/gpx/gpx.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/gpx/gpx.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/gpx/gpx.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/gpx/gpx.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/gpx/META
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/gpx.1.1.1/src'
+-> installed gpx.1.1.1
+Done.
+# Run eval `opam env` to update the current shell environment
