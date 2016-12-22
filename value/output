@@ -1,0 +1,143 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install xmlm    1.2.0                                       [required by xmldiff]
+  - install xmldiff 0.5.0
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [xmldiff.0.5.0: dl]
+Processing  2/2: [xmldiff.0.5.0: dl] [xmlm.1.2.0: dl]
+[xmlm.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [xmldiff.0.5.0: dl]
+[xmldiff.0.5.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [xmlm: ./pkg/pkg-git]
++ ./pkg/pkg-git  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0)
+Processing  1/4: [xmlm: ./pkg/build true]
++ ./pkg/build "true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0)
+- ocamlfind ocamldep -modules src/xmlm.mli > src/xmlm.mli.depends
+- ocamlfind ocamlc -c -I src -I test -o src/xmlm.cmi src/xmlm.mli
+- ocamlfind ocamldep -modules src/xmlm.ml > src/xmlm.ml.depends
+- ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -a src/xmlm.cmo -o src/xmlm.cma
+- ocamlfind ocamlopt -a src/xmlm.cmx -o src/xmlm.cmxa
+- ocamlfind ocamlopt -shared src/xmlm.cmx -o src/xmlm.cmxs
+- ocamlfind ocamldep -modules test/xmltrip.ml > test/xmltrip.ml.depends
+- ocamlfind ocamldep -modules test/xhtml.ml > test/xhtml.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xhtml.cmo test/xhtml.ml
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xhtml.cmx test/xhtml.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -linkpkg src/xmlm.cmx test/xhtml.cmx test/xmltrip.cmx -o test/xmltrip.native
+-> compiled  xmlm.1.2.0
+[WARNING] Errors in /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0/xmlm.install, some fields have been ignored:
+            - At /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0/xmlm.install:1:0:
+              Invalid field opam-version
+
+-> installed xmlm.1.2.0
+Processing  3/4: [xmldiff: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmldiff.0.5.0)
+- checking for ocamlc... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc
+- found OCaml version 4.3.0 (4.03.0)
+- checking for ocamlfind... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- checking for camlp4... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/camlp4
+- checking for ocamlprof... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlprof
+- checking for ocamlmktop... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlmktop
+- checking for ocamlmklib... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlmklib
+- checking for ocamlyacc... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlyacc
+- checking for ocamllex... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex
+- checking for ocamldoc... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- checking for ocamldep... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep
+- checking for ocamlopt... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt
+- checking for ocaml... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocaml
+- checking for ocamlc.opt... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- we can use /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- checking for ocamlopt.opt... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- we can use /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- checking for ocamldep.opt... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt
+- we can use /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt
+- checking for ocamldoc.opt... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc.opt
+- we can use /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc.opt
+- checking for ocamllex.opt... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt
+- we can use /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt
+- Objective-Caml version 4.3.0 (4.03.0)
+- interpreter:                /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocaml
+- bytecode compiler:          /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- native code compiler:       /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- documentation generator(s): /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc, /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc.opt
+- lexer generator:            /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt
+- parser generator:           /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlyacc
+- dependencies generator:     /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt
+- library builder:            /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlmklib
+- toplevel builder:           /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlmktop
+- profiler:                   /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlprof
+- camlp4:                     /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/camlp4
+- ocamlfind:                  /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- 
+- ### checking required tools and libraries ###
+- checking for xmlm... ok
+- checking for js_of_ocaml... ocamlfind: Package `js_of_ocaml' not found
+- Package js_of_ocaml not found
+- checking for js_of_ocaml... no
+- Cannot find js_of_ocaml
+- xmldiff.js package will NOT be available
+- 
+- ###
+- configure: creating ./config.status
+- config.status: creating master.Makefile
+- config.status: creating META
+- 
+- ### Results of configuration ###
+- 
+- Version is 0.5.0
+- Packages to be installed: xmldiff 
+- 
+Processing  3/4: [xmldiff: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmldiff.0.5.0)
+- ocamlfind ocamlc -package xmlm -c -annot -bin-annot -g -safe-string xmldiff.mli
+- ocamlfind ocamlc -package xmlm -c -annot -bin-annot -g -safe-string xmldiff.ml
+- ocamlfind ocamlopt -package xmlm -c -annot -bin-annot -g -safe-string xmldiff.ml
+- ocamlfind ocamlopt -package xmlm -shared -o xmldiff.cmxs -annot -bin-annot -g -safe-string xmldiff.cmx
+-> compiled  xmldiff.0.5.0
+Processing  4/4: [xmldiff: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmldiff.0.5.0)
+- ocamlfind install xmldiff META LICENSE \
+- 	xmldiff.cmi xmldiff.cmti xmldiff.mli xmldiff.cmo \
+- 	xmldiff.cmx xmldiff.cmxs xmldiff.o \
+- 	`if test -n ""; then echo  xmldiff_js.cmi; fi`
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmldiff/xmldiff.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmldiff/xmldiff.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmldiff/xmldiff.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmldiff/xmldiff.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmldiff/xmldiff.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmldiff/xmldiff.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmldiff/xmldiff.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmldiff/LICENSE
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmldiff/META
+-> installed xmldiff.0.5.0
+Done.
+# Run eval `opam env` to update the current shell environment
