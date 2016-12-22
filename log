@@ -1,0 +1,90 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 cgroups /home/opam/opam-repository/cache
+[2016-12-22 16:19.20] Starting...
+[2016-12-22 16:19.20] Waiting for free pool slot to run
+[2016-12-22 17:38.26] Pool slot obtained, starting run
+[2016-12-22 17:38.26] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 cgroups
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install cgroups 0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [cgroups.0.1: dl]
+[cgroups.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [cgroups: make lib]
++ make "lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cgroups.0.1)
+- ocamlbuild -log build.log -use-ocamlfind -classic-display  -Is subsystems,hierarchy,util cgroups.cma cgroups.cmxa cgroups.cmxs
+- ocamlfind ocamldep -modules util/util.mli > util/util.mli.depends
+- ocamlfind ocamlc -c -I util -I subsystems -I hierarchy -o util/util.cmi util/util.mli
+- ocamlfind ocamldep -modules util/util.ml > util/util.ml.depends
+- ocamlfind ocamldep -modules subsystems/subsystem.ml > subsystems/subsystem.ml.depends
+- ocamlfind ocamldep -modules subsystems/CGBlkio.mli > subsystems/CGBlkio.mli.depends
+- ocamlfind ocamldep -modules subsystems/CGParameters.mli > subsystems/CGParameters.mli.depends
+- ocamlfind ocamldep -modules subsystems/CGSubsystem.mli > subsystems/CGSubsystem.mli.depends
+- ocamlfind ocamldep -modules hierarchy/hierarchy.mli > hierarchy/hierarchy.mli.depends
+- ocamlfind ocamlc -c -I subsystems -I util -I hierarchy -o subsystems/CGSubsystem.cmi subsystems/CGSubsystem.mli
+- ocamlfind ocamlc -c -I hierarchy -I util -I subsystems -o hierarchy/hierarchy.cmi hierarchy/hierarchy.mli
+- ocamlfind ocamlc -c -I subsystems -I util -I hierarchy -o subsystems/CGParameters.cmi subsystems/CGParameters.mli
+- ocamlfind ocamldep -modules subsystems/CGCpu.mli > subsystems/CGCpu.mli.depends
+- ocamlfind ocamldep -modules subsystems/CGCpuacct.mli > subsystems/CGCpuacct.mli.depends
+- ocamlfind ocamldep -modules subsystems/CGCpuset.mli > subsystems/CGCpuset.mli.depends
+- ocamlfind ocamldep -modules subsystems/CGMemory.mli > subsystems/CGMemory.mli.depends
+- ocamlfind ocamlc -c -I subsystems -I util -I hierarchy -o subsystems/CGBlkio.cmi subsystems/CGBlkio.mli
+- ocamlfind ocamlc -c -I subsystems -I util -I hierarchy -o subsystems/CGCpu.cmi subsystems/CGCpu.mli
+- ocamlfind ocamlc -c -I subsystems -I util -I hierarchy -o subsystems/CGCpuacct.cmi subsystems/CGCpuacct.mli
+- ocamlfind ocamlc -c -I subsystems -I util -I hierarchy -o subsystems/CGCpuset.cmi subsystems/CGCpuset.mli
+- ocamlfind ocamlc -c -I subsystems -I util -I hierarchy -o subsystems/CGMemory.cmi subsystems/CGMemory.mli
+- ocamlfind ocamldep -modules hierarchy/hierarchy.ml > hierarchy/hierarchy.ml.depends
+- ocamlfind ocamldep -modules subsystems/CGSubsystem.ml > subsystems/CGSubsystem.ml.depends
+- ocamlfind ocamldep -modules subsystems/CGParameters.ml > subsystems/CGParameters.ml.depends
+- ocamlfind ocamldep -modules subsystems/CGBlkio.ml > subsystems/CGBlkio.ml.depends
+- ocamlfind ocamldep -modules subsystems/CGCpu.ml > subsystems/CGCpu.ml.depends
+- ocamlfind ocamldep -modules subsystems/CGCpuset.ml > subsystems/CGCpuset.ml.depends
+- ocamlfind ocamldep -modules subsystems/CGCpuacct.ml > subsystems/CGCpuacct.ml.depends
+- ocamlfind ocamldep -modules subsystems/CGMemory.ml > subsystems/CGMemory.ml.depends
+- ocamlfind ocamlc -c -g -w K -w X -w Y -I util -I subsystems -I hierarchy -o util/util.cmo util/util.ml
+- ocamlfind ocamlc -c -g -w K -w X -w Y -I subsystems -I util -I hierarchy -o subsystems/subsystem.cmo subsystems/subsystem.ml
+- ocamlfind ocamlc -c -g -w K -w X -w Y -I hierarchy -I util -I subsystems -o hierarchy/hierarchy.cmo hierarchy/hierarchy.ml
+- ocamlfind ocamlc -c -g -w K -w X -w Y -I subsystems -I util -I hierarchy -o subsystems/CGSubsystem.cmo subsystems/CGSubsystem.ml
+- ocamlfind ocamlc -c -g -w K -w X -w Y -I subsystems -I util -I hierarchy -o subsystems/CGParameters.cmo subsystems/CGParameters.ml
+- ocamlfind ocamlc -c -g -w K -w X -w Y -I subsystems -I util -I hierarchy -o subsystems/CGBlkio.cmo subsystems/CGBlkio.ml
+- ocamlfind ocamlc -c -g -w K -w X -w Y -I subsystems -I util -I hierarchy -o subsystems/CGCpu.cmo subsystems/CGCpu.ml
+- ocamlfind ocamlc -c -g -w K -w X -w Y -I subsystems -I util -I hierarchy -o subsystems/CGCpuset.cmo subsystems/CGCpuset.ml
+- ocamlfind ocamlc -c -g -w K -w X -w Y -I subsystems -I util -I hierarchy -o subsystems/CGCpuacct.cmo subsystems/CGCpuacct.ml
+- ocamlfind ocamlc -c -g -w K -w X -w Y -I subsystems -I util -I hierarchy -o subsystems/CGMemory.cmo subsystems/CGMemory.ml
+- ocamlfind ocamlc -pack -g util/util.cmo subsystems/CGSubsystem.cmo hierarchy/hierarchy.cmo subsystems/CGParameters.cmo subsystems/CGBlkio.cmo subsystems/CGCpu.cmo subsystems/CGCpuacct.cmo subsystems/CGCpuset.cmo subsystems/CGMemory.cmo subsystems/subsystem.cmo -o cgroups.cmo
+- ocamlfind ocamlc -a cgroups.cmo -o cgroups.cma
+- ocamlfind ocamlopt -c -g -w K -w X -w Y -for-pack Cgroups -I util -I subsystems -I hierarchy -o util/util.cmx util/util.ml
+- ocamlfind ocamlopt -c -g -w K -w X -w Y -for-pack Cgroups -I subsystems -I util -I hierarchy -o subsystems/CGSubsystem.cmx subsystems/CGSubsystem.ml
+- ocamlfind ocamlopt -c -g -w K -w X -w Y -for-pack Cgroups -I hierarchy -I util -I subsystems -o hierarchy/hierarchy.cmx hierarchy/hierarchy.ml
+- ocamlfind ocamlopt -c -g -w K -w X -w Y -for-pack Cgroups -I subsystems -I util -I hierarchy -o subsystems/CGParameters.cmx subsystems/CGParameters.ml
+- ocamlfind ocamlopt -c -g -w K -w X -w Y -for-pack Cgroups -I subsystems -I util -I hierarchy -o subsystems/CGBlkio.cmx subsystems/CGBlkio.ml
+- ocamlfind ocamlopt -c -g -w K -w X -w Y -for-pack Cgroups -I subsystems -I util -I hierarchy -o subsystems/CGCpu.cmx subsystems/CGCpu.ml
+- ocamlfind ocamlopt -c -g -w K -w X -w Y -for-pack Cgroups -I subsystems -I util -I hierarchy -o subsystems/CGCpuacct.cmx subsystems/CGCpuacct.ml
+- ocamlfind ocamlopt -c -g -w K -w X -w Y -for-pack Cgroups -I subsystems -I util -I hierarchy -o subsystems/CGCpuset.cmx subsystems/CGCpuset.ml
+- ocamlfind ocamlopt -c -g -w K -w X -w Y -for-pack Cgroups -I subsystems -I util -I hierarchy -o subsystems/CGMemory.cmx subsystems/CGMemory.ml
+- ocamlfind ocamlopt -c -g -w K -w X -w Y -for-pack Cgroups -I subsystems -I util -I hierarchy -o subsystems/subsystem.cmx subsystems/subsystem.ml
+- touch cgroups.mli  ; if  ocamlfind ocamlopt -pack -g -I util -I subsystems -I hierarchy util/util.cmx subsystems/CGSubsystem.cmx hierarchy/hierarchy.cmx subsystems/CGParameters.cmx subsystems/CGBlkio.cmx subsystems/CGCpu.cmx subsystems/CGCpuacct.cmx subsystems/CGCpuset.cmx subsystems/CGMemory.cmx subsystems/subsystem.cmx -o cgroups.cmx  ; then  rm -f cgroups.mli  ; else  rm -f cgroups.mli  ; exit 1; fi
+- ocamlfind ocamlopt -a cgroups.cmx -o cgroups.cmxa
+- ocamlfind ocamlopt -shared cgroups.cmx -o cgroups.cmxs
+-> compiled  cgroups.0.1
+Processing  2/2: [cgroups: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cgroups.0.1)
+- ocamlbuild -log build.log -use-ocamlfind -classic-display  -Is subsystems,hierarchy,util cgroups.cma cgroups.cmxa cgroups.cmxs
+- ocamlfind install cgroups META _build/cgroups.cma _build/cgroups.cmxa _build/cgroups.cmxs _build/cgroups.a _build/cgroups.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cgroups/cgroups.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cgroups/cgroups.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cgroups/cgroups.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cgroups/cgroups.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cgroups/cgroups.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cgroups/META
+-> installed cgroups.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:38.42] Success
