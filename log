@@ -1,0 +1,74 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 wasm /home/opam/opam-repository/cache
+[2016-12-22 16:19.02] Starting...
+[2016-12-22 16:19.02] Waiting for free pool slot to run
+[2016-12-22 17:20.25] Pool slot obtained, starting run
+[2016-12-22 17:20.25] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 wasm
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install wasm 0.13
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [wasm.0.13: dl]
+[wasm.0.13] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [wasm: make interpreter]
++ make "-C" "interpreter" "opt" "unopt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/wasm.0.13)
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/wasm.0.13/interpreter'
+- ocamlbuild -cflags '-w +a-4-27-42-44-45 -warn-error +a' -I util -I spec -I text -I host -I host/import -libs str -libs bigarray -quiet main.native
+- mv main.native wasm.opt
+- ocamlbuild -cflags '-w +a-4-27-42-44-45 -warn-error +a' -I util -I spec -I text -I host -I host/import -libs str -libs bigarray -quiet main.d.byte
+- mv main.d.byte wasm
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/wasm.0.13/interpreter'
+-> compiled  wasm.0.13
+Processing  2/2: [wasm: make interpreter]
++ make "-C" "interpreter" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/wasm.0.13)
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/wasm.0.13/interpreter'
+- ls util/*.ml* spec/*.ml* text/*.ml* host/*.ml* host/import/*.ml* \
+- 	| sed 's:\(.*/\)\{0,1\}\(.*\)\.[^\.]*:\2:' \
+- 	| grep -v main \
+- 	| sort | uniq \
+- 	>wasm.mlpack
+- ocamlbuild -cflags '-w +a-4-27-42-44-45 -warn-error +a' -I util -I spec -I text -I host -I host/import -libs str -libs bigarray -quiet wasm.cmx
+- ocamlfind install wasm findlib/META _build/wasm.o \
+- 	  _build/wasm.cmx _build/wasm.cmo _build/wasm.cmi _build/wasm.cmt \
+- 	  util/lib.mli util/sexpr.mli util/source.mli util/error.mli spec/i64_convert.mli spec/table.mli spec/i32_convert.mli spec/valid.mli spec/eval_numeric.mli spec/f32_convert.mli spec/encode.mli spec/memory.mli spec/f64_convert.mli spec/eval.mli spec/decode.mli text/lexer.mli text/arrange.mli text/parse.mli text/print.mli host/js.mli host/import.mli host/run.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/run.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/import.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/js.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/print.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/parse.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/arrange.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/lexer.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/decode.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/eval.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/f64_convert.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/memory.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/encode.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/f32_convert.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/eval_numeric.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/valid.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/i32_convert.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/table.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/i64_convert.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/error.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/source.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/sexpr.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/lib.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/wasm.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/wasm.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/wasm.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/wasm.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/wasm.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/wasm/META
+- rm wasm.mlpack
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/wasm.0.13/interpreter'
+-> installed wasm.0.13
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:20.46] Success
