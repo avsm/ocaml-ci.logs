@@ -1,0 +1,889 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install grenier  0.4                                        [required by inuit]
+  - install result   1.2                                        [required by topkg]
+  - install topkg    0.8.1                                      [required by sturgeon]
+  - install inuit    0.1                                        [required by sturgeon]
+  - install sturgeon 0.1  
+===== 5 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/5: [grenier.0.4: dl]
+Processing  2/5: [grenier.0.4: dl] [inuit.0.1: dl]
+Processing  3/5: [grenier.0.4: dl] [inuit.0.1: dl] [result.1.2: dl]
+[grenier.0.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/5: [inuit.0.1: dl] [result.1.2: dl]
+[inuit.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/5: [result.1.2: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/5:
+Processing  4/5: [sturgeon.0.1: dl]
+Processing  5/5: [sturgeon.0.1: dl] [topkg.0.8.1: dl]
+[sturgeon.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/5: [topkg.0.8.1: dl]
+[topkg.0.8.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/5:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/10: [grenier: make]
+Processing  2/10: [grenier: make] [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+Processing  2/10: [grenier: make]
+-> installed result.1.2
+Processing  3/10: [grenier: make]
+Processing  4/10: [grenier: make] [topkg: ocaml build]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4)
+- for i in hll jmphash pcg orderme doubledouble physh baltree trope binpacking; do make -C $i all; done
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- ocamldep hll.mli > ._bcdi/hll.di
+- ocamldep hll.ml > ._d/hll.d
+- ocamldep hll_consts.ml > ._d/hll_consts.d
+- ocamlc -c -g hll_consts.ml
+- ocamlc -c -g hll.mli
+- ocamlc -c -g hll.ml
+- ocamlc -a         -g        -o hll.cma hll_consts.cmo hll.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- ocamldep -native hll.mli > ._ncdi/hll.di
+- ocamlopt -c -g hll_consts.ml
+- ocamlopt -c -g hll.ml
+- ocamlopt -a          -g       -o hll.cmxa hll_consts.cmx hll.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- ocamldep jmphash.mli > ._bcdi/jmphash.di
+- ocamldep jmphash.ml > ._d/jmphash.d
+- ocamlc -c -g jmphash.mli
+- ocamlc -c -g jmphash.ml
+- ocamlc -a         -g        -o jmphash.cma jmphash.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- ocamldep -native jmphash.mli > ._ncdi/jmphash.di
+- ocamlopt -c -g jmphash.ml
+- ocamlopt -a          -g       -o jmphash.cmxa jmphash.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- ocamldep pcg.mli > ._bcdi/pcg.di
+- ocamldep pcg.ml > ._d/pcg.d
+- ocamlc -c -g pcg.mli
+- ocamlc -c -g pcg.ml
+- ocamlc -a         -g        -o pcg.cma pcg.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- ocamldep -native pcg.mli > ._ncdi/pcg.di
+- ocamlopt -c -g pcg.ml
+- ocamlopt -a          -g       -o pcg.cmxa pcg.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- ocamldep order_managed.mli > ._bcdi/order_managed.di
+- ocamldep order_indir.mli > ._bcdi/order_indir.di
+- ocamldep order_list.mli > ._bcdi/order_list.di
+- ocamldep order_managed.ml > ._d/order_managed.d
+- ocamldep order_indir.ml > ._d/order_indir.d
+- ocamldep order_list.ml > ._d/order_list.d
+- ocamlc -c -g order_list.mli
+- ocamlc -c -g order_list.ml
+- ocamlc -c -g order_indir.mli
+- ocamlc -c -g order_indir.ml
+- ocamlc -c -g order_managed.mli
+- ocamlc -c -g order_managed.ml
+- ocamlc -a         -g        -o orderme.cma order_list.cmo order_indir.cmo order_managed.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- ocamldep -native order_managed.mli > ._ncdi/order_managed.di
+- ocamldep -native order_indir.mli > ._ncdi/order_indir.di
+- ocamldep -native order_list.mli > ._ncdi/order_list.di
+- ocamlopt -c -g order_list.ml
+- ocamlopt -c -g order_indir.ml
+- ocamlopt -c -g order_managed.ml
+- ocamlopt -a          -g       -o orderme.cmxa order_list.cmx order_indir.cmx order_managed.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- ocamldep doubledouble.mli > ._bcdi/doubledouble.di
+- ocamldep doubledouble.ml > ._d/doubledouble.d
+- ocamlc -c -g doubledouble.mli
+- ocamlc -c -g doubledouble.ml
+- ocamlc -a         -g        -o doubledouble.cma doubledouble.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- ocamldep -native doubledouble.mli > ._ncdi/doubledouble.di
+- ocamlopt -c -g doubledouble.ml
+- ocamlopt -a          -g       -o doubledouble.cmxa doubledouble.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/physh'
+- ocamlc -c physh.mli
+- ocamlc -c physh.ml
+- ocamlc -c -ccopt "-O2 -std=gnu99" ml_physh_set.c
+- ocamlc -c -ccopt "-O2 -std=gnu99" ml_physh_map.c
+- ocamlmklib \
+-     -o _physh_stubs ml_physh_set.o ml_physh_map.o \
+-     -ccopt -O2 -ccopt -std=gnu99
+- ocamlc -a -custom -o physh.cma physh.cmo \
+-        -dllib dll_physh_stubs.so \
+-        -cclib -l_physh_stubs
+- ocamlopt -c physh.ml
+- ocamlopt -a -o physh.cmxa physh.cmx \
+-       -cclib -l_physh_stubs \
+-   		-ccopt -O2 -ccopt -std=gnu99
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/physh'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- ocamldep mbt.mli > ._bcdi/mbt.di
+- ocamldep bt2.mli > ._bcdi/bt2.di
+- ocamldep bt1.mli > ._bcdi/bt1.di
+- ocamldep mbt.ml > ._d/mbt.d
+- ocamldep bt2.ml > ._d/bt2.d
+- ocamldep bt1.ml > ._d/bt1.d
+- ocamlc -c -g bt1.mli
+- ocamlc -c -g bt1.ml
+- ocamlc -c -g bt2.mli
+- ocamlc -c -g bt2.ml
+- ocamlc -c -g mbt.mli
+- ocamlc -c -g mbt.ml
+- ocamlc -a         -g        -o baltree.cma bt1.cmo bt2.cmo mbt.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- ocamldep -native mbt.mli > ._ncdi/mbt.di
+- ocamldep -native bt2.mli > ._ncdi/bt2.di
+- ocamldep -native bt1.mli > ._ncdi/bt1.di
+- ocamlopt -c -g bt1.ml
+- ocamlopt -c -g bt2.ml
+- ocamlopt -c -g mbt.ml
+- ocamlopt -a          -g       -o baltree.cmxa bt1.cmx bt2.cmx mbt.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- ocamldep trope.mli > ._bcdi/trope.di
+- ocamldep trope.ml > ._d/trope.d
+- ocamlc -c -g -I ../baltree -I ../orderme trope.mli
+- ocamlc -c -g -I ../baltree -I ../orderme trope.ml
+- ocamlc -a         -g        -o trope.cma trope.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- ocamldep -native trope.mli > ._ncdi/trope.di
+- ocamlopt -c -g -I ../baltree -I ../orderme trope.ml
+- ocamlopt -a          -g       -o trope.cmxa trope.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- ocamldep maxrects.mli > ._bcdi/maxrects.di
+- ocamldep maxrects.ml > ._d/maxrects.d
+- ocamlc -c -g maxrects.mli
+- ocamlc -c -g maxrects.ml
+- ocamlc -a         -g        -o binpacking.cma maxrects.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- ocamldep -native maxrects.mli > ._ncdi/maxrects.di
+- ocamlopt -c -g maxrects.ml
+- ocamlopt -a          -g       -o binpacking.cmxa maxrects.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- for i in hll jmphash pcg orderme doubledouble physh baltree trope binpacking; do make -C $i all; done
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- ocamldep hll.mli > ._bcdi/hll.di
+- ocamldep hll.ml > ._d/hll.d
+- ocamldep hll_consts.ml > ._d/hll_consts.d
+- ocamlc -c -g hll_consts.ml
+- ocamlc -c -g hll.mli
+- ocamlc -c -g hll.ml
+- ocamlc -a         -g        -o hll.cma hll_consts.cmo hll.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- ocamldep -native hll.mli > ._ncdi/hll.di
+- ocamlopt -c -g hll_consts.ml
+- ocamlopt -c -g hll.ml
+- ocamlopt -a          -g       -o hll.cmxa hll_consts.cmx hll.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- ocamldep jmphash.mli > ._bcdi/jmphash.di
+- ocamldep jmphash.ml > ._d/jmphash.d
+- ocamlc -c -g jmphash.mli
+- ocamlc -c -g jmphash.ml
+- ocamlc -a         -g        -o jmphash.cma jmphash.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- ocamldep -native jmphash.mli > ._ncdi/jmphash.di
+- ocamlopt -c -g jmphash.ml
+- ocamlopt -a          -g       -o jmphash.cmxa jmphash.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- ocamldep pcg.mli > ._bcdi/pcg.di
+- ocamldep pcg.ml > ._d/pcg.d
+- ocamlc -c -g pcg.mli
+- ocamlc -c -g pcg.ml
+- ocamlc -a         -g        -o pcg.cma pcg.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- ocamldep -native pcg.mli > ._ncdi/pcg.di
+- ocamlopt -c -g pcg.ml
+- ocamlopt -a          -g       -o pcg.cmxa pcg.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- ocamldep order_managed.mli > ._bcdi/order_managed.di
+- ocamldep order_indir.mli > ._bcdi/order_indir.di
+- ocamldep order_list.mli > ._bcdi/order_list.di
+- ocamldep order_managed.ml > ._d/order_managed.d
+- ocamldep order_indir.ml > ._d/order_indir.d
+- ocamldep order_list.ml > ._d/order_list.d
+- ocamlc -c -g order_list.mli
+- ocamlc -c -g order_list.ml
+- ocamlc -c -g order_indir.mli
+- ocamlc -c -g order_indir.ml
+- ocamlc -c -g order_managed.mli
+- ocamlc -c -g order_managed.ml
+- ocamlc -a         -g        -o orderme.cma order_list.cmo order_indir.cmo order_managed.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- ocamldep -native order_managed.mli > ._ncdi/order_managed.di
+- ocamldep -native order_indir.mli > ._ncdi/order_indir.di
+- ocamldep -native order_list.mli > ._ncdi/order_list.di
+- ocamlopt -c -g order_list.ml
+- ocamlopt -c -g order_indir.ml
+- ocamlopt -c -g order_managed.ml
+- ocamlopt -a          -g       -o orderme.cmxa order_list.cmx order_indir.cmx order_managed.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- ocamldep doubledouble.mli > ._bcdi/doubledouble.di
+- ocamldep doubledouble.ml > ._d/doubledouble.d
+- ocamlc -c -g doubledouble.mli
+- ocamlc -c -g doubledouble.ml
+- ocamlc -a         -g        -o doubledouble.cma doubledouble.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- ocamldep -native doubledouble.mli > ._ncdi/doubledouble.di
+- ocamlopt -c -g doubledouble.ml
+- ocamlopt -a          -g       -o doubledouble.cmxa doubledouble.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/physh'
+- ocamlc -c physh.mli
+- ocamlc -c physh.ml
+- ocamlc -c -ccopt "-O2 -std=gnu99" ml_physh_set.c
+- ocamlc -c -ccopt "-O2 -std=gnu99" ml_physh_map.c
+- ocamlmklib \
+-     -o _physh_stubs ml_physh_set.o ml_physh_map.o \
+-     -ccopt -O2 -ccopt -std=gnu99
+- ocamlc -a -custom -o physh.cma physh.cmo \
+-        -dllib dll_physh_stubs.so \
+-        -cclib -l_physh_stubs
+- ocamlopt -c physh.ml
+- ocamlopt -a -o physh.cmxa physh.cmx \
+-       -cclib -l_physh_stubs \
+-   		-ccopt -O2 -ccopt -std=gnu99
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/physh'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- ocamldep mbt.mli > ._bcdi/mbt.di
+- ocamldep bt2.mli > ._bcdi/bt2.di
+- ocamldep bt1.mli > ._bcdi/bt1.di
+- ocamldep mbt.ml > ._d/mbt.d
+- ocamldep bt2.ml > ._d/bt2.d
+- ocamldep bt1.ml > ._d/bt1.d
+- ocamlc -c -g bt1.mli
+- ocamlc -c -g bt1.ml
+- ocamlc -c -g bt2.mli
+- ocamlc -c -g bt2.ml
+- ocamlc -c -g mbt.mli
+- ocamlc -c -g mbt.ml
+- ocamlc -a         -g        -o baltree.cma bt1.cmo bt2.cmo mbt.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- ocamldep -native mbt.mli > ._ncdi/mbt.di
+- ocamldep -native bt2.mli > ._ncdi/bt2.di
+- ocamldep -native bt1.mli > ._ncdi/bt1.di
+- ocamlopt -c -g bt1.ml
+- ocamlopt -c -g bt2.ml
+- ocamlopt -c -g mbt.ml
+- ocamlopt -a          -g       -o baltree.cmxa bt1.cmx bt2.cmx mbt.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- ocamldep trope.mli > ._bcdi/trope.di
+- ocamldep trope.ml > ._d/trope.d
+- ocamlc -c -g -I ../baltree -I ../orderme trope.mli
+- ocamlc -c -g -I ../baltree -I ../orderme trope.ml
+- ocamlc -a         -g        -o trope.cma trope.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- ocamldep -native trope.mli > ._ncdi/trope.di
+- ocamlopt -c -g -I ../baltree -I ../orderme trope.ml
+- ocamlopt -a          -g       -o trope.cmxa trope.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- ocamldep maxrects.mli > ._bcdi/maxrects.di
+- ocamldep maxrects.ml > ._d/maxrects.d
+- ocamlc -c -g maxrects.mli
+- ocamlc -c -g maxrects.ml
+- ocamlc -a         -g        -o binpacking.cma maxrects.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- ocamldep -native maxrects.mli > ._ncdi/maxrects.di
+- ocamlopt -c -g maxrects.ml
+- ocamlopt -a          -g       -o binpacking.cmxa maxrects.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+-> compiled  grenier.0.4
+Processing  4/10: [topkg: ocaml build]
+Processing  5/10: [topkg: ocaml build] [grenier: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4)
+- for i in hll jmphash pcg orderme doubledouble physh baltree trope binpacking; do make -C $i all; done
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- ocamlc -a         -g        -o hll.cma hll_consts.cmo hll.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[2]: 'hll.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[2]: 'jmphash.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[2]: 'jmphash.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[2]: 'pcg.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[2]: 'pcg.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[2]: 'orderme.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[2]: 'orderme.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[2]: 'doubledouble.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[2]: 'doubledouble.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/physh'
+- make[1]: Nothing to be done for 'all'.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/physh'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[2]: 'baltree.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[2]: 'baltree.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[2]: 'trope.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[2]: 'trope.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[2]: 'binpacking.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[2]: 'binpacking.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  grenier META hll/hll.mli hll/hll.cmi hll/hll.cmx hll/hll_consts.cmi hll/hll_consts.cmx hll/hll.a hll/hll.cma hll/hll.cmxa jmphash/jmphash.mli jmphash/jmphash.cmi jmphash/jmphash.cmx jmphash/jmphash.a jmphash/jmphash.cma jmphash/jmphash.cmxa pcg/pcg.mli pcg/pcg.cmi pcg/pcg.cmx pcg/pcg.a pcg/pcg.cma pcg/pcg.cmxa orderme/order_list.mli orderme/order_indir.mli orderme/order_managed.mli orderme/order_list.cmi orderme/order_list.cmx orderme/order_indir.cmi orderme/order_indir.cmx orderme/order_managed.cmi orderme/order_managed.cmx orderme/orderme.a orderme/orderme.cma orderme/orderme.cmxa doubledouble/doubledouble.mli doubledouble/doubledouble.cmi doubledouble/doubledouble.cmo doubledouble/doubledouble.cmx physh/physh.mli physh/physh.cmi physh/physh.cmx physh/physh.a physh/physh.cma physh/physh.cmxa physh/lib_physh_stubs.a physh/dll_physh_stubs.so baltree/bt1.mli baltree/bt1.cmi baltree/bt1.cmx baltree/bt2.mli baltree/bt2.cmi baltree/bt2.cmx baltree/mbt.mli baltree/mbt.cmi baltree/mbt.cmx baltree/baltree.a baltree/baltree.cma baltree/baltree.cmxa binpacking/maxrects.mli binpacking/maxrects.cmi binpacking/maxrects.cmx binpacking/binpacking.a binpacking/binpacking.cma binpacking/binpacking.cmxa trope/trope.mli trope/trope.cmi trope/trope.cmx trope/trope.a trope/trope.cma trope/trope.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/trope.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/trope.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/trope.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/trope.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/trope.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/trope.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/binpacking.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/binpacking.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/binpacking.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/maxrects.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/maxrects.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/maxrects.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/baltree.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/baltree.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/baltree.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/mbt.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/mbt.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/mbt.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/bt2.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/bt2.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/bt2.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/bt1.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/bt1.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/bt1.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/lib_physh_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/physh.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/physh.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/physh.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/physh.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/physh.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/physh.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/doubledouble.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/doubledouble.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/doubledouble.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/doubledouble.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/orderme.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/orderme.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/orderme.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_managed.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_managed.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_indir.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_indir.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_list.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_list.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_managed.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_indir.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_list.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/pcg.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/pcg.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/pcg.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/pcg.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/pcg.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/pcg.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/jmphash.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/jmphash.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/jmphash.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/jmphash.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/jmphash.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/jmphash.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll_consts.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll_consts.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dll_physh_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dll_physh_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+- for i in hll jmphash pcg orderme doubledouble physh baltree trope binpacking; do make -C $i all; done
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- ocamlc -a         -g        -o hll.cma hll_consts.cmo hll.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[2]: 'hll.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/hll'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[2]: 'jmphash.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[2]: 'jmphash.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/jmphash'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[2]: 'pcg.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[2]: 'pcg.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/pcg'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[2]: 'orderme.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[2]: 'orderme.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/orderme'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[2]: 'doubledouble.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[2]: 'doubledouble.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/doubledouble'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/physh'
+- make[1]: Nothing to be done for 'all'.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/physh'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[2]: 'baltree.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[2]: 'baltree.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/baltree'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[2]: 'trope.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[2]: 'trope.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/trope'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[2]: 'binpacking.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[2]: 'binpacking.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/grenier.0.4/binpacking'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  grenier META hll/hll.mli hll/hll.cmi hll/hll.cmx hll/hll_consts.cmi hll/hll_consts.cmx hll/hll.a hll/hll.cma hll/hll.cmxa jmphash/jmphash.mli jmphash/jmphash.cmi jmphash/jmphash.cmx jmphash/jmphash.a jmphash/jmphash.cma jmphash/jmphash.cmxa pcg/pcg.mli pcg/pcg.cmi pcg/pcg.cmx pcg/pcg.a pcg/pcg.cma pcg/pcg.cmxa orderme/order_list.mli orderme/order_indir.mli orderme/order_managed.mli orderme/order_list.cmi orderme/order_list.cmx orderme/order_indir.cmi orderme/order_indir.cmx orderme/order_managed.cmi orderme/order_managed.cmx orderme/orderme.a orderme/orderme.cma orderme/orderme.cmxa doubledouble/doubledouble.mli doubledouble/doubledouble.cmi doubledouble/doubledouble.cmo doubledouble/doubledouble.cmx physh/physh.mli physh/physh.cmi physh/physh.cmx physh/physh.a physh/physh.cma physh/physh.cmxa physh/lib_physh_stubs.a physh/dll_physh_stubs.so baltree/bt1.mli baltree/bt1.cmi baltree/bt1.cmx baltree/bt2.mli baltree/bt2.cmi baltree/bt2.cmx baltree/mbt.mli baltree/mbt.cmi baltree/mbt.cmx baltree/baltree.a baltree/baltree.cma baltree/baltree.cmxa binpacking/maxrects.mli binpacking/maxrects.cmi binpacking/maxrects.cmx binpacking/binpacking.a binpacking/binpacking.cma binpacking/binpacking.cmxa trope/trope.mli trope/trope.cmi trope/trope.cmx trope/trope.a trope/trope.cma trope/trope.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/trope.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/trope.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/trope.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/trope.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/trope.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/trope.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/binpacking.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/binpacking.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/binpacking.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/maxrects.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/maxrects.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/maxrects.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/baltree.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/baltree.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/baltree.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/mbt.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/mbt.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/mbt.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/bt2.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/bt2.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/bt2.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/bt1.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/bt1.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/bt1.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/lib_physh_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/physh.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/physh.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/physh.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/physh.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/physh.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/physh.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/doubledouble.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/doubledouble.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/doubledouble.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/doubledouble.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/orderme.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/orderme.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/orderme.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_managed.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_managed.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_indir.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_indir.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_list.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_list.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_managed.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_indir.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/order_list.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/pcg.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/pcg.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/pcg.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/pcg.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/pcg.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/pcg.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/jmphash.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/jmphash.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/jmphash.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/jmphash.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/jmphash.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/jmphash.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll_consts.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll_consts.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/hll.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/grenier/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dll_physh_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dll_physh_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+-> installed grenier.0.4
+Processing  5/10: [topkg: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pkg-name" "topkg" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/topkg.0.8.1)
+- File "src/topkg_conf.ml", line 19, characters 8-30:
+- Warning 3: deprecated: Topkg_string.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.ml > src/topkg.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.mli > src/topkg.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmi src/topkg.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.ml > src/topkg_build.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.mli > src/topkg_build.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.mli > src/topkg_cmd.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.mli > src/topkg_fpath.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmi src/topkg_fpath.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.mli > src/topkg_codec.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmi src/topkg_cmd.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.mli > src/topkg_result.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmi src/topkg_result.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.mli > src/topkg_conf.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmi src/topkg_codec.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmi src/topkg_conf.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmi src/topkg_build.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.ml > src/topkg_cmd.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.ml > src/topkg_fpath.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.ml > src/topkg_string.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.mli > src/topkg_string.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmi src/topkg_string.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmx src/topkg_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmx src/topkg_fpath.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.ml > src/topkg_codec.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmx src/topkg_cmd.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.ml > src/topkg_os.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.mli > src/topkg_os.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmi src/topkg_os.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.ml > src/topkg_log.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.mli > src/topkg_log.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmi src/topkg_log.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.ml > src/topkg_result.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmx src/topkg_result.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmx src/topkg_log.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmx src/topkg_os.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.ml > src/topkg_conf.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.ml > src/topkg_vcs.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.mli > src/topkg_vcs.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmi src/topkg_vcs.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmx src/topkg_vcs.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmx src/topkg_codec.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmx src/topkg_conf.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.ml > src/topkg_distrib.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.mli > src/topkg_distrib.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmi src/topkg_distrib.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.ml > src/topkg_opam.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.mli > src/topkg_opam.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmi src/topkg_opam.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmx src/topkg_opam.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.ml > src/topkg_fexts.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.mli > src/topkg_fexts.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmi src/topkg_fexts.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.ml > src/topkg_install.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.mli > src/topkg_install.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.mli > src/topkg_test.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmi src/topkg_test.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmi src/topkg_install.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmx src/topkg_fexts.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.ml > src/topkg_test.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmx src/topkg_test.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.ml > src/topkg_ipc.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.mli > src/topkg_ipc.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.mli > src/topkg_pkg.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.mli > src/topkg_publish.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmi src/topkg_publish.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmi src/topkg_pkg.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmi src/topkg_ipc.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.ml > src/topkg_pkg.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmx src/topkg_build.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmx src/topkg_distrib.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.ml > src/topkg_publish.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmx src/topkg_publish.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmx src/topkg_pkg.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.ml > src/topkg_main.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.mli > src/topkg_main.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmi src/topkg_main.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmx src/topkg_ipc.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmx src/topkg_main.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmx src/topkg.ml
+- ocamlfind ocamlopt -a -package 'bytes result' src/topkg_string.cmx src/topkg_fpath.cmx src/topkg_cmd.cmx src/topkg_result.cmx src/topkg_log.cmx src/topkg_os.cmx src/topkg_codec.cmx src/topkg_vcs.cmx src/topkg_conf.cmx src/topkg_build.cmx src/topkg_opam.cmx src/topkg_distrib.cmx src/topkg_fexts.cmx src/topkg_test.cmx src/topkg_install.cmx src/topkg_publish.cmx src/topkg_pkg.cmx src/topkg_ipc.cmx src/topkg_main.cmx src/topkg.cmx -o src/topkg.cmxa
+- ocamlfind ocamlopt -shared -package 'bytes result' src/topkg.cmx -o src/topkg.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmo src/topkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmo src/topkg_build.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmo src/topkg_cmd.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmo src/topkg_codec.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmo src/topkg_conf.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmo src/topkg_distrib.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmo src/topkg_fexts.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmo src/topkg_fpath.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmo src/topkg_ipc.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmo src/topkg_log.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmo src/topkg_main.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmo src/topkg_opam.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmo src/topkg_os.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmo src/topkg_pkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmo src/topkg_publish.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmo src/topkg_result.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmo src/topkg_string.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmo src/topkg_test.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmo src/topkg_vcs.ml
+- ocamlfind ocamlc -a -package 'bytes result' src/topkg_string.cmo src/topkg_fpath.cmo src/topkg_cmd.cmo src/topkg_result.cmo src/topkg_log.cmo src/topkg_os.cmo src/topkg_codec.cmo src/topkg_vcs.cmo src/topkg_conf.cmo src/topkg_build.cmo src/topkg_opam.cmo src/topkg_distrib.cmo src/topkg_fexts.cmo src/topkg_test.cmo src/topkg_install.cmo src/topkg_publish.cmo src/topkg_pkg.cmo src/topkg_ipc.cmo src/topkg_main.cmo src/topkg.cmo -o src/topkg.cma
+-> compiled  topkg.0.8.1
+-> installed topkg.0.8.1
+Processing  7/10: [inuit: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/inuit.0.1)
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit_base.ml > src/inuit_base.ml.depends
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit_base.mli > src/inuit_base.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_base.cmi src/inuit_base.mli
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit_remote.ml > src/inuit_remote.ml.depends
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit_remote.mli > src/inuit_remote.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_remote.cmi src/inuit_remote.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_base.cmx src/inuit_base.ml
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit_region.ml > src/inuit_region.ml.depends
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit_region.mli > src/inuit_region.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_region.cmi src/inuit_region.mli
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit_cursor.ml > src/inuit_cursor.ml.depends
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit_cursor.mli > src/inuit_cursor.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_cursor.cmi src/inuit_cursor.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_region.cmx src/inuit_region.ml
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit_widget.ml > src/inuit_widget.ml.depends
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit_widget.mli > src/inuit_widget.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_widget.cmi src/inuit_widget.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_cursor.cmx src/inuit_cursor.ml
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit_trace.ml > src/inuit_trace.ml.depends
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit_trace.mli > src/inuit_trace.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_trace.cmi src/inuit_trace.mli
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit.ml > src/inuit.ml.depends
+- ocamlfind ocamldep -package bytes -package grenier.trope -modules src/inuit.mli > src/inuit.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit.cmi src/inuit.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_remote.cmx src/inuit_remote.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_trace.cmx src/inuit_trace.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_widget.cmx src/inuit_widget.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit.cmx src/inuit.ml
+- ocamlfind ocamlopt -a -package bytes -package grenier.trope src/inuit_base.cmx src/inuit_remote.cmx src/inuit_region.cmx src/inuit_cursor.cmx src/inuit_widget.cmx src/inuit_trace.cmx src/inuit.cmx -o src/inuit.cmxa
+- ocamlfind ocamlopt -shared -package bytes -package grenier.trope src/inuit.cmx -o src/inuit.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_base.cmo src/inuit_base.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_remote.cmo src/inuit_remote.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_region.cmo src/inuit_region.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_cursor.cmo src/inuit_cursor.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_widget.cmo src/inuit_widget.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit_trace.cmo src/inuit_trace.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package grenier.trope -I src -I test -o src/inuit.cmo src/inuit.ml
+- ocamlfind ocamlc -a -package bytes -package grenier.trope src/inuit_base.cmo src/inuit_remote.cmo src/inuit_region.cmo src/inuit_cursor.cmo src/inuit_widget.cmo src/inuit_trace.cmo src/inuit.cmo -o src/inuit.cma
+-> compiled  inuit.0.1
+-> installed inuit.0.1
+Processing  9/10: [sturgeon: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sturgeon.0.1)
+- ocamlfind ocamldep -package bytes -package inuit -modules src/sturgeon_sexp.ml > src/sturgeon_sexp.ml.depends
+- ocamlfind ocamldep -package bytes -package inuit -modules src/sturgeon_sexp.mli > src/sturgeon_sexp.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon_sexp.cmi src/sturgeon_sexp.mli
+- ocamlfind ocamldep -package bytes -package inuit -modules src/sturgeon_session.ml > src/sturgeon_session.ml.depends
+- ocamlfind ocamldep -package bytes -package inuit -modules src/sturgeon_session.mli > src/sturgeon_session.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon_session.cmi src/sturgeon_session.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon_sexp.cmx src/sturgeon_sexp.ml
+- ocamlfind ocamldep -package bytes -package inuit -modules src/sturgeon_stui.ml > src/sturgeon_stui.ml.depends
+- ocamlfind ocamldep -package bytes -package inuit -modules src/sturgeon_stui.mli > src/sturgeon_stui.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon_stui.cmi src/sturgeon_stui.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon_session.cmx src/sturgeon_session.ml
+- ocamlfind ocamldep -package bytes -package inuit -modules src/sturgeon.ml > src/sturgeon.ml.depends
+- ocamlfind ocamldep -package bytes -package inuit -modules src/sturgeon.mli > src/sturgeon.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon.cmi src/sturgeon.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon_stui.cmx src/sturgeon_stui.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon.cmx src/sturgeon.ml
+- ocamlfind ocamlopt -a -package bytes -package inuit src/sturgeon_sexp.cmx src/sturgeon_session.cmx src/sturgeon_stui.cmx src/sturgeon.cmx -o src/sturgeon.cmxa
+- ocamlfind ocamlopt -shared -package bytes -package inuit src/sturgeon.cmx -o src/sturgeon.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon_sexp.cmo src/sturgeon_sexp.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon_session.cmo src/sturgeon_session.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon_stui.cmo src/sturgeon_stui.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon.cmo src/sturgeon.ml
+- ocamlfind ocamlc -a -package bytes -package inuit src/sturgeon_sexp.cmo src/sturgeon_session.cmo src/sturgeon_stui.cmo src/sturgeon.cmo -o src/sturgeon.cma
+- ocamlfind ocamldep -package bytes -package inuit -modules src/sturgeon_recipes_command.ml > src/sturgeon_recipes_command.ml.depends
+- ocamlfind ocamldep -package bytes -package inuit -modules src/sturgeon_recipes_command.mli > src/sturgeon_recipes_command.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon_recipes_command.cmi src/sturgeon_recipes_command.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon_recipes_command.cmx src/sturgeon_recipes_command.ml
+- ocamlfind ocamlopt -a -package bytes -package inuit src/sturgeon_recipes_command.cmx -o src/sturgeon_recipes_command.cmxa
+- ocamlfind ocamlopt -shared -package bytes -package inuit src/sturgeon_recipes_command.cmx -o src/sturgeon_recipes_command.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package inuit -I src -I test -o src/sturgeon_recipes_command.cmo src/sturgeon_recipes_command.ml
+- ocamlfind ocamlc -a -package bytes -package inuit src/sturgeon_recipes_command.cmo -o src/sturgeon_recipes_command.cma
+- ocamlfind ocamldep -package bytes -package inuit -modules src/sturgeon_recipes_server.ml > src/sturgeon_recipes_server.ml.depends
+- ocamlfind ocamldep -package bytes -package inuit -modules src/sturgeon_recipes_server.mli > src/sturgeon_recipes_server.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -thread -package bytes -package inuit -I src -I test -o src/sturgeon_recipes_server.cmi src/sturgeon_recipes_server.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -thread -package bytes -package inuit -I src -I test -o src/sturgeon_recipes_server.cmx src/sturgeon_recipes_server.ml
+- ocamlfind ocamlopt -a -thread -package bytes -package inuit src/sturgeon_recipes_server.cmx -o src/sturgeon_recipes_server.cmxa
+- ocamlfind ocamlopt -shared -thread -package bytes -package inuit src/sturgeon_recipes_server.cmx -o src/sturgeon_recipes_server.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -thread -package bytes -package inuit -I src -I test -o src/sturgeon_recipes_server.cmo src/sturgeon_recipes_server.ml
+- ocamlfind ocamlc -a -thread -package bytes -package inuit src/sturgeon_recipes_server.cmo -o src/sturgeon_recipes_server.cma
+- ocamlfind ocamldep -package unix -package bytes -package inuit -modules src/sturgeon_connector.ml > src/sturgeon_connector.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package bytes -package inuit -I src -I test -o src/sturgeon_connector.cmo src/sturgeon_connector.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package bytes -package inuit -I src -I test -o src/sturgeon_connector.cmx src/sturgeon_connector.ml
+- ocamlfind ocamlopt -linkpkg -g -package unix -package bytes -package inuit src/sturgeon_connector.cmx -o src/sturgeon_connector.native
+-> compiled  sturgeon.0.1
+-> installed sturgeon.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
