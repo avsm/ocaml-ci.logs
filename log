@@ -1,0 +1,68 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 config-file /home/opam/opam-repository/cache
+[2016-12-22 16:19.26] Starting...
+[2016-12-22 16:19.26] Waiting for free pool slot to run
+[2016-12-22 17:40.47] Pool slot obtained, starting run
+[2016-12-22 17:40.47] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 config-file
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install config-file 1.2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [config-file.1.2: dl]
+[config-file.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [config-file: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/config-file.1.2)
+- checking for ocamlfind... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- checking for camlp4... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/camlp4
+- configure: creating ./config.status
+- config.status: creating master.Makefile
+Processing  1/2: [config-file: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/config-file.1.2)
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc   -c config_file.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc   -c config_file.ml
+- File "config_file.ml", line 100, characters 23-38:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- File "config_file.ml", line 100, characters 49-66:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- File "config_file.ml", line 466, characters 8-24:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt   -c config_file.ml
+- File "config_file.ml", line 100, characters 23-38:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- File "config_file.ml", line 100, characters 49-66:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- File "config_file.ml", line 466, characters 8-24:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -o config_file.cmxs -shared config_file.cmx
+-> compiled  config-file.1.2
+Processing  2/2: [config-file: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/config-file.1.2)
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/config-file/config_file.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/config-file/config_file.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/config-file/config_file.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/config-file/config_file.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/config-file/config_file.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/config-file/config_file.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/config-file/META
+-> installed config-file.1.2
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:41.01] Success
