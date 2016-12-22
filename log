@@ -1,0 +1,1210 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 pfff /home/opam/opam-repository/cache
+[2016-12-22 16:18.39] Starting...
+[2016-12-22 16:18.40] Waiting for free pool slot to run
+[2016-12-22 17:06.59] Pool slot obtained, starting run
+[2016-12-22 17:06.59] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 pfff
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install pfff 0.29
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [pfff.0.29: dl]
+[pfff.0.29] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [pfff: patch]
+Processing  1/2: [pfff: ./configure]
++ ./configure "--novisual" "--nocmt" "--nobytecode" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29)
+- Checking your configuration.
+- 
+- OCaml (the wonderful language) is present.
+- make (gnu version) is present.
+- 
+- pfff target prefix: /usr/local (you can use --prefix to override it)
+- Generating Makefile.config (VISUAL=0, BYTECODE=0, CMT=0) (see also configure --help)
+- Generating commons/features.ml
+- Generating globals/config_pfff.ml
+- All seems fine for pfff.
+- 
+- To compile pfff type:
+-   $ make depend
+-   $ make 
+- 
+- Then, to test pfff simply type:
+-   $ ./pfff -dump_php demos/foo.php
+- 
+- If you want to use the analysis framework and code visualization tools
+- see install.txt or type ./configure --help
+- 
+Processing  1/2: [pfff: make depend]
++ make "depend" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29)
+- ocamldep -pp "cpp  -DFEATURE_BYTECODE=0 -DFEATURE_CMT=0" -I commons -I commons/graph -I external/jsonwheel -I external/ocamlgraph -I globals -I h_version-control -I h_visualization -I h_files-format -I h_program-lang -I graph_code -I h_program-visual -I matcher -I lang_ml/parsing -I lang_ml/analyze -I lang_nw/parsing -I lang_nw/analyze -I lang_lisp/parsing -I lang_lisp/analyze -I lang_haskell/parsing -I lang_haskell/analyze -I lang_php/parsing -I lang_php/matcher -I lang_php/pretty -I lang_sql/parsing -I lang_js/parsing -I lang_js/analyze -I lang_cpp/parsing -I lang_cpp/analyze -I lang_c/parsing -I lang_c/analyze -I lang_clang/parsing -I lang_clang/analyze -I lang_java/parsing -I lang_java/analyze -I lang_python/parsing -I lang_python/analyze -I lang_csharp/parsing -I lang_csharp/analyze -I lang_rust/parsing -I lang_rust/analyze -I lang_opa/parsing -I lang_opa/analyze -I lang_erlang/parsing -I lang_erlang/analyze -I lang_php/analyze -I lang_php/analyze/foundation -I lang_php/analyze/checker -I lang_php/analyze/tools -I lang_php/analyze/qa_test -I lang_html/parsing -I lang_html/analyze -I lang_css/parsing -I lang_web/parsing -I lang_text -I mini -I demos -I commons/ocamlextra -I commons/ocollection  *.mli *.ml > .depend
+- main_codegraph.ml:22:60: warning: missing terminating " character
+-   * Structure Matrix (DSM). This should help understand the "software
+-                                                             ^
+- main_codegraph.ml:23:16: warning: missing terminating " character
+-   * architecture" of a project and assist in refactoring it.
+-                 ^
+- main_codegraph.ml:48:15: warning: missing terminating ' character
+-   *      we don't understand why there exists a dependency.
+-                ^
+- main_codegraph.ml:57:64: warning: missing terminating ' character
+-   * - Lattix, the startup of the original paper on DSM at OOPSLA'05
+-                                                                 ^
+- main_codegraph.ml:89:60: warning: missing terminating ' character
+-   *    better than UML diagrams (I think after reading Harel's papers on
+-                                                             ^
+- main_codegraph.ml:116:34: warning: missing terminating ' character
+-   *    scale very well for www. It's ok for pfff, but even for 
+-                                   ^
+- main_codegraph.ml:125:47: warning: missing terminating ' character
+-   *    a tree when looked locally (AST), but it's really a graph
+-                                                ^
+- main_codegraph.ml:144:66: warning: missing terminating ' character
+-   *    ocamldoc fails. Also there is no package "projection" so it's 
+-                                                                   ^
+- main_codegraph.ml:152:9: warning: missing terminating ' character
+-   *    it's also good to see things without the reduction (especially
+-          ^
+- main_codegraph.ml:158:9: warning: missing terminating ' character
+-   *    It's somehow covered by the strongly-connected + coloring in gephi.
+-          ^
+- main_codemap.ml:25:17: warning: missing terminating ' character
+-   *  - get a bird's eye view of all the code (hence treemaps)
+-                  ^
+- main_codemap.ml:26:17: warning: missing terminating ' character
+-   *  - get a bird's eye view of a file (hence code thumbnails)
+-                  ^
+- main_codemap.ml:52:21: warning: missing terminating ' character
+-   *  - saw talk at CC'09 about improving javadoc by putting in bigger fonts
+-                      ^
+- main_codemap.ml:67:46: warning: missing terminating ' character
+-   *  - sublime, has thumbnails, but people don't really care about it
+-                                               ^
+- main_codemap.ml:102:54: warning: missing terminating ' character
+-   *    as well as not overriden parent methods. We don't need autocomplete
+-                                                       ^
+- main_codemap.ml:380:23: warning: missing terminating ' character
+-       * runtime, so let's do the heavy computation in another process
+-                        ^
+- main_codemap.ml:479:68: warning: missing terminating ' character
+-   * here. Here it's for ... well it's for nothing I think because it's not 
+-                                                                     ^
+- main_codequery.ml:82:208: warning: missing terminating ' character
+-    -mx600m -Dlearnbestorder=n -Dsingleignore=yes -Dbasedir=./results/ -Dbddcache=1500000 -Dbddnodes=40000000 -Dnumberingtype=%s -Dpa.clinit=no -Dpa.filternull=yes -Dpa.unknowntypes=no net.sf.bddbddb.Solver %s' % (java_cmd, cla
+-                                                                                                                                                                                                                 ^
+- main_codequery.ml:142:9: warning: missing terminating ' character
+-    (* don't care about the remaining prolog stuff so exit earlier *)
+-          ^
+- main_codeslicer.ml:19:12: warning: missing terminating ' character
+-   * Once you've seen one driver you got the main ideas and seeing
+-             ^
+- main_codeslicer.ml:23:22: warning: missing terminating ' character
+-   * architecture as it's difficult to find a meaningful layering of the code
+-                       ^
+- main_codeslicer.ml:41:21: warning: missing terminating ' character
+-   * is far smaller it's also faster to run expensive analysis that are 
+-                      ^
+- main_codeslicer.ml:93:31: warning: missing terminating ' character
+-  (* In this file because it can't be put in syncweb/ (it uses graph_code_c),
+-                                ^
+- main_codeslicer.ml:94:10: warning: missing terminating ' character
+-   * and it's a form of code slicing ...
+-           ^
+- main_codeslicer.ml:203:32: warning: missing terminating ' character
+-                (* prototype, don't care *)
+-                                 ^
+- main_codeslicer.ml:219:37: warning: missing terminating ' character
+-                (* other typedefs, don't care *)
+-                                      ^
+- main_codeslicer.ml:223:34: warning: missing terminating ' character
+-                (* global decl, don't care *)
+-                                   ^
+- main_codeslicer.ml:455:43: warning: missing terminating ' character
+-       * but that should not anymore, so let's reconsider all children!
+-                                            ^
+- main_scheck.ml:140:22: warning: missing terminating ' character
+-   * I put 5 because it's fast enough at depth 5, and 
+-                       ^
+- main_scheck.ml:141:14: warning: missing terminating ' character
+-   * I think it's good enough as it is probably bad for a file to use
+-               ^
+- main_scheck.ml:267:12: warning: missing terminating ' character
+-    (* we don't here *)
+-             ^
+- main_scheck.ml:342:37: warning: missing terminating ' character
+-      (* todo: make this more lazy? it's pretty slow *)
+-                                      ^
+- main_scheck.ml:535:8: warning: missing terminating ' character
+-  (* Poor's man token-based Deadcode detector for C/C++/...  *)
+-         ^
+- main_sgrep.ml:115:13: warning: missing terminating ' character
+-      let file' = Common2.relative_to_absolute file in 
+-              ^
+- main_sgrep.ml:116:30: warning: missing terminating ' character
+-      Common.readable root file', line
+-                               ^
+- main_spatch.ml:284:70: warning: missing terminating ' character
+-    (* optimisation; if a file does not contain certain keywords we don't
+-                                                                       ^
+- main_spatch.ml:294:60: warning: missing terminating ' character
+-    (* xhp and transformation was not mixing well, but now it's better
+-                                                             ^
+- main_spatch.ml:488:33: warning: missing terminating " character
+-     *            i_15, [XhpText(("
+-                                  ^
+- main_spatch.ml:490:8: warning: missing terminating " character
+-     *   ", i_16))],
+-         ^
+- main_spatch.ml:546:30: warning: missing terminating ' character
+-   * a la lex-pass. Or maybe it's better to add support in the DSL directly
+-                               ^
+- main_test.ml:182:11: warning: missing terminating ' character
+-      let db' = 
+-            ^
+- main_test.ml:184:35: warning: missing terminating ' character
+-      Database_code.save_database db' output
+-                                    ^
+- set -e; for i in commons commons/graph external/jsonwheel external/ocamlgraph       globals h_version-control h_visualization h_files-format h_program-lang graph_code h_program-visual matcher lang_ml/parsing lang_ml/analyze  lang_nw/parsing lang_nw/analyze lang_lisp/parsing lang_lisp/analyze lang_haskell/parsing lang_haskell/analyze lang_php/parsing lang_php/matcher lang_php/pretty lang_sql/parsing lang_js/parsing lang_js/analyze lang_cpp/parsing lang_cpp/analyze lang_c/parsing lang_c/analyze lang_clang/parsing lang_clang/analyze lang_java/parsing lang_java/analyze  lang_python/parsing lang_python/analyze lang_csharp/parsing lang_csharp/analyze lang_rust/parsing lang_rust/analyze lang_opa/parsing lang_opa/analyze lang_erlang/parsing lang_erlang/analyze lang_php/analyze lang_php/analyze/foundation lang_php/analyze/checker lang_php/analyze/tools lang_php/analyze/qa_test lang_html/parsing lang_html/analyze lang_css/parsing lang_web/parsing lang_text mini  demos; do echo $i; make -C $i depend; done
+- commons
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons'
+- ocamldep.opt -I ocamlextra -I ocollection  *.mli *.ml  > .depend
+- for i in ocamlextra ocollection; do ocamldep.opt -I ocamlextra -I ocollection  $i/*.ml $i/*.mli >> .depend; done
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons'
+- commons/graph
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/graph'
+- ocamldep  -I ../../commons -I ../../external/ocamlgraph/ -I ../../external/ocamlgraph/src  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/graph'
+- external/jsonwheel
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/external/jsonwheel'
+- ocamldep  *.mli *.ml    > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/external/jsonwheel'
+- external/ocamlgraph
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/external/ocamlgraph'
+- Makefile:597: .depend: No such file or directory
+- sed -e s/VERSION/1.8.3/ -e s/CMA/ocamlgraph.cma/ -e s/CMXA/ocamlgraph.cmxa/ \
+- 	META.in > META
+- ocamllex src/gml.mll
+- 26 states, 827 transitions, table size 3464 bytes
+- 2623 additional bytes used for bindings
+- rm -f src/version.ml
+- echo "let version = \""1.8.3"\"" > src/version.ml
+- echo "let date = \""`date`"\"" >> src/version.ml
+- ocamlyacc -v src/dot_parser.mly
+- ocamllex src/dot_lexer.mll
+- 43 states, 478 transitions, table size 2170 bytes
+- rm -f .depend
+- ocamldep -slash -I src -I lib -I editor -I view_graph -I dgraph\
+- 	lib/*.ml lib/*.mli \
+- 	src/*.ml src/*.mli \
+- 	editor/*.mli editor/*.ml \
+- 	view_graph/*.mli view_graph/*.ml \
+- 	dgraph/*.mli dgraph/*.ml > .depend
+- rm -f .depend
+- ocamldep -slash -I src -I lib -I editor -I view_graph -I dgraph\
+- 	lib/*.ml lib/*.mli \
+- 	src/*.ml src/*.mli \
+- 	editor/*.mli editor/*.ml \
+- 	view_graph/*.mli view_graph/*.ml \
+- 	dgraph/*.mli dgraph/*.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/external/ocamlgraph'
+- globals
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/globals'
+- ocamldep  -I ../commons  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/globals'
+- h_version-control
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_version-control'
+- ocamldep  -I ../commons -I ../commons/ocamlextra -I ../globals  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_version-control'
+- h_visualization
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_visualization'
+- ocamldep  -I ../commons  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_visualization'
+- h_files-format
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_files-format'
+- ocamldep  -I ../commons  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_files-format'
+- h_program-lang
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_program-lang'
+- ocamllex  archi_code_lexer.mll
+- 1101 states, 1627 transitions, table size 13114 bytes
+- ocamldep  -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_program-lang'
+- graph_code
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/graph_code'
+- ocamldep  -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/graph_code'
+- h_program-visual
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_program-visual'
+- ocamldep  -I ../commons -I ../h_visualization -I ../h_version-control -I ../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_program-visual'
+- matcher
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/matcher'
+- ocamldep  -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/matcher'
+- lang_ml/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/parsing'
+- ocamllex  lexer_ml.mll
+- 137 states, 1993 transitions, table size 8794 bytes
+- ocamlyacc -v parser_ml.mly
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/parsing'
+- lang_ml/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../globals -I ../../external/ -I ../../h_program-lang -I ../../graph_code -I ../../h_version-control -I ../../h_visualization -I ../../globals -I ../parsing -I visual  *.mli *.ml > .depend
+- set -e; for i in visual; do make -C $i depend; done 
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/analyze/visual'
+- ocamldep  -I ../../../commons -I ../../../commons/ocollection -I ../../../commons/ocamlextra -I ../../../h_program-lang -I ../../../h_version-control -I ../../../globals -I ../../../lang_ml/parsing  *.mli *.ml > .depend
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/analyze/visual'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/analyze'
+- lang_nw/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_nw/parsing'
+- ocamllex  lexer_nw.mll
+- 65 states, 1089 transitions, table size 4746 bytes
+- ocamlyacc -v parser_nw.mly
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_nw/parsing'
+- lang_nw/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_nw/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/ -I ../../h_program-lang -I ../../h_version-control -I ../../globals -I ../parsing  *.mli *.ml > .depend
+- set -e; for i in ; do make -C $i depend; done 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_nw/analyze'
+- lang_lisp/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_lisp/parsing'
+- ocamllex  lexer_lisp.mll
+- 35 states, 903 transitions, table size 3822 bytes
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_lisp/parsing'
+- lang_lisp/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_lisp/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/ -I ../../h_program-lang -I ../../h_version-control -I ../../graph_code -I ../../globals -I ../parsing  *.mli *.ml > .depend
+- set -e; for i in ; do make -C $i depend; done 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_lisp/analyze'
+- lang_haskell/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_haskell/parsing'
+- ocamllex  lexer_hs.mll
+- 43 states, 878 transitions, table size 3770 bytes
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_haskell/parsing'
+- lang_haskell/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_haskell/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/ -I ../../h_program-lang -I ../../h_version-control -I ../../globals -I ../parsing  *.mli *.ml > .depend
+- set -e; for i in ; do make -C $i depend; done 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_haskell/analyze'
+- lang_php/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/parsing'
+- ocamllex  lexer_php.mll
+- 418 states, 7523 transitions, table size 32600 bytes
+- 5526 additional bytes used for bindings
+- ocamlyacc -v parser_php.mly
+- 1 shift/reduce conflict.
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/parsing'
+- lang_php/matcher
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/matcher'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../h_program-lang -I ../../h_version-control -I ../../globals -I ../../external/ -I ../../matcher -I ../parsing  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/matcher'
+- lang_php/pretty
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/pretty'
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../lang_php/parsing  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/pretty'
+- lang_sql/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_sql/parsing'
+- ocamllex  lexer_sql.mll
+- 37 states, 568 transitions, table size 2494 bytes
+- ocamlyacc -v parser_sql.mly
+- 1 reduce/reduce conflict.
+- ocamldep  -I ../../commons -I ../../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_sql/parsing'
+- lang_js/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_js/parsing'
+- ocamllex  lexer_js.mll
+- 158 states, 2043 transitions, table size 9120 bytes
+- ocamlyacc -v parser_js.mly
+- 2 shift/reduce conflicts.
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_js/parsing'
+- lang_js/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_js/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/ -I ../../h_program-lang -I ../../h_version-control -I ../../globals -I ../parsing  *.mli *.ml > .depend
+- set -e; for i in ; do make -C $i depend; done
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_js/analyze'
+- lang_cpp/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_cpp/parsing'
+- ocamllex  lexer_cpp.mll
+- 390 states, 12797 transitions, table size 53528 bytes
+- 3405 additional bytes used for bindings
+- ocamlyacc -v parser_cpp.mly
+- 2 shift/reduce conflicts.
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_cpp/parsing'
+- lang_cpp/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_cpp/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/ -I ../../h_program-lang -I ../../h_version-control -I ../../globals -I ../parsing  *.mli *.ml > .depend
+- set -e; for i in ; do make -C $i depend; done 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_cpp/analyze'
+- lang_c/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_c/parsing'
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../lang_cpp/parsing  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_c/parsing'
+- lang_c/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_c/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/ -I ../../h_program-lang -I ../../h_version-control -I ../../graph_code -I ../../globals -I ../../lang_cpp/parsing -I ../../lang_c/parsing -I ../parsing  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_c/analyze'
+- lang_clang/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_clang/parsing'
+- ocamllex  lexer_clang.mll
+- 154 states, 7023 transitions, table size 29016 bytes
+- ocamlyacc -v parser_clang.mly
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../external/jsonwheel -I ../../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_clang/parsing'
+- lang_clang/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_clang/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/jsonwheel -I ../../h_program-lang -I ../../h_version-control -I ../../graph_code -I ../../globals -I ../../lang_cpp/parsing -I ../parsing  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_clang/analyze'
+- lang_java/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_java/parsing'
+- ocamllex  lexer_java.mll
+- 102 states, 2053 transitions, table size 8824 bytes
+- ocamlyacc -v parser_java.mly
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../h_program-lang -I ../../matcher -I ../../globals  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_java/parsing'
+- lang_java/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_java/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/ -I ../../h_program-lang -I ../../h_version-control -I ../../graph_code -I ../../globals -I ../parsing  *.mli *.ml > .depend
+- set -e; for i in ; do make -C $i depend; done 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_java/analyze'
+- lang_python/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_python/parsing'
+- ocamllex  lexer_python.mll
+- 102 states, 909 transitions, table size 4248 bytes
+- ocamlyacc -v parser_python.mly
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_python/parsing'
+- lang_python/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_python/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/ -I ../../h_program-lang -I ../../h_version-control -I ../../globals -I ../parsing  *.mli *.ml > .depend
+- set -e; for i in ; do make -C $i depend; done 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_python/analyze'
+- lang_csharp/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_csharp/parsing'
+- ocamllex  lexer_csharp.mll
+- 122 states, 835 transitions, table size 4072 bytes
+- ocamlyacc -v parser_csharp.mly
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_csharp/parsing'
+- lang_csharp/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_csharp/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/ -I ../../h_program-lang -I ../../h_version-control -I ../../globals -I ../parsing  *.mli *.ml > .depend
+- set -e; for i in ; do make -C $i depend; done 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_csharp/analyze'
+- lang_rust/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_rust/parsing'
+- ocamllex  lexer_rust.mll
+- 73 states, 718 transitions, table size 3310 bytes
+- ocamlyacc -v parser_rust.mly
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_rust/parsing'
+- lang_rust/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_rust/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/ -I ../../h_program-lang -I ../../h_version-control -I ../../globals -I ../parsing  *.mli *.ml > .depend
+- set -e; for i in ; do make -C $i depend; done 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_rust/analyze'
+- lang_opa/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_opa/parsing'
+- ocamllex  lexer_opa.mll
+- 138 states, 2629 transitions, table size 11344 bytes
+- 2176 additional bytes used for bindings
+- ocamlyacc -v parser_opa.mly
+- 4 shift/reduce conflicts.
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_opa/parsing'
+- lang_opa/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_opa/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/ -I ../../h_program-lang -I ../../h_version-control -I ../../globals -I ../parsing  *.mli *.ml > .depend
+- set -e; for i in ; do make -C $i depend; done 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_opa/analyze'
+- lang_erlang/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_erlang/parsing'
+- ocamllex  lexer_erlang.mll
+- 60 states, 769 transitions, table size 3436 bytes
+- ocamlyacc -v parser_erlang.mly
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_erlang/parsing'
+- lang_erlang/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_erlang/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/ -I ../../h_program-lang -I ../../h_version-control -I ../../globals -I ../parsing  *.mli *.ml > .depend
+- set -e; for i in ; do make -C $i depend; done 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_erlang/analyze'
+- lang_php/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/jsonwheel -I ../../h_program-lang -I ../../h_version-control -I ../../globals -I ../../matcher -I ../parsing -I foundation -I checker -I tools -I qa_test  *.mli *.ml > .depend
+- set -e; for i in foundation tools checker qa_test visual ; do make -C $i depend; done
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/foundation'
+- ocamldep  -I ../../../commons -I ../../../commons/ocollection -I ../../../commons/ocamlextra -I ../../../external/jsonwheel -I ../../../h_program-lang -I ../../../h_version-control -I ../../../graph_code -I ../../../globals -I ../../../matcher -I ../../../lang_php/parsing -I ../../../lang_ml/parsing  *.mli *.ml > .depend
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/foundation'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/tools'
+- ocamldep -pp camlp4o -I ../../../commons -I ../../../commons/ocollection -I ../../../commons/ocamlextra -I ../../../external/jsonwheel -I ../../../h_program-lang -I ../../../h_version-control -I ../../parsing -I ../foundation  *.mli *.ml > .depend
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/tools'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/checker'
+- ocamldep  -I ../../../commons -I ../../../commons/ocollection -I ../../../commons/ocamlextra -I ../../../external/ -I ../../../h_program-lang -I ../../../h_version-control -I ../../../graph_code -I ../../../globals -I ../../parsing -I .. -I ../foundation  *.mli *.ml > .depend
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/checker'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/qa_test'
+- ocamldep  -I ../../../commons -I ../../../commons/ocollection -I ../../../commons/ocamlextra -I ../../../external/jsonwheel -I ../../../h_program-lang -I ../../../h_version-control -I ../../parsing -I .. -I ../foundation -I ../tools -I ../../../globals  *.mli *.ml > .depend
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/qa_test'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/visual'
+- ocamldep  -I ../../../commons -I ../../../commons/ocollection -I ../../../commons/ocamlextra -I ../../../h_program-lang -I ../../../h_version-control -I ../../../globals -I ../../../lang_php/parsing -I ../foundation  *.mli *.ml > .depend
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/visual'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze'
+- lang_php/analyze/foundation
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/foundation'
+- ocamldep  -I ../../../commons -I ../../../commons/ocollection -I ../../../commons/ocamlextra -I ../../../external/jsonwheel -I ../../../h_program-lang -I ../../../h_version-control -I ../../../graph_code -I ../../../globals -I ../../../matcher -I ../../../lang_php/parsing -I ../../../lang_ml/parsing  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/foundation'
+- lang_php/analyze/checker
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/checker'
+- ocamldep  -I ../../../commons -I ../../../commons/ocollection -I ../../../commons/ocamlextra -I ../../../external/ -I ../../../h_program-lang -I ../../../h_version-control -I ../../../graph_code -I ../../../globals -I ../../parsing -I .. -I ../foundation  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/checker'
+- lang_php/analyze/tools
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/tools'
+- ocamldep -pp camlp4o -I ../../../commons -I ../../../commons/ocollection -I ../../../commons/ocamlextra -I ../../../external/jsonwheel -I ../../../h_program-lang -I ../../../h_version-control -I ../../parsing -I ../foundation  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/tools'
+- lang_php/analyze/qa_test
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/qa_test'
+- ocamldep  -I ../../../commons -I ../../../commons/ocollection -I ../../../commons/ocamlextra -I ../../../external/jsonwheel -I ../../../h_program-lang -I ../../../h_version-control -I ../../parsing -I .. -I ../foundation -I ../tools -I ../../../globals  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_php/analyze/qa_test'
+- lang_html/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_html/parsing'
+- ocamllex  lexer_html.mll
+- 57 states, 1087 transitions, table size 4690 bytes
+- ocamlyacc -v parser_html.mly
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_html/parsing'
+- lang_html/analyze
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_html/analyze'
+- ocamldep  -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../external/ -I ../../h_program-lang -I ../../globals -I ../parsing  *.mli *.ml > .depend
+- set -e; for i in ; do make -C $i depend; done 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_html/analyze'
+- lang_css/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_css/parsing'
+- ocamllex  lexer_css.mll
+- 130 states, 1823 transitions, table size 8072 bytes
+- ocamlyacc -v parser_css.mly
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_css/parsing'
+- lang_web/parsing
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_web/parsing'
+- ocamldep  -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../lang_html/parsing -I ../../lang_js/parsing -I ../../lang_css/parsing  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_web/parsing'
+- lang_text
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_text'
+- ocamldep  -I ../commons -I ../commons/ocamlextra -I ../globals -I ../h_program-lang  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_text'
+- mini
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/mini'
+- ocamldep  -I ../commons -I ../commons/ocamlextra -I ../globals -I ../h_program-lang -I ../lang_cpp/parsing -I ../lang_c/parsing  *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/mini'
+- demos
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/demos'
+- ocamldep -I ../commons -I ../h_program-lang -I ../lang_php/parsing -I ../h_version-control *.mli *.ml > .depend
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/demos'
+Processing  1/2: [pfff: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29)
+- make rec
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29'
+- make -C commons
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons'
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/dumper.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/dumper.ml
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/dumper.ml", line 81, characters 16-25:
+- Warning 3: deprecated: Obj.final_tag
+- Replaced by custom_tag.
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/ANSITerminal.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/ANSITerminal.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/set_poly.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/set_poly.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/map_poly.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/map_poly.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/setPt.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c common.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c common.ml
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/common.ml", line 252, characters 16-25:
+- Warning 3: deprecated: Obj.final_tag
+- Replaced by custom_tag.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/common.ml", line 841, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c common2.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c common2.ml
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/common2.ml", line 329, characters 16-25:
+- Warning 3: deprecated: Obj.final_tag
+- Replaced by custom_tag.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/common2.ml", line 1918, characters 16-32:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/common2.ml", line 3006, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c console.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c console.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c interfaces.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c objet.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c objet.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c int.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c seti.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c oset.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c oset.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c oassoc.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c oassoc.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c osequence.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c osequence.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ograph.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ograph.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection/oseti.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection/oseth.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection/osetb.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection/osetpt.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection/oassocb.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection/oassoch.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection/oassoc_buffer.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection/oassoc_buffer.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection/oassoc_cache.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection/oassoc_cache.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection/oassocid.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c oarray.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c oarray.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection/ograph2way.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocollection/ograph2way.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ograph_extended.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ograph_extended.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ograph_simple.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ograph_simple.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ofullcommon.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c math.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c math.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c unicode.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c unicode.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c file_type.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c file_type.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c file_format.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c file_format.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c parser_combinators.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c parser_combinators.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c concurrency.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c parallel.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c parallel.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/enum.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/enum.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/dynArray.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/dynArray.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/suffix_tree.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/suffix_tree.ml
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/suffix_tree.ml", line 52, characters 13-14:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/suffix_tree.ml", line 83, characters 19-20:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/suffix_tree.ml", line 182, characters 30-32:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/suffix_tree.ml", line 255, characters 15-16:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/suffix_tree.ml", line 255, characters 24-25:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/suffix_tree_ext.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/suffix_tree_ext.ml
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/suffix_tree_ext.ml", line 52, characters 13-14:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/suffix_tree_ext.ml", line 83, characters 19-20:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/suffix_tree_ext.ml", line 182, characters 30-32:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/suffix_tree_ext.ml", line 272, characters 15-16:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/suffix_tree_ext.ml", line 272, characters 24-25:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/graph_ocamldot.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/graph_ocamldot.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/pretty_printer_indent.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/pretty_printer_indent.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/oUnit.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/oUnit.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/xML2.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/xML2.ml
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/xML2.ml", line 218, characters 31-47:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/xML2.ml", line 237, characters 32-48:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/ocamlextra/xML2.ml", line 236, characters 36-52:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/xHTML2.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocamlextra/xHTML2.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c logger.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c logger.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocaml.mli
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c ocaml.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection  -c ocamlextra/realpath.c -o realpath.o
+- ocamlmklib -o lib  ocamlextra/dumper.cmo ocamlextra/ANSITerminal.cmo ocamlextra/set_poly.cmo ocamlextra/map_poly.cmo ocamlextra/setPt.cmo common.cmo common2.cmo console.cmo interfaces.cmo objet.cmo int.cmo ocollection.cmo seti.cmo oset.cmo oassoc.cmo osequence.cmo ograph.cmo ocollection/oseti.cmo ocollection/oseth.cmo ocollection/osetb.cmo ocollection/osetpt.cmo ocollection/oassocb.cmo ocollection/oassoch.cmo ocollection/oassoc_buffer.cmo ocollection/oassoc_cache.cmo ocollection/oassocid.cmo oarray.cmo ocollection/ograph2way.cmo ograph_extended.cmo ograph_simple.cmo ofullcommon.cmo math.cmo unicode.cmo file_type.cmo file_format.cmo parser_combinators.cmo concurrency.cmo parallel.cmo ocamlextra/enum.cmo ocamlextra/dynArray.cmo ocamlextra/suffix_tree.cmo ocamlextra/suffix_tree_ext.cmo ocamlextra/graph_ocamldot.cmo ocamlextra/pretty_printer_indent.cmo ocamlextra/oUnit.cmo ocamlextra/xML2.cmo ocamlextra/xHTML2.cmo logger.cmo ocaml.cmo realpath.o
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons'
+- make all -C external/ocamlgraph && make -C commons/graph
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/external/ocamlgraph'
+- ocamlc -c -I src -I lib -g -dtypes src/sig.mli
+- ocamlc -c -I src -I lib -g -dtypes src/sig_pack.mli
+- ocamlc -c -I src -I lib -g -dtypes src/dot_ast.mli
+- ocamlc -c -I src -I lib -g -dtypes lib/unionfind.mli
+- ocamlc -c -I src -I lib -g -dtypes lib/unionfind.ml
+- ocamlc -c -I src -I lib -g -dtypes lib/heap.mli
+- ocamlc -c -I src -I lib -g -dtypes lib/heap.ml
+- File "lib/heap.ml", line 54, characters 13-25:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/heap.ml", line 61, characters 16-28:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- ocamlc -c -I src -I lib -g -dtypes lib/bitv.mli
+- ocamlc -c -I src -I lib -g -dtypes lib/bitv.ml
+- File "lib/bitv.ml", line 51, characters 15-27:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 68, characters 25-37:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 71, characters 12-24:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 113, characters 11-13:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 118, characters 11-13:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 205, characters 13-15:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 205, characters 25-27:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 206, characters 13-15:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 206, characters 25-27:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 214, characters 13-15:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 214, characters 24-26:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 289, characters 13-15:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 289, characters 24-26:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 368, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 380, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 392, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 401, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 464, characters 27-39:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlc -c -I src -I lib -g -dtypes src/version.ml
+- ocamlc -c -I src -I lib -g -dtypes src/util.mli
+- ocamlc -c -I src -I lib -g -dtypes src/util.ml
+- ocamlc -c -I src -I lib -g -dtypes src/blocks.ml
+- ocamlc -c -I src -I lib -g -dtypes src/persistent.mli
+- ocamlc -c -I src -I lib -g -dtypes src/persistent.ml
+- ocamlc -c -I src -I lib -g -dtypes src/imperative.mli
+- ocamlc -c -I src -I lib -g -dtypes src/imperative.ml
+- ocamlc -c -I src -I lib -g -dtypes src/delaunay.mli
+- ocamlc -c -I src -I lib -g -dtypes src/delaunay.ml
+- File "src/delaunay.ml", line 260, characters 19-31:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- ocamlc -c -I src -I lib -g -dtypes src/builder.mli
+- ocamlc -c -I src -I lib -g -dtypes src/builder.ml
+- ocamlc -c -I src -I lib -g -dtypes src/classic.mli
+- ocamlc -c -I src -I lib -g -dtypes src/classic.ml
+- ocamlc -c -I src -I lib -g -dtypes src/rand.mli
+- ocamlc -c -I src -I lib -g -dtypes src/rand.ml
+- ocamlc -c -I src -I lib -g -dtypes src/oper.mli
+- ocamlc -c -I src -I lib -g -dtypes src/oper.ml
+- ocamlc -c -I src -I lib -g -dtypes src/components.mli
+- ocamlc -c -I src -I lib -g -dtypes src/components.ml
+- ocamlc -c -I src -I lib -g -dtypes src/path.mli
+- ocamlc -c -I src -I lib -g -dtypes src/path.ml
+- ocamlc -c -I src -I lib -g -dtypes src/nonnegative.mli
+- ocamlc -c -I src -I lib -g -dtypes src/nonnegative.ml
+- ocamlc -c -I src -I lib -g -dtypes src/traverse.mli
+- ocamlc -c -I src -I lib -g -dtypes src/traverse.ml
+- ocamlc -c -I src -I lib -g -dtypes src/coloring.mli
+- ocamlc -c -I src -I lib -g -dtypes src/coloring.ml
+- ocamlc -c -I src -I lib -g -dtypes src/topological.mli
+- ocamlc -c -I src -I lib -g -dtypes src/topological.ml
+- ocamlc -c -I src -I lib -g -dtypes src/kruskal.mli
+- ocamlc -c -I src -I lib -g -dtypes src/kruskal.ml
+- ocamlc -c -I src -I lib -g -dtypes src/flow.mli
+- ocamlc -c -I src -I lib -g -dtypes src/flow.ml
+- ocamlc -c -I src -I lib -g -dtypes src/dominator.mli
+- ocamlc -c -I src -I lib -g -dtypes src/dominator.ml
+- ocamlc -c -I src -I lib -g -dtypes src/graphviz.mli
+- ocamlc -c -I src -I lib -g -dtypes src/graphviz.ml
+- ocamlc -c -I src -I lib -g -dtypes src/gml.mli
+- ocamlc -c -I src -I lib -g -dtypes src/gml.ml
+- ocamlc -c -I src -I lib -g -dtypes src/dot_parser.mli
+- ocamlc -c -I src -I lib -g -dtypes src/dot_parser.ml
+- ocamlc -c -I src -I lib -g -dtypes src/dot_lexer.ml
+- File "src/dot_lexer.mll", line 39, characters 21-37:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlc -c -I src -I lib -g -dtypes src/dot.mli
+- ocamlc -c -I src -I lib -g -dtypes src/dot.ml
+- ocamlc -c -I src -I lib -g -dtypes src/pack.mli
+- ocamlc -c -I src -I lib -g -dtypes src/pack.ml
+- ocamlc -c -I src -I lib -g -dtypes src/gmap.mli
+- ocamlc -c -I src -I lib -g -dtypes src/gmap.ml
+- ocamlc -c -I src -I lib -g -dtypes src/minsep.mli
+- ocamlc -c -I src -I lib -g -dtypes src/minsep.ml
+- ocamlc -c -I src -I lib -g -dtypes src/cliquetree.mli
+- ocamlc -c -I src -I lib -g -dtypes src/cliquetree.ml
+- ocamlc -c -I src -I lib -g -dtypes src/mcs_m.mli
+- ocamlc -c -I src -I lib -g -dtypes src/mcs_m.ml
+- ocamlc -c -I src -I lib -g -dtypes src/md.mli
+- ocamlc -c -I src -I lib -g -dtypes src/md.ml
+- ocamlc -c -I src -I lib -g -dtypes src/strat.mli
+- ocamlc -c -I src -I lib -g -dtypes src/strat.ml
+- ocamlc -c -I src -I lib -g -dtypes src/fixpoint.mli
+- ocamlc -c -I src -I lib -g -dtypes src/fixpoint.ml
+- ocamlc -c -I src -I lib -g -dtypes src/leaderlist.mli
+- ocamlc -c -I src -I lib -g -dtypes src/leaderlist.ml
+- ocamlc -c -I src -I lib -g -dtypes src/contraction.mli
+- ocamlc -c -I src -I lib -g -dtypes src/contraction.ml
+- ocamlc -c -I src -I lib -g -dtypes src/graphml.mli
+- ocamlc -c -I src -I lib -g -dtypes src/graphml.ml
+- ocamlc -c -I src -I lib -g -dtypes src/merge.mli
+- ocamlc -c -I src -I lib -g -dtypes src/merge.ml
+- ocamlc -I src -I lib -pack -o ocamlgraph.cmo src/sig.cmi src/sig_pack.cmi src/dot_ast.cmi lib/unionfind.cmo lib/heap.cmo lib/bitv.cmo src/version.cmo src/util.cmo src/blocks.cmo src/persistent.cmo src/imperative.cmo src/delaunay.cmo src/builder.cmo src/classic.cmo src/rand.cmo src/oper.cmo src/components.cmo src/path.cmo src/nonnegative.cmo src/traverse.cmo src/coloring.cmo src/topological.cmo src/kruskal.cmo src/flow.cmo src/dominator.cmo src/graphviz.cmo src/gml.cmo src/dot_parser.cmo src/dot_lexer.cmo src/dot.cmo src/pack.cmo src/gmap.cmo src/minsep.cmo src/cliquetree.cmo src/mcs_m.cmo src/md.cmo src/strat.cmo src/fixpoint.cmo src/leaderlist.cmo src/contraction.cmo src/graphml.cmo src/merge.cmo
+- ocamlc -I src -I lib -a -g -o ocamlgraph.cma ocamlgraph.cmo
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  lib/unionfind.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  lib/heap.ml
+- File "lib/heap.ml", line 54, characters 13-25:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/heap.ml", line 61, characters 16-28:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  lib/bitv.ml
+- File "lib/bitv.ml", line 51, characters 15-27:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 68, characters 25-37:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 71, characters 12-24:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 113, characters 11-13:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 118, characters 11-13:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 205, characters 13-15:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 205, characters 25-27:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 206, characters 13-15:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 206, characters 25-27:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 214, characters 13-15:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 214, characters 24-26:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 289, characters 13-15:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 289, characters 24-26:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "lib/bitv.ml", line 368, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 380, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 392, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 401, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/bitv.ml", line 464, characters 27-39:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/version.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/util.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/blocks.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/persistent.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/imperative.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/delaunay.ml
+- File "src/delaunay.ml", line 260, characters 19-31:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/builder.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/classic.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/rand.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/oper.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/components.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/path.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/nonnegative.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/traverse.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/coloring.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/topological.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/kruskal.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/flow.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/dominator.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/graphviz.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/gml.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/dot_parser.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/dot_lexer.ml
+- File "src/dot_lexer.mll", line 39, characters 21-37:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/dot.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/pack.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/gmap.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/minsep.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/cliquetree.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/mcs_m.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/md.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/strat.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/fixpoint.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/leaderlist.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/contraction.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/graphml.ml
+- ocamlopt -c -I src -I lib -for-pack Ocamlgraph  src/merge.ml
+- ocamlopt -I src -I lib -pack -o ocamlgraph.cmx src/sig.cmi src/sig_pack.cmi src/dot_ast.cmi lib/unionfind.cmx lib/heap.cmx lib/bitv.cmx src/version.cmx src/util.cmx src/blocks.cmx src/persistent.cmx src/imperative.cmx src/delaunay.cmx src/builder.cmx src/classic.cmx src/rand.cmx src/oper.cmx src/components.cmx src/path.cmx src/nonnegative.cmx src/traverse.cmx src/coloring.cmx src/topological.cmx src/kruskal.cmx src/flow.cmx src/dominator.cmx src/graphviz.cmx src/gml.cmx src/dot_parser.cmx src/dot_lexer.cmx src/dot.cmx src/pack.cmx src/gmap.cmx src/minsep.cmx src/cliquetree.cmx src/mcs_m.cmx src/md.cmx src/strat.cmx src/fixpoint.cmx src/leaderlist.cmx src/contraction.cmx src/graphml.cmx src/merge.cmx
+- ocamlopt -I src -I lib -a -g -o ocamlgraph.cmxa ocamlgraph.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/external/ocamlgraph'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/graph'
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../external/ocamlgraph/ -I ../../external/ocamlgraph/src   -c graph.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../external/ocamlgraph/ -I ../../external/ocamlgraph/src   -c graph.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../external/ocamlgraph/ -I ../../external/ocamlgraph/src  -a -o lib.cma graph.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/graph'
+- make features -C commons
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons'
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection   -c features.ml
+- ocamlc.opt -g -dtypes -bin-annot -absname -thread -w +9 -I ocamlextra -I ocollection  -a -o commons_features.cma features.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons'
+- set -e; for i in commons commons/graph external/jsonwheel external/ocamlgraph       globals h_version-control h_visualization h_files-format h_program-lang graph_code h_program-visual matcher lang_ml/parsing lang_ml/analyze  lang_nw/parsing lang_nw/analyze lang_lisp/parsing lang_lisp/analyze lang_haskell/parsing lang_haskell/analyze lang_php/parsing lang_php/matcher lang_php/pretty lang_sql/parsing lang_js/parsing lang_js/analyze lang_cpp/parsing lang_cpp/analyze lang_c/parsing lang_c/analyze lang_clang/parsing lang_clang/analyze lang_java/parsing lang_java/analyze  lang_python/parsing lang_python/analyze lang_csharp/parsing lang_csharp/analyze lang_rust/parsing lang_rust/analyze lang_opa/parsing lang_opa/analyze lang_erlang/parsing lang_erlang/analyze lang_php/analyze lang_php/analyze/foundation lang_php/analyze/checker lang_php/analyze/tools lang_php/analyze/qa_test lang_html/parsing lang_html/analyze lang_css/parsing lang_web/parsing lang_text mini  demos; do make -C $i all || exit 1; done
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons'
+- make[2]: Nothing to be done for 'all'.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/graph'
+- make[2]: Nothing to be done for 'all'.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/commons/graph'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/external/jsonwheel'
+- ocamlc -g -dtypes      -thread -c json_type.mli
+- ocamlc -g -dtypes      -thread -c json_type.ml
+- ocamlc -g -dtypes      -thread -c json_out.ml
+- ocamlc -g -dtypes      -thread -c netconversion2.ml
+- ocamlc -g -dtypes      -thread -c json_parser.mli
+- ocamlc -g -dtypes      -thread -c json_parser.ml
+- ocamlc -g -dtypes      -thread -c json_lexer.ml
+- ocamlc -g -dtypes      -thread -c json_in.ml
+- ocamlc -g -dtypes      -thread -c json_io.mli
+- ocamlc -g -dtypes      -thread -c json_io.ml
+- ocamlc -g -dtypes      -thread -a -o lib.cma json_type.cmo json_out.cmo netconversion2.cmo json_parser.cmo json_lexer.cmo json_in.cmo json_io.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/external/jsonwheel'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/external/ocamlgraph'
+- make[2]: Nothing to be done for 'all'.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/external/ocamlgraph'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/globals'
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c config_pfff.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons  -a -o lib.cma config_pfff.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/globals'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_version-control'
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c flag_version_control.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c patch.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c patch.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c lib_vcs.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c lib_vcs.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c version_control.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c version_control.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c git.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c git.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c cvs.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c cvs.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c mercurial.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c mercurial.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c generic_vcs.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c generic_vcs.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c test_version_control.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c test_version_control.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c unit_version_control.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c unit_version_control.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c subversion.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c subversion.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals  -a -o lib.cma flag_version_control.cmo patch.cmo lib_vcs.cmo version_control.cmo git.cmo cvs.cmo mercurial.cmo generic_vcs.cmo test_version_control.cmo unit_version_control.cmo subversion.cmo
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals   -c main_vcs.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../globals  -custom -o vcs nums.cma bigarray.cma str.cma unix.cma ../commons/lib.cma ../globals/lib.cma flag_version_control.cmo patch.cmo lib_vcs.cmo version_control.cmo git.cmo cvs.cmo mercurial.cmo generic_vcs.cmo test_version_control.cmo unit_version_control.cmo subversion.cmo main_vcs.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_version-control'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_visualization'
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c figures.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c figures.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c simple_color.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c simple_color.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c plot_jgraph.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c plot_jgraph.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c treemap.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c treemap.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c gnuplot.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c gnuplot.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c html.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c html.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c latex.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c latex.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons  -a -o lib.cma figures.cmo simple_color.cmo plot_jgraph.cmo treemap.cmo gnuplot.cmo html.cmo latex.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_visualization'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_files-format'
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c outline.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c outline.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c simple_format.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c simple_format.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c source_tree.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons   -c source_tree.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons  -a -o lib.cma outline.cmo simple_format.cmo source_tree.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_files-format'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_program-lang'
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c entity_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c entity_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c scope_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c scope_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c parse_info.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c parse_info.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c comment_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c comment_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c ast_fuzzy.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c ast_fuzzy.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c meta_ast_generic.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c meta_ast_generic.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c highlight_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c highlight_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c archi_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c archi_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c archi_code_lexer.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c archi_code_parse.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c archi_code_parse.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c skip_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c skip_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c refactoring_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c refactoring_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c database_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c database_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c prolog_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c prolog_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c datalog_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c datalog_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c layer_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c layer_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c tags_file.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c tags_file.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c errors_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c errors_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c layer_parse_errors.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c layer_parse_errors.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c coverage_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c coverage_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c layer_coverage.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c layer_coverage.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c overlay_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c overlay_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c big_grep.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c big_grep.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c pleac.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c pleac.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c info_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c info_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c pretty_print_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c test_program_lang.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c test_program_lang.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c unit_program_lang.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format   -c unit_program_lang.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocamlextra -I ../external/jsonwheel -I ../h_files-format  -a -o lib.cma entity_code.cmo scope_code.cmo parse_info.cmo comment_code.cmo ast_fuzzy.cmo meta_ast_generic.cmo highlight_code.cmo archi_code.cmo archi_code_lexer.cmo archi_code_parse.cmo skip_code.cmo refactoring_code.cmo database_code.cmo prolog_code.cmo datalog_code.cmo layer_code.cmo tags_file.cmo errors_code.cmo layer_parse_errors.cmo coverage_code.cmo layer_coverage.cmo overlay_code.cmo big_grep.cmo pleac.cmo info_code.cmo pretty_print_code.cmo test_program_lang.cmo unit_program_lang.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_program-lang'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/graph_code'
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_opti.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_opti.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c dependencies_matrix_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c dependencies_matrix_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c dependencies_matrix_build.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c dependencies_matrix_build.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_tags.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_tags.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_database.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_database.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_prolog.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_prolog.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_class_analysis.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_class_analysis.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_helpers.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_helpers.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_checker.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c graph_code_checker.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c layer_graph_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c layer_graph_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c test_graph_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c test_graph_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c unit_graph_code.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang   -c unit_graph_code.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/graph -I ../commons/ocamlextra -I ../external/ocamlgraph -I ../external/ocamlgraph/src -I ../h_program-lang  -a -o lib.cma graph_code.cmo graph_code_opti.cmo dependencies_matrix_code.cmo dependencies_matrix_build.cmo graph_code_tags.cmo graph_code_database.cmo graph_code_prolog.cmo graph_code_class_analysis.cmo graph_code_helpers.cmo graph_code_checker.cmo layer_graph_code.cmo test_graph_code.cmo unit_graph_code.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/graph_code'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_program-visual'
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../h_visualization -I ../h_version-control -I ../h_program-lang   -c flag_program_visual.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../h_visualization -I ../h_version-control -I ../h_program-lang   -c treemap_pl.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../h_visualization -I ../h_version-control -I ../h_program-lang   -c treemap_pl.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../h_visualization -I ../h_version-control -I ../h_program-lang   -c layer_archi.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../h_visualization -I ../h_version-control -I ../h_program-lang   -c layer_archi.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../h_visualization -I ../h_version-control -I ../h_program-lang   -c layer_vcs.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../h_visualization -I ../h_version-control -I ../h_program-lang   -c layer_vcs.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../h_visualization -I ../h_version-control -I ../h_program-lang   -c test_program_visual.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../h_visualization -I ../h_version-control -I ../h_program-lang   -c test_program_visual.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../h_visualization -I ../h_version-control -I ../h_program-lang  -a -o lib.cma flag_program_visual.cmo treemap_pl.cmo layer_archi.cmo layer_vcs.cmo test_program_visual.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/h_program-visual'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/matcher'
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c flag_matcher.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c parse_fuzzy.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c parse_fuzzy.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c matching_report.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c matching_report.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c lib_unparser.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c lib_unparser.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c metavars_fuzzy.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c metavars_fuzzy.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c fuzzy_vs_fuzzy.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c fuzzy_vs_fuzzy.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c matching_fuzzy.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c matching_fuzzy.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c transforming_fuzzy.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c transforming_fuzzy.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c sgrep_fuzzy.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c sgrep_fuzzy.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c spatch_fuzzy.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c spatch_fuzzy.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c unit_matcher.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/   -c unit_matcher.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../commons -I ../commons/ocollection -I ../commons/ocamlextra -I ../h_program-lang -I ../h_version-control -I ../globals -I ../external/  -a -o lib.cma flag_matcher.cmo parse_fuzzy.cmo matching_report.cmo lib_unparser.cmo metavars_fuzzy.cmo fuzzy_vs_fuzzy.cmo matching_fuzzy.cmo transforming_fuzzy.cmo sgrep_fuzzy.cmo spatch_fuzzy.cmo unit_matcher.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/matcher'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/parsing'
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c flag_parsing_ml.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c ast_ml.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c meta_ast_ml.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c meta_ast_ml.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c visitor_ml.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher  -w y -c visitor_ml.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c lib_parsing_ml.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c lib_parsing_ml.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c parser_ml.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c parser_ml.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c lexer_ml.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c token_helpers_ml.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c token_helpers_ml.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c parse_ml.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c parse_ml.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c test_parsing_ml.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c test_parsing_ml.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c unit_parsing_ml.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher   -c unit_parsing_ml.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocamlextra -I ../../globals -I ../../h_program-lang -I ../../matcher  -a -o lib.cma flag_parsing_ml.cmo ast_ml.cmo meta_ast_ml.cmo visitor_ml.cmo lib_parsing_ml.cmo parser_ml.cmo lexer_ml.cmo token_helpers_ml.cmo parse_ml.cmo test_parsing_ml.cmo unit_parsing_ml.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/parsing'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/analyze'
+- set -e; for i in visual; do make -C $i all || exit 1; done 
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/analyze/visual'
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../../commons -I ../../../commons/ocollection -I ../../../commons/ocamlextra -I ../../../h_program-lang -I ../../../h_version-control -I ../../../globals -I ../../../lang_ml/parsing   -c highlight_ml.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../../commons -I ../../../commons/ocollection -I ../../../commons/ocamlextra -I ../../../h_program-lang -I ../../../h_version-control -I ../../../globals -I ../../../lang_ml/parsing   -c highlight_ml.ml
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../../commons -I ../../../commons/ocollection -I ../../../commons/ocamlextra -I ../../../h_program-lang -I ../../../h_version-control -I ../../../globals -I ../../../lang_ml/parsing  -a -o lib.cma highlight_ml.cmo
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/analyze/visual'
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../globals -I ../../external/ -I ../../h_program-lang -I ../../graph_code -I ../../h_version-control -I ../../h_visualization -I ../../globals -I ../parsing -I visual   -c module_ml.mli
+- ocamlc.opt -g -thread -dtypes -w +A-4-29-6-45-41-44-48 -warn-error +a  -bin-annot -absname   -I ../../commons -I ../../commons/ocollection -I ../../commons/ocamlextra -I ../../globals -I ../../external/ -I ../../h_program-lang -I ../../graph_code -I ../../h_version-control -I ../../h_visualization -I ../../globals -I ../parsing -I visual   -c module_ml.ml
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/analyze/module_ml.ml", line 20, characters 20-37:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/analyze/module_ml.ml", line 1:
+- Error: Some fatal warnings were triggered (1 occurrences)
+- ../../Makefile.common:136: recipe for target 'module_ml.cmo' failed
+- make[2]: *** [module_ml.cmo] Error 2
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/analyze'
+- Makefile:294: recipe for target 'rec' failed
+- make[1]: *** [rec] Error 1
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29'
+- Makefile:285: recipe for target 'all' failed
+- make: *** [all] Error 2
+[ERROR] The compilation of pfff failed at "make".
+
+#=== ERROR while compiling pfff.0.29 ==========================================#
+# command              make
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29
+# exit-code            2
+# env-file             /home/opam/.opam/log/pfff-1-865888.env
+# output-file          /home/opam/.opam/log/pfff-1-865888.out
+### output ###
+# [...]
+# Warning 3: deprecated: String.capitalize
+# Use String.capitalize_ascii instead.
+# File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/analyze/module_ml.ml", line 1:
+# Error: Some fatal warnings were triggered (1 occurrences)
+# ../../Makefile.common:136: recipe for target 'module_ml.cmo' failed
+# make[2]: *** [module_ml.cmo] Error 2
+# make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29/lang_ml/analyze'
+# Makefile:294: recipe for target 'rec' failed
+# make[1]: *** [rec] Error 1
+# make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29'
+# Makefile:285: recipe for target 'all' failed
+# make: *** [all] Error 2
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build pfff 0.29
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 pfff' failed.
+[2016-12-22 17:07.39] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "pfff" exited with status 4
