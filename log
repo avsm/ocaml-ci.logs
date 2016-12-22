@@ -1,0 +1,86 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ocaml-buddy /home/opam/opam-repository/cache
+[2016-12-22 16:20.03] Starting...
+[2016-12-22 16:20.03] Waiting for free pool slot to run
+[2016-12-22 18:04.31] Pool slot obtained, starting run
+[2016-12-22 18:04.31] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ocaml-buddy
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libbdd-dev
+#  - m4
+# The following new OS packages need to be installed: libbdd-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libbdd-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libbdd0c2.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libbdd0c2_2.4-11_amd64.deb ...
+Unpacking libbdd0c2 (2.4-11) ...
+Selecting previously unselected package libbdd-dev.
+Preparing to unpack .../libbdd-dev_2.4-11_amd64.deb ...
+Unpacking libbdd-dev (2.4-11) ...
+Setting up libbdd0c2 (2.4-11) ...
+Setting up libbdd-dev (2.4-11) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocaml-buddy 0.6.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ocaml-buddy.0.6.1: dl]
+[ocaml-buddy.0.6.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocaml-buddy: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocaml-buddy.0.6.1)
+- ocamlbuild -classic-display -use-ocamlfind buddy.cma
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamlc -cc gcc -ccopt -fPIC -c libbuddy_stubs.c
+- + ocamlfind ocamlc -cc gcc -ccopt -fPIC -c libbuddy_stubs.c
+- libbuddy_stubs.c: In function 'stream_of_channel':
+- libbuddy_stubs.c:149:5: warning: implicit declaration of function 'caml_failwith' [-Wimplicit-function-declaration]
+-      caml_failwith("failed to duplicate caml channel");
+-      ^
+- libbuddy_stubs.c: In function 'wrapper_bdd_save':
+- libbuddy_stubs.c:239:5: warning: implicit declaration of function 'caml_raise_constant' [-Wimplicit-function-declaration]
+-      caml_raise_constant(*caml_named_value("buddy_exn_IOError"));
+-      ^
+- ocamlfind ocamlmklib -o buddy_stubs -lbdd libbuddy_stubs.o
+- ocamlfind ocamldep -modules buddy.mli > buddy.mli.depends
+- ocamlfind ocamlc -c -ccopt -O9 -o buddy.cmi buddy.mli
+- ocamlfind ocamldep -modules buddy.ml > buddy.ml.depends
+- ocamlfind ocamlc -c -ccopt -O9 -o buddy.cmo buddy.ml
+- ocamlfind ocamlc -a -dllib -lbuddy_stubs buddy.cmo -o buddy.cma
+Processing  1/2: [ocaml-buddy: make opt]
++ make "opt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocaml-buddy.0.6.1)
+- ocamlbuild -classic-display -use-ocamlfind buddy.cmxa
+- ocamlfind ocamlopt -c -ccopt -O9 -o buddy.cmx buddy.ml
+- ocamlfind ocamlopt -a -cclib -lbdd -cclib -lbuddy_stubs buddy.cmx -o buddy.cmxa
+- ocamlbuild -classic-display -use-ocamlfind buddy.cmxs
+- ocamlfind ocamlopt -shared libbuddy_stubs.a buddy.cmx -o buddy.cmxs
+-> compiled  ocaml-buddy.0.6.1
+Processing  2/2: [ocaml-buddy: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocaml-buddy.0.6.1)
+- test -d //home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml || mkdir -p //home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamlfind install -ldconf ignore -patch-version 0.1 buddy META _build/buddy.cma _build/buddy.cmxa _build/libbuddy_stubs.a _build/buddy.a _build/buddy.cmi buddy.mli _build/buddy.cmx _build/dllbuddy_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/buddy/buddy.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/buddy/buddy.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/buddy/buddy.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/buddy/buddy.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/buddy/libbuddy_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/buddy/buddy.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/buddy/buddy.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/buddy/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllbuddy_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllbuddy_stubs.so.owner
+-> installed ocaml-buddy.0.6.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:04.51] Success
