@@ -1,0 +1,2084 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 frama-c-base /home/opam/opam-repository/cache
+[2016-12-22 16:19.37] Starting...
+[2016-12-22 16:19.37] Waiting for free pool slot to run
+[2016-12-22 17:48.19] Pool slot obtained, starting run
+[2016-12-22 17:48.19] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 frama-c-base
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocamlgraph   1.8.7                                  [required by frama-c-base]
+  - install frama-c-base 20161101
+       Why3 can be used by the WP plug-in for running additional automatic solvers
+       Coq can be used with the WP plug-in for proving interactively proof obligations
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [frama-c-base.20161101: dl]
+Processing  2/2: [frama-c-base.20161101: dl] [ocamlgraph.1.8.7: dl]
+[ocamlgraph.1.8.7] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [frama-c-base.20161101: dl]
+[frama-c-base.20161101] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [ocamlgraph: ./configure]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocamlgraph.1.8.7)
+- checking for ocamlc... ocamlc
+- ocaml version is 4.04.0
+- ocaml library path is /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version... ok
+- checking for ocamlc.opt... ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking ocamlc.opt version... ok
+- checking for ocamldep... ocamldep
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- checking for ocamldoc... ocamldoc
+- checking for ocamldoc.opt... ocamldoc.opt
+- checking for ocamlweb... true
+- checking for ocamlfind... ocamlfind
+- OCamlfind detected and enabled
+- ocamlfind: Package `lablgtk2' not found
+- checking for /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/lablgtk2/lablgtk.cmxa... no
+- checking Win32 platform... no
+- configure: WARNING: lablgnomecanvas not found: the graph editor and view_graph will not be compiled
+- configure: creating ./config.status
+- config.status: creating Makefile
+Processing  1/4: [ocamlgraph: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocamlgraph.1.8.7)
+- sed -e s/VERSION/1.8.7/ -e s/CMA/graph.cma/ -e s/CMXA/graph.cmxa/ \
+- 	META.in > META
+- rm -f src/version.ml
+- echo "let version = \""1.8.7"\"" > src/version.ml
+- echo "let date = \""`date`"\"" >> src/version.ml
+- rm -f .depend
+- ocamldep -slash -I src -I lib -I editor -I view_graph -I dgraph\
+- 	lib/*.ml lib/*.mli \
+- 	src/*.ml src/*.mli \
+- 	editor/*.mli editor/*.ml \
+- 	view_graph/*.mli view_graph/*.ml \
+- 	dgraph/*.mli dgraph/*.ml > .depend
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/sig.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/sig_pack.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dot_ast.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 lib/unionfind.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 lib/unionfind.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 lib/heap.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 lib/heap.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 lib/bitv.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 lib/bitv.ml
+- File "lib/bitv.ml", line 454, characters 27-39:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/version.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/util.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/util.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/blocks.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/persistent.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/persistent.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/imperative.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/imperative.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/delaunay.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/delaunay.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/builder.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/builder.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/classic.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/classic.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/rand.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/rand.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/oper.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/oper.ml
+- File "src/oper.ml", line 52, characters 2-30:
+- Warning 60: unused module H.
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/components.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/components.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/path.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/path.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/nonnegative.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/nonnegative.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/traverse.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/traverse.ml
+- File "src/traverse.ml", line 60, characters 6-26:
+- Warning 32: unused value has_cycle_undirected.
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/coloring.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/coloring.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/topological.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/topological.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/kruskal.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/kruskal.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/flow.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/flow.ml
+- File "src/flow.ml", line 46, characters 2-27:
+- Warning 60: unused module Se.
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/prim.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/prim.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dominator.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dominator.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/graphviz.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/graphviz.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/gml.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/gml.ml
+- File "src/gml.ml", line 418, characters 27-39:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "src/gml.ml", line 455, characters 27-39:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dot_parser.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dot_parser.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dot_lexer.ml
+- File "src/dot_lexer.mll", line 38, characters 21-37:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dot.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dot.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/pack.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/pack.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/gmap.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/gmap.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/minsep.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/minsep.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/cliquetree.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/cliquetree.ml
+- File "src/cliquetree.ml", line 21, characters 2-31:
+- Warning 60: unused module OVSet.
+- File "src/cliquetree.ml", line 149, characters 2-32:
+- Warning 60: unused module EdgeSet.
+- File "src/cliquetree.ml", line 150, characters 2-34:
+- Warning 60: unused module H.
+- File "src/cliquetree.ml", line 153, characters 2-32:
+- Warning 60: unused module Choose.
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/mcs_m.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/mcs_m.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/md.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/md.ml
+- File "src/md.ml", line 20, characters 2-34:
+- Warning 60: unused module VertexSet.
+- File "src/md.ml", line 22, characters 2-32:
+- Warning 60: unused module Choose.
+- File "src/md.ml", line 88, characters 2-34:
+- Warning 60: unused module VertexSet.
+- File "src/md.ml", line 90, characters 2-32:
+- Warning 60: unused module Choose.
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/strat.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/strat.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/fixpoint.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/fixpoint.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/leaderlist.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/leaderlist.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/contraction.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/contraction.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/graphml.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/graphml.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/merge.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/merge.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/mincut.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/mincut.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/clique.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/clique.ml
+- ocamlc.opt -I src -I lib -pack -g -o graph.cmo src/sig.cmi src/sig_pack.cmi src/dot_ast.cmi lib/unionfind.cmo lib/heap.cmo lib/bitv.cmo src/version.cmo src/util.cmo src/blocks.cmo src/persistent.cmo src/imperative.cmo src/delaunay.cmo src/builder.cmo src/classic.cmo src/rand.cmo src/oper.cmo src/components.cmo src/path.cmo src/nonnegative.cmo src/traverse.cmo src/coloring.cmo src/topological.cmo src/kruskal.cmo src/flow.cmo src/prim.cmo src/dominator.cmo src/graphviz.cmo src/gml.cmo src/dot_parser.cmo src/dot_lexer.cmo src/dot.cmo src/pack.cmo src/gmap.cmo src/minsep.cmo src/cliquetree.cmo src/mcs_m.cmo src/md.cmo src/strat.cmo src/fixpoint.cmo src/leaderlist.cmo src/contraction.cmo src/graphml.cmo src/merge.cmo src/mincut.cmo src/clique.cmo
+- ocamlc.opt -I src -I lib -a -g -o graph.cma graph.cmo
+- ocamlopt.opt -c -I src -I lib -for-pack Graph lib/unionfind.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph lib/heap.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph lib/bitv.ml
+- File "lib/bitv.ml", line 454, characters 27-39:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/version.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/util.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/blocks.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/persistent.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/imperative.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/delaunay.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/builder.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/classic.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/rand.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/oper.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/components.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/path.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/nonnegative.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/traverse.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/coloring.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/topological.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/kruskal.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/flow.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/prim.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/dominator.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/graphviz.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/gml.ml
+- File "src/gml.ml", line 418, characters 27-39:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "src/gml.ml", line 455, characters 27-39:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/dot_parser.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/dot_lexer.ml
+- File "src/dot_lexer.mll", line 38, characters 21-37:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/dot.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/pack.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/gmap.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/minsep.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/cliquetree.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/mcs_m.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/md.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/strat.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/fixpoint.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/leaderlist.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/contraction.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/graphml.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/merge.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/mincut.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/clique.ml
+- ocamlopt.opt -I src -I lib -pack -o graph.cmx src/sig.cmi src/sig_pack.cmi src/dot_ast.cmi lib/unionfind.cmx lib/heap.cmx lib/bitv.cmx src/version.cmx src/util.cmx src/blocks.cmx src/persistent.cmx src/imperative.cmx src/delaunay.cmx src/builder.cmx src/classic.cmx src/rand.cmx src/oper.cmx src/components.cmx src/path.cmx src/nonnegative.cmx src/traverse.cmx src/coloring.cmx src/topological.cmx src/kruskal.cmx src/flow.cmx src/prim.cmx src/dominator.cmx src/graphviz.cmx src/gml.cmx src/dot_parser.cmx src/dot_lexer.cmx src/dot.cmx src/pack.cmx src/gmap.cmx src/minsep.cmx src/cliquetree.cmx src/mcs_m.cmx src/md.cmx src/strat.cmx src/fixpoint.cmx src/leaderlist.cmx src/contraction.cmx src/graphml.cmx src/merge.cmx src/mincut.cmx src/clique.cmx
+- ocamlopt.opt -I src -I lib -a -o graph.cmxa graph.cmx
+- ocamlopt.opt -I src -I lib -shared -o graph.cmxs graph.cmx
+-> compiled  ocamlgraph.1.8.7
+Processing  2/4: [ocamlgraph: make install-findlib]
++ make "install-findlib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocamlgraph.1.8.7)
+- ocamlfind install  ocamlgraph META \
+- 	src/*.mli view_graph/*.mli dgraph/*.mli \
+- 	graph.a graph.cmx graph.cmo graph.cmi graph.cma graph.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/graph.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/graph.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/graph.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/graph.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/graph.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/graph.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/xDotDraw.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/xDot.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/dGraphViewItem.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/dGraphView.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/dGraphTreeModel.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/dGraphTreeLayout.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/dGraphSubTree.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/dGraphRandModel.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/dGraphModel.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/dGraphContainer.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/viewGraph_utils.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/viewGraph_select.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/viewGraph_core.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/util.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/traverse.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/topological.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/strat.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/sig_pack.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/sig.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/rand.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/prim.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/persistent.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/path.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/pack.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/oper.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/nonnegative.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/minsep.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/mincut.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/merge.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/md.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/mcs_m.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/leaderlist.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/kruskal.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/imperative.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/graphviz.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/graphml.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/gml.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/gmap.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/flow.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/fixpoint.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/dot_parser.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/dot_ast.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/dot.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/dominator.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/delaunay.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/contraction.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/components.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/coloring.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/cliquetree.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/clique.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/classic.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/builder.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlgraph/META
+-> installed ocamlgraph.1.8.7
+Processing  3/4: [frama-c-base: sh]
++ sh "-eux" "./run_autoconf_if_needed.sh" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101)
+- + [ ! -f configure ]
+Processing  3/4: [frama-c-base: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" "--disable-gui" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101)
+- configure: ******************
+- configure: * CONFIGURE MAKE *
+- configure: ******************
+- checking for make... make
+- checking version of make... 4.1
+- configure: *****************************
+- configure: * CONFIGURE OCAML COMPILERS *
+- configure: *****************************
+- checking for ocamlc... ocamlc
+- checking version of OCaml... 4.04.0
+- checking OCaml library path... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version and standard library... ok
+- checking for ocamlfind... ocamlfind
+- configure: Distribution mode: all warnings are deactivated
+- configure: *******************************************
+- configure: * CONFIGURE MANDATORY TOOLS AND LIBRARIES *
+- configure: *******************************************
+- checking for ocamldep... ocamldep
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- configure: ******************************************
+- configure: * CONFIGURE OPTIONAL TOOLS AND LIBRARIES *
+- configure: ******************************************
+- checking for ocamldoc... ocamldoc
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlcp... ocamlcp
+- checking for otags... no
+- checking for ocamlgraph... found
+- checking for Zarith... configure: WARNING: Zarith not found: will use the default less efficient library instead
+- checking for Apron... not found. The corresponding domains won't be available in Eva
+- configure: **********************
+- configure: * CONFIGURE PLATFORM *
+- configure: **********************
+- checking platform... Unix
+- checking OCaml native threads... ok.
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking how to run the C preprocessor... gcc -E
+- checking for grep that handles long lines and -e... /bin/grep
+- checking for egrep... /bin/grep -E
+- checking for ANSI C header files... yes
+- checking for sys/types.h... yes
+- checking for sys/stat.h... yes
+- checking for stdlib.h... yes
+- checking for string.h... yes
+- checking for memory.h... 
+- yes
+- checking for strings.h... yes
+- checking for inttypes.h... yes
+- checking for stdint.h... yes
+- checking for unistd.h... yes
+- checking for stdlib.h... (cached) yes
+- checking assert.h usability... yes
+- checking assert.h presence... yes
+- checking for assert.h... yes
+- checking float.h usability... yes
+- checking float.h presence... yes
+- checking for float.h... yes
+- checking math.h usability... yes
+- checking math.h presence... yes
+- checking for math.h... yes
+- checking signal.h usability... yes
+- checking signal.h presence... yes
+- checking for signal.h... yes
+- checking for unistd.h... (cached) yes
+- checking how to run the C preprocessor... gcc -E
+- /* Check whether comments are kept in output */
+- Default preprocessor is 'gcc -E -C -I.'.
+- configure: ***************************
+- configure: * WISHED FRAMA-C PLUG-INS *
+- configure: ***************************
+- checking for src/plugins/callgraph... yes
+- callgraph... yes
+- checking for src/plugins/constant_propagation... yes
+- semantic_constant_folding... yes
+- checking for src/plugins/from... yes
+- from_analysis... yes
+- checking for src/plugins/gui... yes
+- gui... no
+- checking for src/plugins/impact... yes
+- impact... yes
+- checking for src/plugins/inout... yes
+- inout... yes
+- checking for src/plugins/metrics... yes
+- metrics... yes
+- checking for src/plugins/occurrence... yes
+- occurrence... yes
+- checking for src/plugins/pdg... yes
+- pdg... yes
+- checking for src/plugins/postdominators... yes
+- postdominators... yes
+- checking for src/plugins/rte... yes
+- rtegen... yes
+- checking for src/plugins/scope... yes
+- scope... yes
+- checking for src/plugins/slicing... yes
+- slicing... yes
+- checking for src/plugins/sparecode... yes
+- sparecode... yes
+- checking for src/plugins/users... yes
+- users... yes
+- checking for src/plugins/value... yes
+- value_analysis... yes
+- checking for src/plugins/aorai/Makefile.in... yes
+- aorai... yes
+- checking for ltl2ba... no
+- checking for src/plugins/loop_analysis/Makefile.in... yes
+- loop_analysis... yes
+- checking for src/plugins/nonterm/Makefile.in... yes
+- nonterm... yes
+- checking for src/plugins/obfuscator/Makefile.in... yes
+- obfuscator... yes
+- checking for src/plugins/print_api... yes
+- print_api... yes
+- checking for src/plugins/report/Makefile.in... yes
+- report... yes
+- checking for src/plugins/security_slicing/Makefile.in... yes
+- security_slicing... yes
+- checking for src/plugins/variadic/Makefile.in... yes
+- variadic... yes
+- checking for src/plugins/wp/Makefile.in... yes
+- wp... yes
+- configure: *******************************************************
+- configure: * CONFIGURE TOOLS AND LIBRARIES USED BY SOME PLUG-INS *
+- configure: *******************************************************
+- ocamlfind: Package `lablgtk2' not found
+- Ocamlfind -> using +lablgtk2.(,/home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/lablgtk2)
+- checking for /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/lablgtk2/lablgtksourceview2.cmxa... no
+- checking for /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/lablgtk2/lablgnomecanvas.cmxa... no
+- checking for /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/lablgtk2/lablgtk.cmxa... no
+- checking for dot... no
+- checking for /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/dynlink.cmxa... yes
+- native dynlink works fine. Great.
+- configure: *************************************
+- configure: * CHECKING FOR PLUG-IN DEPENDENCIES *
+- configure: *************************************
+- configure: WARNING: ltl2ba not found.
+- configure: WARNING: aorai partially enabled because ltl2ba missing.
+- checking for coqc... no
+- configure: rerun configure to make wp using coq 8.5
+- configure: WARNING: lablgtksourceview2.cmxa not found
+- configure: WARNING: lablgnomecanvas.cmxa not found
+- configure: WARNING: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/lablgtk2/lablgtk.cmxa not found.
+- configure: WARNING: dot not found: you should install GraphViz
+- configure: WARNING: callgraph partially enabled because dot missing.
+- configure: WARNING: callgraph partially enabled because gui not enabled.
+- configure: WARNING: security_slicing disabled because gui not enabled.
+- configure: WARNING: impact only partially enabled because gui not enabled.
+- configure: WARNING: metrics only partially enabled because gui not enabled.
+- configure: WARNING: occurrence only partially enabled because gui not enabled.
+- configure: WARNING: scope only partially enabled because gui not enabled.
+- configure: WARNING: slicing only partially enabled because gui not enabled.
+- configure: WARNING: value_analysis only partially enabled because gui not enabled.
+- configure: WARNING: wp only partially enabled because gui not enabled.
+- configure: *********************
+- configure: * CREATING MAKEFILE *
+- configure: *********************
+- configure: creating ./config.status
+- config.status: creating src/plugins/loop_analysis/Makefile
+- config.status: creating src/plugins/nonterm/Makefile
+- config.status: creating src/plugins/obfuscator/Makefile
+- config.status: creating src/plugins/report/Makefile
+- config.status: creating src/plugins/variadic/Makefile
+- config.status: creating src/plugins/aorai/Makefile
+- config.status: creating src/plugins/security_slicing/Makefile
+- config.status: creating src/plugins/wp/Makefile
+- config.status: creating share/Makefile.config
+- configure: *******************************
+- configure: * SUMMARY: PLUG-INS AVAILABLE *
+- configure: *******************************
+- configure: callgraph: partial, dynamic, gui not enabled
+- configure: semantic_constant_folding: yes, dynamic
+- configure: from_analysis: yes, dynamic
+- configure: gui: no
+- configure: impact: partial, dynamic, gui not enabled
+- configure: inout: yes, dynamic
+- configure: metrics: partial, dynamic, gui not enabled
+- configure: occurrence: partial, dynamic, gui not enabled
+- configure: pdg: yes, dynamic
+- configure: postdominators: yes, dynamic
+- configure: rtegen: yes, dynamic
+- configure: scope: partial, dynamic, gui not enabled
+- configure: slicing: partial, dynamic, gui not enabled
+- configure: sparecode: yes, dynamic
+- configure: users: yes, dynamic
+- configure: value_analysis: partial, dynamic, gui not enabled
+- configure: aorai: partial, dynamic, ltl2ba missing
+- configure: loop_analysis: yes, dynamic
+- configure: nonterm: yes, dynamic
+- configure: obfuscator: yes, dynamic
+- configure: print_api: yes, dynamic
+- configure: report: yes, dynamic
+- configure: security_slicing: no, gui not enabled
+- configure: variadic: yes, dynamic
+- configure: wp: partial, dynamic, gui not enabled
+Processing  3/4: [frama-c-base: make]
++ make "-j1" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101)
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/share/Makefile.dynamic:205: share/Makefile.kernel: No such file or directory
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/share/Makefile.dynamic:205: share/Makefile.kernel: No such file or directory
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/share/Makefile.dynamic:205: share/Makefile.kernel: No such file or directory
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/share/Makefile.dynamic:205: share/Makefile.kernel: No such file or directory
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/share/Makefile.dynamic:205: share/Makefile.kernel: No such file or directory
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/share/Makefile.dynamic:205: share/Makefile.kernel: No such file or directory
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/share/Makefile.dynamic:205: share/Makefile.kernel: No such file or directory
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/share/Makefile.dynamic:205: share/Makefile.kernel: No such file or directory
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/share/Makefile.dynamic:205: share/Makefile.kernel: No such file or directory
+- Generating  src/libraries/stdlib/integer.ml
+- Generating  src/libraries/stdlib/FCDynlink.ml
+- Ocamllex     src/libraries/utils/json.ml
+- 36 states, 360 transitions, table size 1656 bytes
+- Ocamllex     src/kernel_internals/parsing/clexer.ml
+- 381 states, 4411 transitions, table size 19930 bytes
+- 3329 additional bytes used for bindings
+- Ocamlyacc    src/kernel_internals/parsing/cparser.ml
+- Ocamllex     src/kernel_internals/parsing/logic_lexer.ml
+- 148 states, 1842 transitions, table size 8256 bytes
+- 1933 additional bytes used for bindings
+- Ocamlyacc    src/kernel_internals/parsing/logic_parser.ml
+- Ocamllex     src/kernel_internals/parsing/logic_preprocess.ml
+- 136 states, 558 transitions, table size 3048 bytes
+- 2127 additional bytes used for bindings
+- Generating  src/plugins/value/domains/apron/apron_domain.ml
+- Generating  src/kernel_internals/runtime/config.ml
+- Generating   src/kernel_internals/runtime/frama_c_config.ml
+- Generating   share/frama-c.rc
+- Generating   share/Makefile.dynamic_config
+- Generating   share/Makefile.kernel
+- Generating   .depend
+- Generating   src/plugins/wp/.Makefile.plugin.generated
+- Generating   src/plugins/variadic/.Makefile.plugin.generated
+- Generating   src/plugins/security_slicing/.Makefile.plugin.generated
+- Generating   src/plugins/report/.Makefile.plugin.generated
+- Generating   src/plugins/print_api/.Makefile.plugin.generated
+- Generating   src/plugins/obfuscator/.Makefile.plugin.generated
+- Generating   src/plugins/nonterm/.Makefile.plugin.generated
+- Generating   src/plugins/loop_analysis/.Makefile.plugin.generated
+- Generating   src/plugins/aorai/.Makefile.plugin.generated
+- Generating   src/plugins/slicing/.Makefile.plugin.generated
+- Generating   src/plugins/sparecode/.Makefile.plugin.generated
+- Generating   src/plugins/scope/.Makefile.plugin.generated
+- Generating   src/plugins/pdg/.Makefile.plugin.generated
+- Generating   src/plugins/impact/.Makefile.plugin.generated
+- Generating   src/plugins/inout/.Makefile.plugin.generated
+- Generating   src/plugins/postdominators/.Makefile.plugin.generated
+- Generating   src/plugins/constant_propagation/.Makefile.plugin.generated
+- Generating   src/plugins/users/.Makefile.plugin.generated
+- Generating   src/plugins/from/.Makefile.plugin.generated
+- Generating   src/plugins/rte/.Makefile.plugin.generated
+- Generating   src/plugins/occurrence/.Makefile.plugin.generated
+- Generating   src/plugins/value/.Makefile.plugin.generated
+- Generating   src/plugins/callgraph/.Makefile.plugin.generated
+- Generating   src/plugins/metrics/.Makefile.plugin.generated
+- Ocamllex     src/plugins/wp/script.ml
+- 57 states, 826 transitions, table size 3646 bytes
+- Ocamllex     src/plugins/wp/rformat.ml
+- 30 states, 1109 transitions, table size 4616 bytes
+- 4387 additional bytes used for bindings
+- Ocamllex     src/plugins/wp/driver.ml
+- 105 states, 2064 transitions, table size 8886 bytes
+- 2265 additional bytes used for bindings
+- Ocamllex     src/plugins/wp/why3_xml.ml
+- 114 states, 1396 transitions, table size 6268 bytes
+- 3538 additional bytes used for bindings
+- Ocamllex     src/plugins/wp/qed/src/numbers.ml
+- 53 states, 1709 transitions, table size 7154 bytes
+- 4689 additional bytes used for bindings
+- Generating   src/plugins/wp/Wp.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Wp.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Wp.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Metrics.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Callgraph.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Value.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Occurrence.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/RteGen.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/From.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Users.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Constant_Propagation.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Postdominators.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Inout.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Impact.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Pdg.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Scope.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Sparecode.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Slicing.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Aorai.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/LoopAnalysis.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Nonterm.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Obfuscator.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Print_api.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Report.mli
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Variadic.mli
+- Ocamldep     src/plugins/wp/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Variadic.mli
+- Ocamldep     src/plugins/variadic/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Report.mli
+- Ocamldep     src/plugins/report/.depend
+- Ocamlyacc    src/plugins/print_api/grammar.ml
+- Ocamllex     src/plugins/print_api/lexer.ml
+- 8 states, 264 transitions, table size 1104 bytes
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Print_api.mli
+- Ocamldep     src/plugins/print_api/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Obfuscator.mli
+- Ocamldep     src/plugins/obfuscator/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Nonterm.mli
+- Ocamldep     src/plugins/nonterm/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/LoopAnalysis.mli
+- Ocamldep     src/plugins/loop_analysis/.depend
+- Ocamllex     src/plugins/aorai/promelalexer_withexps.ml
+- 100 states, 4420 transitions, table size 18280 bytes
+- Ocamlyacc    src/plugins/aorai/promelaparser_withexps.ml
+- 4 shift/reduce conflicts.
+- Ocamllex     src/plugins/aorai/promelalexer.ml
+- 85 states, 4392 transitions, table size 18078 bytes
+- Ocamlyacc    src/plugins/aorai/promelaparser.ml
+- Ocamllex     src/plugins/aorai/ltllexer.ml
+- 82 states, 3369 transitions, table size 13968 bytes
+- Ocamlyacc    src/plugins/aorai/ltlparser.ml
+- 7 shift/reduce conflicts.
+- Ocamllex     src/plugins/aorai/yalexer.ml
+- 73 states, 2302 transitions, table size 9646 bytes
+- Ocamlyacc    src/plugins/aorai/yaparser.ml
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Aorai.mli
+- Ocamldep     src/plugins/aorai/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Slicing.mli
+- Ocamldep     src/plugins/slicing/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Sparecode.mli
+- Ocamldep     src/plugins/sparecode/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Scope.mli
+- Ocamldep     src/plugins/scope/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Pdg.mli
+- Ocamldep     src/plugins/pdg/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Impact.mli
+- Ocamldep     src/plugins/impact/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Inout.mli
+- Ocamldep     src/plugins/inout/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Postdominators.mli
+- Ocamldep     src/plugins/postdominators/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Constant_Propagation.mli
+- Ocamldep     src/plugins/constant_propagation/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Users.mli
+- Ocamldep     src/plugins/users/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/From.mli
+- Ocamldep     src/plugins/from/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/RteGen.mli
+- Ocamldep     src/plugins/rte/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Occurrence.mli
+- Ocamldep     src/plugins/occurrence/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Value.mli
+- Ocamldep     src/plugins/value/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Callgraph.mli
+- Ocamldep     src/plugins/callgraph/.depend
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Metrics.mli
+- Ocamldep     src/plugins/metrics/.depend
+- Generating   META.frama-c-aorai
+- Ocamlc       src/plugins/aorai/bool3.cmi
+- Ocamlc       src/plugins/aorai/bool3.cmo
+- Ocamlc       src/libraries/datatype/unmarshal.cmi
+- Ocamlc       src/libraries/datatype/structural_descr.cmi
+- Ocamlc       src/libraries/datatype/type.cmi
+- Ocamlc       src/libraries/stdlib/FCSet.cmi
+- Ocamlc       src/kernel_services/plugin_entry_points/log.cmi
+- Ocamlc       src/libraries/project/project_skeleton.cmi
+- Ocamlc       src/libraries/utils/pretty_utils.cmi
+- Ocamlc       src/libraries/stdlib/integer.cmi
+- Ocamlc       src/libraries/stdlib/FCMap.cmi
+- Ocamlc       src/libraries/stdlib/FCHashtbl.cmi
+- Ocamlc       src/libraries/datatype/descr.cmi
+- Ocamlc       src/libraries/datatype/datatype.cmi
+- Ocamlc       src/libraries/project/state.cmi
+- Ocamlc       src/libraries/project/state_selection.cmi
+- Ocamlc       src/libraries/project/project.cmi
+- Ocamlc       src/libraries/project/state_builder.cmi
+- Ocamlc       src/kernel_services/cmdline_parameters/typed_parameter.cmi
+- Ocamlc       src/kernel_services/cmdline_parameters/parameter_category.cmi
+- Ocamlc       src/kernel_services/ast_data/cil_types.cmi
+- Ocamlc       src/kernel_services/parsetree/logic_ptree.cmi
+- Ocamlc       src/libraries/utils/hptmap_sig.cmi
+- Ocamlc       src/libraries/utils/hptmap.cmi
+- Ocamlc       src/libraries/utils/hptset.cmi
+- Ocamlc       src/kernel_services/parsetree/cabs.cmo
+- Ocamlc       src/kernel_services/ast_queries/cil_datatype.cmi
+- Ocamlc       src/kernel_services/cmdline_parameters/parameter_sig.cmi
+- Ocamlc       src/kernel_services/cmdline_parameters/cmdline.cmi
+- Ocamlc       src/kernel_services/plugin_entry_points/plugin.cmi
+- Ocamlc       src/kernel_services/cmdline_parameters/parameter_customize.cmi
+- Ocamlc       src/kernel_services/plugin_entry_points/kernel.cmi
+- Ocamlc       src/kernel_services/plugin_entry_points/emitter.cmi
+- Ocamlc       src/plugins/aorai/aorai_option.cmi
+- Ocamlc       src/plugins/aorai/aorai_option.cmo
+- Ocamlc       src/plugins/aorai/promelaast.cmi
+- Ocamlc       src/plugins/aorai/path_analysis.cmo
+- Ocamlc       src/kernel_services/ast_printing/printer_api.cmi
+- Ocamlc       src/kernel_services/ast_printing/printer.cmi
+- Ocamlc       src/kernel_services/ast_queries/logic_typing.cmi
+- Ocamlc       src/kernel_services/ast_data/kernel_function.cmi
+- Ocamlc       src/plugins/aorai/promelaoutput.cmi
+- Ocamlc       src/plugins/aorai/promelaoutput.cmo
+- Ocamlc       src/kernel_services/ast_queries/cil.cmi
+- Ocamlc       src/kernel_services/ast_queries/logic_utils.cmi
+- Ocamlc       src/plugins/aorai/logic_simplification.cmi
+- Ocamlc       src/plugins/aorai/logic_simplification.cmo
+- Ocamlc       src/kernel_services/visitors/visitor.cmi
+- Ocamlc       src/kernel_internals/parsing/logic_parser.cmi
+- Ocamlc       src/kernel_internals/parsing/logic_lexer.cmi
+- Ocamlc       src/kernel_services/ast_queries/logic_env.cmi
+- Ocamlc       src/kernel_services/ast_queries/logic_const.cmi
+- Ocamlc       src/kernel_services/ast_data/globals.cmi
+- Ocamlc       src/libraries/stdlib/extlib.cmi
+- Ocamlc       src/kernel_internals/parsing/cparser.cmi
+- Ocamlc       src/kernel_internals/parsing/clexer.cmi
+- Ocamlc       src/kernel_services/ast_queries/cil_const.cmi
+- Ocamlc       src/kernel_internals/typing/cabs2cil.cmi
+- Ocamlc       src/kernel_services/ast_data/ast.cmi
+- Ocamlc       src/kernel_services/ast_data/annotations.cmi
+- Ocamlc       src/plugins/aorai/data_for_aorai.cmi
+- Ocamlc       src/plugins/aorai/data_for_aorai.cmo
+- Ocamlc       src/plugins/aorai/aorai_utils.cmi
+- Ocamlc       src/plugins/aorai/aorai_utils.cmo
+- Ocamlc       src/plugins/aorai/ltlast.cmi
+- Ocamlc       src/plugins/aorai/ltl_output.cmi
+- Ocamlc       src/plugins/aorai/ltl_output.cmo
+- Ocamlc       src/plugins/aorai/utils_parser.cmo
+- Ocamlc       src/plugins/aorai/ltlparser.cmi
+- Ocamlc       src/plugins/aorai/ltlparser.cmo
+- Ocamlc       src/plugins/aorai/ltllexer.cmo
+- Ocamlc       src/plugins/aorai/yaparser.cmi
+- Ocamlc       src/plugins/aorai/yaparser.cmo
+- Ocamlc       src/plugins/aorai/yalexer.cmo
+- Ocamlc       src/plugins/aorai/promelaparser.cmi
+- Ocamlc       src/plugins/aorai/promelaparser.cmo
+- Ocamlc       src/plugins/aorai/promelalexer.cmo
+- Ocamlc       src/plugins/aorai/promelaparser_withexps.cmi
+- Ocamlc       src/plugins/aorai/promelaparser_withexps.cmo
+- Ocamlc       src/plugins/aorai/promelalexer_withexps.cmo
+- Ocamlc       src/libraries/utils/wto.cmi
+- Ocamlc       src/kernel_services/analysis/wto_statement.cmi
+- Ocamlc       src/kernel_services/analysis/dataflow2.cmi
+- Ocamlc       src/plugins/aorai/aorai_dataflow.cmi
+- Ocamlc       src/plugins/aorai/aorai_dataflow.cmo
+- Ocamlc       src/kernel_internals/typing/cfg.cmi
+- Ocamlc       src/plugins/aorai/aorai_visitors.cmo
+- Ocamlc       src/kernel_services/cmdline_parameters/parameter_state.cmi
+- Ocamlc       src/libraries/utils/filepath.cmi
+- Ocamlc       src/kernel_services/ast_queries/filecheck.cmi
+- Ocamlc       src/kernel_services/ast_queries/file.cmi
+- Ocamlc       src/kernel_services/plugin_entry_points/dynamic.cmi
+- Ocamlc       src/kernel_services/abstract_interp/lattice_type.cmi
+- Ocamlc       src/kernel_services/abstract_interp/origin.cmi
+- Ocamlc       src/kernel_services/abstract_interp/int_Base.cmi
+- Ocamlc       src/kernel_services/abstract_interp/bottom.cmi
+- Ocamlc       src/kernel_services/abstract_interp/abstract_interp.cmi
+- Ocamlc       src/kernel_services/abstract_interp/fval.cmi
+- Ocamlc       src/kernel_services/abstract_interp/ival.cmi
+- Ocamlc       src/kernel_services/abstract_interp/int_Intervals_sig.cmi
+- Ocamlc       src/libraries/utils/escape.cmi
+- Ocamlc       src/kernel_services/abstract_interp/base.cmi
+- Ocamlc       src/kernel_services/abstract_interp/offsetmap_sig.cmi
+- Ocamlc       src/kernel_services/abstract_interp/offsetmap_lattice_with_isotropy.cmi
+- Ocamlc       src/kernel_services/abstract_interp/offsetmap_bitwise_sig.cmi
+- Ocamlc       src/kernel_services/abstract_interp/offsetmap.cmi
+- Ocamlc       src/kernel_services/abstract_interp/int_Intervals.cmi
+- Ocamlc       src/kernel_services/abstract_interp/locations.cmi
+- Ocamlc       src/plugins/value_types/precise_locs.cmi
+- Ocamlc       src/kernel_services/abstract_interp/lmap_bitwise.cmi
+- Ocamlc       src/plugins/value_types/function_Froms.cmi
+- Ocamlc       src/kernel_services/abstract_interp/lmap_sig.cmi
+- Ocamlc       src/plugins/value_types/cvalue.cmi
+- Ocamlc       src/plugins/value_types/value_types.cmi
+- Ocamlc       src/plugins/pdg_types/pdgIndex.cmi
+- Ocamlc       src/plugins/pdg_types/pdgTypes.cmi
+- Ocamlc       src/plugins/pdg_types/pdgMarks.cmi
+- Ocamlc       src/plugins/slicing_types/slicingInternals.cmo
+- Ocamlc       src/plugins/slicing_types/slicingTypes.cmo
+- Ocamlc       src/kernel_services/ast_data/property.cmi
+- Ocamlc       src/kernel_services/ast_data/property_status.cmi
+- Ocamlc       src/plugins/value_types/inout_type.cmi
+- Ocamlc       src/libraries/utils/hook.cmi
+- Ocamlc       src/plugins/value_types/cilE.cmi
+- Ocamlc       src/kernel_services/plugin_entry_points/db.cmi
+- Ocamlc       src/plugins/aorai/aorai_register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Aorai.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Aorai.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Aorai.cmo
+- Generating   META.frama-c-loopanalysis
+- Ocamlc       src/plugins/loop_analysis/options.cmi
+- Ocamlc       src/plugins/loop_analysis/options.cmo
+- Ocamlc       src/plugins/loop_analysis/region_analysis_sig.cmo
+- Ocamlc       src/plugins/loop_analysis/region_analysis.cmi
+- Ocamlc       src/plugins/loop_analysis/region_analysis.cmo
+- Ocamlc       src/kernel_services/analysis/dominators.cmi
+- Ocamlc       src/plugins/loop_analysis/region_analysis_stmt.cmi
+- Ocamlc       src/plugins/loop_analysis/region_analysis_stmt.cmo
+- Ocamlc       src/kernel_services/analysis/ordered_stmt.cmi
+- Ocamlc       src/kernel_services/analysis/dataflows.cmi
+- Ocamlc       src/kernel_services/ast_queries/cil_state_builder.cmi
+- Ocamlc       src/plugins/loop_analysis/loop_analysis.cmi
+- Ocamlc       src/plugins/loop_analysis/loop_analysis.cmo
+- Ocamlc       src/plugins/loop_analysis/slevel_analysis.cmo
+- Ocamlc       src/kernel_services/analysis/loop.cmi
+- Ocamlc       src/plugins/loop_analysis/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/LoopAnalysis.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/LoopAnalysis.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/LoopAnalysis.cmo
+- Generating   META.frama-c-nonterm
+- Ocamlc       src/kernel_services/analysis/stmts_graph.cmi
+- Ocamlc       src/plugins/nonterm/nonterm_run.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Nonterm.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Nonterm.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Nonterm.cmo
+- Generating   META.frama-c-obfuscator
+- Ocamlc       src/plugins/obfuscator/options.cmi
+- Ocamlc       src/plugins/obfuscator/options.cmo
+- Ocamlc       src/plugins/obfuscator/obfuscator_kind.cmi
+- Ocamlc       src/plugins/obfuscator/obfuscator_kind.cmo
+- Ocamlc       src/plugins/obfuscator/dictionary.cmi
+- Ocamlc       src/plugins/obfuscator/dictionary.cmo
+- Ocamlc       src/plugins/obfuscator/obfuscate.cmi
+- Ocamlc       src/plugins/obfuscator/obfuscate.cmo
+- Ocamlc       src/plugins/obfuscator/obfuscator_register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Obfuscator.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Obfuscator.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Obfuscator.cmo
+- Generating   META.frama-c-print_api
+- Ocamlc       src/plugins/print_api/grammar.cmi
+- Ocamlc       src/plugins/print_api/grammar.cmo
+- Ocamlc       src/plugins/print_api/lexer.cmo
+- Ocamlc       src/libraries/stdlib/transitioning.cmi
+- Ocamlc       src/kernel_internals/runtime/config.cmi
+- Ocamlc       src/plugins/print_api/print_interface.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Print_api.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Print_api.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Print_api.cmo
+- Generating   META.frama-c-report
+- Ocamlc       src/plugins/report/report_parameters.cmi
+- Ocamlc       src/plugins/report/report_parameters.cmo
+- Ocamlc       src/kernel_services/ast_queries/ast_info.cmi
+- Ocamlc       src/plugins/report/scan.cmi
+- Ocamlc       src/plugins/report/scan.cmo
+- Ocamlc       src/kernel_services/ast_printing/description.cmi
+- Ocamlc       src/plugins/report/dump.cmi
+- Ocamlc       src/plugins/report/dump.cmo
+- Ocamlc       src/kernel_services/ast_data/alarms.cmi
+- Ocamlc       src/plugins/report/csv.cmi
+- Ocamlc       src/plugins/report/csv.cmo
+- Ocamlc       src/plugins/report/register.cmi
+- Ocamlc       src/plugins/report/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Report.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Report.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Report.cmo
+- Generating   META.frama-c-variadic
+- Ocamlc       src/plugins/variadic/options.cmi
+- Ocamlc       src/plugins/variadic/options.cmo
+- Ocamlc       src/plugins/variadic/extends.cmi
+- Ocamlc       src/plugins/variadic/extends.cmo
+- Ocamlc       src/plugins/variadic/va_build.cmo
+- Ocamlc       src/plugins/variadic/environment.cmo
+- Ocamlc       src/plugins/variadic/format_types.cmi
+- Ocamlc       src/plugins/variadic/format_pprint.cmi
+- Ocamlc       src/plugins/variadic/format_pprint.cmo
+- Ocamlc       src/plugins/variadic/format_typer.cmi
+- Ocamlc       src/plugins/variadic/format_typer.cmo
+- Ocamlc       src/plugins/variadic/format_parser.cmi
+- Ocamlc       src/plugins/variadic/format_parser.cmo
+- Ocamlc       src/plugins/variadic/generic.cmo
+- Ocamlc       src/plugins/variadic/va_types.cmi
+- Ocamlc       src/plugins/variadic/standard.cmo
+- Ocamlc       src/plugins/variadic/classify.cmo
+- Ocamlc       src/plugins/variadic/translate.cmo
+- Ocamlc       src/plugins/variadic/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Variadic.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Variadic.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Variadic.cmo
+- Generating   META.frama-c-wp
+- Ocamlc       src/plugins/wp/rformat.cmi
+- Ocamlc       src/plugins/wp/rformat.cmo
+- Ocamlc       src/plugins/wp/wprop.cmi
+- Ocamlc       src/plugins/wp/wprop.cmo
+- Ocamlc       src/libraries/utils/command.cmi
+- Ocamlc       src/plugins/wp/wp_parameters.cmi
+- Ocamlc       src/plugins/wp/wp_parameters.cmo
+- Ocamlc       src/plugins/wp/wp_error.cmi
+- Ocamlc       src/plugins/wp/wp_error.cmo
+- Ocamlc       src/plugins/wp/dyncall.cmi
+- Ocamlc       src/plugins/wp/dyncall.cmo
+- Compiling    Qed (byte)
+- Ocamlc       src/plugins/wp/ctypes.cmi
+- Ocamlc       src/plugins/wp/ctypes.cmo
+- Ocamlc       src/plugins/wp/clabels.cmi
+- Ocamlc       src/plugins/wp/clabels.cmo
+- Ocamlc       src/plugins/wp/Separation.cmi
+- Ocamlc       src/plugins/wp/Separation.cmo
+- Ocamlc       src/plugins/wp/LogicUsage.cmi
+- Ocamlc       src/plugins/wp/LogicUsage.cmo
+- Ocamlc       src/plugins/wp/RefUsage.cmi
+- Ocamlc       src/plugins/wp/RefUsage.cmo
+- Ocamlc       src/kernel_services/ast_data/statuses_by_call.cmi
+- Ocamlc       src/plugins/wp/cil2cfg.cmi
+- Ocamlc       src/plugins/wp/cil2cfg.cmo
+- Ocamlc       src/plugins/wp/normAtLabels.cmi
+- Ocamlc       src/plugins/wp/normAtLabels.cmo
+- Ocamlc       src/libraries/utils/bag.cmi
+- Ocamlc       src/plugins/wp/wpPropId.cmi
+- Ocamlc       src/plugins/wp/wpPropId.cmo
+- Ocamlc       src/plugins/wp/mcfg.cmo
+- Ocamlc       src/plugins/wp/Context.cmi
+- Ocamlc       src/plugins/wp/Context.cmo
+- Ocamlc       src/plugins/wp/Warning.cmi
+- Ocamlc       src/plugins/wp/Warning.cmo
+- Ocamlc       src/plugins/wp/Model.cmi
+- Ocamlc       src/plugins/wp/Model.cmo
+- Ocamlc       src/libraries/utils/floating_point.cmi
+- Ocamlc       src/plugins/wp/Lang.cmi
+- Ocamlc       src/plugins/wp/Lang.cmo
+- Ocamlc       src/plugins/wp/Plang.cmi
+- Ocamlc       src/plugins/wp/Plang.cmo
+- Ocamlc       src/plugins/wp/Matrix.cmi
+- Ocamlc       src/plugins/wp/Matrix.cmo
+- Ocamlc       src/plugins/wp/Passive.cmi
+- Ocamlc       src/plugins/wp/Passive.cmo
+- Ocamlc       src/plugins/wp/Splitter.cmi
+- Ocamlc       src/plugins/wp/Splitter.cmo
+- Ocamlc       src/plugins/wp/Letify.cmi
+- Ocamlc       src/plugins/wp/Letify.cmo
+- Ocamlc       src/plugins/wp/Cleaning.cmi
+- Ocamlc       src/plugins/wp/Cleaning.cmo
+- Ocamlc       src/plugins/wp/Conditions.cmi
+- Ocamlc       src/plugins/wp/Conditions.cmo
+- Ocamlc       src/plugins/wp/Pcond.cmi
+- Ocamlc       src/plugins/wp/Pcond.cmo
+- Ocamlc       src/plugins/wp/LogicBuiltins.cmi
+- Ocamlc       src/plugins/wp/LogicBuiltins.cmo
+- Ocamlc       src/plugins/wp/Definitions.cmi
+- Ocamlc       src/plugins/wp/Definitions.cmo
+- Ocamlc       src/plugins/wp/Cint.cmi
+- Ocamlc       src/plugins/wp/Cint.cmo
+- Ocamlc       src/plugins/wp/Cfloat.cmi
+- Ocamlc       src/plugins/wp/Cfloat.cmo
+- Ocamlc       src/plugins/wp/Vset.cmi
+- Ocamlc       src/plugins/wp/Vset.cmo
+- Ocamlc       src/plugins/wp/Vlist.cmi
+- Ocamlc       src/plugins/wp/Vlist.cmo
+- Ocamlc       src/plugins/wp/Region.cmi
+- Ocamlc       src/plugins/wp/Region.cmo
+- Ocamlc       src/plugins/wp/Cstring.cmi
+- Ocamlc       src/plugins/wp/Cstring.cmo
+- Ocamlc       src/plugins/wp/Memory.cmo
+- Ocamlc       src/plugins/wp/Sigma.cmi
+- Ocamlc       src/plugins/wp/Cvalues.cmi
+- Ocamlc       src/plugins/wp/Cvalues.cmo
+- Ocamlc       src/plugins/wp/CodeSemantics.cmi
+- Ocamlc       src/plugins/wp/CodeSemantics.cmo
+- Ocamlc       src/plugins/wp/LogicCompiler.cmi
+- Ocamlc       src/plugins/wp/LogicCompiler.cmo
+- Ocamlc       src/plugins/wp/LogicSemantics.cmi
+- Ocamlc       src/plugins/wp/LogicSemantics.cmo
+- Ocamlc       src/plugins/wp/LogicAssigns.cmi
+- Ocamlc       src/plugins/wp/LogicAssigns.cmo
+- Ocamlc       src/plugins/wp/Sigma.cmo
+- Ocamlc       src/plugins/wp/MemEmpty.cmi
+- Ocamlc       src/plugins/wp/MemEmpty.cmo
+- Ocamlc       src/plugins/wp/MemZeroAlias.cmi
+- Ocamlc       src/plugins/wp/MemZeroAlias.cmo
+- Ocamlc       src/plugins/wp/MemVar.cmi
+- Ocamlc       src/plugins/wp/MemVar.cmo
+- Ocamlc       src/plugins/wp/MemTyped.cmi
+- Ocamlc       src/plugins/wp/MemTyped.cmo
+- Ocamlc       src/plugins/wp/wpStrategy.cmi
+- Ocamlc       src/plugins/wp/wpStrategy.cmo
+- Ocamlc       src/plugins/wp/wpRTE.cmi
+- Ocamlc       src/plugins/wp/wpRTE.cmo
+- Ocamlc       src/libraries/utils/bitvector.cmi
+- Ocamlc       src/plugins/wp/wpAnnot.cmi
+- Ocamlc       src/plugins/wp/wpAnnot.cmo
+- Ocamlc       src/plugins/wp/VCS.cmi
+- Ocamlc       src/plugins/wp/VCS.cmo
+- Ocamlc       src/plugins/wp/script.cmi
+- Ocamlc       src/plugins/wp/script.cmo
+- Ocamlc       src/plugins/wp/proof.cmi
+- Ocamlc       src/plugins/wp/proof.cmo
+- Ocamlc       src/plugins/wp/wpo.cmi
+- Ocamlc       src/plugins/wp/wpo.cmo
+- Ocamlc       src/plugins/wp/wpReport.cmi
+- Ocamlc       src/plugins/wp/wpReport.cmo
+- Ocamlc       src/plugins/wp/why3_xml.cmi
+- Ocamlc       src/plugins/wp/why3_xml.cmo
+- Ocamlc       src/libraries/utils/task.cmi
+- Ocamlc       src/plugins/wp/ProverTask.cmi
+- Ocamlc       src/plugins/wp/ProverTask.cmo
+- Ocamlc       src/plugins/wp/ProverErgo.cmi
+- Ocamlc       src/plugins/wp/ProverErgo.cmo
+- Ocamlc       src/plugins/wp/ProverCoq.cmi
+- Ocamlc       src/plugins/wp/ProverCoq.cmo
+- Ocamlc       src/plugins/wp/ProverWhy3.cmi
+- Ocamlc       src/plugins/wp/ProverWhy3.cmo
+- Ocamlc       src/plugins/wp/ProverWhy3ide.cmi
+- Ocamlc       src/plugins/wp/ProverWhy3ide.cmo
+- Ocamlc       src/plugins/wp/driver.cmi
+- Ocamlc       src/plugins/wp/driver.cmo
+- Ocamlc       src/plugins/wp/prover.cmi
+- Ocamlc       src/plugins/wp/prover.cmo
+- Ocamlc       src/plugins/wp/Generator.cmi
+- Ocamlc       src/plugins/wp/Generator.cmo
+- Ocamlc       src/plugins/wp/Factory.cmi
+- Ocamlc       src/plugins/wp/Factory.cmo
+- Ocamlc       src/plugins/wp/calculus.cmi
+- Ocamlc       src/plugins/wp/calculus.cmo
+- Ocamlc       src/plugins/wp/cfgDump.cmi
+- Ocamlc       src/plugins/wp/cfgDump.cmo
+- Ocamlc       src/kernel_internals/typing/alpha.cmi
+- Ocamlc       src/plugins/wp/cfgWP.cmi
+- Ocamlc       src/plugins/wp/cfgWP.cmo
+- Ocamlc       src/plugins/wp/register.cmo
+- Ocamlc       src/plugins/wp/VC.cmi
+- Ocamlc       src/plugins/wp/VC.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Wp.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Wp.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Wp.cmo
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Wp.cma
+- Generation of the extra-config for why3
+- Ocamlc       src/kernel_internals/runtime/frama_c_init.cmi
+- Ocamlc       src/kernel_internals/runtime/frama_c_init.cmo
+- Ocamlc       src/libraries/stdlib/transitioning.cmo
+- Ocamlc       src/libraries/stdlib/FCDynlink.cmi
+- Ocamlc       src/libraries/stdlib/FCDynlink.cmo
+- Ocamlc       src/libraries/stdlib/FCSet.cmo
+- Ocamlc       src/libraries/stdlib/FCMap.cmo
+- Ocamlc       src/libraries/stdlib/FCBuffer.cmi
+- Ocamlc       src/libraries/stdlib/FCBuffer.cmo
+- Ocamlc       src/libraries/stdlib/FCHashtbl.cmo
+- Ocamlc       src/libraries/stdlib/extlib.cmo
+- Ocamlc       src/libraries/datatype/unmarshal.cmo
+- Ocamlc       src/libraries/datatype/unmarshal_nums.cmi
+- Ocamlc       src/libraries/datatype/unmarshal_nums.cmo
+- Ocamlc       src/libraries/datatype/structural_descr.cmo
+- Ocamlc       src/libraries/datatype/type.cmo
+- Ocamlc       src/libraries/datatype/descr.cmo
+- Ocamlc       src/libraries/utils/pretty_utils.cmo
+- Ocamlc       src/libraries/utils/hook.cmo
+- Ocamlc       src/libraries/utils/bag.cmo
+- Ocamlc       src/libraries/utils/wto.cmo
+- Ocamlc       src/libraries/utils/vector.cmi
+- Ocamlc       src/libraries/utils/vector.cmo
+- Ocamlc       src/libraries/utils/indexer.cmi
+- Ocamlc       src/libraries/utils/indexer.cmo
+- Ocamlc       src/libraries/utils/rgmap.cmi
+- Ocamlc       src/libraries/utils/rgmap.cmo
+- Ocamlc       src/libraries/utils/bitvector.cmo
+- Ocamlc       src/libraries/utils/qstack.cmi
+- Ocamlc       src/libraries/utils/qstack.cmo
+- Ocamlc       src/libraries/utils/leftistheap.cmi
+- Ocamlc       src/libraries/utils/leftistheap.cmo
+- Ocamlc       src/libraries/stdlib/integer.cmo
+- Ocamlc       src/libraries/utils/filepath.cmo
+- Ocamlc       src/libraries/utils/json.cmi
+- Ocamlc       src/libraries/utils/json.cmo
+- Ocamlc       src/kernel_internals/runtime/config.cmo
+- Ocamlc       src/kernel_services/plugin_entry_points/log.cmo
+- Ocamlc       src/kernel_services/cmdline_parameters/cmdline.cmo
+- Ocamlc       src/libraries/project/project_skeleton.cmo
+- Ocamlc       src/libraries/datatype/datatype.cmo
+- Ocamlc       src/kernel_services/plugin_entry_points/journal.cmi
+- Ocamlc       src/kernel_services/plugin_entry_points/journal.cmo
+- Ocamlc       src/libraries/project/state.cmo
+- Ocamlc       src/libraries/project/state_dependency_graph.cmi
+- Ocamlc       src/libraries/project/state_dependency_graph.cmo
+- Ocamlc       src/libraries/project/state_topological.cmi
+- Ocamlc       src/libraries/project/state_topological.cmo
+- Ocamlc       src/libraries/project/state_selection.cmo
+- Ocamlc       src/libraries/project/project.cmo
+- Ocamlc       src/libraries/project/state_builder.cmo
+- Ocamlc       src/libraries/utils/utf8_logic.cmi
+- Ocamlc       src/libraries/utils/utf8_logic.cmo
+- Ocamlc       src/libraries/utils/binary_cache.cmi
+- Ocamlc       src/libraries/utils/binary_cache.cmo
+- Ocamlc       src/libraries/utils/hptmap.cmo
+- Ocamlc       src/libraries/utils/hptset.cmo
+- Ocamlc       src/libraries/utils/escape.cmo
+- Ocamlc       src/kernel_services/ast_queries/cil_datatype.cmo
+- Ocamlc       src/kernel_services/cmdline_parameters/typed_parameter.cmo
+- Ocamlc       src/kernel_services/plugin_entry_points/dynamic.cmo
+- Ocamlc       src/kernel_services/cmdline_parameters/parameter_category.cmo
+- Ocamlc       src/kernel_services/cmdline_parameters/parameter_customize.cmo
+- Ocamlc       src/kernel_services/cmdline_parameters/parameter_state.cmo
+- Ocamlc       src/kernel_services/cmdline_parameters/parameter_builder.cmi
+- Ocamlc       src/kernel_services/cmdline_parameters/parameter_builder.cmo
+- Ocamlc       src/kernel_services/plugin_entry_points/plugin.cmo
+- Ocamlc       src/kernel_services/plugin_entry_points/kernel.cmo
+- Ocamlc       src/libraries/utils/unicode.cmi
+- Ocamlc       src/libraries/utils/unicode.cmo
+- Ocamlc       src/kernel_services/plugin_entry_points/emitter.cmo
+- Ocamlc       src/libraries/utils/floating_point.cmo
+- Ocamlc       src/libraries/utils/rangemap.cmi
+- Ocamlc       src/libraries/utils/rangemap.cmo
+- Ocamlc       src/kernel_services/ast_printing/printer_builder.cmi
+- Ocamlc       src/kernel_services/ast_printing/printer_builder.cmo
+- Ocamlc       src/libraries/utils/cilconfig.cmi
+- Ocamlc       src/libraries/utils/cilconfig.cmo
+- Ocamlc       src/kernel_internals/typing/alpha.cmo
+- Ocamlc       src/kernel_services/ast_queries/cil_state_builder.cmo
+- Ocamlc       src/kernel_internals/runtime/machdeps.cmi
+- Ocamlc       src/kernel_internals/runtime/machdeps.cmo
+- Ocamlc       src/kernel_services/ast_queries/cil_const.cmo
+- Ocamlc       src/kernel_services/ast_queries/logic_env.cmo
+- Ocamlc       src/kernel_services/ast_queries/logic_const.cmo
+- Ocamlc       src/kernel_services/ast_queries/cil.cmo
+- Ocamlc       src/kernel_internals/parsing/errorloc.cmi
+- Ocamlc       src/kernel_internals/parsing/errorloc.cmo
+- Ocamlc       src/kernel_services/ast_printing/cil_printer.cmi
+- Ocamlc       src/kernel_services/ast_printing/cil_printer.cmo
+- Ocamlc       src/kernel_services/ast_printing/cil_descriptive_printer.cmi
+- Ocamlc       src/kernel_services/ast_printing/cil_descriptive_printer.cmo
+- Ocamlc       src/kernel_services/parsetree/cabshelper.cmi
+- Ocamlc       src/kernel_services/parsetree/cabshelper.cmo
+- Ocamlc       src/kernel_services/ast_printing/logic_print.cmi
+- Ocamlc       src/kernel_services/ast_printing/logic_print.cmo
+- Ocamlc       src/kernel_services/ast_queries/logic_utils.cmo
+- Ocamlc       src/kernel_internals/parsing/logic_parser.cmo
+- Ocamlc       src/kernel_internals/parsing/logic_lexer.cmo
+- Ocamlc       src/kernel_services/ast_queries/logic_typing.cmo
+- Ocamlc       src/kernel_services/ast_queries/ast_info.cmo
+- Ocamlc       src/kernel_services/ast_data/ast.cmo
+- Ocamlc       src/kernel_services/ast_data/globals.cmo
+- Ocamlc       src/kernel_internals/typing/cfg.cmo
+- Ocamlc       src/kernel_services/ast_data/kernel_function.cmo
+- Ocamlc       src/kernel_services/ast_data/property.cmo
+- Ocamlc       src/kernel_services/ast_data/property_status.cmo
+- Ocamlc       src/kernel_services/ast_data/annotations.cmo
+- Ocamlc       src/kernel_services/ast_printing/printer.cmo
+- Ocamlc       src/kernel_internals/typing/logic_builtin.cmi
+- Ocamlc       src/kernel_internals/typing/logic_builtin.cmo
+- Ocamlc       src/kernel_services/ast_printing/cabs_debug.cmi
+- Ocamlc       src/kernel_services/ast_printing/cabs_debug.cmo
+- Ocamlc       src/kernel_services/ast_printing/cprint.cmi
+- Ocamlc       src/kernel_services/ast_printing/cprint.cmo
+- Ocamlc       src/kernel_internals/parsing/lexerhack.cmo
+- Ocamlc       src/kernel_internals/parsing/clexer.cmo
+- Ocamlc       src/kernel_services/visitors/cabsvisit.cmi
+- Ocamlc       src/kernel_services/visitors/cabsvisit.cmo
+- Ocamlc       src/kernel_internals/parsing/cparser.cmo
+- Ocamlc       src/kernel_internals/parsing/logic_preprocess.cmi
+- Ocamlc       src/kernel_internals/parsing/logic_preprocess.cmo
+- Ocamlc       src/kernel_internals/typing/mergecil.cmi
+- Ocamlc       src/kernel_internals/typing/mergecil.cmo
+- Ocamlc       src/kernel_internals/typing/rmtmps.cmi
+- Ocamlc       src/kernel_internals/typing/rmtmps.cmo
+- Ocamlc       src/kernel_internals/typing/cabs2cil.cmo
+- Ocamlc       src/kernel_internals/typing/oneret.cmi
+- Ocamlc       src/kernel_internals/typing/oneret.cmo
+- Ocamlc       src/kernel_internals/typing/frontc.cmi
+- Ocamlc       src/kernel_internals/typing/frontc.cmo
+- Ocamlc       src/kernel_services/ast_data/statuses_by_call.cmo
+- Ocamlc       src/kernel_services/analysis/dataflow.cmi
+- Ocamlc       src/kernel_services/analysis/dataflow.cmo
+- Ocamlc       src/kernel_services/analysis/ordered_stmt.cmo
+- Ocamlc       src/kernel_services/analysis/wto_statement.cmo
+- Ocamlc       src/kernel_services/analysis/dataflows.cmo
+- Ocamlc       src/kernel_services/analysis/dataflow2.cmo
+- Ocamlc       src/kernel_services/analysis/stmts_graph.cmo
+- Ocamlc       src/kernel_services/analysis/dominators.cmo
+- Ocamlc       src/kernel_services/analysis/service_graph.cmi
+- Ocamlc       src/kernel_services/analysis/service_graph.cmo
+- Ocamlc       src/kernel_services/ast_printing/description.cmo
+- Ocamlc       src/kernel_services/ast_data/alarms.cmo
+- Ocamlc       src/kernel_services/abstract_interp/lattice_messages.cmi
+- Ocamlc       src/kernel_services/abstract_interp/lattice_messages.cmo
+- Ocamlc       src/kernel_services/abstract_interp/abstract_interp.cmo
+- Ocamlc       src/kernel_services/abstract_interp/bottom.cmo
+- Ocamlc       src/kernel_services/abstract_interp/int_Base.cmo
+- Ocamlc       src/kernel_services/analysis/bit_utils.cmi
+- Ocamlc       src/kernel_services/analysis/bit_utils.cmo
+- Ocamlc       src/kernel_services/abstract_interp/fval.cmo
+- Ocamlc       src/kernel_services/abstract_interp/ival.cmo
+- Ocamlc       src/kernel_services/abstract_interp/base.cmo
+- Ocamlc       src/kernel_services/abstract_interp/origin.cmo
+- Ocamlc       src/kernel_services/abstract_interp/map_Lattice.cmo
+- Ocamlc       src/kernel_services/abstract_interp/trace.cmi
+- Ocamlc       src/kernel_services/abstract_interp/trace.cmo
+- Ocamlc       src/kernel_services/abstract_interp/tr_offset.cmi
+- Ocamlc       src/kernel_services/abstract_interp/tr_offset.cmo
+- Ocamlc       src/kernel_services/abstract_interp/offsetmap.cmo
+- Ocamlc       src/kernel_services/abstract_interp/int_Intervals.cmo
+- Ocamlc       src/kernel_services/abstract_interp/locations.cmo
+- Ocamlc       src/kernel_services/abstract_interp/lmap.cmi
+- Ocamlc       src/kernel_services/abstract_interp/lmap.cmo
+- Ocamlc       src/kernel_services/abstract_interp/lmap_bitwise.cmo
+- Ocamlc       src/kernel_services/visitors/visitor.cmo
+- Ocamlc       src/plugins/value_types/cilE.cmo
+- Ocamlc       src/plugins/value_types/cvalue.cmo
+- Ocamlc       src/plugins/value_types/precise_locs.cmo
+- Ocamlc       src/plugins/value_types/value_types.cmo
+- Ocamlc       src/plugins/value_types/widen_type.cmi
+- Ocamlc       src/plugins/value_types/widen_type.cmo
+- Ocamlc       src/plugins/value_types/function_Froms.cmo
+- Ocamlc       src/plugins/value_types/inout_type.cmo
+- Ocamlc       src/plugins/pdg_types/pdgIndex.cmo
+- Ocamlc       src/plugins/pdg_types/pdgTypes.cmo
+- Ocamlc       src/plugins/pdg_types/pdgMarks.cmo
+- Ocamlc       src/kernel_services/plugin_entry_points/db.cmo
+- Ocamlc       src/libraries/utils/command.cmo
+- Ocamlc       src/libraries/utils/task.cmo
+- Ocamlc       src/kernel_services/ast_queries/filecheck.cmo
+- Ocamlc       src/kernel_services/ast_queries/file.cmo
+- Ocamlc       src/kernel_internals/typing/translate_lightweight.cmi
+- Ocamlc       src/kernel_internals/typing/translate_lightweight.cmo
+- Ocamlc       src/kernel_internals/typing/allocates.cmi
+- Ocamlc       src/kernel_internals/typing/allocates.cmo
+- Ocamlc       src/kernel_internals/typing/unroll_loops.cmi
+- Ocamlc       src/kernel_internals/typing/unroll_loops.cmo
+- Ocamlc       src/kernel_internals/typing/asm_contracts.cmi
+- Ocamlc       src/kernel_internals/typing/asm_contracts.cmo
+- Ocamlc       src/kernel_services/analysis/loop.cmo
+- Ocamlc       src/kernel_services/analysis/exn_flow.cmi
+- Ocamlc       src/kernel_services/analysis/exn_flow.cmo
+- Ocamlc       src/kernel_services/analysis/logic_interp.cmi
+- Ocamlc       src/kernel_services/analysis/logic_interp.cmo
+- Ocamlc       src/kernel_internals/typing/infer_annotations.cmi
+- Ocamlc       src/kernel_internals/typing/infer_annotations.cmo
+- Ocamlc       src/kernel_services/ast_transformations/clone.cmi
+- Ocamlc       src/kernel_services/ast_transformations/clone.cmo
+- Ocamlc       src/kernel_services/ast_transformations/filter.cmi
+- Ocamlc       src/kernel_services/ast_transformations/filter.cmo
+- Ocamlc       src/kernel_internals/runtime/special_hooks.cmi
+- Ocamlc       src/kernel_internals/runtime/special_hooks.cmo
+- Ocamlc       src/kernel_internals/runtime/messages.cmi
+- Ocamlc       src/kernel_internals/runtime/messages.cmo
+- Ocamlc       src/kernel_internals/runtime/boot.cmo
+- CC           src/libraries/utils/c_bindings.o
+- Ocamlc       src/plugins/metrics/metrics_parameters.cmi
+- Ocamlc       src/plugins/metrics/metrics_parameters.cmo
+- Ocamlc       src/plugins/metrics/css_html.cmo
+- Ocamlc       src/plugins/metrics/metrics_base.cmi
+- Ocamlc       src/plugins/metrics/metrics_base.cmo
+- Ocamlc       src/plugins/metrics/metrics_acsl.cmi
+- Ocamlc       src/plugins/metrics/metrics_acsl.cmo
+- Ocamlc       src/plugins/metrics/metrics_cabs.cmi
+- Ocamlc       src/plugins/metrics/metrics_cabs.cmo
+- Ocamlc       src/plugins/metrics/metrics_cilast.cmi
+- Ocamlc       src/plugins/metrics/metrics_cilast.cmo
+- Ocamlc       src/plugins/metrics/metrics_coverage.cmi
+- Ocamlc       src/plugins/metrics/metrics_coverage.cmo
+- Ocamlc       src/plugins/metrics/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Metrics.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Metrics.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Metrics.cmo
+- Ocamlc       src/plugins/callgraph/options.cmi
+- Ocamlc       src/plugins/callgraph/options.cmo
+- Ocamlc       src/plugins/callgraph/journalize.cmi
+- Ocamlc       src/plugins/callgraph/journalize.cmo
+- Ocamlc       src/plugins/callgraph/callgraph_api.cmi
+- Ocamlc       src/plugins/callgraph/cg.cmi
+- Ocamlc       src/plugins/callgraph/cg.cmo
+- Ocamlc       src/plugins/callgraph/services.cmi
+- Ocamlc       src/plugins/callgraph/services.cmo
+- Ocamlc       src/plugins/callgraph/uses.cmi
+- Ocamlc       src/plugins/callgraph/uses.cmo
+- Ocamlc       src/plugins/callgraph/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Callgraph.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Callgraph.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Callgraph.cmo
+- Ocamlc       src/plugins/value/slevel/split_strategy.cmi
+- Ocamlc       src/plugins/value/slevel/split_strategy.cmo
+- Ocamlc       src/plugins/value/value_parameters.cmi
+- Ocamlc       src/plugins/value/value_parameters.cmo
+- Ocamlc       src/plugins/value/slevel/stop_at_nth.cmi
+- Ocamlc       src/plugins/value/slevel/stop_at_nth.cmo
+- Ocamlc       src/plugins/value/utils/value_perf.cmi
+- Ocamlc       src/plugins/value/utils/value_perf.cmo
+- Ocamlc       src/plugins/value/legacy/state_set.cmi
+- Ocamlc       src/plugins/value/legacy/state_set.cmo
+- Ocamlc       src/plugins/value/utils/value_util.cmi
+- Ocamlc       src/plugins/value/utils/value_util.cmo
+- Ocamlc       src/plugins/value/legacy/value_messages.cmo
+- Ocamlc       src/plugins/value/utils/library_functions.cmi
+- Ocamlc       src/plugins/value/utils/library_functions.cmo
+- Ocamlc       src/plugins/value/utils/mark_noresults.cmo
+- Ocamlc       src/plugins/value/slevel/separate.cmi
+- Ocamlc       src/plugins/value/slevel/separate.cmo
+- Ocamlc       src/plugins/value/legacy/state_imp.cmi
+- Ocamlc       src/plugins/value/legacy/state_imp.cmo
+- Ocamlc       src/plugins/value/utils/widen_hints_ext.cmi
+- Ocamlc       src/plugins/value/utils/widen_hints_ext.cmo
+- Ocamlc       src/plugins/value/utils/widen.cmi
+- Ocamlc       src/plugins/value/utils/widen.cmo
+- Ocamlc       src/plugins/value/legacy/valarms.cmi
+- Ocamlc       src/plugins/value/legacy/valarms.cmo
+- Ocamlc       src/plugins/value/legacy/warn.cmi
+- Ocamlc       src/plugins/value/legacy/warn.cmo
+- Ocamlc       src/plugins/value/alarmset.cmi
+- Ocamlc       src/plugins/value/eval.cmi
+- Ocamlc       src/plugins/value/utils/eval_typ.cmi
+- Ocamlc       src/plugins/value/utils/eval_typ.cmo
+- Ocamlc       src/plugins/value/utils/backward_formals.cmi
+- Ocamlc       src/plugins/value/utils/backward_formals.cmo
+- Ocamlc       src/plugins/value/legacy/eval_op.cmi
+- Ocamlc       src/plugins/value/legacy/eval_op.cmo
+- Ocamlc       src/plugins/value/domains/cvalue/locals_scoping.cmi
+- Ocamlc       src/plugins/value/domains/cvalue/locals_scoping.cmo
+- Ocamlc       src/plugins/value/domains/cvalue/builtins.cmi
+- Ocamlc       src/plugins/value/domains/cvalue/builtins.cmo
+- Ocamlc       src/plugins/value/domains/cvalue/builtins_string.cmi
+- Ocamlc       src/plugins/value/domains/cvalue/builtins_string.cmo
+- Ocamlc       src/plugins/value/legacy/eval_terms.cmi
+- Ocamlc       src/plugins/value/legacy/eval_terms.cmo
+- Ocamlc       src/plugins/value/legacy/eval_annots.cmo
+- Ocamlc       src/plugins/value/legacy/eval_behaviors.cmi
+- Ocamlc       src/plugins/value/legacy/eval_behaviors.cmo
+- Ocamlc       src/plugins/value/legacy/mem_exec.cmi
+- Ocamlc       src/plugins/value/legacy/mem_exec.cmo
+- Ocamlc       src/plugins/value/legacy/eval_exprs.cmi
+- Ocamlc       src/plugins/value/legacy/eval_exprs.cmo
+- Ocamlc       src/plugins/value/legacy/eval_non_linear.cmi
+- Ocamlc       src/plugins/value/legacy/eval_non_linear.cmo
+- Ocamlc       src/plugins/value/legacy/initial_state.cmi
+- Ocamlc       src/plugins/value/legacy/initial_state.cmo
+- Ocamlc       src/plugins/value/domains/cvalue/builtins_malloc.cmi
+- Ocamlc       src/plugins/value/domains/cvalue/builtins_malloc.cmo
+- Ocamlc       src/plugins/value/domains/cvalue/builtins_misc.cmi
+- Ocamlc       src/plugins/value/domains/cvalue/builtins_misc.cmo
+- Ocamlc       src/plugins/value/utils/value_results.cmi
+- Ocamlc       src/plugins/value/utils/value_results.cmo
+- Ocamlc       src/plugins/value/utils/state_import.cmi
+- Ocamlc       src/plugins/value/utils/state_import.cmo
+- Ocamlc       src/plugins/value/legacy/function_args.cmo
+- Ocamlc       src/plugins/value/legacy/split_return.cmi
+- Ocamlc       src/plugins/value/legacy/split_return.cmo
+- Ocamlc       src/plugins/value/legacy/eval_stmt.cmi
+- Ocamlc       src/plugins/value/legacy/eval_stmt.cmo
+- Ocamlc       src/plugins/value/slevel/per_stmt_slevel.cmi
+- Ocamlc       src/plugins/value/slevel/per_stmt_slevel.cmo
+- Ocamlc       src/plugins/value/legacy/eval_slevel.cmi
+- Ocamlc       src/plugins/value/legacy/eval_slevel.cmo
+- Ocamlc       src/plugins/value/legacy/eval_funs.cmi
+- Ocamlc       src/plugins/value/legacy/eval_funs.cmo
+- Ocamlc       src/plugins/value/alarmset.cmo
+- Ocamlc       src/plugins/value/eval.cmo
+- Ocamlc       src/plugins/value/utils/structure.cmi
+- Ocamlc       src/plugins/value/utils/structure.cmo
+- Ocamlc       src/plugins/value/values/abstract_value.cmi
+- Ocamlc       src/plugins/value/values/value_product.cmi
+- Ocamlc       src/plugins/value/values/value_product.cmo
+- Ocamlc       src/plugins/value/values/abstract_location.cmi
+- Ocamlc       src/plugins/value/values/location_lift.cmi
+- Ocamlc       src/plugins/value/values/location_lift.cmo
+- Ocamlc       src/plugins/value/values/cvalue_forward.cmi
+- Ocamlc       src/plugins/value/values/cvalue_forward.cmo
+- Ocamlc       src/plugins/value/values/cvalue_backward.cmi
+- Ocamlc       src/plugins/value/values/cvalue_backward.cmo
+- Ocamlc       src/plugins/value/values/main_values.cmi
+- Ocamlc       src/plugins/value/values/main_values.cmo
+- Ocamlc       src/plugins/value/values/main_locations.cmi
+- Ocamlc       src/plugins/value/values/main_locations.cmo
+- Ocamlc       src/plugins/value/values/offsm_value.cmi
+- Ocamlc       src/plugins/value/values/offsm_value.cmo
+- Ocamlc       src/plugins/value/domains/abstract_domain.cmi
+- Ocamlc       src/plugins/value/domains/domain_store.cmi
+- Ocamlc       src/plugins/value/domains/domain_store.cmo
+- Ocamlc       src/plugins/value/domains/domain_builder.cmi
+- Ocamlc       src/plugins/value/domains/domain_builder.cmo
+- Ocamlc       src/plugins/value/domains/domain_product.cmi
+- Ocamlc       src/plugins/value/domains/domain_product.cmo
+- Ocamlc       src/plugins/value/domains/domain_lift.cmi
+- Ocamlc       src/plugins/value/domains/domain_lift.cmo
+- Ocamlc       src/plugins/value/domains/unit_domain.cmi
+- Ocamlc       src/plugins/value/domains/unit_domain.cmo
+- Ocamlc       src/plugins/value/domains/gauges/gauges_domain.cmo
+- Ocamlc       src/plugins/value/domains/apron/apron_domain.cmi
+- Ocamlc       src/plugins/value/domains/apron/apron_domain.cmo
+- Ocamlc       src/plugins/value/domains/hcexprs.cmi
+- Ocamlc       src/plugins/value/domains/hcexprs.cmo
+- Ocamlc       src/plugins/value/domains/equality/equality_sig.cmi
+- Ocamlc       src/plugins/value/domains/equality/equality.cmi
+- Ocamlc       src/plugins/value/domains/equality/equality.cmo
+- Ocamlc       src/plugins/value/domains/equality/equality_domain.cmi
+- Ocamlc       src/plugins/value/domains/equality/equality_domain.cmo
+- Ocamlc       src/plugins/value/domains/offsm_domain.cmi
+- Ocamlc       src/plugins/value/domains/offsm_domain.cmo
+- Ocamlc       src/plugins/value/domains/symbolic_locs.cmi
+- Ocamlc       src/plugins/value/domains/symbolic_locs.cmo
+- Ocamlc       src/plugins/value/domains/cvalue/cvalue_transfer.cmi
+- Ocamlc       src/plugins/value/domains/cvalue/cvalue_transfer.cmo
+- Ocamlc       src/plugins/value/domains/cvalue/cvalue_init.cmi
+- Ocamlc       src/plugins/value/domains/cvalue/cvalue_init.cmo
+- Ocamlc       src/plugins/value/domains/cvalue/cvalue_domain.cmi
+- Ocamlc       src/plugins/value/domains/cvalue/cvalue_domain.cmo
+- Ocamlc       src/plugins/value/domains/cvalue/builtins_float.cmi
+- Ocamlc       src/plugins/value/domains/cvalue/builtins_float.cmo
+- Ocamlc       src/plugins/value/engine/evaluation.cmi
+- Ocamlc       src/plugins/value/engine/evaluation.cmo
+- Ocamlc       src/plugins/value/engine/non_linear_evaluation.cmi
+- Ocamlc       src/plugins/value/engine/non_linear_evaluation.cmo
+- Ocamlc       src/plugins/value/engine/partitioning.cmi
+- Ocamlc       src/plugins/value/engine/transfer_logic.cmi
+- Ocamlc       src/plugins/value/engine/transfer_logic.cmo
+- Ocamlc       src/plugins/value/engine/transfer_stmt.cmi
+- Ocamlc       src/plugins/value/engine/transfer_stmt.cmo
+- Ocamlc       src/plugins/value/engine/partitioning.cmo
+- Ocamlc       src/plugins/value/engine/mem_exec2.cmi
+- Ocamlc       src/plugins/value/engine/mem_exec2.cmo
+- Ocamlc       src/plugins/value/engine/partitioned_dataflow.cmi
+- Ocamlc       src/plugins/value/engine/partitioned_dataflow.cmo
+- Ocamlc       src/plugins/value/engine/initialization.cmi
+- Ocamlc       src/plugins/value/engine/initialization.cmo
+- Ocamlc       src/plugins/value/engine/abstractions.cmi
+- Ocamlc       src/plugins/value/engine/abstractions.cmo
+- Ocamlc       src/plugins/value/engine/compute_functions.cmi
+- Ocamlc       src/plugins/value/engine/compute_functions.cmo
+- Ocamlc       src/plugins/value/engine/analysis.cmi
+- Ocamlc       src/plugins/value/engine/analysis.cmo
+- Ocamlc       src/plugins/value/register.cmi
+- Ocamlc       src/plugins/value/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Value.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Value.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Value.cmo
+- Ocamlc       src/plugins/occurrence/options.cmi
+- Ocamlc       src/plugins/occurrence/options.cmo
+- Ocamlc       src/plugins/occurrence/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Occurrence.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Occurrence.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Occurrence.cmo
+- Ocamlc       src/plugins/rte/options.cmi
+- Ocamlc       src/plugins/rte/options.cmo
+- Ocamlc       src/plugins/rte/generator.cmi
+- Ocamlc       src/plugins/rte/generator.cmo
+- Ocamlc       src/plugins/rte/rte.cmi
+- Ocamlc       src/plugins/rte/rte.cmo
+- Ocamlc       src/plugins/rte/visit.cmi
+- Ocamlc       src/plugins/rte/visit.cmo
+- Ocamlc       src/plugins/rte/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/RteGen.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/RteGen.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/RteGen.cmo
+- Ocamlc       src/plugins/from/from_parameters.cmi
+- Ocamlc       src/plugins/from/from_parameters.cmo
+- Ocamlc       src/plugins/from/from_compute.cmi
+- Ocamlc       src/plugins/from/from_compute.cmo
+- Ocamlc       src/plugins/from/functionwise.cmi
+- Ocamlc       src/plugins/from/functionwise.cmo
+- Ocamlc       src/plugins/from/callwise.cmi
+- Ocamlc       src/plugins/from/callwise.cmo
+- Ocamlc       src/plugins/from/from_register.cmi
+- Ocamlc       src/plugins/from/from_register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/From.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/From.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/From.cmo
+- Ocamlc       src/plugins/users/users_register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Users.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Users.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Users.cmo
+- Ocamlc       src/plugins/constant_propagation/propagationParameters.cmi
+- Ocamlc       src/plugins/constant_propagation/propagationParameters.cmo
+- Ocamlc       src/plugins/constant_propagation/register.cmi
+- Ocamlc       src/plugins/constant_propagation/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Constant_Propagation.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Constant_Propagation.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Constant_Propagation.cmo
+- Ocamlc       src/plugins/postdominators/postdominators_parameters.cmi
+- Ocamlc       src/plugins/postdominators/postdominators_parameters.cmo
+- Ocamlc       src/plugins/postdominators/print.cmo
+- Ocamlc       src/plugins/postdominators/compute.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Postdominators.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Postdominators.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Postdominators.cmo
+- Ocamlc       src/plugins/inout/inout_parameters.cmi
+- Ocamlc       src/plugins/inout/inout_parameters.cmo
+- Ocamlc       src/plugins/inout/cumulative_analysis.cmi
+- Ocamlc       src/plugins/inout/cumulative_analysis.cmo
+- Ocamlc       src/plugins/inout/operational_inputs.cmo
+- Ocamlc       src/plugins/inout/outputs.cmi
+- Ocamlc       src/plugins/inout/outputs.cmo
+- Ocamlc       src/plugins/inout/inputs.cmi
+- Ocamlc       src/plugins/inout/inputs.cmo
+- Ocamlc       src/plugins/inout/derefs.cmi
+- Ocamlc       src/plugins/inout/derefs.cmo
+- Ocamlc       src/plugins/inout/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Inout.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Inout.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Inout.cmo
+- Ocamlc       src/plugins/impact/options.cmi
+- Ocamlc       src/plugins/impact/options.cmo
+- Ocamlc       src/plugins/impact/pdg_aux.cmi
+- Ocamlc       src/plugins/impact/pdg_aux.cmo
+- Ocamlc       src/plugins/impact/reason_graph.cmo
+- Ocamlc       src/plugins/impact/compute_impact.cmi
+- Ocamlc       src/plugins/impact/compute_impact.cmo
+- Ocamlc       src/plugins/impact/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Impact.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Impact.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Impact.cmo
+- Ocamlc       src/plugins/pdg/pdg_parameters.cmi
+- Ocamlc       src/plugins/pdg/pdg_parameters.cmo
+- Ocamlc       src/plugins/pdg/ctrlDpds.cmi
+- Ocamlc       src/plugins/pdg/ctrlDpds.cmo
+- Ocamlc       src/plugins/pdg/pdg_state.cmi
+- Ocamlc       src/plugins/pdg/pdg_state.cmo
+- Ocamlc       src/plugins/pdg/build.cmi
+- Ocamlc       src/plugins/pdg/build.cmo
+- Ocamlc       src/plugins/pdg/sets.cmi
+- Ocamlc       src/plugins/pdg/sets.cmo
+- Ocamlc       src/plugins/pdg/annot.cmi
+- Ocamlc       src/plugins/pdg/annot.cmo
+- Ocamlc       src/plugins/pdg/marks.cmi
+- Ocamlc       src/plugins/pdg/marks.cmo
+- Ocamlc       src/plugins/pdg/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Pdg.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Pdg.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Pdg.cmo
+- Ocamlc       src/plugins/scope/datascope.cmi
+- Ocamlc       src/plugins/scope/datascope.cmo
+- Ocamlc       src/plugins/scope/zones.cmi
+- Ocamlc       src/plugins/scope/zones.cmo
+- Ocamlc       src/plugins/scope/defs.cmi
+- Ocamlc       src/plugins/scope/defs.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Scope.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Scope.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Scope.cmo
+- Ocamlc       src/plugins/sparecode/sparecode_params.cmi
+- Ocamlc       src/plugins/sparecode/sparecode_params.cmo
+- Ocamlc       src/plugins/sparecode/globs.cmo
+- Ocamlc       src/plugins/sparecode/spare_marks.cmi
+- Ocamlc       src/plugins/sparecode/spare_marks.cmo
+- Ocamlc       src/plugins/sparecode/transform.cmo
+- Ocamlc       src/plugins/sparecode/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Sparecode.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Sparecode.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Sparecode.cmo
+- Ocamlc       src/plugins/slicing/slicingParameters.cmi
+- Ocamlc       src/plugins/slicing/slicingParameters.cmo
+- Ocamlc       src/plugins/slicing/slicingMacros.cmi
+- Ocamlc       src/plugins/slicing/slicingMacros.cmo
+- Ocamlc       src/plugins/slicing/slicingMarks.cmi
+- Ocamlc       src/plugins/slicing/slicingMarks.cmo
+- Ocamlc       src/plugins/slicing/slicingActions.cmi
+- Ocamlc       src/plugins/slicing/slicingActions.cmo
+- Ocamlc       src/plugins/slicing/fct_slice.cmi
+- Ocamlc       src/plugins/slicing/fct_slice.cmo
+- Ocamlc       src/plugins/slicing/printSlice.cmi
+- Ocamlc       src/plugins/slicing/printSlice.cmo
+- Ocamlc       src/plugins/slicing/slicingProject.cmi
+- Ocamlc       src/plugins/slicing/slicingProject.cmo
+- Ocamlc       src/plugins/slicing/slicingTransform.cmi
+- Ocamlc       src/plugins/slicing/slicingTransform.cmo
+- Ocamlc       src/plugins/slicing/slicingCmds.cmi
+- Ocamlc       src/plugins/slicing/slicingCmds.cmo
+- Ocamlc       src/plugins/slicing/register.cmi
+- Ocamlc       src/plugins/slicing/register.cmo
+- Ocamlc       /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/Slicing.cmi
+- Generating   /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Slicing.cmi
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Slicing.cmo
+- Linking      bin/toplevel.byte
+- Generating   META.frama-c-metrics
+- Generating   META.frama-c-callgraph
+- Generating   META.frama-c-value
+- Generating   META.frama-c-occurrence
+- Generating   META.frama-c-rtegen
+- Generating   META.frama-c-from
+- Generating   META.frama-c-users
+- Generating   META.frama-c-constant_propagation
+- Generating   META.frama-c-postdominators
+- Generating   META.frama-c-inout
+- Generating   META.frama-c-impact
+- Generating   META.frama-c-pdg
+- Generating   META.frama-c-scope
+- Generating   META.frama-c-sparecode
+- Generating   META.frama-c-slicing
+- Ocamlopt     src/plugins/aorai/bool3.cmx
+- Ocamlopt     src/libraries/datatype/unmarshal.cmx
+- Ocamlopt     src/libraries/datatype/structural_descr.cmx
+- Ocamlopt     src/libraries/datatype/type.cmx
+- Ocamlopt     src/libraries/stdlib/transitioning.cmx
+- Ocamlopt     src/libraries/stdlib/FCDynlink.cmx
+- Ocamlopt     src/libraries/stdlib/extlib.cmx
+- Ocamlopt     src/libraries/utils/pretty_utils.cmx
+- Ocamlopt     src/libraries/utils/filepath.cmx
+- Ocamlopt     src/libraries/stdlib/FCSet.cmx
+- Ocamlopt     src/libraries/stdlib/FCBuffer.cmx
+- Ocamlopt     src/kernel_services/plugin_entry_points/log.cmx
+- Ocamlopt     src/libraries/utils/hook.cmx
+- Ocamlopt     src/kernel_internals/runtime/config.cmx
+- Ocamlopt     src/kernel_services/cmdline_parameters/cmdline.cmx
+- Ocamlopt     src/libraries/project/project_skeleton.cmx
+- Ocamlopt     src/libraries/datatype/descr.cmx
+- Ocamlopt     src/libraries/stdlib/integer.cmx
+- Ocamlopt     src/libraries/stdlib/FCMap.cmx
+- Ocamlopt     src/libraries/stdlib/FCHashtbl.cmx
+- Ocamlopt     src/libraries/datatype/datatype.cmx
+- Ocamlopt     src/libraries/project/state.cmx
+- Ocamlopt     src/libraries/project/state_dependency_graph.cmx
+- Ocamlopt     src/libraries/project/state_topological.cmx
+- Ocamlopt     src/libraries/project/state_selection.cmx
+- Ocamlopt     src/libraries/utils/qstack.cmx
+- Ocamlopt     src/kernel_services/plugin_entry_points/journal.cmx
+- Ocamlopt     src/libraries/project/project.cmx
+- Ocamlopt     src/libraries/project/state_builder.cmx
+- Ocamlopt     src/kernel_services/cmdline_parameters/typed_parameter.cmx
+- Ocamlopt     src/libraries/utils/binary_cache.cmx
+- Ocamlopt     src/libraries/utils/hptmap.cmx
+- Ocamlopt     src/libraries/utils/hptset.cmx
+- Ocamlopt     src/kernel_services/parsetree/cabs.cmx
+- Ocamlopt     src/kernel_services/ast_queries/cil_datatype.cmx
+- Ocamlopt     src/kernel_services/cmdline_parameters/parameter_customize.cmx
+- Ocamlopt     src/kernel_services/plugin_entry_points/dynamic.cmx
+- Ocamlopt     src/kernel_services/cmdline_parameters/parameter_state.cmx
+- Ocamlopt     src/kernel_services/cmdline_parameters/parameter_category.cmx
+- Ocamlopt     src/kernel_services/cmdline_parameters/parameter_builder.cmx
+- Ocamlopt     src/kernel_services/plugin_entry_points/plugin.cmx
+- Ocamlopt     src/kernel_services/plugin_entry_points/kernel.cmx
+- Ocamlopt     src/kernel_services/plugin_entry_points/emitter.cmx
+- Ocamlopt     src/plugins/aorai/aorai_option.cmx
+- Ocamlopt     src/plugins/aorai/path_analysis.cmx
+- Ocamlopt     src/kernel_services/ast_printing/printer_builder.cmx
+- Ocamlopt     src/kernel_services/ast_queries/cil_const.cmx
+- Ocamlopt     src/kernel_services/ast_queries/logic_env.cmx
+- Ocamlopt     src/libraries/utils/utf8_logic.cmx
+- Ocamlopt     src/libraries/utils/floating_point.cmx
+- Ocamlopt     src/kernel_services/ast_queries/logic_const.cmx
+- Ocamlopt     src/libraries/utils/escape.cmx
+- Ocamlopt     src/kernel_internals/runtime/machdeps.cmx
+- Ocamlopt     src/kernel_internals/typing/alpha.cmx
+- Ocamlopt     src/kernel_services/ast_queries/cil.cmx
+- Ocamlopt     src/kernel_services/ast_printing/cil_printer.cmx
+- Ocamlopt     src/kernel_services/ast_queries/logic_utils.cmx
+- Ocamlopt     src/libraries/utils/rangemap.cmx
+- Ocamlopt     src/kernel_services/parsetree/cabshelper.cmx
+- Ocamlopt     src/kernel_internals/parsing/logic_parser.cmx
+- Ocamlopt     src/kernel_internals/parsing/logic_lexer.cmx
+- Ocamlopt     src/kernel_services/ast_queries/logic_typing.cmx
+- Ocamlopt     src/kernel_services/ast_queries/cil_state_builder.cmx
+- Ocamlopt     src/kernel_services/ast_queries/ast_info.cmx
+- Ocamlopt     src/kernel_services/ast_data/ast.cmx
+- Ocamlopt     src/kernel_services/ast_data/globals.cmx
+- Ocamlopt     src/kernel_internals/typing/cfg.cmx
+- Ocamlopt     src/kernel_services/ast_data/kernel_function.cmx
+- Ocamlopt     src/kernel_services/ast_data/property.cmx
+- Ocamlopt     src/kernel_services/ast_data/property_status.cmx
+- Ocamlopt     src/kernel_services/ast_data/annotations.cmx
+- Ocamlopt     src/kernel_services/ast_printing/printer.cmx
+- Ocamlopt     src/plugins/aorai/promelaoutput.cmx
+- Ocamlopt     src/plugins/aorai/logic_simplification.cmx
+- Ocamlopt     src/kernel_services/visitors/visitor.cmx
+- Ocamlopt     src/kernel_internals/parsing/lexerhack.cmx
+- Ocamlopt     src/kernel_internals/parsing/errorloc.cmx
+- Ocamlopt     src/kernel_services/ast_printing/logic_print.cmx
+- Ocamlopt     src/kernel_services/ast_printing/cprint.cmx
+- Ocamlopt     src/kernel_services/visitors/cabsvisit.cmx
+- Ocamlopt     src/kernel_internals/parsing/cparser.cmx
+- Ocamlopt     src/kernel_internals/parsing/clexer.cmx
+- Ocamlopt     src/kernel_services/ast_printing/cil_descriptive_printer.cmx
+- Ocamlopt     src/kernel_internals/typing/cabs2cil.cmx
+- Ocamlopt     src/plugins/aorai/data_for_aorai.cmx
+- Ocamlopt     src/plugins/aorai/aorai_utils.cmx
+- Ocamlopt     src/plugins/aorai/ltl_output.cmx
+- Ocamlopt     src/plugins/aorai/utils_parser.cmx
+- Ocamlopt     src/plugins/aorai/ltlparser.cmx
+- Ocamlopt     src/plugins/aorai/ltllexer.cmx
+- Ocamlopt     src/plugins/aorai/yaparser.cmx
+- Ocamlopt     src/plugins/aorai/yalexer.cmx
+- Ocamlopt     src/plugins/aorai/promelaparser.cmx
+- Ocamlopt     src/plugins/aorai/promelalexer.cmx
+- Ocamlopt     src/plugins/aorai/promelaparser_withexps.cmx
+- Ocamlopt     src/plugins/aorai/promelalexer_withexps.cmx
+- Ocamlopt     src/libraries/utils/wto.cmx
+- Ocamlopt     src/kernel_services/analysis/wto_statement.cmx
+- Ocamlopt     src/kernel_services/analysis/ordered_stmt.cmx
+- Ocamlopt     src/libraries/utils/bitvector.cmx
+- Ocamlopt     src/kernel_services/analysis/dataflow2.cmx
+- Ocamlopt     src/plugins/aorai/aorai_dataflow.cmx
+- Ocamlopt     src/plugins/aorai/aorai_visitors.cmx
+- Ocamlopt     src/kernel_services/ast_queries/filecheck.cmx
+- Ocamlopt     src/kernel_internals/typing/rmtmps.cmx
+- Ocamlopt     src/kernel_internals/typing/oneret.cmx
+- Ocamlopt     src/kernel_internals/typing/mergecil.cmx
+- Ocamlopt     src/kernel_internals/parsing/logic_preprocess.cmx
+- Ocamlopt     src/kernel_internals/typing/logic_builtin.cmx
+- Ocamlopt     src/kernel_internals/typing/frontc.cmx
+- Ocamlopt     src/kernel_services/ast_queries/file.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/lattice_messages.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/abstract_interp.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/origin.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/map_Lattice.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/int_Base.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/bottom.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/fval.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/ival.cmx
+- Ocamlopt     src/libraries/utils/unicode.cmx
+- Ocamlopt     src/kernel_services/analysis/bit_utils.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/base.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/tr_offset.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/offsetmap.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/int_Intervals.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/locations.cmx
+- Ocamlopt     src/plugins/value_types/precise_locs.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/lmap_bitwise.cmx
+- Ocamlopt     src/plugins/value_types/function_Froms.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/lmap.cmx
+- Ocamlopt     src/plugins/value_types/cvalue.cmx
+- Ocamlopt     src/plugins/value_types/value_types.cmx
+- Ocamlopt     src/plugins/pdg_types/pdgIndex.cmx
+- Ocamlopt     src/plugins/pdg_types/pdgTypes.cmx
+- Ocamlopt     src/plugins/pdg_types/pdgMarks.cmx
+- Ocamlopt     src/plugins/slicing_types/slicingInternals.cmx
+- Ocamlopt     src/plugins/slicing_types/slicingTypes.cmx
+- Ocamlopt     src/plugins/value_types/inout_type.cmx
+- Ocamlopt     src/plugins/value_types/cilE.cmx
+- Ocamlopt     src/kernel_services/ast_data/alarms.cmx
+- Ocamlopt     src/kernel_services/plugin_entry_points/db.cmx
+- Ocamlopt     src/plugins/aorai/aorai_register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Aorai.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Aorai.cmxs
+- Ocamlopt     src/plugins/loop_analysis/options.cmx
+- Ocamlopt     src/plugins/loop_analysis/region_analysis_sig.cmx
+- Ocamlopt     src/plugins/loop_analysis/region_analysis.cmx
+- Ocamlopt     src/kernel_services/analysis/dominators.cmx
+- Ocamlopt     src/plugins/loop_analysis/region_analysis_stmt.cmx
+- Ocamlopt     src/kernel_services/analysis/dataflows.cmx
+- Ocamlopt     src/plugins/loop_analysis/loop_analysis.cmx
+- Ocamlopt     src/plugins/loop_analysis/slevel_analysis.cmx
+- Ocamlopt     src/kernel_services/analysis/loop.cmx
+- Ocamlopt     src/plugins/loop_analysis/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/LoopAnalysis.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/LoopAnalysis.cmxs
+- Ocamlopt     src/kernel_services/analysis/stmts_graph.cmx
+- Ocamlopt     src/plugins/nonterm/nonterm_run.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Nonterm.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Nonterm.cmxs
+- Ocamlopt     src/plugins/obfuscator/options.cmx
+- Ocamlopt     src/plugins/obfuscator/obfuscator_kind.cmx
+- Ocamlopt     src/plugins/obfuscator/dictionary.cmx
+- Ocamlopt     src/plugins/obfuscator/obfuscate.cmx
+- Ocamlopt     src/plugins/obfuscator/obfuscator_register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Obfuscator.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Obfuscator.cmxs
+- Ocamlopt     src/plugins/print_api/grammar.cmx
+- Ocamlopt     src/plugins/print_api/lexer.cmx
+- Ocamlopt     src/plugins/print_api/print_interface.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Print_api.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Print_api.cmxs
+- Ocamlopt     src/plugins/report/report_parameters.cmx
+- Ocamlopt     src/plugins/report/scan.cmx
+- Ocamlopt     src/kernel_services/ast_printing/description.cmx
+- Ocamlopt     src/plugins/report/dump.cmx
+- Ocamlopt     src/plugins/report/csv.cmx
+- Ocamlopt     src/plugins/report/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Report.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Report.cmxs
+- Ocamlopt     src/plugins/variadic/options.cmx
+- Ocamlopt     src/plugins/variadic/extends.cmx
+- Ocamlopt     src/plugins/variadic/va_build.cmx
+- Ocamlopt     src/plugins/variadic/environment.cmx
+- Ocamlopt     src/plugins/variadic/format_pprint.cmx
+- Ocamlopt     src/plugins/variadic/format_typer.cmx
+- Ocamlopt     src/plugins/variadic/format_parser.cmx
+- Ocamlopt     src/plugins/variadic/generic.cmx
+- Ocamlopt     src/plugins/variadic/standard.cmx
+- Ocamlopt     src/plugins/variadic/classify.cmx
+- Ocamlopt     src/plugins/variadic/translate.cmx
+- Ocamlopt     src/plugins/variadic/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Variadic.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Variadic.cmxs
+- Ocamlopt     src/plugins/wp/rformat.cmx
+- Ocamlopt     src/plugins/wp/wprop.cmx
+- Ocamlopt     src/libraries/utils/command.cmx
+- Ocamlopt     src/plugins/wp/wp_parameters.cmx
+- Ocamlopt     src/plugins/wp/wp_error.cmx
+- Ocamlopt     src/plugins/wp/dyncall.cmx
+- Compiling    Qed (opt)
+- Ocamlopt     src/plugins/wp/ctypes.cmx
+- Ocamlopt     src/plugins/wp/clabels.cmx
+- Ocamlopt     src/plugins/wp/Separation.cmx
+- Ocamlopt     src/plugins/wp/LogicUsage.cmx
+- Ocamlopt     src/plugins/wp/RefUsage.cmx
+- Ocamlopt     src/kernel_services/ast_data/statuses_by_call.cmx
+- Ocamlopt     src/plugins/wp/cil2cfg.cmx
+- Ocamlopt     src/plugins/wp/normAtLabels.cmx
+- Ocamlopt     src/libraries/utils/bag.cmx
+- Ocamlopt     src/plugins/wp/wpPropId.cmx
+- Ocamlopt     src/plugins/wp/mcfg.cmx
+- Ocamlopt     src/plugins/wp/Context.cmx
+- Ocamlopt     src/plugins/wp/Warning.cmx
+- Ocamlopt     src/plugins/wp/Model.cmx
+- Ocamlopt     src/plugins/wp/Lang.cmx
+- Ocamlopt     src/plugins/wp/Plang.cmx
+- Ocamlopt     src/plugins/wp/Matrix.cmx
+- Ocamlopt     src/plugins/wp/Passive.cmx
+- Ocamlopt     src/plugins/wp/Splitter.cmx
+- Ocamlopt     src/plugins/wp/Letify.cmx
+- Ocamlopt     src/plugins/wp/Cleaning.cmx
+- Ocamlopt     src/plugins/wp/Conditions.cmx
+- Ocamlopt     src/plugins/wp/Pcond.cmx
+- Ocamlopt     src/plugins/wp/LogicBuiltins.cmx
+- Ocamlopt     src/plugins/wp/Definitions.cmx
+- Ocamlopt     src/plugins/wp/Cint.cmx
+- Ocamlopt     src/plugins/wp/Cfloat.cmx
+- Ocamlopt     src/plugins/wp/Vset.cmx
+- Ocamlopt     src/plugins/wp/Vlist.cmx
+- Ocamlopt     src/plugins/wp/Region.cmx
+- Ocamlopt     src/plugins/wp/Cstring.cmx
+- Ocamlopt     src/plugins/wp/Memory.cmx
+- Ocamlopt     src/plugins/wp/Cvalues.cmx
+- Ocamlopt     src/plugins/wp/CodeSemantics.cmx
+- Ocamlopt     src/plugins/wp/Sigma.cmx
+- Ocamlopt     src/plugins/wp/LogicCompiler.cmx
+- Ocamlopt     src/plugins/wp/LogicSemantics.cmx
+- Ocamlopt     src/plugins/wp/LogicAssigns.cmx
+- Ocamlopt     src/plugins/wp/MemEmpty.cmx
+- Ocamlopt     src/plugins/wp/MemZeroAlias.cmx
+- Ocamlopt     src/plugins/wp/MemVar.cmx
+- Ocamlopt     src/plugins/wp/MemTyped.cmx
+- Ocamlopt     src/plugins/wp/wpStrategy.cmx
+- Ocamlopt     src/plugins/wp/wpRTE.cmx
+- Ocamlopt     src/plugins/wp/wpAnnot.cmx
+- Ocamlopt     src/plugins/wp/VCS.cmx
+- Ocamlopt     src/plugins/wp/script.cmx
+- Ocamlopt     src/plugins/wp/proof.cmx
+- Ocamlopt     src/plugins/wp/wpo.cmx
+- Ocamlopt     src/plugins/wp/wpReport.cmx
+- Ocamlopt     src/plugins/wp/why3_xml.cmx
+- Ocamlopt     src/libraries/utils/task.cmx
+- Ocamlopt     src/plugins/wp/ProverTask.cmx
+- Ocamlopt     src/plugins/wp/ProverErgo.cmx
+- Ocamlopt     src/plugins/wp/ProverCoq.cmx
+- Ocamlopt     src/plugins/wp/ProverWhy3.cmx
+- Ocamlopt     src/plugins/wp/ProverWhy3ide.cmx
+- Ocamlopt     src/plugins/wp/driver.cmx
+- Ocamlopt     src/plugins/wp/prover.cmx
+- Ocamlopt     src/plugins/wp/Generator.cmx
+- Ocamlopt     src/plugins/wp/Factory.cmx
+- Ocamlopt     src/plugins/wp/calculus.cmx
+- Ocamlopt     src/plugins/wp/cfgDump.cmx
+- Ocamlopt     src/plugins/wp/cfgWP.cmx
+- Ocamlopt     src/plugins/wp/register.cmx
+- Ocamlopt     src/plugins/wp/VC.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Wp.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Wp.cmxs
+- Ocamlopt     src/kernel_internals/runtime/frama_c_init.cmx
+- Ocamlopt     src/libraries/datatype/unmarshal_nums.cmx
+- Ocamlopt     src/libraries/utils/vector.cmx
+- Ocamlopt     src/libraries/utils/indexer.cmx
+- Ocamlopt     src/libraries/utils/rgmap.cmx
+- Ocamlopt     src/libraries/utils/leftistheap.cmx
+- Ocamlopt     src/libraries/utils/json.cmx
+- Ocamlopt     src/libraries/utils/cilconfig.cmx
+- Ocamlopt     src/kernel_services/ast_printing/cabs_debug.cmx
+- Ocamlopt     src/kernel_services/analysis/dataflow.cmx
+- Ocamlopt     src/kernel_services/analysis/service_graph.cmx
+- Ocamlopt     src/kernel_services/abstract_interp/trace.cmx
+- Ocamlopt     src/plugins/value_types/widen_type.cmx
+- Ocamlopt     src/kernel_internals/typing/translate_lightweight.cmx
+- Ocamlopt     src/kernel_internals/typing/allocates.cmx
+- Ocamlopt     src/kernel_internals/typing/unroll_loops.cmx
+- Ocamlopt     src/kernel_internals/typing/asm_contracts.cmx
+- Ocamlopt     src/kernel_services/analysis/exn_flow.cmx
+- Ocamlopt     src/kernel_services/analysis/logic_interp.cmx
+- Ocamlopt     src/kernel_internals/typing/infer_annotations.cmx
+- Ocamlopt     src/kernel_services/ast_transformations/clone.cmx
+- Ocamlopt     src/kernel_services/ast_transformations/filter.cmx
+- Ocamlopt     src/kernel_internals/runtime/special_hooks.cmx
+- Ocamlopt     src/kernel_internals/runtime/messages.cmx
+- Ocamlopt     src/kernel_internals/runtime/boot.cmx
+- Ocamlopt     src/plugins/metrics/metrics_parameters.cmx
+- Ocamlopt     src/plugins/metrics/css_html.cmx
+- Ocamlopt     src/plugins/metrics/metrics_base.cmx
+- Ocamlopt     src/plugins/metrics/metrics_acsl.cmx
+- Ocamlopt     src/plugins/metrics/metrics_cabs.cmx
+- Ocamlopt     src/plugins/metrics/metrics_cilast.cmx
+- Ocamlopt     src/plugins/metrics/metrics_coverage.cmx
+- Ocamlopt     src/plugins/metrics/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Metrics.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Metrics.cmxs
+- Ocamlopt     src/plugins/callgraph/options.cmx
+- Ocamlopt     src/plugins/callgraph/journalize.cmx
+- Ocamlopt     src/plugins/callgraph/cg.cmx
+- Ocamlopt     src/plugins/callgraph/services.cmx
+- Ocamlopt     src/plugins/callgraph/uses.cmx
+- Ocamlopt     src/plugins/callgraph/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Callgraph.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Callgraph.cmxs
+- Ocamlopt     src/plugins/value/slevel/split_strategy.cmx
+- Ocamlopt     src/plugins/value/value_parameters.cmx
+- Ocamlopt     src/plugins/value/slevel/stop_at_nth.cmx
+- Ocamlopt     src/plugins/value/utils/value_perf.cmx
+- Ocamlopt     src/plugins/value/legacy/state_set.cmx
+- Ocamlopt     src/plugins/value/utils/value_util.cmx
+- Ocamlopt     src/plugins/value/legacy/value_messages.cmx
+- Ocamlopt     src/plugins/value/utils/library_functions.cmx
+- Ocamlopt     src/plugins/value/utils/mark_noresults.cmx
+- Ocamlopt     src/plugins/value/slevel/separate.cmx
+- Ocamlopt     src/plugins/value/legacy/state_imp.cmx
+- Ocamlopt     src/plugins/value/utils/widen_hints_ext.cmx
+- Ocamlopt     src/plugins/value/utils/widen.cmx
+- Ocamlopt     src/plugins/value/legacy/valarms.cmx
+- Ocamlopt     src/plugins/value/legacy/warn.cmx
+- Ocamlopt     src/plugins/value/utils/eval_typ.cmx
+- Ocamlopt     src/plugins/value/utils/backward_formals.cmx
+- Ocamlopt     src/plugins/value/legacy/eval_op.cmx
+- Ocamlopt     src/plugins/value/domains/cvalue/locals_scoping.cmx
+- Ocamlopt     src/plugins/value/domains/cvalue/builtins.cmx
+- Ocamlopt     src/plugins/value/domains/cvalue/builtins_string.cmx
+- Ocamlopt     src/plugins/value/legacy/eval_terms.cmx
+- Ocamlopt     src/plugins/value/legacy/eval_annots.cmx
+- Ocamlopt     src/plugins/value/legacy/eval_behaviors.cmx
+- Ocamlopt     src/plugins/value/legacy/mem_exec.cmx
+- Ocamlopt     src/plugins/value/legacy/eval_exprs.cmx
+- Ocamlopt     src/plugins/value/legacy/eval_non_linear.cmx
+- Ocamlopt     src/plugins/value/legacy/initial_state.cmx
+- Ocamlopt     src/plugins/value/domains/cvalue/builtins_malloc.cmx
+- Ocamlopt     src/plugins/value/domains/cvalue/builtins_misc.cmx
+- Ocamlopt     src/plugins/value/utils/value_results.cmx
+- Ocamlopt     src/plugins/value/utils/state_import.cmx
+- Ocamlopt     src/plugins/value/legacy/function_args.cmx
+- Ocamlopt     src/plugins/value/legacy/split_return.cmx
+- Ocamlopt     src/plugins/value/legacy/eval_stmt.cmx
+- Ocamlopt     src/plugins/value/slevel/per_stmt_slevel.cmx
+- Ocamlopt     src/plugins/value/legacy/eval_slevel.cmx
+- Ocamlopt     src/plugins/value/legacy/eval_funs.cmx
+- Ocamlopt     src/plugins/value/alarmset.cmx
+- Ocamlopt     src/plugins/value/eval.cmx
+- Ocamlopt     src/plugins/value/utils/structure.cmx
+- Ocamlopt     src/plugins/value/values/value_product.cmx
+- Ocamlopt     src/plugins/value/values/location_lift.cmx
+- Ocamlopt     src/plugins/value/values/cvalue_forward.cmx
+- Ocamlopt     src/plugins/value/values/cvalue_backward.cmx
+- Ocamlopt     src/plugins/value/values/main_values.cmx
+- Ocamlopt     src/plugins/value/values/main_locations.cmx
+- Ocamlopt     src/plugins/value/values/offsm_value.cmx
+- Ocamlopt     src/plugins/value/domains/domain_store.cmx
+- Ocamlopt     src/plugins/value/domains/domain_builder.cmx
+- Ocamlopt     src/plugins/value/domains/domain_product.cmx
+- Ocamlopt     src/plugins/value/domains/domain_lift.cmx
+- Ocamlopt     src/plugins/value/domains/unit_domain.cmx
+- Ocamlopt     src/plugins/value/domains/gauges/gauges_domain.cmx
+- Ocamlopt     src/plugins/value/domains/apron/apron_domain.cmx
+- Ocamlopt     src/plugins/value/domains/hcexprs.cmx
+- Ocamlopt     src/plugins/value/domains/equality/equality.cmx
+- Ocamlopt     src/plugins/value/domains/equality/equality_domain.cmx
+- Ocamlopt     src/plugins/value/domains/offsm_domain.cmx
+- Ocamlopt     src/plugins/value/domains/symbolic_locs.cmx
+- Ocamlopt     src/plugins/value/domains/cvalue/cvalue_transfer.cmx
+- Ocamlopt     src/plugins/value/domains/cvalue/cvalue_init.cmx
+- Ocamlopt     src/plugins/value/domains/cvalue/cvalue_domain.cmx
+- Ocamlopt     src/plugins/value/domains/cvalue/builtins_float.cmx
+- Ocamlopt     src/plugins/value/engine/evaluation.cmx
+- Ocamlopt     src/plugins/value/engine/non_linear_evaluation.cmx
+- Ocamlopt     src/plugins/value/engine/partitioning.cmx
+- Ocamlopt     src/plugins/value/engine/transfer_logic.cmx
+- Ocamlopt     src/plugins/value/engine/transfer_stmt.cmx
+- Ocamlopt     src/plugins/value/engine/mem_exec2.cmx
+- Ocamlopt     src/plugins/value/engine/partitioned_dataflow.cmx
+- Ocamlopt     src/plugins/value/engine/initialization.cmx
+- Ocamlopt     src/plugins/value/engine/abstractions.cmx
+- Ocamlopt     src/plugins/value/engine/compute_functions.cmx
+- Ocamlopt     src/plugins/value/engine/analysis.cmx
+- Ocamlopt     src/plugins/value/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Value.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Value.cmxs
+- Ocamlopt     src/plugins/occurrence/options.cmx
+- Ocamlopt     src/plugins/occurrence/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Occurrence.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Occurrence.cmxs
+- Ocamlopt     src/plugins/rte/options.cmx
+- Ocamlopt     src/plugins/rte/generator.cmx
+- Ocamlopt     src/plugins/rte/rte.cmx
+- Ocamlopt     src/plugins/rte/visit.cmx
+- Ocamlopt     src/plugins/rte/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/RteGen.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/RteGen.cmxs
+- Ocamlopt     src/plugins/from/from_parameters.cmx
+- Ocamlopt     src/plugins/from/from_compute.cmx
+- Ocamlopt     src/plugins/from/functionwise.cmx
+- Ocamlopt     src/plugins/from/callwise.cmx
+- Ocamlopt     src/plugins/from/from_register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/From.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/From.cmxs
+- Ocamlopt     src/plugins/users/users_register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Users.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Users.cmxs
+- Ocamlopt     src/plugins/constant_propagation/propagationParameters.cmx
+- Ocamlopt     src/plugins/constant_propagation/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Constant_Propagation.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Constant_Propagation.cmxs
+- Ocamlopt     src/plugins/postdominators/postdominators_parameters.cmx
+- Ocamlopt     src/plugins/postdominators/print.cmx
+- Ocamlopt     src/plugins/postdominators/compute.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Postdominators.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Postdominators.cmxs
+- Ocamlopt     src/plugins/inout/inout_parameters.cmx
+- Ocamlopt     src/plugins/inout/cumulative_analysis.cmx
+- Ocamlopt     src/plugins/inout/operational_inputs.cmx
+- Ocamlopt     src/plugins/inout/outputs.cmx
+- Ocamlopt     src/plugins/inout/inputs.cmx
+- Ocamlopt     src/plugins/inout/derefs.cmx
+- Ocamlopt     src/plugins/inout/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Inout.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Inout.cmxs
+- Ocamlopt     src/plugins/impact/options.cmx
+- Ocamlopt     src/plugins/impact/pdg_aux.cmx
+- Ocamlopt     src/plugins/impact/reason_graph.cmx
+- Ocamlopt     src/plugins/impact/compute_impact.cmx
+- Ocamlopt     src/plugins/impact/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Impact.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Impact.cmxs
+- Ocamlopt     src/plugins/pdg/pdg_parameters.cmx
+- Ocamlopt     src/plugins/pdg/ctrlDpds.cmx
+- Ocamlopt     src/plugins/pdg/pdg_state.cmx
+- Ocamlopt     src/plugins/pdg/build.cmx
+- Ocamlopt     src/plugins/pdg/sets.cmx
+- Ocamlopt     src/plugins/pdg/annot.cmx
+- Ocamlopt     src/plugins/pdg/marks.cmx
+- Ocamlopt     src/plugins/pdg/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Pdg.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Pdg.cmxs
+- Ocamlopt     src/plugins/scope/datascope.cmx
+- Ocamlopt     src/plugins/scope/zones.cmx
+- Ocamlopt     src/plugins/scope/defs.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Scope.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Scope.cmxs
+- Ocamlopt     src/plugins/sparecode/sparecode_params.cmx
+- Ocamlopt     src/plugins/sparecode/globs.cmx
+- Ocamlopt     src/plugins/sparecode/spare_marks.cmx
+- Ocamlopt     src/plugins/sparecode/transform.cmx
+- Ocamlopt     src/plugins/sparecode/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Sparecode.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Sparecode.cmxs
+- Ocamlopt     src/plugins/slicing/slicingParameters.cmx
+- Ocamlopt     src/plugins/slicing/slicingMacros.cmx
+- Ocamlopt     src/plugins/slicing/slicingMarks.cmx
+- Ocamlopt     src/plugins/slicing/slicingActions.cmx
+- Ocamlopt     src/plugins/slicing/fct_slice.cmx
+- Ocamlopt     src/plugins/slicing/printSlice.cmx
+- Ocamlopt     src/plugins/slicing/slicingProject.cmx
+- Ocamlopt     src/plugins/slicing/slicingTransform.cmx
+- Ocamlopt     src/plugins/slicing/slicingCmds.cmx
+- Ocamlopt     src/plugins/slicing/register.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Slicing.cmx
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Slicing.cmxs
+- Packing      /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101/lib/plugins/top/Wp.cmxa
+- Linking      bin/toplevel.opt
+- Generating   ptests/ptests_config.ml
+- Linking      bin/ptests.opt
+- Generating   tests/ptests_config
+- Generating   src/plugins/report/tests/ptests_config
+- Generating   src/plugins/wp/tests/ptests_config
+-> compiled  frama-c-base.20161101
+Processing  4/4: [frama-c-base: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/frama-c-base.20161101)
+- Cleaning     Installation directory
+- Installing   WP shared files
+- Installing   Qed Library
+- Installing   kernel API
+- Generating   destination directories
+- Installing   shared files
+- Installing   C standard library
+- Installing   binaries
+- Installing   config files
+- Installing   API documentation
+- Installing   dynamic plug-ins
+- Installing   dynamic gui plug-ins
+- Installing   man pages
+-> installed frama-c-base.20161101
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:51.25] Success
