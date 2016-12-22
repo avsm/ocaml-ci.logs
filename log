@@ -1,0 +1,112 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 polyglot /home/opam/opam-repository/cache
+[2016-12-22 16:20.17] Starting...
+[2016-12-22 16:20.17] Waiting for free pool slot to run
+[2016-12-22 18:12.24] Pool slot obtained, starting run
+[2016-12-22 18:12.24] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 polyglot
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install xmlm     1.2.0                                      [required by polyglot]
+  - install polyglot 1.0.0
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [polyglot.1.0.0: dl]
+Processing  2/2: [polyglot.1.0.0: dl] [xmlm.1.2.0: dl]
+[polyglot.1.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [xmlm.1.2.0: dl]
+[xmlm.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [xmlm: ./pkg/pkg-git]
++ ./pkg/pkg-git  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0)
+Processing  1/4: [xmlm: ./pkg/build true]
++ ./pkg/build "true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0)
+- ocamlfind ocamldep -modules src/xmlm.mli > src/xmlm.mli.depends
+- ocamlfind ocamlc -c -I src -I test -o src/xmlm.cmi src/xmlm.mli
+- ocamlfind ocamldep -modules src/xmlm.ml > src/xmlm.ml.depends
+- ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -a src/xmlm.cmo -o src/xmlm.cma
+- ocamlfind ocamlopt -a src/xmlm.cmx -o src/xmlm.cmxa
+- ocamlfind ocamlopt -shared src/xmlm.cmx -o src/xmlm.cmxs
+- ocamlfind ocamldep -modules test/xmltrip.ml > test/xmltrip.ml.depends
+- ocamlfind ocamldep -modules test/xhtml.ml > test/xhtml.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xhtml.cmo test/xhtml.ml
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xhtml.cmx test/xhtml.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -linkpkg src/xmlm.cmx test/xhtml.cmx test/xmltrip.cmx -o test/xmltrip.native
+-> compiled  xmlm.1.2.0
+[WARNING] Errors in /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0/xmlm.install, some fields have been ignored:
+            - At /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0/xmlm.install:1:0:
+              Invalid field opam-version
+
+-> installed xmlm.1.2.0
+Processing  3/4: [polyglot: make lib]
++ make "lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/polyglot.1.0.0)
+- ocamlbuild -use-ocamlfind -cflags -w,@f@p@u@y,-bin-annot -Is cli,lib polyglot.cma
+- ocamlfind ocamldep -package xmlm -modules lib/polyglot.mli > lib/polyglot.mli.depends
+- ocamlfind ocamlc -c -w @f@p@u@y -bin-annot -g -annot -bin-annot -safe-string -principal -strict-sequence -w @5@8@10@11@12@14@23@24@26@29 -package xmlm -I lib -I cli -o lib/polyglot.cmi lib/polyglot.mli
+- ocamlfind ocamldep -package xmlm -modules lib/polyglot.ml > lib/polyglot.ml.depends
+- ocamlfind ocamlc -c -w @f@p@u@y -bin-annot -g -annot -bin-annot -safe-string -principal -strict-sequence -w @5@8@10@11@12@14@23@24@26@29 -package xmlm -I lib -I cli -o lib/polyglot.cmo lib/polyglot.ml
+- ocamlfind ocamlc -a -package xmlm lib/polyglot.cmo -o lib/polyglot.cma
+- ocamlbuild -use-ocamlfind -cflags -w,@f@p@u@y,-bin-annot -Is cli,lib polyglot.cmxa
+- ocamlfind ocamlopt -c -w @f@p@u@y -bin-annot -g -annot -bin-annot -safe-string -principal -strict-sequence -w @5@8@10@11@12@14@23@24@26@29 -package xmlm -I lib -I cli -o lib/polyglot.cmx lib/polyglot.ml
+- ocamlfind ocamlopt -a -package xmlm lib/polyglot.cmx -o lib/polyglot.cmxa
+- ocamlbuild -use-ocamlfind -cflags -w,@f@p@u@y,-bin-annot -Is cli,lib polyglot.cmxs
+- ocamlfind ocamlopt -shared -package xmlm lib/polyglot.cmx -o lib/polyglot.cmxs
+Processing  3/4: [polyglot: make tool]
++ make "tool" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/polyglot.1.0.0)
+- printf "let git_descr = \""              > polyglotVersion.ml
+- printf "1.0.0"                       >> polyglotVersion.ml
+- printf "\"\nlet git_dirty = true\n" >> polyglotVersion.ml
+- ocamlbuild -use-ocamlfind -cflags -w,@f@p@u@y,-bin-annot -Is cli,lib polyglot_main.native
+- ocamlfind ocamldep -package xmlm -package cmdliner -package unix -modules cli/polyglot_main.ml > cli/polyglot_main.ml.depends
+- ocamlfind ocamldep -modules polyglotVersion.ml > polyglotVersion.ml.depends
+- ocamlfind ocamlc -c -w @f@p@u@y -bin-annot -g -annot -bin-annot -safe-string -principal -strict-sequence -w @5@8@10@11@12@14@23@24@26@29 -I lib -I cli -o polyglotVersion.cmo polyglotVersion.ml
+- ocamlfind ocamlc -c -w @f@p@u@y -bin-annot -g -annot -bin-annot -safe-string -principal -strict-sequence -w @5@8@10@11@12@14@23@24@26@29 -package xmlm -package cmdliner -package unix -I cli -I lib -o cli/polyglot_main.cmo cli/polyglot_main.ml
+- ocamlfind ocamlopt -c -w @f@p@u@y -bin-annot -g -annot -bin-annot -safe-string -principal -strict-sequence -w @5@8@10@11@12@14@23@24@26@29 -I lib -I cli -o polyglotVersion.cmx polyglotVersion.ml
+- ocamlfind ocamlopt -c -w @f@p@u@y -bin-annot -g -annot -bin-annot -safe-string -principal -strict-sequence -w @5@8@10@11@12@14@23@24@26@29 -package xmlm -package cmdliner -package unix -I cli -I lib -o cli/polyglot_main.cmx cli/polyglot_main.ml
+- ocamlfind ocamlopt -linkpkg -g -package xmlm -package cmdliner -package unix lib/polyglot.cmx polyglotVersion.cmx cli/polyglot_main.cmx -o cli/polyglot_main.native
+- ln -f polyglot_main.native polyglot
+-> compiled  polyglot.1.0.0
+Processing  4/4: [polyglot: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/polyglot.1.0.0)
+- ocamlbuild -use-ocamlfind -cflags -w,@f@p@u@y,-bin-annot -Is cli,lib polyglot.cma
+- ocamlbuild -use-ocamlfind -cflags -w,@f@p@u@y,-bin-annot -Is cli,lib polyglot.cmxa
+- ocamlbuild -use-ocamlfind -cflags -w,@f@p@u@y,-bin-annot -Is cli,lib polyglot.cmxs
+- ocamlfind install polyglot lib/META lib/polyglot.mli \
+- 	_build/lib/polyglot.cma _build/lib/polyglot.cmxa _build/lib/polyglot.cmxs _build/lib/polyglot.cmi _build/lib/polyglot.cmti _build/lib/polyglot.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/polyglot/polyglot.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/polyglot/polyglot.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/polyglot/polyglot.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/polyglot/polyglot.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/polyglot/polyglot.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/polyglot/polyglot.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/polyglot/polyglot.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/polyglot/META
+-> installed polyglot.1.0.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:12.40] Success
