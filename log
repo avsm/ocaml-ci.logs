@@ -1,0 +1,70 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 zarith-freestanding /home/opam/opam-repository/cache
+[2016-12-22 16:19.06] Starting...
+[2016-12-22 16:19.06] Waiting for free pool slot to run
+[2016-12-22 17:22.30] Pool slot obtained, starting run
+[2016-12-22 17:22.30] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 zarith-freestanding
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libgmp-dev
+#  - linux-libc-dev
+#  - m4
+#  - perl
+#  - pkg-config
+# The following new OS packages need to be installed: libgmp-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libgmp-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libgmpxx4ldbl:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libgmpxx4ldbl_2%3a6.1.0+dfsg-2_amd64.deb ...
+Unpacking libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+Selecting previously unselected package libgmp-dev:amd64.
+Preparing to unpack .../libgmp-dev_2%3a6.1.0+dfsg-2_amd64.deb ...
+Unpacking libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+Setting up libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-gmp            1                               [required by zarith]
+  - install conf-perl           1                               [required by zarith]
+  - install ocaml-src           4.03.0                          [required by ocaml-freestanding]
+  - install conf-pkg-config     1.0                             [required by ocaml-freestanding]
+  - install zarith              1.4                             [required by zarith-freestanding]
+  - install solo5-kernel-ukvm   0.1.1                           [required by ocaml-freestanding]
+  - install ocaml-freestanding  0.1.1                           [required by zarith-freestanding]
+  - install gmp-freestanding    6.0.0                           [required by zarith-freestanding]
+  - install zarith-freestanding 1.4   
+===== 9 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  4/9: [gmp-freestanding.6.0.0: dl]
+Processing  5/9: [gmp-freestanding.6.0.0: dl] [ocaml-freestanding.0.1.1: dl]
+Processing  6/9: [gmp-freestanding.6.0.0: dl] [ocaml-freestanding.0.1.1: dl] [ocaml-src.4.03.0: dl]
+[ocaml-freestanding.0.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/9: [gmp-freestanding.6.0.0: dl] [ocaml-src.4.03.0: dl]
+[gmp-freestanding.6.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/9: [ocaml-src.4.03.0: dl]
+[ocaml-src.4.03.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/9:
+Processing  7/9: [solo5-kernel-ukvm.0.1.1: dl]
+[solo5-kernel-ukvm.0.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/9:
+Processing  8/9: [zarith.1.4: dl]
+Processing  9/9: [zarith.1.4: dl] [zarith-freestanding.1.4: dl]
+[zarith.1.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  9/9: [zarith-freestanding.1.4: dl]
+Processing  9/9:
+[ERROR] The sources of the following couldn't be obtained, aborting:
+          - zarith-freestanding.1.4
+
+'opam install --verbose --yes --jobs=2 zarith-freestanding' failed.
+[2016-12-22 17:22.49] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "zarith-freestanding" exited with status 66
