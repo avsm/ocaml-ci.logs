@@ -1,0 +1,39 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 hweak /home/opam/opam-repository/cache
+[2016-12-22 16:19.42] Starting...
+[2016-12-22 16:19.43] Waiting for free pool slot to run
+[2016-12-22 17:53.30] Pool slot obtained, starting run
+[2016-12-22 17:53.30] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 hweak
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install hweak 1.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [hweak.1.1: dl]
+[hweak.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [hweak: mkdir]
++ mkdir "-p" "/home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hweak" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/hweak.1.1)
+Processing  1/2: [hweak: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/hweak.1.1)
+- ocamlc  -c hweak.mli
+- ocamlc  -c hweak.ml
+- File "hweak.ml", line 69, characters 14-26:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- ocamlc  -c weak_memo.mli
+- ocamlc  -c weak_memo.ml
+- File "weak_memo.ml", line 44, characters 12-24:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+-> compiled  hweak.1.1
+Processing  2/2: [hweak: cp hweak.cmi]
++ cp "hweak.cmi" "hweak.cmo" "weak_memo.cmi" "weak_memo.cmo" "/home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hweak" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/hweak.1.1)
+-> installed hweak.1.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:53.46] Success

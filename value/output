@@ -1,0 +1,33 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install hweak 1.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [hweak.1.1: dl]
+[hweak.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [hweak: mkdir]
++ mkdir "-p" "/home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hweak" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/hweak.1.1)
+Processing  1/2: [hweak: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/hweak.1.1)
+- ocamlc  -c hweak.mli
+- ocamlc  -c hweak.ml
+- File "hweak.ml", line 69, characters 14-26:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- ocamlc  -c weak_memo.mli
+- ocamlc  -c weak_memo.ml
+- File "weak_memo.ml", line 44, characters 12-24:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+-> compiled  hweak.1.1
+Processing  2/2: [hweak: cp hweak.cmi]
++ cp "hweak.cmi" "hweak.cmo" "weak_memo.cmi" "weak_memo.cmo" "/home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hweak" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/hweak.1.1)
+-> installed hweak.1.1
+Done.
+# Run eval `opam env` to update the current shell environment
