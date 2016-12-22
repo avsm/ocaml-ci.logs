@@ -1,0 +1,1560 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install uutf       0.9.4                                    [required by m17n]
+  - install gen        0.4                                      [required by m17n]
+  - install base-bytes base                                     [required by uucp]
+  - install ppx_tools  5.0+4.03.0                               [required by sedlex]
+  - install uunf       1.0.0                                    [required by m17n]
+  - install uucp       1.1.0                                    [required by m17n]
+  - install sedlex     1.99.3                                   [required by m17n]
+  - install m17n       1.0       
+===== 8 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/8: [gen.0.4: dl]
+Processing  3/8: [gen.0.4: dl] [m17n.1.0: dl]
+Processing  4/8: [gen.0.4: dl] [m17n.1.0: dl] [ppx_tools.5.0+4.03.0: dl]
+[m17n.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/8: [gen.0.4: dl] [ppx_tools.5.0+4.03.0: dl]
+[gen.0.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/8: [ppx_tools.5.0+4.03.0: dl]
+[ppx_tools.5.0+4.03.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/8:
+Processing  5/8: [sedlex.1.99.3: dl]
+Processing  6/8: [sedlex.1.99.3: dl] [uucp.1.1.0: dl]
+Processing  7/8: [sedlex.1.99.3: dl] [uucp.1.1.0: dl] [uunf.1.0.0: dl]
+[sedlex.1.99.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/8: [uucp.1.1.0: dl] [uunf.1.0.0: dl]
+[uucp.1.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/8: [uunf.1.0.0: dl]
+[uunf.1.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/8:
+Processing  8/8: [uutf.0.9.4: dl]
+[uutf.0.9.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/8:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/16: [gen: ./configure]
+Processing  3/16: [gen: ./configure] [ppx_tools: make all]
++ ./configure "--disable-docs" "--disable-tests" "--disable-bench" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/gen.0.4)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ gen
+- Package version: ..................................... 0.2.4
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- build benchmark: ..................................... false
+- Create documentations: ............................... false
+- Compile tests executable and library and run them: ... false
+- 
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ gen
+- Package version: ..................................... 0.2.4
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- build benchmark: ..................................... false
+- Create documentations: ............................... false
+- Compile tests executable and library and run them: ... false
+- 
+Processing  3/16: [gen: make all] [ppx_tools: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_tools.5.0+4.03.0)
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+-> compiled  ppx_tools.5.0+4.03.0
+Processing  3/16: [gen: make all]
+Processing  4/16: [gen: make all] [uutf: ocaml]
++ ocaml "pkg/git.ml" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/uutf.0.9.4)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+-> compiled  uutf.0.9.4
+Processing  4/16: [gen: make all]
+-> installed base-bytes.base
+Processing  5/16: [gen: make all]
+Processing  6/16: [gen: make all] [uucp: ocaml]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/gen.0.4)
+- ocaml setup.ml -all 
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ gen
+- Package version: ..................................... 0.2.4
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- build benchmark: ..................................... false
+- Create documentations: ............................... false
+- Compile tests executable and library and run them: ... false
+- 
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/gen.0.4'
+- mkdir -p qtest
+- qtest extract src/gen.ml > qtest/run_qtest.ml || true
+- /bin/sh: 1: qtest: not found
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/gen.0.4'
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 20, characters 26-35:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 21, characters 26-36:
+- Warning: the tag "pkg_qcheck" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 23, characters 20-29:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 24, characters 20-30:
+- Warning: the tag "pkg_qcheck" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 27, characters 27-40:
+- Warning: the tag "pkg_benchmark" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 29, characters 20-33:
+- Warning: the tag "pkg_benchmark" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/gen.mli > src/gen.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/gen_intf.ml > src/gen_intf.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/gen_intf.cmo src/gen_intf.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -I qtest -o src/gen.cmi src/gen.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/gen.ml > src/gen.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genMList.mli > src/genMList.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -I qtest -o src/genMList.cmi src/genMList.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genLabels.mli > src/genLabels.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genLabels_intf.ml > src/genLabels_intf.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genLabels_intf.cmo src/genLabels_intf.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -I qtest -o src/genLabels.cmi src/genLabels.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genLabels.ml > src/genLabels.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genClone.mli > src/genClone.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -I qtest -o src/genClone.cmi src/genClone.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genClone.ml > src/genClone.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genMList.ml > src/genMList.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genM.mli > src/genM.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genM_intf.ml > src/genM_intf.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genM_intf.cmo src/genM_intf.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -I qtest -o src/genM.cmi src/genM.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genM.ml > src/genM.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/gen.cmo src/gen.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -nolabels -w A -w -4 -w -44 -I src -I qtest -o src/genLabels.cmo src/genLabels.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genClone.cmo src/genClone.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genClone.cmo src/genClone.ml
+- File "src/genClone.ml", line 9, characters 31-75:
+- Warning 50: ambiguous documentation comment
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genMList.cmo src/genMList.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genM.cmo src/genM.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a src/genMList.cmo src/gen_intf.cmo src/gen.cmo src/genLabels_intf.cmo src/genLabels.cmo src/genClone.cmo src/genM_intf.cmo src/genM.cmo -o src/gen.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genMList.cmx src/genMList.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/gen_intf.cmx src/gen_intf.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/gen.cmx src/gen.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genLabels_intf.cmx src/genLabels_intf.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genM_intf.cmx src/genM_intf.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -nolabels -w A -w -4 -w -44 -I src -I qtest -o src/genLabels.cmx src/genLabels.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genClone.cmx src/genClone.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genClone.cmx src/genClone.ml
+- File "src/genClone.ml", line 9, characters 31-75:
+- Warning 50: ambiguous documentation comment
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genM.cmx src/genM.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a src/genMList.cmx src/gen_intf.cmx src/gen.cmx src/genLabels_intf.cmx src/genLabels.cmx src/genClone.cmx src/genM_intf.cmx src/genM.cmx -o src/gen.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared src/gen.cmxa src/genMList.cmx src/gen_intf.cmx src/gen.cmx src/genLabels_intf.cmx src/genLabels.cmx src/genClone.cmx src/genM_intf.cmx src/genM.cmx -o src/gen.cmxs
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- W: Docs are turned off, consider enabling with 'ocaml setup.ml -configure --enable-docs'
+- W: Tests are turned off, consider enabling with 'ocaml setup.ml -configure --enable-tests'
+- ocaml setup.ml -all 
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ gen
+- Package version: ..................................... 0.2.4
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- build benchmark: ..................................... false
+- Create documentations: ............................... false
+- Compile tests executable and library and run them: ... false
+- 
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/gen.0.4'
+- mkdir -p qtest
+- qtest extract src/gen.ml > qtest/run_qtest.ml || true
+- /bin/sh: 1: qtest: not found
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/gen.0.4'
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 20, characters 26-35:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 21, characters 26-36:
+- Warning: the tag "pkg_qcheck" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 23, characters 20-29:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 24, characters 20-30:
+- Warning: the tag "pkg_qcheck" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 27, characters 27-40:
+- Warning: the tag "pkg_benchmark" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 29, characters 20-33:
+- Warning: the tag "pkg_benchmark" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/gen.mli > src/gen.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/gen_intf.ml > src/gen_intf.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/gen_intf.cmo src/gen_intf.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -I qtest -o src/gen.cmi src/gen.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/gen.ml > src/gen.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genMList.mli > src/genMList.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -I qtest -o src/genMList.cmi src/genMList.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genLabels.mli > src/genLabels.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genLabels_intf.ml > src/genLabels_intf.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genLabels_intf.cmo src/genLabels_intf.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -I qtest -o src/genLabels.cmi src/genLabels.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genLabels.ml > src/genLabels.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genClone.mli > src/genClone.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -I qtest -o src/genClone.cmi src/genClone.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genClone.ml > src/genClone.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genMList.ml > src/genMList.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genM.mli > src/genM.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genM_intf.ml > src/genM_intf.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genM_intf.cmo src/genM_intf.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -I qtest -o src/genM.cmi src/genM.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/genM.ml > src/genM.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/gen.cmo src/gen.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -nolabels -w A -w -4 -w -44 -I src -I qtest -o src/genLabels.cmo src/genLabels.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genClone.cmo src/genClone.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genClone.cmo src/genClone.ml
+- File "src/genClone.ml", line 9, characters 31-75:
+- Warning 50: ambiguous documentation comment
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genMList.cmo src/genMList.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genM.cmo src/genM.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a src/genMList.cmo src/gen_intf.cmo src/gen.cmo src/genLabels_intf.cmo src/genLabels.cmo src/genClone.cmo src/genM_intf.cmo src/genM.cmo -o src/gen.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genMList.cmx src/genMList.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/gen_intf.cmx src/gen_intf.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/gen.cmx src/gen.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genLabels_intf.cmx src/genLabels_intf.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genM_intf.cmx src/genM_intf.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -nolabels -w A -w -4 -w -44 -I src -I qtest -o src/genLabels.cmx src/genLabels.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genClone.cmx src/genClone.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genClone.cmx src/genClone.ml
+- File "src/genClone.ml", line 9, characters 31-75:
+- Warning 50: ambiguous documentation comment
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -I qtest -o src/genM.cmx src/genM.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a src/genMList.cmx src/gen_intf.cmx src/gen.cmx src/genLabels_intf.cmx src/genLabels.cmx src/genClone.cmx src/genM_intf.cmx src/genM.cmx -o src/gen.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared src/gen.cmxa src/genMList.cmx src/gen_intf.cmx src/gen.cmx src/genLabels_intf.cmx src/genLabels.cmx src/genClone.cmx src/genM_intf.cmx src/genM.cmx -o src/gen.cmxs
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- W: Docs are turned off, consider enabling with 'ocaml setup.ml -configure --enable-docs'
+- W: Tests are turned off, consider enabling with 'ocaml setup.ml -configure --enable-tests'
+-> compiled  gen.0.4
+Processing  6/16: [uucp: ocaml]
+Processing  7/16: [uucp: ocaml] [gen: make install]
++ ocaml "pkg/git.ml" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/uucp.1.1.0)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/gen.0.4)
+- ocaml setup.ml -install 
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genClone.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genMList.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen_intf.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels_intf.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM_intf.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM_intf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM_intf.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM_intf.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels_intf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels_intf.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels_intf.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen_intf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen_intf.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen_intf.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genMList.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genMList.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genMList.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genMList.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genClone.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genClone.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genClone.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genClone.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM_intf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels_intf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen_intf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genMList.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genClone.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/META
+- ocaml setup.ml -install 
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genClone.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genMList.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen_intf.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels_intf.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM_intf.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM_intf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM_intf.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM_intf.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels_intf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels_intf.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels_intf.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen_intf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen_intf.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen_intf.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genMList.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genMList.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genMList.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genMList.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genClone.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genClone.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genClone.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genClone.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM_intf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genM.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels_intf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen_intf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genMList.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genClone.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/genLabels.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/gen.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gen/META
+-> installed gen.0.4
+Processing  7/16: [uucp: ocaml]
+Processing  8/16: [uucp: ocaml] [ppx_tools: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_tools.5.0+4.03.0)
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/META
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/META
+-> installed ppx_tools.5.0+4.03.0
+Processing  8/16: [uucp: ocaml]
+Processing  9/16: [sedlex: make all] [uucp: ocaml]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3)
+- (cd src/lib && make all doc)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/lib'
+- ocamlfind ocamlc -package gen -w +A-4-9 -safe-string -c sedlexing.mli sedlexing.ml
+- ocamlfind ocamlc -package gen -a -o sedlexing.cma sedlexing.cmo
+- rm -rf ../../libdoc
+- mkdir ../../libdoc
+- ocamlfind ocamldoc -package gen -html sedlexing.mli -d ../../libdoc
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/lib'
+- (cd src/syntax && make all)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/syntax'
+- ocamlfind ocamlc -package ppx_tools.metaquot -w +A-4-9 -annot -a -o sedlex.cma sedlex_cset.mli sedlex_cset.ml unicode63.mli unicode63.ml sedlex.mli sedlex.ml ppx_sedlex.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -package ppx_tools.metaquot -w +A-4-9 -annot -o ppx_sedlex -linkpkg -linkall sedlex.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/syntax'
+- (cd src/lib && make all doc)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/lib'
+- ocamlfind ocamlc -package gen -w +A-4-9 -safe-string -c sedlexing.mli sedlexing.ml
+- ocamlfind ocamlc -package gen -a -o sedlexing.cma sedlexing.cmo
+- rm -rf ../../libdoc
+- mkdir ../../libdoc
+- ocamlfind ocamldoc -package gen -html sedlexing.mli -d ../../libdoc
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/lib'
+- (cd src/syntax && make all)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/syntax'
+- ocamlfind ocamlc -package ppx_tools.metaquot -w +A-4-9 -annot -a -o sedlex.cma sedlex_cset.mli sedlex_cset.ml unicode63.mli unicode63.ml sedlex.mli sedlex.ml ppx_sedlex.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -package ppx_tools.metaquot -w +A-4-9 -annot -o ppx_sedlex -linkpkg -linkall sedlex.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/syntax'
+Processing  9/16: [sedlex: make opt] [uucp: ocaml]
++ make "opt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3)
+- (cd src/syntax && make opt)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/syntax'
+- ocamlfind ocamlopt -package ppx_tools.metaquot -w +A-4-9 -annot -a -o sedlex.cmxa sedlex_cset.mli sedlex_cset.ml unicode63.mli unicode63.ml sedlex.mli sedlex.ml ppx_sedlex.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -package ppx_tools.metaquot -w +A-4-9 -annot -o ppx_sedlex.opt -linkpkg -linkall sedlex.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -package ppx_tools.metaquot -w +A-4-9 -annot -shared -o sedlex.cmxs sedlex_cset.mli sedlex_cset.ml unicode63.mli unicode63.ml sedlex.mli sedlex.ml ppx_sedlex.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/syntax'
+- (cd src/lib && make opt)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/lib'
+- ocamlfind ocamlopt -package gen -safe-string -c sedlexing.mli sedlexing.ml
+- ocamlfind ocamlopt -package gen -a -o sedlexing.cmxa sedlexing.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/lib'
+- (cd src/syntax && make opt)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/syntax'
+- ocamlfind ocamlopt -package ppx_tools.metaquot -w +A-4-9 -annot -a -o sedlex.cmxa sedlex_cset.mli sedlex_cset.ml unicode63.mli unicode63.ml sedlex.mli sedlex.ml ppx_sedlex.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -package ppx_tools.metaquot -w +A-4-9 -annot -o ppx_sedlex.opt -linkpkg -linkall sedlex.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -package ppx_tools.metaquot -w +A-4-9 -annot -shared -o sedlex.cmxs sedlex_cset.mli sedlex_cset.ml unicode63.mli unicode63.ml sedlex.mli sedlex.ml ppx_sedlex.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/syntax'
+- (cd src/lib && make opt)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/lib'
+- ocamlfind ocamlopt -package gen -safe-string -c sedlexing.mli sedlexing.ml
+- ocamlfind ocamlopt -package gen -a -o sedlexing.cmxa sedlexing.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3/src/lib'
+-> compiled  sedlex.1.99.3
+Processing  9/16: [uucp: ocaml]
+Processing 10/16: [uucp: ocaml] [sedlex: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sedlex.1.99.3)
+- ocamlfind install sedlex META src/syntax/sedlex.cma src/syntax/ppx_sedlex src/lib/sedlexing.cma src/lib/sedlexing.cmi src/syntax/sedlex.cmxs src/syntax/sedlex.a src/syntax/sedlex.cmxa src/syntax/ppx_sedlex.opt src/lib/sedlexing.cmx src/lib/sedlexing.a src/lib/sedlexing.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlexing.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlexing.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlexing.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/ppx_sedlex.opt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlex.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlex.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlex.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlexing.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlexing.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/ppx_sedlex
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlex.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/META
+- ocamlfind install sedlex META src/syntax/sedlex.cma src/syntax/ppx_sedlex src/lib/sedlexing.cma src/lib/sedlexing.cmi src/syntax/sedlex.cmxs src/syntax/sedlex.a src/syntax/sedlex.cmxa src/syntax/ppx_sedlex.opt src/lib/sedlexing.cmx src/lib/sedlexing.a src/lib/sedlexing.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlexing.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlexing.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlexing.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/ppx_sedlex.opt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlex.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlex.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlex.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlexing.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlexing.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/ppx_sedlex
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/sedlex.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sedlex/META
+-> installed sedlex.1.99.3
+Processing 10/16: [uucp: ocaml]
+Processing 11/16: [uucp: ocaml] [uutf: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" "cmdliner=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/uutf.0.9.4)
+- ocamlfind ocamldep -package cmdliner -modules test/utftrip.ml > test/utftrip.ml.depends
+- ocamlfind ocamldep -modules src/uutf.mli > src/uutf.mli.depends
+- ocamlfind ocamlc -c -bin-annot -I src -I test -o src/uutf.cmi src/uutf.mli
+- ocamlfind ocamlc -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- + ocamlfind ocamlc -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- File "test/utftrip.ml", line 42, characters 50-63:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 43, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 102, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 136, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 161, characters 44-57:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 219, characters 54-67:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 221, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 233, characters 32-45:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamldep -modules src/uutf.ml > src/uutf.ml.depends
+- ocamlfind ocamlopt -c -bin-annot -I src -I test -o src/uutf.cmx src/uutf.ml
+- + ocamlfind ocamlopt -c -bin-annot -I src -I test -o src/uutf.cmx src/uutf.ml
+- File "src/uutf.ml", line 22, characters 31-48:
+- Warning 3: deprecated: String.unsafe_set
+- File "src/uutf.ml", line 45, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/uutf.ml", line 68, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 492, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 496, characters 25-38:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 676, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 679, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- + ocamlfind ocamlopt -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- File "test/utftrip.ml", line 42, characters 50-63:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 43, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 102, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 136, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 161, characters 44-57:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 219, characters 54-67:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 221, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 233, characters 32-45:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -linkpkg unix.cmxa -package cmdliner src/uutf.cmx test/utftrip.cmx -o test/utftrip.native
+- ocamlfind ocamlopt -a src/uutf.cmx -o src/uutf.cmxa
+- ocamlfind ocamlc -c -bin-annot -I src -I test -o src/uutf.cmo src/uutf.ml
+- + ocamlfind ocamlc -c -bin-annot -I src -I test -o src/uutf.cmo src/uutf.ml
+- File "src/uutf.ml", line 22, characters 31-48:
+- Warning 3: deprecated: String.unsafe_set
+- File "src/uutf.ml", line 45, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/uutf.ml", line 68, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 492, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 496, characters 25-38:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 676, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 679, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -a src/uutf.cmo -o src/uutf.cma
+- ocamlfind ocamlopt -shared src/uutf.cmx -o src/uutf.cmxs
+- ocamlfind ocamldep -package cmdliner -modules test/utftrip.ml > test/utftrip.ml.depends
+- ocamlfind ocamldep -modules src/uutf.mli > src/uutf.mli.depends
+- ocamlfind ocamlc -c -bin-annot -I src -I test -o src/uutf.cmi src/uutf.mli
+- ocamlfind ocamlc -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- + ocamlfind ocamlc -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- File "test/utftrip.ml", line 42, characters 50-63:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 43, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 102, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 136, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 161, characters 44-57:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 219, characters 54-67:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 221, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 233, characters 32-45:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamldep -modules src/uutf.ml > src/uutf.ml.depends
+- ocamlfind ocamlopt -c -bin-annot -I src -I test -o src/uutf.cmx src/uutf.ml
+- + ocamlfind ocamlopt -c -bin-annot -I src -I test -o src/uutf.cmx src/uutf.ml
+- File "src/uutf.ml", line 22, characters 31-48:
+- Warning 3: deprecated: String.unsafe_set
+- File "src/uutf.ml", line 45, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/uutf.ml", line 68, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 492, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 496, characters 25-38:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 676, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 679, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- + ocamlfind ocamlopt -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- File "test/utftrip.ml", line 42, characters 50-63:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 43, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 102, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 136, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 161, characters 44-57:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 219, characters 54-67:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 221, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 233, characters 32-45:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -linkpkg unix.cmxa -package cmdliner src/uutf.cmx test/utftrip.cmx -o test/utftrip.native
+- ocamlfind ocamlopt -a src/uutf.cmx -o src/uutf.cmxa
+- ocamlfind ocamlc -c -bin-annot -I src -I test -o src/uutf.cmo src/uutf.ml
+- + ocamlfind ocamlc -c -bin-annot -I src -I test -o src/uutf.cmo src/uutf.ml
+- File "src/uutf.ml", line 22, characters 31-48:
+- Warning 3: deprecated: String.unsafe_set
+- File "src/uutf.ml", line 45, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/uutf.ml", line 68, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 492, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 496, characters 25-38:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 676, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 679, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -a src/uutf.cmo -o src/uutf.cma
+- ocamlfind ocamlopt -shared src/uutf.cmx -o src/uutf.cmxs
+-> installed uutf.0.9.4
+Processing 11/16: [uucp: ocaml]
+Processing 12/16: [uucp: ocaml] [uunf: ocaml]
++ ocaml "pkg/git.ml" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/uunf.1.0.0)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+-> compiled  uunf.1.0.0
+Processing 12/16: [uucp: ocaml]
+Processing 13/16: [uucp: ocaml] [uunf: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/uucp.1.1.0)
+- ocamlfind ocamldep -package bytes -modules src/uucp.ml > src/uucp.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp.mli > src/uucp.mli.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp.cmi src/uucp.mli
+- ocamlfind ocamldep -package bytes -modules src/uucp_age.ml > src/uucp_age.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_age_data.ml > src/data/uucp_age_data.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_rmap.ml > src/uucp_rmap.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_rmap.cmo src/uucp_rmap.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_age_data.cmo src/data/uucp_age_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_age.cmo src/uucp_age.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_rmap.cmx src/uucp_rmap.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_age_data.cmx src/data/uucp_age_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_alpha.ml > src/uucp_alpha.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_alpha_data.ml > src/data/uucp_alpha_data.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_tmapbool.ml > src/uucp_tmapbool.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmapbool.cmo src/uucp_tmapbool.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_alpha_data.cmo src/data/uucp_alpha_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_alpha.cmo src/uucp_alpha.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmapbool.cmx src/uucp_tmapbool.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_alpha_data.cmx src/data/uucp_alpha_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_block.ml > src/uucp_block.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_block_base.ml > src/uucp_block_base.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_block_data.ml > src/data/uucp_block_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_block_base.cmo src/uucp_block_base.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_block_data.cmo src/data/uucp_block_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_block.cmo src/uucp_block.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_block_base.cmx src/uucp_block_base.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_block_data.cmx src/data/uucp_block_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_break.ml > src/uucp_break.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_break_base.ml > src/uucp_break_base.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_break_data.ml > src/data/uucp_break_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_break_base.cmo src/uucp_break_base.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_tmapbyte.ml > src/uucp_tmapbyte.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmapbyte.cmo src/uucp_tmapbyte.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_gc.ml > src/uucp_gc.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_gc_base.ml > src/uucp_gc_base.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_gc_data.ml > src/data/uucp_gc_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_gc_base.cmo src/uucp_gc_base.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_gc_data.cmo src/data/uucp_gc_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_break_data.cmo src/data/uucp_break_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_gc.cmo src/uucp_gc.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_break.cmo src/uucp_break.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_break_base.cmx src/uucp_break_base.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmapbyte.cmx src/uucp_tmapbyte.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_gc_base.cmx src/uucp_gc_base.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_gc_data.cmx src/data/uucp_gc_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_break_data.cmx src/data/uucp_break_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_gc.cmx src/uucp_gc.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_case.ml > src/uucp_case.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_case_data.ml > src/data/uucp_case_data.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_case_fold.ml > src/uucp_case_fold.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_case_fold_data.ml > src/data/uucp_case_fold_data.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_tmap.ml > src/uucp_tmap.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmap.cmo src/uucp_tmap.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_fold_data.cmo src/data/uucp_case_fold_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_case_map.ml > src/uucp_case_map.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_case_map_data.ml > src/data/uucp_case_map_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_map_data.cmo src/data/uucp_case_map_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_case_nfkc.ml > src/uucp_case_nfkc.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_case_nfkc_data.ml > src/data/uucp_case_nfkc_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_nfkc_data.cmo src/data/uucp_case_nfkc_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_data.cmo src/data/uucp_case_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case_fold.cmo src/uucp_case_fold.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case_map.cmo src/uucp_case_map.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case_nfkc.cmo src/uucp_case_nfkc.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case.cmo src/uucp_case.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmap.cmx src/uucp_tmap.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_fold_data.cmx src/data/uucp_case_fold_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_map_data.cmx src/data/uucp_case_map_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_nfkc_data.cmx src/data/uucp_case_nfkc_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_data.cmx src/data/uucp_case_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case_fold.cmx src/uucp_case_fold.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case_map.cmx src/uucp_case_map.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case_nfkc.cmx src/uucp_case_nfkc.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_cjk.ml > src/uucp_cjk.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_cjk_data.ml > src/data/uucp_cjk_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_cjk_data.cmo src/data/uucp_cjk_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_cjk.cmo src/uucp_cjk.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_cjk_data.cmx src/data/uucp_cjk_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_cmap.ml > src/uucp_cmap.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_cmap.cmo src/uucp_cmap.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_func.ml > src/uucp_func.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_func_data.ml > src/data/uucp_func_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_func_data.cmo src/data/uucp_func_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_func.cmo src/uucp_func.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_func_data.cmx src/data/uucp_func_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_gen.ml > src/uucp_gen.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_gen_data.ml > src/data/uucp_gen_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_gen_data.cmo src/data/uucp_gen_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_gen.cmo src/uucp_gen.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_gen_data.cmx src/data/uucp_gen_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_id.ml > src/uucp_id.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_id_data.ml > src/data/uucp_id_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_id_data.cmo src/data/uucp_id_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_id.cmo src/uucp_id.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_id_data.cmx src/data/uucp_id_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_name.ml > src/uucp_name.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_name_base.ml > src/uucp_name_base.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_name_data.ml > src/data/uucp_name_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_name_base.cmo src/uucp_name_base.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_tmap4bytes.ml > src/uucp_tmap4bytes.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmap4bytes.cmo src/uucp_tmap4bytes.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_name_data.cmo src/data/uucp_name_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_name.cmo src/uucp_name.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_cmap.cmx src/uucp_cmap.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_name_base.cmx src/uucp_name_base.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmap4bytes.cmx src/uucp_tmap4bytes.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_name_data.cmx src/data/uucp_name_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_num.ml > src/uucp_num.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_num_base.ml > src/uucp_num_base.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_num_data.ml > src/data/uucp_num_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_num_base.cmo src/uucp_num_base.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_num_data.cmo src/data/uucp_num_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_num.cmo src/uucp_num.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_num_base.cmx src/uucp_num_base.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_num_data.cmx src/data/uucp_num_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_script.ml > src/uucp_script.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_script_base.ml > src/uucp_script_base.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_script_data.ml > src/data/uucp_script_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_script_base.cmo src/uucp_script_base.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_script_data.cmo src/data/uucp_script_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_script.cmo src/uucp_script.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_script_base.cmx src/uucp_script_base.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_script_data.cmx src/data/uucp_script_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_uchar.ml > src/uucp_uchar.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_uchar.cmo src/uucp_uchar.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_white.ml > src/uucp_white.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_white_data.ml > src/data/uucp_white_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_white_data.cmo src/data/uucp_white_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_white.cmo src/uucp_white.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_white_data.cmx src/data/uucp_white_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_age.cmx src/uucp_age.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_alpha.cmx src/uucp_alpha.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_block.cmx src/uucp_block.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_break.cmx src/uucp_break.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case.cmx src/uucp_case.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_cjk.cmx src/uucp_cjk.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_func.cmx src/uucp_func.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_gen.cmx src/uucp_gen.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_id.cmx src/uucp_id.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_name.cmx src/uucp_name.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_num.cmx src/uucp_num.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_script.cmx src/uucp_script.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_uchar.cmx src/uucp_uchar.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_white.cmx src/uucp_white.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp.cmx src/uucp.ml
+- ocamlfind ocamlopt -a -package bytes src/uucp_rmap.cmx src/data/uucp_age_data.cmx src/uucp_tmapbool.cmx src/data/uucp_alpha_data.cmx src/uucp_block_base.cmx src/data/uucp_block_data.cmx src/uucp_break_base.cmx src/uucp_tmapbyte.cmx src/data/uucp_break_data.cmx src/data/uucp_case_data.cmx src/uucp_tmap.cmx src/data/uucp_case_fold_data.cmx src/data/uucp_case_map_data.cmx src/data/uucp_case_nfkc_data.cmx src/data/uucp_cjk_data.cmx src/data/uucp_func_data.cmx src/uucp_gc_base.cmx src/data/uucp_gc_data.cmx src/data/uucp_gen_data.cmx src/data/uucp_id_data.cmx src/uucp_cmap.cmx src/uucp_name_base.cmx src/uucp_tmap4bytes.cmx src/data/uucp_name_data.cmx src/uucp_num_base.cmx src/data/uucp_num_data.cmx src/uucp_script_base.cmx src/data/uucp_script_data.cmx src/data/uucp_white_data.cmx src/uucp_age.cmx src/uucp_alpha.cmx src/uucp_block.cmx src/uucp_gc.cmx src/uucp_break.cmx src/uucp_case_fold.cmx src/uucp_case_map.cmx src/uucp_case_nfkc.cmx src/uucp_case.cmx src/uucp_cjk.cmx src/uucp_func.cmx src/uucp_gen.cmx src/uucp_id.cmx src/uucp_name.cmx src/uucp_num.cmx src/uucp_script.cmx src/uucp_uchar.cmx src/uucp_white.cmx src/uucp.cmx -o src/uucp.cmxa
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp.cmo src/uucp.ml
+- ocamlfind ocamlc -a -package bytes src/uucp_rmap.cmo src/data/uucp_age_data.cmo src/uucp_age.cmo src/uucp_tmapbool.cmo src/data/uucp_alpha_data.cmo src/uucp_alpha.cmo src/uucp_block_base.cmo src/data/uucp_block_data.cmo src/uucp_block.cmo src/uucp_break_base.cmo src/uucp_tmapbyte.cmo src/data/uucp_break_data.cmo src/uucp_gc_base.cmo src/data/uucp_gc_data.cmo src/uucp_gc.cmo src/uucp_break.cmo src/data/uucp_case_data.cmo src/uucp_tmap.cmo src/data/uucp_case_fold_data.cmo src/uucp_case_fold.cmo src/data/uucp_case_map_data.cmo src/uucp_case_map.cmo src/data/uucp_case_nfkc_data.cmo src/uucp_case_nfkc.cmo src/uucp_case.cmo src/data/uucp_cjk_data.cmo src/uucp_cjk.cmo src/uucp_cmap.cmo src/data/uucp_func_data.cmo src/uucp_func.cmo src/data/uucp_gen_data.cmo src/uucp_gen.cmo src/data/uucp_id_data.cmo src/uucp_id.cmo src/uucp_name_base.cmo src/uucp_tmap4bytes.cmo src/data/uucp_name_data.cmo src/uucp_name.cmo src/uucp_num_base.cmo src/data/uucp_num_data.cmo src/uucp_num.cmo src/uucp_script_base.cmo src/data/uucp_script_data.cmo src/uucp_script.cmo src/uucp_uchar.cmo src/data/uucp_white_data.cmo src/uucp_white.cmo src/uucp.cmo -o src/uucp.cma
+- ocamlfind ocamlopt -shared -package bytes src/uucp.cmx -o src/uucp.cmxs
+- ocamlfind ocamldep -package bytes -modules src/uucp.ml > src/uucp.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp.mli > src/uucp.mli.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp.cmi src/uucp.mli
+- ocamlfind ocamldep -package bytes -modules src/uucp_age.ml > src/uucp_age.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_age_data.ml > src/data/uucp_age_data.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_rmap.ml > src/uucp_rmap.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_rmap.cmo src/uucp_rmap.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_age_data.cmo src/data/uucp_age_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_age.cmo src/uucp_age.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_rmap.cmx src/uucp_rmap.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_age_data.cmx src/data/uucp_age_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_alpha.ml > src/uucp_alpha.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_alpha_data.ml > src/data/uucp_alpha_data.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_tmapbool.ml > src/uucp_tmapbool.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmapbool.cmo src/uucp_tmapbool.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_alpha_data.cmo src/data/uucp_alpha_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_alpha.cmo src/uucp_alpha.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmapbool.cmx src/uucp_tmapbool.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_alpha_data.cmx src/data/uucp_alpha_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_block.ml > src/uucp_block.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_block_base.ml > src/uucp_block_base.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_block_data.ml > src/data/uucp_block_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_block_base.cmo src/uucp_block_base.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_block_data.cmo src/data/uucp_block_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_block.cmo src/uucp_block.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_block_base.cmx src/uucp_block_base.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_block_data.cmx src/data/uucp_block_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_break.ml > src/uucp_break.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_break_base.ml > src/uucp_break_base.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_break_data.ml > src/data/uucp_break_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_break_base.cmo src/uucp_break_base.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_tmapbyte.ml > src/uucp_tmapbyte.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmapbyte.cmo src/uucp_tmapbyte.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_gc.ml > src/uucp_gc.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_gc_base.ml > src/uucp_gc_base.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_gc_data.ml > src/data/uucp_gc_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_gc_base.cmo src/uucp_gc_base.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_gc_data.cmo src/data/uucp_gc_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_break_data.cmo src/data/uucp_break_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_gc.cmo src/uucp_gc.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_break.cmo src/uucp_break.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_break_base.cmx src/uucp_break_base.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmapbyte.cmx src/uucp_tmapbyte.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_gc_base.cmx src/uucp_gc_base.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_gc_data.cmx src/data/uucp_gc_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_break_data.cmx src/data/uucp_break_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_gc.cmx src/uucp_gc.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_case.ml > src/uucp_case.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_case_data.ml > src/data/uucp_case_data.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_case_fold.ml > src/uucp_case_fold.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_case_fold_data.ml > src/data/uucp_case_fold_data.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_tmap.ml > src/uucp_tmap.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmap.cmo src/uucp_tmap.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_fold_data.cmo src/data/uucp_case_fold_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_case_map.ml > src/uucp_case_map.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_case_map_data.ml > src/data/uucp_case_map_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_map_data.cmo src/data/uucp_case_map_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_case_nfkc.ml > src/uucp_case_nfkc.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_case_nfkc_data.ml > src/data/uucp_case_nfkc_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_nfkc_data.cmo src/data/uucp_case_nfkc_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_data.cmo src/data/uucp_case_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case_fold.cmo src/uucp_case_fold.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case_map.cmo src/uucp_case_map.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case_nfkc.cmo src/uucp_case_nfkc.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case.cmo src/uucp_case.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmap.cmx src/uucp_tmap.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_fold_data.cmx src/data/uucp_case_fold_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_map_data.cmx src/data/uucp_case_map_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_nfkc_data.cmx src/data/uucp_case_nfkc_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_case_data.cmx src/data/uucp_case_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case_fold.cmx src/uucp_case_fold.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case_map.cmx src/uucp_case_map.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case_nfkc.cmx src/uucp_case_nfkc.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_cjk.ml > src/uucp_cjk.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_cjk_data.ml > src/data/uucp_cjk_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_cjk_data.cmo src/data/uucp_cjk_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_cjk.cmo src/uucp_cjk.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_cjk_data.cmx src/data/uucp_cjk_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_cmap.ml > src/uucp_cmap.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_cmap.cmo src/uucp_cmap.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_func.ml > src/uucp_func.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_func_data.ml > src/data/uucp_func_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_func_data.cmo src/data/uucp_func_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_func.cmo src/uucp_func.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_func_data.cmx src/data/uucp_func_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_gen.ml > src/uucp_gen.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_gen_data.ml > src/data/uucp_gen_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_gen_data.cmo src/data/uucp_gen_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_gen.cmo src/uucp_gen.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_gen_data.cmx src/data/uucp_gen_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_id.ml > src/uucp_id.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_id_data.ml > src/data/uucp_id_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_id_data.cmo src/data/uucp_id_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_id.cmo src/uucp_id.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_id_data.cmx src/data/uucp_id_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_name.ml > src/uucp_name.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_name_base.ml > src/uucp_name_base.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_name_data.ml > src/data/uucp_name_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_name_base.cmo src/uucp_name_base.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_tmap4bytes.ml > src/uucp_tmap4bytes.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmap4bytes.cmo src/uucp_tmap4bytes.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_name_data.cmo src/data/uucp_name_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_name.cmo src/uucp_name.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_cmap.cmx src/uucp_cmap.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_name_base.cmx src/uucp_name_base.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_tmap4bytes.cmx src/uucp_tmap4bytes.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_name_data.cmx src/data/uucp_name_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_num.ml > src/uucp_num.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_num_base.ml > src/uucp_num_base.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_num_data.ml > src/data/uucp_num_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_num_base.cmo src/uucp_num_base.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_num_data.cmo src/data/uucp_num_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_num.cmo src/uucp_num.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_num_base.cmx src/uucp_num_base.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_num_data.cmx src/data/uucp_num_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_script.ml > src/uucp_script.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uucp_script_base.ml > src/uucp_script_base.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_script_data.ml > src/data/uucp_script_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_script_base.cmo src/uucp_script_base.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_script_data.cmo src/data/uucp_script_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_script.cmo src/uucp_script.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_script_base.cmx src/uucp_script_base.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_script_data.cmx src/data/uucp_script_data.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_uchar.ml > src/uucp_uchar.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_uchar.cmo src/uucp_uchar.ml
+- ocamlfind ocamldep -package bytes -modules src/uucp_white.ml > src/uucp_white.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uucp_white_data.ml > src/data/uucp_white_data.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_white_data.cmo src/data/uucp_white_data.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_white.cmo src/uucp_white.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uucp_white_data.cmx src/data/uucp_white_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_age.cmx src/uucp_age.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_alpha.cmx src/uucp_alpha.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_block.cmx src/uucp_block.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_break.cmx src/uucp_break.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_case.cmx src/uucp_case.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_cjk.cmx src/uucp_cjk.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_func.cmx src/uucp_func.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_gen.cmx src/uucp_gen.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_id.cmx src/uucp_id.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_name.cmx src/uucp_name.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_num.cmx src/uucp_num.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_script.cmx src/uucp_script.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_uchar.cmx src/uucp_uchar.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp_white.cmx src/uucp_white.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp.cmx src/uucp.ml
+- ocamlfind ocamlopt -a -package bytes src/uucp_rmap.cmx src/data/uucp_age_data.cmx src/uucp_tmapbool.cmx src/data/uucp_alpha_data.cmx src/uucp_block_base.cmx src/data/uucp_block_data.cmx src/uucp_break_base.cmx src/uucp_tmapbyte.cmx src/data/uucp_break_data.cmx src/data/uucp_case_data.cmx src/uucp_tmap.cmx src/data/uucp_case_fold_data.cmx src/data/uucp_case_map_data.cmx src/data/uucp_case_nfkc_data.cmx src/data/uucp_cjk_data.cmx src/data/uucp_func_data.cmx src/uucp_gc_base.cmx src/data/uucp_gc_data.cmx src/data/uucp_gen_data.cmx src/data/uucp_id_data.cmx src/uucp_cmap.cmx src/uucp_name_base.cmx src/uucp_tmap4bytes.cmx src/data/uucp_name_data.cmx src/uucp_num_base.cmx src/data/uucp_num_data.cmx src/uucp_script_base.cmx src/data/uucp_script_data.cmx src/data/uucp_white_data.cmx src/uucp_age.cmx src/uucp_alpha.cmx src/uucp_block.cmx src/uucp_gc.cmx src/uucp_break.cmx src/uucp_case_fold.cmx src/uucp_case_map.cmx src/uucp_case_nfkc.cmx src/uucp_case.cmx src/uucp_cjk.cmx src/uucp_func.cmx src/uucp_gen.cmx src/uucp_id.cmx src/uucp_name.cmx src/uucp_num.cmx src/uucp_script.cmx src/uucp_uchar.cmx src/uucp_white.cmx src/uucp.cmx -o src/uucp.cmxa
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uucp.cmo src/uucp.ml
+- ocamlfind ocamlc -a -package bytes src/uucp_rmap.cmo src/data/uucp_age_data.cmo src/uucp_age.cmo src/uucp_tmapbool.cmo src/data/uucp_alpha_data.cmo src/uucp_alpha.cmo src/uucp_block_base.cmo src/data/uucp_block_data.cmo src/uucp_block.cmo src/uucp_break_base.cmo src/uucp_tmapbyte.cmo src/data/uucp_break_data.cmo src/uucp_gc_base.cmo src/data/uucp_gc_data.cmo src/uucp_gc.cmo src/uucp_break.cmo src/data/uucp_case_data.cmo src/uucp_tmap.cmo src/data/uucp_case_fold_data.cmo src/uucp_case_fold.cmo src/data/uucp_case_map_data.cmo src/uucp_case_map.cmo src/data/uucp_case_nfkc_data.cmo src/uucp_case_nfkc.cmo src/uucp_case.cmo src/data/uucp_cjk_data.cmo src/uucp_cjk.cmo src/uucp_cmap.cmo src/data/uucp_func_data.cmo src/uucp_func.cmo src/data/uucp_gen_data.cmo src/uucp_gen.cmo src/data/uucp_id_data.cmo src/uucp_id.cmo src/uucp_name_base.cmo src/uucp_tmap4bytes.cmo src/data/uucp_name_data.cmo src/uucp_name.cmo src/uucp_num_base.cmo src/data/uucp_num_data.cmo src/uucp_num.cmo src/uucp_script_base.cmo src/data/uucp_script_data.cmo src/uucp_script.cmo src/uucp_uchar.cmo src/data/uucp_white_data.cmo src/uucp_white.cmo src/uucp.cmo -o src/uucp.cma
+- ocamlfind ocamlopt -shared -package bytes src/uucp.cmx -o src/uucp.cmxs
+-> compiled  uucp.1.1.0
+Processing 13/16: [uunf: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" "uutf=true" "cmdliner=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/uunf.1.0.0)
+- ocamlfind ocamldep -package uutf -package cmdliner -package bytes -modules test/unftrip.ml > test/unftrip.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uunf.mli > src/uunf.mli.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uunf.cmi src/uunf.mli
+- ocamlfind ocamlc -c -bin-annot -package uutf -package cmdliner -package bytes -I test -I src -I src/data -o test/unftrip.cmo test/unftrip.ml
+- ocamlfind ocamldep -package bytes -modules src/uunf.ml > src/uunf.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/data/uunf_data.ml > src/data/uunf_data.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uunf_tmap.ml > src/uunf_tmap.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uunf_tmapbool.ml > src/uunf_tmapbool.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/uunf_tmapbyte.ml > src/uunf_tmapbyte.ml.depends
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uunf_tmap.cmo src/uunf_tmap.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uunf_tmapbool.cmo src/uunf_tmapbool.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uunf_tmapbyte.cmo src/uunf_tmapbyte.ml
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uunf_data.cmo src/data/uunf_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uunf_tmap.cmx src/uunf_tmap.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uunf_tmapbool.cmx src/uunf_tmapbool.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uunf_tmapbyte.cmx src/uunf_tmapbyte.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src/data -I test -I src -o src/data/uunf_data.cmx src/data/uunf_data.ml
+- ocamlfind ocamlopt -c -bin-annot -package bytes -I src -I test -I src/data -o src/uunf.cmx src/uunf.ml
+- ocamlfind ocamlopt -c -bin-annot -package uutf -package cmdliner -package bytes -I test -I src -I src/data -o test/unftrip.cmx test/unftrip.ml
+- ocamlfind ocamlopt -linkpkg -package uutf -package cmdliner -package bytes src/uunf_tmap.cmx src/uunf_tmapbool.cmx src/uunf_tmapbyte.cmx src/data/uunf_data.cmx src/uunf.cmx test/unftrip.cmx -o test/unftrip.native
+- ocamlfind ocamlopt -a -package bytes src/uunf_tmap.cmx src/uunf_tmapbool.cmx src/uunf_tmapbyte.cmx src/data/uunf_data.cmx src/uunf.cmx -o src/uunf.cmxa
+- ocamlfind ocamlc -c -bin-annot -package bytes -I src -I test -I src/data -o src/uunf.cmo src/uunf.ml
+- ocamlfind ocamlc -a -package bytes src/uunf_tmap.cmo src/uunf_tmapbool.cmo src/uunf_tmapbyte.cmo src/data/uunf_data.cmo src/uunf.cmo -o src/uunf.cma
+- ocamlfind ocamlopt -shared -package bytes src/uunf.cmx -o src/uunf.cmxs
+- ocamlfind ocamldep -package uutf -package bytes -modules src/uunf_string.ml > src/uunf_string.ml.depends
+- ocamlfind ocamldep -package uutf -package bytes -modules src/uunf_string.mli > src/uunf_string.mli.depends
+- ocamlfind ocamlc -c -bin-annot -package uutf -package bytes -I src -I test -I src/data -o src/uunf_string.cmi src/uunf_string.mli
+- ocamlfind ocamlopt -c -bin-annot -package uutf -package bytes -I src -I test -I src/data -o src/uunf_string.cmx src/uunf_string.ml
+- ocamlfind ocamlopt -a -package uutf -package bytes src/uunf_string.cmx -o src/uunf_string.cmxa
+- ocamlfind ocamlc -c -bin-annot -package uutf -package bytes -I src -I test -I src/data -o src/uunf_string.cmo src/uunf_string.ml
+- ocamlfind ocamlc -a -package uutf -package bytes src/uunf_string.cmo -o src/uunf_string.cma
+- ocamlfind ocamlopt -shared -package uutf -package bytes src/uunf_string.cmx -o src/uunf_string.cmxs
+-> installed uunf.1.0.0
+-> installed uucp.1.1.0
+Processing 15/16: [m17n: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" "utop=false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/m17n.1.0)
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -modules src/m17n_pp.ml > src/m17n_pp.ml.depends
+- ocamlfind ocamldep -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -modules src/m17n_lexer.mli > src/m17n_lexer.mli.depends
+- ocamlfind ocamldep -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -modules src/m17n_sedlexing.mli > src/m17n_sedlexing.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_sedlexing.cmi src/m17n_sedlexing.mli
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_sedlexing.cmi src/m17n_sedlexing.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_lexer.cmi src/m17n_lexer.mli
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_lexer.cmi src/m17n_lexer.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_pp.cmo src/m17n_pp.ml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_pp.cmo src/m17n_pp.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- ocamlfind ocamldep -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -modules src/m17n_lexer.ml > src/m17n_lexer.ml.depends
+- ocamlfind ocamldep -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -modules src/m17n_confusable_gen.ml > src/m17n_confusable_gen.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_confusable_gen.cmo src/m17n_confusable_gen.ml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_confusable_gen.cmo src/m17n_confusable_gen.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- ocamlfind ocamldep -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -modules src/m17n_sedlexing.ml > src/m17n_sedlexing.ml.depends
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_confusable_gen.cmx src/m17n_confusable_gen.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_sedlexing.cmx src/m17n_sedlexing.ml
+- + ocamlfind ocamlopt -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_sedlexing.cmx src/m17n_sedlexing.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- + ocamlfind ocamlopt -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_confusable_gen.cmx src/m17n_confusable_gen.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_lexer.cmx src/m17n_lexer.ml
+- + ocamlfind ocamlopt -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_lexer.cmx src/m17n_lexer.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_pp.cmx src/m17n_pp.ml
+- + ocamlfind ocamlopt -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_pp.cmx src/m17n_pp.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- ocamlfind ocamlopt -linkpkg -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' src/m17n_confusable_gen.cmx src/m17n_sedlexing.cmx src/m17n_lexer.cmx src/m17n_pp.cmx -o src/m17n_pp.native
+- + ocamlfind ocamlopt -linkpkg -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' src/m17n_confusable_gen.cmx src/m17n_sedlexing.cmx src/m17n_lexer.cmx src/m17n_pp.cmx -o src/m17n_pp.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- ocamlfind ocamldep -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -modules src/m17n_util.ml > src/m17n_util.ml.depends
+- ocamlfind ocamldep -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -modules src/m17n_util.mli > src/m17n_util.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_util.cmi src/m17n_util.mli
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_util.cmi src/m17n_util.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_util.cmx src/m17n_util.ml
+- + ocamlfind ocamlopt -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_util.cmx src/m17n_util.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- File "src/m17n_util.ml", line 108, characters 24-39:
+- Warning 52: the argument of this constructor should not be matched against a
+- constant pattern; the actual value of the argument could change
+- in the future.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' src/m17n_confusable_gen.cmx src/m17n_sedlexing.cmx src/m17n_lexer.cmx src/m17n_util.cmx -o src/m17n.cmxa
+- + ocamlfind ocamlopt -a -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' src/m17n_confusable_gen.cmx src/m17n_sedlexing.cmx src/m17n_lexer.cmx src/m17n_util.cmx -o src/m17n.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_sedlexing.cmo src/m17n_sedlexing.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_lexer.cmo src/m17n_lexer.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_util.cmo src/m17n_util.ml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_sedlexing.cmo src/m17n_sedlexing.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_util.cmo src/m17n_util.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- File "src/m17n_util.ml", line 108, characters 24-39:
+- Warning 52: the argument of this constructor should not be matched against a
+- constant pattern; the actual value of the argument could change
+- in the future.
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_lexer.cmo src/m17n_lexer.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- ocamlfind ocamlc -a -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' src/m17n_confusable_gen.cmo src/m17n_sedlexing.cmo src/m17n_lexer.cmo src/m17n_util.cmo -o src/m17n.cma
+- + ocamlfind ocamlc -a -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' src/m17n_confusable_gen.cmo src/m17n_sedlexing.cmo src/m17n_lexer.cmo src/m17n_util.cmo -o src/m17n.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- ocamlfind ocamlopt -shared -linkall -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' src/m17n.cmxa -o src/m17n.cmxs
+- + ocamlfind ocamlopt -shared -linkall -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' src/m17n.cmxa -o src/m17n.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- ocamlfind ocamldep -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -modules src/m17n_toploop.ml > src/m17n_toploop.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_toploop.cmo src/m17n_toploop.ml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package 'unix compiler-libs.common findlib gen uutf uunf uucp sedlex' -w @5@8@10@11@12@14@23-24@26@29@40 -I src -I src_test/ja -I src_test/ru -o src/m17n_toploop.cmo src/m17n_toploop.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- # Parallel statistics: { count(total): 2(25), max: 3, min: 2, average(total): 2.500(1.120) }
+-> compiled  m17n.1.0
+-> installed m17n.1.0
+Done.
+# Run eval `opam env` to update the current shell environment
