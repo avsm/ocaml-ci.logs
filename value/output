@@ -1,0 +1,46 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install stb_image_write 0.2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [stb_image_write.0.2: dl]
+[stb_image_write.0.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [stb_image_write: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/stb_image_write.0.2)
+- ocamlc -c stb_image_write.mli
+- ocamlc -c stb_image_write.ml
+- ocamlc -c -ccopt "-O3 -std=gnu99 -ffast-math" ml_stb_image_write.c
+- ocamlmklib -o _stb_image_write_stubs ml_stb_image_write.o
+- ocamlc -a -custom -o stb_image_write.cma stb_image_write.cmo \
+-        -dllib dll_stb_image_write_stubs.so \
+-        -cclib -l_stb_image_write_stubs
+- ocamlopt -c stb_image_write.ml
+- ocamlopt -a -o stb_image_write.cmxa stb_image_write.cmx \
+-        -cclib -l_stb_image_write_stubs
+-> compiled  stb_image_write.0.2
+Processing  2/2: [stb_image_write: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/stb_image_write.0.2)
+- ocamlfind install stb_image_write stb_image_write.a stb_image_write.cmi stb_image_write.cmo stb_image_write.cma stb_image_write.cmx stb_image_write.cmxa stb_image_write.ml stb_image_write.mli lib_stb_image_write_stubs.a dll_stb_image_write_stubs.so META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image_write/lib_stb_image_write_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image_write/stb_image_write.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image_write/stb_image_write.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image_write/stb_image_write.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image_write/stb_image_write.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image_write/stb_image_write.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image_write/stb_image_write.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image_write/stb_image_write.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image_write/stb_image_write.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image_write/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dll_stb_image_write_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dll_stb_image_write_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+-> installed stb_image_write.0.2
+Done.
+# Run eval `opam env` to update the current shell environment
