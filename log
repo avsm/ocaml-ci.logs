@@ -1,0 +1,106 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 abella /home/opam/opam-repository/cache
+[2016-12-22 16:19.07] Starting...
+[2016-12-22 16:19.07] Waiting for free pool slot to run
+[2016-12-22 17:22.47] Pool slot obtained, starting run
+[2016-12-22 17:22.47] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 abella
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install abella 2.0.4
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [abella.2.0.4: dl]
+[abella.2.0.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [abella: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/abella.2.0.4)
+- ocamlbuild -classic-display -no-links src/abella.native
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- Recreating "src/version.ml"
+- ocamlfind ocamldep -modules src/abella.ml > src/abella.ml.depends
+- ocamlfind ocamldep -modules src/abella_types.ml > src/abella_types.ml.depends
+- ocamlfind ocamldep -modules src/extensions.ml > src/extensions.ml.depends
+- ocamlfind ocamldep -modules src/metaterm.ml > src/metaterm.ml.depends
+- ocamlfind ocamldep -modules src/context.ml > src/context.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/extensions.cmo src/extensions.ml
+- ocamlfind ocamldep -modules src/term.mli > src/term.mli.depends
+- ocamlfind ocamldep -modules src/pretty.mli > src/pretty.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/pretty.cmi src/pretty.mli
+- ocamlfind ocamldep -modules src/unify.mli > src/unify.mli.depends
+- ocamlfind ocamldep -modules src/subordination.mli > src/subordination.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/term.cmi src/term.mli
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/subordination.cmi src/subordination.mli
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/unify.cmi src/unify.mli
+- ocamlfind ocamldep -modules src/state.mli > src/state.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/context.cmo src/context.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/state.cmi src/state.mli
+- ocamlfind ocamldep -modules src/typing.ml > src/typing.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/metaterm.cmo src/metaterm.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/typing.cmo src/typing.ml
+- ocamlfind ocamldep -modules src/accumulate.ml > src/accumulate.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/abella_types.cmo src/abella_types.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamllex.opt -q src/lexer.mll
+- ocamlfind ocamldep -modules src/lexer.ml > src/lexer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlyacc src/parser.mly
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlyacc src/parser.mly
+- 1 shift/reduce conflict.
+- ocamlfind ocamldep -modules src/parser.mli > src/parser.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/parser.cmi src/parser.mli
+- ocamlfind ocamldep -modules src/prover.ml > src/prover.ml.depends
+- ocamlfind ocamldep -modules src/checks.ml > src/checks.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/lexer.cmo src/lexer.ml
+- ocamlfind ocamldep -modules src/tactics.ml > src/tactics.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/checks.cmo src/checks.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/tactics.cmo src/tactics.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/prover.cmo src/prover.ml
+- ocamlfind ocamldep -modules src/depend.ml > src/depend.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/accumulate.cmo src/accumulate.ml
+- ocamlfind ocamldep -modules src/version.ml > src/version.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/depend.cmo src/depend.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/version.cmo src/version.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/abella.cmo src/abella.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/extensions.cmx src/extensions.ml
+- ocamlfind ocamldep -modules src/term.ml > src/term.ml.depends
+- ocamlfind ocamldep -modules src/pretty.ml > src/pretty.ml.depends
+- ocamlfind ocamldep -modules src/state.ml > src/state.ml.depends
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/pretty.cmx src/pretty.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/state.cmx src/state.ml
+- ocamlfind ocamldep -modules src/unify.ml > src/unify.ml.depends
+- ocamlfind ocamldep -modules src/subordination.ml > src/subordination.ml.depends
+- ocamlfind ocamldep -modules src/graph.ml > src/graph.ml.depends
+- ocamlfind ocamldep -modules src/graph.mli > src/graph.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -I src -I test/ext -o src/graph.cmi src/graph.mli
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/term.cmx src/term.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/graph.cmx src/graph.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/subordination.cmx src/subordination.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/unify.cmx src/unify.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/context.cmx src/context.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/metaterm.cmx src/metaterm.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/typing.cmx src/typing.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/abella_types.cmx src/abella_types.ml
+- ocamlfind ocamldep -modules src/parser.ml > src/parser.ml.depends
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/parser.cmx src/parser.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/lexer.cmx src/lexer.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/checks.cmx src/checks.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/tactics.cmx src/tactics.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/prover.cmx src/prover.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/accumulate.cmx src/accumulate.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/depend.cmx src/depend.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/version.cmx src/version.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -w @3@5@6@8..12@14@20@26@28@29 -nodynlink -I src -I test/ext -o src/abella.cmx src/abella.ml
+- ocamlfind ocamlopt -linkpkg unix.cmxa src/extensions.cmx src/graph.cmx src/pretty.cmx src/state.cmx src/term.cmx src/subordination.cmx src/unify.cmx src/context.cmx src/metaterm.cmx src/typing.cmx src/abella_types.cmx src/checks.cmx src/parser.cmx src/lexer.cmx src/tactics.cmx src/prover.cmx src/accumulate.cmx src/depend.cmx src/version.cmx src/abella.cmx -o src/abella.native
+- if file _build/src/abella.native | grep Windows >/dev/null 2>&1 ; then \
+-   cp _build/src/abella.native abella.exe ; \
+- else \
+-   cp -a _build/src/abella.native abella ; \
+- fi
+-> compiled  abella.2.0.4
+-> installed abella.2.0.4
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:23.06] Success
