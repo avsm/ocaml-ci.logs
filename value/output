@@ -1,0 +1,298 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install mlbdd 0.5                                           [required by setr]
+  - install cppo  1.4.0                                         [required by setr]
+  - install setr  0.1.1
+===== 3 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/3: [cppo.1.4.0: dl]
+Processing  2/3: [cppo.1.4.0: dl] [mlbdd.0.5: dl]
+Processing  3/3: [cppo.1.4.0: dl] [mlbdd.0.5: dl] [setr.0.1.1: dl]
+[cppo.1.4.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3: [mlbdd.0.5: dl] [setr.0.1.1: dl]
+[mlbdd.0.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3: [setr.0.1.1: dl]
+[setr.0.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/6: [cppo: make]
+Processing  2/6: [cppo: make] [mlbdd: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/mlbdd.0.5)
+- ocamlopt -c -inline 100 MLBDD.mli
+- ocamlopt -c -inline 100 MLBDD.ml
+- ocamlopt -a -inline 100 MLBDD.cmx -o MLBDD.cmxa
+- ocamlc -c MLBDD.ml
+- ocamlc -a MLBDD.cmo -o MLBDD.cma
+- ocamlopt -c -inline 100 MLBDD.mli
+- ocamlopt -c -inline 100 MLBDD.ml
+- ocamlopt -a -inline 100 MLBDD.cmx -o MLBDD.cmxa
+- ocamlc -c MLBDD.ml
+- ocamlc -a MLBDD.cmo -o MLBDD.cma
+-> compiled  mlbdd.0.5
+Processing  2/6: [cppo: make]
+Processing  3/6: [cppo: make] [mlbdd: make install]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.0)
+- echo 'let cppo_version = "1.4.0"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlopt -o cppo -dtypes unix.cmxa str.cmxa cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+- echo 'let cppo_version = "1.4.0"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlopt -o cppo -dtypes unix.cmxa str.cmxa cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+-> compiled  cppo.1.4.0
+Processing  3/6: [mlbdd: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/mlbdd.0.5)
+- ocamlfind install mlbdd META MLBDD.cmxa MLBDD.cma MLBDD.cmi MLBDD.a MLBDD.o MLBDD.cmx MLBDD.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mlbdd/MLBDD.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mlbdd/MLBDD.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mlbdd/MLBDD.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mlbdd/MLBDD.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mlbdd/MLBDD.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mlbdd/MLBDD.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mlbdd/MLBDD.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mlbdd/META
+-> installed mlbdd.0.5
+Processing  4/6: [cppo: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.0)
+- ocamlfind install -patch-version 1.4.0 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/META
+-> installed cppo.1.4.0
+Processing  5/6: [setr: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/setr.0.1.1)
+- make -C src all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/setr.0.1.1/src'
+- make -C setr
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/setr.0.1.1/src/setr'
+- cppo -n -D PKG_MLBDD  -D 'SETR_VERSION 0.1.1' -o _tags _tags.in
+- cppo -n -D PKG_MLBDD  -D 'SETR_VERSION 0.1.1' -o SETr.mllib SETr.mllib.in
+- cppo -n -D PKG_MLBDD  -D 'SETR_VERSION 0.1.1' -o META META.in
+- ocamlbuild -use-ocamlfind -j 0 -cflag -short-paths -pp "cppo -D PKG_MLBDD  -D 'SETR_VERSION 0.1.1'" SETr.cma SETr.cmxa
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules SETr.ml > SETr.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS.ml > ds/SETr_DS.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS_CNF.ml > ds/SETr_DS_CNF.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS_Dequeue.mli > ds/SETr_DS_Dequeue.mli.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS_HMap.mli > ds/SETr_DS_HMap.mli.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS_HashCons.mli > ds/SETr_DS_HashCons.mli.depends
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_HashCons.cmi ds/SETr_DS_HashCons.mli
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS_HSet.mli > ds/SETr_DS_HSet.mli.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS_List.ml > ds/SETr_DS_List.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS_PSet.mli > ds/SETr_DS_PSet.mli.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS_SetOfSets.ml > ds/SETr_DS_SetOfSets.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules SETr_Rename.mli > SETr_Rename.mli.depends
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_Rename.cmi SETr_Rename.mli
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_CNF.cmo ds/SETr_DS_CNF.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_Dequeue.cmi ds/SETr_DS_Dequeue.mli
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_HMap.cmi ds/SETr_DS_HMap.mli
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_HSet.cmi ds/SETr_DS_HSet.mli
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_List.cmo ds/SETr_DS_List.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_PSet.cmi ds/SETr_DS_PSet.mli
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_SetOfSets.cmo ds/SETr_DS_SetOfSets.ml
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules SETr_DomainBuilder.ml > SETr_DomainBuilder.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symsing/SETr_SymSing_Interface.ml > symsing/SETr_SymSing_Interface.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules SETr_Interface.ml > SETr_Interface.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symsing/SETr_SymSing_Logic.ml > symsing/SETr_SymSing_Logic.ml.depends
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS.cmo ds/SETr_DS.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_Interface.cmo SETr_Interface.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symsing -I symbolic -I ds -o symsing/SETr_SymSing_Logic.cmo symsing/SETr_SymSing_Logic.ml
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symsing/SETr_SymSing_Lin.mli > symsing/SETr_SymSing_Lin.mli.depends
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symsing -I symbolic -I ds -o symsing/SETr_SymSing_Interface.cmo symsing/SETr_SymSing_Interface.ml
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symsing/SETr_SymSing_Sing.ml > symsing/SETr_SymSing_Sing.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_Interface.ml > symbolic/SETr_Symbolic_Interface.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_Logic.ml > symbolic/SETr_Symbolic_Logic.ml.depends
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Logic.cmo symbolic/SETr_Symbolic_Logic.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Interface.cmo symbolic/SETr_Symbolic_Interface.ml
+- ocamlfind ocamldep -package mlbdd -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_BDD_MLBDD.mli > symbolic/SETr_Symbolic_BDD_MLBDD.mli.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_BDD_XBDD.mli > symbolic/SETr_Symbolic_BDD_XBDD.mli.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_Debugger.ml > symbolic/SETr_Symbolic_Debugger.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_Equality.ml > symbolic/SETr_Symbolic_Equality.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_Logger.ml > symbolic/SETr_Symbolic_Logger.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_Packer.ml > symbolic/SETr_Symbolic_Packer.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_Remap.ml > symbolic/SETr_Symbolic_Remap.ml.depends
+- ocamlfind ocamldep -package unix -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_Stats.ml > symbolic/SETr_Symbolic_Stats.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_Tracer.ml > symbolic/SETr_Symbolic_Tracer.ml.depends
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symsing -I symbolic -I ds -o symsing/SETr_SymSing_Lin.cmi symsing/SETr_SymSing_Lin.mli
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symsing -I symbolic -I ds -o symsing/SETr_SymSing_Sing.cmo symsing/SETr_SymSing_Sing.ml
+- ocamlfind ocamlc -c -short-paths -package mlbdd -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_BDD_MLBDD.cmi symbolic/SETr_Symbolic_BDD_MLBDD.mli
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_BDD_XBDD.cmi symbolic/SETr_Symbolic_BDD_XBDD.mli
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Debugger.cmo symbolic/SETr_Symbolic_Debugger.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Equality.cmo symbolic/SETr_Symbolic_Equality.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Logger.cmo symbolic/SETr_Symbolic_Logger.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Packer.cmo symbolic/SETr_Symbolic_Packer.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Remap.cmo symbolic/SETr_Symbolic_Remap.ml
+- ocamlfind ocamlc -c -short-paths -package unix -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Stats.cmo symbolic/SETr_Symbolic_Stats.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Tracer.cmo symbolic/SETr_Symbolic_Tracer.ml
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules SETr_Select.ml > SETr_Select.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamllex.opt -q SETr_Lexer.mll
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules SETr_Lexer.ml > SETr_Lexer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlyacc SETr_Parser.mly
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules SETr_Parser.mli > SETr_Parser.mli.depends
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_DomainBuilder.cmo SETr_DomainBuilder.ml
+- + ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_DomainBuilder.cmo SETr_DomainBuilder.ml
+- File "SETr_DomainBuilder.ml", line 11, characters 8-24:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_Parser.cmi SETr_Parser.mli
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_Lexer.cmo SETr_Lexer.ml
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symsing/SETr_SymSing.ml > symsing/SETr_SymSing.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic.ml > symbolic/SETr_Symbolic.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_BDD.ml > symbolic/SETr_Symbolic_BDD.ml.depends
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_BDD.cmo symbolic/SETr_Symbolic_BDD.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_Select.cmo SETr_Select.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symsing -I symbolic -I ds -o symsing/SETr_SymSing.cmo symsing/SETr_SymSing.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic.cmo symbolic/SETr_Symbolic.ml
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules SETr_Rename.ml > SETr_Rename.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules SETr_Parser.ml > SETr_Parser.ml.depends
+- ocamlfind ocamldep -package mlbdd -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_BDD_MLBDD.ml > symbolic/SETr_Symbolic_BDD_MLBDD.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_BDD_XBDD.ml > symbolic/SETr_Symbolic_BDD_XBDD.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symbolic/SETr_Symbolic_BDD_XImp.ml > symbolic/SETr_Symbolic_BDD_XImp.ml.depends
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_BDD_XImp.cmo symbolic/SETr_Symbolic_BDD_XImp.ml
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules symsing/SETr_SymSing_Lin.ml > symsing/SETr_SymSing_Lin.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS_Dequeue.ml > ds/SETr_DS_Dequeue.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS_HMap.ml > ds/SETr_DS_HMap.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS_HSet.ml > ds/SETr_DS_HSet.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS_HashCons.ml > ds/SETr_DS_HashCons.ml.depends
+- ocamlfind ocamldep -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -modules ds/SETr_DS_PSet.ml > ds/SETr_DS_PSet.ml.depends
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr.cmo SETr.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_Rename.cmo SETr_Rename.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_Parser.cmo SETr_Parser.ml
+- ocamlfind ocamlc -c -short-paths -package mlbdd -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_BDD_MLBDD.cmo symbolic/SETr_Symbolic_BDD_MLBDD.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_BDD_XBDD.cmo symbolic/SETr_Symbolic_BDD_XBDD.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symsing -I symbolic -I ds -o symsing/SETr_SymSing_Lin.cmo symsing/SETr_SymSing_Lin.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_Dequeue.cmo ds/SETr_DS_Dequeue.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_HMap.cmo ds/SETr_DS_HMap.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_HSet.cmo ds/SETr_DS_HSet.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_HashCons.cmo ds/SETr_DS_HashCons.ml
+- ocamlfind ocamlc -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_PSet.cmo ds/SETr_DS_PSet.ml
+- ocamlfind ocamlc -a ds/SETr_DS_Dequeue.cmo SETr_Rename.cmo SETr_Interface.cmo ds/SETr_DS_CNF.cmo ds/SETr_DS_HashCons.cmo ds/SETr_DS_HMap.cmo ds/SETr_DS_HSet.cmo ds/SETr_DS_List.cmo ds/SETr_DS_PSet.cmo ds/SETr_DS_SetOfSets.cmo ds/SETr_DS.cmo symbolic/SETr_Symbolic_Logic.cmo symbolic/SETr_Symbolic_Interface.cmo symbolic/SETr_Symbolic_BDD_MLBDD.cmo symbolic/SETr_Symbolic_BDD_XImp.cmo symbolic/SETr_Symbolic_BDD_XBDD.cmo symbolic/SETr_Symbolic_Debugger.cmo symbolic/SETr_Symbolic_Equality.cmo symbolic/SETr_Symbolic_Logger.cmo symbolic/SETr_Symbolic_Packer.cmo symbolic/SETr_Symbolic_Remap.cmo symbolic/SETr_Symbolic_Stats.cmo symbolic/SETr_Symbolic_Tracer.cmo symsing/SETr_SymSing_Logic.cmo symsing/SETr_SymSing_Interface.cmo symsing/SETr_SymSing_Lin.cmo symsing/SETr_SymSing_Sing.cmo SETr_DomainBuilder.cmo SETr_Parser.cmo SETr_Lexer.cmo SETr_Select.cmo symbolic/SETr_Symbolic_BDD.cmo symbolic/SETr_Symbolic.cmo symsing/SETr_SymSing.cmo SETr.cmo -o SETr.cma
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_HashCons.cmx ds/SETr_DS_HashCons.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_Dequeue.cmx ds/SETr_DS_Dequeue.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_Rename.cmx SETr_Rename.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_CNF.cmx ds/SETr_DS_CNF.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_HMap.cmx ds/SETr_DS_HMap.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_HSet.cmx ds/SETr_DS_HSet.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_List.cmx ds/SETr_DS_List.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_PSet.cmx ds/SETr_DS_PSet.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS_SetOfSets.cmx ds/SETr_DS_SetOfSets.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I ds -I symbolic -I symsing -o ds/SETr_DS.cmx ds/SETr_DS.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_Interface.cmx SETr_Interface.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symsing -I symbolic -I ds -o symsing/SETr_SymSing_Logic.cmx symsing/SETr_SymSing_Logic.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symsing -I symbolic -I ds -o symsing/SETr_SymSing_Interface.cmx symsing/SETr_SymSing_Interface.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Logic.cmx symbolic/SETr_Symbolic_Logic.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Interface.cmx symbolic/SETr_Symbolic_Interface.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_BDD_XImp.cmx symbolic/SETr_Symbolic_BDD_XImp.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symsing -I symbolic -I ds -o symsing/SETr_SymSing_Lin.cmx symsing/SETr_SymSing_Lin.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symsing -I symbolic -I ds -o symsing/SETr_SymSing_Sing.cmx symsing/SETr_SymSing_Sing.ml
+- ocamlfind ocamlopt -c -short-paths -package mlbdd -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_BDD_MLBDD.cmx symbolic/SETr_Symbolic_BDD_MLBDD.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_BDD_XBDD.cmx symbolic/SETr_Symbolic_BDD_XBDD.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Debugger.cmx symbolic/SETr_Symbolic_Debugger.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Equality.cmx symbolic/SETr_Symbolic_Equality.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Logger.cmx symbolic/SETr_Symbolic_Logger.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Packer.cmx symbolic/SETr_Symbolic_Packer.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Remap.cmx symbolic/SETr_Symbolic_Remap.ml
+- ocamlfind ocamlopt -c -short-paths -package unix -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Stats.cmx symbolic/SETr_Symbolic_Stats.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_Tracer.cmx symbolic/SETr_Symbolic_Tracer.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_DomainBuilder.cmx SETr_DomainBuilder.ml
+- + ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_DomainBuilder.cmx SETr_DomainBuilder.ml
+- File "SETr_DomainBuilder.ml", line 11, characters 8-24:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_Parser.cmx SETr_Parser.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_Lexer.cmx SETr_Lexer.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic_BDD.cmx symbolic/SETr_Symbolic_BDD.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr_Select.cmx SETr_Select.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symsing -I symbolic -I ds -o symsing/SETr_SymSing.cmx symsing/SETr_SymSing.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o symbolic/SETr_Symbolic.cmx symbolic/SETr_Symbolic.ml
+- ocamlfind ocamlopt -c -short-paths -pp 'cppo -D PKG_MLBDD -D '\''SETR_VERSION 0.1.1'\''' -I symbolic -I ds -I symsing -o SETr.cmx SETr.ml
+- ocamlfind ocamlopt -a ds/SETr_DS_Dequeue.cmx SETr_Rename.cmx SETr_Interface.cmx ds/SETr_DS_CNF.cmx ds/SETr_DS_HashCons.cmx ds/SETr_DS_HMap.cmx ds/SETr_DS_HSet.cmx ds/SETr_DS_List.cmx ds/SETr_DS_PSet.cmx ds/SETr_DS_SetOfSets.cmx ds/SETr_DS.cmx symbolic/SETr_Symbolic_Logic.cmx symbolic/SETr_Symbolic_Interface.cmx symbolic/SETr_Symbolic_BDD_MLBDD.cmx symbolic/SETr_Symbolic_BDD_XImp.cmx symbolic/SETr_Symbolic_BDD_XBDD.cmx symbolic/SETr_Symbolic_Debugger.cmx symbolic/SETr_Symbolic_Equality.cmx symbolic/SETr_Symbolic_Logger.cmx symbolic/SETr_Symbolic_Packer.cmx symbolic/SETr_Symbolic_Remap.cmx symbolic/SETr_Symbolic_Stats.cmx symbolic/SETr_Symbolic_Tracer.cmx symsing/SETr_SymSing_Logic.cmx symsing/SETr_SymSing_Interface.cmx symsing/SETr_SymSing_Lin.cmx symsing/SETr_SymSing_Sing.cmx SETr_DomainBuilder.cmx SETr_Parser.cmx SETr_Lexer.cmx SETr_Select.cmx symbolic/SETr_Symbolic_BDD.cmx symbolic/SETr_Symbolic.cmx symsing/SETr_SymSing.cmx SETr.cmx -o SETr.cmxa
+- # Parallel statistics: { count(total): 9(83), max: 11, min: 2, average(total): 6.222(1.566) }
+- rm _tags
+- rm SETr.mllib
+- mkdir -p ../../lib
+- cp `ls _build/*.cmi` ../../lib
+- cp `ls _build/*/*.cmi` ../../lib
+- cp _build/SETr.cma _build/SETr.cmxa _build/SETr.a ../../lib
+- cp META ../../lib
+- rm META
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/setr.0.1.1/src/setr'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/setr.0.1.1/src'
+-> compiled  setr.0.1.1
+Processing  6/6: [setr: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/setr.0.1.1)
+- ocamlfind install setr lib/META lib/SETr_Interface.cmi lib/SETr_DS_PSet.cmi lib/SETr_Symbolic_Interface.cmi lib/SETr_DomainBuilder.cmi lib/SETr_DS_HashCons.cmi lib/SETr_Lexer.cmi lib/SETr.cmi lib/SETr_Symbolic_BDD_MLBDD.cmi lib/SETr_Symbolic_BDD_XBDD.cmi lib/SETr_SymSing_Interface.cmi lib/SETr_DS_HMap.cmi lib/SETr_DS_CNF.cmi lib/SETr_Parser.cmi lib/SETr_Symbolic_Equality.cmi lib/SETr.cmxa lib/SETr_Symbolic.cmi lib/SETr_DS.cmi lib/SETr_Symbolic_Packer.cmi lib/SETr_Symbolic_Remap.cmi lib/SETr_Symbolic_Logger.cmi lib/SETr_DS_HSet.cmi lib/SETr.a lib/SETr_SymSing_Lin.cmi lib/SETr_SymSing_Sing.cmi lib/SETr.cma lib/SETr_Symbolic_BDD.cmi lib/SETr_DS_Dequeue.cmi lib/SETr_Symbolic_Tracer.cmi lib/SETr_DS_SetOfSets.cmi lib/SETr_SymSing.cmi lib/SETr_Symbolic_BDD_XImp.cmi lib/SETr_Symbolic_Logic.cmi lib/SETr_Rename.cmi lib/SETr_Symbolic_Stats.cmi lib/SETr_Select.cmi lib/SETr_Symbolic_Debugger.cmi lib/SETr_DS_List.cmi lib/SETr_SymSing_Logic.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_SymSing_Logic.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_DS_List.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic_Debugger.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Select.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic_Stats.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Rename.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic_Logic.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic_BDD_XImp.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_SymSing.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_DS_SetOfSets.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic_Tracer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_DS_Dequeue.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic_BDD.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_SymSing_Sing.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_SymSing_Lin.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_DS_HSet.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic_Logger.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic_Remap.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic_Packer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_DS.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic_Equality.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Parser.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_DS_CNF.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_DS_HMap.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_SymSing_Interface.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic_BDD_XBDD.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic_BDD_MLBDD.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Lexer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_DS_HashCons.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_DomainBuilder.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Symbolic_Interface.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_DS_PSet.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/SETr_Interface.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/setr/META
+-> installed setr.0.1.1
+Done.
+# Run eval `opam env` to update the current shell environment
