@@ -1,0 +1,73 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 owebl /home/opam/opam-repository/cache
+[2016-12-22 16:20.14] Starting...
+[2016-12-22 16:20.14] Waiting for free pool slot to run
+[2016-12-22 18:10.10] Pool slot obtained, starting run
+[2016-12-22 18:10.10] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 owebl
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install owebl 0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [owebl.0.1: dl]
+[owebl.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [owebl: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owebl.0.1)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owebl.0.1'
+- ocamlfind ocamldep -I src/ src/server.ml > ._d/src/server.d
+- ocamlfind ocamldep -I src/ src/handler.ml > ._d/src/handler.d
+- ocamlfind ocamldep -I src/ src/rule.ml > ._d/src/rule.d
+- ocamlfind ocamldep -I src/ src/response.ml > ._d/src/response.d
+- ocamlfind ocamldep -I src/ src/template.ml > ._d/src/template.d
+- ocamlfind ocamldep -I src/ src/request.ml > ._d/src/request.d
+- ocamlfind ocamldep -I src/ src/verb.ml > ._d/src/verb.d
+- ocamlfind ocamldep -I src/ src/utils.ml > ._d/src/utils.d
+- ocamlfind ocamlopt -package unix,str -c -I src/ -for-pack Owebl src/utils.ml
+- ocamlfind ocamlopt -package unix,str -c -I src/ -for-pack Owebl src/verb.ml
+- ocamlfind ocamlopt -package unix,str -c -I src/ -for-pack Owebl src/request.ml
+- ocamlfind ocamlopt -package unix,str -c -I src/ -for-pack Owebl src/template.ml
+- ocamlfind ocamlopt -package unix,str -c -I src/ -for-pack Owebl src/response.ml
+- ocamlfind ocamlopt -package unix,str -c -I src/ -for-pack Owebl src/rule.ml
+- ocamlfind ocamlopt -package unix,str -c -I src/ -for-pack Owebl src/handler.ml
+- ocamlfind ocamlopt -package unix,str -c -I src/ -for-pack Owebl src/server.ml
+- File "src/server.ml", line 7, characters 21-34:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -pack -o owebl.cmx   src/utils.cmx src/verb.cmx src/request.cmx src/template.cmx src/response.cmx src/rule.cmx src/handler.cmx src/server.cmx
+- ocamlfind ocamlopt -a    -I src/ -ccopt -Lsrc/ -o owebl.cmxa owebl.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owebl.0.1'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owebl.0.1'
+- ocamlfind ocamlc -package unix,str -c -I src/ -for-pack Owebl src/utils.ml
+- ocamlfind ocamlc -package unix,str -c -I src/ -for-pack Owebl src/verb.ml
+- ocamlfind ocamlc -package unix,str -c -I src/ -for-pack Owebl src/request.ml
+- ocamlfind ocamlc -package unix,str -c -I src/ -for-pack Owebl src/template.ml
+- ocamlfind ocamlc -package unix,str -c -I src/ -for-pack Owebl src/response.ml
+- ocamlfind ocamlc -package unix,str -c -I src/ -for-pack Owebl src/rule.ml
+- ocamlfind ocamlc -package unix,str -c -I src/ -for-pack Owebl src/handler.ml
+- ocamlfind ocamlc -package unix,str -c -I src/ -for-pack Owebl src/server.ml
+- File "src/server.ml", line 7, characters 21-34:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -pack -o owebl.cmo  src/utils.cmo src/verb.cmo src/request.cmo src/template.cmo src/response.cmo src/rule.cmo src/handler.cmo src/server.cmo
+- ocamlfind ocamlc -a      -I src/     -ccopt -Lsrc/     -o owebl.cma owebl.cmo
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owebl.0.1'
+-> compiled  owebl.0.1
+Processing  2/2: [owebl: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owebl.0.1)
+- ocamlfind install owebl META owebl.o owebl.cmi owebl.cma owebl.cmxa owebl.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owebl/owebl.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owebl/owebl.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owebl/owebl.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owebl/owebl.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owebl/owebl.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owebl/META
+-> installed owebl.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:10.26] Success
