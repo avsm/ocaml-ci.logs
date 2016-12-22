@@ -1,0 +1,84 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 conf-lua /home/opam/opam-repository/cache
+[2016-12-22 16:19.24] Starting...
+[2016-12-22 16:19.24] Waiting for free pool slot to run
+[2016-12-22 17:40.08] Pool slot obtained, starting run
+[2016-12-22 17:40.08] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 conf-lua
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - liblua5.2-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy liblua5.2-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package autotools-dev.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../autotools-dev_20150820.1_all.deb ...
+Unpacking autotools-dev (20150820.1) ...
+Selecting previously unselected package libltdl7:amd64.
+Preparing to unpack .../libltdl7_2.4.6-0.1_amd64.deb ...
+Unpacking libltdl7:amd64 (2.4.6-0.1) ...
+Selecting previously unselected package libltdl-dev:amd64.
+Preparing to unpack .../libltdl-dev_2.4.6-0.1_amd64.deb ...
+Unpacking libltdl-dev:amd64 (2.4.6-0.1) ...
+Selecting previously unselected package libreadline6-dev:amd64.
+Preparing to unpack .../libreadline6-dev_6.3-8ubuntu2_amd64.deb ...
+Unpacking libreadline6-dev:amd64 (6.3-8ubuntu2) ...
+Selecting previously unselected package libreadline-dev:amd64.
+Preparing to unpack .../libreadline-dev_6.3-8ubuntu2_amd64.deb ...
+Unpacking libreadline-dev:amd64 (6.3-8ubuntu2) ...
+Selecting previously unselected package liblua5.2-dev:amd64.
+Preparing to unpack .../liblua5.2-dev_5.2.4-1ubuntu1_amd64.deb ...
+Unpacking liblua5.2-dev:amd64 (5.2.4-1ubuntu1) ...
+Selecting previously unselected package libtool.
+Preparing to unpack .../libtool_2.4.6-0.1_all.deb ...
+Unpacking libtool (2.4.6-0.1) ...
+Selecting previously unselected package libtool-bin.
+Preparing to unpack .../libtool-bin_2.4.6-0.1_amd64.deb ...
+Unpacking libtool-bin (2.4.6-0.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up autotools-dev (20150820.1) ...
+Setting up libltdl7:amd64 (2.4.6-0.1) ...
+Setting up libltdl-dev:amd64 (2.4.6-0.1) ...
+Setting up libreadline6-dev:amd64 (6.3-8ubuntu2) ...
+Setting up libreadline-dev:amd64 (6.3-8ubuntu2) ...
+Setting up liblua5.2-dev:amd64 (5.2.4-1ubuntu1) ...
+Setting up libtool (2.4.6-0.1) ...
+Setting up libtool-bin (2.4.6-0.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-lua 1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-lua: pkg-config lua]
++ pkg-config "lua" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-lua.1)
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-lua 1
++- 
+- No changes have been performed
+
+=-=- conf-lua.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-lua.1' may help you find the correct installation for your system.
+[ERROR] The compilation of conf-lua failed at "pkg-config lua".
+
+#=== ERROR while compiling conf-lua.1 =========================================#
+# command              pkg-config lua
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-lua.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-lua-1-7afd23.env
+# output-file          /home/opam/.opam/log/conf-lua-1-7afd23.out
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-lua' failed.
+[2016-12-22 17:40.23] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191" "opam" "depext" "-ivyj" "2" "conf-lua" exited with status 4
