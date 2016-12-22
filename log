@@ -1,0 +1,99 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 functory /home/opam/opam-repository/cache
+[2016-12-22 16:19.38] Starting...
+[2016-12-22 16:19.38] Waiting for free pool slot to run
+[2016-12-22 17:48.47] Pool slot obtained, starting run
+[2016-12-22 17:48.47] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 functory
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install functory 0.5
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [functory.0.5: dl]
+[functory.0.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [functory: ./configure]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/functory.0.5)
+- checking for ocamlc... ocamlc
+- ocaml version is 4.04.0
+- ocaml library path is /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version... ok
+- checking for ocamlc.opt... ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking ocamlc.opt version... ok
+- checking for ocamldep... ocamldep
+- checking for ocamldep.opt... ocamldep.opt
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- checking for ocamlweb... true
+- checking platform... configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: WARNING:  'Makefile.in' seems to ignore the --datarootdir setting
+Processing  1/2: [functory: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/functory.0.5)
+- echo "let version = \""0.5"\"" > version.ml
+- echo "let date = \""`date`"\"" >> version.ml
+- rm -f .depend
+- ocamldep.opt  *.ml *.mli > .depend
+- ocamlc.opt -c -dtypes -g  control.ml
+- ocamlc.opt -c -dtypes -g  sequential.ml
+- ocamlc.opt -c -dtypes -g  map_fold.ml
+- ocamlc.opt -c -dtypes -g  cores.ml
+- ocamlc.opt -c -dtypes -g  binary.mli
+- ocamlc.opt -c -dtypes -g  binary.ml
+- ocamlc.opt -c -dtypes -g  protocol.mli
+- ocamlc.opt -c -dtypes -g  protocol.ml
+- File "protocol.ml", line 48, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "protocol.ml", line 62, characters 47-60:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlc.opt -c -dtypes -g  network.ml
+- File "network.ml", line 415, characters 17-38:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- ocamlc.opt -c -dtypes -g  functory.mli
+- ocamlc.opt -dtypes -g  -pack -o functory.cmo control.cmo sequential.cmo map_fold.cmo cores.cmo binary.cmo protocol.cmo network.cmo 
+- ocamlc.opt -a -dtypes -g  -o functory.cma functory.cmo
+- ocamlopt.opt -g -annot -c -dtypes  -for-pack Functory control.ml
+- ocamlopt.opt -g -annot -c -dtypes  -for-pack Functory sequential.ml
+- ocamlopt.opt -g -annot -c -dtypes  -for-pack Functory map_fold.ml
+- ocamlopt.opt -g -annot -c -dtypes  -for-pack Functory cores.ml
+- ocamlopt.opt -g -annot -c -dtypes  -for-pack Functory binary.ml
+- ocamlopt.opt -g -annot -c -dtypes  -for-pack Functory protocol.ml
+- File "protocol.ml", line 48, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "protocol.ml", line 62, characters 47-60:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlopt.opt -g -annot -c -dtypes  -for-pack Functory network.ml
+- File "network.ml", line 415, characters 17-38:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- ocamlopt.opt -g -annot  -pack -o functory.cmx control.cmx sequential.cmx map_fold.cmx cores.cmx binary.cmx protocol.cmx network.cmx
+- ocamlopt.opt -g -annot -a -dtypes  -for-pack Functory -o functory.cmxa functory.cmx
+-> compiled  functory.0.5
+Processing  2/2: [functory: make ocamlfind-install]
++ make "ocamlfind-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/functory.0.5)
+- ocamlfind install functory META functory.cmi functory.cma functory.cmxa functory.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/functory/functory.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/functory/functory.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/functory/functory.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/functory/functory.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/functory/META
+-> installed functory.0.5
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:49.03] Success
