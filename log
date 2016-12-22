@@ -1,0 +1,149 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 caml2html /home/opam/opam-repository/cache
+[2016-12-22 16:19.18] Starting...
+[2016-12-22 16:19.18] Waiting for free pool slot to run
+[2016-12-22 17:37.09] Pool slot obtained, starting run
+[2016-12-22 17:37.09] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 caml2html
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install camlmix   1.3.0                                     [required by caml2html]
+  - install caml2html 1.4.4
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [caml2html.1.4.4: dl]
+Processing  2/2: [caml2html.1.4.4: dl] [camlmix.1.3.0: dl]
+[camlmix.1.3.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [caml2html.1.4.4: dl]
+[caml2html.1.4.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [camlmix: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlmix.1.3.0)
+- contents='let version = "1.3.0"'; \
+-   if test "`cat version.ml`" != "$contents"; then \
+-     echo "$contents" > version.ml;\
+-   fi
+- ocamllex lexer.mll
+- 29 states, 305 transitions, table size 1394 bytes
+- ocamlyacc  parser_directive.mly
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlmix.1.3.0'
+- making ._ncdi/parser_directive.di from parser_directive.mli
+- making ._ncdi/lexer.di from lexer.mli
+- making ._d/parser_directive.d from parser_directive.ml
+- making ._d/lexer.d from lexer.ml
+- making ._d/main.d from main.ml
+- making ._d/directive.d from directive.ml
+- making ._d/version.d from version.ml
+- ocamlopt -c version.ml
+- ocamlc -c lexer.mli
+- ocamlopt -c lexer.ml
+- ocamlc -c parser_directive.mli
+- ocamlopt -c parser_directive.ml
+- ocamlopt -c directive.ml
+- ocamlopt -c main.ml
+- ocamlopt \
+- 			  \
+- 			             unix.cmxa   -o camlmix \
+- 			version.cmx lexer.cmx parser_directive.cmx directive.cmx main.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlmix.1.3.0'
+-> compiled  camlmix.1.3.0
+Processing  2/4: [camlmix: make install]
++ make "install" "PREFIX=/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlmix.1.3.0)
+- install -m 0755 camlmix /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/
+-> installed camlmix.1.3.0
+Processing  3/4: [caml2html: mkdir]
++ mkdir "-p" "/home/opam/.opam/ocaml-base-compiler.4.04.0/bin" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/caml2html.1.4.4)
+Processing  3/4: [caml2html: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/caml2html.1.4.4)
+- ocamlc -c hashtbl2.mli
+- ocamlopt -dtypes -c hashtbl2.ml
+- camlmix -clean version.ml.mlx -o version.ml
+- ocamlopt -dtypes -c version.ml
+- ocamlc -c annot.mli
+- ocamlopt -dtypes -c annot.ml
+- ocamlopt -dtypes -c tag.ml
+- ocamlc -c plugin.mli
+- ocamlopt -dtypes -c plugin.ml
+- ocamllex input.mll
+- 98 states, 2531 transitions, table size 10712 bytes
+- 2799 additional bytes used for bindings
+- ocamlc -c input.mli
+- ocamlopt -dtypes -c input.ml
+- ocamlc -c output.mli
+- ocamlopt -dtypes -c output.ml
+- ocamlc -c output_latex.mli
+- ocamlopt -dtypes -c output_latex.ml
+- ocamlopt -dtypes -c main.ml
+- ocamlopt -o caml2html str.cmxa unix.cmxa  hashtbl2.cmx  version.cmx  annot.cmx  tag.cmx  plugin.cmx  input.cmx  output.cmx  output_latex.cmx  main.cmx
+- rm -f caml2html_test.mli
+- ocamlc -i caml2html_test.ml > caml2html_test.mli
+- File "caml2html_test.ml", line 35, characters 7-14:
+- Warning 3: deprecated: ISO-Latin1 characters in identifiers
+- ocamlc -c caml2html_test.mli
+- File "caml2html_test.mli", line 3, characters 7-14:
+- Warning 3: deprecated: ISO-Latin1 characters in identifiers
+- ocamlc -c -dtypes caml2html_test.ml
+- File "caml2html_test.ml", line 35, characters 7-14:
+- Warning 3: deprecated: ISO-Latin1 characters in identifiers
+- ./caml2html -o caml2html_test.html \
+- 	caml2html_test.mli caml2html_test.ml caml2html_test2.ml \
+- 	-ln -ie7 \
+- 	-ext date:date \
+- 	-ext cat:cat \
+- 	-ext "rot13:tr '[a-z]' '[n-za-m]'"
+- ./caml2html -o caml2html_self_test.html \
+- 	tag.ml annot.mli annot.ml plugin.mli plugin.ml \
+- 	input.mli input.mll output.mli output.ml \
+- 	output_latex.mli output_latex.ml \
+- 	main.ml \
+- 	-ln
+- ./caml2html -latex -o caml2html_self_test.tex \
+- 	tag.ml annot.mli annot.ml plugin.mli plugin.ml \
+- 	input.mli input.mll output.mli output.ml \
+- 	output_latex.mli output_latex.ml \
+- 	main.ml \
+- 	-ln
+Processing  3/4: [caml2html: make lib]
++ make "lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/caml2html.1.4.4)
+- ocamlc -dtypes -c hashtbl2.ml
+- ocamlc -dtypes -c version.ml
+- ocamlc -dtypes -c annot.ml
+- ocamlc -dtypes -c tag.ml
+- ocamlc -dtypes -c plugin.ml
+- ocamlc -dtypes -c input.ml
+- ocamlc -dtypes -c output.ml
+- ocamlc -dtypes -c output_latex.ml
+- ocamlc -dtypes -c main.ml
+- ocamlc -custom -o caml2html.byte str.cma unix.cma  hashtbl2.cmo  version.cmo  annot.cmo  tag.cmo  plugin.cmo  input.cmo  output.cmo  output_latex.cmo  main.cmo
+- camlmix -clean caml2html.mli.mlx -o caml2html.mli
+- ocamlc -c caml2html.mli
+- camlmix -clean caml2html.ml.mlx -o caml2html.ml
+- ocamlc -dtypes -c caml2html.ml
+- ocamlc -a -o caml2html.cma caml2html.cmo
+- ocamlopt -dtypes -c caml2html.ml
+- ocamlopt -a -o caml2html.cmxa caml2html.cmx
+-> compiled  caml2html.1.4.4
+Processing  4/4: [caml2html: make install]
++ make "install" "PREFIX=/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/caml2html.1.4.4)
+- install -m 0755 caml2html /home/opam/.opam/ocaml-base-compiler.4.04.0/bin || \
+- 	install -m 0755 caml2html.byte /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/caml2html
+- test -f caml2html.cma -o -f caml2html.cmxa && make libinstall
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/caml2html.1.4.4'
+- ocamlfind install caml2html META caml2html.mli caml2html.cmi \
+- 	caml2html.*a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/caml2html/caml2html.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/caml2html/caml2html.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/caml2html/caml2html.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/caml2html/caml2html.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/caml2html/caml2html.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/caml2html/META
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/caml2html.1.4.4'
+-> installed caml2html.1.4.4
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:37.26] Success
