@@ -1,0 +1,26 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocamlfind-lint 0.1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ocamlfind-lint.0.1.0: dl]
+[ocamlfind-lint.0.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocamlfind-lint: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfind-lint.0.1.0)
+- ocamlfind ocamlopt -o ocamlfind-lint -package findlib -linkpkg findlib_lint.ml
+- ocamlfind ocamlc -o ocamlfind-lint.byte -package findlib -linkpkg findlib_lint.ml
+-> compiled  ocamlfind-lint.0.1.0
+Processing  2/2: [ocamlfind-lint: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfind-lint.0.1.0)
+- ocamlfind install findlib-lint META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/findlib-lint/META
+-> installed ocamlfind-lint.0.1.0
+Done.
+# Run eval `opam env` to update the current shell environment
