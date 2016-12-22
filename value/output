@@ -1,0 +1,1092 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-which     1                                    [required by biniou]
+  - install base-bytes     base                                 [required by json-predicate]
+  - install easy-format    1.2.0                                [required by yojson]
+  - install result         1.2                                  [required by json-predicate]
+  - install cppo           1.4.1                                [required by yojson]
+  - install biniou         1.0.12                               [required by yojson]
+  - install yojson         1.3.3                                [required by json-predicate]
+  - install json-pointer   0.1.1-0                              [required by json-predicate]
+  - install json-predicate 0.2.0-0
+===== 9 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/9: [biniou.1.0.12: dl]
+Processing  3/9: [biniou.1.0.12: dl]
+Processing  4/9: [biniou.1.0.12: dl] [cppo.1.4.1: dl]
+Processing  5/9: [biniou.1.0.12: dl] [cppo.1.4.1: dl] [easy-format.1.2.0: dl]
+[biniou.1.0.12] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/9: [cppo.1.4.1: dl] [easy-format.1.2.0: dl]
+[cppo.1.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/9: [easy-format.1.2.0: dl]
+[easy-format.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/9:
+Processing  6/9: [json-pointer.0.1.1-0: dl]
+Processing  7/9: [json-pointer.0.1.1-0: dl] [json-predicate.0.2.0-0: dl]
+Processing  8/9: [json-pointer.0.1.1-0: dl] [json-predicate.0.2.0-0: dl] [result.1.2: dl]
+[json-pointer.0.1.1-0] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/9: [json-predicate.0.2.0-0: dl] [result.1.2: dl]
+Processing  9/9: [json-predicate.0.2.0-0: dl] [result.1.2: dl] [yojson.1.3.3: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  9/9: [json-predicate.0.2.0-0: dl] [yojson.1.3.3: dl]
+[json-predicate.0.2.0-0] downloaded from file:///home/opam/opam-repository/cache
+Processing  9/9: [yojson.1.3.3: dl]
+[yojson.1.3.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  9/9:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/18: [conf-which: which which]
+Processing  3/18: [conf-which: which which] [easy-format: make]
++ which "which" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-which.1)
+- /usr/bin/which
+- /usr/bin/which
+-> compiled  conf-which.1
+Processing  3/18: [easy-format: make]
+Processing  4/18: [easy-format: make] [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+Processing  4/18: [easy-format: make]
+-> installed base-bytes.base
+Processing  5/18: [easy-format: make]
+Processing  6/18: [cppo: make opt] [easy-format: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/easy-format.1.2.0)
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlc -c -dtypes easy_format.ml
+- touch bytecode
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlopt -c -dtypes easy_format.ml
+- ocamlfind ocamlopt -I . -shared -linkall \
+-   -o easy_format.cmxs easy_format.cmx
+- touch nativecode
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlc -c -dtypes easy_format.ml
+- touch bytecode
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlopt -c -dtypes easy_format.ml
+- ocamlfind ocamlopt -I . -shared -linkall \
+-   -o easy_format.cmxs easy_format.cmx
+- touch nativecode
+-> compiled  easy-format.1.2.0
+Processing  6/18: [cppo: make opt]
+-> installed conf-which.1
+Processing  7/18: [cppo: make opt]
+Processing  8/18: [cppo: make opt] [easy-format: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/easy-format.1.2.0)
+- echo "version = \"1.2.0\"" > META; cat META.tpl >> META
+- INSTALL_FILES="META easy_format.cmi easy_format.mli"; \
+- 	if test -f bytecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmo"; \
+- 	fi; \
+- 	if test -f nativecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmx easy_format.o easy_format.cmxs"; \
+- 	fi; \
+- 	ocamlfind install easy-format $INSTALL_FILES
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/META
+- echo "version = \"1.2.0\"" > META; cat META.tpl >> META
+- INSTALL_FILES="META easy_format.cmi easy_format.mli"; \
+- 	if test -f bytecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmo"; \
+- 	fi; \
+- 	if test -f nativecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmx easy_format.o easy_format.cmxs"; \
+- 	fi; \
+- 	ocamlfind install easy-format $INSTALL_FILES
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/META
+-> installed easy-format.1.2.0
+Processing  8/18: [cppo: make opt]
+Processing  9/18: [biniou: make] [cppo: make opt]
++ make "opt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.1)
+- echo 'let cppo_version = "1.4.1"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlfind ocamlopt -o cppo -dtypes -linkpkg -package "unix str bytes" cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+- echo 'let cppo_version = "1.4.1"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlfind ocamlopt -o cppo -dtypes -linkpkg -package "unix str bytes" cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+Processing  9/18: [biniou: make] [cppo: make ocamlbuild]
++ make "ocamlbuild" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.1)
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+-> compiled  cppo.1.4.1
+Processing  9/18: [biniou: make]
+Processing 10/18: [biniou: make] [cppo: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.1)
+- ocamlfind install -patch-version 1.4.1 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/META
+- ocamlfind install -patch-version 1.4.1 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/META
+-> installed cppo.1.4.1
+Processing 10/18: [biniou: make]
+-> installed result.1.2
+Processing 11/18: [biniou: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/biniou.1.0.12)
+- ocamlfind ocamlc -a -g -annot -bin-annot -o biniou.cma \
+- 	-package "easy-format" bi_util.mli bi_util.ml bi_share.mli bi_share.ml bi_outbuf.mli bi_outbuf.ml bi_inbuf.mli bi_inbuf.ml bi_vint.mli bi_vint.ml bi_io.mli bi_io.ml bi_dump.ml bi_stream.mli bi_stream.ml
+- File "bi_util.ml", line 11, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 13, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 18, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 20, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 36, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 41, characters 6-64:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 43, characters 4-54:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 24, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_outbuf.ml", line 40, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_outbuf.ml", line 86, characters 2-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 90, characters 2-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 96, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 97, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 102, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 103, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 104, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 105, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 116, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_inbuf.ml", line 99, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_io.ml", line 86, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 88, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 90, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 92, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 216, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 220, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 231, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 235, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 562, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_stream.ml", line 56, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -o bdump.byte -g -annot -bin-annot \
+- 	-package easy-format -linkpkg biniou.cma bdump.ml
+- ocamlfind ocamlopt -a -g -annot -bin-annot \
+- 	-o biniou.cmxa -package "easy-format" bi_util.mli bi_util.ml bi_share.mli bi_share.ml bi_outbuf.mli bi_outbuf.ml bi_inbuf.mli bi_inbuf.ml bi_vint.mli bi_vint.ml bi_io.mli bi_io.ml bi_dump.ml bi_stream.mli bi_stream.ml
+- File "bi_util.ml", line 11, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 13, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 18, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 20, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 36, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 41, characters 6-64:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 43, characters 4-54:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 24, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_outbuf.ml", line 40, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_outbuf.ml", line 86, characters 2-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 90, characters 2-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 96, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 97, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 102, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 103, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 104, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 105, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 116, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_inbuf.ml", line 99, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_io.ml", line 86, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 88, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 90, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 92, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 216, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 220, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 231, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 235, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 562, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_stream.ml", line 56, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -shared -linkall -I . -o biniou.cmxs biniou.cmxa
+- ocamlfind ocamlopt -o bdump.native -g -annot -bin-annot \
+- 	-package easy-format -linkpkg biniou.cmxa bdump.ml
+- mkdir -p doc
+- ocamlfind ocamldoc -d doc -html -package easy-format bi_util.mli bi_share.mli bi_outbuf.mli bi_inbuf.mli bi_vint.mli bi_io.mli bi_stream.mli
+- sed -e 's:@@VERSION@@:1.0.12:' META.in > META
+- ocamlfind ocamlopt -o test_biniou.native -g -annot -bin-annot \
+- 	-package "easy-format unix" -linkpkg biniou.cmxa test_biniou.ml
+- cp test_biniou.native test_biniou
+-> compiled  biniou.1.0.12
+Processing 12/18: [biniou: make install]
++ make "install" "BINDIR=/home/opam/.opam/ocaml-base-compiler.4.04.0/bin" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/biniou.1.0.12)
+- if [ -f bdump.native ]; then \
+- 	cp bdump.native /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/bdump; \
+- else \
+- 	cp bdump.byte /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/bdump; \
+- fi
+- ocamlfind install biniou META \
+-   bi_util.mli bi_share.mli bi_outbuf.mli bi_inbuf.mli bi_vint.mli bi_io.mli bi_stream.mli bi_util.cmi bi_share.cmi bi_outbuf.cmi bi_inbuf.cmi bi_vint.cmi bi_io.cmi bi_stream.cmi bi_util.cmt bi_share.cmt bi_outbuf.cmt bi_inbuf.cmt bi_vint.cmt bi_io.cmt bi_stream.cmt bi_util.annot bi_share.annot bi_outbuf.annot bi_inbuf.annot bi_vint.annot bi_io.annot bi_stream.annot bi_util.cmo bi_share.cmo bi_outbuf.cmo bi_inbuf.cmo bi_vint.cmo bi_io.cmo bi_dump.cmo bi_stream.cmo biniou.cma \
+-   -optional bi_util.cmx bi_share.cmx bi_outbuf.cmx bi_inbuf.cmx bi_vint.cmx bi_io.cmx bi_dump.cmx bi_stream.cmx bi_util.o bi_share.o bi_outbuf.o bi_inbuf.o bi_vint.o bi_io.o bi_dump.o bi_stream.o biniou.cmxa biniou.a biniou.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/biniou.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/biniou.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/biniou.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_stream.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_dump.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_io.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_vint.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_inbuf.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_outbuf.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_share.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_util.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_stream.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_dump.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_io.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_vint.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_inbuf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_outbuf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_share.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_util.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/biniou.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_stream.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_dump.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_io.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_vint.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_inbuf.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_outbuf.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_share.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_util.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_stream.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_io.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_vint.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_inbuf.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_outbuf.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_share.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_util.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_stream.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_io.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_vint.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_inbuf.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_outbuf.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_share.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_util.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_stream.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_io.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_vint.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_inbuf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_outbuf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_share.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_util.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_stream.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_io.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_vint.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_inbuf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_outbuf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_share.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/bi_util.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/biniou/META
+-> installed biniou.1.0.12
+Processing 13/18: [yojson: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/yojson.1.3.3)
+- sed -e 's:@@VERSION@@:1.3.3:' META.in > META
+- cppo -n yojson.mli.cppo -o yojson.mli
+- ocamlfind ocamlc -c -bin-annot -dtypes -g -package easy-format,biniou yojson.mli
+- ocamllex read.mll
+- 546 states, 2537 transitions, table size 13424 bytes
+- cppo -D "VERSION 1.3.3" yojson.ml.cppo -o yojson.ml
+- ocamlfind ocamlc -c -bin-annot -dtypes -g -package easy-format,biniou yojson.ml
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlc -c -bin-annot -dtypes -g -package easy-format,biniou yojson_biniou.mli
+- ocamlfind ocamlc -c -bin-annot -dtypes -g -package easy-format,biniou yojson_biniou.ml
+- ocamlfind ocamlopt -c -bin-annot -dtypes -g -package easy-format,biniou yojson.ml
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -c -bin-annot -dtypes -g -package easy-format,biniou yojson_biniou.ml
+- ocamlfind ocamlopt -shared -linkall -I . -o yojson.cmxs yojson.cmx
+- ocamlfind ocamlopt -shared -linkall -I . -o yojson_biniou.cmxs \
+- 	yojson_biniou.cmx
+- ocamlfind ocamlopt -o ydump -bin-annot -dtypes -g -package easy-format,biniou -linkpkg \
+- 	yojson.cmx yojson_biniou.cmx ydump.ml
+-> compiled  yojson.1.3.3
+Processing 14/18: [yojson: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/yojson.1.3.3)
+- ocamlfind install yojson META \
+-   yojson_biniou.cmt ydump.cmt yojson.cmt yojson_biniou.cmti yojson.cmti common.mli pretty.mli safe.mli util.mli write2.mli write.mli yojson_biniou.mli yojson.mli read.mli \
+-   ydump.cmi yojson.cmi yojson_biniou.cmi  yojson.cmo yojson_biniou.cmo \
+-   yojson.o yojson_biniou.o ydump.o ydump.cmx yojson.cmx yojson_biniou.cmx yojson.cmxs yojson_biniou.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson_biniou.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson_biniou.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/ydump.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/ydump.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson_biniou.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson_biniou.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson_biniou.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/ydump.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/read.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson_biniou.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/write.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/write2.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/util.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/safe.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/pretty.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/common.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson_biniou.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/ydump.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/yojson_biniou.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson/META
+-> installed yojson.1.3.3
+Processing 15/18: [json-pointer: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/json-pointer.0.1.1-0)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ json-pointer
+- Package version: ..................................... 0.1.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_str: ............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_yojson: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson
+- pkg_result: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/result
+- pkg_bytes: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bytes
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/json-pointer.0.1.1-0)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -package result -package str -package yojson -modules src/json_pointer.mli > src/json_pointer.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bytes -package result -package str -package yojson -I src -o src/json_pointer.cmi src/json_pointer.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -package result -package str -package yojson -modules src/json_pointer.ml > src/json_pointer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bytes -package result -package str -package yojson -I src -o src/json_pointer.cmo src/json_pointer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/json_pointer.cmo -o src/json-pointer.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bytes -package result -package str -package yojson -I src -o src/json_pointer.cmx src/json_pointer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/json_pointer.cmx -o src/json-pointer.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/json-pointer.cmxa src/json_pointer.cmx -o src/json-pointer.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -package result -package str -package yojson -modules src/eval.ml > src/eval.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bytes -package result -package str -package yojson -I src -o src/eval.cmo src/eval.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bytes -package result -package str -package yojson -I src -o src/eval.cmx src/eval.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -g -linkpkg -package bytes -package result -package str -package yojson src/json-pointer.cmxa src/eval.cmx -o src/eval.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+-> compiled  json-pointer.0.1.1-0
+Processing 16/18: [json-pointer: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/json-pointer.0.1.1-0)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-pointer/json_pointer.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-pointer/json-pointer.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-pointer/json-pointer.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-pointer/json-pointer.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-pointer/json-pointer.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-pointer/json_pointer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-pointer/json_pointer.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-pointer/json_pointer.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-pointer/json_pointer.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-pointer/json_pointer.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-pointer/META
+-> installed json-pointer.0.1.1-0
+Processing 17/18: [json-predicate: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/json-predicate.0.2.0-0)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ json-predicate
+- Package version: ..................................... 0.2.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_str: ............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_yojson: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/yojson
+- pkg_result: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/result
+- pkg_bytes: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bytes
+- pkg_json_pointer: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-pointer
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/json-predicate.0.2.0-0)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -package json-pointer -package result -package str -package yojson -modules src/json_predicate.mli > src/json_predicate.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bytes -package json-pointer -package result -package str -package yojson -I src -o src/json_predicate.cmi src/json_predicate.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -package json-pointer -package result -package str -package yojson -modules src/json_predicate.ml > src/json_predicate.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bytes -package json-pointer -package result -package str -package yojson -I src -o src/json_predicate.cmo src/json_predicate.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bytes -package json-pointer -package result -package str -package yojson -I src -o src/json_predicate.cmo src/json_predicate.ml
+- File "src/json_predicate.ml", line 79, characters 55-71:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/json_predicate.ml", line 79, characters 77-93:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/json_predicate.ml", line 94, characters 55-71:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/json_predicate.ml", line 94, characters 77-93:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/json_predicate.ml", line 104, characters 16-32:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/json_predicate.ml", line 104, characters 37-53:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/json_predicate.cmo -o src/json-predicate.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bytes -package json-pointer -package result -package str -package yojson -I src -o src/json_predicate.cmx src/json_predicate.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bytes -package json-pointer -package result -package str -package yojson -I src -o src/json_predicate.cmx src/json_predicate.ml
+- File "src/json_predicate.ml", line 79, characters 55-71:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/json_predicate.ml", line 79, characters 77-93:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/json_predicate.ml", line 94, characters 55-71:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/json_predicate.ml", line 94, characters 77-93:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/json_predicate.ml", line 104, characters 16-32:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/json_predicate.ml", line 104, characters 37-53:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/json_predicate.cmx -o src/json-predicate.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/json-predicate.cmxa src/json_predicate.cmx -o src/json-predicate.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -package json-pointer -package result -package str -package yojson -modules src/eval.ml > src/eval.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bytes -package json-pointer -package result -package str -package yojson -I src -o src/eval.cmo src/eval.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bytes -package json-pointer -package result -package str -package yojson -I src -o src/eval.cmx src/eval.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -g -linkpkg -package bytes -package json-pointer -package result -package str -package yojson src/json-predicate.cmxa src/eval.cmx -o src/eval.native
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -package json-pointer -package result -package str -package yojson -modules src/test.ml > src/test.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bytes -package json-pointer -package result -package str -package yojson -I src -o src/test.cmo src/test.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bytes -package json-pointer -package result -package str -package yojson -I src -o src/test.cmx src/test.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -g -linkpkg -package bytes -package json-pointer -package result -package str -package yojson src/json-predicate.cmxa src/test.cmx -o src/test.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+-> compiled  json-predicate.0.2.0-0
+Processing 18/18: [json-predicate: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/json-predicate.0.2.0-0)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-predicate/json_predicate.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-predicate/json-predicate.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-predicate/json-predicate.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-predicate/json-predicate.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-predicate/json-predicate.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-predicate/json_predicate.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-predicate/json_predicate.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-predicate/json_predicate.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-predicate/json_predicate.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-predicate/json_predicate.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/json-predicate/META
+-> installed json-predicate.0.2.0-0
+Done.
+# Run eval `opam env` to update the current shell environment
