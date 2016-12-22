@@ -1,0 +1,21 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 reins /home/opam/opam-repository/cache
+[2016-12-22 16:18.48] Starting...
+[2016-12-22 16:18.49] Waiting for free pool slot to run
+[2016-12-22 17:11.49] Pool slot obtained, starting run
+[2016-12-22 17:11.49] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 reins
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following dependencies couldn't be met:
+  - reins -> ocaml < 4.03.0 -> ocaml-variants < 4.02.4~
+    conflict with the base packages of this switch
+  - reins -> ocaml < 4.03.0 -> ocaml-system < 4.03.0
+    unmet availability conditions, e.g. sys-ocaml-version = "4.02.3"
+  - reins -> ocaml < 4.03.0 -> ocaml-base-compiler < 4.03.0
+    conflict with the base packages of this switch
+
+No solution found, exiting
+'opam install --verbose --yes --jobs=2 reins' failed.
+[2016-12-22 17:12.02] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "reins" exited with status 3
