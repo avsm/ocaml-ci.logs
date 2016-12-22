@@ -1,0 +1,36 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ocp-pack-split /home/opam/opam-repository/cache
+[2016-12-22 16:20.08] Starting...
+[2016-12-22 16:20.08] Waiting for free pool slot to run
+[2016-12-22 18:06.19] Pool slot obtained, starting run
+[2016-12-22 18:06.19] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ocp-pack-split
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocp-pack-split 1.0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ocp-pack-split.1.0.1: dl]
+[ocp-pack-split.1.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocp-pack-split: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocp-pack-split.1.0.1)
+- ocamlopt version.ml pack.ml -o ocp-pack
+- File "pack.ml", line 151, characters 20-37:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "pack.ml", line 215, characters 15-32:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "pack.ml", line 249, characters 19-36:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlopt version.ml split.ml -o ocp-split
+-> compiled  ocp-pack-split.1.0.1
+-> installed ocp-pack-split.1.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:06.34] Success
