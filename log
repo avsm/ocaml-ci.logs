@@ -1,0 +1,551 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 mlgmpidl /home/opam/opam-repository/cache
+[2016-12-22 16:18.21] Starting...
+[2016-12-22 16:18.21] Waiting for free pool slot to run
+[2016-12-22 16:58.53] Pool slot obtained, starting run
+[2016-12-22 16:58.53] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 mlgmpidl
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libgmp-dev
+#  - libmpfr-dev
+#  - m4
+# The following new OS packages need to be installed: libgmp-dev libmpfr-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libgmp-dev libmpfr-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libgmpxx4ldbl:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libgmpxx4ldbl_2%3a6.1.0+dfsg-2_amd64.deb ...
+Unpacking libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+Selecting previously unselected package libgmp-dev:amd64.
+Preparing to unpack .../libgmp-dev_2%3a6.1.0+dfsg-2_amd64.deb ...
+Unpacking libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+Selecting previously unselected package libmpfr-dev:amd64.
+Preparing to unpack .../libmpfr-dev_3.1.4-1_amd64.deb ...
+Unpacking libmpfr-dev:amd64 (3.1.4-1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+Setting up libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+Setting up libmpfr-dev:amd64 (3.1.4-1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install camlidl   1.05                                      [required by mlgmpidl]
+  - install conf-gmp  1                                         [required by mlgmpidl]
+  - install conf-mpfr 1                                         [required by mlgmpidl]
+  - install mlgmpidl  1.2.4
+===== 4 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [camlidl.1.05: dl]
+Processing  2/4: [camlidl.1.05: dl]
+Processing  3/4: [camlidl.1.05: dl]
+Processing  4/4: [camlidl.1.05: dl] [mlgmpidl.1.2.4: dl]
+[mlgmpidl.1.2.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4: [camlidl.1.05: dl]
+[camlidl.1.05] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/8: [camlidl: patch]
+Processing  2/8: [camlidl: patch] [conf-gmp: sh]
+Processing  2/8: [camlidl: mv] [conf-gmp: sh]
++ mv "config/Makefile.unix" "config/Makefile" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05)
+Processing  2/8: [camlidl: make all] [conf-gmp: sh]
++ sh "-exc" "cc -c $CFLAGS -I/usr/local/include test.c" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-gmp.1)
+- + cc -c -I/usr/local/include test.c
+- test.c: In function 'test':
+- test.c:7:2: warning: implicit declaration of function '__gmp_init' [-Wimplicit-function-declaration]
+-   __gmp_init();
+-   ^
+- + cc -c -I/usr/local/include test.c
+- test.c: In function 'test':
+- test.c:7:2: warning: implicit declaration of function '__gmp_init' [-Wimplicit-function-declaration]
+-   __gmp_init();
+-   ^
+-> compiled  conf-gmp.1
+Processing  2/8: [camlidl: make all]
+-> installed conf-gmp.1
+Processing  3/8: [camlidl: make all]
+Processing  4/8: [camlidl: make all] [conf-mpfr: cc test.c]
++ cc "test.c" "-I/usr/local/include" "-L/usr/local/lib" "-lgmp" "-lmpfr" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-mpfr.1)
+-> compiled  conf-mpfr.1
+Processing  4/8: [camlidl: make all]
+-> installed conf-mpfr.1
+Processing  5/8: [camlidl: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05)
+- cd compiler; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/compiler'
+- rm -f config.ml
+- sed -e 's|%%CPP%%|cpp|' \
+-           config.mlp > config.ml
+- chmod -w config.ml
+- ocamlc -g -warn-error -31 -c config.mli
+- ocamlc -g -warn-error -31 -c config.ml
+- ocamlc -g -warn-error -31 -c utils.mli
+- ocamlc -g -warn-error -31 -c utils.ml
+- File "utils.ml", line 51, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlc -g -warn-error -31 -c clflags.ml
+- ocamlc -g -warn-error -31 -c idltypes.mli
+- ocamlc -g -warn-error -31 -c prefix.mli
+- ocamlc -g -warn-error -31 -c prefix.ml
+- ocamlc -g -warn-error -31 -c lexpr.mli
+- ocamlc -g -warn-error -31 -c lexpr.ml
+- File "lexpr.ml", line 268, characters 10-16:
+- Warning 26: unused variable trail'.
+- ocamlc -g -warn-error -31 -c cvttyp.mli
+- ocamlc -g -warn-error -31 -c cvttyp.ml
+- File "cvttyp.ml", line 126, characters 49-66:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "cvttyp.ml", line 127, characters 20-39:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "cvttyp.ml", line 132, characters 49-66:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "cvttyp.ml", line 135, characters 25-44:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c variables.mli
+- ocamlc -g -warn-error -31 -c variables.ml
+- ocamlc -g -warn-error -31 -c array.mli
+- ocamlc -g -warn-error -31 -c array.ml
+- ocamlc -g -warn-error -31 -c struct.mli
+- ocamlc -g -warn-error -31 -c struct.ml
+- ocamlc -g -warn-error -31 -c enum.mli
+- ocamlc -g -warn-error -31 -c enum.ml
+- ocamlc -g -warn-error -31 -c union.mli
+- ocamlc -g -warn-error -31 -c union.ml
+- ocamlc -g -warn-error -31 -c cvtval.mli
+- ocamlc -g -warn-error -31 -c cvtval.ml
+- ocamlc -g -warn-error -31 -c structdecl.mli
+- ocamlc -g -warn-error -31 -c structdecl.ml
+- File "structdecl.ml", line 30, characters 27-46:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "structdecl.ml", line 39, characters 19-38:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c enumdecl.mli
+- ocamlc -g -warn-error -31 -c enumdecl.ml
+- File "enumdecl.ml", line 30, characters 28-47:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "enumdecl.ml", line 32, characters 37-54:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c uniondecl.mli
+- ocamlc -g -warn-error -31 -c uniondecl.ml
+- File "uniondecl.ml", line 30, characters 28-47:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "uniondecl.ml", line 37, characters 24-41:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c typedef.mli
+- ocamlc -g -warn-error -31 -c typedef.ml
+- File "typedef.ml", line 48, characters 30-49:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "typedef.ml", line 50, characters 25-44:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "typedef.ml", line 53, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c funct.mli
+- ocamlc -g -warn-error -31 -c funct.ml
+- File "funct.ml", line 104, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c constdecl.mli
+- ocamlc -g -warn-error -31 -c constdecl.ml
+- File "constdecl.ml", line 34, characters 26-45:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "constdecl.ml", line 54, characters 13-32:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "constdecl.ml", line 36, characters 4-24:
+- Warning 26: unused variable ty.
+- ocamlc -g -warn-error -31 -c intf.mli
+- ocamlc -g -warn-error -31 -c intf.ml
+- File "intf.ml", line 46, characters 21-40:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 51, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 52, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 62, characters 18-37:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 162, characters 17-36:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 163, characters 18-37:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 199, characters 21-40:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 260, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 312, characters 12-16:
+- Warning 26: unused variable outs.
+- File "intf.ml", line 312, characters 7-10:
+- Warning 26: unused variable ins.
+- ocamlc -g -warn-error -31 -c file.mli
+- ocamlc -g -warn-error -31 -c file.ml
+- File "file.ml", line 216, characters 31-47:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlc -g -warn-error -31 -c predef.mli
+- ocamlc -g -warn-error -31 -c predef.ml
+- ocamllex linenum.mll
+- 16 states, 331 transitions, table size 1420 bytes
+- ocamlc -g -warn-error -31 -c linenum.mli
+- ocamlc -g -warn-error -31 -c linenum.ml
+- ocamlc -g -warn-error -31 -c parse_aux.mli
+- ocamlc -g -warn-error -31 -c parse_aux.ml
+- File "parse_aux.ml", line 167, characters 23-54:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 169, characters 42-74:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 171, characters 22-47:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 230, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "parse_aux.ml", line 459, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlyacc -v parser_midl.mly
+- 12 shift/reduce conflicts.
+- ocamlc -g -warn-error -31 -c parser_midl.mli
+- ocamlc -g -warn-error -31 -c parser_midl.ml
+- ocamllex lexer_midl.mll
+- 129 states, 1747 transitions, table size 7762 bytes
+- ocamlc -g -warn-error -31 -c lexer_midl.mli
+- ocamlc -g -warn-error -31 -c lexer_midl.ml
+- ocamlc -g -warn-error -31 -c parse.mli
+- ocamlc -g -warn-error -31 -c parse.ml
+- ocamlc -g -warn-error -31 -c fixlabels.mli
+- ocamlc -g -warn-error -31 -c fixlabels.ml
+- ocamlc -g -warn-error -31 -c normalize.mli
+- ocamlc -g -warn-error -31 -c normalize.ml
+- ocamlc -g -warn-error -31 -c main.ml
+- ocamlc -g -warn-error -31 -o camlidl config.cmo utils.cmo clflags.cmo prefix.cmo lexpr.cmo cvttyp.cmo variables.cmo array.cmo struct.cmo enum.cmo union.cmo cvtval.cmo structdecl.cmo enumdecl.cmo uniondecl.cmo typedef.cmo funct.cmo constdecl.cmo intf.cmo file.cmo predef.cmo linenum.cmo parse_aux.cmo parser_midl.cmo lexer_midl.cmo parse.cmo fixlabels.cmo normalize.cmo main.cmo
+- File "array.cmo", line 1:
+- Warning 31: files array.cmo and /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/stdlib.cma(Array) both define a module named Array
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/compiler'
+- cd runtime; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/runtime'
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" idlalloc.c
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" comintf.c
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" comerror.c
+- comerror.c: In function 'camlidl_error':
+- comerror.c:52:8: warning: unused variable 'msg' [-Wunused-variable]
+-    char msg[1024];
+-         ^
+- In file included from /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/mlvalues.h:20:0,
+-                  from comerror.c:20:
+- comerror.c: In function 'camlidl_uncaught_exception':
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/compatibility.h:255:31: warning: implicit declaration of function 'caml_format_exception' [-Wimplicit-function-declaration]
+-  #define format_caml_exception caml_format_exception /*SP*/
+-                                ^
+- comerror.c:171:16: note: in expansion of macro 'format_caml_exception'
+-    char * msg = format_caml_exception(exn_bucket);
+-                 ^
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/compatibility.h:255:31: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+-  #define format_caml_exception caml_format_exception /*SP*/
+-                                ^
+- comerror.c:171:16: note: in expansion of macro 'format_caml_exception'
+-    char * msg = format_caml_exception(exn_bucket);
+-                 ^
+- rm -f dllcamlidl.so
+- ocamlmklib -o camlidl  idlalloc.o comintf.o comerror.o 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/runtime'
+- cd lib; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/lib'
+- ocamlc -g -warn-error -31 -c com.mli
+- ocamlc -g -warn-error -31 -c com.ml
+- ocamlc -g -warn-error -31 -a -o com.cma com.cmo
+- ocamlopt -c com.ml
+- ocamlopt -a -o com.cmxa com.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/lib'
+- cd tools; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/tools'
+- make[1]: Nothing to be done for 'all'.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/tools'
+-> compiled  camlidl.1.05
+-> installed camlidl.1.05
+Processing  7/8: [mlgmpidl: ./configure]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mlgmpidl.1.2.4)
+- OCaml version found is 4.03.0: plugins will be built.
+Processing  7/8: [mlgmpidl: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mlgmpidl.1.2.4)
+- mkdir -p tmp;
+- grep '#define *MPFR_VERSION_MAJOR' /usr/include/mpfr.h > tmp/cpp-defs.h
+- echo "module mpz";
+- module mpz
+- cp -p mpz.idl tmp/mpz.idl;
+- camlidl -no-include -prepro "cpp -imacros tmp/cpp-defs.h" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mlgmpidl.1.2.4 tmp/mpz.idl;
+- sed -f sedscript_c tmp/mpz_stubs.c >mpz_caml.c;
+- sed -f sedscript_caml tmp/mpz.ml >mpz.ml;
+- sed -f sedscript_caml tmp/mpz.mli >mpz.mli;
+- echo "module mpq";
+- module mpq
+- cp -p mpq.idl tmp/mpq.idl;
+- camlidl -no-include -prepro "cpp -imacros tmp/cpp-defs.h" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mlgmpidl.1.2.4 tmp/mpq.idl;
+- sed -f sedscript_c tmp/mpq_stubs.c >mpq_caml.c;
+- sed -f sedscript_caml tmp/mpq.ml >mpq.ml;
+- sed -f sedscript_caml tmp/mpq.mli >mpq.mli;
+- echo "module mpf";
+- module mpf
+- cp -p mpf.idl tmp/mpf.idl;
+- camlidl -no-include -prepro "cpp -imacros tmp/cpp-defs.h" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mlgmpidl.1.2.4 tmp/mpf.idl;
+- sed -f sedscript_c tmp/mpf_stubs.c >mpf_caml.c;
+- sed -f sedscript_caml tmp/mpf.ml >mpf.ml;
+- sed -f sedscript_caml tmp/mpf.mli >mpf.mli;
+- echo "module mpfr";
+- module mpfr
+- cp -p mpfr.idl tmp/mpfr.idl;
+- camlidl -no-include -prepro "cpp -imacros tmp/cpp-defs.h" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mlgmpidl.1.2.4 tmp/mpfr.idl;
+- sed -f sedscript_c tmp/mpfr_stubs.c >mpfr_caml.c;
+- sed -f sedscript_caml tmp/mpfr.ml >mpfr.ml;
+- sed -f sedscript_caml tmp/mpfr.mli >mpfr.mli;
+- echo "module gmp_random";
+- module gmp_random
+- cp -p gmp_random.idl tmp/gmp_random.idl;
+- camlidl -no-include -prepro "cpp -imacros tmp/cpp-defs.h" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mlgmpidl.1.2.4 tmp/gmp_random.idl;
+- sed -f sedscript_c tmp/gmp_random_stubs.c >gmp_random_caml.c;
+- sed -f sedscript_caml tmp/gmp_random.ml >gmp_random.ml;
+- sed -f sedscript_caml tmp/gmp_random.mli >gmp_random.mli;
+- ocamldep mpz.mli mpq.mli mpf.mli mpfr.mli gmp_random.mli mpzf.mli mpqf.mli mpfrf.mli mpz.ml mpq.ml mpf.ml mpfr.ml gmp_random.ml mpzf.ml mpqf.ml mpfrf.ml >Makefile.depend
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpz.mli
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpq.mli
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpf.mli
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpfr.mli
+- ocamlfind ocamlc -package "bigarray" -annot -g -c gmp_random.mli
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpzf.mli
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpqf.mli
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpfrf.mli
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpz.ml
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpq.ml
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpf.ml
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpfr.ml
+- File "mpfr.ml", line 551, characters 2-14:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlc -package "bigarray" -annot -g -c gmp_random.ml
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpzf.ml
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpqf.ml
+- ocamlfind ocamlc -package "bigarray" -annot -g -c mpfrf.ml
+- ocamlfind ocamlopt -package "bigarray" -ccopt -Wcast-qual -ccopt -Wswitch -ccopt -Werror-implicit-function-declaration -ccopt -Wall -ccopt -Wextra -ccopt -Wundef -ccopt -Wbad-function-cast -ccopt -Wcast-align -ccopt -Wstrict-prototypes -ccopt -Wno-unused -ccopt -fPIC -ccopt -std=c99 -ccopt -g -ccopt -O0 -ccopt -UNDEBUG -ccopt -I/usr/include -ccopt -I/usr/include -ccopt -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -ccopt -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -g -c -o mpz_caml.o mpz_caml.c
+- ocamlfind ocamlopt -package "bigarray" -ccopt -Wcast-qual -ccopt -Wswitch -ccopt -Werror-implicit-function-declaration -ccopt -Wall -ccopt -Wextra -ccopt -Wundef -ccopt -Wbad-function-cast -ccopt -Wcast-align -ccopt -Wstrict-prototypes -ccopt -Wno-unused -ccopt -fPIC -ccopt -std=c99 -ccopt -g -ccopt -O0 -ccopt -UNDEBUG -ccopt -I/usr/include -ccopt -I/usr/include -ccopt -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -ccopt -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -g -c -o mpq_caml.o mpq_caml.c
+- ocamlfind ocamlopt -package "bigarray" -ccopt -Wcast-qual -ccopt -Wswitch -ccopt -Werror-implicit-function-declaration -ccopt -Wall -ccopt -Wextra -ccopt -Wundef -ccopt -Wbad-function-cast -ccopt -Wcast-align -ccopt -Wstrict-prototypes -ccopt -Wno-unused -ccopt -fPIC -ccopt -std=c99 -ccopt -g -ccopt -O0 -ccopt -UNDEBUG -ccopt -I/usr/include -ccopt -I/usr/include -ccopt -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -ccopt -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -g -c -o mpf_caml.o mpf_caml.c
+- ocamlfind ocamlopt -package "bigarray" -ccopt -Wcast-qual -ccopt -Wswitch -ccopt -Werror-implicit-function-declaration -ccopt -Wall -ccopt -Wextra -ccopt -Wundef -ccopt -Wbad-function-cast -ccopt -Wcast-align -ccopt -Wstrict-prototypes -ccopt -Wno-unused -ccopt -fPIC -ccopt -std=c99 -ccopt -g -ccopt -O0 -ccopt -UNDEBUG -ccopt -I/usr/include -ccopt -I/usr/include -ccopt -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -ccopt -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -g -c -o mpfr_caml.o mpfr_caml.c
+- In file included from mpfr_caml.c:7:0:
+- mpfr_caml.c: In function 'camlidl_mpfr_mpfr_set_q':
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/mlvalues.h:73:37: warning: '_res' is used uninitialized in this function [-Wuninitialized]
+-  #define Val_long(x)     ((intnat) (((uintnat)(x) << 1)) + 1)
+-                                      ^
+- mpfr_caml.c:456:7: note: '_res' was declared here
+-    int _res;
+-        ^
+- In file included from mpfr_caml.c:7:0:
+- mpfr_caml.c: In function 'camlidl_mpfr_mpfr_init_set_q':
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/mlvalues.h:73:37: warning: '_res' is used uninitialized in this function [-Wuninitialized]
+-  #define Val_long(x)     ((intnat) (((uintnat)(x) << 1)) + 1)
+-                                      ^
+- mpfr_caml.c:773:7: note: '_res' was declared here
+-    int _res;
+-        ^
+- ocamlfind ocamlopt -package "bigarray" -ccopt -Wcast-qual -ccopt -Wswitch -ccopt -Werror-implicit-function-declaration -ccopt -Wall -ccopt -Wextra -ccopt -Wundef -ccopt -Wbad-function-cast -ccopt -Wcast-align -ccopt -Wstrict-prototypes -ccopt -Wno-unused -ccopt -fPIC -ccopt -std=c99 -ccopt -g -ccopt -O0 -ccopt -UNDEBUG -ccopt -I/usr/include -ccopt -I/usr/include -ccopt -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -ccopt -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -g -c -o gmp_random_caml.o gmp_random_caml.c
+- ocamlfind ocamlopt -package "bigarray" -ccopt -Wcast-qual -ccopt -Wswitch -ccopt -Werror-implicit-function-declaration -ccopt -Wall -ccopt -Wextra -ccopt -Wundef -ccopt -Wbad-function-cast -ccopt -Wcast-align -ccopt -Wstrict-prototypes -ccopt -Wno-unused -ccopt -fPIC -ccopt -std=c99 -ccopt -g -ccopt -O0 -ccopt -UNDEBUG -ccopt -I/usr/include -ccopt -I/usr/include -ccopt -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -ccopt -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -g -c -o gmp_caml.o gmp_caml.c
+- gmp_caml.c:61:1: warning: missing initializer for field 'compare_ext' of 'struct custom_operations' [-Wmissing-field-initializers]
+-  };
+-  ^
+- In file included from gmp_caml.c:14:0:
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/custom.h:34:9: note: 'compare_ext' declared here
+-    int (*compare_ext)(value v1, value v2);
+-          ^
+- gmp_caml.c: In function 'camlidl_custom_mpq_hash':
+- gmp_caml.c:112:25: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+-    else hash = (labs(num)<den ? den/num : num/den);
+-                          ^
+- gmp_caml.c: At top level:
+- gmp_caml.c:123:1: warning: missing initializer for field 'compare_ext' of 'struct custom_operations' [-Wmissing-field-initializers]
+-  };
+-  ^
+- In file included from gmp_caml.c:14:0:
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/custom.h:34:9: note: 'compare_ext' declared here
+-    int (*compare_ext)(value v1, value v2);
+-          ^
+- gmp_caml.c:195:1: warning: missing initializer for field 'compare_ext' of 'struct custom_operations' [-Wmissing-field-initializers]
+-  };
+-  ^
+- In file included from gmp_caml.c:14:0:
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/custom.h:34:9: note: 'compare_ext' declared here
+-    int (*compare_ext)(value v1, value v2);
+-          ^
+- gmp_caml.c:267:1: warning: missing initializer for field 'compare_ext' of 'struct custom_operations' [-Wmissing-field-initializers]
+-  };
+-  ^
+- In file included from gmp_caml.c:14:0:
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/custom.h:34:9: note: 'compare_ext' declared here
+-    int (*compare_ext)(value v1, value v2);
+-          ^
+- gmp_caml.c:304:1: warning: missing initializer for field 'compare_ext' of 'struct custom_operations' [-Wmissing-field-initializers]
+-  };
+-  ^
+- In file included from gmp_caml.c:14:0:
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/custom.h:34:9: note: 'compare_ext' declared here
+-    int (*compare_ext)(value v1, value v2);
+-          ^
+- gmp_caml.c:363:1: warning: missing initializer for field 'compare_ext' of 'struct custom_operations' [-Wmissing-field-initializers]
+-  };
+-  ^
+- In file included from gmp_caml.c:14:0:
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/custom.h:34:9: note: 'compare_ext' declared here
+-    int (*compare_ext)(value v1, value v2);
+-          ^
+- gmp_caml.c:422:1: warning: missing initializer for field 'compare_ext' of 'struct custom_operations' [-Wmissing-field-initializers]
+-  };
+-  ^
+- In file included from gmp_caml.c:14:0:
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/custom.h:34:9: note: 'compare_ext' declared here
+-    int (*compare_ext)(value v1, value v2);
+-          ^
+- gmp_caml.c:458:1: warning: missing initializer for field 'compare_ext' of 'struct custom_operations' [-Wmissing-field-initializers]
+-  };
+-  ^
+- In file included from gmp_caml.c:14:0:
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/custom.h:34:9: note: 'compare_ext' declared here
+-    int (*compare_ext)(value v1, value v2);
+-          ^
+- ocamlmklib -oc gmp_caml mpz_caml.o mpq_caml.o mpf_caml.o mpfr_caml.o gmp_random_caml.o gmp_caml.o -L/usr/lib -L/usr/lib -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/stublibs -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -lmpfr -lgmp -lcamlidl
+- ocamlmklib -oc gmp_caml.p mpz_caml.o mpq_caml.o mpf_caml.o mpfr_caml.o gmp_random_caml.o gmp_caml.o -L/usr/lib -L/usr/lib -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/stublibs -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -lmpfr -lgmp -lcamlidl
+- ocamlfind ocamlc -package "bigarray" -annot -g -a -o gmp.cma mpz.cmo mpq.cmo mpf.cmo mpfr.cmo gmp_random.cmo mpzf.cmo mpqf.cmo mpfrf.cmo \
+- -dllib -lgmp_caml -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp -ccopt "-L/usr/lib -L/usr/lib -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/stublibs -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -lmpfr -lgmp -lcamlidl" -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -ccopt -L/usr/lib -ccopt -L/usr/lib  -cclib -lmpfr -cclib -lgmp -cclib -lcamlidl
+- ocamlfind ocamlopt -package "bigarray" -annot -inline 20 -c mpz.ml
+- ocamlfind ocamlopt -package "bigarray" -annot -inline 20 -c mpq.ml
+- ocamlfind ocamlopt -package "bigarray" -annot -inline 20 -c mpf.ml
+- ocamlfind ocamlopt -package "bigarray" -annot -inline 20 -c mpfr.ml
+- File "mpfr.ml", line 551, characters 2-14:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -package "bigarray" -annot -inline 20 -c gmp_random.ml
+- ocamlfind ocamlopt -package "bigarray" -annot -inline 20 -c mpzf.ml
+- ocamlfind ocamlopt -package "bigarray" -annot -inline 20 -c mpqf.ml
+- ocamlfind ocamlopt -package "bigarray" -annot -inline 20 -c mpfrf.ml
+- ocamlfind ocamlopt -package "bigarray" -annot -inline 20 -a -o gmp.cmxa mpz.cmx mpq.cmx mpf.cmx mpfr.cmx gmp_random.cmx mpzf.cmx mpqf.cmx mpfrf.cmx \
+- -cclib -lgmp_caml -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp -ccopt "-L/usr/lib -L/usr/lib -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/stublibs -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -lmpfr -lgmp -lcamlidl" -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -ccopt -L/usr/lib -ccopt -L/usr/lib  -cclib -lmpfr -cclib -lgmp -cclib -lcamlidl
+- ocamlfind ocamlopt -package "bigarray" -annot -inline 20 -linkall -shared -o gmp.cmxs -I . gmp.cmxa
+- ocamlfind ocamlopt -package "bigarray" -p -annot -inline 20  -c -o mpz.p.cmx mpz.ml
+- ocamlfind ocamlopt -package "bigarray" -p -annot -inline 20  -c -o mpq.p.cmx mpq.ml
+- ocamlfind ocamlopt -package "bigarray" -p -annot -inline 20  -c -o mpf.p.cmx mpf.ml
+- ocamlfind ocamlopt -package "bigarray" -p -annot -inline 20  -c -o mpfr.p.cmx mpfr.ml
+- File "mpfr.ml", line 551, characters 2-14:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -package "bigarray" -p -annot -inline 20  -c -o gmp_random.p.cmx gmp_random.ml
+- ocamlfind ocamlopt -package "bigarray" -p -annot -inline 20  -c -o mpzf.p.cmx mpzf.ml
+- ocamlfind ocamlopt -package "bigarray" -p -annot -inline 20  -c -o mpqf.p.cmx mpqf.ml
+- ocamlfind ocamlopt -package "bigarray" -p -annot -inline 20  -c -o mpfrf.p.cmx mpfrf.ml
+- ocamlfind ocamlopt -package "bigarray" -p -annot -inline 20 -a -o gmp.p.cmxa mpz.p.cmx mpq.p.cmx mpf.p.cmx mpfr.p.cmx gmp_random.p.cmx mpzf.p.cmx mpqf.p.cmx mpfrf.p.cmx \
+- -cclib -lgmp_caml.p -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp -ccopt "-L/usr/lib -L/usr/lib -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/stublibs -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -lmpfr -lgmp -lcamlidl" -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml -ccopt -L/usr/lib -ccopt -L/usr/lib  -cclib -lmpfr -cclib -lgmp -cclib -lcamlidl
+- rm gmp_caml.o mpz_caml.o mpf_caml.o mpq_caml.o gmp_random_caml.o mpfr_caml.o
+-> compiled  mlgmpidl.1.2.4
+Processing  8/8: [mlgmpidl: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mlgmpidl.1.2.4)
+- /bin/rm -f META
+- echo "description = \"OCaml Interface to GMP and MPFR libraries\"" >META
+- echo "version = \"1.2.3\"" >>META
+- echo "requires = \"bigarray\"" >>META
+- echo "archive(byte) = \"gmp.cma\"" >>META
+- echo "archive(byte,plugin) = \"gmp.cma\"" >>META
+- echo "archive(native) = \"gmp.cmxa\"" >>META
+- echo "archive(native,plugin) = \"gmp.cmxs\"" >>META
+- echo "archive(native,gprof) = \"gmp.p.cmxa\"" >>META
+- ocamlfind remove gmp
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp
+- ocamlfind install gmp META gmp_caml.h mpz.idl mpq.idl mpf.idl mpfr.idl gmp_random.idl mpz.ml mpq.ml mpf.ml mpfr.ml gmp_random.ml mpzf.ml mpqf.ml mpfrf.ml mpz.mli mpq.mli mpf.mli mpfr.mli gmp_random.mli mpzf.mli mpqf.mli mpfrf.mli mpz.cmi mpq.cmi mpf.cmi mpfr.cmi gmp_random.cmi mpzf.cmi mpqf.cmi mpfrf.cmi gmp.cma mpz.cmx mpq.cmx mpf.cmx mpfr.cmx gmp_random.cmx mpzf.cmx mpqf.cmx mpfrf.cmx gmp.cmxa gmp.a mpz.p.cmx mpq.p.cmx mpf.p.cmx mpfr.p.cmx gmp_random.p.cmx mpzf.p.cmx mpqf.p.cmx mpfrf.p.cmx gmp.p.cmxa gmp.p.a gmp.cmxs libgmp_caml.a libgmp_caml.p.a dllgmp_caml.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/libgmp_caml.p.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/libgmp_caml.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/gmp.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/gmp.p.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/gmp.p.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpfrf.p.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpqf.p.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpzf.p.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/gmp_random.p.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpfr.p.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpf.p.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpq.p.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpz.p.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/gmp.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/gmp.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpfrf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpqf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpzf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/gmp_random.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpfr.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpq.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpz.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/gmp.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpfrf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpqf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpzf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/gmp_random.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpfr.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpq.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpz.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpfrf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpqf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpzf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/gmp_random.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpfr.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpq.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpz.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpfrf.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpqf.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpzf.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/gmp_random.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpfr.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpf.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpq.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpz.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/gmp_random.idl
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpfr.idl
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpf.idl
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpq.idl
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/mpz.idl
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/gmp_caml.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/gmp/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllgmp_caml.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllgmp_caml.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+-> installed mlgmpidl.1.2.4
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 16:59.16] Success
