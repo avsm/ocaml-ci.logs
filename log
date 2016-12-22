@@ -1,0 +1,378 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 getopts /home/opam/opam-repository/cache
+[2016-12-22 16:19.39] Starting...
+[2016-12-22 16:19.39] Waiting for free pool slot to run
+[2016-12-22 17:49.50] Pool slot obtained, starting run
+[2016-12-22 17:49.50] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 getopts
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - bmake
+#  - m4
+# The following new OS packages need to be installed: bmake
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy bmake
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package bmake.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../bmake_20160220-2_amd64.deb ...
+Unpacking bmake (20160220-2) ...
+Setting up bmake (20160220-2) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-bmake 1.0                                      [required by getopts]
+  - install bsdowl     3.0.0-20150830                           [required by getopts]
+  - install broken     0.4.2                                    [required by getopts]
+  - install mixture    1.0.0                                    [required by lemonade]
+  - install lemonade   0.6.0                                    [required by getopts]
+  - install getopts    0.4.0         
+===== 6 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/6: [broken.0.4.2: dl]
+Processing  2/6: [broken.0.4.2: dl] [bsdowl.3.0.0-20150830: dl]
+Processing  3/6: [broken.0.4.2: dl] [bsdowl.3.0.0-20150830: dl]
+Processing  4/6: [broken.0.4.2: dl] [bsdowl.3.0.0-20150830: dl] [getopts.0.4.0: dl]
+[getopts.0.4.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/6: [broken.0.4.2: dl] [bsdowl.3.0.0-20150830: dl]
+[broken.0.4.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/6: [bsdowl.3.0.0-20150830: dl]
+[bsdowl.3.0.0-20150830] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/6:
+Processing  5/6: [lemonade.0.6.0: dl]
+Processing  6/6: [lemonade.0.6.0: dl] [mixture.1.0.0: dl]
+[lemonade.0.6.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6: [mixture.1.0.0: dl]
+[mixture.1.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/12: [conf-bmake: sh bmake]
++ sh "./detect_program.sh" "./conf-bmake.config" "bmake" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-bmake.1.0)
+- Debug: program: bmake
+- Debug: output: ./conf-bmake.config
+- Debug: pwd: /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-bmake.1.0
+- Debug: Looking for bmake in /home/opam/.opam/ocaml-base-compiler.4.04.0/bin
+- Debug: Looking for bmake in /home/opam/.opam/ocaml-base-compiler.4.04.0/bin
+- Debug: Looking for bmake in /usr/local/sbin
+- Debug: Looking for bmake in /usr/local/bin
+- Debug: Looking for bmake in /usr/sbin
+- Debug: Looking for bmake in /usr/bin
+-> compiled  conf-bmake.1.0
+-> installed conf-bmake.1.0
+Processing  3/12: [bsdowl: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/bsdowl.3.0.0-20150830)
+- checking build system type... x86_64-unknown-linux-gnu
+- checking host system type... x86_64-unknown-linux-gnu
+- checking for a modern BSD Make program... bmake
+- checking for gawk... no
+- checking for mawk... mawk
+- checking for grep that handles long lines and -e... /bin/grep
+- checking for a BSD-compatible install... /usr/bin/install -c
+- checking whether ln -s works... yes
+- checking for a thread-safe mkdir -p... /bin/mkdir -p
+- checking for ocamlc... ocamlc
+- OCaml version is 4.04.0
+- OCaml library path is /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for dynlink.cmxa... yes
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamlbuild... ocamlbuild
+- checking for a sed that does not truncate output... /bin/sed
+- checking for id that handles -g, -u and -n... id
+- checking whether tar -z works... yes
+- checking whether tar -j works... yes
+- checking whether tar -J works... yes
+- checking for ocamlfind... yes
+- checking for mingw32-gcc... no
+- checking for i586-mingw32msvc-cc... no
+- checking for mingw32-ar... no
+- checking for i586-mingw32msvc-ar... no
+- checking for noweb... no
+- checking for gpg... yes
+- checking for tex... no
+- configure: creating ./config.status
+- config.status: creating Makefile.config
+- config.status: creating bps/bps.bpsconfig.mk
+- 
+- ** Configuration Summary **
+- 
+- Optional Features:
+-   --enable-test-findlib=yes
+-   --enable-test-py-setuptools=no
+-   --enable-test-mingw32=no
+-   --enable-test-noweb=no
+-   --enable-test-gpg=yes
+-   --enable-test-texmf=no
+-   --enable-test-metapost=no
+- 
+- Optional Packages:
+-   --with-credentials=su
+- 
+Processing  3/12: [bsdowl: /usr/bin/bmake build]
++ /usr/bin/bmake "-r" "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/bsdowl.3.0.0-20150830)
+- ===> bps (build)
+- ===> ocaml (build)
+- ===> texmf (build)
+- ===> langc (build)
+- ===> noweb (build)
+- ===> config (build)
+- ===> script (build)
+- ===> misc (build)
+- ===> www (build)
+- ===> support (build)
+- /bin/sed -e 's|@PACKAGE@|bsdowl|g' -e 's|@VERSION@|3.0.0-20150830|g' -e 's|@prefix@|/home/opam/.opam/ocaml-base-compiler.4.04.0|g' -e 's|@exec_prefix@|/home/opam/.opam/ocaml-base-compiler.4.04.0|g' -e 's|@bindir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/bin|g' -e 's|@sbindir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/sbin|g' -e 's|@libexecdir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/libexec|g' -e 's|@datarootdir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/share|g' -e 's|@datadir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/share|g' -e 's|@sysconfdir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/etc|g' -e 's|@sharedstatedir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/com|g' -e 's|@localstatedir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/var|g' -e 's|@runstatedir@|@runstatedir@|g' -e 's|@includedir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/include|g' -e 's|@docdir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/share/doc/bsdowl|g' -e 's|@infodir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/share/info|g' -e 's|@libdir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/lib|g' -e 's|@localedir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/share/locale|g' -e 's|@mandir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/share/man|g' -e 's|@BINDIR@|/home/opam/.opam/ocaml-base-compiler.4.04.0/bin|g' < mp2png.sh > mp2png
+-> compiled  bsdowl.3.0.0-20150830
+Processing  4/12: [bsdowl: /usr/bin/bmake install]
++ /usr/bin/bmake "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/bsdowl.3.0.0-20150830)
+- ===> bps (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.init.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.bpsconfig.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.package.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.uses.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.module.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.external.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.product.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.architecture.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.configuration.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.credentials.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.objdir.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.own.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.man.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.usertarget.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.clean.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.subdir.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.files.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.autoconf.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.preparatives.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.replace.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.project.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.m4.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.noweb.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.test-expected.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- ===> ocaml (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.uses.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.module.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.external.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.build.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.depend.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.find.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.meta.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.init.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.lex.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.lib.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.pack.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.main.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.object.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.prog.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.dirs.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.source.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.compile.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.tools.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.yacc.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.odoc.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.manual.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.toplevel.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- ===> texmf (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.init.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.uses.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.module.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.external.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.depend.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.clean.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.build.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.mpost.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.draft.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.bibtex.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.index.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 tex.doc.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 plain.files.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 latex.doc.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 latex.files.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 mpost.doc.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 mpost.files.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- ===> langc (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.init.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.build.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.uses.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.module.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.external.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.depend.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.prog.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.lib.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- ===> noweb (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/share/texmf-local/tex/latex/bsdowl
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 nwlatex.tex /home/opam/.opam/ocaml-base-compiler.4.04.0/share/texmf-local/tex/latex/bsdowl
+- install -o opam -g opam -m 440 nwlatex.css /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- ===> config (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 conf.dotfile.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 conf.freebsd.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- ===> script (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 script.main.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 shell.prog.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 shell.lib.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 python.prog.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 python.lib.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 python.init.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 python.uses.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 python.setuptools.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- ===> misc (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 elisp.lib.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 generic.files.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 generic.subdir.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 generic.project.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 generic.test.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- ===> www (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 www.files.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- install -o opam -g opam -m 440 www.sgml.mk /home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl
+- ===> support (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/bin
+- install -o opam -g opam -m 550 mp2png /home/opam/.opam/ocaml-base-compiler.4.04.0/bin
+-> installed bsdowl.3.0.0-20150830
+Processing  5/12: [broken: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2)
+- checking for ocamlc... ocamlc
+- OCaml version is 4.04.0
+- OCaml library path is /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for dynlink.cmxa... yes
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamlbuild... ocamlbuild
+- checking for ocamlfind... ocamlfind
+- checking for findlib package unix... found
+- configure: creating ./config.status
+- config.status: creating Makefile.config
+Processing  5/12: [broken: /usr/bin/bmake all]
++ /usr/bin/bmake "-I/home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl" "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2)
+- /usr/bin/bmake depend
+- ===> src (depend)
+- (cd /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src && ocamldep -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I +. -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src broken.ml broken.mli broken.ml broken.mli) | sh -c '/bin/sed -e "s@/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src/*@@g" -e "s@/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src/*@@g"' -- OCAMLDEP_FILTER  > .depend
+- ===> meta (depend)
+- ===> manual (depend)
+- ===> testsuite (depend)
+- ===> testsuite/unit-testing (depend)
+- (cd /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/testsuite/unit-testing && ocamldep -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I +. -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -native testBroken.ml main.ml) | sh -c '/bin/sed -e "s@/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src/*@@g" -e "s@/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src/*@@g"' -- OCAMLDEP_FILTER  > .depend
+- ===> testsuite/trip-trap (depend)
+- (cd /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/testsuite/trip-trap && ocamldep -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I +. -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -native main.ml) | sh -c '/bin/sed -e "s@/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src/*@@g" -e "s@/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src/*@@g"' -- OCAMLDEP_FILTER  > .depend
+- /usr/bin/bmake build
+- ===> src (build)
+- ocamlfind ocamlc -c -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -o broken.cmi broken.mli
+- ocamlfind ocamlopt -c -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -o broken.cmx broken.ml
+- ocamlopt -a -o broken.cmxa broken.cmx
+- ocamlfind ocamlc -c -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -o broken.cmo broken.ml
+- ocamlc -a -o broken.cma broken.cmo
+- ===> meta (build)
+- /bin/sed -e 's|@PACKAGE@|broken|g' -e 's|@VERSION@|0.4.2|g' -e 's|@prefix@|/home/opam/.opam/ocaml-base-compiler.4.04.0|g' -e 's|@exec_prefix@|/home/opam/.opam/ocaml-base-compiler.4.04.0|g' -e 's|@bindir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/bin|g' -e 's|@sbindir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/sbin|g' -e 's|@libexecdir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/libexec|g' -e 's|@datarootdir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/share|g' -e 's|@datadir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/share|g' -e 's|@sysconfdir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/etc|g' -e 's|@sharedstatedir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/com|g' -e 's|@localstatedir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/var|g' -e 's|@runstatedir@|@runstatedir@|g' -e 's|@includedir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/include|g' -e 's|@docdir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/share/doc/broken|g' -e 's|@infodir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/share/info|g' -e 's|@libdir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/lib|g' -e 's|@ocamllibdir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/lib|g' -e 's|@localedir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/share/locale|g' -e 's|@mandir@|/home/opam/.opam/ocaml-base-compiler.4.04.0/share/man|g' broken.in > broken
+- ===> manual (build)
+- ===> testsuite (build)
+- /usr/bin/bmake doc
+- ===> src (doc)
+- ocamlfind ocamldoc -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -t "Ocamldoc dump for broken" -short-functors -dump broken.odoc broken.ml broken.mli
+- ===> meta (doc)
+- ===> manual (doc)
+- rm -R -f broken_html.temp broken_html
+- mkdir broken_html.temp
+- ocamlfind ocamldoc -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src -t "Broken Testing Framework" -short-functors -load /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/src/broken.odoc -html -charset utf-8 -intro intro.text -d broken_html.temp 
+- cp /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/Library/Data/broken.css broken_html.temp/style.css
+- mv broken_html.temp broken_html
+- ===> testsuite (doc)
+- ===> testsuite/unit-testing (doc)
+- ===> testsuite/trip-trap (doc)
+-> compiled  broken.0.4.2
+Processing  6/12: [broken: /usr/bin/bmake install]
++ /usr/bin/bmake "-I/home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2)
+- ===> src (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/broken
+- install -o opam -g opam -m 440 broken.cmxa /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/broken
+- install -o opam -g opam -m 440 broken.a /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/broken
+- install -o opam -g opam -m 440 broken.cma /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/broken
+- install -o opam -g opam -m 440 broken.cmi /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/broken
+- ===> meta (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/broken
+- install -o opam -g opam -m 440 broken /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/broken/META
+- ===> manual (install)
+- install -d -o opam -g opam /home/opam/.opam/ocaml-base-compiler.4.04.0/share/doc/broken/html
+- (cd broken_html && sh -c '(find $1 -depth $3 | cpio -dump $2 >/dev/null 2>&1) && find $1 -depth $3 -type d -exec chmod 755 $2/{} \; && find $1 -depth $3 -type f -exec chmod 440 $2/{} \;' COPYTREE_DOC . /home/opam/.opam/ocaml-base-compiler.4.04.0/share/doc/broken/html)
+- *** Error code 127
+- 
+- Stop.
+- bmake[1]: stopped in /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/manual
+- *** Error code 1
+- 
+- Stop.
+- bmake: stopped in /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2
+[ERROR] The installation of broken failed at "/usr/bin/bmake -I/home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl install".
+Processing  6/12: [broken: ocamlfind remove]
++ ocamlfind "remove" "broken"
+- Removed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/broken
+Processing  6/12: [broken: rm]
++ rm "-rf" "/home/opam/.opam/ocaml-base-compiler.4.04.0/share/doc/broken"
+
+#=== ERROR while installing broken.0.4.2 ======================================#
+# command              /usr/bin/bmake -I/home/opam/.opam/ocaml-base-compiler.4.04.0/share/bsdowl install
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2
+# exit-code            1
+# env-file             /home/opam/.opam/log/broken-1-8c0dd3.env
+# output-file          /home/opam/.opam/log/broken-1-8c0dd3.out
+### output ###
+# [...]
+# install -o opam -g opam -m 440 broken /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/broken/META
+# ===> manual (install)
+# install -d -o opam -g opam /home/opam/.opam/ocaml-base-compiler.4.04.0/share/doc/broken/html
+# (cd broken_html && sh -c '(find $1 -depth $3 | cpio -dump $2 >/dev/null 2>&1) && find $1 -depth $3 -type d -exec chmod 755 $2/{} \; && find $1 -depth $3 -type f -exec chmod 440 $2/{} \;' COPYTREE_DOC . /home/opam/.opam/ocaml-base-compiler.4.04.0/share/doc/broken/html)
+# *** Error code 127
+# 
+# Stop.
+# bmake[1]: stopped in /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2/manual
+# *** Error code 1
+# 
+# Stop.
+# bmake: stopped in /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/broken.0.4.2
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install getopts  0.4.0
+| - install lemonade 0.6.0
+| - install mixture  1.0.0
++- 
++- The following actions failed
+| - install broken 0.4.2
++- 
++- The following changes have been performed
+| - install bsdowl     3.0.0-20150830
+| - install conf-bmake 1.0           
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/backup/state-20161222175002.export"
+'opam install --verbose --yes --jobs=2 getopts' failed.
+[2016-12-22 17:50.10] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191" "opam" "depext" "-ivyj" "2" "getopts" exited with status 4
