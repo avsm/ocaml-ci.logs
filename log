@@ -1,0 +1,67 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 flow_parser /home/opam/opam-repository/cache
+[2016-12-22 16:19.36] Starting...
+[2016-12-22 16:19.37] Waiting for free pool slot to run
+[2016-12-22 17:47.58] Pool slot obtained, starting run
+[2016-12-22 17:47.58] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 flow_parser
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install flow_parser 0.36.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [flow_parser.0.36.0: dl]
+[flow_parser.0.36.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [flow_parser: sh]
++ sh "-c" "cd src/parser && make ocamlfind-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/flow_parser.0.36.0)
+- ocamlbuild parser_flow.cma parser_flow.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules parser_flow.ml > parser_flow.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamllex.opt -q lexer_flow.mll
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lexer_flow.ml > lexer_flow.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules loc.mli > loc.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules parse_error.ml > parse_error.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o loc.cmi loc.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules spider_monkey_ast.ml > spider_monkey_ast.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o parse_error.cmo parse_error.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o spider_monkey_ast.cmo spider_monkey_ast.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules parser_env.mli > parser_env.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lexer_flow.cmo lexer_flow.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o parser_env.cmi parser_env.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o parser_flow.cmo parser_flow.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules loc.ml > loc.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules parser_env.ml > parser_env.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o loc.cmo loc.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o parser_env.cmo parser_env.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -a loc.cmo parse_error.cmo spider_monkey_ast.cmo lexer_flow.cmo parser_env.cmo parser_flow.cmo -o parser_flow.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o loc.cmx loc.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o parse_error.cmx parse_error.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o spider_monkey_ast.cmx spider_monkey_ast.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lexer_flow.cmx lexer_flow.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o parser_env.cmx parser_env.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o parser_flow.cmx parser_flow.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -a loc.cmx parse_error.cmx spider_monkey_ast.cmx lexer_flow.cmx parser_env.cmx parser_flow.cmx -o parser_flow.cmxa
+- ocamlfind install flow_parser META \
+- 	_build/parser_flow.a \
+- 	_build/parser_flow.cma \
+- 	_build/parser_flow.cmxa \
+- 	_build/*.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/flow_parser/spider_monkey_ast.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/flow_parser/parser_flow.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/flow_parser/parser_env.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/flow_parser/parse_error.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/flow_parser/loc.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/flow_parser/lexer_flow.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/flow_parser/parser_flow.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/flow_parser/parser_flow.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/flow_parser/parser_flow.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/flow_parser/META
+-> compiled  flow_parser.0.36.0
+-> installed flow_parser.0.36.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:48.16] Success
