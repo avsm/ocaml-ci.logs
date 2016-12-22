@@ -1,0 +1,22 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 froc /home/opam/opam-repository/cache
+[2016-12-22 16:19.38] Starting...
+[2016-12-22 16:19.38] Waiting for free pool slot to run
+[2016-12-22 17:48.30] Pool slot obtained, starting run
+[2016-12-22 17:48.30] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 froc
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following dependencies couldn't be met:
+  - froc -> ocaml < 4.02.0 -> ocaml-variants < 4.01.1~
+    conflict with the base packages of this switch
+  - froc -> ocaml < 4.02.0 -> ocaml-system < 4.02.0
+    unmet availability conditions, e.g. sys-ocaml-version = "4.01.0"
+  - froc -> ocaml < 4.02.0 -> ocaml-base-compiler < 4.02.0
+    conflict with the base packages of this switch
+
+No solution found, exiting
+'opam install --verbose --yes --jobs=2 froc' failed.
+[2016-12-22 17:48.42] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191" "opam" "depext" "-ivyj" "2" "froc" exited with status 3
