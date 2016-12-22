@@ -1,0 +1,36 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 npy /home/opam/opam-repository/cache
+[2016-12-22 16:20.02] Starting...
+[2016-12-22 16:20.02] Waiting for free pool slot to run
+[2016-12-22 18:03.58] Pool slot obtained, starting run
+[2016-12-22 18:03.58] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 npy
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install npy 0.0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [npy.0.0.3: dl]
+[npy.0.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [npy: make npy.lib]
++ make "npy.lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/npy.0.0.3)
+- ocamlbuild npy.cmxa npy.cma npy.cmxs npy.cmx
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -modules src/npy.ml > src/npy.ml.depends
+- ocamlfind ocamldep -modules src/npy.mli > src/npy.mli.depends
+- ocamlfind ocamlc -c -for-pack Npy -warn-error A-4-29-40-41-42-44-45-48-56-58 -w A-4-29-40-41-42-44-45-48-56-58 -I src -o src/npy.cmi src/npy.mli
+- ocamlfind ocamlopt -c -for-pack Npy -warn-error A-4-29-40-41-42-44-45-48-56-58 -w A-4-29-40-41-42-44-45-48-56-58 -I src -o src/npy.cmx src/npy.ml
+- ocamlfind ocamlopt -a src/npy.cmx -o src/npy.cmxa
+- ocamlfind ocamlc -c -for-pack Npy -warn-error A-4-29-40-41-42-44-45-48-56-58 -w A-4-29-40-41-42-44-45-48-56-58 -I src -o src/npy.cmo src/npy.ml
+- ocamlfind ocamlc -a src/npy.cmo -o src/npy.cma
+- ocamlfind ocamlopt -shared src/npy.cmx -o src/npy.cmxs
+-> compiled  npy.0.0.3
+-> installed npy.0.0.3
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:04.13] Success
