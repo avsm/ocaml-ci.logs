@@ -1,0 +1,111 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 hashcons /home/opam/opam-repository/cache
+[2016-12-22 16:18.05] Starting...
+[2016-12-22 16:18.05] Waiting for free pool slot to run
+[2016-12-22 16:50.02] Pool slot obtained, starting run
+[2016-12-22 16:50.02] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 hashcons
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - autoconf
+#  - debianutils
+#  - m4
+# The following new OS packages need to be installed: autoconf
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy autoconf
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package autoconf.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../autoconf_2.69-9_all.deb ...
+Unpacking autoconf (2.69-9) ...
+Selecting previously unselected package autotools-dev.
+Preparing to unpack .../autotools-dev_20150820.1_all.deb ...
+Unpacking autotools-dev (20150820.1) ...
+Selecting previously unselected package automake.
+Preparing to unpack .../automake_1%3a1.15-4ubuntu1_all.deb ...
+Unpacking automake (1:1.15-4ubuntu1) ...
+Setting up autoconf (2.69-9) ...
+Setting up autotools-dev (20150820.1) ...
+Setting up automake (1:1.15-4ubuntu1) ...
+update-alternatives: using /usr/bin/automake-1.15 to provide /usr/bin/automake (automake) in auto mode
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-autoconf 0.1                                   [required by hashcons]
+  - install hashcons      1.2
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [hashcons.1.2: dl]
+[hashcons.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-autoconf: which autoconf]
++ which "autoconf" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-autoconf.0.1)
+- /usr/bin/autoconf
+-> compiled  conf-autoconf.0.1
+-> installed conf-autoconf.0.1
+Processing  3/4: [hashcons: autoconf]
++ autoconf  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/hashcons.1.2)
+Processing  3/4: [hashcons: ./configure]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/hashcons.1.2)
+- checking for ocamlc... ocamlc
+- ocaml version is 4.03.0
+- ocaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version... ok
+- checking for ocamlc.opt... ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking ocamlc.opt version... ok
+- checking for ocamldep... ocamldep
+- checking for ocamllex... ocamllex
+- checking for ocamlyacc... ocamlyacc
+- checking for ocamlweb... true
+- checking for ocamlfind... yes
+- Hashcons library will be installed in: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons
+- configure: creating ./config.status
+- config.status: creating META
+- config.status: creating Makefile
+Processing  3/4: [hashcons: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/hashcons.1.2)
+- ocamlc.opt -c  hashcons.mli
+- ocamlc.opt -c  hashcons.ml
+- ocamlc.opt -c  hset.mli
+- ocamlc.opt -c  hset.ml
+- ocamlc.opt -c  hmap.mli
+- ocamlc.opt -c  hmap.ml
+- ocamlopt.opt -c  hashcons.ml
+- ocamlopt.opt -c  hset.ml
+- ocamlopt.opt -c  hmap.ml
+-> compiled  hashcons.1.2
+Processing  4/4: [hashcons: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/hashcons.1.2)
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind remove -destdir /home/opam/.opam/ocaml-base-compiler.4.03.0/lib hashcons
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind install -destdir /home/opam/.opam/ocaml-base-compiler.4.03.0/lib hashcons META hashcons.cmo hset.cmo hmap.cmo hashcons.cmi hset.cmi hmap.cmi hashcons.mli hset.mli hmap.mli hashcons.cmx hset.cmx hmap.cmx hashcons.o hset.o hmap.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hmap.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hset.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hashcons.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hmap.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hset.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hashcons.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hmap.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hset.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hashcons.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hmap.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hset.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hashcons.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hmap.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hset.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/hashcons.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/hashcons/META
+-> installed hashcons.1.2
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 16:50.21] Success
