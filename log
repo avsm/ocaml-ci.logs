@@ -1,0 +1,21 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 ppx_sexp /home/opam/opam-repository/cache
+[2016-12-22 16:18.44] Starting...
+[2016-12-22 16:18.44] Waiting for free pool slot to run
+[2016-12-22 17:09.46] Pool slot obtained, starting run
+[2016-12-22 17:09.46] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 ppx_sexp
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following dependencies couldn't be met:
+  - ppx_sexp -> ocaml < 4.03.0 -> ocaml-variants < 4.02.4~
+    conflict with the base packages of this switch
+  - ppx_sexp -> ocaml < 4.03.0 -> ocaml-system < 4.03.0
+    unmet availability conditions, e.g. sys-ocaml-version = "4.02.3"
+  - ppx_sexp -> ocaml < 4.03.0 -> ocaml-base-compiler < 4.03.0
+    conflict with the base packages of this switch
+
+No solution found, exiting
+'opam install --verbose --yes --jobs=2 ppx_sexp' failed.
+[2016-12-22 17:09.58] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "ppx_sexp" exited with status 3
