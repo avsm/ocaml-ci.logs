@@ -1,0 +1,93 @@
+=== docker run sha256:d7e7dfca2b781a2903c36e322486f2954a953d4c9550e78c88537eae7135ccca opam depext -ivyj 2 kafka /home/opam/opam-repository/cache
+[2016-12-22 23:12.04] Starting...
+[2016-12-22 23:12.04] Waiting for free pool slot to run
+[2016-12-22 23:46.05] Pool slot obtained, starting run
+[2016-12-22 23:46.05] docker run sha256:d7e7dfca2b781a2903c36e322486f2954a953d4c9550e78c88537eae7135ccca opam depext -ivyj 2 kafka
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - librdkafka-dev
+#  - m4
+# The following new OS packages need to be installed: librdkafka-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy librdkafka-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package librdkafka1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../librdkafka1_0.8.6-1.1_amd64.deb ...
+Unpacking librdkafka1:amd64 (0.8.6-1.1) ...
+Selecting previously unselected package librdkafka-dev:amd64.
+Preparing to unpack .../librdkafka-dev_0.8.6-1.1_amd64.deb ...
+Unpacking librdkafka-dev:amd64 (0.8.6-1.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up librdkafka1:amd64 (0.8.6-1.1) ...
+Setting up librdkafka-dev:amd64 (0.8.6-1.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install kafka 0.2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [kafka.0.2: dl]
+[kafka.0.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [kafka: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/kafka.0.2)
+- rm -f libocamlkafka.clib okafka.mllib META
+- ln -s libocamlkafka.clib.sync libocamlkafka.clib
+- ln -s okafka.mllib.sync okafka.mllib
+- ln -s META.sync META
+- ocamlbuild okafka.cma okafka.cmxa okafka.cmxs okafka.a dllocamlkafka.so libocamlkafka.a kafka.cmi kafkaConsumer.cmi kafkaProducer.cmi
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /usr/bin/ocamlc.opt -c ocaml_kafka.c
+- /usr/bin/ocamlmklib -o ocamlkafka -lrdkafka -lpthread -lz ocaml_kafka.o
+- + /usr/bin/ocamlmklib -o ocamlkafka -lrdkafka -lpthread -lz ocaml_kafka.o
+- /usr/bin/ld: cannot find -lz
+- collect2: error: ld returned 1 exit status
+- Command exited with code 2.
+- Makefile:7: recipe for target 'all' failed
+- make: *** [all] Error 10
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[ERROR] The compilation of kafka failed at "make".
+
+#=== ERROR while compiling kafka.0.2 ==========================================#
+# command              make
+# path                 /home/opam/.opam/default/.opam-switch/build/kafka.0.2
+# exit-code            2
+# env-file             /home/opam/.opam/log/kafka-1-d2d111.env
+# output-file          /home/opam/.opam/log/kafka-1-d2d111.out
+### output ###
+# [...]
+# ln -s okafka.mllib.sync okafka.mllib
+# ln -s META.sync META
+# ocamlbuild okafka.cma okafka.cmxa okafka.cmxs okafka.a dllocamlkafka.so libocamlkafka.a kafka.cmi kafkaConsumer.cmi kafkaProducer.cmi
+# /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+# /usr/bin/ocamlc.opt -c ocaml_kafka.c
+# /usr/bin/ocamlmklib -o ocamlkafka -lrdkafka -lpthread -lz ocaml_kafka.o
+# + /usr/bin/ocamlmklib -o ocamlkafka -lrdkafka -lpthread -lz ocaml_kafka.o
+# /usr/bin/ld: cannot find -lz
+# collect2: error: ld returned 1 exit status
+# Command exited with code 2.
+# Makefile:7: recipe for target 'all' failed
+# make: *** [all] Error 10
+
++- The following actions failed
+| - build kafka 0.2
++- 
+- No changes have been performed
+
+=-=- kafka.0.2 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext kafka.0.2' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 kafka' failed.
+[2016-12-22 23:46.21] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:d7e7dfca2b781a2903c36e322486f2954a953d4c9550e78c88537eae7135ccca" "opam" "depext" "-ivyj" "2" "kafka" exited with status 4
