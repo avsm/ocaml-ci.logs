@@ -1,0 +1,49 @@
+=== Building Base for 4.04.0 (4fce34ea471a0fd2c753066c46e614322e1dece7) (238cc3)
+[2016-12-22 00:51.29] Starting...
+Sending build context to Docker daemon 2.048 kB
+Step 1/4 : FROM ocaml/opam-dev:ubuntu-16.04_ocaml-4.04.0
+ubuntu-16.04_ocaml-4.04.0: Pulling from ocaml/opam-dev
+af49a5ceb2a5: Pulling fs layer
+8f9757b472e7: Pulling fs layer
+e931b117db38: Pulling fs layer
+47b5e16c0811: Pulling fs layer
+9332eaf1a55b: Pulling fs layer
+d6687b2f8d7b: Pulling fs layer
+3b4720540e9f: Pulling fs layer
+186dcda15f96: Pulling fs layer
+47b5e16c0811: Waiting
+9332eaf1a55b: Waiting
+d6687b2f8d7b: Waiting
+3b4720540e9f: Waiting
+e931b117db38: Download complete
+8f9757b472e7: Verifying Checksum
+8f9757b472e7: Download complete
+47b5e16c0811: Download complete
+9332eaf1a55b: Download complete
+af49a5ceb2a5: Verifying Checksum
+af49a5ceb2a5: Download complete
+af49a5ceb2a5: Pull complete
+8f9757b472e7: Pull complete
+e931b117db38: Pull complete
+47b5e16c0811: Pull complete
+9332eaf1a55b: Pull complete
+d6687b2f8d7b: Verifying Checksum
+d6687b2f8d7b: Download complete
+3b4720540e9f: Verifying Checksum
+3b4720540e9f: Download complete
+186dcda15f96: Verifying Checksum
+186dcda15f96: Download complete
+d6687b2f8d7b: Pull complete
+3b4720540e9f: Pull complete
+186dcda15f96: Pull complete
+Digest: sha256:09c66800792ab1801a321df698bc899c9e5695b2780d1b1fa5c361df5834c73d
+Status: Downloaded newer image for ocaml/opam-dev:ubuntu-16.04_ocaml-4.04.0
+ ---> f475e65a7263
+Step 2/4 : WORKDIR /home/opam/opam-repository
+ ---> 08926291973e
+Removing intermediate container ce23e94e5905
+Step 3/4 : RUN git checkout master &&   git pull origin master &&   git branch -D v2 &&   git checkout -b v2 4fce34ea471a0fd2c753066c46e614322e1dece7 &&   opam admin upgrade-format &&   git add . &&   git commit -a -m 'upgrade format to opam2' &&   opam update -uy &&   opam depext -uivy ocamlfind ocamlbuild camlp4 &&   echo 'archive-mirrors: [ "file:///home/opam/opam-repository/cache" ]' >> /home/opam/.opam/config
+ ---> Running in 73978e536a31
+Removing intermediate container 73978e536a31
+network mirageci_opam_build not found
+[2016-12-22 00:52.29] Failed: Build exit 1
