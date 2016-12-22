@@ -1,0 +1,245 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 sha /home/opam/opam-repository/cache
+[2016-12-22 16:20.28] Starting...
+[2016-12-22 16:20.28] Waiting for free pool slot to run
+[2016-12-22 18:18.12] Pool slot obtained, starting run
+[2016-12-22 18:18.12] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 sha
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install sha 1.9
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [sha.1.9: dl]
+[sha.1.9] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [sha: patch]
+Processing  1/2: [sha: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sha.1.9)
+- ocamlc -c -o sha1.cmi sha1.mli
+- ocamlc -ccopt "-Wall -O3 -funroll-loops -I/usr/include" -c -o sha1.o sha1.c
+- mv sha1.o sha1.lib.o
+- ocamlc -ccopt "-Wall -O3 -funroll-loops -I/usr/include" -c -o sha1_stubs.o sha1_stubs.c
+- sha1_stubs.c: In function 'stub_sha1_file':
+- sha1_stubs.c:110:20: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                     ^
+- sha1_stubs.c:118:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha1_stubs.c:110:20: warning: incompatible implicit declaration of built-in function 'strcpy'
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                     ^
+- sha1_stubs.c:118:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha1_stubs.c:110:20: note: include '<string.h>' or provide a declaration of 'strcpy'
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                     ^
+- sha1_stubs.c:118:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- In file included from /usr/include/stdlib.h:492:0,
+-                  from /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/caml/misc.h:29,
+-                  from /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/caml/mlvalues.h:23,
+-                  from sha1_stubs.c:42:
+- sha1_stubs.c:110:34: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                                   ^
+- sha1_stubs.c:118:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha1_stubs.c:110:34: warning: incompatible implicit declaration of built-in function 'strlen'
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                                   ^
+- sha1_stubs.c:118:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha1_stubs.c:110:34: note: include '<string.h>' or provide a declaration of 'strlen'
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                                   ^
+- sha1_stubs.c:118:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha1_stubs.c:128:2: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+-   memcpy((sha1_digest *)result, &digest, sizeof(sha1_digest));
+-   ^
+- sha1_stubs.c:128:2: warning: incompatible implicit declaration of built-in function 'memcpy'
+- sha1_stubs.c:128:2: note: include '<string.h>' or provide a declaration of 'memcpy'
+- ocamlc -c -o sha1.cmo sha1.ml
+- File "sha1.ml", line 61, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlmklib -o sha1 sha1.lib.o sha1_stubs.o sha1.cmo
+- ocamlopt  -c -o sha1.cmx sha1.ml
+- File "sha1.ml", line 61, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlmklib -o sha1 sha1.lib.o sha1_stubs.o sha1.cmx
+- ocamlc -c -o sha256.cmi sha256.mli
+- ocamlc -ccopt "-Wall -O3 -funroll-loops -I/usr/include" -c -o sha256.o sha256.c
+- mv sha256.o sha256.lib.o
+- ocamlc -ccopt "-Wall -O3 -funroll-loops -I/usr/include" -c -o sha256_stubs.o sha256_stubs.c
+- sha256_stubs.c: In function 'stub_sha256_file':
+- sha256_stubs.c:108:20: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                     ^
+- sha256_stubs.c:116:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha256_stubs.c:108:20: warning: incompatible implicit declaration of built-in function 'strcpy'
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                     ^
+- sha256_stubs.c:116:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha256_stubs.c:108:20: note: include '<string.h>' or provide a declaration of 'strcpy'
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                     ^
+- sha256_stubs.c:116:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- In file included from /usr/include/stdlib.h:492:0,
+-                  from /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/caml/misc.h:29,
+-                  from /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/caml/mlvalues.h:23,
+-                  from sha256_stubs.c:42:
+- sha256_stubs.c:108:34: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                                   ^
+- sha256_stubs.c:116:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha256_stubs.c:108:34: warning: incompatible implicit declaration of built-in function 'strlen'
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                                   ^
+- sha256_stubs.c:116:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha256_stubs.c:108:34: note: include '<string.h>' or provide a declaration of 'strlen'
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                                   ^
+- sha256_stubs.c:116:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha256_stubs.c:126:2: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+-   memcpy((sha256_digest *)result, &digest, sizeof(sha256_digest));
+-   ^
+- sha256_stubs.c:126:2: warning: incompatible implicit declaration of built-in function 'memcpy'
+- sha256_stubs.c:126:2: note: include '<string.h>' or provide a declaration of 'memcpy'
+- ocamlc -c -o sha256.cmo sha256.ml
+- File "sha256.ml", line 62, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlmklib -o sha256 sha256.lib.o sha256_stubs.o sha256.cmo
+- ocamlopt  -c -o sha256.cmx sha256.ml
+- File "sha256.ml", line 62, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlmklib -o sha256 sha256.lib.o sha256_stubs.o sha256.cmx
+- ocamlc -c -o sha512.cmi sha512.mli
+- ocamlc -ccopt "-Wall -O3 -funroll-loops -I/usr/include" -c -o sha512.o sha512.c
+- mv sha512.o sha512.lib.o
+- ocamlc -ccopt "-Wall -O3 -funroll-loops -I/usr/include" -c -o sha512_stubs.o sha512_stubs.c
+- sha512_stubs.c: In function 'stub_sha512_file':
+- sha512_stubs.c:108:20: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                     ^
+- sha512_stubs.c:116:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha512_stubs.c:108:20: warning: incompatible implicit declaration of built-in function 'strcpy'
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                     ^
+- sha512_stubs.c:116:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha512_stubs.c:108:20: note: include '<string.h>' or provide a declaration of 'strcpy'
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                     ^
+- sha512_stubs.c:116:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- In file included from /usr/include/stdlib.h:492:0,
+-                  from /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/caml/misc.h:29,
+-                  from /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/caml/mlvalues.h:23,
+-                  from sha512_stubs.c:42:
+- sha512_stubs.c:108:34: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                                   ^
+- sha512_stubs.c:116:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha512_stubs.c:108:34: warning: incompatible implicit declaration of built-in function 'strlen'
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                                   ^
+- sha512_stubs.c:116:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha512_stubs.c:108:34: note: include '<string.h>' or provide a declaration of 'strlen'
+-  #define strdupa(s) strcpy(alloca(strlen(s)+1),s)
+-                                   ^
+- sha512_stubs.c:116:19: note: in expansion of macro 'strdupa'
+-   char *name_dup = strdupa(String_val(name));
+-                    ^
+- sha512_stubs.c:126:2: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+-   memcpy((sha512_digest *)result, &digest, sizeof(sha512_digest));
+-   ^
+- sha512_stubs.c:126:2: warning: incompatible implicit declaration of built-in function 'memcpy'
+- sha512_stubs.c:126:2: note: include '<string.h>' or provide a declaration of 'memcpy'
+- ocamlc -c -o sha512.cmo sha512.ml
+- File "sha512.ml", line 60, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlmklib -o sha512 sha512.lib.o sha512_stubs.o sha512.cmo
+- ocamlopt  -c -o sha512.cmx sha512.ml
+- File "sha512.ml", line 60, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlmklib -o sha512 sha512.lib.o sha512_stubs.o sha512.cmx
+- ocamlmklib -o sha  sha1.lib.o sha1_stubs.o sha1.cmo  sha256.lib.o sha256_stubs.o sha256.cmo  sha512.lib.o sha512_stubs.o sha512.cmo
+- ocamlmklib -o sha  sha1.lib.o sha1_stubs.o sha1.cmx  sha256.lib.o sha256_stubs.o sha256.cmx  sha512.lib.o sha512_stubs.o sha512.cmx
+- rm sha1.o sha256.o sha512.o
+-> compiled  sha.1.9
+Processing  2/2: [sha: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sha.1.9)
+- ocamlfind install sha META *.cmx sha1.cmi sha1.cma sha1.cmxa sha256.cmi sha256.cma sha256.cmxa sha512.cmi sha512.cma sha512.cmxa sha.cma sha.cmxa *.a *.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha512.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha256.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha1.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/libsha512.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/libsha256.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/libsha1.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/libsha.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha512.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha512.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha512.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha256.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha256.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha256.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha1.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha1.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha1.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha512.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha256.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/sha1.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sha/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllsha512.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllsha512.so.owner
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllsha256.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllsha256.so.owner
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllsha1.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllsha1.so.owner
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllsha.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllsha.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+-> installed sha.1.9
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:18.28] Success
