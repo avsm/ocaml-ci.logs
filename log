@@ -1,0 +1,35 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 delimcc /home/opam/opam-repository/cache
+[2016-12-22 16:19.32] Starting...
+[2016-12-22 16:19.32] Waiting for free pool slot to run
+[2016-12-22 17:44.38] Pool slot obtained, starting run
+[2016-12-22 17:44.38] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 delimcc
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install delimcc 0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [delimcc.0: dl]
+[delimcc.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [delimcc: patch]
+
+#=== ERROR while compiling delimcc.0 ==========================================#
+These patches didn't apply at /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/delimcc.0:
+  - ocaml.4.04.patch: "patch -p1 -i /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/delimcc.0/ocaml.4.04.patch" exited with code 1
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build delimcc 0
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 delimcc' failed.
+[2016-12-22 17:44.52] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191" "opam" "depext" "-ivyj" "2" "delimcc" exited with status 4
