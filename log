@@ -1,0 +1,922 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 satML-plugin /home/opam/opam-repository/cache
+[2016-12-22 16:18.50] Starting...
+[2016-12-22 16:18.50] Waiting for free pool slot to run
+[2016-12-22 17:12.29] Pool slot obtained, starting run
+[2016-12-22 17:12.29] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 satML-plugin
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - autoconf
+#  - debianutils
+#  - libgmp-dev
+#  - m4
+#  - perl
+#  - zlib1g-dev
+# The following new OS packages need to be installed: autoconf libgmp-dev zlib1g-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy autoconf libgmp-dev zlib1g-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package autoconf.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../autoconf_2.69-9_all.deb ...
+Unpacking autoconf (2.69-9) ...
+Selecting previously unselected package autotools-dev.
+Preparing to unpack .../autotools-dev_20150820.1_all.deb ...
+Unpacking autotools-dev (20150820.1) ...
+Selecting previously unselected package automake.
+Preparing to unpack .../automake_1%3a1.15-4ubuntu1_all.deb ...
+Unpacking automake (1:1.15-4ubuntu1) ...
+Selecting previously unselected package libgmpxx4ldbl:amd64.
+Preparing to unpack .../libgmpxx4ldbl_2%3a6.1.0+dfsg-2_amd64.deb ...
+Unpacking libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+Selecting previously unselected package libgmp-dev:amd64.
+Preparing to unpack .../libgmp-dev_2%3a6.1.0+dfsg-2_amd64.deb ...
+Unpacking libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+Selecting previously unselected package zlib1g-dev:amd64.
+Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-2ubuntu4_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up autoconf (2.69-9) ...
+Setting up autotools-dev (20150820.1) ...
+Setting up automake (1:1.15-4ubuntu1) ...
+update-alternatives: using /usr/bin/automake-1.15 to provide /usr/bin/automake (automake) in auto mode
+Setting up libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+Setting up libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install camlzip        1.06                                 [required by satML-plugin]
+  - install conf-gmp       1                                    [required by zarith]
+  - install conf-perl      1                                    [required by zarith]
+  - install conf-autoconf  0.1                                  [required by ocplib-simplex]
+  - install zarith         1.4.1                                [required by satML-plugin]
+  - install ocplib-simplex 0.3                                  [required by satML-plugin]
+  - install alt-ergo       1.30                                 [required by satML-plugin]
+  - install satML-plugin   1.30 
+===== 8 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/8: [alt-ergo.1.30: dl]
+Processing  2/8: [alt-ergo.1.30: dl] [camlzip.1.06: dl]
+Processing  3/8: [alt-ergo.1.30: dl] [camlzip.1.06: dl]
+Processing  4/8: [alt-ergo.1.30: dl] [camlzip.1.06: dl]
+Processing  5/8: [alt-ergo.1.30: dl] [camlzip.1.06: dl]
+Processing  6/8: [alt-ergo.1.30: dl] [camlzip.1.06: dl] [ocplib-simplex.0.3: dl]
+[camlzip.1.06] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/8: [alt-ergo.1.30: dl] [ocplib-simplex.0.3: dl]
+[alt-ergo.1.30] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/8: [ocplib-simplex.0.3: dl]
+[ocplib-simplex.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/8:
+[satML-plugin.1.30] found in cache
+Processing  7/8:
+Processing  8/8: [zarith.1.4.1: dl]
+[zarith.1.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/8:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/16: [camlzip: patch]
+Processing  2/16: [camlzip: patch] [conf-autoconf: which autoconf]
++ which "autoconf" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-autoconf.0.1)
+- /usr/bin/autoconf
+- /usr/bin/autoconf
+-> compiled  conf-autoconf.0.1
+Processing  2/16: [camlzip: patch]
+Processing  3/16: [camlzip: patch] [conf-gmp: sh]
+Processing  3/16: [camlzip: make all] [conf-gmp: sh]
++ sh "-exc" "cc -c $CFLAGS -I/usr/local/include test.c" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-gmp.1)
+- + cc -c -I/usr/local/include test.c
+- test.c: In function 'test':
+- test.c:7:2: warning: implicit declaration of function '__gmp_init' [-Wimplicit-function-declaration]
+-   __gmp_init();
+-   ^
+- + cc -c -I/usr/local/include test.c
+- test.c: In function 'test':
+- test.c:7:2: warning: implicit declaration of function '__gmp_init' [-Wimplicit-function-declaration]
+-   __gmp_init();
+-   ^
+-> compiled  conf-gmp.1
+Processing  3/16: [camlzip: make all]
+Processing  4/16: [camlzip: make all] [conf-perl: perl]
++ perl "--version" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-perl.1)
+- 
+- This is perl 5, version 22, subversion 1 (v5.22.1) built for x86_64-linux-gnu-thread-multi
+- (with 58 registered patches, see perl -V for more detail)
+- 
+- Copyright 1987-2015, Larry Wall
+- 
+- Perl may be copied only under the terms of either the Artistic License or the
+- GNU General Public License, which may be found in the Perl 5 source kit.
+- 
+- Complete documentation for Perl, including FAQ lists, should be found on
+- this system using "man perl" or "perldoc perl".  If you have access to the
+- Internet, point your browser at http://www.perl.org/, the Perl Home Page.
+- 
+- 
+- This is perl 5, version 22, subversion 1 (v5.22.1) built for x86_64-linux-gnu-thread-multi
+- (with 58 registered patches, see perl -V for more detail)
+- 
+- Copyright 1987-2015, Larry Wall
+- 
+- Perl may be copied only under the terms of either the Artistic License or the
+- GNU General Public License, which may be found in the Perl 5 source kit.
+- 
+- Complete documentation for Perl, including FAQ lists, should be found on
+- this system using "man perl" or "perldoc perl".  If you have access to the
+- Internet, point your browser at http://www.perl.org/, the Perl Home Page.
+- 
+-> compiled  conf-perl.1
+Processing  4/16: [camlzip: make all]
+-> installed conf-autoconf.0.1
+Processing  5/16: [camlzip: make all]
+Processing  6/16: [camlzip: make all] [ocplib-simplex: autoconf]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlzip.1.06)
+- ocamlc -g -safe-string -c -ccopt -g -ccopt -I/usr/include zlibstubs.c
+- ocamlmklib -oc camlzip zlibstubs.o \
+-             -L/usr/lib -lz
+- ocamlc -g -safe-string -c zlib.mli
+- ocamlc -g -safe-string -c zlib.ml
+- ocamlc -g -safe-string -c zip.mli
+- ocamlc -g -safe-string -c zip.ml
+- ocamlc -g -safe-string -c gzip.mli
+- ocamlc -g -safe-string -c gzip.ml
+- ocamlmklib -o zip -oc camlzip zlib.cmo zip.cmo gzip.cmo \
+-             -L/usr/lib -lz
+- ocamlc -g -safe-string -c -ccopt -g -ccopt -I/usr/include zlibstubs.c
+- ocamlmklib -oc camlzip zlibstubs.o \
+-             -L/usr/lib -lz
+- ocamlc -g -safe-string -c zlib.mli
+- ocamlc -g -safe-string -c zlib.ml
+- ocamlc -g -safe-string -c zip.mli
+- ocamlc -g -safe-string -c zip.ml
+- ocamlc -g -safe-string -c gzip.mli
+- ocamlc -g -safe-string -c gzip.ml
+- ocamlmklib -o zip -oc camlzip zlib.cmo zip.cmo gzip.cmo \
+-             -L/usr/lib -lz
+Processing  6/16: [camlzip: make allopt] [ocplib-simplex: autoconf]
++ autoconf  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocplib-simplex.0.3)
+Processing  6/16: [camlzip: make allopt] [ocplib-simplex: ./configure]
++ make "allopt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlzip.1.06)
+- ocamlopt -safe-string -c zlib.ml
+- ocamlopt -safe-string -c zip.ml
+- ocamlopt -safe-string -c gzip.ml
+- ocamlmklib -o zip -oc camlzip zlib.cmx zip.cmx gzip.cmx \
+-             -L/usr/lib -lz
+- ocamlopt -safe-string -shared -linkall -I ./ -o zip.cmxs zip.cmxa
+- ocamlopt -safe-string -c zlib.ml
+- ocamlopt -safe-string -c zip.ml
+- ocamlopt -safe-string -c gzip.ml
+- ocamlmklib -o zip -oc camlzip zlib.cmx zip.cmx gzip.cmx \
+-             -L/usr/lib -lz
+- ocamlopt -safe-string -shared -linkall -I ./ -o zip.cmxs zip.cmxa
+-> compiled  camlzip.1.06
+Processing  6/16: [ocplib-simplex: ./configure]
+Processing  7/16: [ocplib-simplex: ./configure] [camlzip: make install-findlib]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocplib-simplex.0.3)
+- checking for ocamlc... ocamlc
+- ocaml version is 4.03.0
+- ocaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlfind... yes
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version... ok
+- checking for ocamlc.opt... ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking ocamlopt.opt version... ok
+- checking for ocamldep... ocamldep
+- checking platform... configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: WARNING:  'Makefile.in' seems to ignore the --datarootdir setting
+- checking for ocamlc... ocamlc
+- ocaml version is 4.03.0
+- ocaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlfind... yes
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version... ok
+- checking for ocamlc.opt... ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking ocamlopt.opt version... ok
+- checking for ocamldep... ocamldep
+- checking platform... configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: WARNING:  'Makefile.in' seems to ignore the --datarootdir setting
+Processing  7/16: [ocplib-simplex: make] [camlzip: make install-findlib]
++ make "install-findlib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlzip.1.06)
+- ocamlfind install zip META *.mli *.a *.cmi *.cma zip.cmx gzip.cmx zlib.cmx zip.cmxa zip.cmxs dllcamlzip.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zlib.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/gzip.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zlib.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/gzip.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/libcamlzip.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zlib.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/gzip.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllcamlzip.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllcamlzip.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+- echo 'directory="../zip"' >> META && ocamlfind install camlzip META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/META
+- ocamlfind install zip META *.mli *.a *.cmi *.cma zip.cmx gzip.cmx zlib.cmx zip.cmxa zip.cmxs dllcamlzip.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zlib.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/gzip.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zlib.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/gzip.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/libcamlzip.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zlib.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/zip.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/gzip.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zip/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllcamlzip.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllcamlzip.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+- echo 'directory="../zip"' >> META && ocamlfind install camlzip META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/META
+-> installed camlzip.1.06
+Processing  7/16: [ocplib-simplex: make]
+-> installed conf-gmp.1
+Processing  8/16: [ocplib-simplex: make]
+-> installed conf-perl.1
+Processing  9/16: [ocplib-simplex: make]
+Processing 10/16: [ocplib-simplex: make] [zarith: ./configure]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/zarith.1.4.1)
+- binary ocaml: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamlc: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamldep: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamlmklib: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamldoc: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ar: found in /usr/bin
+- binary perl: found in /usr/bin
+- binary gcc: found in /usr/bin
+- binary ocamlopt: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- checking compilation with gcc -O3 -Wall -Wextra : working
+- include caml/mlvalues.h: found
+- library dynlink.cmxa: found
+- binary ocamlfind: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- OCaml's word size is 64
+- binary uname: found in /bin
+- include gmp.h: found
+- library gmp: found
+- OCaml extended comparison supported
+- OCaml new hash functions available
+- 
+- detected configuration:
+- 
+-   native-code:          yes
+-   dynamic linking:      yes
+-   asm path:             x86_64
+-   defines:              -DZ_OCAML_HASH -DZ_OCAML_COMPARE_EXT -DHAS_GMP -DZ_ELF -DZ_DOT_LABEL_PREFIX 
+-   libraries:             -lgmp
+-   C options:            -O3 -Wall -Wextra 
+-   asm options           
+-   installation path:    /home/opam/.opam/ocaml-base-compiler.4.03.0/lib
+-   installation method   findlib
+- 
+- configuration successful!
+- now type "make" to build
+- then type "make install" or "sudo make install" to install
+- binary ocaml: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamlc: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamldep: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamlmklib: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamldoc: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ar: found in /usr/bin
+- binary perl: found in /usr/bin
+- binary gcc: found in /usr/bin
+- binary ocamlopt: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- checking compilation with gcc -O3 -Wall -Wextra : working
+- include caml/mlvalues.h: found
+- library dynlink.cmxa: found
+- binary ocamlfind: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- OCaml's word size is 64
+- binary uname: found in /bin
+- include gmp.h: found
+- library gmp: found
+- OCaml extended comparison supported
+- OCaml new hash functions available
+- 
+- detected configuration:
+- 
+-   native-code:          yes
+-   dynamic linking:      yes
+-   asm path:             x86_64
+-   defines:              -DZ_OCAML_HASH -DZ_OCAML_COMPARE_EXT -DHAS_GMP -DZ_ELF -DZ_DOT_LABEL_PREFIX 
+-   libraries:             -lgmp
+-   C options:            -O3 -Wall -Wextra 
+-   asm options           
+-   installation path:    /home/opam/.opam/ocaml-base-compiler.4.03.0/lib
+-   installation method   findlib
+- 
+- configuration successful!
+- now type "make" to build
+- then type "make install" or "sudo make install" to install
+Processing 10/16: [ocplib-simplex: make] [zarith: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocplib-simplex.0.3)
+- Makefile:164: .depend: No such file or directory
+- cp src/extSigs.mli src/extSigs.ml
+- cp src/coreSig.mli src/coreSig.ml
+- ocamldep -I src src/*.ml* > .depend
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/version.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/version.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/extSigs.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/rat2.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/rat2.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/extSigs.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/polys.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/polys.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/coreSig.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/coreSig.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/core.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/core.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/result.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/result.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/assertBounds.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/assertBounds.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/solveBounds.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/solveBounds.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/basic.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/basic.ml
+- ocamlc.opt   -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -pack -o src/ocplibSimplex.cmo src/version.cmo src/rat2.cmo src/extSigs.cmo src/polys.cmo src/coreSig.cmo src/core.cmo src/result.cmo src/assertBounds.cmo src/solveBounds.cmo src/basic.cmo
+- ocamlc.opt -a -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -o src/ocplibSimplex.cma src/ocplibSimplex.cmo
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/version.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/extSigs.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/rat2.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/polys.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/coreSig.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/core.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/result.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/assertBounds.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/solveBounds.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/basic.ml
+- ocamlopt.opt -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -pack -o src/ocplibSimplex.cmx src/version.cmx src/rat2.cmx src/extSigs.cmx src/polys.cmx src/coreSig.cmx src/core.cmx src/result.cmx src/assertBounds.cmx src/solveBounds.cmx src/basic.cmx
+- ocamlopt.opt -a -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -o src/ocplibSimplex.cmxa src/ocplibSimplex.cmx
+- ocamlopt.opt -shared -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -o src/ocplibSimplex.cmxs src/ocplibSimplex.cmx
+- Makefile:164: .depend: No such file or directory
+- cp src/extSigs.mli src/extSigs.ml
+- cp src/coreSig.mli src/coreSig.ml
+- ocamldep -I src src/*.ml* > .depend
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/version.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/version.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/extSigs.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/rat2.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/rat2.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/extSigs.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/polys.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/polys.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/coreSig.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/coreSig.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/core.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/core.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/result.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/result.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/assertBounds.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/assertBounds.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/solveBounds.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/solveBounds.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/basic.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -for-pack OcplibSimplex src/basic.ml
+- ocamlc.opt   -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -pack -o src/ocplibSimplex.cmo src/version.cmo src/rat2.cmo src/extSigs.cmo src/polys.cmo src/coreSig.cmo src/core.cmo src/result.cmo src/assertBounds.cmo src/solveBounds.cmo src/basic.cmo
+- ocamlc.opt -a -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -I src -o src/ocplibSimplex.cma src/ocplibSimplex.cmo
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/version.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/extSigs.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/rat2.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/polys.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/coreSig.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/core.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/result.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/assertBounds.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/solveBounds.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -for-pack OcplibSimplex src/basic.ml
+- ocamlopt.opt -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -pack -o src/ocplibSimplex.cmx src/version.cmx src/rat2.cmx src/extSigs.cmx src/polys.cmx src/coreSig.cmx src/core.cmx src/result.cmx src/assertBounds.cmx src/solveBounds.cmx src/basic.cmx
+- ocamlopt.opt -a -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -o src/ocplibSimplex.cmxa src/ocplibSimplex.cmx
+- ocamlopt.opt -shared -annot -absname -bin-annot -short-paths -strict-sequence -w +A -g -inline 100 -I src -o src/ocplibSimplex.cmxs src/ocplibSimplex.cmx
+-> compiled  ocplib-simplex.0.3
+Processing 10/16: [zarith: make]
+Processing 11/16: [zarith: make] [ocplib-simplex: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocplib-simplex.0.3)
+- ocamlfind install ocplib-simplex src/ocplibSimplex.* src/*.mli META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/version.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/solveBounds.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/result.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/rat2.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/polys.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/extSigs.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/coreSig.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/core.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/basic.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/assertBounds.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/META
+- ocamlfind install ocplib-simplex src/ocplibSimplex.* src/*.mli META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/version.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/solveBounds.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/result.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/rat2.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/polys.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/extSigs.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/coreSig.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/core.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/basic.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/assertBounds.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/ocplibSimplex.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex/META
+-> installed ocplib-simplex.0.3
+Processing 11/16: [zarith: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/zarith.1.4.1)
+- project.mak:137: depend: No such file or directory
+- ./z_pp.pl x86_64
+- found assembly file caml_z_x86_64.S
+-   found abs
+-   found add
+-   found div
+-   found divexact
+-   found logand
+-   found lognot
+-   found logor
+-   found logxor
+-   found mul
+-   found neg
+-   found pred
+-   found rem
+-   found shift_left
+-   found shift_right
+-   found sub
+-   found succ
+- ocamldep -native  *.ml *.mli > depend
+- ocamlc   -c z.mli
+- File "z.mli", line 63, characters 0-51:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 229, characters 0-53:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 236, characters 0-67:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 318, characters 0-56:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 321, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 324, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 327, characters 0-68:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 356, characters 0-58:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 364, characters 0-55:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 379, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 396, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 506, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 601, characters 0-49:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlc   -c z.ml
+- File "z.ml", line 50, characters 0-51:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 61, characters 0-58:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 62, characters 0-55:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 63, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 68, characters 0-53:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 69, characters 0-67:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 72, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 73, characters 0-56:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 74, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 75, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 76, characters 0-68:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 88, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 135, characters 0-70:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 216, characters 0-49:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlc   -c q.mli
+- ocamlc   -c q.ml
+- ocamlc   -c big_int_Z.mli
+- ocamlc   -c big_int_Z.ml
+- ocamlmklib -failsafe -o zarith z.cmo q.cmo big_int_Z.cmo -lgmp
+- gcc -DZ_OCAML_HASH -DZ_OCAML_COMPARE_EXT -DHAS_GMP -DZ_ELF -DZ_DOT_LABEL_PREFIX     -c -o caml_z_x86_64.o caml_z_x86_64.S
+- ocamlc -ccopt "-I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml  -DZ_OCAML_HASH -DZ_OCAML_COMPARE_EXT -DHAS_GMP -DZ_ELF -DZ_DOT_LABEL_PREFIX  -O3 -Wall -Wextra " -c caml_z.c
+- ocamlmklib -failsafe -o zarith caml_z_x86_64.o caml_z.o -lgmp
+- ocamlopt   -c z.ml
+- File "z.ml", line 50, characters 0-51:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 61, characters 0-58:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 62, characters 0-55:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 63, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 68, characters 0-53:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 69, characters 0-67:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 72, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 73, characters 0-56:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 74, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 75, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 76, characters 0-68:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 88, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 135, characters 0-70:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 216, characters 0-49:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlopt   -c q.ml
+- ocamlopt   -c big_int_Z.ml
+- ocamlmklib -failsafe -o zarith z.cmx q.cmx big_int_Z.cmx -lgmp
+- ocamlopt -shared -o zarith.cmxs -I . zarith.cmxa
+-> compiled  zarith.1.4.1
+Processing 12/16: [zarith: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/zarith.1.4.1)
+- ocamlfind install -destdir "/home/opam/.opam/ocaml-base-compiler.4.03.0/lib" zarith META zarith.h zarith.cma libzarith.a z.mli q.mli big_int_Z.mli z.cmi q.cmi big_int_Z.cmi zarith.a zarith.cmxa zarith.cmxs dllzarith.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/big_int_Z.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/q.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/z.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/big_int_Z.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/q.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/z.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/libzarith.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllzarith.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllzarith.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+-> installed zarith.1.4.1
+Processing 13/16: [alt-ergo: ./configure]
++ ./configure "-prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/alt-ergo.1.30)
+- checking for ocp-ocamlc... no
+- checking for ocamlc... ocamlc
+- ocaml version is 4.03.0
+- ocaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlfind... yes
+- ocamlfind found zarith in -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith
+- ocamlfind found camlzip in -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip
+- ocamlfind found ocplib-simplex in -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex
+- checking for ocp-ocamlopt... no
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version... ok
+- checking for ocp-ocamlc.opt... no
+- checking for ocamlc.opt... ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocp-ocamlopt.opt... no
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking ocamlc.opt version... ok
+- checking for ocamldep... ocamldep
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- ocamlfind: Package `lablgtk2.sourceview2' not found
+- checking for /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/lablgtk2/lablgtksourceview2.cma... no
+- Will not be able to compile GUI. Please install the *liblablgtksourceview2-ocaml-dev* Debian package - or use the GODI caml package system *http://godi.ocaml-programming.de/* - or compile from sources *http://wwwfun.kurims.kyoto-u.ac.jp/soft/lsl/lablgtk.html*
+- checking for ocamlweb... true
+- checking platform... configure: creating ./config.status
+- config.status: creating Makefile.configurable
+- config.status: WARNING:  'Makefile.configurable.in' seems to ignore the --datarootdir setting
+Processing 13/16: [alt-ergo: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/alt-ergo.1.30)
+- Makefile.users:264: .depend: No such file or directory
+- ocamlyacc -v src/parsing/why_parser.mly 
+- ocamllex.opt src/parsing/why_lexer.mll > /dev/null
+- ocamldep -slash -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/*.ml* src/structures/*.ml* src/theories/*.ml* src/instances/*.ml* src/sat/*.ml* src/preprocess/*.ml* src/parsing/*.ml* src/gui/*.ml* src/main/*.ml* non-free/plugins/common/*ml* non-free/plugins/satML/*ml* non-free/plugins/fm-simplex/*ml* non-free/plugins/profiler/*ml* > .depend
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/config.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/version.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/version.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/emap.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/emap.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/myUnix.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/myUnix.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/myDynlink.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/myDynlink.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/myZip.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/myZip.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/util.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/util.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/lists.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/lists.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/numbersInterface.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/numsNumbers.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/numsNumbers.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/zarithNumbers.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/zarithNumbers.ml
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/alt-ergo.1.30/_none_", line 1:
+- Warning 58: no cmx file was found in path for module Z, and its interface was not compiled with -opaque
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/alt-ergo.1.30/_none_", line 1:
+- Warning 58: no cmx file was found in path for module Q, and its interface was not compiled with -opaque
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/numbers.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/numbers.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/timers.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/timers.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/options.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/options.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/gc_debug.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/gc_debug.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/loc.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/loc.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/hashcons.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/hashcons.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/hstring.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/hstring.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/ty.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/ty.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/symbols.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/symbols.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/term.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/term.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/literal.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/literal.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/formula.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/formula.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/explanation.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/explanation.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/exception.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/exception.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/parsed.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/parsed.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/typed.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/typed.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/errors.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/errors.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/profiling_default.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/profiling_default.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/profiling.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/profiling.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/parsing/why_parser.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/parsing/why_parser.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/parsing/why_lexer.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/existantial.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/existantial.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/triggers.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/triggers.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/why_typing.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/why_typing.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/commands.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/cnf.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/cnf.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/sig.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/instances/matching.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/instances/matching.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/use.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/use.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/ac.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/ac.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/uf.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/uf.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/sum.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/sum.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/records.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/records.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/polynome.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/polynome.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/bitv.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/bitv.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/arrays.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/arrays.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/intervals.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/intervals.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/inequalities.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/inequalities.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/intervalCalculus.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/intervalCalculus.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/arith.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/arith.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/combine.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/combine.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/ccx.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/ccx.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/theory.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/theory.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/instances/instances.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/instances/instances.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/sat/sat_solvers.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/sat/sat_solvers.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/main/frontend.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/main/frontend.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/main/main_text.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/main/main_text.ml
+- ocamlopt.opt -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex -o alt-ergo.opt zarith.cmxa nums.cmxa unix.cmxa dynlink.cmxa str.cmxa zip.cmxa ocplibSimplex.cmxa src/util/config.cmx src/util/version.cmx src/util/emap.cmx src/util/myUnix.cmx src/util/myDynlink.cmx src/util/myZip.cmx src/util/util.cmx src/util/lists.cmx src/util/numsNumbers.cmx src/util/zarithNumbers.cmx src/util/numbers.cmx src/util/timers.cmx src/util/options.cmx src/util/gc_debug.cmx src/util/loc.cmx src/util/hashcons.cmx src/util/hstring.cmx src/structures/exception.cmx src/structures/symbols.cmx src/structures/ty.cmx src/structures/parsed.cmx src/structures/typed.cmx src/structures/term.cmx src/structures/literal.cmx src/structures/formula.cmx src/structures/explanation.cmx src/structures/errors.cmx src/util/profiling_default.cmx src/util/profiling.cmx src/parsing/why_parser.cmx src/parsing/why_lexer.cmx src/preprocess/existantial.cmx src/preprocess/triggers.cmx src/preprocess/why_typing.cmx src/preprocess/cnf.cmx src/instances/matching.cmx src/instances/instances.cmx src/theories/polynome.cmx src/theories/ac.cmx src/theories/uf.cmx src/theories/use.cmx src/theories/intervals.cmx src/theories/inequalities.cmx src/theories/intervalCalculus.cmx src/theories/arith.cmx src/theories/records.cmx src/theories/bitv.cmx src/theories/arrays.cmx src/theories/sum.cmx src/theories/combine.cmx src/theories/ccx.cmx src/theories/theory.cmx src/sat/sat_solvers.cmx src/main/frontend.cmx src/main/main_text.cmx
+-> compiled  alt-ergo.1.30
+Processing 14/16: [alt-ergo: make install]
++ make "install" "MANDIR=/home/opam/.opam/ocaml-base-compiler.4.03.0/man" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/alt-ergo.1.30)
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/man/man1
+- cp -f doc/*.1 /home/opam/.opam/ocaml-base-compiler.4.03.0/man/man1
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- cp -f alt-ergo.opt /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/alt-ergo
+-> installed alt-ergo.1.30
+Processing 15/16: [satML-plugin: ./configure]
++ ./configure "-prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/satML-plugin.1.30)
+- checking for ocp-ocamlc... no
+- checking for ocamlc... ocamlc
+- ocaml version is 4.03.0
+- ocaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlfind... yes
+- ocamlfind found zarith in -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith
+- ocamlfind found camlzip in -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip
+- ocamlfind found ocplib-simplex in -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex
+- checking for ocp-ocamlopt... no
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version... ok
+- checking for ocp-ocamlc.opt... no
+- checking for ocamlc.opt... ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocp-ocamlopt.opt... no
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking ocamlc.opt version... ok
+- checking for ocamldep... ocamldep
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- ocamlfind: Package `lablgtk2.sourceview2' not found
+- checking for /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/lablgtk2/lablgtksourceview2.cma... no
+- Will not be able to compile GUI. Please install the *liblablgtksourceview2-ocaml-dev* Debian package - or use the GODI caml package system *http://godi.ocaml-programming.de/* - or compile from sources *http://wwwfun.kurims.kyoto-u.ac.jp/soft/lsl/lablgtk.html*
+- checking for ocamlweb... true
+- checking platform... configure: creating ./config.status
+- config.status: creating Makefile.configurable
+- config.status: WARNING:  'Makefile.configurable.in' seems to ignore the --datarootdir setting
+Processing 15/16: [satML-plugin: make satML]
++ make "satML" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/satML-plugin.1.30)
+- Makefile.users:264: .depend: No such file or directory
+- ocamlyacc -v src/parsing/why_parser.mly 
+- ocamllex.opt src/parsing/why_lexer.mll > /dev/null
+- ocamldep -slash -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/*.ml* src/structures/*.ml* src/theories/*.ml* src/instances/*.ml* src/sat/*.ml* src/preprocess/*.ml* src/parsing/*.ml* src/gui/*.ml* src/main/*.ml* non-free/plugins/common/*ml* non-free/plugins/satML/*ml* non-free/plugins/fm-simplex/*ml* non-free/plugins/profiler/*ml* > .depend
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/config.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/version.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/version.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/emap.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/emap.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/myUnix.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/myUnix.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/myDynlink.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/myDynlink.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/myZip.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/myZip.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/util.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/util.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/lists.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/lists.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/numbersInterface.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/numsNumbers.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/numsNumbers.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/zarithNumbers.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/zarithNumbers.ml
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/satML-plugin.1.30/_none_", line 1:
+- Warning 58: no cmx file was found in path for module Z, and its interface was not compiled with -opaque
+- File "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/satML-plugin.1.30/_none_", line 1:
+- Warning 58: no cmx file was found in path for module Q, and its interface was not compiled with -opaque
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/numbers.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/numbers.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/timers.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/timers.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/options.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/options.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/gc_debug.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/gc_debug.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/loc.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/loc.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/hashcons.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/hashcons.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/hstring.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/hstring.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/ty.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/ty.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/symbols.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/symbols.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/term.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/term.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/literal.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/literal.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/formula.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/formula.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/explanation.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/explanation.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/exception.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/exception.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/parsed.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/parsed.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/typed.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/typed.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/errors.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/errors.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/profiling_default.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/profiling_default.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/profiling.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/util/profiling.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/parsing/why_parser.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/parsing/why_parser.ml
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/parsing/why_lexer.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/existantial.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/existantial.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/triggers.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/triggers.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/why_typing.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/why_typing.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/structures/commands.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/cnf.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/preprocess/cnf.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/sig.mli
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/instances/matching.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/instances/matching.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/use.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/use.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/ac.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/ac.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/uf.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/uf.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/sum.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/sum.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/records.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/records.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/polynome.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/polynome.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/bitv.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/bitv.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/arrays.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/arrays.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/intervals.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/intervals.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/inequalities.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/inequalities.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/intervalCalculus.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/intervalCalculus.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/arith.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/arith.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/combine.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/combine.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/ccx.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/ccx.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/theory.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/theories/theory.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/instances/instances.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/instances/instances.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/sat/sat_solvers.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex src/sat/sat_solvers.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex non-free/plugins/common/vec.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex non-free/plugins/common/vec.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex non-free/plugins/satML/satml.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex non-free/plugins/satML/satml.ml
+- ocamlc.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex non-free/plugins/satML/satml_frontend.mli
+- ocamlopt.opt -c -annot -absname -bin-annot -short-paths -strict-sequence -g -inline 100 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex non-free/plugins/satML/satml_frontend.ml
+- ocamlopt.opt -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith   -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlzip/../zip -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocplib-simplex -I src/util -I src/structures -I src/theories -I src/instances -I src/sat -I src/preprocess -I src/parsing -I src/gui -I src/main -I non-free/plugins/common -I non-free/plugins/satML -I non-free/plugins/profiler -I non-free/plugins/fm-simplex  -shared -o satML-plugin.cmxs non-free/plugins/common/vec.cmx non-free/plugins/satML/satml.cmx non-free/plugins/satML/satml_frontend.cmx
+-> compiled  satML-plugin.1.30
+Processing 16/16: [satML-plugin: make install-satML]
++ make "install-satML" "MANDIR=/home/opam/.opam/ocaml-base-compiler.4.03.0/man/man1" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/satML-plugin.1.30)
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/alt-ergo/plugins
+- cp -f satML-plugin.cmxs /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/alt-ergo/plugins
+-> installed satML-plugin.1.30
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:13.18] Success
