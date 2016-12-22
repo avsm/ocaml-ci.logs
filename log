@@ -1,0 +1,90 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 dht /home/opam/opam-repository/cache
+[2016-12-22 16:17.54] Starting...
+[2016-12-22 16:17.54] Waiting for free pool slot to run
+[2016-12-22 16:43.08] Pool slot obtained, starting run
+[2016-12-22 16:43.08] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 dht
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - libgmp-dev
+#  - m4
+#  - ncurses-dev
+#  - perl
+#  - pkg-config
+#  - time
+#  - zlib1g-dev
+# The following new OS packages need to be installed: libgmp-dev time zlib1g-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libgmp-dev time zlib1g-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package time.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../time_1.7-25.1_amd64.deb ...
+Unpacking time (1.7-25.1) ...
+Selecting previously unselected package libgmpxx4ldbl:amd64.
+Preparing to unpack .../libgmpxx4ldbl_2%3a6.1.0+dfsg-2_amd64.deb ...
+Unpacking libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+Selecting previously unselected package libgmp-dev:amd64.
+Preparing to unpack .../libgmp-dev_2%3a6.1.0+dfsg-2_amd64.deb ...
+Unpacking libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+Selecting previously unselected package zlib1g-dev:amd64.
+Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-2ubuntu4_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up time (1.7-25.1) ...
+Setting up libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+Setting up libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes base                                     [required by dht]
+  - install dht        0.2.0
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [dht.0.2.0: dl]
+[dht.0.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed base-bytes.base
+Processing  3/4: [dht: make lib]
++ make "lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/dht.0.2.0)
+- cc -Wall -std=c99 -I dht/ -I `ocamlfind printconf stdlib` -I lib/ -o lib/dhtstubs.o -c lib/dhtstubs.c
+- lib/dhtstubs.c: In function 'caml_dht_ping_node':
+- lib/dhtstubs.c:137:7: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+-    int res;
+-        ^
+- lib/dhtstubs.c: In function 'caml_dht_get_nodes':
+- lib/dhtstubs.c:219:7: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+-    int res, n, n6;
+-        ^
+- cc -Wall -std=c99   -c -o dht/dht.o dht/dht.c
+- ocamlfind ocamlc -safe-string -g -bin-annot -I lib/ -o lib/dht.cmo -c lib/dht.mli lib/dht.ml
+- File "lib/dht.ml", line 26, characters 0-114:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/dht.ml", line 32, characters 0-93:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/dht.ml", line 38, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlfind ocamlopt -safe-string -g -bin-annot -I lib/ -o lib/dht.cmx -c lib/dht.mli lib/dht.ml
+- File "lib/dht.ml", line 26, characters 0-114:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/dht.ml", line 32, characters 0-93:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/dht.ml", line 38, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlmklib -custom -o lib/dht lib/dhtstubs.o dht/dht.o lib/dht.cmo lib/dht.cmx
+-> compiled  dht.0.2.0
+-> installed dht.0.2.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 16:43.29] Success
