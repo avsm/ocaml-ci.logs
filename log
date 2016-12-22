@@ -1,0 +1,45 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 base58 /home/opam/opam-repository/cache
+[2016-12-22 16:19.15] Starting...
+[2016-12-22 16:19.15] Waiting for free pool slot to run
+[2016-12-22 17:33.36] Pool slot obtained, starting run
+[2016-12-22 17:33.36] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 base58
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base58 0.1.2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [base58.0.1.2: dl]
+[base58.0.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [base58: make library]
++ make "library" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/base58.0.1.2)
+- ocamlbuild -cflags -w,-a base58.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lib/base58.mli > lib/base58.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -w -a -I lib -o lib/base58.cmi lib/base58.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lib/base58.ml > lib/base58.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -w -a -I lib -o lib/base58.cmo lib/base58.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -a lib/base58.cmo -o lib/base58.cma
+- ocamlbuild -cflags -w,-a base58.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -w -a -I lib -o lib/base58.cmx lib/base58.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -a lib/base58.cmx -o lib/base58.cmxa
+-> compiled  base58.0.1.2
+Processing  2/2: [base58: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/base58.0.1.2)
+- ocamlfind remove base58
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/base58
+- ocamlfind install base58 _build/lib/base58.cmi _build/lib/base58.cma _build/lib/base58.cmxa _build/lib/base58.a META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/base58/base58.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/base58/base58.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/base58/base58.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/base58/base58.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/base58/META
+-> installed base58.0.1.2
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:33.53] Success
