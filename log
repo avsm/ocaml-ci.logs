@@ -1,0 +1,60 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ascii85 /home/opam/opam-repository/cache
+[2016-12-22 16:19.09] Starting...
+[2016-12-22 16:19.10] Waiting for free pool slot to run
+[2016-12-22 17:23.45] Pool slot obtained, starting run
+[2016-12-22 17:23.45] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ascii85
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ascii85 0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ascii85.0.3: dl]
+[ascii85.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ascii85: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ascii85.0.3)
+- ocamlbuild  -use-ocamlfind main.native
+- ocamlfind ocamldep -modules main.ml > main.ml.depends
+- ocamlfind ocamldep -modules ascii85.mli > ascii85.mli.depends
+- ocamlfind ocamlc -c -o ascii85.cmi ascii85.mli
+- ocamlfind ocamlc -c -o main.cmo main.ml
+- ocamlfind ocamldep -modules ascii85.ml > ascii85.ml.depends
+- ocamlfind ocamlopt -c -o ascii85.cmx ascii85.ml
+- ocamlfind ocamlopt -c -o main.cmx main.ml
+- ocamlfind ocamlopt -linkpkg ascii85.cmx main.cmx -o main.native
+- ocamlbuild  -use-ocamlfind  META ascii85.cma ascii85.cmxa ascii85.cmxs ascii85.a ascii85.mli ascii85.cmi
+- ocamlfind ocamlc -c -o ascii85.cmo ascii85.ml
+- ocamlfind ocamlc -a ascii85.cmo -o ascii85.cma
+- ocamlfind ocamlopt -a ascii85.cmx -o ascii85.cmxa
+- ocamlfind ocamlopt -shared ascii85.cmx -o ascii85.cmxs
+- pod2man -s 1 -r "Alpha" -c "opam.ocaml.org" ascii85enc.pod > ascii85enc.1
+- ocamlbuild  -use-ocamlfind ascii85.docdir/index.html
+- ocamlfind ocamldoc -dump ascii85.odoc ascii85.mli
+- rm -rf ascii85.docdir
+- mkdir -p ascii85.docdir
+- ocamlfind ocamldoc -load ascii85.odoc -html -d ascii85.docdir
+- sed -n '/^# Opam/,$ { /^#/n; p;}' README.md >descr
+- grep -q 'version: "0.3"' opam
+- grep -q 'version = "0.3"' META
+- sed -n 1p descr | grep -q ascii85
+-> compiled  ascii85.0.3
+Processing  2/2: [ascii85: make install]
++ make "PREFIX=/home/opam/.opam/ocaml-base-compiler.4.04.0" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ascii85.0.3)
+- ocamlbuild  -use-ocamlfind main.native
+- ocamlbuild  -use-ocamlfind  META ascii85.cma ascii85.cmxa ascii85.cmxs ascii85.a ascii85.mli ascii85.cmi
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/bin
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/man/man1
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ascii85
+- install main.native /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ascii85enc
+- install ascii85enc.1 /home/opam/.opam/ocaml-base-compiler.4.04.0/man/man1
+- for f in  META ascii85.cma ascii85.cmxa ascii85.cmxs ascii85.a ascii85.mli ascii85.cmi; do install _build/$f /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ascii85; done
+-> installed ascii85.0.3
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:24.01] Success
