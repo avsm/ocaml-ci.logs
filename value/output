@@ -1,0 +1,93 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libpcre3-dev
+#  - pkg-config
+# The following new OS packages need to be installed: libpcre3-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libpcre3-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libpcrecpp0v5:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libpcrecpp0v5_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcrecpp0v5:amd64 (2:8.38-3.1) ...
+Selecting previously unselected package libpcre16-3:amd64.
+Preparing to unpack .../libpcre16-3_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcre16-3:amd64 (2:8.38-3.1) ...
+Selecting previously unselected package libpcre32-3:amd64.
+Preparing to unpack .../libpcre32-3_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcre32-3:amd64 (2:8.38-3.1) ...
+Selecting previously unselected package libpcre3-dev:amd64.
+Preparing to unpack .../libpcre3-dev_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcre3-dev:amd64 (2:8.38-3.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libpcrecpp0v5:amd64 (2:8.38-3.1) ...
+Setting up libpcre16-3:amd64 (2:8.38-3.1) ...
+Setting up libpcre32-3:amd64 (2:8.38-3.1) ...
+Setting up libpcre3-dev:amd64 (2:8.38-3.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by conf-libpcre]
+  - install conf-libpcre    1  
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-pkg-config: pkg-config]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-pkg-config.1.0)
+- Usage:
+-   pkg-config [OPTION...]
+- 
+- Help Options:
+-   -h, --help                              Show help options
+- 
+- Application Options:
+-   --version                               output version of pkg-config
+-   --modversion                            output version for package
+-   --atleast-pkgconfig-version=VERSION     require given version of pkg-config
+-   --libs                                  output all linker flags
+-   --static                                output linker flags for static linking
+-   --short-errors                          print short errors
+-   --libs-only-l                           output -l flags
+-   --libs-only-other                       output other libs (e.g. -pthread)
+-   --libs-only-L                           output -L flags
+-   --cflags                                output all pre-processor and compiler flags
+-   --cflags-only-I                         output -I flags
+-   --cflags-only-other                     output cflags not covered by the cflags-only-I option
+-   --variable=NAME                         get the value of variable named NAME
+-   --define-variable=NAME=VALUE            set variable NAME to VALUE
+-   --exists                                return 0 if the module(s) exist
+-   --print-variables                       output list of variables defined by the module
+-   --uninstalled                           return 0 if the uninstalled version of one or more module(s) or their dependencies will be used
+-   --atleast-version=VERSION               return 0 if the module is at least version VERSION
+-   --exact-version=VERSION                 return 0 if the module is at exactly version VERSION
+-   --max-version=VERSION                   return 0 if the module is at no newer than version VERSION
+-   --list-all                              list all known packages
+-   --debug                                 show verbose debug information
+-   --print-errors                          show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)
+-   --silence-errors                        be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)
+-   --errors-to-stdout                      print errors from --print-errors to stdout not stderr
+-   --print-provides                        print which packages the package provides
+-   --print-requires                        print which packages the package requires
+-   --print-requires-private                print which packages the package requires for static linking
+-   --validate                              validate a package's .pc file
+-   --define-prefix                         try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --dont-define-prefix                    don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --prefix-variable=PREFIX                set the name of the variable that pkg-config automatically sets
+- 
+-> compiled  conf-pkg-config.1.0
+-> installed conf-pkg-config.1.0
+Processing  3/4: [conf-libpcre: pkg-config libpcre]
++ pkg-config "libpcre" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-libpcre.1)
+-> compiled  conf-libpcre.1
+-> installed conf-libpcre.1
+Done.
+# Run eval `opam env` to update the current shell environment
