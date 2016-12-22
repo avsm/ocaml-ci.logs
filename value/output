@@ -1,0 +1,41 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install stemmer 0.2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [stemmer.0.2: dl]
+[stemmer.0.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [stemmer: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/stemmer.0.2)
+- ocamlc    -c stemmer.mli
+- ocamlfind ocamlc -package "" -c stemmer.ml
+- File "stemmer.ml", line 268, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -a -o stemmer.cma -package "" -linkpkg stemmer.cmo \
+- 	-ccopt "-O2 -Wall -Wno-unused "
+- ocamlopt   -unsafe -c stemmer.ml
+- File "stemmer.ml", line 268, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -a -o stemmer.cmxa -package "" -linkpkg stemmer.cmx \
+- 	-ccopt "-O2 -Wall -Wno-unused "
+-> compiled  stemmer.0.2
+Processing  2/2: [stemmer: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/stemmer.0.2)
+- ocamlfind install stemmer stemmer.cma stemmer.cmxa stemmer.cmi stemmer.mli META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stemmer/stemmer.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stemmer/stemmer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stemmer/stemmer.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stemmer/stemmer.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stemmer/META
+-> installed stemmer.0.2
+Done.
+# Run eval `opam env` to update the current shell environment
