@@ -1,0 +1,1502 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 named-pipe /home/opam/opam-repository/cache
+[2016-12-22 16:20.01] Starting...
+[2016-12-22 16:20.01] Waiting for free pool slot to run
+[2016-12-22 18:03.24] Pool slot obtained, starting run
+[2016-12-22 18:03.24] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 named-pipe
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_tools   5.0                                     [required by lwt]
+  - install base-bytes  base                                    [required by named-pipe]
+  - install result      1.2                                     [required by lwt]
+  - install topkg       0.8.1                                   [required by named-pipe]
+  - install lwt         2.6.0                                   [required by named-pipe]
+  - install astring     0.8.3                                   [required by ocb-stubblr]
+  - install ocb-stubblr 0.1.0                                   [required by named-pipe]
+  - install named-pipe  0.4.0
+===== 8 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/8: [astring.0.8.3: dl]
+Processing  2/8: [astring.0.8.3: dl]
+Processing  3/8: [astring.0.8.3: dl] [lwt.2.6.0: dl]
+Processing  4/8: [astring.0.8.3: dl] [lwt.2.6.0: dl] [named-pipe.0.4.0: dl]
+[astring.0.8.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/8: [lwt.2.6.0: dl] [named-pipe.0.4.0: dl]
+[lwt.2.6.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/8: [named-pipe.0.4.0: dl]
+[named-pipe.0.4.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/8:
+Processing  5/8: [ocb-stubblr.0.1.0: dl]
+Processing  6/8: [ocb-stubblr.0.1.0: dl] [ppx_tools.5.0: dl]
+Processing  7/8: [ocb-stubblr.0.1.0: dl] [ppx_tools.5.0: dl] [result.1.2: dl]
+[ocb-stubblr.0.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/8: [ppx_tools.5.0: dl] [result.1.2: dl]
+[ppx_tools.5.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/8: [result.1.2: dl]
+Processing  8/8: [result.1.2: dl] [topkg.0.8.1: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/8: [topkg.0.8.1: dl]
+[topkg.0.8.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/8:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/16: [ppx_tools: make all]
+Processing  3/16: [ppx_tools: make all] [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+Processing  3/16: [ppx_tools: make all]
+-> installed base-bytes.base
+Processing  4/16: [ppx_tools: make all]
+-> installed result.1.2
+Processing  5/16: [ppx_tools: make all]
+Processing  6/16: [ppx_tools: make all] [topkg: ocaml build]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+-> compiled  ppx_tools.5.0
+Processing  6/16: [topkg: ocaml build]
+Processing  7/16: [topkg: ocaml build] [ppx_tools: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/META
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/META
+-> installed ppx_tools.5.0
+Processing  7/16: [topkg: ocaml build]
+Processing  8/16: [lwt: ocaml setup.ml] [topkg: ocaml build]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" "--disable-libev" "--enable-camlp4" "--disable-react" "--disable-ssl" "--enable-unix" "--enable-preemptive" "--disable-glib" "--enable-ppx" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lwt.2.6.0)
+- not checking for pkg-config
+- not checking for libev
+- testing for pthread: ........................... available
+- not checking for glib
+- testing for eventfd: ........................... available
+- testing for fd passing: ........................ available
+- testing for sched_getcpu: ...................... available
+- testing for affinity getting/setting: .......... available
+- testing for credentials getting (Linux): ....... available
+- testing for credentials getting (NetBSD): ...... unavailable
+- testing for credentials getting (OpenBSD): ..... unavailable
+- testing for credentials getting (FreeBSD): ..... unavailable
+- testing for credentials getting (getpeereid): .. unavailable
+- testing for fdatasync: ......................... available
+- testing for netdb_reentrant: ................... unavailable
+- testing for reentrant gethost*: ................ available
+- testing for nanosecond stat support: ........... *tim.tv_nsec
+- Generating C stubs...
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ lwt
+- Package version: ..................................... 2.6.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: .........................
+- Compiles for Android: ................................ false
+- build and install everything: ........................ false
+- Build the syntax extension: .......................... true
+- Build the ppx syntax extension: ...................... true
+- Unix support: ........................................ true
+- React helpers: ....................................... false
+- Glib integration: .................................... false
+- SSL support: ......................................... false
+- Preemptive threads support: .......................... true
+- Compile with libev support: .......................... false
+- Use the libev backend by default: .................... true
+- Use pthread: ......................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_bytes: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bytes
+- pkg_result: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/result
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_bigarray: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_compiler_libs_common: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- pkg_threads: ......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_camlp4: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_quotations_o: ............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_extend: ................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_ppx_tools_metaquot: .............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+- not checking for pkg-config
+- not checking for libev
+- testing for pthread: ........................... available
+- not checking for glib
+- testing for eventfd: ........................... available
+- testing for fd passing: ........................ available
+- testing for sched_getcpu: ...................... available
+- testing for affinity getting/setting: .......... available
+- testing for credentials getting (Linux): ....... available
+- testing for credentials getting (NetBSD): ...... unavailable
+- testing for credentials getting (OpenBSD): ..... unavailable
+- testing for credentials getting (FreeBSD): ..... unavailable
+- testing for credentials getting (getpeereid): .. unavailable
+- testing for fdatasync: ......................... available
+- testing for netdb_reentrant: ................... unavailable
+- testing for reentrant gethost*: ................ available
+- testing for nanosecond stat support: ........... *tim.tv_nsec
+- Generating C stubs...
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ lwt
+- Package version: ..................................... 2.6.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: .........................
+- Compiles for Android: ................................ false
+- build and install everything: ........................ false
+- Build the syntax extension: .......................... true
+- Build the ppx syntax extension: ...................... true
+- Unix support: ........................................ true
+- React helpers: ....................................... false
+- Glib integration: .................................... false
+- SSL support: ......................................... false
+- Preemptive threads support: .......................... true
+- Compile with libev support: .......................... false
+- Use the libev backend by default: .................... true
+- Use pthread: ......................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_bytes: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bytes
+- pkg_result: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/result
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_bigarray: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_compiler_libs_common: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- pkg_threads: ......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_camlp4: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_quotations_o: ............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_extend: ................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_ppx_tools_metaquot: .............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+Processing  8/16: [lwt: make build] [topkg: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pkg-name" "topkg" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/topkg.0.8.1)
+- File "src/topkg_conf.ml", line 19, characters 8-30:
+- Warning 3: deprecated: Topkg_string.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.ml > src/topkg.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.mli > src/topkg.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmi src/topkg.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.ml > src/topkg_build.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.mli > src/topkg_build.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.mli > src/topkg_cmd.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.mli > src/topkg_fpath.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmi src/topkg_fpath.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.mli > src/topkg_codec.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmi src/topkg_cmd.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.mli > src/topkg_result.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmi src/topkg_result.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.mli > src/topkg_conf.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmi src/topkg_codec.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmi src/topkg_conf.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmi src/topkg_build.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.ml > src/topkg_cmd.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.ml > src/topkg_fpath.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.ml > src/topkg_string.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.mli > src/topkg_string.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmi src/topkg_string.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmx src/topkg_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmx src/topkg_fpath.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.ml > src/topkg_codec.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmx src/topkg_cmd.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.ml > src/topkg_os.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.mli > src/topkg_os.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmi src/topkg_os.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.ml > src/topkg_log.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.mli > src/topkg_log.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmi src/topkg_log.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.ml > src/topkg_result.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmx src/topkg_result.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmx src/topkg_log.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmx src/topkg_os.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.ml > src/topkg_conf.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.ml > src/topkg_vcs.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.mli > src/topkg_vcs.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmi src/topkg_vcs.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmx src/topkg_vcs.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmx src/topkg_codec.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmx src/topkg_conf.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.ml > src/topkg_distrib.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.mli > src/topkg_distrib.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmi src/topkg_distrib.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.ml > src/topkg_opam.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.mli > src/topkg_opam.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmi src/topkg_opam.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmx src/topkg_opam.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.ml > src/topkg_fexts.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.mli > src/topkg_fexts.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmi src/topkg_fexts.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.ml > src/topkg_install.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.mli > src/topkg_install.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.mli > src/topkg_test.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmi src/topkg_test.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmi src/topkg_install.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmx src/topkg_fexts.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.ml > src/topkg_test.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmx src/topkg_test.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.ml > src/topkg_ipc.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.mli > src/topkg_ipc.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.mli > src/topkg_pkg.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.mli > src/topkg_publish.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmi src/topkg_publish.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmi src/topkg_pkg.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmi src/topkg_ipc.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.ml > src/topkg_pkg.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmx src/topkg_build.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmx src/topkg_distrib.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.ml > src/topkg_publish.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmx src/topkg_publish.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmx src/topkg_pkg.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.ml > src/topkg_main.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.mli > src/topkg_main.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmi src/topkg_main.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmx src/topkg_ipc.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmx src/topkg_main.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmx src/topkg.ml
+- ocamlfind ocamlopt -a -package 'bytes result' src/topkg_string.cmx src/topkg_fpath.cmx src/topkg_cmd.cmx src/topkg_result.cmx src/topkg_log.cmx src/topkg_os.cmx src/topkg_codec.cmx src/topkg_vcs.cmx src/topkg_conf.cmx src/topkg_build.cmx src/topkg_opam.cmx src/topkg_distrib.cmx src/topkg_fexts.cmx src/topkg_test.cmx src/topkg_install.cmx src/topkg_publish.cmx src/topkg_pkg.cmx src/topkg_ipc.cmx src/topkg_main.cmx src/topkg.cmx -o src/topkg.cmxa
+- ocamlfind ocamlopt -shared -package 'bytes result' src/topkg.cmx -o src/topkg.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmo src/topkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmo src/topkg_build.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmo src/topkg_cmd.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmo src/topkg_codec.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmo src/topkg_conf.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmo src/topkg_distrib.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmo src/topkg_fexts.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmo src/topkg_fpath.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmo src/topkg_ipc.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmo src/topkg_log.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmo src/topkg_main.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmo src/topkg_opam.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmo src/topkg_os.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmo src/topkg_pkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmo src/topkg_publish.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmo src/topkg_result.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmo src/topkg_string.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmo src/topkg_test.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmo src/topkg_vcs.ml
+- ocamlfind ocamlc -a -package 'bytes result' src/topkg_string.cmo src/topkg_fpath.cmo src/topkg_cmd.cmo src/topkg_result.cmo src/topkg_log.cmo src/topkg_os.cmo src/topkg_codec.cmo src/topkg_vcs.cmo src/topkg_conf.cmo src/topkg_build.cmo src/topkg_opam.cmo src/topkg_distrib.cmo src/topkg_fexts.cmo src/topkg_test.cmo src/topkg_install.cmo src/topkg_publish.cmo src/topkg_pkg.cmo src/topkg_ipc.cmo src/topkg_main.cmo src/topkg.cmo -o src/topkg.cma
+- File "src/topkg_conf.ml", line 19, characters 8-30:
+- Warning 3: deprecated: Topkg_string.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.ml > src/topkg.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.mli > src/topkg.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmi src/topkg.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.ml > src/topkg_build.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.mli > src/topkg_build.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.mli > src/topkg_cmd.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.mli > src/topkg_fpath.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmi src/topkg_fpath.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.mli > src/topkg_codec.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmi src/topkg_cmd.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.mli > src/topkg_result.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmi src/topkg_result.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.mli > src/topkg_conf.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmi src/topkg_codec.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmi src/topkg_conf.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmi src/topkg_build.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.ml > src/topkg_cmd.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.ml > src/topkg_fpath.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.ml > src/topkg_string.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.mli > src/topkg_string.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmi src/topkg_string.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmx src/topkg_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmx src/topkg_fpath.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.ml > src/topkg_codec.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmx src/topkg_cmd.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.ml > src/topkg_os.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.mli > src/topkg_os.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmi src/topkg_os.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.ml > src/topkg_log.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.mli > src/topkg_log.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmi src/topkg_log.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.ml > src/topkg_result.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmx src/topkg_result.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmx src/topkg_log.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmx src/topkg_os.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.ml > src/topkg_conf.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.ml > src/topkg_vcs.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.mli > src/topkg_vcs.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmi src/topkg_vcs.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmx src/topkg_vcs.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmx src/topkg_codec.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmx src/topkg_conf.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.ml > src/topkg_distrib.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.mli > src/topkg_distrib.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmi src/topkg_distrib.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.ml > src/topkg_opam.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.mli > src/topkg_opam.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmi src/topkg_opam.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmx src/topkg_opam.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.ml > src/topkg_fexts.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.mli > src/topkg_fexts.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmi src/topkg_fexts.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.ml > src/topkg_install.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.mli > src/topkg_install.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.mli > src/topkg_test.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmi src/topkg_test.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmi src/topkg_install.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmx src/topkg_fexts.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.ml > src/topkg_test.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmx src/topkg_test.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.ml > src/topkg_ipc.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.mli > src/topkg_ipc.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.mli > src/topkg_pkg.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.mli > src/topkg_publish.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmi src/topkg_publish.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmi src/topkg_pkg.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmi src/topkg_ipc.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.ml > src/topkg_pkg.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmx src/topkg_build.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmx src/topkg_distrib.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.ml > src/topkg_publish.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmx src/topkg_publish.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmx src/topkg_pkg.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.ml > src/topkg_main.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.mli > src/topkg_main.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmi src/topkg_main.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmx src/topkg_ipc.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmx src/topkg_main.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmx src/topkg.ml
+- ocamlfind ocamlopt -a -package 'bytes result' src/topkg_string.cmx src/topkg_fpath.cmx src/topkg_cmd.cmx src/topkg_result.cmx src/topkg_log.cmx src/topkg_os.cmx src/topkg_codec.cmx src/topkg_vcs.cmx src/topkg_conf.cmx src/topkg_build.cmx src/topkg_opam.cmx src/topkg_distrib.cmx src/topkg_fexts.cmx src/topkg_test.cmx src/topkg_install.cmx src/topkg_publish.cmx src/topkg_pkg.cmx src/topkg_ipc.cmx src/topkg_main.cmx src/topkg.cmx -o src/topkg.cmxa
+- ocamlfind ocamlopt -shared -package 'bytes result' src/topkg.cmx -o src/topkg.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmo src/topkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmo src/topkg_build.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmo src/topkg_cmd.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmo src/topkg_codec.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmo src/topkg_conf.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmo src/topkg_distrib.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmo src/topkg_fexts.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmo src/topkg_fpath.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmo src/topkg_ipc.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmo src/topkg_log.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmo src/topkg_main.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmo src/topkg_opam.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmo src/topkg_os.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmo src/topkg_pkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmo src/topkg_publish.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmo src/topkg_result.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmo src/topkg_string.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmo src/topkg_test.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmo src/topkg_vcs.ml
+- ocamlfind ocamlc -a -package 'bytes result' src/topkg_string.cmo src/topkg_fpath.cmo src/topkg_cmd.cmo src/topkg_result.cmo src/topkg_log.cmo src/topkg_os.cmo src/topkg_codec.cmo src/topkg_vcs.cmo src/topkg_conf.cmo src/topkg_build.cmo src/topkg_opam.cmo src/topkg_distrib.cmo src/topkg_fexts.cmo src/topkg_test.cmo src/topkg_install.cmo src/topkg_publish.cmo src/topkg_pkg.cmo src/topkg_ipc.cmo src/topkg_main.cmo src/topkg.cmo -o src/topkg.cma
+-> compiled  topkg.0.8.1
+Processing  8/16: [lwt: make build]
+-> installed topkg.0.8.1
+Processing  9/16: [lwt: make build]
+Processing 10/16: [astring: ocaml build] [lwt: make build]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/astring.0.8.3)
+- ocamlfind ocamldep -package bytes -modules src/astring_unsafe.ml > src/astring_unsafe.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_unsafe.cmo src/astring_unsafe.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_base.ml > src/astring_base.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_base.cmo src/astring_base.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_unsafe.cmx src/astring_unsafe.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_escape.ml > src/astring_escape.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_escape.cmo src/astring_escape.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_char.ml > src/astring_char.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_char.cmo src/astring_char.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_escape.cmx src/astring_escape.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_sub.ml > src/astring_sub.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_sub.cmo src/astring_sub.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_base.cmx src/astring_base.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_char.cmx src/astring_char.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_string.ml > src/astring_string.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_string.cmo src/astring_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_sub.cmx src/astring_sub.ml
+- ocamlfind ocamldep -package bytes -modules src/astring.ml > src/astring.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/astring.mli > src/astring.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring.cmi src/astring.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_string.cmx src/astring_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring.cmx src/astring.ml
+- ocamlfind ocamlopt -a -package bytes src/astring_unsafe.cmx src/astring_base.cmx src/astring_escape.cmx src/astring_char.cmx src/astring_sub.cmx src/astring_string.cmx src/astring.cmx -o src/astring.cmxa
+- ocamlfind ocamlopt -shared -package bytes src/astring.cmx -o src/astring.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring.cmo src/astring.ml
+- ocamlfind ocamlc -a -package bytes src/astring_unsafe.cmo src/astring_base.cmo src/astring_escape.cmo src/astring_char.cmo src/astring_sub.cmo src/astring_string.cmo src/astring.cmo -o src/astring.cma
+- ocamlfind ocamldep -package compiler-libs.toplevel -package bytes -modules src/astring_top.ml > src/astring_top.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package bytes -I src -I test -o src/astring_top.cmo src/astring_top.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package bytes -I src -I test -o src/astring_top.cmo src/astring_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package bytes -I src -I test -o src/astring_top.cmx src/astring_top.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package bytes -I src -I test -o src/astring_top.cmx src/astring_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package compiler-libs.toplevel -package bytes src/astring_top.cmx -o src/astring_top.cmxa
+- + ocamlfind ocamlopt -a -package compiler-libs.toplevel -package bytes src/astring_top.cmx -o src/astring_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package bytes src/astring_top.cmx -o src/astring_top.cmxs
+- + ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package bytes src/astring_top.cmx -o src/astring_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a -package compiler-libs.toplevel -package bytes src/astring_top.cmo -o src/astring_top.cma
+- + ocamlfind ocamlc -a -package compiler-libs.toplevel -package bytes src/astring_top.cmo -o src/astring_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamldep -package bytes -modules src/astring_unsafe.ml > src/astring_unsafe.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_unsafe.cmo src/astring_unsafe.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_base.ml > src/astring_base.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_base.cmo src/astring_base.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_unsafe.cmx src/astring_unsafe.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_escape.ml > src/astring_escape.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_escape.cmo src/astring_escape.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_char.ml > src/astring_char.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_char.cmo src/astring_char.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_escape.cmx src/astring_escape.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_sub.ml > src/astring_sub.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_sub.cmo src/astring_sub.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_base.cmx src/astring_base.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_char.cmx src/astring_char.ml
+- ocamlfind ocamldep -package bytes -modules src/astring_string.ml > src/astring_string.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_string.cmo src/astring_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_sub.cmx src/astring_sub.ml
+- ocamlfind ocamldep -package bytes -modules src/astring.ml > src/astring.ml.depends
+- ocamlfind ocamldep -package bytes -modules src/astring.mli > src/astring.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring.cmi src/astring.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring_string.cmx src/astring_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring.cmx src/astring.ml
+- ocamlfind ocamlopt -a -package bytes src/astring_unsafe.cmx src/astring_base.cmx src/astring_escape.cmx src/astring_char.cmx src/astring_sub.cmx src/astring_string.cmx src/astring.cmx -o src/astring.cmxa
+- ocamlfind ocamlopt -shared -package bytes src/astring.cmx -o src/astring.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -I src -I test -o src/astring.cmo src/astring.ml
+- ocamlfind ocamlc -a -package bytes src/astring_unsafe.cmo src/astring_base.cmo src/astring_escape.cmo src/astring_char.cmo src/astring_sub.cmo src/astring_string.cmo src/astring.cmo -o src/astring.cma
+- ocamlfind ocamldep -package compiler-libs.toplevel -package bytes -modules src/astring_top.ml > src/astring_top.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package bytes -I src -I test -o src/astring_top.cmo src/astring_top.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package bytes -I src -I test -o src/astring_top.cmo src/astring_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package bytes -I src -I test -o src/astring_top.cmx src/astring_top.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package bytes -I src -I test -o src/astring_top.cmx src/astring_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package compiler-libs.toplevel -package bytes src/astring_top.cmx -o src/astring_top.cmxa
+- + ocamlfind ocamlopt -a -package compiler-libs.toplevel -package bytes src/astring_top.cmx -o src/astring_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package bytes src/astring_top.cmx -o src/astring_top.cmxs
+- + ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package bytes src/astring_top.cmx -o src/astring_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a -package compiler-libs.toplevel -package bytes src/astring_top.cmo -o src/astring_top.cma
+- + ocamlfind ocamlc -a -package compiler-libs.toplevel -package bytes src/astring_top.cmo -o src/astring_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+-> compiled  astring.0.8.3
+Processing 10/16: [lwt: make build]
+-> installed astring.0.8.3
+Processing 11/16: [lwt: make build]
+Processing 12/16: [lwt: make build] [ocb-stubblr: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" "--tests" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocb-stubblr.0.1.0)
+- ocamlfind ocamldep -package ocamlbuild -package astring -package bytes -modules src/ocb_stubblr.ml > src/ocb_stubblr.ml.depends
+- ocamlfind ocamldep -package ocamlbuild -package astring -package bytes -modules src/ocb_stubblr.mli > src/ocb_stubblr.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package ocamlbuild -package astring -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src -I src-topkg -o src/ocb_stubblr.cmi src/ocb_stubblr.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package ocamlbuild -package astring -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src -I src-topkg -o src/ocb_stubblr.cmx src/ocb_stubblr.ml
+- ocamlfind ocamlopt -a -package bytes src/ocb_stubblr.cmx -o src/ocb-stubblr.cmxa
+- ocamlfind ocamlopt -shared -linkall -package bytes src/ocb-stubblr.cmxa -o src/ocb-stubblr.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package ocamlbuild -package astring -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src -I src-topkg -o src/ocb_stubblr.cmo src/ocb_stubblr.ml
+- ocamlfind ocamlc -a -package bytes src/ocb_stubblr.cmo -o src/ocb-stubblr.cma
+- ocamlfind ocamldep -package topkg -package bytes -modules src-topkg/ocb_stubblr_topkg.ml > src-topkg/ocb_stubblr_topkg.ml.depends
+- ocamlfind ocamldep -package topkg -package bytes -modules src-topkg/ocb_stubblr_topkg.mli > src-topkg/ocb_stubblr_topkg.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package topkg -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src-topkg -I src -o src-topkg/ocb_stubblr_topkg.cmi src-topkg/ocb_stubblr_topkg.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package topkg -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src-topkg -I src -o src-topkg/ocb_stubblr_topkg.cmx src-topkg/ocb_stubblr_topkg.ml
+- ocamlfind ocamlopt -a -package bytes src-topkg/ocb_stubblr_topkg.cmx -o src-topkg/ocb-stubblr-topkg.cmxa
+- ocamlfind ocamlopt -shared -linkall -package bytes src-topkg/ocb-stubblr-topkg.cmxa -o src-topkg/ocb-stubblr-topkg.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package topkg -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src-topkg -I src -o src-topkg/ocb_stubblr_topkg.cmo src-topkg/ocb_stubblr_topkg.ml
+- ocamlfind ocamlc -a -package bytes src-topkg/ocb_stubblr_topkg.cmo -o src-topkg/ocb-stubblr-topkg.cma
+- ocamlfind ocamldep -package ocamlbuild -package astring -package bytes -modules src/ocb_stubblr.ml > src/ocb_stubblr.ml.depends
+- ocamlfind ocamldep -package ocamlbuild -package astring -package bytes -modules src/ocb_stubblr.mli > src/ocb_stubblr.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package ocamlbuild -package astring -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src -I src-topkg -o src/ocb_stubblr.cmi src/ocb_stubblr.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package ocamlbuild -package astring -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src -I src-topkg -o src/ocb_stubblr.cmx src/ocb_stubblr.ml
+- ocamlfind ocamlopt -a -package bytes src/ocb_stubblr.cmx -o src/ocb-stubblr.cmxa
+- ocamlfind ocamlopt -shared -linkall -package bytes src/ocb-stubblr.cmxa -o src/ocb-stubblr.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package ocamlbuild -package astring -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src -I src-topkg -o src/ocb_stubblr.cmo src/ocb_stubblr.ml
+- ocamlfind ocamlc -a -package bytes src/ocb_stubblr.cmo -o src/ocb-stubblr.cma
+- ocamlfind ocamldep -package topkg -package bytes -modules src-topkg/ocb_stubblr_topkg.ml > src-topkg/ocb_stubblr_topkg.ml.depends
+- ocamlfind ocamldep -package topkg -package bytes -modules src-topkg/ocb_stubblr_topkg.mli > src-topkg/ocb_stubblr_topkg.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package topkg -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src-topkg -I src -o src-topkg/ocb_stubblr_topkg.cmi src-topkg/ocb_stubblr_topkg.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package topkg -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src-topkg -I src -o src-topkg/ocb_stubblr_topkg.cmx src-topkg/ocb_stubblr_topkg.ml
+- ocamlfind ocamlopt -a -package bytes src-topkg/ocb_stubblr_topkg.cmx -o src-topkg/ocb-stubblr-topkg.cmxa
+- ocamlfind ocamlopt -shared -linkall -package bytes src-topkg/ocb-stubblr-topkg.cmxa -o src-topkg/ocb-stubblr-topkg.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package topkg -package bytes -w A-4-29-33-40-41-42-43-34-44-48 -color always -I src-topkg -I src -o src-topkg/ocb_stubblr_topkg.cmo src-topkg/ocb_stubblr_topkg.ml
+- ocamlfind ocamlc -a -package bytes src-topkg/ocb_stubblr_topkg.cmo -o src-topkg/ocb-stubblr-topkg.cma
+-> compiled  ocb-stubblr.0.1.0
+Processing 12/16: [lwt: make build]
+-> installed ocb-stubblr.0.1.0
+Processing 13/16: [lwt: make build]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lwt.2.6.0)
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- rm -f setup.cmx setup.cmi setup.o setup.obj setup.cmo
+- ./setup.exe -configure 
+- not checking for pkg-config
+- not checking for libev
+- testing for pthread: ........................... available
+- not checking for glib
+- testing for eventfd: ........................... available
+- testing for fd passing: ........................ available
+- testing for sched_getcpu: ...................... available
+- testing for affinity getting/setting: .......... available
+- testing for credentials getting (Linux): ....... available
+- testing for credentials getting (NetBSD): ...... unavailable
+- testing for credentials getting (OpenBSD): ..... unavailable
+- testing for credentials getting (FreeBSD): ..... unavailable
+- testing for credentials getting (getpeereid): .. unavailable
+- testing for fdatasync: ......................... available
+- testing for netdb_reentrant: ................... unavailable
+- testing for reentrant gethost*: ................ available
+- testing for nanosecond stat support: ........... *tim.tv_nsec
+- Generating C stubs...
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ lwt
+- Package version: ..................................... 2.6.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: .........................
+- Compiles for Android: ................................ false
+- build and install everything: ........................ false
+- Build the syntax extension: .......................... true
+- Build the ppx syntax extension: ...................... true
+- Unix support: ........................................ true
+- React helpers: ....................................... false
+- Glib integration: .................................... false
+- SSL support: ......................................... false
+- Preemptive threads support: .......................... true
+- Compile with libev support: .......................... false
+- Use the libev backend by default: .................... true
+- Use pthread: ......................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_bytes: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bytes
+- pkg_result: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/result
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_bigarray: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_compiler_libs_common: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- pkg_threads: ......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_camlp4: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_quotations_o: ............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_extend: ................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_ppx_tools_metaquot: .............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+- ./setup.exe -build 
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 8, characters 14-25:
+- Warning: the tag "use_C_libev" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 9, characters 14-24:
+- Warning: the tag "use_C_glib" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_condition.mli > src/core/lwt_condition.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt.mli > src/core/lwt.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_sequence.mli > src/core/lwt_sequence.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_sequence.cmi src/core/lwt_sequence.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_mutex.mli > src/core/lwt_mutex.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt.cmi src/core/lwt.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_mutex.cmi src/core/lwt_mutex.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_condition.cmi src/core/lwt_condition.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_condition.ml > src/core/lwt_condition.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_list.mli > src/core/lwt_list.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_list.cmi src/core/lwt_list.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_list.ml > src/core/lwt_list.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt.ml > src/core/lwt.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_mutex.ml > src/core/lwt_mutex.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_mvar.mli > src/core/lwt_mvar.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_mvar.cmi src/core/lwt_mvar.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_mvar.ml > src/core/lwt_mvar.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_pool.mli > src/core/lwt_pool.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_pool.cmi src/core/lwt_pool.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_pool.ml > src/core/lwt_pool.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_result.mli > src/core/lwt_result.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_result.cmi src/core/lwt_result.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_result.ml > src/core/lwt_result.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_sequence.ml > src/core/lwt_sequence.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_stream.mli > src/core/lwt_stream.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_stream.cmi src/core/lwt_stream.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_stream.ml > src/core/lwt_stream.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_switch.mli > src/core/lwt_switch.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_switch.cmi src/core/lwt_switch.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_switch.ml > src/core/lwt_switch.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_pqueue.mli > src/core/lwt_pqueue.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_pqueue.cmi src/core/lwt_pqueue.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/core/lwt_pqueue.ml > src/core/lwt_pqueue.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_condition.cmo src/core/lwt_condition.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_list.cmo src/core/lwt_list.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt.cmo src/core/lwt.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_mutex.cmo src/core/lwt_mutex.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_mvar.cmo src/core/lwt_mvar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_pool.cmo src/core/lwt_pool.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_result.cmo src/core/lwt_result.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_sequence.cmo src/core/lwt_sequence.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_stream.cmo src/core/lwt_stream.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_switch.cmo src/core/lwt_switch.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_pqueue.cmo src/core/lwt_pqueue.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/core/lwt_sequence.cmo src/core/lwt.cmo src/core/lwt_mutex.cmo src/core/lwt_condition.cmo src/core/lwt_list.cmo src/core/lwt_mvar.cmo src/core/lwt_pool.cmo src/core/lwt_result.cmo src/core/lwt_stream.cmo src/core/lwt_switch.cmo src/core/lwt_pqueue.cmo -o src/core/lwt.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_sequence.cmx src/core/lwt_sequence.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt.cmx src/core/lwt.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_mutex.cmx src/core/lwt_mutex.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_condition.cmx src/core/lwt_condition.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_list.cmx src/core/lwt_list.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_mvar.cmx src/core/lwt_mvar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_pool.cmx src/core/lwt_pool.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_result.cmx src/core/lwt_result.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_stream.cmx src/core/lwt_stream.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_switch.cmx src/core/lwt_switch.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package result -package bytes -I src/core -o src/core/lwt_pqueue.cmx src/core/lwt_pqueue.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/core/lwt_sequence.cmx src/core/lwt.cmx src/core/lwt_mutex.cmx src/core/lwt_condition.cmx src/core/lwt_list.cmx src/core/lwt_mvar.cmx src/core/lwt_pool.cmx src/core/lwt_result.cmx src/core/lwt_stream.cmx src/core/lwt_switch.cmx src/core/lwt_pqueue.cmx -o src/core/lwt.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/core/lwt.cmxa src/core/lwt_sequence.cmx src/core/lwt.cmx src/core/lwt_mutex.cmx src/core/lwt_condition.cmx src/core/lwt_list.cmx src/core/lwt_mvar.cmx src/core/lwt_pool.cmx src/core/lwt_result.cmx src/core/lwt_stream.cmx src/core/lwt_switch.cmx src/core/lwt_pqueue.cmx -o src/core/lwt.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/logger/lwt_log_core.mli > src/logger/lwt_log_core.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -package result -package bytes -I src/logger -I src/core -o src/logger/lwt_log_core.cmi src/logger/lwt_log_core.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/logger/lwt_log_core.ml > src/logger/lwt_log_core.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/logger/lwt_log_rules.mli > src/logger/lwt_log_rules.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -package result -package bytes -I src/logger -I src/core -o src/logger/lwt_log_rules.cmi src/logger/lwt_log_rules.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamllex.opt -q src/logger/lwt_log_rules.mll
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package result -package bytes -modules src/logger/lwt_log_rules.ml > src/logger/lwt_log_rules.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -package result -package bytes -I src/logger -I src/core -o src/logger/lwt_log_core.cmo src/logger/lwt_log_core.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -package result -package bytes -I src/logger -I src/core -o src/logger/lwt_log_core.cmo src/logger/lwt_log_core.ml
+- File "src/logger/lwt_log_core.ml", line 116, characters 12-28:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -package result -package bytes -I src/logger -I src/core -o src/logger/lwt_log_rules.cmo src/logger/lwt_log_rules.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/logger/lwt_log_rules.cmo src/logger/lwt_log_core.cmo -o src/logger/lwt-log.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -package result -package bytes -I src/logger -I src/core -o src/logger/lwt_log_rules.cmx src/logger/lwt_log_rules.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -package result -package bytes -I src/logger -I src/core -o src/logger/lwt_log_core.cmx src/logger/lwt_log_core.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -package result -package bytes -I src/logger -I src/core -o src/logger/lwt_log_core.cmx src/logger/lwt_log_core.ml
+- File "src/logger/lwt_log_core.ml", line 116, characters 12-28:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/logger/lwt_log_rules.cmx src/logger/lwt_log_core.cmx -o src/logger/lwt-log.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/logger/lwt-log.cmxa src/logger/lwt_log_rules.cmx src/logger/lwt_log_core.cmx -o src/logger/lwt-log.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/lwt_unix_stubs.c
+- mv lwt_unix_stubs.o src/unix/lwt_unix_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/lwt_libev_stubs.c
+- mv lwt_libev_stubs.o src/unix/lwt_libev_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/lwt_process_stubs.c
+- mv lwt_process_stubs.o src/unix/lwt_process_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_access.c
+- mv lwt_unix_job_access.o src/unix/jobs-unix/lwt_unix_job_access.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_chdir.c
+- mv lwt_unix_job_chdir.o src/unix/jobs-unix/lwt_unix_job_chdir.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_chmod.c
+- mv lwt_unix_job_chmod.o src/unix/jobs-unix/lwt_unix_job_chmod.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_chown.c
+- mv lwt_unix_job_chown.o src/unix/jobs-unix/lwt_unix_job_chown.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_chroot.c
+- mv lwt_unix_job_chroot.o src/unix/jobs-unix/lwt_unix_job_chroot.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_close.c
+- mv lwt_unix_job_close.o src/unix/jobs-unix/lwt_unix_job_close.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_fchmod.c
+- mv lwt_unix_job_fchmod.o src/unix/jobs-unix/lwt_unix_job_fchmod.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_fchown.c
+- mv lwt_unix_job_fchown.o src/unix/jobs-unix/lwt_unix_job_fchown.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_fdatasync.c
+- mv lwt_unix_job_fdatasync.o src/unix/jobs-unix/lwt_unix_job_fdatasync.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_fsync.c
+- mv lwt_unix_job_fsync.o src/unix/jobs-unix/lwt_unix_job_fsync.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_ftruncate.c
+- mv lwt_unix_job_ftruncate.o src/unix/jobs-unix/lwt_unix_job_ftruncate.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_link.c
+- mv lwt_unix_job_link.o src/unix/jobs-unix/lwt_unix_job_link.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_lseek.c
+- mv lwt_unix_job_lseek.o src/unix/jobs-unix/lwt_unix_job_lseek.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_mkdir.c
+- mv lwt_unix_job_mkdir.o src/unix/jobs-unix/lwt_unix_job_mkdir.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_mkfifo.c
+- mv lwt_unix_job_mkfifo.o src/unix/jobs-unix/lwt_unix_job_mkfifo.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_rename.c
+- mv lwt_unix_job_rename.o src/unix/jobs-unix/lwt_unix_job_rename.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_rmdir.c
+- mv lwt_unix_job_rmdir.o src/unix/jobs-unix/lwt_unix_job_rmdir.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_symlink.c
+- mv lwt_unix_job_symlink.o src/unix/jobs-unix/lwt_unix_job_symlink.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_tcdrain.c
+- mv lwt_unix_job_tcdrain.o src/unix/jobs-unix/lwt_unix_job_tcdrain.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_tcflow.c
+- mv lwt_unix_job_tcflow.o src/unix/jobs-unix/lwt_unix_job_tcflow.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_tcflush.c
+- mv lwt_unix_job_tcflush.o src/unix/jobs-unix/lwt_unix_job_tcflush.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_tcsendbreak.c
+- mv lwt_unix_job_tcsendbreak.o src/unix/jobs-unix/lwt_unix_job_tcsendbreak.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_truncate.c
+- mv lwt_unix_job_truncate.o src/unix/jobs-unix/lwt_unix_job_truncate.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -Isrc/unix -package unix -package result -package bytes -package bigarray -c src/unix/jobs-unix/lwt_unix_job_unlink.c
+- mv lwt_unix_job_unlink.o src/unix/jobs-unix/lwt_unix_job_unlink.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlmklib -o src/unix/lwt-unix_stubs -lpthread src/unix/lwt_unix_stubs.o src/unix/lwt_libev_stubs.o src/unix/lwt_process_stubs.o src/unix/jobs-unix/lwt_unix_job_access.o src/unix/jobs-unix/lwt_unix_job_chdir.o src/unix/jobs-unix/lwt_unix_job_chmod.o src/unix/jobs-unix/lwt_unix_job_chown.o src/unix/jobs-unix/lwt_unix_job_chroot.o src/unix/jobs-unix/lwt_unix_job_close.o src/unix/jobs-unix/lwt_unix_job_fchmod.o src/unix/jobs-unix/lwt_unix_job_fchown.o src/unix/jobs-unix/lwt_unix_job_fdatasync.o src/unix/jobs-unix/lwt_unix_job_fsync.o src/unix/jobs-unix/lwt_unix_job_ftruncate.o src/unix/jobs-unix/lwt_unix_job_link.o src/unix/jobs-unix/lwt_unix_job_lseek.o src/unix/jobs-unix/lwt_unix_job_mkdir.o src/unix/jobs-unix/lwt_unix_job_mkfifo.o src/unix/jobs-unix/lwt_unix_job_rename.o src/unix/jobs-unix/lwt_unix_job_rmdir.o src/unix/jobs-unix/lwt_unix_job_symlink.o src/unix/jobs-unix/lwt_unix_job_tcdrain.o src/unix/jobs-unix/lwt_unix_job_tcflow.o src/unix/jobs-unix/lwt_unix_job_tcflush.o src/unix/jobs-unix/lwt_unix_job_tcsendbreak.o src/unix/jobs-unix/lwt_unix_job_truncate.o src/unix/jobs-unix/lwt_unix_job_unlink.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_chan.mli > src/unix/lwt_chan.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_io.mli > src/unix/lwt_io.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_bytes.mli > src/unix/lwt_bytes.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_unix.mli > src/unix/lwt_unix.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_unix.cmi src/unix/lwt_unix.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_sys.mli > src/unix/lwt_sys.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_bytes.cmi src/unix/lwt_bytes.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_bytes.cmi src/unix/lwt_bytes.mli
+- File "src/unix/lwt_bytes.mli", line 110, characters 0-88:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_bytes.mli", line 154, characters 0-57:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_sys.cmi src/unix/lwt_sys.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_io.cmi src/unix/lwt_io.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_chan.cmi src/unix/lwt_chan.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_chan.ml > src/unix/lwt_chan.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_daemon.mli > src/unix/lwt_daemon.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_log.mli > src/unix/lwt_log.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_log.cmi src/unix/lwt_log.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_daemon.cmi src/unix/lwt_daemon.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_daemon.ml > src/unix/lwt_daemon.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_main.mli > src/unix/lwt_main.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_main.cmi src/unix/lwt_main.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_gc.mli > src/unix/lwt_gc.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_gc.cmi src/unix/lwt_gc.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_gc.ml > src/unix/lwt_gc.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_io.ml > src/unix/lwt_io.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_log.ml > src/unix/lwt_log.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_main.ml > src/unix/lwt_main.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_engine.mli > src/unix/lwt_engine.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_engine.cmi src/unix/lwt_engine.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_process.mli > src/unix/lwt_process.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_process.cmi src/unix/lwt_process.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_process.ml > src/unix/lwt_process.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_throttle.mli > src/unix/lwt_throttle.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_throttle.cmi src/unix/lwt_throttle.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_throttle.ml > src/unix/lwt_throttle.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_timeout.mli > src/unix/lwt_timeout.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_timeout.cmi src/unix/lwt_timeout.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_timeout.ml > src/unix/lwt_timeout.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_unix.ml > src/unix/lwt_unix.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_config.ml > src/unix/lwt_config.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_unix_jobs_generated.ml > src/unix/lwt_unix_jobs_generated.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_config.cmo src/unix/lwt_config.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_unix_jobs_generated.cmo src/unix/lwt_unix_jobs_generated.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_sys.ml > src/unix/lwt_sys.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_engine.ml > src/unix/lwt_engine.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules src/unix/lwt_bytes.ml > src/unix/lwt_bytes.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_chan.cmo src/unix/lwt_chan.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_daemon.cmo src/unix/lwt_daemon.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_gc.cmo src/unix/lwt_gc.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_io.cmo src/unix/lwt_io.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_log.cmo src/unix/lwt_log.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_main.cmo src/unix/lwt_main.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_process.cmo src/unix/lwt_process.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_throttle.cmo src/unix/lwt_throttle.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_timeout.cmo src/unix/lwt_timeout.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_unix.cmo src/unix/lwt_unix.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_unix.cmo src/unix/lwt_unix.ml
+- File "src/unix/lwt_unix.ml", line 165, characters 0-75:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_unix.ml", line 289, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_unix.ml", line 2099, characters 0-65:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_unix.ml", line 2100, characters 0-73:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_unix.ml", line 2101, characters 0-71:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_unix.ml", line 2102, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_sys.cmo src/unix/lwt_sys.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_engine.cmo src/unix/lwt_engine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_bytes.cmo src/unix/lwt_bytes.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_bytes.cmo src/unix/lwt_bytes.ml
+- File "src/unix/lwt_bytes.ml", line 39, characters 0-88:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_bytes.ml", line 51, characters 0-114:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_bytes.ml", line 52, characters 0-110:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_bytes.ml", line 53, characters 0-86:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_bytes.ml", line 224, characters 0-57:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -dllib -llwt-unix_stubs -cclib -llwt-unix_stubs -cclib -lpthread src/unix/lwt_config.cmo src/unix/lwt_engine.cmo src/unix/lwt_main.cmo src/unix/lwt_sys.cmo src/unix/lwt_unix_jobs_generated.cmo src/unix/lwt_unix.cmo src/unix/lwt_bytes.cmo src/unix/lwt_io.cmo src/unix/lwt_chan.cmo src/unix/lwt_log.cmo src/unix/lwt_daemon.cmo src/unix/lwt_gc.cmo src/unix/lwt_process.cmo src/unix/lwt_throttle.cmo src/unix/lwt_timeout.cmo -o src/unix/lwt-unix.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_config.cmx src/unix/lwt_config.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_engine.cmx src/unix/lwt_engine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_main.cmx src/unix/lwt_main.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_sys.cmx src/unix/lwt_sys.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_unix_jobs_generated.cmx src/unix/lwt_unix_jobs_generated.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_unix.cmx src/unix/lwt_unix.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_unix.cmx src/unix/lwt_unix.ml
+- File "src/unix/lwt_unix.ml", line 165, characters 0-75:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_unix.ml", line 289, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_unix.ml", line 2099, characters 0-65:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_unix.ml", line 2100, characters 0-73:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_unix.ml", line 2101, characters 0-71:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_unix.ml", line 2102, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_bytes.cmx src/unix/lwt_bytes.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_bytes.cmx src/unix/lwt_bytes.ml
+- File "src/unix/lwt_bytes.ml", line 39, characters 0-88:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_bytes.ml", line 51, characters 0-114:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_bytes.ml", line 52, characters 0-110:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_bytes.ml", line 53, characters 0-86:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "src/unix/lwt_bytes.ml", line 224, characters 0-57:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_io.cmx src/unix/lwt_io.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_log.cmx src/unix/lwt_log.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_chan.cmx src/unix/lwt_chan.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_daemon.cmx src/unix/lwt_daemon.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_gc.cmx src/unix/lwt_gc.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_process.cmx src/unix/lwt_process.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_throttle.cmx src/unix/lwt_throttle.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -package unix -package result -package bytes -package bigarray -I src/unix -I src/core -I src/logger -o src/unix/lwt_timeout.cmx src/unix/lwt_timeout.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -cclib -llwt-unix_stubs -cclib -lpthread src/unix/lwt_config.cmx src/unix/lwt_engine.cmx src/unix/lwt_main.cmx src/unix/lwt_sys.cmx src/unix/lwt_unix_jobs_generated.cmx src/unix/lwt_unix.cmx src/unix/lwt_bytes.cmx src/unix/lwt_io.cmx src/unix/lwt_chan.cmx src/unix/lwt_log.cmx src/unix/lwt_daemon.cmx src/unix/lwt_gc.cmx src/unix/lwt_process.cmx src/unix/lwt_throttle.cmx src/unix/lwt_timeout.cmx -o src/unix/lwt-unix.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -I src/unix -cclib -lpthread src/unix/lwt-unix.cmxa src/unix/lwt_config.cmx src/unix/lwt_engine.cmx src/unix/lwt_main.cmx src/unix/lwt_sys.cmx src/unix/lwt_unix_jobs_generated.cmx src/unix/lwt_unix.cmx src/unix/lwt_bytes.cmx src/unix/lwt_io.cmx src/unix/lwt_chan.cmx src/unix/lwt_log.cmx src/unix/lwt_daemon.cmx src/unix/lwt_gc.cmx src/unix/lwt_process.cmx src/unix/lwt_throttle.cmx src/unix/lwt_timeout.cmx -o src/unix/lwt-unix.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package compiler-libs.common -package bytes -package bigarray -modules src/simple_top/lwt_simple_top.ml > src/simple_top/lwt_simple_top.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -I src/unix -package unix -package result -package compiler-libs.common -package bytes -package bigarray -I src/simple_top -I src/core -I src/unix -o src/simple_top/lwt_simple_top.cmo src/simple_top/lwt_simple_top.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -I src/unix -package unix -package result -package compiler-libs.common -package bytes -package bigarray -I src/simple_top -I src/core -I src/unix -o src/simple_top/lwt_simple_top.cmo src/simple_top/lwt_simple_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/simple_top/lwt_simple_top.cmo -o src/simple_top/lwt-simple-top.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -I src/unix -package unix -package result -package compiler-libs.common -package bytes -package bigarray -I src/simple_top -I src/core -I src/unix -o src/simple_top/lwt_simple_top.cmx src/simple_top/lwt_simple_top.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -I src/unix -package unix -package result -package compiler-libs.common -package bytes -package bigarray -I src/simple_top -I src/core -I src/unix -o src/simple_top/lwt_simple_top.cmx src/simple_top/lwt_simple_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/simple_top/lwt_simple_top.cmx -o src/simple_top/lwt-simple-top.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/simple_top/lwt-simple-top.cmxa src/simple_top/lwt_simple_top.cmx -o src/simple_top/lwt-simple-top.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -package threads -modules src/preemptive/lwt_preemptive.mli > src/preemptive/lwt_preemptive.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -I src/unix -thread -package unix -package result -package bytes -package bigarray -package threads -I src/preemptive -I src/core -I src/unix -o src/preemptive/lwt_preemptive.cmi src/preemptive/lwt_preemptive.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -package threads -modules src/preemptive/lwt_preemptive.ml > src/preemptive/lwt_preemptive.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -I src/unix -thread -package unix -package result -package bytes -package bigarray -package threads -I src/preemptive -I src/core -I src/unix -o src/preemptive/lwt_preemptive.cmo src/preemptive/lwt_preemptive.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/preemptive/lwt_preemptive.cmo -o src/preemptive/lwt-preemptive.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -I src/unix -thread -package unix -package result -package bytes -package bigarray -package threads -I src/preemptive -I src/core -I src/unix -o src/preemptive/lwt_preemptive.cmx src/preemptive/lwt_preemptive.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/preemptive/lwt_preemptive.cmx -o src/preemptive/lwt-preemptive.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/preemptive/lwt-preemptive.cmxa src/preemptive/lwt_preemptive.cmx -o src/preemptive/lwt-preemptive.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -modules src/camlp4/pa_lwt.mli > src/camlp4/pa_lwt.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -I src/camlp4 -o src/camlp4/pa_lwt.cmi src/camlp4/pa_lwt.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -syntax camlp4o -modules src/camlp4/pa_lwt.ml > src/camlp4/pa_lwt.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -syntax camlp4o -modules src/camlp4/pa_lwt_options.ml > src/camlp4/pa_lwt_options.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -syntax camlp4o -I src/camlp4 -o src/camlp4/pa_lwt_options.cmo src/camlp4/pa_lwt_options.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -syntax camlp4o -I src/camlp4 -o src/camlp4/pa_lwt.cmo src/camlp4/pa_lwt.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/camlp4/pa_lwt.cmo -o src/camlp4/lwt-syntax.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -syntax camlp4o -I src/camlp4 -o src/camlp4/pa_lwt_options.cmx src/camlp4/pa_lwt_options.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -syntax camlp4o -I src/camlp4 -o src/camlp4/pa_lwt_options.cmx src/camlp4/pa_lwt_options.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -syntax camlp4o -I src/camlp4 -o src/camlp4/pa_lwt.cmx src/camlp4/pa_lwt.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -syntax camlp4o -I src/camlp4 -o src/camlp4/pa_lwt.cmx src/camlp4/pa_lwt.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/camlp4/pa_lwt.cmx -o src/camlp4/lwt-syntax.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/camlp4/lwt-syntax.cmxa src/camlp4/pa_lwt.cmx -o src/camlp4/lwt-syntax.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/camlp4/pa_lwt_options.cmo -o src/camlp4/lwt-syntax-options.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/camlp4/pa_lwt_options.cmx -o src/camlp4/lwt-syntax-options.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/camlp4/lwt-syntax-options.cmxa src/camlp4/pa_lwt_options.cmx -o src/camlp4/lwt-syntax-options.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -modules src/camlp4/pa_lwt_log.mli > src/camlp4/pa_lwt_log.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -I src/camlp4 -o src/camlp4/pa_lwt_log.cmi src/camlp4/pa_lwt_log.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -syntax camlp4o -modules src/camlp4/pa_lwt_log.ml > src/camlp4/pa_lwt_log.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -syntax camlp4o -I src/camlp4 -o src/camlp4/pa_lwt_log.cmo src/camlp4/pa_lwt_log.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -syntax camlp4o -I src/camlp4 -o src/camlp4/pa_lwt_log.cmo src/camlp4/pa_lwt_log.ml
+- File "src/camlp4/pa_lwt_log.ml", line 39, characters 4-21:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/camlp4/pa_lwt_log.ml", line 65, characters 20-37:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/camlp4/pa_lwt_log.cmo -o src/camlp4/lwt-syntax-log.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -syntax camlp4o -I src/camlp4 -o src/camlp4/pa_lwt_log.cmx src/camlp4/pa_lwt_log.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -syntax camlp4o -syntax camlp4o -package camlp4.quotations.o -package camlp4 -package camlp4.extend -syntax camlp4o -I src/camlp4 -o src/camlp4/pa_lwt_log.cmx src/camlp4/pa_lwt_log.ml
+- File "src/camlp4/pa_lwt_log.ml", line 39, characters 4-21:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/camlp4/pa_lwt_log.ml", line 65, characters 20-37:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/camlp4/pa_lwt_log.cmx -o src/camlp4/lwt-syntax-log.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/camlp4/lwt-syntax-log.cmxa src/camlp4/pa_lwt_log.cmx -o src/camlp4/lwt-syntax-log.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools.metaquot -package compiler-libs.common -modules src/ppx/ppx_lwt.mli > src/ppx/ppx_lwt.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package ppx_tools.metaquot -package compiler-libs.common -I src/ppx -o src/ppx/ppx_lwt.cmi src/ppx/ppx_lwt.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package ppx_tools.metaquot -package compiler-libs.common -I src/ppx -o src/ppx/ppx_lwt.cmi src/ppx/ppx_lwt.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools.metaquot -package compiler-libs.common -modules src/ppx/ppx_lwt.ml > src/ppx/ppx_lwt.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package ppx_tools.metaquot -package compiler-libs.common -I src/ppx -o src/ppx/ppx_lwt.cmo src/ppx/ppx_lwt.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package ppx_tools.metaquot -package compiler-libs.common -I src/ppx -o src/ppx/ppx_lwt.cmo src/ppx/ppx_lwt.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/ppx/ppx_lwt.cmo -o src/ppx/ppx.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package ppx_tools.metaquot -package compiler-libs.common -I src/ppx -o src/ppx/ppx_lwt.cmx src/ppx/ppx_lwt.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package ppx_tools.metaquot -package compiler-libs.common -I src/ppx -o src/ppx/ppx_lwt.cmx src/ppx/ppx_lwt.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/ppx/ppx_lwt.cmx -o src/ppx/ppx.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/ppx/ppx.cmxa src/ppx/ppx_lwt.cmx -o src/ppx/ppx.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools.metaquot -package compiler-libs.common -modules src/ppx/ppx_lwt_ex.ml > src/ppx/ppx_lwt_ex.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package ppx_tools.metaquot -package compiler-libs.common -I src/ppx -o src/ppx/ppx_lwt_ex.cmo src/ppx/ppx_lwt_ex.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -package ppx_tools.metaquot -package compiler-libs.common -I src/ppx -o src/ppx/ppx_lwt_ex.cmo src/ppx/ppx_lwt_ex.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "src/ppx/ppx_lwt_ex.ml", line 277, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package ppx_tools.metaquot -package compiler-libs.common -I src/ppx -o src/ppx/ppx_lwt_ex.cmx src/ppx/ppx_lwt_ex.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -package ppx_tools.metaquot -package compiler-libs.common -I src/ppx -o src/ppx/ppx_lwt_ex.cmx src/ppx/ppx_lwt_ex.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "src/ppx/ppx_lwt_ex.ml", line 277, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -linkpkg -package ppx_tools.metaquot -package compiler-libs.common src/ppx/ppx_lwt_ex.cmx -o src/ppx/ppx_lwt_ex.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -linkpkg -package ppx_tools.metaquot -package compiler-libs.common src/ppx/ppx_lwt_ex.cmx -o src/ppx/ppx_lwt_ex.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules doc/examples/unix/logging.ml > doc/examples/unix/logging.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -I src/unix -I src/ppx -ppx src/ppx/ppx_lwt_ex.native -package unix -package result -package bytes -package bigarray -I doc/examples/unix -I src/ppx -I src/unix -o doc/examples/unix/logging.cmo doc/examples/unix/logging.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -I src/unix -I src/ppx -ppx src/ppx/ppx_lwt_ex.native -package unix -package result -package bytes -package bigarray -I doc/examples/unix -I src/ppx -I src/unix -o doc/examples/unix/logging.cmx doc/examples/unix/logging.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -I src/unix -linkpkg -package unix -package result -package bytes -package bigarray src/ppx/ppx.cmxa src/core/lwt.cmxa src/logger/lwt-log.cmxa src/unix/lwt-unix.cmxa doc/examples/unix/logging.cmx -o doc/examples/unix/logging.native
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules doc/examples/unix/relay.ml > doc/examples/unix/relay.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -I src/unix -I src/ppx -ppx src/ppx/ppx_lwt_ex.native -package unix -package result -package bytes -package bigarray -I doc/examples/unix -I src/ppx -I src/unix -o doc/examples/unix/relay.cmo doc/examples/unix/relay.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -I src/unix -I src/ppx -ppx src/ppx/ppx_lwt_ex.native -package unix -package result -package bytes -package bigarray -I doc/examples/unix -I src/ppx -I src/unix -o doc/examples/unix/relay.cmx doc/examples/unix/relay.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -I src/unix -linkpkg -package unix -package result -package bytes -package bigarray src/ppx/ppx.cmxa src/core/lwt.cmxa src/logger/lwt-log.cmxa src/unix/lwt-unix.cmxa doc/examples/unix/relay.cmx -o doc/examples/unix/relay.native
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -package result -package bytes -package bigarray -modules doc/examples/unix/parallelize.ml > doc/examples/unix/parallelize.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -I src/unix -I src/ppx -ppx src/ppx/ppx_lwt_ex.native -package unix -package result -package bytes -package bigarray -I doc/examples/unix -I src/ppx -I src/unix -o doc/examples/unix/parallelize.cmo doc/examples/unix/parallelize.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -I src/core -I src/logger -I src/unix -I src/ppx -ppx src/ppx/ppx_lwt_ex.native -package unix -package result -package bytes -package bigarray -I doc/examples/unix -I src/ppx -I src/unix -o doc/examples/unix/parallelize.cmx doc/examples/unix/parallelize.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -I src/unix -linkpkg -package unix -package result -package bytes -package bigarray src/ppx/ppx.cmxa src/core/lwt.cmxa src/logger/lwt-log.cmxa src/unix/lwt-unix.cmxa doc/examples/unix/parallelize.cmx -o doc/examples/unix/parallelize.native
+-> compiled  lwt.2.6.0
+Processing 14/16: [lwt: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lwt.2.6.0)
+- ./setup.exe -install 
+- W: Nothing to install for findlib library 'test'
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_condition.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_list.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_mutex.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_mvar.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_pool.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_result.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_sequence.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_stream.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_switch.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_pqueue.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_pqueue.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_pqueue.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_pqueue.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_pqueue.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_switch.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_switch.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_switch.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_switch.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_stream.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_stream.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_stream.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_stream.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_sequence.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_sequence.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_sequence.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_sequence.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_result.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_result.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_result.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_result.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_pool.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_pool.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_pool.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_pool.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_mvar.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_mvar.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_mvar.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_mvar.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_mutex.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_mutex.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_mutex.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_mutex.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_list.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_list.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_list.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_list.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_condition.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_condition.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_condition.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_condition.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_pqueue.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_switch.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_stream.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_sequence.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_result.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_pool.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_mvar.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_mutex.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_list.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_condition.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_unix.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_config.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_chan.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_daemon.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_gc.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_io.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_main.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_process.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_throttle.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_timeout.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_unix.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_sys.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_engine.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_bytes.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/liblwt-unix_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-unix.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-unix.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-unix.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-unix.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_bytes.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_bytes.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_bytes.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_bytes.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_engine.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_engine.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_engine.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_engine.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_sys.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_sys.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_sys.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_sys.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_unix.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_unix.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_unix.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_unix.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_timeout.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_timeout.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_timeout.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_timeout.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_throttle.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_throttle.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_throttle.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_throttle.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_process.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_process.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_process.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_process.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_main.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_main.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_main.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_main.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_io.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_io.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_io.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_io.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_gc.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_gc.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_gc.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_gc.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_daemon.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_daemon.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_daemon.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_daemon.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_chan.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_chan.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_chan.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_chan.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_config.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_unix_jobs_generated.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_bytes.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_engine.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_sys.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_unix.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_timeout.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_throttle.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_process.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_main.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_io.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_gc.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_daemon.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_chan.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/pa_lwt.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-syntax.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-syntax.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-syntax.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-syntax.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/pa_lwt.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/pa_lwt.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/pa_lwt.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/pa_lwt.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/pa_lwt.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-syntax-options.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-syntax-options.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-syntax-options.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-syntax-options.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/pa_lwt_options.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/pa_lwt_log.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-syntax-log.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-syntax-log.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-syntax-log.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-syntax-log.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/pa_lwt_log.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/pa_lwt_log.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/pa_lwt_log.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/pa_lwt_log.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/pa_lwt_log.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-simple-top.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-simple-top.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-simple-top.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-simple-top.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_simple_top.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_preemptive.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-preemptive.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-preemptive.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-preemptive.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-preemptive.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_preemptive.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_preemptive.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_preemptive.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_preemptive.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_preemptive.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/ppx_lwt.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/ppx.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/ppx.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/ppx.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/ppx.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/ppx_lwt.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/ppx_lwt.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/ppx_lwt.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/ppx_lwt.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/ppx_lwt.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log_core.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log_rules.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-log.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-log.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-log.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt-log.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log_rules.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log_rules.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log_rules.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log_rules.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log_core.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log_core.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log_core.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log_core.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log_rules.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/lwt_log_core.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dlllwt-unix_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dlllwt-unix_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+-> installed lwt.2.6.0
+Processing 15/16: [named-pipe: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/named-pipe.0.4.0)
+- ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package ocb-stubblr myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- Adding cclib(-I '/home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lwt')
+- ocamlfind ocamlc -g -package 'bytes unix' -c lib/named_pipe_stubs.c
+- mv named_pipe_stubs.o lib/named_pipe_stubs.o
+- ocamlfind ocamlmklib -o lib/named_pipe lib/named_pipe_stubs.o
+- ocamlfind ocamldep -package 'bytes unix' -modules lib/named_pipe.ml > lib/named_pipe.ml.depends
+- ocamlfind ocamldep -package 'bytes unix' -modules lib/named_pipe.mli > lib/named_pipe.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -short-paths -package 'bytes unix' -warn-error +1..49 -w A-4-41-44 -I lib -I lwt -o lib/named_pipe.cmi lib/named_pipe.mli
+- ocamlfind ocamlopt -c -g -bin-annot -short-paths -package 'bytes unix' -warn-error +1..49 -w A-4-41-44 -I lib -I lwt -o lib/named_pipe.cmx lib/named_pipe.ml
+- ocamlfind ocamlopt -a -cclib -lnamed_pipe -package 'bytes unix' lib/named_pipe.cmx -o lib/named_pipe.cmxa
+- ocamlfind ocamlopt -shared -package 'bytes unix' lib/named_pipe.cmx -o lib/named_pipe.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -short-paths -package 'bytes unix' -warn-error +1..49 -w A-4-41-44 -I lib -I lwt -o lib/named_pipe.cmo lib/named_pipe.ml
+- ocamlfind ocamlc -a -dllib -lnamed_pipe -package 'bytes unix' lib/named_pipe.cmo -o lib/named_pipe.cma
+- ocamlfind ocamlc -g -package 'lwt lwt.unix' -package 'bytes unix' -c lwt/named_pipe_lwt_stubs.c
+- mv named_pipe_lwt_stubs.o lwt/named_pipe_lwt_stubs.o
+- ocamlfind ocamlmklib -o lwt/named_pipe_lwt lwt/named_pipe_lwt_stubs.o
+- ocamlfind ocamldep -package 'lwt lwt.unix' -package 'bytes unix' -modules lwt/named_pipe_lwt.ml > lwt/named_pipe_lwt.ml.depends
+- ocamlfind ocamldep -package 'lwt lwt.unix' -package 'bytes unix' -modules lwt/named_pipe_lwt.mli > lwt/named_pipe_lwt.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -short-paths -package 'lwt lwt.unix' -package 'bytes unix' -warn-error +1..49 -w A-4-41-44 -I lwt -I lib -o lwt/named_pipe_lwt.cmi lwt/named_pipe_lwt.mli
+- ocamlfind ocamlopt -c -g -bin-annot -short-paths -package 'lwt lwt.unix' -package 'bytes unix' -warn-error +1..49 -w A-4-41-44 -I lwt -I lib -o lwt/named_pipe_lwt.cmx lwt/named_pipe_lwt.ml
+- ocamlfind ocamlopt -a -cclib -lnamed_pipe_lwt -package 'lwt lwt.unix' -package 'bytes unix' lwt/named_pipe_lwt.cmx -o lwt/named_pipe_lwt.cmxa
+- ocamlfind ocamlopt -shared -package 'lwt lwt.unix' -package 'bytes unix' lwt/named_pipe_lwt.cmx -o lwt/named_pipe_lwt.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -short-paths -package 'lwt lwt.unix' -package 'bytes unix' -warn-error +1..49 -w A-4-41-44 -I lwt -I lib -o lwt/named_pipe_lwt.cmo lwt/named_pipe_lwt.ml
+- ocamlfind ocamlc -a -dllib -lnamed_pipe_lwt -package 'lwt lwt.unix' -package 'bytes unix' lwt/named_pipe_lwt.cmo -o lwt/named_pipe_lwt.cma
+- ocamlfind ocamldep -package 'lwt.unix cmdliner' -package 'bytes unix' -modules src/pipecat.ml > src/pipecat.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -short-paths -package 'lwt.unix cmdliner' -package 'bytes unix' -warn-error +1..49 -w A-4-41-44 -I src -I lwt -I lib -o src/pipecat.cmo src/pipecat.ml
+- ocamlfind ocamlopt -c -g -bin-annot -short-paths -package 'lwt.unix cmdliner' -package 'bytes unix' -warn-error +1..49 -w A-4-41-44 -I src -I lwt -I lib -o src/pipecat.cmx src/pipecat.ml
+- ocamlfind ocamlopt -linkpkg -g -I . -I lwt -I lib -package 'lwt.unix cmdliner' -package 'bytes unix' lib/named_pipe.cmxa lwt/named_pipe_lwt.cmxa src/pipecat.cmx -o src/pipecat.native
+-> compiled  named-pipe.0.4.0
+-> installed named-pipe.0.4.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:04.02] Success
