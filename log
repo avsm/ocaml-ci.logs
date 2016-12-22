@@ -1,0 +1,411 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 lambdasoup /home/opam/opam-repository/cache
+[2016-12-22 16:19.49] Starting...
+[2016-12-22 16:19.49] Waiting for free pool slot to run
+[2016-12-22 17:57.40] Pool slot obtained, starting run
+[2016-12-22 17:57.40] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 lambdasoup
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install uchar      0.0.1                                    [required by uutf]
+  - install result     1.2                                      [required by topkg]
+  - install topkg      0.8.1                                    [required by uutf]
+  - install uutf       1.0.0                                    [required by markup]
+  - install markup     0.7.4                                    [required by lambdasoup]
+  - install lambdasoup 0.6.1
+===== 6 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/6: [lambdasoup.0.6.1: dl]
+Processing  2/6: [lambdasoup.0.6.1: dl] [markup.0.7.4: dl]
+Processing  3/6: [lambdasoup.0.6.1: dl] [markup.0.7.4: dl] [result.1.2: dl]
+[markup.0.7.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/6: [lambdasoup.0.6.1: dl] [result.1.2: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/6: [lambdasoup.0.6.1: dl]
+[lambdasoup.0.6.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/6:
+Processing  4/6: [topkg.0.8.1: dl]
+Processing  5/6: [topkg.0.8.1: dl] [uchar.0.0.1: dl]
+Processing  6/6: [topkg.0.8.1: dl] [uchar.0.0.1: dl] [uutf.1.0.0: dl]
+[topkg.0.8.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6: [uchar.0.0.1: dl] [uutf.1.0.0: dl]
+[uchar.0.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6: [uutf.1.0.0: dl]
+[uutf.1.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/12: [result: make]
+Processing  2/12: [result: make] [uchar: ocaml]
++ ocaml "pkg/git.ml" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/uchar.0.0.1)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+Processing  2/12: [uchar: ocaml]
+-> installed result.1.2
+Processing  3/12: [uchar: ocaml]
+Processing  4/12: [topkg: ocaml build] [uchar: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/uchar.0.0.1)
+-> compiled  uchar.0.0.1
+Processing  4/12: [topkg: ocaml build]
+-> installed uchar.0.0.1
+Processing  5/12: [topkg: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pkg-name" "topkg" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/topkg.0.8.1)
+- File "src/topkg_conf.ml", line 19, characters 8-30:
+- Warning 3: deprecated: Topkg_string.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.ml > src/topkg.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.mli > src/topkg.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmi src/topkg.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.ml > src/topkg_build.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.mli > src/topkg_build.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.mli > src/topkg_cmd.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.mli > src/topkg_fpath.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmi src/topkg_fpath.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.mli > src/topkg_codec.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmi src/topkg_cmd.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.mli > src/topkg_result.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmi src/topkg_result.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.mli > src/topkg_conf.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmi src/topkg_codec.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmi src/topkg_conf.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmi src/topkg_build.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.ml > src/topkg_cmd.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.ml > src/topkg_fpath.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.ml > src/topkg_string.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.mli > src/topkg_string.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmi src/topkg_string.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmx src/topkg_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmx src/topkg_fpath.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.ml > src/topkg_codec.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmx src/topkg_cmd.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.ml > src/topkg_os.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.mli > src/topkg_os.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmi src/topkg_os.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.ml > src/topkg_log.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.mli > src/topkg_log.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmi src/topkg_log.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.ml > src/topkg_result.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmx src/topkg_result.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmx src/topkg_log.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmx src/topkg_os.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.ml > src/topkg_conf.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.ml > src/topkg_vcs.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.mli > src/topkg_vcs.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmi src/topkg_vcs.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmx src/topkg_vcs.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmx src/topkg_codec.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmx src/topkg_conf.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.ml > src/topkg_distrib.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.mli > src/topkg_distrib.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmi src/topkg_distrib.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.ml > src/topkg_opam.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.mli > src/topkg_opam.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmi src/topkg_opam.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmx src/topkg_opam.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.ml > src/topkg_fexts.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.mli > src/topkg_fexts.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmi src/topkg_fexts.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.ml > src/topkg_install.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.mli > src/topkg_install.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.mli > src/topkg_test.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmi src/topkg_test.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmi src/topkg_install.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmx src/topkg_fexts.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.ml > src/topkg_test.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmx src/topkg_test.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.ml > src/topkg_ipc.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.mli > src/topkg_ipc.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.mli > src/topkg_pkg.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.mli > src/topkg_publish.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmi src/topkg_publish.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmi src/topkg_pkg.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmi src/topkg_ipc.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.ml > src/topkg_pkg.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmx src/topkg_build.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmx src/topkg_distrib.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.ml > src/topkg_publish.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmx src/topkg_publish.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmx src/topkg_pkg.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.ml > src/topkg_main.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.mli > src/topkg_main.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmi src/topkg_main.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmx src/topkg_ipc.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmx src/topkg_main.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmx src/topkg.ml
+- ocamlfind ocamlopt -a -package 'bytes result' src/topkg_string.cmx src/topkg_fpath.cmx src/topkg_cmd.cmx src/topkg_result.cmx src/topkg_log.cmx src/topkg_os.cmx src/topkg_codec.cmx src/topkg_vcs.cmx src/topkg_conf.cmx src/topkg_build.cmx src/topkg_opam.cmx src/topkg_distrib.cmx src/topkg_fexts.cmx src/topkg_test.cmx src/topkg_install.cmx src/topkg_publish.cmx src/topkg_pkg.cmx src/topkg_ipc.cmx src/topkg_main.cmx src/topkg.cmx -o src/topkg.cmxa
+- ocamlfind ocamlopt -shared -package 'bytes result' src/topkg.cmx -o src/topkg.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmo src/topkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmo src/topkg_build.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmo src/topkg_cmd.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmo src/topkg_codec.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmo src/topkg_conf.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmo src/topkg_distrib.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmo src/topkg_fexts.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmo src/topkg_fpath.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmo src/topkg_ipc.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmo src/topkg_log.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmo src/topkg_main.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmo src/topkg_opam.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmo src/topkg_os.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmo src/topkg_pkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmo src/topkg_publish.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmo src/topkg_result.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmo src/topkg_string.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmo src/topkg_test.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmo src/topkg_vcs.ml
+- ocamlfind ocamlc -a -package 'bytes result' src/topkg_string.cmo src/topkg_fpath.cmo src/topkg_cmd.cmo src/topkg_result.cmo src/topkg_log.cmo src/topkg_os.cmo src/topkg_codec.cmo src/topkg_vcs.cmo src/topkg_conf.cmo src/topkg_build.cmo src/topkg_opam.cmo src/topkg_distrib.cmo src/topkg_fexts.cmo src/topkg_test.cmo src/topkg_install.cmo src/topkg_publish.cmo src/topkg_pkg.cmo src/topkg_ipc.cmo src/topkg_main.cmo src/topkg.cmo -o src/topkg.cma
+-> compiled  topkg.0.8.1
+-> installed topkg.0.8.1
+Processing  7/12: [uutf: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" "--with-cmdliner" "true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/uutf.1.0.0)
+- ocamlfind ocamldep -package bytes -package uchar -modules src/uutf.ml > src/uutf.ml.depends
+- ocamlfind ocamldep -package bytes -package uchar -modules src/uutf.mli > src/uutf.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmi src/uutf.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmx src/uutf.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmx src/uutf.ml
+- File "src/uutf.ml", line 34, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlopt -a -package bytes -package uchar src/uutf.cmx -o src/uutf.cmxa
+- ocamlfind ocamlopt -shared -package bytes -package uchar src/uutf.cmx -o src/uutf.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmo src/uutf.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmo src/uutf.ml
+- File "src/uutf.ml", line 34, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlc -a -package bytes -package uchar src/uutf.cmo -o src/uutf.cma
+- ocamlfind ocamldep -package unix -package cmdliner -package bytes -package uchar -modules test/utftrip.ml > test/utftrip.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package cmdliner -package bytes -package uchar -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package cmdliner -package bytes -package uchar -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- ocamlfind ocamlopt -linkpkg -g -package unix -package cmdliner -package bytes -package uchar src/uutf.cmx test/utftrip.cmx -o test/utftrip.native
+-> compiled  uutf.1.0.0
+-> installed uutf.1.0.0
+Processing  9/12: [markup: make build]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/markup.0.7.4)
+- find: '_build/src': No such file or directory
+- ocamlbuild -use-ocamlfind -j 0 -no-links -cflags -g,-w,+A-4-9-44-45-48,-warn-error,+A-3,-bin-annot,-safe-string -tag-line '<src/*>: optimize(3)' markup.cma markup.cmxa
+- ocamlfind ocamldep -package uutf -modules src/markup.mli > src/markup.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_kstream.mli > src/markup_kstream.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_common.ml > src/markup_common.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_common.cmo src/markup_common.ml
+- + ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_common.cmo src/markup_common.ml
+- File "src/markup_common.ml", line 8, characters 18-27:
+- Warning 3: deprecated: lowercase
+- Use String.lowercase_ascii instead.
+- File "src/markup_common.ml", line 14, characters 18-27:
+- Warning 3: deprecated: lowercase
+- Use Char.lowercase_ascii instead.
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_kstream.cmi src/markup_kstream.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup.cmi src/markup.mli
+- ocamlfind ocamldep -package uutf -modules src/markup.ml > src/markup.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup__xml_parser.mli > src/markup__xml_parser.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_error.ml > src/markup_error.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_xml_tokenizer.mli > src/markup_xml_tokenizer.mli.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_error.cmo src/markup_error.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_xml_tokenizer.cmi src/markup_xml_tokenizer.mli
+- ocamlfind ocamldep -package uutf -modules src/markup_detect.mli > src/markup_detect.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_encoding.ml > src/markup_encoding.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_encoding.cmo src/markup_encoding.ml
+- ocamlfind ocamldep -package uutf -modules src/markup_html_parser.mli > src/markup_html_parser.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_html_tokenizer.mli > src/markup_html_tokenizer.mli.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_html_tokenizer.cmi src/markup_html_tokenizer.mli
+- ocamlfind ocamldep -package uutf -modules src/markup_html_writer.mli > src/markup_html_writer.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_input.mli > src/markup_input.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_stream_io.ml > src/markup_stream_io.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_utility.ml > src/markup_utility.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_entities.ml > src/markup_entities.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_entities.cmo src/markup_entities.ml
+- ocamlfind ocamldep -package uutf -modules src/markup_xml_writer.mli > src/markup_xml_writer.mli.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup__xml_parser.cmi src/markup__xml_parser.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_detect.cmi src/markup_detect.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_html_parser.cmi src/markup_html_parser.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_html_writer.cmi src/markup_html_writer.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_input.cmi src/markup_input.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_stream_io.cmo src/markup_stream_io.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_utility.cmo src/markup_utility.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_xml_writer.cmi src/markup_xml_writer.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup.cmo src/markup.ml
+- ocamlfind ocamldep -package uutf -modules src/markup__xml_parser.ml > src/markup__xml_parser.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_namespace.mli > src/markup_namespace.mli.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_namespace.cmi src/markup_namespace.mli
+- ocamlfind ocamldep -package uutf -modules src/markup_detect.ml > src/markup_detect.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_html_parser.ml > src/markup_html_parser.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_text.ml > src/markup_text.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_text.cmo src/markup_text.ml
+- ocamlfind ocamldep -package uutf -modules src/markup_html_tokenizer.ml > src/markup_html_tokenizer.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_trie.ml > src/markup_trie.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_trie.cmo src/markup_trie.ml
+- ocamlfind ocamldep -package uutf -modules src/markup_html_writer.ml > src/markup_html_writer.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_input.ml > src/markup_input.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_kstream.ml > src/markup_kstream.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_xml_tokenizer.ml > src/markup_xml_tokenizer.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup_xml_writer.ml > src/markup_xml_writer.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup__xml_parser.cmo src/markup__xml_parser.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_detect.cmo src/markup_detect.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_html_parser.cmo src/markup_html_parser.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_html_tokenizer.cmo src/markup_html_tokenizer.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_html_writer.cmo src/markup_html_writer.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_input.cmo src/markup_input.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_kstream.cmo src/markup_kstream.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_xml_tokenizer.cmo src/markup_xml_tokenizer.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_xml_writer.cmo src/markup_xml_writer.ml
+- ocamlfind ocamldep -package uutf -modules src/markup_namespace.ml > src/markup_namespace.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_namespace.cmo src/markup_namespace.ml
+- ocamlfind ocamlc -a -package uutf src/markup_common.cmo src/markup_error.cmo src/markup_kstream.cmo src/markup_namespace.cmo src/markup_text.cmo src/markup_xml_tokenizer.cmo src/markup__xml_parser.cmo src/markup_encoding.cmo src/markup_input.cmo src/markup_stream_io.cmo src/markup_detect.cmo src/markup_entities.cmo src/markup_trie.cmo src/markup_html_tokenizer.cmo src/markup_html_parser.cmo src/markup_html_writer.cmo src/markup_utility.cmo src/markup_xml_writer.cmo src/markup.cmo -o src/markup.cma
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_common.cmx src/markup_common.ml
+- + ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_common.cmx src/markup_common.ml
+- File "src/markup_common.ml", line 8, characters 18-27:
+- Warning 3: deprecated: lowercase
+- Use String.lowercase_ascii instead.
+- File "src/markup_common.ml", line 14, characters 18-27:
+- Warning 3: deprecated: lowercase
+- Use Char.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_error.cmx src/markup_error.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_kstream.cmx src/markup_kstream.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_text.cmx src/markup_text.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_namespace.cmx src/markup_namespace.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_xml_tokenizer.cmx src/markup_xml_tokenizer.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_encoding.cmx src/markup_encoding.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_input.cmx src/markup_input.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_stream_io.cmx src/markup_stream_io.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_entities.cmx src/markup_entities.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_trie.cmx src/markup_trie.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_html_tokenizer.cmx src/markup_html_tokenizer.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup__xml_parser.cmx src/markup__xml_parser.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_detect.cmx src/markup_detect.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_html_parser.cmx src/markup_html_parser.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_html_writer.cmx src/markup_html_writer.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_utility.cmx src/markup_utility.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup_xml_writer.cmx src/markup_xml_writer.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -O3 -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup.cmx src/markup.ml
+- ocamlfind ocamlopt -a -package uutf src/markup_common.cmx src/markup_error.cmx src/markup_kstream.cmx src/markup_namespace.cmx src/markup_text.cmx src/markup_xml_tokenizer.cmx src/markup__xml_parser.cmx src/markup_encoding.cmx src/markup_input.cmx src/markup_stream_io.cmx src/markup_detect.cmx src/markup_entities.cmx src/markup_trie.cmx src/markup_html_tokenizer.cmx src/markup_html_parser.cmx src/markup_html_writer.cmx src/markup_utility.cmx src/markup_xml_writer.cmx src/markup.cmx -o src/markup.cmxa
+- # Parallel statistics: { count(total): 6(58), max: 9, min: 2, average(total): 5.000(1.414) }
+- ! ocamlfind query lwt > /dev/null 2> /dev/null || (  ocamlbuild -use-ocamlfind -j 0 -no-links -cflags -g,-w,+A-4-9-44-45-48,-warn-error,+A-3,-bin-annot,-safe-string -tag-line '<src/*>: optimize(3)' markup_lwt.cma markup_lwt.cmxa )
+- ! ocamlfind query lwt.unix > /dev/null 2> /dev/null || (  ocamlbuild -use-ocamlfind -j 0 -no-links -cflags -g,-w,+A-4-9-44-45-48,-warn-error,+A-3,-bin-annot,-safe-string -tag-line '<src/*>: optimize(3)' markup_lwt_unix.cma markup_lwt_unix.cmxa )
+-> compiled  markup.0.7.4
+Processing 10/12: [markup: make ocamlfind-install]
++ make "ocamlfind-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/markup.0.7.4)
+- ocamlfind install markup src/META -optional _build/src/markup.cma _build/src/markup.cmxa _build/src/markup.a _build/src/markup.cmi _build/src/markup.mli _build/src/markup.cmti _build/src/markup.cmt _build/src/markup_lwt.cma _build/src/markup_lwt.cmxa _build/src/markup_lwt.a _build/src/markup_lwt.cmi _build/src/markup_lwt.mli _build/src/markup_lwt.cmti _build/src/markup_lwt.cmt _build/src/markup_lwt_unix.cma _build/src/markup_lwt_unix.cmxa _build/src/markup_lwt_unix.a _build/src/markup_lwt_unix.cmi _build/src/markup_lwt_unix.mli _build/src/markup_lwt_unix.cmti _build/src/markup_lwt_unix.cmt _build/src/markup_namespace.cmx _build/src/markup_text.cmx _build/src/markup_entities.cmx _build/src/markup_xml_tokenizer.cmx _build/src/markup_xml_writer.cmx _build/src/markup_utility.cmx _build/src/markup.cmx _build/src/markup_html_tokenizer.cmx _build/src/markup_kstream.cmx _build/src/markup_html_writer.cmx _build/src/markup_detect.cmx _build/src/markup_encoding.cmx _build/src/markup_common.cmx _build/src/markup_stream_io.cmx _build/src/markup__xml_parser.cmx _build/src/markup_error.cmx _build/src/markup_html_parser.cmx _build/src/markup_input.cmx _build/src/markup_trie.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_trie.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_input.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_html_parser.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_error.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup__xml_parser.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_stream_io.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_common.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_encoding.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_detect.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_html_writer.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_kstream.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_html_tokenizer.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_utility.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_xml_writer.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_xml_tokenizer.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_entities.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_text.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup_namespace.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/markup.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/markup/META
+-> installed markup.0.7.4
+Processing 11/12: [lambdasoup: make build]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lambdasoup.0.6.1)
+- ocamlbuild -use-ocamlfind -no-links -cflags -w,+A,-bin-annot,-safe-string lambdasoup.cma lambdasoup.cmxa
+- ocamlfind ocamldep -package markup -modules src/soup.mli > src/soup.mli.depends
+- ocamlfind ocamlc -c -w +A -bin-annot -safe-string -package markup -I src -I test -I docs -o src/soup.cmi src/soup.mli
+- ocamlfind ocamldep -package markup -modules src/soup.ml > src/soup.ml.depends
+- ocamlfind ocamlc -c -w +A -bin-annot -safe-string -package markup -I src -I test -I docs -o src/soup.cmo src/soup.ml
+- + ocamlfind ocamlc -c -w +A -bin-annot -safe-string -package markup -I src -I test -I docs -o src/soup.cmo src/soup.ml
+- File "src/soup.ml", line 53, characters 24-33:
+- Warning 3: deprecated: lowercase
+- Use String.lowercase_ascii instead.
+- File "src/soup.ml", line 61, characters 24-33:
+- Warning 3: deprecated: lowercase
+- Use Char.lowercase_ascii instead.
+- ocamlfind ocamlc -a -package markup src/soup.cmo -o src/lambdasoup.cma
+- ocamlfind ocamlopt -c -w +A -bin-annot -safe-string -package markup -I src -I test -I docs -o src/soup.cmx src/soup.ml
+- + ocamlfind ocamlopt -c -w +A -bin-annot -safe-string -package markup -I src -I test -I docs -o src/soup.cmx src/soup.ml
+- File "src/soup.ml", line 53, characters 24-33:
+- Warning 3: deprecated: lowercase
+- Use String.lowercase_ascii instead.
+- File "src/soup.ml", line 61, characters 24-33:
+- Warning 3: deprecated: lowercase
+- Use Char.lowercase_ascii instead.
+- ocamlfind ocamlopt -a -package markup src/soup.cmx -o src/lambdasoup.cmxa
+-> compiled  lambdasoup.0.6.1
+Processing 12/12: [lambdasoup: make ocamlfind-install]
++ make "ocamlfind-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lambdasoup.0.6.1)
+- ocamlfind install lambdasoup -optional src/META _build/src/lambdasoup.cma _build/src/lambdasoup.cmxa _build/src/lambdasoup.a _build/src/soup.cmi _build/src/soup.mli _build/src/soup.cmti _build/src/soup.cmt _build/src/soup.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lambdasoup/soup.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lambdasoup/soup.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lambdasoup/soup.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lambdasoup/soup.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lambdasoup/soup.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lambdasoup/lambdasoup.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lambdasoup/lambdasoup.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lambdasoup/lambdasoup.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lambdasoup/META
+-> installed lambdasoup.0.6.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:58.05] Success
