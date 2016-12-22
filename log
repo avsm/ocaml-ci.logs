@@ -1,0 +1,22 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 js-lz4 /home/opam/opam-repository/cache
+[2016-12-22 16:18.10] Starting...
+[2016-12-22 16:18.10] Waiting for free pool slot to run
+[2016-12-22 16:53.12] Pool slot obtained, starting run
+[2016-12-22 16:53.12] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 js-lz4
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+'opam install --verbose --yes --jobs=2 js-lz4' failed.
+The following dependencies couldn't be met:
+  - js-lz4 -> core < 111.25.00 -> ocaml < 4.03 -> ocaml-base-compiler < 4.03.0
+    conflict with the base packages of this switch
+  - js-lz4 -> core < 111.25.00 -> ocaml < 4.03 -> ocaml-system < 4.03.0
+    unmet availability conditions, e.g. sys-ocaml-version = "4.02.3"
+  - js-lz4 -> core < 111.25.00 -> ocaml < 4.03 -> ocaml-variants < 4.02.4~
+    conflict with the base packages of this switch
+
+No solution found, exiting
+[2016-12-22 16:53.28] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "js-lz4" exited with status 3
