@@ -1,0 +1,42 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 conf-lldb /home/opam/opam-repository/cache
+[2016-12-22 16:19.23] Starting...
+[2016-12-22 16:19.24] Waiting for free pool slot to run
+[2016-12-22 17:40.04] Pool slot obtained, starting run
+[2016-12-22 17:40.04] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 conf-lldb
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-lldb 3.5
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-lldb: ls]
++ ls "/usr/lib/llvm-3.5/include/lldb/API/SBDebugger.h" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-lldb.3.5)
+- ls: cannot access '/usr/lib/llvm-3.5/include/lldb/API/SBDebugger.h': No such file or directory
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-lldb 3.5
++- 
+- No changes have been performed
+
+=-=- conf-lldb.3.5 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package requires LLDB 3.5 development packages installed on your system
+[ERROR] The compilation of conf-lldb failed at "ls /usr/lib/llvm-3.5/include/lldb/API/SBDebugger.h".
+
+#=== ERROR while compiling conf-lldb.3.5 ======================================#
+# command              ls /usr/lib/llvm-3.5/include/lldb/API/SBDebugger.h
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-lldb.3.5
+# exit-code            2
+# env-file             /home/opam/.opam/log/conf-lldb-1-7afd23.env
+# output-file          /home/opam/.opam/log/conf-lldb-1-7afd23.out
+### output ###
+# ls: cannot access '/usr/lib/llvm-3.5/include/lldb/API/SBDebugger.h': No such file or directory
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-lldb' failed.
+[2016-12-22 17:40.17] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191" "opam" "depext" "-ivyj" "2" "conf-lldb" exited with status 4
