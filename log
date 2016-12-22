@@ -1,0 +1,63 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 bindlib /home/opam/opam-repository/cache
+[2016-12-22 16:19.16] Starting...
+[2016-12-22 16:19.16] Waiting for free pool slot to run
+[2016-12-22 17:35.18] Pool slot obtained, starting run
+[2016-12-22 17:35.18] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 bindlib
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install bindlib 4.0.2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [bindlib.4.0.2: dl]
+[bindlib.4.0.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [bindlib: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/bindlib.4.0.2)
+- ocamlfind ocamlc -c ptmap.mli
+- ocamlfind ocamlc -c ptmap.ml
+- ocamlfind ocamlc -c bindlib_util.mli
+- ocamlfind ocamlc -c bindlib_util.ml
+- ocamlfind ocamlc -c bindlib.mli
+- ocamlfind ocamlc -c bindlib.ml
+- ocamlfind ocamlc -o bindlib.cma -a ptmap.cmo bindlib_util.cmo bindlib.cmo
+- ocamlfind ocamlopt -c ptmap.ml
+- ocamlfind ocamlopt -c bindlib_util.ml
+- ocamlfind ocamlopt -c bindlib.ml
+- ocamlfind ocamlopt -o bindlib.cmxa -a ptmap.cmx bindlib_util.cmx bindlib.cmx
+-> compiled  bindlib.4.0.2
+Processing  2/2: [bindlib: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/bindlib.4.0.2)
+- ocamlfind remove bindlib
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib
+- ocamlfind remove bindlib
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib
+- ocamlfind install bindlib *.cmi *.cmo *.cmx *.mli *.o *.a *.cma *.cmxa META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/bindlib.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/bindlib.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/bindlib.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/ptmap.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/bindlib_util.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/bindlib.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/ptmap.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/bindlib_util.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/bindlib.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/ptmap.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/bindlib_util.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/bindlib.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/ptmap.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/bindlib_util.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/bindlib.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/ptmap.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/bindlib_util.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/bindlib.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bindlib/META
+-> installed bindlib.4.0.2
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:35.36] Success
