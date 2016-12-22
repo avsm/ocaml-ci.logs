@@ -1,0 +1,264 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 igvxml /home/opam/opam-repository/cache
+[2016-12-22 16:19.43] Starting...
+[2016-12-22 16:19.43] Waiting for free pool slot to run
+[2016-12-22 17:53.46] Pool slot obtained, starting run
+[2016-12-22 17:53.46] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 igvxml
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install sosa   0.2.0                                        [required by igvxml]
+  - install nonstd 0.0.1                                        [required by igvxml]
+  - install xmlm   1.2.0                                        [required by igvxml]
+  - install igvxml 0.0.6
+===== 4 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [igvxml.0.0.6: dl]
+Processing  2/4: [igvxml.0.0.6: dl] [nonstd.0.0.1: dl]
+Processing  3/4: [igvxml.0.0.6: dl] [nonstd.0.0.1: dl] [sosa.0.2.0: dl]
+[igvxml.0.0.6] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/4: [nonstd.0.0.1: dl] [sosa.0.2.0: dl]
+[nonstd.0.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/4: [sosa.0.2.0: dl]
+[sosa.0.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/4:
+Processing  4/4: [xmlm.1.2.0: dl]
+[xmlm.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/8: [nonstd: ocaml please.ml]
+Processing  2/8: [nonstd: ocaml please.ml]
+Processing  3/8: [nonstd: ocaml please.ml] [xmlm: ./pkg/pkg-git]
++ ./pkg/pkg-git  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0)
+Processing  3/8: [nonstd: ocaml please.ml] [xmlm: ./pkg/build true]
++ ocaml "please.ml" "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/nonstd.0.0.1)
+- Please-> Building
+- ! cp ../nonstd.ml .
+- ! ocamlfind ocamlc  -c nonstd.ml -o nonstd.cmo
+- ! ocamlfind ocamlopt  -c nonstd.ml  -annot -bin-annot -o nonstd.cmx
+- ! ocamlc nonstd.cmo -a -o nonstd.cma
+- ! ocamlopt nonstd.cmx -a -o nonstd.cmxa
+- ! ocamlopt nonstd.cmxa nonstd.a -shared -o nonstd.cmxs
+- Please-> Done.
+- Please-> Building
+- ! cp ../nonstd.ml .
+- ! ocamlfind ocamlc  -c nonstd.ml -o nonstd.cmo
+- ! ocamlfind ocamlopt  -c nonstd.ml  -annot -bin-annot -o nonstd.cmx
+- ! ocamlc nonstd.cmo -a -o nonstd.cma
+- ! ocamlopt nonstd.cmx -a -o nonstd.cmxa
+- ! ocamlopt nonstd.cmxa nonstd.a -shared -o nonstd.cmxs
+- Please-> Done.
+-> compiled  nonstd.0.0.1
+Processing  3/8: [xmlm: ./pkg/build true]
+Processing  4/8: [xmlm: ./pkg/build true] [nonstd: ocaml please.ml]
++ ./pkg/build "true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0)
+- ocamlfind ocamldep -modules src/xmlm.mli > src/xmlm.mli.depends
+- ocamlfind ocamlc -c -I src -I test -o src/xmlm.cmi src/xmlm.mli
+- ocamlfind ocamldep -modules src/xmlm.ml > src/xmlm.ml.depends
+- ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -a src/xmlm.cmo -o src/xmlm.cma
+- ocamlfind ocamlopt -a src/xmlm.cmx -o src/xmlm.cmxa
+- ocamlfind ocamlopt -shared src/xmlm.cmx -o src/xmlm.cmxs
+- ocamlfind ocamldep -modules test/xmltrip.ml > test/xmltrip.ml.depends
+- ocamlfind ocamldep -modules test/xhtml.ml > test/xhtml.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xhtml.cmo test/xhtml.ml
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xhtml.cmx test/xhtml.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -linkpkg src/xmlm.cmx test/xhtml.cmx test/xmltrip.cmx -o test/xmltrip.native
+- ocamlfind ocamldep -modules src/xmlm.mli > src/xmlm.mli.depends
+- ocamlfind ocamlc -c -I src -I test -o src/xmlm.cmi src/xmlm.mli
+- ocamlfind ocamldep -modules src/xmlm.ml > src/xmlm.ml.depends
+- ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -a src/xmlm.cmo -o src/xmlm.cma
+- ocamlfind ocamlopt -a src/xmlm.cmx -o src/xmlm.cmxa
+- ocamlfind ocamlopt -shared src/xmlm.cmx -o src/xmlm.cmxs
+- ocamlfind ocamldep -modules test/xmltrip.ml > test/xmltrip.ml.depends
+- ocamlfind ocamldep -modules test/xhtml.ml > test/xhtml.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xhtml.cmo test/xhtml.ml
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xhtml.cmx test/xhtml.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -linkpkg src/xmlm.cmx test/xhtml.cmx test/xmltrip.cmx -o test/xmltrip.native
+-> compiled  xmlm.1.2.0
+Processing  4/8: [nonstd: ocaml please.ml]
++ ocaml "please.ml" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/nonstd.0.0.1)
+- Please-> Installing
+- ! ocamlfind install nonstd ../META nonstd.cmx nonstd.cmo nonstd.cma nonstd.cmi nonstd.cmxa nonstd.cmxs nonstd.a nonstd.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/nonstd.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/nonstd/META
+- Please-> Done.
+-> installed nonstd.0.0.1
+Processing  5/8: [sosa: make build]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sosa.0.2.0)
+- ocamlbuild -use-ocamlfind -cflag -safe-string -I src/lib sosa.cmx sosa.cma sosa.cmxa sosa.cmxs
+- ocamlfind ocamldep -modules src/lib/api.mli > src/lib/api.mli.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/api.cmi src/lib/api.mli
+- ocamlfind ocamldep -modules src/lib/functors.ml > src/lib/functors.ml.depends
+- ocamlfind ocamldep -modules src/lib/native_character.mli > src/lib/native_character.mli.depends
+- ocamlfind ocamldep -modules src/lib/sosa_pervasives.ml > src/lib/sosa_pervasives.ml.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/native_character.cmi src/lib/native_character.mli
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/sosa_pervasives.cmo src/lib/sosa_pervasives.ml
+- ocamlfind ocamldep -modules src/lib/native_character.ml > src/lib/native_character.ml.depends
+- ocamlfind ocamldep -modules src/lib/native_string.mli > src/lib/native_string.mli.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/native_string.cmi src/lib/native_string.mli
+- ocamlfind ocamldep -modules src/lib/native_string.ml > src/lib/native_string.ml.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/functors.cmo src/lib/functors.ml
+- ocamlfind ocamldep -modules src/lib/native_bytes.mli > src/lib/native_bytes.mli.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/native_bytes.cmi src/lib/native_bytes.mli
+- ocamlfind ocamldep -modules src/lib/native_bytes.ml > src/lib/native_bytes.ml.depends
+- ocamlfind ocamldep -modules src/lib/list_of.mli > src/lib/list_of.mli.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/list_of.cmi src/lib/list_of.mli
+- ocamlfind ocamldep -modules src/lib/list_of.ml > src/lib/list_of.ml.depends
+- ocamlfind ocamldep -modules src/lib/sosa_utilities.ml > src/lib/sosa_utilities.ml.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/sosa_utilities.cmo src/lib/sosa_utilities.ml
+- ocamlfind ocamldep -modules src/lib/of_mutable.mli > src/lib/of_mutable.mli.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/of_mutable.cmi src/lib/of_mutable.mli
+- ocamlfind ocamldep -modules src/lib/of_mutable.ml > src/lib/of_mutable.ml.depends
+- ocamlfind ocamldep -modules src/lib/int_utf8_character.mli > src/lib/int_utf8_character.mli.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/int_utf8_character.cmi src/lib/int_utf8_character.mli
+- ocamlfind ocamldep -modules src/lib/int_utf8_character.ml > src/lib/int_utf8_character.ml.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/native_character.cmo src/lib/native_character.ml
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/native_string.cmo src/lib/native_string.ml
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/native_bytes.cmo src/lib/native_bytes.ml
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/list_of.cmo src/lib/list_of.ml
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/of_mutable.cmo src/lib/of_mutable.ml
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/int_utf8_character.cmo src/lib/int_utf8_character.ml
+- ocamlfind ocamlc -pack -annot -bin-annot src/lib/api.cmi src/lib/native_character.cmo src/lib/functors.cmo src/lib/native_string.cmo src/lib/native_bytes.cmo src/lib/list_of.cmo src/lib/of_mutable.cmo src/lib/int_utf8_character.cmo -o src/lib/sosa.cmo
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/sosa_pervasives.cmx src/lib/sosa_pervasives.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/native_character.cmx src/lib/native_character.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/functors.cmx src/lib/functors.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/sosa_utilities.cmx src/lib/sosa_utilities.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/native_string.cmx src/lib/native_string.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/native_bytes.cmx src/lib/native_bytes.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/list_of.cmx src/lib/list_of.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/of_mutable.cmx src/lib/of_mutable.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/int_utf8_character.cmx src/lib/int_utf8_character.ml
+- touch src/lib/sosa.mli  ; if  ocamlfind ocamlopt -pack -annot -bin-annot -I src/lib src/lib/api.cmi src/lib/native_character.cmx src/lib/functors.cmx src/lib/native_string.cmx src/lib/native_bytes.cmx src/lib/list_of.cmx src/lib/of_mutable.cmx src/lib/int_utf8_character.cmx -o src/lib/sosa.cmx  ; then  rm -f src/lib/sosa.mli  ; else  rm -f src/lib/sosa.mli  ; exit 1; fi
+- ocamlfind ocamlc -a src/lib/sosa_pervasives.cmo src/lib/sosa_utilities.cmo src/lib/sosa.cmo -o src/lib/sosa.cma
+- ocamlfind ocamlopt -a src/lib/sosa_pervasives.cmx src/lib/sosa_utilities.cmx src/lib/sosa.cmx -o src/lib/sosa.cmxa
+- ocamlfind ocamlopt -shared src/lib/sosa.cmx -o src/lib/sosa.cmxs
+Processing  5/8: [sosa: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sosa.0.2.0)
+- ocamlfind install sosa META \
+- 	_build/src/lib/sosa.cmi \
+- 	_build/src/lib/sosa.cmo \
+- 	_build/src/lib/sosa.cmx \
+- 	_build/src/lib/sosa.a \
+- 	_build/src/lib/sosa.o \
+- 	_build/src/lib/sosa.cma \
+- 	_build/src/lib/sosa.cmxa \
+- 	_build/src/lib/sosa.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sosa/sosa.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sosa/sosa.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sosa/sosa.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sosa/sosa.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sosa/sosa.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sosa/sosa.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sosa/sosa.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sosa/sosa.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sosa/META
+-> installed sosa.0.2.0
+[WARNING] Errors in /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0/xmlm.install, some fields have been ignored:
+            - At /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0/xmlm.install:1:0:
+              Invalid field opam-version
+
+-> installed xmlm.1.2.0
+Processing  7/8: [igvxml: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/igvxml.0.0.6)
+- ocamlbuild -use-ocamlfind -tag thread -build-dir _build -I src/ \
+- 	-package nonstd -package sosa -package cmdliner -package xmlm \
+- 	igvxml.cma igvxml.cmxs igvxml.cmxa igvxml_cli.native
+- ocamlfind ocamldep -package xmlm -package cmdliner -package sosa -package nonstd -modules src/igvxml.ml > src/igvxml.ml.depends
+- ocamlfind ocamlc -c -bin-annot -thread -package xmlm -package cmdliner -package sosa -package nonstd -I src -o src/igvxml.cmo src/igvxml.ml
+- ocamlfind ocamlc -a -thread -package xmlm -package cmdliner -package sosa -package nonstd src/igvxml.cmo -o src/igvxml.cma
+- ocamlfind ocamlopt -c -bin-annot -thread -package xmlm -package cmdliner -package sosa -package nonstd -I src -o src/igvxml.cmx src/igvxml.ml
+- ocamlfind ocamlopt -shared -thread -package xmlm -package cmdliner -package sosa -package nonstd src/igvxml.cmx -o src/igvxml.cmxs
+- ocamlfind ocamlopt -a -thread -package xmlm -package cmdliner -package sosa -package nonstd src/igvxml.cmx -o src/igvxml.cmxa
+- ocamlfind ocamldep -package xmlm -package cmdliner -package sosa -package nonstd -modules src/igvxml_cli.ml > src/igvxml_cli.ml.depends
+- ocamlfind ocamlc -c -bin-annot -thread -package xmlm -package cmdliner -package sosa -package nonstd -I src -o src/igvxml_cli.cmo src/igvxml_cli.ml
+- ocamlfind ocamlopt -c -bin-annot -thread -package xmlm -package cmdliner -package sosa -package nonstd -I src -o src/igvxml_cli.cmx src/igvxml_cli.ml
+- ocamlfind ocamlopt -linkpkg -thread -package xmlm -package cmdliner -package sosa -package nonstd src/igvxml.cmx src/igvxml_cli.cmx -o src/igvxml_cli.native
+- mv _build/src/igvxml_cli.native ./igvxml
+-> compiled  igvxml.0.0.6
+Processing  8/8: [igvxml: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/igvxml.0.0.6)
+- ocamlbuild -use-ocamlfind -tag thread -build-dir _build -I src/ \
+- 	-package nonstd -package sosa -package cmdliner -package xmlm \
+- 	igvxml.cma igvxml.cmxs igvxml.cmxa igvxml_cli.native
+- ocamlfind ocamlopt -linkpkg -thread -package xmlm -package cmdliner -package sosa -package nonstd src/igvxml.cmx src/igvxml_cli.cmx -o src/igvxml_cli.native
+- mv _build/src/igvxml_cli.native ./igvxml
+Processing  8/8: [igvxml: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/igvxml.0.0.6)
+- ocamlfind install igvxml META\
+-     _build/src/igvxml.a\
+-     _build/src/igvxml.o\
+-     _build/src/igvxml.cma\
+-     _build/src/igvxml.cmi\
+-     _build/src/igvxml.cmo\
+-     _build/src/igvxml.cmx\
+-     _build/src/igvxml.cmxa\
+-     _build/src/igvxml.cmx\
+-     _build/src/igvxml.cmxs\
+-     _build/src/igvxml.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/igvxml/igvxml.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/igvxml/igvxml.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/igvxml/igvxml.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/igvxml/igvxml.cmxa
+- ocamlfind: [WARNING] Overwriting file /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/igvxml/igvxml.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/igvxml/igvxml.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/igvxml/igvxml.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/igvxml/igvxml.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/igvxml/igvxml.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/igvxml/igvxml.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/igvxml/igvxml.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/igvxml/META
+-> installed igvxml.0.0.6
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:54.04] Success
