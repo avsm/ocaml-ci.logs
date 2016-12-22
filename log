@@ -1,0 +1,52 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 easy-format /home/opam/opam-repository/cache
+[2016-12-22 16:19.34] Starting...
+[2016-12-22 16:19.34] Waiting for free pool slot to run
+[2016-12-22 17:46.31] Pool slot obtained, starting run
+[2016-12-22 17:46.31] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 easy-format
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install easy-format 1.2.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [easy-format.1.2.0: dl]
+[easy-format.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [easy-format: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/easy-format.1.2.0)
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlc -c -dtypes easy_format.ml
+- touch bytecode
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlopt -c -dtypes easy_format.ml
+- ocamlfind ocamlopt -I . -shared -linkall \
+-   -o easy_format.cmxs easy_format.cmx
+- touch nativecode
+-> compiled  easy-format.1.2.0
+Processing  2/2: [easy-format: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/easy-format.1.2.0)
+- echo "version = \"1.2.0\"" > META; cat META.tpl >> META
+- INSTALL_FILES="META easy_format.cmi easy_format.mli"; \
+- 	if test -f bytecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmo"; \
+- 	fi; \
+- 	if test -f nativecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmx easy_format.o easy_format.cmxs"; \
+- 	fi; \
+- 	ocamlfind install easy-format $INSTALL_FILES
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/easy_format.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/easy-format/META
+-> installed easy-format.1.2.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:46.46] Success
