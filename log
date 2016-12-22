@@ -1,0 +1,100 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 bencode /home/opam/opam-repository/cache
+[2016-12-22 16:19.16] Starting...
+[2016-12-22 16:19.16] Waiting for free pool slot to run
+[2016-12-22 17:34.25] Pool slot obtained, starting run
+[2016-12-22 17:34.25] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 bencode
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes base                                     [required by bencode]
+  - install bencode    1.0.2
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [bencode.1.0.2: dl]
+[bencode.1.0.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed base-bytes.base
+Processing  3/4: [bencode: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/bencode.1.0.2)
+- ocamlbuild -use-ocamlfind -package bytes bencode.cma bencode.cmxa bencode.a bencode.docdir/index.html
+- ocamlfind ocamldep -package bytes -modules lib/bencode.mli > lib/bencode.mli.depends
+- ocamlfind ocamlc -c -g -package bytes -I lib -o lib/bencode.cmi lib/bencode.mli
+- ocamlfind ocamldep -package bytes -modules lib/bencode.ml > lib/bencode.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamllex.opt -q lib/bencode_lex.mll
+- ocamlfind ocamldep -package bytes -modules lib/bencode_lex.ml > lib/bencode_lex.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlyacc lib/bencode_parse.mly
+- ocamlfind ocamldep -package bytes -modules lib/bencode_parse.mli > lib/bencode_parse.mli.depends
+- ocamlfind ocamldep -package bytes -modules lib/bencode_types.ml > lib/bencode_types.ml.depends
+- ocamlfind ocamlc -c -g -package bytes -I lib -o lib/bencode_types.cmo lib/bencode_types.ml
+- ocamlfind ocamlc -c -g -package bytes -I lib -o lib/bencode_parse.cmi lib/bencode_parse.mli
+- ocamlfind ocamlc -c -g -package bytes -I lib -o lib/bencode_lex.cmo lib/bencode_lex.ml
+- ocamlfind ocamldep -package bytes -modules lib/bencode_parse.ml > lib/bencode_parse.ml.depends
+- ocamlfind ocamldep -package bytes -modules lib/bencode_streaming.mli > lib/bencode_streaming.mli.depends
+- ocamlfind ocamldep -package bytes -modules lib/bencode_token.mli > lib/bencode_token.mli.depends
+- ocamlfind ocamlc -c -g -package bytes -I lib -o lib/bencode_token.cmi lib/bencode_token.mli
+- ocamlfind ocamlc -c -g -package bytes -I lib -o lib/bencode_streaming.cmi lib/bencode_streaming.mli
+- ocamlfind ocamldep -package bytes -modules lib/bencode_streaming.ml > lib/bencode_streaming.ml.depends
+- ocamlfind ocamldep -package bytes -modules lib/bencode_token.ml > lib/bencode_token.ml.depends
+- ocamlfind ocamlc -c -g -package bytes -I lib -o lib/bencode.cmo lib/bencode.ml
+- ocamlfind ocamlc -c -g -package bytes -I lib -o lib/bencode_parse.cmo lib/bencode_parse.ml
+- ocamlfind ocamlc -c -g -package bytes -I lib -o lib/bencode_streaming.cmo lib/bencode_streaming.ml
+- ocamlfind ocamlc -c -g -package bytes -I lib -o lib/bencode_token.cmo lib/bencode_token.ml
+- ocamlfind ocamlc -a -package bytes lib/bencode_types.cmo lib/bencode_parse.cmo lib/bencode_lex.cmo lib/bencode.cmo lib/bencode_token.cmo lib/bencode_streaming.cmo -o bencode.cma
+- ocamlfind ocamlopt -c -g -package bytes -I lib -o lib/bencode_types.cmx lib/bencode_types.ml
+- ocamlfind ocamlopt -c -g -package bytes -I lib -o lib/bencode_parse.cmx lib/bencode_parse.ml
+- ocamlfind ocamlopt -c -g -package bytes -I lib -o lib/bencode_lex.cmx lib/bencode_lex.ml
+- ocamlfind ocamlopt -c -g -package bytes -I lib -o lib/bencode.cmx lib/bencode.ml
+- ocamlfind ocamlopt -c -g -package bytes -I lib -o lib/bencode_token.cmx lib/bencode_token.ml
+- ocamlfind ocamlopt -c -g -package bytes -I lib -o lib/bencode_streaming.cmx lib/bencode_streaming.ml
+- ocamlfind ocamlopt -a -package bytes lib/bencode_types.cmx lib/bencode_parse.cmx lib/bencode_lex.cmx lib/bencode.cmx lib/bencode_token.cmx lib/bencode_streaming.cmx -o bencode.cmxa
+- ocamlfind ocamldoc -dump lib/bencode.odoc -package bytes -I lib lib/bencode.mli
+- rm -rf bencode.docdir
+- mkdir -p bencode.docdir
+- ocamlfind ocamldoc -load lib/bencode.odoc -html -package bytes -d bencode.docdir
+-> compiled  bencode.1.0.2
+Processing  4/4: [bencode: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/bencode.1.0.2)
+- ocamlbuild -use-ocamlfind -package bytes bencode.cma bencode.cmxa bencode.a bencode.docdir/index.html
+- ocamlfind install bencode META _build/bencode.cma _build/bencode.cmxa _build/bencode.a _build/lib/*.cmi _build/lib/*.cmo _build/lib/*.o _build/lib/*.mli _build/lib/*.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_types.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_token.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_streaming.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_parse.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_lex.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_token.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_streaming.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_parse.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_types.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_token.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_streaming.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_parse.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_lex.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_types.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_token.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_streaming.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_parse.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_lex.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_types.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_token.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_streaming.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_parse.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode_lex.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/bencode.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bencode/META
+-> installed bencode.1.0.2
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:34.42] Success
