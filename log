@@ -1,0 +1,57 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 opam-file-format /home/opam/opam-repository/cache
+[2016-12-22 16:20.11] Starting...
+[2016-12-22 16:20.12] Waiting for free pool slot to run
+[2016-12-22 18:08.11] Pool slot obtained, starting run
+[2016-12-22 18:08.11] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 opam-file-format
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install opam-file-format 2.0~alpha5
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [opam-file-format.2.0~alpha5: dl]
+[opam-file-format.2.0~alpha5] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [opam-file-format: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/opam-file-format.2.0~alpha5)
+- make -C src opam-file-format.cma
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/opam-file-format.2.0~alpha5/src'
+- ocamlyacc opamParser.mly
+- ocamllex opamLexer.mll
+- 81 states, 2059 transitions, table size 8722 bytes
+- ocamldep *.mli *.ml > .depend
+- ocamlc -c opamParserTypes.mli
+- ocamlc -c opamParser.mli
+- ocamlc -c opamLexer.mli
+- ocamlc -c opamLexer.ml
+- ocamlc -c opamParser.ml
+- ocamlc -c opamPrinter.mli
+- ocamlc -c opamPrinter.ml
+- ocamlc -a opamLexer.cmo opamParser.cmo opamPrinter.cmo -o opam-file-format.cma
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/opam-file-format.2.0~alpha5/src'
+- make -C src opam-file-format.cmxa
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/opam-file-format.2.0~alpha5/src'
+- ocamlopt -c opamParser.ml
+- ocamlopt -c opamLexer.ml
+- ocamlopt -c opamPrinter.ml
+- ocamlopt -a opamLexer.cmx opamParser.cmx opamPrinter.cmx -o opam-file-format.cmxa
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/opam-file-format.2.0~alpha5/src'
+- make -C src all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/opam-file-format.2.0~alpha5/src'
+- make[1]: Nothing to be done for 'all'.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/opam-file-format.2.0~alpha5/src'
+-> compiled  opam-file-format.2.0~alpha5
+Processing  2/2: [opam-file-format: make install]
++ make "install" "PREFIX=/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/opam-file-format.2.0~alpha5)
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/opam-file-format
+- install -m 0644 \
+-   src/opamParserTypes.cmi src/opamPrinter.cmi src/opamParser.cmi src/opamLexer.cmi src/opamParser.cmo src/opamLexer.cmo src/opamPrinter.cmo src/opamPrinter.cmx src/opamParser.cmx src/opamLexer.cmx src/opam-file-format.a src/opam-file-format.cma src/opam-file-format.cmxa src/META \
+-   /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/opam-file-format/
+-> installed opam-file-format.2.0~alpha5
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:08.27] Success
