@@ -1,0 +1,177 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes base                                     [required by extlib]
+  - install cppo       1.4.1                                    [required by extlib]
+  - install extlib     1.7.1
+===== 3 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/3: [cppo.1.4.1: dl]
+Processing  3/3: [cppo.1.4.1: dl] [extlib.1.7.1: dl]
+[extlib.1.7.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3: [cppo.1.4.1: dl]
+[cppo.1.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed base-bytes.base
+Processing  3/6: [cppo: make opt]
++ make "opt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.1)
+- echo 'let cppo_version = "1.4.1"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlfind ocamlopt -o cppo -dtypes -linkpkg -package "unix str bytes" cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+Processing  3/6: [cppo: make ocamlbuild]
++ make "ocamlbuild" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.1)
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+-> compiled  cppo.1.4.1
+Processing  4/6: [cppo: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.1)
+- ocamlfind install -patch-version 1.4.1 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/META
+-> installed cppo.1.4.1
+Processing  5/6: [extlib: make build]
++ make "minimal=1" "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/extlib.1.7.1)
+- fatal: Not a git repository (or any of the parent directories): .git
+- make -C src build
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/extlib.1.7.1/src'
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -i extBytes.ml > extBytes.mli
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extBytes.mli extBytes.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c enum.mli enum.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c bitSet.mli bitSet.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c dynArray.mli dynArray.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extArray.mli extArray.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extHashtbl.mli extHashtbl.ml
+- File "extHashtbl.ml", line 26, characters 2-90:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extList.mli extList.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extString.mli extString.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extBuffer.mli extBuffer.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c global.mli global.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c IO.mli IO.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c option.mli option.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c pMap.mli pMap.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c std.mli std.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c base64.mli base64.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c refList.mli refList.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c optParse.mli optParse.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c dllist.mli dllist.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extLib.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -a -o extLib.cma extBytes.cmo enum.cmo bitSet.cmo dynArray.cmo extArray.cmo extHashtbl.cmo extList.cmo extString.cmo extBuffer.cmo global.cmo IO.cmo option.cmo pMap.cmo std.cmo base64.cmo refList.cmo optParse.cmo dllist.cmo extLib.cmo
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extBytes.mli extBytes.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c enum.mli enum.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c bitSet.mli bitSet.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c dynArray.mli dynArray.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extArray.mli extArray.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extHashtbl.mli extHashtbl.ml
+- File "extHashtbl.ml", line 26, characters 2-90:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extList.mli extList.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extString.mli extString.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extBuffer.mli extBuffer.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c global.mli global.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c IO.mli IO.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c option.mli option.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c pMap.mli pMap.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c std.mli std.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c base64.mli base64.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c refList.mli refList.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c optParse.mli optParse.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c dllist.mli dllist.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -c extLib.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -a -o extLib.cmxa extBytes.cmx enum.cmx bitSet.cmx dynArray.cmx extArray.cmx extHashtbl.cmx extList.cmx extString.cmx extBuffer.cmx global.cmx IO.cmx option.cmx pMap.cmx std.cmx base64.cmx refList.cmx optParse.cmx dllist.cmx extLib.cmx
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03  -D OCAML4_04  -D WITH_BYTES" -g -package bytes -shared -linkall extLib.cmxa -o extLib.cmxs
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/extlib.1.7.1/src'
+-> compiled  extlib.1.7.1
+Processing  6/6: [extlib: make install]
++ make "minimal=1" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/extlib.1.7.1)
+- fatal: Not a git repository (or any of the parent directories): .git
+- make -C src VERSION=1.7.1 install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/extlib.1.7.1/src'
+- ocamlfind install -patch-version 1.7.1 extlib META extLib.cma extBytes.mli enum.mli bitSet.mli dynArray.mli extArray.mli extHashtbl.mli extList.mli extString.mli extBuffer.mli global.mli IO.mli option.mli pMap.mli std.mli base64.mli refList.mli optParse.mli dllist.mli extBytes.cmi enum.cmi bitSet.cmi dynArray.cmi extArray.cmi extHashtbl.cmi extList.cmi extString.cmi extBuffer.cmi global.cmi IO.cmi option.cmi pMap.cmi std.cmi base64.cmi refList.cmi optParse.cmi dllist.cmi extLib.cmi -optional extLib.cmxa extBytes.cmx enum.cmx bitSet.cmx dynArray.cmx extArray.cmx extHashtbl.cmx extList.cmx extString.cmx extBuffer.cmx global.cmx IO.cmx option.cmx pMap.cmx std.cmx base64.cmx refList.cmx optParse.cmx dllist.cmx extLib.cmx extLib.cmxs extLib.a extLib.lib
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extLib.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extLib.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extLib.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/dllist.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/optParse.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/refList.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/base64.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/std.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/pMap.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/option.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/IO.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/global.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extBuffer.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extString.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extList.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extHashtbl.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extArray.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/dynArray.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/bitSet.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/enum.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extBytes.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extLib.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extLib.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/dllist.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/optParse.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/refList.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/base64.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/std.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/pMap.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/option.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/IO.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/global.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extBuffer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extString.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extList.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extHashtbl.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extArray.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/dynArray.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/bitSet.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/enum.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extBytes.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/dllist.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/optParse.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/refList.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/base64.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/std.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/pMap.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/option.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/IO.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/global.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extBuffer.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extString.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extList.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extHashtbl.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extArray.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/dynArray.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/bitSet.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/enum.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extBytes.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extLib.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/META
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/extlib.1.7.1/src'
+-> installed extlib.1.7.1
+Done.
+# Run eval `opam env` to update the current shell environment
