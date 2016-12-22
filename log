@@ -1,0 +1,60 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 glical /home/opam/opam-repository/cache
+[2016-12-22 16:19.40] Starting...
+[2016-12-22 16:19.40] Waiting for free pool slot to run
+[2016-12-22 17:50.15] Pool slot obtained, starting run
+[2016-12-22 17:50.15] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 glical
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install glical 0.0.7
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [glical.0.0.7: dl]
+[glical.0.0.7] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [glical: ./configure]
++ ./configure "-prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/glical.0.0.7)
+Processing  1/2: [glical: make build]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/glical.0.0.7)
+- ocamlc -c glical_kernel.mli
+- ocamlc -c glical_kernel.ml
+- File "glical_kernel.ml", line 780, characters 22-37:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- ocamlc -c glical.mli
+- ocamlc -c glical.ml
+- ocamlc -a glical_kernel.cmo glical.cmo -o glical.cma
+- ocamlopt -c glical_kernel.ml
+- File "glical_kernel.ml", line 780, characters 22-37:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- ocamlopt -c glical.ml
+- ocamlopt -a glical_kernel.cmx glical.cmx -o glical.cmxa
+-> compiled  glical.0.0.7
+Processing  2/2: [glical: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/glical.0.0.7)
+- mkdir -p "/home/opam/.opam/ocaml-base-compiler.4.04.0"/lib/glical/
+- ocamlfind install -destdir "/home/opam/.opam/ocaml-base-compiler.4.04.0"/lib glical glical.cma glical.cmxa glical.a glical.mli glical.cmi glical.cmo glical.cmx glical_kernel.cmi glical_kernel.mli glical_kernel.cmo glical_kernel.cmx META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/glical/glical_kernel.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/glical/glical_kernel.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/glical/glical_kernel.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/glical/glical_kernel.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/glical/glical.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/glical/glical.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/glical/glical.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/glical/glical.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/glical/glical.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/glical/glical.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/glical/glical.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/glical/META
+-> installed glical.0.0.7
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:50.30] Success
