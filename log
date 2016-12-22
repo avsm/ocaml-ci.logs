@@ -1,0 +1,50 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 choice /home/opam/opam-repository/cache
+[2016-12-22 16:19.20] Starting...
+[2016-12-22 16:19.20] Waiting for free pool slot to run
+[2016-12-22 17:38.34] Pool slot obtained, starting run
+[2016-12-22 17:38.34] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 choice
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install choice 0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [choice.0.1: dl]
+[choice.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [choice: patch]
+Processing  1/2: [choice: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/choice.0.1)
+- ocamlbuild -use-ocamlfind choice.cmxa choice.cma choice.a choice.cmi choice.cmxs choice.docdir/index.html
+- ocamlfind ocamldep -modules choice.ml > choice.ml.depends
+- ocamlfind ocamldep -modules choice.mli > choice.mli.depends
+- ocamlfind ocamlc -c -o choice.cmi choice.mli
+- ocamlfind ocamlopt -c -o choice.cmx choice.ml
+- ocamlfind ocamlopt -a choice.cmx -o choice.cmxa
+- ocamlfind ocamlc -c -o choice.cmo choice.ml
+- ocamlfind ocamlc -a choice.cmo -o choice.cma
+- ocamlfind ocamlopt -shared choice.cmx -o choice.cmxs
+- ocamlfind ocamldoc -dump choice.odoc choice.mli
+- rm -rf choice.docdir
+- mkdir -p choice.docdir
+- ocamlfind ocamldoc -load choice.odoc -html -d choice.docdir
+-> compiled  choice.0.1
+Processing  2/2: [choice: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/choice.0.1)
+- ocamlfind install choice META _build/choice.cmxa _build/choice.cma _build/choice.a _build/choice.cmi _build/choice.cmxs choice.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/choice/choice.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/choice/choice.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/choice/choice.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/choice/choice.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/choice/choice.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/choice/choice.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/choice/META
+-> installed choice.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:38.49] Success
