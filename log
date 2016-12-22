@@ -1,0 +1,1449 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 socket-daemon /home/opam/opam-repository/cache
+[2016-12-22 16:18.52] Starting...
+[2016-12-22 16:18.52] Waiting for free pool slot to run
+[2016-12-22 17:13.46] Pool slot obtained, starting run
+[2016-12-22 17:13.46] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 socket-daemon
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes          base                            [required by lwt]
+  - install easy-format         1.2.0                           [required by yojson]
+  - install ppx_tools           5.0+4.03.0                      [required by lwt]
+  - install result              1.2                             [required by lwt, ppx_deriving_yojson]
+  - install cppo                1.4.1                           [required by ppx_deriving_yojson]
+  - install biniou              1.0.12                          [required by yojson]
+  - install lwt                 2.6.0                           [required by socket-daemon]
+  - install ppx_deriving        4.1                             [required by ppx_deriving_yojson]
+  - install yojson              1.3.3                           [required by ppx_deriving_yojson]
+  - install ppx_deriving_yojson 3.0                             [required by socket-daemon]
+  - install socket-daemon       0.3.0     
+===== 11 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/11: [biniou.1.0.12: dl]
+Processing  3/11: [biniou.1.0.12: dl] [cppo.1.4.1: dl]
+Processing  4/11: [biniou.1.0.12: dl] [cppo.1.4.1: dl] [easy-format.1.2.0: dl]
+[biniou.1.0.12] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/11: [cppo.1.4.1: dl] [easy-format.1.2.0: dl]
+[cppo.1.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/11: [easy-format.1.2.0: dl]
+[easy-format.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/11:
+Processing  5/11: [lwt.2.6.0: dl]
+Processing  6/11: [lwt.2.6.0: dl] [ppx_deriving.4.1: dl]
+Processing  7/11: [lwt.2.6.0: dl] [ppx_deriving.4.1: dl] [ppx_deriving_yojson.3.0: dl]
+[lwt.2.6.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/11: [ppx_deriving.4.1: dl] [ppx_deriving_yojson.3.0: dl]
+[ppx_deriving.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/11: [ppx_deriving_yojson.3.0: dl]
+[ppx_deriving_yojson.3.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/11:
+Processing  8/11: [ppx_tools.5.0+4.03.0: dl]
+Processing  9/11: [ppx_tools.5.0+4.03.0: dl] [result.1.2: dl]
+Processing 10/11: [ppx_tools.5.0+4.03.0: dl] [result.1.2: dl] [socket-daemon.0.3.0: dl]
+[ppx_tools.5.0+4.03.0] downloaded from file:///home/opam/opam-repository/cache
+Processing 10/11: [result.1.2: dl] [socket-daemon.0.3.0: dl]
+Processing 11/11: [result.1.2: dl] [socket-daemon.0.3.0: dl] [yojson.1.3.3: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing 11/11: [socket-daemon.0.3.0: dl] [yojson.1.3.3: dl]
+[socket-daemon.0.3.0] downloaded from file:///home/opam/opam-repository/cache
+Processing 11/11: [yojson.1.3.3: dl]
+[yojson.1.3.3] downloaded from file:///home/opam/opam-repository/cache
+Processing 11/11:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/22: [easy-format: make]
+Processing  3/22: [easy-format: make] [ppx_tools: make all]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/easy-format.1.2.0)
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlc -c -dtypes easy_format.ml
+- touch bytecode
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlopt -c -dtypes easy_format.ml
+- ocamlfind ocamlopt -I . -shared -linkall \
+-   -o easy_format.cmxs easy_format.cmx
+- touch nativecode
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlc -c -dtypes easy_format.ml
+- touch bytecode
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlopt -c -dtypes easy_format.ml
+- ocamlfind ocamlopt -I . -shared -linkall \
+-   -o easy_format.cmxs easy_format.cmx
+- touch nativecode
+-> compiled  easy-format.1.2.0
+Processing  3/22: [ppx_tools: make all]
+Processing  4/22: [ppx_tools: make all] [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+Processing  4/22: [ppx_tools: make all]
+-> installed base-bytes.base
+Processing  5/22: [ppx_tools: make all]
+Processing  6/22: [cppo: make opt] [ppx_tools: make all]
++ make "opt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/cppo.1.4.1)
+- echo 'let cppo_version = "1.4.1"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlfind ocamlopt -o cppo -dtypes -linkpkg -package "unix str bytes" cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+- echo 'let cppo_version = "1.4.1"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlfind ocamlopt -o cppo -dtypes -linkpkg -package "unix str bytes" cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+Processing  6/22: [cppo: make ocamlbuild] [ppx_tools: make all]
++ make "ocamlbuild" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/cppo.1.4.1)
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+-> compiled  cppo.1.4.1
+Processing  6/22: [ppx_tools: make all]
+Processing  7/22: [ppx_tools: make all] [cppo: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/cppo.1.4.1)
+- ocamlfind install -patch-version 1.4.1 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/META
+- ocamlfind install -patch-version 1.4.1 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/META
+-> installed cppo.1.4.1
+Processing  7/22: [ppx_tools: make all]
+Processing  8/22: [ppx_tools: make all] [easy-format: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/easy-format.1.2.0)
+- echo "version = \"1.2.0\"" > META; cat META.tpl >> META
+- INSTALL_FILES="META easy_format.cmi easy_format.mli"; \
+- 	if test -f bytecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmo"; \
+- 	fi; \
+- 	if test -f nativecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmx easy_format.o easy_format.cmxs"; \
+- 	fi; \
+- 	ocamlfind install easy-format $INSTALL_FILES
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/META
+- echo "version = \"1.2.0\"" > META; cat META.tpl >> META
+- INSTALL_FILES="META easy_format.cmi easy_format.mli"; \
+- 	if test -f bytecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmo"; \
+- 	fi; \
+- 	if test -f nativecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmx easy_format.o easy_format.cmxs"; \
+- 	fi; \
+- 	ocamlfind install easy-format $INSTALL_FILES
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/META
+-> installed easy-format.1.2.0
+Processing  8/22: [ppx_tools: make all]
+Processing  9/22: [biniou: make] [ppx_tools: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_tools.5.0+4.03.0)
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+-> compiled  ppx_tools.5.0+4.03.0
+Processing  9/22: [biniou: make]
+Processing 10/22: [biniou: make] [ppx_tools: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_tools.5.0+4.03.0)
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/META
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/META
+-> installed ppx_tools.5.0+4.03.0
+Processing 10/22: [biniou: make]
+-> installed result.1.2
+Processing 11/22: [biniou: make]
+Processing 12/22: [biniou: make] [lwt: ocaml setup.ml]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/biniou.1.0.12)
+- ocamlfind ocamlc -a -g -annot -bin-annot -o biniou.cma \
+- 	-package "easy-format" bi_util.mli bi_util.ml bi_share.mli bi_share.ml bi_outbuf.mli bi_outbuf.ml bi_inbuf.mli bi_inbuf.ml bi_vint.mli bi_vint.ml bi_io.mli bi_io.ml bi_dump.ml bi_stream.mli bi_stream.ml
+- File "bi_util.ml", line 11, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 13, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 18, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 20, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 36, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 41, characters 6-64:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 43, characters 4-54:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 24, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_outbuf.ml", line 40, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_outbuf.ml", line 86, characters 2-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 90, characters 2-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 96, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 97, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 102, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 103, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 104, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 105, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 116, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_inbuf.ml", line 99, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_io.ml", line 86, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 88, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 90, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 92, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 216, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 220, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 231, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 235, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 562, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_stream.ml", line 56, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -o bdump.byte -g -annot -bin-annot \
+- 	-package easy-format -linkpkg biniou.cma bdump.ml
+- ocamlfind ocamlopt -a -g -annot -bin-annot \
+- 	-o biniou.cmxa -package "easy-format" bi_util.mli bi_util.ml bi_share.mli bi_share.ml bi_outbuf.mli bi_outbuf.ml bi_inbuf.mli bi_inbuf.ml bi_vint.mli bi_vint.ml bi_io.mli bi_io.ml bi_dump.ml bi_stream.mli bi_stream.ml
+- File "bi_util.ml", line 11, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 13, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 18, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 20, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 36, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 41, characters 6-64:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 43, characters 4-54:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 24, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_outbuf.ml", line 40, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_outbuf.ml", line 86, characters 2-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 90, characters 2-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 96, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 97, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 102, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 103, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 104, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 105, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 116, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_inbuf.ml", line 99, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_io.ml", line 86, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 88, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 90, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 92, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 216, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 220, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 231, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 235, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 562, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_stream.ml", line 56, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -shared -linkall -I . -o biniou.cmxs biniou.cmxa
+- ocamlfind ocamlopt -o bdump.native -g -annot -bin-annot \
+- 	-package easy-format -linkpkg biniou.cmxa bdump.ml
+- mkdir -p doc
+- ocamlfind ocamldoc -d doc -html -package easy-format bi_util.mli bi_share.mli bi_outbuf.mli bi_inbuf.mli bi_vint.mli bi_io.mli bi_stream.mli
+- sed -e 's:@@VERSION@@:1.0.12:' META.in > META
+- ocamlfind ocamlopt -o test_biniou.native -g -annot -bin-annot \
+- 	-package "easy-format unix" -linkpkg biniou.cmxa test_biniou.ml
+- cp test_biniou.native test_biniou
+- ocamlfind ocamlc -a -g -annot -bin-annot -o biniou.cma \
+- 	-package "easy-format" bi_util.mli bi_util.ml bi_share.mli bi_share.ml bi_outbuf.mli bi_outbuf.ml bi_inbuf.mli bi_inbuf.ml bi_vint.mli bi_vint.ml bi_io.mli bi_io.ml bi_dump.ml bi_stream.mli bi_stream.ml
+- File "bi_util.ml", line 11, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 13, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 18, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 20, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 36, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 41, characters 6-64:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 43, characters 4-54:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 24, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_outbuf.ml", line 40, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_outbuf.ml", line 86, characters 2-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 90, characters 2-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 96, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 97, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 102, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 103, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 104, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 105, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 116, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_inbuf.ml", line 99, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_io.ml", line 86, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 88, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 90, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 92, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 216, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 220, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 231, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 235, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 562, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_stream.ml", line 56, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -o bdump.byte -g -annot -bin-annot \
+- 	-package easy-format -linkpkg biniou.cma bdump.ml
+- ocamlfind ocamlopt -a -g -annot -bin-annot \
+- 	-o biniou.cmxa -package "easy-format" bi_util.mli bi_util.ml bi_share.mli bi_share.ml bi_outbuf.mli bi_outbuf.ml bi_inbuf.mli bi_inbuf.ml bi_vint.mli bi_vint.ml bi_io.mli bi_io.ml bi_dump.ml bi_stream.mli bi_stream.ml
+- File "bi_util.ml", line 11, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 13, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 18, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 20, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 36, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_util.ml", line 41, characters 6-64:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_util.ml", line 43, characters 4-54:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 24, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_outbuf.ml", line 40, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_outbuf.ml", line 86, characters 2-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 90, characters 2-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bi_outbuf.ml", line 96, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 97, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 102, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 103, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 104, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 105, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_outbuf.ml", line 116, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_inbuf.ml", line 99, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_io.ml", line 86, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 88, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 90, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 92, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 216, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 220, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 231, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 235, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "bi_io.ml", line 562, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bi_stream.ml", line 56, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -shared -linkall -I . -o biniou.cmxs biniou.cmxa
+- ocamlfind ocamlopt -o bdump.native -g -annot -bin-annot \
+- 	-package easy-format -linkpkg biniou.cmxa bdump.ml
+- mkdir -p doc
+- ocamlfind ocamldoc -d doc -html -package easy-format bi_util.mli bi_share.mli bi_outbuf.mli bi_inbuf.mli bi_vint.mli bi_io.mli bi_stream.mli
+- sed -e 's:@@VERSION@@:1.0.12:' META.in > META
+- ocamlfind ocamlopt -o test_biniou.native -g -annot -bin-annot \
+- 	-package "easy-format unix" -linkpkg biniou.cmxa test_biniou.ml
+- cp test_biniou.native test_biniou
+-> compiled  biniou.1.0.12
+Processing 12/22: [lwt: ocaml setup.ml]
+Processing 13/22: [lwt: ocaml setup.ml] [ppx_deriving: ocaml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" "--disable-libev" "--enable-camlp4" "--disable-react" "--disable-ssl" "--enable-unix" "--enable-preemptive" "--disable-glib" "--enable-ppx" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lwt.2.6.0)
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Field 'pkg_camlp4_quotations_o' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-94a97d.txt'' terminated with error code 2
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-d951f6.txt'' terminated with error code 2")
+- E: Cannot find findlib package camlp4.quotations.o
+- E: Failure("1 configuration error")
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Field 'pkg_camlp4_quotations_o' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-94a97d.txt'' terminated with error code 2
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-d951f6.txt'' terminated with error code 2")
+- E: Cannot find findlib package camlp4.quotations.o
+- E: Failure("1 configuration error")
+[ERROR] The compilation of lwt failed at "ocaml setup.ml -configure --prefix /home/opam/.opam/ocaml-base-compiler.4.03.0 --disable-libev --enable-camlp4 --disable-react --disable-ssl --enable-unix --enable-preemptive --disable-glib --enable-ppx".
+Processing 13/22: [ppx_deriving: ocaml]
+Processing 14/22: [ppx_deriving: ocaml] [biniou: make install]
++ make "install" "BINDIR=/home/opam/.opam/ocaml-base-compiler.4.03.0/bin" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/biniou.1.0.12)
+- if [ -f bdump.native ]; then \
+- 	cp bdump.native /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/bdump; \
+- else \
+- 	cp bdump.byte /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/bdump; \
+- fi
+- ocamlfind install biniou META \
+-   bi_util.mli bi_share.mli bi_outbuf.mli bi_inbuf.mli bi_vint.mli bi_io.mli bi_stream.mli bi_util.cmi bi_share.cmi bi_outbuf.cmi bi_inbuf.cmi bi_vint.cmi bi_io.cmi bi_stream.cmi bi_util.cmt bi_share.cmt bi_outbuf.cmt bi_inbuf.cmt bi_vint.cmt bi_io.cmt bi_stream.cmt bi_util.annot bi_share.annot bi_outbuf.annot bi_inbuf.annot bi_vint.annot bi_io.annot bi_stream.annot bi_util.cmo bi_share.cmo bi_outbuf.cmo bi_inbuf.cmo bi_vint.cmo bi_io.cmo bi_dump.cmo bi_stream.cmo biniou.cma \
+-   -optional bi_util.cmx bi_share.cmx bi_outbuf.cmx bi_inbuf.cmx bi_vint.cmx bi_io.cmx bi_dump.cmx bi_stream.cmx bi_util.o bi_share.o bi_outbuf.o bi_inbuf.o bi_vint.o bi_io.o bi_dump.o bi_stream.o biniou.cmxa biniou.a biniou.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/biniou.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/biniou.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/biniou.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_dump.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_dump.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/biniou.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_dump.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/META
+- if [ -f bdump.native ]; then \
+- 	cp bdump.native /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/bdump; \
+- else \
+- 	cp bdump.byte /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/bdump; \
+- fi
+- ocamlfind install biniou META \
+-   bi_util.mli bi_share.mli bi_outbuf.mli bi_inbuf.mli bi_vint.mli bi_io.mli bi_stream.mli bi_util.cmi bi_share.cmi bi_outbuf.cmi bi_inbuf.cmi bi_vint.cmi bi_io.cmi bi_stream.cmi bi_util.cmt bi_share.cmt bi_outbuf.cmt bi_inbuf.cmt bi_vint.cmt bi_io.cmt bi_stream.cmt bi_util.annot bi_share.annot bi_outbuf.annot bi_inbuf.annot bi_vint.annot bi_io.annot bi_stream.annot bi_util.cmo bi_share.cmo bi_outbuf.cmo bi_inbuf.cmo bi_vint.cmo bi_io.cmo bi_dump.cmo bi_stream.cmo biniou.cma \
+-   -optional bi_util.cmx bi_share.cmx bi_outbuf.cmx bi_inbuf.cmx bi_vint.cmx bi_io.cmx bi_dump.cmx bi_stream.cmx bi_util.o bi_share.o bi_outbuf.o bi_inbuf.o bi_vint.o bi_io.o bi_dump.o bi_stream.o biniou.cmxa biniou.a biniou.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/biniou.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/biniou.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/biniou.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_dump.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_dump.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/biniou.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_dump.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_stream.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_io.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_vint.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_inbuf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_outbuf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_share.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/bi_util.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/biniou/META
+-> installed biniou.1.0.12
+Processing 14/22: [ppx_deriving: ocaml]
+Processing 15/22: [ppx_deriving: ocaml] [yojson: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/yojson.1.3.3)
+- sed -e 's:@@VERSION@@:1.3.3:' META.in > META
+- cppo -n yojson.mli.cppo -o yojson.mli
+- ocamlfind ocamlc -c -bin-annot -dtypes -g -package easy-format,biniou yojson.mli
+- ocamllex read.mll
+- 546 states, 2537 transitions, table size 13424 bytes
+- cppo -D "VERSION 1.3.3" yojson.ml.cppo -o yojson.ml
+- ocamlfind ocamlc -c -bin-annot -dtypes -g -package easy-format,biniou yojson.ml
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlc -c -bin-annot -dtypes -g -package easy-format,biniou yojson_biniou.mli
+- ocamlfind ocamlc -c -bin-annot -dtypes -g -package easy-format,biniou yojson_biniou.ml
+- ocamlfind ocamlopt -c -bin-annot -dtypes -g -package easy-format,biniou yojson.ml
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -c -bin-annot -dtypes -g -package easy-format,biniou yojson_biniou.ml
+- ocamlfind ocamlopt -shared -linkall -I . -o yojson.cmxs yojson.cmx
+- ocamlfind ocamlopt -shared -linkall -I . -o yojson_biniou.cmxs \
+- 	yojson_biniou.cmx
+- ocamlfind ocamlopt -o ydump -bin-annot -dtypes -g -package easy-format,biniou -linkpkg \
+- 	yojson.cmx yojson_biniou.cmx ydump.ml
+- sed -e 's:@@VERSION@@:1.3.3:' META.in > META
+- cppo -n yojson.mli.cppo -o yojson.mli
+- ocamlfind ocamlc -c -bin-annot -dtypes -g -package easy-format,biniou yojson.mli
+- ocamllex read.mll
+- 546 states, 2537 transitions, table size 13424 bytes
+- cppo -D "VERSION 1.3.3" yojson.ml.cppo -o yojson.ml
+- ocamlfind ocamlc -c -bin-annot -dtypes -g -package easy-format,biniou yojson.ml
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlc -c -bin-annot -dtypes -g -package easy-format,biniou yojson_biniou.mli
+- ocamlfind ocamlc -c -bin-annot -dtypes -g -package easy-format,biniou yojson_biniou.ml
+- ocamlfind ocamlopt -c -bin-annot -dtypes -g -package easy-format,biniou yojson.ml
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 21, characters 2-38:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 22, characters 2-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 61, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "write.ml", line 63, characters 4-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 88, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "write.ml", line 98, characters 4-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "read.mll", line 367, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "read.mll", line 368, characters 11-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -c -bin-annot -dtypes -g -package easy-format,biniou yojson_biniou.ml
+- ocamlfind ocamlopt -shared -linkall -I . -o yojson.cmxs yojson.cmx
+- ocamlfind ocamlopt -shared -linkall -I . -o yojson_biniou.cmxs \
+- 	yojson_biniou.cmx
+- ocamlfind ocamlopt -o ydump -bin-annot -dtypes -g -package easy-format,biniou -linkpkg \
+- 	yojson.cmx yojson_biniou.cmx ydump.ml
+-> compiled  yojson.1.3.3
+Processing 15/22: [ppx_deriving: ocaml]
+Processing 16/22: [ppx_deriving: ocaml]
+Processing 17/22: [ppx_deriving: ocaml] [yojson: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/yojson.1.3.3)
+- ocamlfind install yojson META \
+-   yojson_biniou.cmt ydump.cmt yojson.cmt yojson_biniou.cmti yojson.cmti common.mli pretty.mli safe.mli util.mli write2.mli write.mli yojson_biniou.mli yojson.mli read.mli \
+-   ydump.cmi yojson.cmi yojson_biniou.cmi  yojson.cmo yojson_biniou.cmo \
+-   yojson.o yojson_biniou.o ydump.o ydump.cmx yojson.cmx yojson_biniou.cmx yojson.cmxs yojson_biniou.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/ydump.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/ydump.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/ydump.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/read.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/write.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/write2.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/util.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/safe.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/pretty.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/common.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/ydump.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/META
+- ocamlfind install yojson META \
+-   yojson_biniou.cmt ydump.cmt yojson.cmt yojson_biniou.cmti yojson.cmti common.mli pretty.mli safe.mli util.mli write2.mli write.mli yojson_biniou.mli yojson.mli read.mli \
+-   ydump.cmi yojson.cmi yojson_biniou.cmi  yojson.cmo yojson_biniou.cmo \
+-   yojson.o yojson_biniou.o ydump.o ydump.cmx yojson.cmx yojson_biniou.cmx yojson.cmxs yojson_biniou.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/ydump.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/ydump.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/ydump.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/read.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/write.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/write2.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/util.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/safe.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/pretty.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/common.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/ydump.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/yojson_biniou.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yojson/META
+-> installed yojson.1.3.3
+Processing 17/22: [ppx_deriving: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_deriving.4.1)
+- ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- cppo -V OCAML:4.03.0 -o src/ppx_deriving_main.ml src/ppx_deriving_main.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -modules src/ppx_deriving_main.ml > src/ppx_deriving_main.ml.depends
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving.mli > src/ppx_deriving.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmi src/ppx_deriving.mli
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmi src/ppx_deriving.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmo src/ppx_deriving_main.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmo src/ppx_deriving_main.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- cppo -V OCAML:4.03.0 -o src/ppx_deriving.ml src/ppx_deriving.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving.ml > src/ppx_deriving.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmx src/ppx_deriving.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmx src/ppx_deriving.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- File "src/ppx_deriving.cppo.ml", line 463, characters 17-34:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmx src/ppx_deriving_main.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmx src/ppx_deriving_main.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -linkpkg -g -linkall -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result src/ppx_deriving.cmx src/ppx_deriving_main.cmx -o src/ppx_deriving_main.native
+- + ocamlfind ocamlopt -linkpkg -g -linkall -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result src/ppx_deriving.cmx src/ppx_deriving_main.cmx -o src/ppx_deriving_main.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src/ppx_deriving.cmx -o src/ppx_deriving.cmxa
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmo src/ppx_deriving.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmo src/ppx_deriving.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- File "src/ppx_deriving.cppo.ml", line 463, characters 17-34:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind ocamlc -a src/ppx_deriving.cmo -o src/ppx_deriving.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving.cmx -o src/ppx_deriving.cmxs
+- ocamlfind ocamlopt -a src/ppx_deriving_main.cmx -o src/ppx_deriving_main.cmxa
+- ocamlfind ocamlc -a src/ppx_deriving_main.cmo -o src/ppx_deriving_main.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving_main.cmx -o src/ppx_deriving_main.cmxs
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving_runtime.ml > src/ppx_deriving_runtime.ml.depends
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving_runtime.mli > src/ppx_deriving_runtime.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmi src/ppx_deriving_runtime.mli
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmi src/ppx_deriving_runtime.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmx src/ppx_deriving_runtime.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmx src/ppx_deriving_runtime.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src/ppx_deriving_runtime.cmx -o src/ppx_deriving_runtime.cmxa
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmo src/ppx_deriving_runtime.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmo src/ppx_deriving_runtime.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a src/ppx_deriving_runtime.cmo -o src/ppx_deriving_runtime.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving_runtime.cmx -o src/ppx_deriving_runtime.cmxs
+- cppo -V OCAML:4.03.0 -o src_plugins/ppx_deriving_create.ml src_plugins/ppx_deriving_create.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_create.ml > src_plugins/ppx_deriving_create.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmo src_plugins/ppx_deriving_create.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmo src_plugins/ppx_deriving_create.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmx src_plugins/ppx_deriving_create.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmx src_plugins/ppx_deriving_create.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_create.cmx -o src_plugins/ppx_deriving_create.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_create.cmo -o src_plugins/ppx_deriving_create.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_create.cmx -o src_plugins/ppx_deriving_create.cmxs
+- cppo -V OCAML:4.03.0 -o src_plugins/ppx_deriving_enum.ml src_plugins/ppx_deriving_enum.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_enum.ml > src_plugins/ppx_deriving_enum.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmo src_plugins/ppx_deriving_enum.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmo src_plugins/ppx_deriving_enum.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmx src_plugins/ppx_deriving_enum.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmx src_plugins/ppx_deriving_enum.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_enum.cmx -o src_plugins/ppx_deriving_enum.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_enum.cmo -o src_plugins/ppx_deriving_enum.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_enum.cmx -o src_plugins/ppx_deriving_enum.cmxs
+- cppo -V OCAML:4.03.0 -o src_plugins/ppx_deriving_eq.ml src_plugins/ppx_deriving_eq.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_eq.ml > src_plugins/ppx_deriving_eq.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmo src_plugins/ppx_deriving_eq.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmo src_plugins/ppx_deriving_eq.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmx src_plugins/ppx_deriving_eq.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmx src_plugins/ppx_deriving_eq.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_eq.cmx -o src_plugins/ppx_deriving_eq.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_eq.cmo -o src_plugins/ppx_deriving_eq.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_eq.cmx -o src_plugins/ppx_deriving_eq.cmxs
+- cppo -V OCAML:4.03.0 -o src_plugins/ppx_deriving_fold.ml src_plugins/ppx_deriving_fold.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_fold.ml > src_plugins/ppx_deriving_fold.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmo src_plugins/ppx_deriving_fold.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmo src_plugins/ppx_deriving_fold.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmx src_plugins/ppx_deriving_fold.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmx src_plugins/ppx_deriving_fold.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_fold.cmx -o src_plugins/ppx_deriving_fold.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_fold.cmo -o src_plugins/ppx_deriving_fold.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_fold.cmx -o src_plugins/ppx_deriving_fold.cmxs
+- cppo -V OCAML:4.03.0 -o src_plugins/ppx_deriving_iter.ml src_plugins/ppx_deriving_iter.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_iter.ml > src_plugins/ppx_deriving_iter.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmo src_plugins/ppx_deriving_iter.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmo src_plugins/ppx_deriving_iter.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmx src_plugins/ppx_deriving_iter.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmx src_plugins/ppx_deriving_iter.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_iter.cmx -o src_plugins/ppx_deriving_iter.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_iter.cmo -o src_plugins/ppx_deriving_iter.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_iter.cmx -o src_plugins/ppx_deriving_iter.cmxs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_create.cmx -o src_plugins/ppx_deriving_make.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_create.cmo -o src_plugins/ppx_deriving_make.cma
+- cppo -V OCAML:4.03.0 -o src_plugins/ppx_deriving_make.ml src_plugins/ppx_deriving_make.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_make.ml > src_plugins/ppx_deriving_make.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmo src_plugins/ppx_deriving_make.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmo src_plugins/ppx_deriving_make.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmx src_plugins/ppx_deriving_make.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmx src_plugins/ppx_deriving_make.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_make.cmx -o src_plugins/ppx_deriving_make.cmxs
+- cppo -V OCAML:4.03.0 -o src_plugins/ppx_deriving_map.ml src_plugins/ppx_deriving_map.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_map.ml > src_plugins/ppx_deriving_map.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmo src_plugins/ppx_deriving_map.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmo src_plugins/ppx_deriving_map.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmx src_plugins/ppx_deriving_map.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmx src_plugins/ppx_deriving_map.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_map.cmx -o src_plugins/ppx_deriving_map.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_map.cmo -o src_plugins/ppx_deriving_map.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_map.cmx -o src_plugins/ppx_deriving_map.cmxs
+- cppo -V OCAML:4.03.0 -o src_plugins/ppx_deriving_ord.ml src_plugins/ppx_deriving_ord.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_ord.ml > src_plugins/ppx_deriving_ord.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmo src_plugins/ppx_deriving_ord.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmo src_plugins/ppx_deriving_ord.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmx src_plugins/ppx_deriving_ord.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmx src_plugins/ppx_deriving_ord.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_ord.cmx -o src_plugins/ppx_deriving_ord.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_ord.cmo -o src_plugins/ppx_deriving_ord.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_ord.cmx -o src_plugins/ppx_deriving_ord.cmxs
+- cppo -V OCAML:4.03.0 -o src_plugins/ppx_deriving_show.ml src_plugins/ppx_deriving_show.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_show.ml > src_plugins/ppx_deriving_show.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmo src_plugins/ppx_deriving_show.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmo src_plugins/ppx_deriving_show.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmx src_plugins/ppx_deriving_show.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmx src_plugins/ppx_deriving_show.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_show.cmx -o src_plugins/ppx_deriving_show.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_show.cmo -o src_plugins/ppx_deriving_show.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_show.cmx -o src_plugins/ppx_deriving_show.cmxs
+- + ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Ocamlbuild_cppo, and its interface was not compiled with -opaque
+-> compiled  ppx_deriving.4.1
+-> installed ppx_deriving.4.1
+Processing 19/22: [ppx_deriving_yojson: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_deriving_yojson.3.0)
+- ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- cppo -V OCAML:4.03.0 -o src/ppx_deriving_yojson.ml src/ppx_deriving_yojson.cppo.ml
+- ocamlfind ocamldep -package result -package ppx_tools.metaquot -package ppx_deriving.api -modules src/ppx_deriving_yojson.ml > src/ppx_deriving_yojson.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package result -package ppx_tools.metaquot -package ppx_deriving.api -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_yojson.cmo src/ppx_deriving_yojson.ml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package result -package ppx_tools.metaquot -package ppx_deriving.api -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_yojson.cmo src/ppx_deriving_yojson.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package result -package ppx_tools.metaquot -package ppx_deriving.api -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_yojson.cmx src/ppx_deriving_yojson.ml
+- + ocamlfind ocamlopt -c -bin-annot -safe-string -package result -package ppx_tools.metaquot -package ppx_deriving.api -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_yojson.cmx src/ppx_deriving_yojson.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src/ppx_deriving_yojson.cmx -o src/ppx_deriving_yojson.cmxa
+- ocamlfind ocamlc -a src/ppx_deriving_yojson.cmo -o src/ppx_deriving_yojson.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving_yojson.cmx -o src/ppx_deriving_yojson.cmxs
+- ocamlfind ocamldep -package result -package ppx_tools.metaquot -package ppx_deriving.api -modules src/ppx_deriving_yojson_runtime.ml > src/ppx_deriving_yojson_runtime.ml.depends
+- ocamlfind ocamldep -package result -package ppx_tools.metaquot -package ppx_deriving.api -modules src/ppx_deriving_yojson_runtime.mli > src/ppx_deriving_yojson_runtime.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package result -package ppx_tools.metaquot -package ppx_deriving.api -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_yojson_runtime.cmi src/ppx_deriving_yojson_runtime.mli
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package result -package ppx_tools.metaquot -package ppx_deriving.api -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_yojson_runtime.cmi src/ppx_deriving_yojson_runtime.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package result -package ppx_tools.metaquot -package ppx_deriving.api -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_yojson_runtime.cmx src/ppx_deriving_yojson_runtime.ml
+- + ocamlfind ocamlopt -c -bin-annot -safe-string -package result -package ppx_tools.metaquot -package ppx_deriving.api -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_yojson_runtime.cmx src/ppx_deriving_yojson_runtime.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src/ppx_deriving_yojson_runtime.cmx -o src/ppx_deriving_yojson_runtime.cmxa
+- ocamlfind ocamlc -c -bin-annot -safe-string -package result -package ppx_tools.metaquot -package ppx_deriving.api -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_yojson_runtime.cmo src/ppx_deriving_yojson_runtime.ml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package result -package ppx_tools.metaquot -package ppx_deriving.api -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_yojson_runtime.cmo src/ppx_deriving_yojson_runtime.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a src/ppx_deriving_yojson_runtime.cmo -o src/ppx_deriving_yojson_runtime.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving_yojson_runtime.cmx -o src/ppx_deriving_yojson_runtime.cmxs
+- + ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Ocamlbuild_cppo, and its interface was not compiled with -opaque
+-> compiled  ppx_deriving_yojson.3.0
+-> installed ppx_deriving_yojson.3.0
+
+#=== ERROR while compiling lwt.2.6.0 ==========================================#
+# command              ocaml setup.ml -configure --prefix /home/opam/.opam/ocaml-base-compiler.4.03.0 --disable-libev --enable-camlp4 --disable-react --disable-ssl --enable-unix --enable-preemptive --disable-glib --enable-ppx
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lwt.2.6.0
+# exit-code            1
+# env-file             /home/opam/.opam/log/lwt-1-4519e5.env
+# output-file          /home/opam/.opam/log/lwt-1-4519e5.out
+### output ###
+# ocamlfind: Package `camlp4.quotations.o' not found
+# W: Field 'pkg_camlp4_quotations_o' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-94a97d.txt'' terminated with error code 2
+# ocamlfind: Package `camlp4.quotations.o' not found
+# W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-d951f6.txt'' terminated with error code 2")
+# E: Cannot find findlib package camlp4.quotations.o
+# E: Failure("1 configuration error")
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install socket-daemon 0.3.0
++- 
++- The following actions failed
+| - build lwt 2.6.0
++- 
++- The following changes have been performed
+| - install base-bytes          base      
+| - install biniou              1.0.12    
+| - install cppo                1.4.1     
+| - install easy-format         1.2.0     
+| - install ppx_deriving        4.1       
+| - install ppx_deriving_yojson 3.0       
+| - install ppx_tools           5.0+4.03.0
+| - install result              1.2       
+| - install yojson              1.3.3     
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/backup/state-20161222171355.export"
+'opam install --verbose --yes --jobs=2 socket-daemon' failed.
+[2016-12-22 17:14.11] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "socket-daemon" exited with status 4
