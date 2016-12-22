@@ -1,0 +1,46 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 smtp /home/opam/opam-repository/cache
+[2016-12-22 16:20.29] Starting...
+[2016-12-22 16:20.29] Waiting for free pool slot to run
+[2016-12-22 18:18.41] Pool slot obtained, starting run
+[2016-12-22 18:18.41] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 smtp
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install smtp 0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [smtp.0.3: dl]
+[smtp.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [smtp: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" "unix=true" "lwt=false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/smtp.0.3)
+- ocamlfind ocamldep -modules test/test_unix.ml > test/test_unix.ml.depends
+- ocamlfind ocamldep -modules src/smtp_unix.mli > src/smtp_unix.mli.depends
+- ocamlfind ocamldep -modules src/smtp.mli > src/smtp.mli.depends
+- ocamlfind ocamlc -c -bin-annot -I src -I test -o src/smtp.cmi src/smtp.mli
+- ocamlfind ocamlc -c -bin-annot -I src -I test -o src/smtp_unix.cmi src/smtp_unix.mli
+- ocamlfind ocamlc -c -bin-annot -I test -I src -o test/test_unix.cmo test/test_unix.ml
+- ocamlfind ocamldep -modules src/smtp_unix.ml > src/smtp_unix.ml.depends
+- ocamlfind ocamldep -modules src/smtp.ml > src/smtp.ml.depends
+- ocamlfind ocamlopt -c -bin-annot -I src -I test -o src/smtp.cmx src/smtp.ml
+- ocamlfind ocamlopt -c -bin-annot -I src -I test -o src/smtp_unix.cmx src/smtp_unix.ml
+- ocamlfind ocamlopt -c -bin-annot -I test -I src -o test/test_unix.cmx test/test_unix.ml
+- ocamlfind ocamlopt -linkpkg unix.cmxa src/smtp.cmx src/smtp_unix.cmx test/test_unix.cmx -o test/test_unix.native
+- ocamlfind ocamlopt -a src/smtp.cmx -o src/smtp.cmxa
+- ocamlfind ocamlc -c -bin-annot -I src -I test -o src/smtp.cmo src/smtp.ml
+- ocamlfind ocamlc -a src/smtp.cmo -o src/smtp.cma
+- ocamlfind ocamlopt -shared src/smtp.cmx -o src/smtp.cmxs
+- ocamlfind ocamlopt -a src/smtp.cmx src/smtp_unix.cmx -o src/smtp_unix.cmxa
+- ocamlfind ocamlc -c -bin-annot -I src -I test -o src/smtp_unix.cmo src/smtp_unix.ml
+- ocamlfind ocamlc -a src/smtp.cmo src/smtp_unix.cmo -o src/smtp_unix.cma
+- ocamlfind ocamlopt -shared src/smtp_unix.cmx -o src/smtp_unix.cmxs
+-> compiled  smtp.0.3
+-> installed smtp.0.3
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:18.57] Success
