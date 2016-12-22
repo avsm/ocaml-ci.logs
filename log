@@ -1,0 +1,272 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 aio /home/opam/opam-repository/cache
+[2016-12-22 16:19.08] Starting...
+[2016-12-22 16:19.08] Waiting for free pool slot to run
+[2016-12-22 17:23.03] Pool slot obtained, starting run
+[2016-12-22 17:23.03] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 aio
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libaio-dev
+#  - m4
+# The following new OS packages need to be installed: libaio-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libaio-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libaio1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libaio1_0.3.110-2_amd64.deb ...
+Unpacking libaio1:amd64 (0.3.110-2) ...
+Selecting previously unselected package libaio-dev.
+Preparing to unpack .../libaio-dev_0.3.110-2_amd64.deb ...
+Unpacking libaio-dev (0.3.110-2) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libaio1:amd64 (0.3.110-2) ...
+Setting up libaio-dev (0.3.110-2) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install aio 0.0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [aio.0.0.3: dl]
+[aio.0.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [aio: patch]
+Processing  1/2: [aio: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3)
+- make -C lib all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- ocamldep aio.mli > ._bcdi/aio.di
+- ocamldep aio.ml > ._d/aio.d
+- ocamldep aio_buffer.ml > ._d/aio_buffer.d
+- ocamlc -c -cc "cc" -ccopt "-fPIC -O2 -g -W -Wall \
+- 			-DPIC   \
+- 			    -o aio_stubs.o " aio_stubs.c
+- aio_stubs.c: In function 'caml_aio_run':
+- aio_stubs.c:272:3: warning: ignoring return value of 'read', declared with attribute warn_unused_result [-Wunused-result]
+-    (void)read(ctx->fd, &num, sizeof(num));
+-    ^
+- ocamlc -c -cc "cc" -ccopt "-fPIC -O2 -g -W -Wall \
+- 			-DPIC   \
+- 			    -o aio_buffer_stubs.o " aio_buffer_stubs.c
+- ar rcs libaio_stubs.a  aio_stubs.o aio_buffer_stubs.o
+- ocamlc -c aio_buffer.ml
+- File "aio_buffer.ml", line 25, characters 0-72:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 59, characters 0-81:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 60, characters 0-89:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 61, characters 0-85:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 62, characters 0-93:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 63, characters 0-83:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 64, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 65, characters 0-83:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 66, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 68, characters 0-93:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 70, characters 0-93:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 164, characters 0-89:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 165, characters 0-97:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 166, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 167, characters 0-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 168, characters 0-89:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 169, characters 0-97:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 171, characters 0-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 173, characters 0-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 217, characters 0-89:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 218, characters 0-97:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 219, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 220, characters 0-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 221, characters 0-89:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 222, characters 0-97:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 224, characters 0-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 226, characters 0-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlc -c aio.mli
+- File "aio.mli", line 37, characters 2-74:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 60, characters 2-83:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 61, characters 2-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 62, characters 2-85:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 63, characters 2-85:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 78, characters 2-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 79, characters 2-95:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 80, characters 2-93:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 83, characters 2-93:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 84, characters 2-95:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 85, characters 2-95:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 110, characters 2-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 111, characters 2-93:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 112, characters 2-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 124, characters 2-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 125, characters 2-101:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 126, characters 2-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 127, characters 2-101:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 128, characters 2-101:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 140, characters 2-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 141, characters 2-93:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 142, characters 2-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 154, characters 2-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 155, characters 2-101:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 156, characters 2-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 157, characters 2-101:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio.mli", line 158, characters 2-101:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlc -c aio.ml
+- ocamlmklib         \
+- 			-o aio_stubs  aio_stubs.o aio_buffer_stubs.o -laio  \
+- 			
+- ocamlc -a -cclib -laio_stubs -cclib -laio   -dllib dllaio_stubs.so -custom             -o aio.cma aio_buffer.cmo aio.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- ocamldep -native aio.mli > ._ncdi/aio.di
+- make[2]: 'libaio_stubs.a' is up to date.
+- ocamlopt -c aio_buffer.ml
+- File "aio_buffer.ml", line 25, characters 0-72:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 59, characters 0-81:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 60, characters 0-89:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 61, characters 0-85:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 62, characters 0-93:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 63, characters 0-83:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 64, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 65, characters 0-83:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 66, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 68, characters 0-93:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 70, characters 0-93:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 164, characters 0-89:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 165, characters 0-97:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 166, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 167, characters 0-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 168, characters 0-89:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 169, characters 0-97:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 171, characters 0-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 173, characters 0-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 217, characters 0-89:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 218, characters 0-97:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 219, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 220, characters 0-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 221, characters 0-89:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 222, characters 0-97:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 224, characters 0-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "aio_buffer.ml", line 226, characters 0-99:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlopt -c aio.ml
+- ocamlopt -a -cclib -laio_stubs -cclib -laio               -o aio.cmxa aio_buffer.cmx aio.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+-> compiled  aio.0.0.3
+Processing  2/2: [aio: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3)
+- make -C lib install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- make[2]: 'libaio_stubs.a' is up to date.
+- ocamlc -a -cclib -laio_stubs -cclib -laio   -dllib dllaio_stubs.so -custom             -o aio.cma aio_buffer.cmo aio.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- make[2]: 'libaio_stubs.a' is up to date.
+- make[2]: 'aio.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  aio META aio.mli aio.cmi aio.cma aio.cmxa aio.a libaio_stubs.a dllaio_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/aio/libaio_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/aio/aio.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/aio/aio.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/aio/aio.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/aio/aio.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/aio/aio.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/aio/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllaio_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllaio_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+-> installed aio.0.0.3
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:23.21] Success
