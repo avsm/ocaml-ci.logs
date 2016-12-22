@@ -1,0 +1,115 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install owee 0.2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [owee.0.2: dl]
+[owee.0.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [owee: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2)
+- make -C src
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2/src'
+- ocamlfind ocamldep owee_marker.mli > ._bcdi/owee_marker.di
+- ocamlfind ocamldep owee_location.mli > ._bcdi/owee_location.di
+- ocamlfind ocamldep owee_debug_line.mli > ._bcdi/owee_debug_line.di
+- ocamlfind ocamldep owee_elf.mli > ._bcdi/owee_elf.di
+- ocamlfind ocamldep owee_interval_tree.mli > ._bcdi/owee_interval_tree.di
+- ocamlfind ocamldep owee_buf.mli > ._bcdi/owee_buf.di
+- ocamlfind ocamldep owee_marker.ml > ._d/owee_marker.d
+- ocamlfind ocamldep owee_location.ml > ._d/owee_location.d
+- ocamlfind ocamldep owee_debug_line.ml > ._d/owee_debug_line.d
+- ocamlfind ocamldep owee_elf.ml > ._d/owee_elf.d
+- ocamlfind ocamldep owee_interval_tree.ml > ._d/owee_interval_tree.d
+- ocamlfind ocamldep owee_buf.ml > ._d/owee_buf.d
+- ocamlc -c -cc "cc" -ccopt "-fPIC  \
+- 			-DPIC   \
+- 			    -o owee_stubs.o " owee_stubs.c
+- ar rcs libowee_stubs.a  owee_stubs.o
+- ocamlfind ocamlc -package unix,bigarray -c owee_buf.mli
+- ocamlfind ocamlc -package unix,bigarray -c owee_buf.ml
+- ocamlfind ocamlc -package unix,bigarray -c owee_interval_tree.mli
+- ocamlfind ocamlc -package unix,bigarray -c owee_interval_tree.ml
+- ocamlfind ocamlc -package unix,bigarray -c owee_elf.mli
+- ocamlfind ocamlc -package unix,bigarray -c owee_elf.ml
+- ocamlfind ocamlc -package unix,bigarray -c owee_debug_line.mli
+- ocamlfind ocamlc -package unix,bigarray -c owee_debug_line.ml
+- ocamlfind ocamlc -package unix,bigarray -c owee_location.mli
+- ocamlfind ocamlc -package unix,bigarray -c owee_location.ml
+- ocamlfind ocamlc -package unix,bigarray -c owee_marker.mli
+- ocamlfind ocamlc -package unix,bigarray -c owee_marker.ml
+- ocamlmklib         \
+- 			-o owee_stubs  owee_stubs.o   \
+- 			
+- ocamlfind ocamlc -a -cclib -lowee_stubs    -dllib dllowee_stubs.so -custom             -o owee.cma owee_buf.cmo owee_interval_tree.cmo owee_elf.cmo owee_debug_line.cmo owee_location.cmo owee_marker.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2/src'
+- ocamlfind ocamldep -native owee_marker.mli > ._ncdi/owee_marker.di
+- ocamlfind ocamldep -native owee_location.mli > ._ncdi/owee_location.di
+- ocamlfind ocamldep -native owee_debug_line.mli > ._ncdi/owee_debug_line.di
+- ocamlfind ocamldep -native owee_elf.mli > ._ncdi/owee_elf.di
+- ocamlfind ocamldep -native owee_interval_tree.mli > ._ncdi/owee_interval_tree.di
+- ocamlfind ocamldep -native owee_buf.mli > ._ncdi/owee_buf.di
+- make[2]: 'libowee_stubs.a' is up to date.
+- ocamlfind ocamlopt -package unix,bigarray -c owee_buf.ml
+- ocamlfind ocamlopt -package unix,bigarray -c owee_interval_tree.ml
+- ocamlfind ocamlopt -package unix,bigarray -c owee_elf.ml
+- ocamlfind ocamlopt -package unix,bigarray -c owee_debug_line.ml
+- ocamlfind ocamlopt -package unix,bigarray -c owee_location.ml
+- ocamlfind ocamlopt -package unix,bigarray -c owee_marker.ml
+- ocamlfind ocamlopt -a -cclib -lowee_stubs                -o owee.cmxa owee_buf.cmx owee_interval_tree.cmx owee_elf.cmx owee_debug_line.cmx owee_location.cmx owee_marker.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2/src'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2/src'
+-> compiled  owee.0.2
+Processing  2/2: [owee: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2)
+- make -C src
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2/src'
+- make[2]: 'libowee_stubs.a' is up to date.
+- make[2]: 'owee.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2/src'
+- make[2]: 'libowee_stubs.a' is up to date.
+- make[2]: 'owee.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2/src'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/owee.0.2/src'
+- ocamlfind install owee src/owee_buf.mli src/owee_buf.ml src/owee_buf.cmi src/owee_buf.cmx src/owee_elf.mli src/owee_elf.ml src/owee_elf.cmi src/owee_elf.cmx src/owee_debug_line.ml src/owee_debug_line.mli src/owee_debug_line.cmi src/owee_debug_line.cmx src/owee_location.mli src/owee_location.ml src/owee_location.cmi src/owee_location.cmx src/owee_marker.mli src/owee_marker.ml src/owee_marker.cmi src/owee_marker.cmx src/owee.cma src/owee.a src/owee.cmxa src/dllowee_stubs.so src/libowee_stubs.a src/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/libowee_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_marker.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_marker.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_marker.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_marker.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_location.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_location.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_location.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_location.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_debug_line.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_debug_line.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_debug_line.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_debug_line.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_elf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_elf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_elf.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_elf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_buf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_buf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_buf.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/owee_buf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/owee/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllowee_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllowee_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+-> installed owee.0.2
+Done.
+# Run eval `opam env` to update the current shell environment
