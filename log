@@ -1,0 +1,1934 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 tptp /home/opam/opam-repository/cache
+[2016-12-22 16:18.58] Starting...
+[2016-12-22 16:18.58] Waiting for free pool slot to run
+[2016-12-22 17:17.04] Pool slot obtained, starting run
+[2016-12-22 17:17.04] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 tptp
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libgmp-dev
+#  - m4
+#  - perl
+# The following new OS packages need to be installed: libgmp-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libgmp-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libgmpxx4ldbl:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libgmpxx4ldbl_2%3a6.1.0+dfsg-2_amd64.deb ...
+Unpacking libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+Selecting previously unselected package libgmp-dev:amd64.
+Preparing to unpack .../libgmp-dev_2%3a6.1.0+dfsg-2_amd64.deb ...
+Unpacking libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libgmpxx4ldbl:amd64 (2:6.1.0+dfsg-2) ...
+Setting up libgmp-dev:amd64 (2:6.1.0+dfsg-2) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install pprint    20140424                                  [required by tptp]
+  - install menhir    20161115                                  [required by tptp]
+  - install conf-gmp  1                                         [required by zarith]
+  - install conf-perl 1                                         [required by zarith]
+  - install zarith    1.4.1                                     [required by tptp]
+  - install tptp      0.3.2   
+===== 6 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  3/6: [menhir.20161115: dl]
+Processing  4/6: [menhir.20161115: dl] [pprint.20140424: dl]
+Processing  5/6: [menhir.20161115: dl] [pprint.20140424: dl] [tptp.0.3.2: dl]
+[menhir.20161115] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/6: [pprint.20140424: dl] [tptp.0.3.2: dl]
+[tptp.0.3.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/6: [pprint.20140424: dl]
+[pprint.20140424] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/6:
+Processing  6/6: [zarith.1.4.1: dl]
+[zarith.1.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/12: [conf-gmp: sh]
+Processing  2/12: [conf-gmp: sh] [conf-perl: perl]
++ perl "--version" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-perl.1)
+- 
+- This is perl 5, version 22, subversion 1 (v5.22.1) built for x86_64-linux-gnu-thread-multi
+- (with 58 registered patches, see perl -V for more detail)
+- 
+- Copyright 1987-2015, Larry Wall
+- 
+- Perl may be copied only under the terms of either the Artistic License or the
+- GNU General Public License, which may be found in the Perl 5 source kit.
+- 
+- Complete documentation for Perl, including FAQ lists, should be found on
+- this system using "man perl" or "perldoc perl".  If you have access to the
+- Internet, point your browser at http://www.perl.org/, the Perl Home Page.
+- 
+- 
+- This is perl 5, version 22, subversion 1 (v5.22.1) built for x86_64-linux-gnu-thread-multi
+- (with 58 registered patches, see perl -V for more detail)
+- 
+- Copyright 1987-2015, Larry Wall
+- 
+- Perl may be copied only under the terms of either the Artistic License or the
+- GNU General Public License, which may be found in the Perl 5 source kit.
+- 
+- Complete documentation for Perl, including FAQ lists, should be found on
+- this system using "man perl" or "perldoc perl".  If you have access to the
+- Internet, point your browser at http://www.perl.org/, the Perl Home Page.
+- 
+-> compiled  conf-perl.1
+Processing  2/12: [conf-gmp: sh]
+Processing  3/12: [conf-gmp: sh] [menhir: make Makefile]
++ sh "-exc" "cc -c $CFLAGS -I/usr/local/include test.c" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-gmp.1)
+- + cc -c -I/usr/local/include test.c
+- test.c: In function 'test':
+- test.c:7:2: warning: implicit declaration of function '__gmp_init' [-Wimplicit-function-declaration]
+-   __gmp_init();
+-   ^
+- + cc -c -I/usr/local/include test.c
+- test.c: In function 'test':
+- test.c:7:2: warning: implicit declaration of function '__gmp_init' [-Wimplicit-function-declaration]
+-   __gmp_init();
+-   ^
+-> compiled  conf-gmp.1
+Processing  3/12: [menhir: make Makefile]
+Processing  4/12: [menhir: make Makefile] [pprint: make src]
++ make "-C" "src" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pprint.20140424)
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pprint.20140424/src'
+- ocamlbuild -use-ocamlfind -cflags "-g" -lflags "-g" -classic-display PPrintLib.cma PPrintLib.cmxa
+- ocamlfind ocamldep -modules PPrint.ml > PPrint.ml.depends
+- ocamlfind ocamldep -modules PPrintCombinators.mli > PPrintCombinators.mli.depends
+- ocamlfind ocamldep -modules PPrintEngine.mli > PPrintEngine.mli.depends
+- ocamlfind ocamldep -modules PPrintRenderer.ml > PPrintRenderer.ml.depends
+- ocamlfind ocamlc -c -g -o PPrintRenderer.cmo PPrintRenderer.ml
+- ocamlfind ocamlc -c -g -o PPrintEngine.cmi PPrintEngine.mli
+- ocamlfind ocamldep -modules PPrintOCaml.mli > PPrintOCaml.mli.depends
+- ocamlfind ocamlc -c -g -o PPrintCombinators.cmi PPrintCombinators.mli
+- ocamlfind ocamlc -c -g -o PPrintOCaml.cmi PPrintOCaml.mli
+- ocamlfind ocamldep -modules PPrintCombinators.ml > PPrintCombinators.ml.depends
+- ocamlfind ocamldep -modules PPrintEngine.ml > PPrintEngine.ml.depends
+- ocamlfind ocamldep -modules PPrintOCaml.ml > PPrintOCaml.ml.depends
+- ocamlfind ocamlc -c -g -o PPrint.cmo PPrint.ml
+- ocamlfind ocamlc -c -g -o PPrintCombinators.cmo PPrintCombinators.ml
+- ocamlfind ocamlc -c -g -o PPrintEngine.cmo PPrintEngine.ml
+- ocamlfind ocamlc -c -g -o PPrintOCaml.cmo PPrintOCaml.ml
+- ocamlfind ocamlc -a -g PPrintRenderer.cmo PPrintEngine.cmo PPrintCombinators.cmo PPrintOCaml.cmo PPrint.cmo -o PPrintLib.cma
+- ocamlfind ocamlopt -c -g -o PPrintRenderer.cmx PPrintRenderer.ml
+- ocamlfind ocamlopt -c -g -o PPrintEngine.cmx PPrintEngine.ml
+- ocamlfind ocamlopt -c -g -o PPrintCombinators.cmx PPrintCombinators.ml
+- ocamlfind ocamlopt -c -g -o PPrintOCaml.cmx PPrintOCaml.ml
+- ocamlfind ocamlopt -c -g -o PPrint.cmx PPrint.ml
+- ocamlfind ocamlopt -a -g PPrintRenderer.cmx PPrintEngine.cmx PPrintCombinators.cmx PPrintOCaml.cmx PPrint.cmx -o PPrintLib.cmxa
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pprint.20140424/src'
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pprint.20140424/src'
+- ocamlbuild -use-ocamlfind -cflags "-g" -lflags "-g" -classic-display PPrintLib.cma PPrintLib.cmxa
+- ocamlfind ocamldep -modules PPrint.ml > PPrint.ml.depends
+- ocamlfind ocamldep -modules PPrintCombinators.mli > PPrintCombinators.mli.depends
+- ocamlfind ocamldep -modules PPrintEngine.mli > PPrintEngine.mli.depends
+- ocamlfind ocamldep -modules PPrintRenderer.ml > PPrintRenderer.ml.depends
+- ocamlfind ocamlc -c -g -o PPrintRenderer.cmo PPrintRenderer.ml
+- ocamlfind ocamlc -c -g -o PPrintEngine.cmi PPrintEngine.mli
+- ocamlfind ocamldep -modules PPrintOCaml.mli > PPrintOCaml.mli.depends
+- ocamlfind ocamlc -c -g -o PPrintCombinators.cmi PPrintCombinators.mli
+- ocamlfind ocamlc -c -g -o PPrintOCaml.cmi PPrintOCaml.mli
+- ocamlfind ocamldep -modules PPrintCombinators.ml > PPrintCombinators.ml.depends
+- ocamlfind ocamldep -modules PPrintEngine.ml > PPrintEngine.ml.depends
+- ocamlfind ocamldep -modules PPrintOCaml.ml > PPrintOCaml.ml.depends
+- ocamlfind ocamlc -c -g -o PPrint.cmo PPrint.ml
+- ocamlfind ocamlc -c -g -o PPrintCombinators.cmo PPrintCombinators.ml
+- ocamlfind ocamlc -c -g -o PPrintEngine.cmo PPrintEngine.ml
+- ocamlfind ocamlc -c -g -o PPrintOCaml.cmo PPrintOCaml.ml
+- ocamlfind ocamlc -a -g PPrintRenderer.cmo PPrintEngine.cmo PPrintCombinators.cmo PPrintOCaml.cmo PPrint.cmo -o PPrintLib.cma
+- ocamlfind ocamlopt -c -g -o PPrintRenderer.cmx PPrintRenderer.ml
+- ocamlfind ocamlopt -c -g -o PPrintEngine.cmx PPrintEngine.ml
+- ocamlfind ocamlopt -c -g -o PPrintCombinators.cmx PPrintCombinators.ml
+- ocamlfind ocamlopt -c -g -o PPrintOCaml.cmx PPrintOCaml.ml
+- ocamlfind ocamlopt -c -g -o PPrint.cmx PPrint.ml
+- ocamlfind ocamlopt -a -g PPrintRenderer.cmx PPrintEngine.cmx PPrintCombinators.cmx PPrintOCaml.cmx PPrint.cmx -o PPrintLib.cmxa
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pprint.20140424/src'
+-> compiled  pprint.20140424
+Processing  4/12: [menhir: make Makefile]
+-> installed conf-gmp.1
+Processing  5/12: [menhir: make Makefile]
+-> installed conf-perl.1
+Processing  6/12: [menhir: make Makefile]
+Processing  7/12: [menhir: make Makefile] [zarith: ./configure]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/zarith.1.4.1)
+- binary ocaml: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamlc: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamldep: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamlmklib: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamldoc: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ar: found in /usr/bin
+- binary perl: found in /usr/bin
+- binary gcc: found in /usr/bin
+- binary ocamlopt: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- checking compilation with gcc -O3 -Wall -Wextra : working
+- include caml/mlvalues.h: found
+- library dynlink.cmxa: found
+- binary ocamlfind: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- OCaml's word size is 64
+- binary uname: found in /bin
+- include gmp.h: found
+- library gmp: found
+- OCaml extended comparison supported
+- OCaml new hash functions available
+- 
+- detected configuration:
+- 
+-   native-code:          yes
+-   dynamic linking:      yes
+-   asm path:             x86_64
+-   defines:              -DZ_OCAML_HASH -DZ_OCAML_COMPARE_EXT -DHAS_GMP -DZ_ELF -DZ_DOT_LABEL_PREFIX 
+-   libraries:             -lgmp
+-   C options:            -O3 -Wall -Wextra 
+-   asm options           
+-   installation path:    /home/opam/.opam/ocaml-base-compiler.4.03.0/lib
+-   installation method   findlib
+- 
+- configuration successful!
+- now type "make" to build
+- then type "make install" or "sudo make install" to install
+- binary ocaml: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamlc: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamldep: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamlmklib: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ocamldoc: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- binary ar: found in /usr/bin
+- binary perl: found in /usr/bin
+- binary gcc: found in /usr/bin
+- binary ocamlopt: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- checking compilation with gcc -O3 -Wall -Wextra : working
+- include caml/mlvalues.h: found
+- library dynlink.cmxa: found
+- binary ocamlfind: found in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- OCaml's word size is 64
+- binary uname: found in /bin
+- include gmp.h: found
+- library gmp: found
+- OCaml extended comparison supported
+- OCaml new hash functions available
+- 
+- detected configuration:
+- 
+-   native-code:          yes
+-   dynamic linking:      yes
+-   asm path:             x86_64
+-   defines:              -DZ_OCAML_HASH -DZ_OCAML_COMPARE_EXT -DHAS_GMP -DZ_ELF -DZ_DOT_LABEL_PREFIX 
+-   libraries:             -lgmp
+-   C options:            -O3 -Wall -Wextra 
+-   asm options           
+-   installation path:    /home/opam/.opam/ocaml-base-compiler.4.03.0/lib
+-   installation method   findlib
+- 
+- configuration successful!
+- now type "make" to build
+- then type "make install" or "sudo make install" to install
+Processing  7/12: [menhir: make Makefile] [zarith: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/zarith.1.4.1)
+- project.mak:137: depend: No such file or directory
+- ./z_pp.pl x86_64
+- found assembly file caml_z_x86_64.S
+-   found abs
+-   found add
+-   found div
+-   found divexact
+-   found logand
+-   found lognot
+-   found logor
+-   found logxor
+-   found mul
+-   found neg
+-   found pred
+-   found rem
+-   found shift_left
+-   found shift_right
+-   found sub
+-   found succ
+- ocamldep -native  *.ml *.mli > depend
+- ocamlc   -c z.mli
+- File "z.mli", line 63, characters 0-51:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 229, characters 0-53:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 236, characters 0-67:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 318, characters 0-56:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 321, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 324, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 327, characters 0-68:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 356, characters 0-58:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 364, characters 0-55:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 379, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 396, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 506, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 601, characters 0-49:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlc   -c z.ml
+- File "z.ml", line 50, characters 0-51:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 61, characters 0-58:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 62, characters 0-55:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 63, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 68, characters 0-53:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 69, characters 0-67:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 72, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 73, characters 0-56:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 74, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 75, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 76, characters 0-68:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 88, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 135, characters 0-70:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 216, characters 0-49:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlc   -c q.mli
+- ocamlc   -c q.ml
+- ocamlc   -c big_int_Z.mli
+- ocamlc   -c big_int_Z.ml
+- ocamlmklib -failsafe -o zarith z.cmo q.cmo big_int_Z.cmo -lgmp
+- gcc -DZ_OCAML_HASH -DZ_OCAML_COMPARE_EXT -DHAS_GMP -DZ_ELF -DZ_DOT_LABEL_PREFIX     -c -o caml_z_x86_64.o caml_z_x86_64.S
+- ocamlc -ccopt "-I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml  -DZ_OCAML_HASH -DZ_OCAML_COMPARE_EXT -DHAS_GMP -DZ_ELF -DZ_DOT_LABEL_PREFIX  -O3 -Wall -Wextra " -c caml_z.c
+- ocamlmklib -failsafe -o zarith caml_z_x86_64.o caml_z.o -lgmp
+- ocamlopt   -c z.ml
+- File "z.ml", line 50, characters 0-51:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 61, characters 0-58:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 62, characters 0-55:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 63, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 68, characters 0-53:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 69, characters 0-67:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 72, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 73, characters 0-56:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 74, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 75, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 76, characters 0-68:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 88, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 135, characters 0-70:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 216, characters 0-49:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlopt   -c q.ml
+- ocamlopt   -c big_int_Z.ml
+- ocamlmklib -failsafe -o zarith z.cmx q.cmx big_int_Z.cmx -lgmp
+- ocamlopt -shared -o zarith.cmxs -I . zarith.cmxa
+- project.mak:137: depend: No such file or directory
+- ./z_pp.pl x86_64
+- found assembly file caml_z_x86_64.S
+-   found abs
+-   found add
+-   found div
+-   found divexact
+-   found logand
+-   found lognot
+-   found logor
+-   found logxor
+-   found mul
+-   found neg
+-   found pred
+-   found rem
+-   found shift_left
+-   found shift_right
+-   found sub
+-   found succ
+- ocamldep -native  *.ml *.mli > depend
+- ocamlc   -c z.mli
+- File "z.mli", line 63, characters 0-51:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 229, characters 0-53:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 236, characters 0-67:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 318, characters 0-56:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 321, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 324, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 327, characters 0-68:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 356, characters 0-58:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 364, characters 0-55:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 379, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 396, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 506, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.mli", line 601, characters 0-49:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlc   -c z.ml
+- File "z.ml", line 50, characters 0-51:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 61, characters 0-58:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 62, characters 0-55:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 63, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 68, characters 0-53:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 69, characters 0-67:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 72, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 73, characters 0-56:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 74, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 75, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 76, characters 0-68:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 88, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 135, characters 0-70:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 216, characters 0-49:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlc   -c q.mli
+- ocamlc   -c q.ml
+- ocamlc   -c big_int_Z.mli
+- ocamlc   -c big_int_Z.ml
+- ocamlmklib -failsafe -o zarith z.cmo q.cmo big_int_Z.cmo -lgmp
+- gcc -DZ_OCAML_HASH -DZ_OCAML_COMPARE_EXT -DHAS_GMP -DZ_ELF -DZ_DOT_LABEL_PREFIX     -c -o caml_z_x86_64.o caml_z_x86_64.S
+- ocamlc -ccopt "-I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml  -DZ_OCAML_HASH -DZ_OCAML_COMPARE_EXT -DHAS_GMP -DZ_ELF -DZ_DOT_LABEL_PREFIX  -O3 -Wall -Wextra " -c caml_z.c
+- ocamlmklib -failsafe -o zarith caml_z_x86_64.o caml_z.o -lgmp
+- ocamlopt   -c z.ml
+- File "z.ml", line 50, characters 0-51:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 61, characters 0-58:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 62, characters 0-55:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 63, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 68, characters 0-53:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 69, characters 0-67:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 72, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 73, characters 0-56:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 74, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 75, characters 0-60:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 76, characters 0-68:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 88, characters 0-47:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 135, characters 0-70:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "z.ml", line 216, characters 0-49:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlopt   -c q.ml
+- ocamlopt   -c big_int_Z.ml
+- ocamlmklib -failsafe -o zarith z.cmx q.cmx big_int_Z.cmx -lgmp
+- ocamlopt -shared -o zarith.cmxs -I . zarith.cmxa
+-> compiled  zarith.1.4.1
+Processing  7/12: [menhir: make Makefile]
+Processing  8/12: [menhir: make Makefile] [pprint: make src]
++ make "-C" "src" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pprint.20140424)
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pprint.20140424/src'
+- ocamlbuild -use-ocamlfind -cflags "-g" -lflags "-g" -classic-display PPrintLib.cma PPrintLib.cmxa
+- ocamlfind install pprint META \
+- 	_build/PPrintLib.cma _build/PPrintLib.cmxa \
+- 	_build/PPrintLib.a _build/*.cmx _build/*.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintRenderer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintOCaml.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintEngine.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintCombinators.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrint.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintRenderer.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintOCaml.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintEngine.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintCombinators.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrint.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintLib.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintLib.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintLib.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/META
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pprint.20140424/src'
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pprint.20140424/src'
+- ocamlbuild -use-ocamlfind -cflags "-g" -lflags "-g" -classic-display PPrintLib.cma PPrintLib.cmxa
+- ocamlfind install pprint META \
+- 	_build/PPrintLib.cma _build/PPrintLib.cmxa \
+- 	_build/PPrintLib.a _build/*.cmx _build/*.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintRenderer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintOCaml.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintEngine.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintCombinators.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrint.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintRenderer.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintOCaml.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintEngine.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintCombinators.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrint.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintLib.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintLib.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/PPrintLib.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint/META
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pprint.20140424/src'
+-> installed pprint.20140424
+Processing  8/12: [menhir: make Makefile]
+Processing  9/12: [menhir: make Makefile] [zarith: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/zarith.1.4.1)
+- ocamlfind install -destdir "/home/opam/.opam/ocaml-base-compiler.4.03.0/lib" zarith META zarith.h zarith.cma libzarith.a z.mli q.mli big_int_Z.mli z.cmi q.cmi big_int_Z.cmi zarith.a zarith.cmxa zarith.cmxs dllzarith.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/big_int_Z.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/q.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/z.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/big_int_Z.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/q.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/z.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/libzarith.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllzarith.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllzarith.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+- ocamlfind install -destdir "/home/opam/.opam/ocaml-base-compiler.4.03.0/lib" zarith META zarith.h zarith.cma libzarith.a z.mli q.mli big_int_Z.mli z.cmi q.cmi big_int_Z.cmi zarith.a zarith.cmxa zarith.cmxs dllzarith.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/big_int_Z.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/q.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/z.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/big_int_Z.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/q.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/z.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/libzarith.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/zarith.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllzarith.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllzarith.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+-> installed zarith.1.4.1
+Processing  9/12: [menhir: make Makefile]
++ make "-f" "Makefile" "PREFIX=/home/opam/.opam/ocaml-base-compiler.4.03.0" "USE_OCAMLFIND=true" "docdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/doc/menhir" "libdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhir" "mandir=/home/opam/.opam/ocaml-base-compiler.4.03.0/man/man1" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/menhir.20161115)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/menhir.20161115/src'
+- ocamlbuild -classic-display -j 0 -cflags "-safe-string -bin-annot" menhirLib.cmo menhirLib.cmx
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules General.mli > General.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o General.cmi General.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules General.ml > General.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Convert.mli > Convert.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Convert.cmi Convert.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Convert.ml > Convert.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules IncrementalEngine.ml > IncrementalEngine.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules EngineTypes.ml > EngineTypes.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o IncrementalEngine.cmo IncrementalEngine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Engine.mli > Engine.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o EngineTypes.cmo EngineTypes.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Engine.cmi Engine.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Engine.ml > Engine.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Printers.mli > Printers.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Printers.cmi Printers.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Printers.ml > Printers.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InfiniteArray.mli > InfiniteArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o InfiniteArray.cmi InfiniteArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InfiniteArray.ml > InfiniteArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules PackedIntArray.mli > PackedIntArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o PackedIntArray.cmi PackedIntArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules PackedIntArray.ml > PackedIntArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules RowDisplacement.mli > RowDisplacement.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o RowDisplacement.cmi RowDisplacement.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules RowDisplacement.ml > RowDisplacement.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LinearizedArray.mli > LinearizedArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o LinearizedArray.cmi LinearizedArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LinearizedArray.ml > LinearizedArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules TableFormat.ml > TableFormat.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InspectionTableFormat.ml > InspectionTableFormat.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InspectionTableInterpreter.mli > InspectionTableInterpreter.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o InspectionTableFormat.cmo InspectionTableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o TableFormat.cmo TableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o InspectionTableInterpreter.cmi InspectionTableInterpreter.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InspectionTableInterpreter.ml > InspectionTableInterpreter.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules TableInterpreter.mli > TableInterpreter.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o TableInterpreter.cmi TableInterpreter.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules TableInterpreter.ml > TableInterpreter.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules StaticVersion.mli > StaticVersion.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o StaticVersion.cmi StaticVersion.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules StaticVersion.ml > StaticVersion.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o General.cmo General.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o Convert.cmo Convert.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o Engine.cmo Engine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o Printers.cmo Printers.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o InfiniteArray.cmo InfiniteArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o PackedIntArray.cmo PackedIntArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o RowDisplacement.cmo RowDisplacement.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o LinearizedArray.cmo LinearizedArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o InspectionTableInterpreter.cmo InspectionTableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o TableInterpreter.cmo TableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o StaticVersion.cmo StaticVersion.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -pack -g General.cmo Convert.cmo IncrementalEngine.cmo EngineTypes.cmo Engine.cmo Printers.cmo InfiniteArray.cmo PackedIntArray.cmo RowDisplacement.cmo LinearizedArray.cmo TableFormat.cmo InspectionTableFormat.cmo InspectionTableInterpreter.cmo TableInterpreter.cmo StaticVersion.cmo -o menhirLib.cmo
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o General.cmx General.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o IncrementalEngine.cmx IncrementalEngine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o EngineTypes.cmx EngineTypes.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o InfiniteArray.cmx InfiniteArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o PackedIntArray.cmx PackedIntArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o InspectionTableFormat.cmx InspectionTableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o LinearizedArray.cmx LinearizedArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o TableFormat.cmx TableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o Engine.cmx Engine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o RowDisplacement.cmx RowDisplacement.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o Convert.cmx Convert.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o Printers.cmx Printers.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o InspectionTableInterpreter.cmx InspectionTableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o TableInterpreter.cmx TableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o StaticVersion.cmx StaticVersion.ml
+- touch menhirLib.mli  ; if  /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -pack -g General.cmx Convert.cmx IncrementalEngine.cmx EngineTypes.cmx Engine.cmx Printers.cmx InfiniteArray.cmx PackedIntArray.cmx RowDisplacement.cmx LinearizedArray.cmx TableFormat.cmx InspectionTableFormat.cmx InspectionTableInterpreter.cmx TableInterpreter.cmx StaticVersion.cmx -o menhirLib.cmx  ; then  rm -f menhirLib.mli  ; else  rm -f menhirLib.mli  ; exit 1; fi
+- # Parallel statistics: { count(total): 2(56), max: 11, min: 5, average(total): 8.000(1.250) }
+- Checking that OCaml is recent enough...
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules checkOCamlVersion.ml > checkOCamlVersion.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o checkOCamlVersion.cmo checkOCamlVersion.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt str.cma -g checkOCamlVersion.cmo -o checkOCamlVersion.byte
+- # No parallelism done
+- Version 4.03.0 is OK.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules menhir.ml > menhir.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules back.mli > back.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o back.cmi back.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o menhir.cmo menhir.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules back.ml > back.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules codeBackend.ml > codeBackend.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules codeBackend.mli > codeBackend.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules IL.mli > IL.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules stretch.mli > stretch.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules keyword.mli > keyword.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o keyword.cmi keyword.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o stretch.cmi stretch.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o IL.cmi IL.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o codeBackend.cmi codeBackend.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules action.ml > action.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules action.mli > action.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o action.cmi action.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules keyword.ml > keyword.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules printer.ml > printer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules printer.mli > printer.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o printer.cmi printer.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt -q lineCount.mll
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lineCount.ml > lineCount.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o lineCount.cmo lineCount.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules settings.ml > settings.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules settings.mli > settings.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules stringSet.mli > stringSet.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o stringSet.cmi stringSet.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o settings.cmi settings.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules installation.ml > installation.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules installation.mli > installation.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o installation.cmi installation.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules stringSet.ml > stringSet.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules version.ml > version.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o version.cmo version.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o installation.cmx installation.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o stringSet.cmx stringSet.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o version.cmx version.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lineCount.cmx lineCount.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o settings.cmx settings.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o keyword.cmx keyword.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o printer.cmx printer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules codeBits.ml > codeBits.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules codeBits.mli > codeBits.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o codeBits.cmi codeBits.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules codePieces.ml > codePieces.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules codePieces.mli > codePieces.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules grammar.ml > grammar.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules front.mli > front.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules unparameterizedSyntax.ml > unparameterizedSyntax.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules positions.mli > positions.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules stringMap.mli > stringMap.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules syntax.mli > syntax.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InputFile.mli > InputFile.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o positions.cmi positions.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o stringMap.cmi stringMap.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o InputFile.cmi InputFile.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o syntax.cmi syntax.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o unparameterizedSyntax.cmo unparameterizedSyntax.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules grammarFunctor.mli > grammarFunctor.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules gMap.ml > gMap.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules gSet.ml > gSet.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o gSet.cmo gSet.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o gMap.cmo gMap.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o front.cmi front.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o grammarFunctor.cmi grammarFunctor.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o grammar.cmo grammar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o codePieces.cmi codePieces.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o codeBits.cmx codeBits.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules front.ml > front.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules anonymous.ml > anonymous.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules anonymous.mli > anonymous.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o anonymous.cmi anonymous.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules misc.ml > misc.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules misc.mli > misc.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o misc.cmi misc.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules General.mli > General.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o General.cmi General.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules General.ml > General.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Convert.mli > Convert.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Convert.cmi Convert.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Convert.ml > Convert.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules IncrementalEngine.ml > IncrementalEngine.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules EngineTypes.ml > EngineTypes.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o IncrementalEngine.cmo IncrementalEngine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Engine.mli > Engine.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o EngineTypes.cmo EngineTypes.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Engine.cmi Engine.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Engine.ml > Engine.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Printers.mli > Printers.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Printers.cmi Printers.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Printers.ml > Printers.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InfiniteArray.mli > InfiniteArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o InfiniteArray.cmi InfiniteArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InfiniteArray.ml > InfiniteArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules PackedIntArray.mli > PackedIntArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o PackedIntArray.cmi PackedIntArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules PackedIntArray.ml > PackedIntArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules RowDisplacement.mli > RowDisplacement.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o RowDisplacement.cmi RowDisplacement.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules RowDisplacement.ml > RowDisplacement.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LinearizedArray.mli > LinearizedArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o LinearizedArray.cmi LinearizedArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LinearizedArray.ml > LinearizedArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules TableFormat.ml > TableFormat.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InspectionTableFormat.ml > InspectionTableFormat.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InspectionTableInterpreter.mli > InspectionTableInterpreter.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o InspectionTableFormat.cmo InspectionTableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o TableFormat.cmo TableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o InspectionTableInterpreter.cmi InspectionTableInterpreter.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InspectionTableInterpreter.ml > InspectionTableInterpreter.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules TableInterpreter.mli > TableInterpreter.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o TableInterpreter.cmi TableInterpreter.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules TableInterpreter.ml > TableInterpreter.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules StaticVersion.mli > StaticVersion.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o StaticVersion.cmi StaticVersion.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules StaticVersion.ml > StaticVersion.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o General.cmo General.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o Convert.cmo Convert.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o Engine.cmo Engine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o Printers.cmo Printers.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o InfiniteArray.cmo InfiniteArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o PackedIntArray.cmo PackedIntArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o RowDisplacement.cmo RowDisplacement.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o LinearizedArray.cmo LinearizedArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o InspectionTableInterpreter.cmo InspectionTableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o TableInterpreter.cmo TableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o StaticVersion.cmo StaticVersion.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -pack -g General.cmo Convert.cmo IncrementalEngine.cmo EngineTypes.cmo Engine.cmo Printers.cmo InfiniteArray.cmo PackedIntArray.cmo RowDisplacement.cmo LinearizedArray.cmo TableFormat.cmo InspectionTableFormat.cmo InspectionTableInterpreter.cmo TableInterpreter.cmo StaticVersion.cmo -o menhirLib.cmo
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o General.cmx General.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o IncrementalEngine.cmx IncrementalEngine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o EngineTypes.cmx EngineTypes.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o InfiniteArray.cmx InfiniteArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o PackedIntArray.cmx PackedIntArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o InspectionTableFormat.cmx InspectionTableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o LinearizedArray.cmx LinearizedArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o TableFormat.cmx TableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o Engine.cmx Engine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o RowDisplacement.cmx RowDisplacement.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o Convert.cmx Convert.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o Printers.cmx Printers.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o InspectionTableInterpreter.cmx InspectionTableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o TableInterpreter.cmx TableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o StaticVersion.cmx StaticVersion.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules stringMap.ml > stringMap.ml.depends
+- touch menhirLib.mli  ; if  /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -pack -g General.cmx Convert.cmx IncrementalEngine.cmx EngineTypes.cmx Engine.cmx Printers.cmx InfiniteArray.cmx PackedIntArray.cmx RowDisplacement.cmx LinearizedArray.cmx TableFormat.cmx InspectionTableFormat.cmx InspectionTableInterpreter.cmx TableInterpreter.cmx StaticVersion.cmx -o menhirLib.cmx  ; then  rm -f menhirLib.mli  ; else  rm -f menhirLib.mli  ; exit 1; fi
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o stringMap.cmx stringMap.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parameters.ml > parameters.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o parameters.cmo parameters.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules positions.ml > positions.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o positions.cmx positions.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o action.cmx action.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InputFile.ml > InputFile.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o InputFile.cmx InputFile.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o misc.cmx misc.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o parameters.cmx parameters.ml
+- cp -p yaccDriver.ml Driver.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Driver.ml > Driver.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Driver.mli > Driver.mli.depends
+- cp -p yacc-parser.mly parser.mly
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlyacc parser.mly
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parser.mli > parser.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o parser.cmi parser.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Driver.cmi Driver.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules error.ml > error.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules error.mli > error.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o error.cmi error.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parser.ml > parser.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parserAux.ml > parserAux.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parserAux.mli > parserAux.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o parserAux.cmi parserAux.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o error.cmx error.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules option.ml > option.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules option.mli > option.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o option.cmi option.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o option.cmx option.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o parserAux.cmx parserAux.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o parser.cmx parser.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules IO.ml > IO.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules IO.mli > IO.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o IO.cmi IO.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules infer.ml > infer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules infer.mli > infer.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o infer.cmi infer.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o IO.cmx IO.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules interface.ml > interface.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules interface.mli > interface.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o interface.cmi interface.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules nonterminalType.ml > nonterminalType.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules nonterminalType.mli > nonterminalType.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o nonterminalType.cmi nonterminalType.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o unparameterizedSyntax.cmx unparameterizedSyntax.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules tokenType.ml > tokenType.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules tokenType.mli > tokenType.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o tokenType.cmi tokenType.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o nonterminalType.cmx nonterminalType.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o tokenType.cmx tokenType.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt -q lexdep.mll
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lexdep.ml > lexdep.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o lexdep.cmo lexdep.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt -q lexmli.mll
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lexmli.ml > lexmli.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o lexmli.cmo lexmli.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o interface.cmx interface.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lexdep.cmx lexdep.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lexmli.cmx lexmli.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules keywordExpansion.ml > keywordExpansion.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules keywordExpansion.mli > keywordExpansion.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o keywordExpansion.cmi keywordExpansion.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules grammarFunctor.ml > grammarFunctor.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Boolean.ml > Boolean.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Boolean.mli > Boolean.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Fix.mli > Fix.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Fix.cmi Fix.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Boolean.cmi Boolean.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Fix.ml > Fix.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o Fix.cmx Fix.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules compressedBitSet.ml > compressedBitSet.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules compressedBitSet.mli > compressedBitSet.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o compressedBitSet.cmi compressedBitSet.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o gSet.cmx gSet.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules FixSolver.ml > FixSolver.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules FixSolver.mli > FixSolver.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o FixSolver.cmi FixSolver.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Maps.ml > Maps.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Maps.mli > Maps.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Maps.cmi Maps.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules patricia.ml > patricia.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules patricia.mli > patricia.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o patricia.cmi patricia.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o gMap.cmx gMap.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules time.ml > time.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules time.mli > time.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o time.cmi time.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o Boolean.cmx Boolean.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o compressedBitSet.cmx compressedBitSet.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o FixSolver.cmx FixSolver.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o Maps.cmx Maps.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o patricia.cmx patricia.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o time.cmx time.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o grammarFunctor.cmx grammarFunctor.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt -q lexer.mll
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lexer.ml > lexer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o lexer.cmo lexer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules nonTerminalDefinitionInlining.ml > nonTerminalDefinitionInlining.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules nonTerminalDefinitionInlining.mli > nonTerminalDefinitionInlining.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o nonTerminalDefinitionInlining.cmi nonTerminalDefinitionInlining.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules listMonad.ml > listMonad.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules listMonad.mli > listMonad.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o listMonad.cmi listMonad.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o listMonad.cmx listMonad.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parameterizedGrammar.ml > parameterizedGrammar.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parameterizedGrammar.mli > parameterizedGrammar.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o parameterizedGrammar.cmi parameterizedGrammar.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules mark.ml > mark.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules mark.mli > mark.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o mark.cmi mark.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules tarjan.ml > tarjan.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules tarjan.mli > tarjan.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o tarjan.cmi tarjan.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules unionFind.ml > unionFind.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules unionFind.mli > unionFind.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o unionFind.cmi unionFind.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o mark.cmx mark.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o tarjan.cmx tarjan.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o unionFind.cmx unionFind.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules partialGrammar.ml > partialGrammar.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules partialGrammar.mli > partialGrammar.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o partialGrammar.cmi partialGrammar.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules reachability.ml > reachability.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules reachability.mli > reachability.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o reachability.cmi reachability.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules unparameterizedPrinter.ml > unparameterizedPrinter.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules unparameterizedPrinter.mli > unparameterizedPrinter.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o unparameterizedPrinter.cmi unparameterizedPrinter.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o anonymous.cmx anonymous.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o Driver.cmx Driver.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o infer.cmx infer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o keywordExpansion.cmx keywordExpansion.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lexer.cmx lexer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o nonTerminalDefinitionInlining.cmx nonTerminalDefinitionInlining.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o parameterizedGrammar.cmx parameterizedGrammar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o partialGrammar.cmx partialGrammar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o reachability.cmx reachability.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o unparameterizedPrinter.cmx unparameterizedPrinter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o front.cmx front.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o grammar.cmx grammar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules invariant.ml > invariant.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules invariant.mli > invariant.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lr1.mli > lr1.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules item.mli > item.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lookahead.mli > lookahead.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o lookahead.cmi lookahead.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lr0.mli > lr0.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o item.cmi item.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o lr0.cmi lr0.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o lr1.cmi lr1.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o invariant.cmi invariant.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules conflict.ml > conflict.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules conflict.mli > conflict.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o conflict.cmi conflict.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules DependencyGraph.ml > DependencyGraph.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules DependencyGraph.mli > DependencyGraph.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o DependencyGraph.cmi DependencyGraph.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules dot.ml > dot.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules dot.mli > dot.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o dot.cmi dot.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o dot.cmx dot.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules derivation.ml > derivation.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules derivation.mli > derivation.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o derivation.cmi derivation.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules item.ml > item.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o item.cmx item.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lr0.ml > lr0.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lr1.ml > lr1.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lr0.cmx lr0.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules slr.ml > slr.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules slr.mli > slr.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o slr.cmi slr.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o slr.cmx slr.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lr1partial.ml > lr1partial.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lr1partial.mli > lr1partial.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o lr1partial.cmi lr1partial.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lr1.cmx lr1.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o DependencyGraph.cmx DependencyGraph.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o derivation.cmx derivation.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lr1partial.cmx lr1partial.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o conflict.cmx conflict.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o codePieces.cmx codePieces.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o invariant.cmx invariant.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules coqBackend.ml > coqBackend.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules coqBackend.mli > coqBackend.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o coqBackend.cmi coqBackend.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules inliner.ml > inliner.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules inliner.mli > inliner.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o inliner.cmi inliner.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules traverse.ml > traverse.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o traverse.cmo traverse.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o traverse.cmx traverse.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules interpret.ml > interpret.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules interpret.mli > interpret.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules referenceInterpreter.mli > referenceInterpreter.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules cst.mli > cst.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o cst.cmi cst.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o referenceInterpreter.cmi referenceInterpreter.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o interpret.cmi interpret.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules cst.ml > cst.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules pprint.ml > pprint.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules pprint.mli > pprint.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o pprint.cmi pprint.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o pprint.cmx pprint.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules referenceInterpreter.ml > referenceInterpreter.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o cst.cmx cst.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt -q segment.mll
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules segment.ml > segment.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o segment.cmo segment.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt -q sentenceLexer.mll
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules sentenceLexer.ml > sentenceLexer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlyacc sentenceParser.mly
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules sentenceParser.mli > sentenceParser.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules sentenceParserAux.ml > sentenceParserAux.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o sentenceParserAux.cmo sentenceParserAux.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o sentenceParser.cmi sentenceParser.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o sentenceLexer.cmo sentenceLexer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules sentenceParser.ml > sentenceParser.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o sentenceParserAux.cmx sentenceParserAux.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o sentenceParser.cmx sentenceParser.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o referenceInterpreter.cmx referenceInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o segment.cmx segment.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o sentenceLexer.cmx sentenceLexer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LRijkstra.ml > LRijkstra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LRijkstra.mli > LRijkstra.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -noassert -noassert -o LRijkstra.cmi LRijkstra.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules astar.ml > astar.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules astar.mli > astar.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o astar.cmi astar.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o interpret.cmx interpret.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LowIntegerPriorityQueue.ml > LowIntegerPriorityQueue.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LowIntegerPriorityQueue.mli > LowIntegerPriorityQueue.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o LowIntegerPriorityQueue.cmi LowIntegerPriorityQueue.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules resizableArray.ml > resizableArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules resizableArray.mli > resizableArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o resizableArray.cmi resizableArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o resizableArray.cmx resizableArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules MySet.ml > MySet.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules MySet.mli > MySet.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o MySet.cmi MySet.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o astar.cmx astar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o LowIntegerPriorityQueue.cmx LowIntegerPriorityQueue.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o MySet.cmx MySet.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules tableBackend.ml > tableBackend.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules tableBackend.mli > tableBackend.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o tableBackend.cmi tableBackend.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o codeBackend.cmx codeBackend.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o coqBackend.cmx coqBackend.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o inliner.cmx inliner.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -noassert -noassert -o LRijkstra.cmx LRijkstra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o tableBackend.cmx tableBackend.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o back.cmx back.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o menhir.cmx menhir.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -g Fix.cmx Boolean.cmx InputFile.cmx installation.cmx keyword.cmx lineCount.cmx stringSet.cmx version.cmx settings.cmx printer.cmx action.cmx positions.cmx error.cmx menhirLib.cmx stringMap.cmx misc.cmx option.cmx parameters.cmx parserAux.cmx parser.cmx Driver.cmx FixSolver.cmx IO.cmx Maps.cmx anonymous.cmx codeBits.cmx gSet.cmx compressedBitSet.cmx dot.cmx gMap.cmx patricia.cmx time.cmx unparameterizedSyntax.cmx grammarFunctor.cmx nonterminalType.cmx tokenType.cmx interface.cmx lexdep.cmx lexmli.cmx infer.cmx keywordExpansion.cmx lexer.cmx listMonad.cmx mark.cmx nonTerminalDefinitionInlining.cmx tarjan.cmx unionFind.cmx parameterizedGrammar.cmx partialGrammar.cmx reachability.cmx unparameterizedPrinter.cmx front.cmx grammar.cmx DependencyGraph.cmx resizableArray.cmx LowIntegerPriorityQueue.cmx MySet.cmx astar.cmx item.cmx derivation.cmx lr0.cmx slr.cmx lr1.cmx lr1partial.cmx conflict.cmx pprint.cmx cst.cmx invariant.cmx referenceInterpreter.cmx segment.cmx sentenceParserAux.cmx sentenceParser.cmx sentenceLexer.cmx interpret.cmx LRijkstra.cmx codePieces.cmx codeBackend.cmx coqBackend.cmx traverse.cmx inliner.cmx tableBackend.cmx back.cmx menhir.cmx -o menhir.native
+- # Parallel statistics: { count(total): 17(352), max: 11, min: 2, average(total): 3.941(1.142) }
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules menhir.ml > menhir.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules back.mli > back.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o back.cmi back.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o menhir.cmo menhir.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules back.ml > back.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules codeBackend.ml > codeBackend.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules codeBackend.mli > codeBackend.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules IL.mli > IL.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules stretch.mli > stretch.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules keyword.mli > keyword.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o keyword.cmi keyword.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o stretch.cmi stretch.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o IL.cmi IL.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o codeBackend.cmi codeBackend.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules action.ml > action.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules action.mli > action.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o action.cmi action.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules keyword.ml > keyword.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules printer.ml > printer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules printer.mli > printer.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o printer.cmi printer.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt -q lineCount.mll
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lineCount.ml > lineCount.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o lineCount.cmo lineCount.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules settings.ml > settings.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules settings.mli > settings.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules stringSet.mli > stringSet.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o stringSet.cmi stringSet.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o settings.cmi settings.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules installation.ml > installation.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules installation.mli > installation.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o installation.cmi installation.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules stringSet.ml > stringSet.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules version.ml > version.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o version.cmo version.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o installation.cmx installation.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o stringSet.cmx stringSet.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o version.cmx version.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lineCount.cmx lineCount.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o settings.cmx settings.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o keyword.cmx keyword.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o printer.cmx printer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules codeBits.ml > codeBits.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules codeBits.mli > codeBits.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o codeBits.cmi codeBits.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules codePieces.ml > codePieces.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules codePieces.mli > codePieces.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules grammar.ml > grammar.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules front.mli > front.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules unparameterizedSyntax.ml > unparameterizedSyntax.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules positions.mli > positions.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules stringMap.mli > stringMap.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules syntax.mli > syntax.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InputFile.mli > InputFile.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o positions.cmi positions.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o stringMap.cmi stringMap.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o InputFile.cmi InputFile.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o syntax.cmi syntax.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o unparameterizedSyntax.cmo unparameterizedSyntax.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules grammarFunctor.mli > grammarFunctor.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules gMap.ml > gMap.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules gSet.ml > gSet.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o gSet.cmo gSet.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o gMap.cmo gMap.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o front.cmi front.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o grammarFunctor.cmi grammarFunctor.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o grammar.cmo grammar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o codePieces.cmi codePieces.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o codeBits.cmx codeBits.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules front.ml > front.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules anonymous.ml > anonymous.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules anonymous.mli > anonymous.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o anonymous.cmi anonymous.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules misc.ml > misc.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules misc.mli > misc.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o misc.cmi misc.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules General.mli > General.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o General.cmi General.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules General.ml > General.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Convert.mli > Convert.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Convert.cmi Convert.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Convert.ml > Convert.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules IncrementalEngine.ml > IncrementalEngine.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules EngineTypes.ml > EngineTypes.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o IncrementalEngine.cmo IncrementalEngine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Engine.mli > Engine.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o EngineTypes.cmo EngineTypes.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Engine.cmi Engine.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Engine.ml > Engine.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Printers.mli > Printers.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Printers.cmi Printers.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Printers.ml > Printers.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InfiniteArray.mli > InfiniteArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o InfiniteArray.cmi InfiniteArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InfiniteArray.ml > InfiniteArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules PackedIntArray.mli > PackedIntArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o PackedIntArray.cmi PackedIntArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules PackedIntArray.ml > PackedIntArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules RowDisplacement.mli > RowDisplacement.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o RowDisplacement.cmi RowDisplacement.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules RowDisplacement.ml > RowDisplacement.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LinearizedArray.mli > LinearizedArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o LinearizedArray.cmi LinearizedArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LinearizedArray.ml > LinearizedArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules TableFormat.ml > TableFormat.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InspectionTableFormat.ml > InspectionTableFormat.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InspectionTableInterpreter.mli > InspectionTableInterpreter.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o InspectionTableFormat.cmo InspectionTableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o TableFormat.cmo TableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o InspectionTableInterpreter.cmi InspectionTableInterpreter.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InspectionTableInterpreter.ml > InspectionTableInterpreter.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules TableInterpreter.mli > TableInterpreter.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o TableInterpreter.cmi TableInterpreter.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules TableInterpreter.ml > TableInterpreter.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules StaticVersion.mli > StaticVersion.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o StaticVersion.cmi StaticVersion.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules StaticVersion.ml > StaticVersion.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o General.cmo General.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o Convert.cmo Convert.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o Engine.cmo Engine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o Printers.cmo Printers.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o InfiniteArray.cmo InfiniteArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o PackedIntArray.cmo PackedIntArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o RowDisplacement.cmo RowDisplacement.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o LinearizedArray.cmo LinearizedArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o InspectionTableInterpreter.cmo InspectionTableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o TableInterpreter.cmo TableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o StaticVersion.cmo StaticVersion.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -pack -g General.cmo Convert.cmo IncrementalEngine.cmo EngineTypes.cmo Engine.cmo Printers.cmo InfiniteArray.cmo PackedIntArray.cmo RowDisplacement.cmo LinearizedArray.cmo TableFormat.cmo InspectionTableFormat.cmo InspectionTableInterpreter.cmo TableInterpreter.cmo StaticVersion.cmo -o menhirLib.cmo
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o General.cmx General.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o IncrementalEngine.cmx IncrementalEngine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o EngineTypes.cmx EngineTypes.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o InfiniteArray.cmx InfiniteArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o PackedIntArray.cmx PackedIntArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o InspectionTableFormat.cmx InspectionTableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o LinearizedArray.cmx LinearizedArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o TableFormat.cmx TableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o Engine.cmx Engine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o RowDisplacement.cmx RowDisplacement.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o Convert.cmx Convert.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o Printers.cmx Printers.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o InspectionTableInterpreter.cmx InspectionTableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o TableInterpreter.cmx TableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -for-pack MenhirLib -o StaticVersion.cmx StaticVersion.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules stringMap.ml > stringMap.ml.depends
+- touch menhirLib.mli  ; if  /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -pack -g General.cmx Convert.cmx IncrementalEngine.cmx EngineTypes.cmx Engine.cmx Printers.cmx InfiniteArray.cmx PackedIntArray.cmx RowDisplacement.cmx LinearizedArray.cmx TableFormat.cmx InspectionTableFormat.cmx InspectionTableInterpreter.cmx TableInterpreter.cmx StaticVersion.cmx -o menhirLib.cmx  ; then  rm -f menhirLib.mli  ; else  rm -f menhirLib.mli  ; exit 1; fi
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o stringMap.cmx stringMap.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parameters.ml > parameters.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o parameters.cmo parameters.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules positions.ml > positions.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o positions.cmx positions.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o action.cmx action.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InputFile.ml > InputFile.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o InputFile.cmx InputFile.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o misc.cmx misc.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o parameters.cmx parameters.ml
+- cp -p fancyDriver.ml Driver.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Driver.ml > Driver.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Driver.mli > Driver.mli.depends
+- cp -p fancy-parser.mly parser.mly
+- ../_stage1/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --raw-depend --ocamldep '/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules' parser.mly > parser.mly.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules error.mli > error.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parserAux.mli > parserAux.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o error.cmi error.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o parserAux.cmi parserAux.mli
+- ../_stage1/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --ocamlc '/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -safe-string -bin-annot' --infer parser.mly
+- + ../_stage1/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --ocamlc '/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -safe-string -bin-annot' --infer parser.mly
+- Grammar has 32 nonterminal symbols, among which 1 start symbols.
+- Grammar has 27 terminal symbols.
+- Grammar has 77 productions.
+- Built an LR(0) automaton with 113 states.
+- The grammar is not SLR(1) -- 1 states have a conflict.
+- Built an LR(1) automaton with 159 states.
+- One shift/reduce conflict was silently solved.
+- 45 out of 159 states are represented.
+- 23 out of 62 symbols keep track of their start position.
+- 29 out of 62 symbols keep track of their end position.
+- 86 out of 159 states have a default reduction.
+- The action table is 4452 entries; 362 non-zero; 476 compressed.
+- The action table occupies roughly 1048 bytes.
+- The goto table is 5247 entries; 131 non-zero; 289 compressed.
+- The goto table occupies roughly 384 bytes.
+- The error table occupies roughly 592 bytes.
+- The default_reduction table occupies roughly 192 bytes.
+- The lhs table occupies roughly 112 bytes.
+- The trace table occupies roughly 8 bytes.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parser.mli > parser.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o parser.cmi parser.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Driver.cmi Driver.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules error.ml > error.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parser.ml > parser.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o error.cmx error.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parserAux.ml > parserAux.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules option.ml > option.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules option.mli > option.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o option.cmi option.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o option.cmx option.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o parserAux.cmx parserAux.ml
+- ../_stage1/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --infer parser.mly --list-errors > parser.mly.auto.messages
+- + ../_stage1/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --infer parser.mly --list-errors > parser.mly.auto.messages
+- Grammar has 32 nonterminal symbols, among which 1 start symbols.
+- Grammar has 27 terminal symbols.
+- Grammar has 77 productions.
+- Built an LR(0) automaton with 113 states.
+- The grammar is not SLR(1) -- 1 states have a conflict.
+- Built an LR(1) automaton with 159 states.
+- One shift/reduce conflict was silently solved.
+- 45 out of 159 states are represented.
+- 23 out of 62 symbols keep track of their start position.
+- 29 out of 62 symbols keep track of their end position.
+- 86 out of 159 states have a default reduction.
+- ../_stage1/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --infer parser.mly --compare-errors parser.mly.auto.messages --compare-errors parserMessages.messages
+- + ../_stage1/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --infer parser.mly --compare-errors parser.mly.auto.messages --compare-errors parserMessages.messages
+- Grammar has 32 nonterminal symbols, among which 1 start symbols.
+- Grammar has 27 terminal symbols.
+- Grammar has 77 productions.
+- Built an LR(0) automaton with 113 states.
+- The grammar is not SLR(1) -- 1 states have a conflict.
+- Built an LR(1) automaton with 159 states.
+- One shift/reduce conflict was silently solved.
+- 45 out of 159 states are represented.
+- 23 out of 62 symbols keep track of their start position.
+- 29 out of 62 symbols keep track of their end position.
+- 86 out of 159 states have a default reduction.
+- Read 59 sample input sentences and 59 error messages.
+- Read 59 sample input sentences and 23 error messages.
+- ../_stage1/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --infer parser.mly --compile-errors parserMessages.messages > parserMessages.ml
+- + ../_stage1/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --infer parser.mly --compile-errors parserMessages.messages > parserMessages.ml
+- Grammar has 32 nonterminal symbols, among which 1 start symbols.
+- Grammar has 27 terminal symbols.
+- Grammar has 77 productions.
+- Built an LR(0) automaton with 113 states.
+- The grammar is not SLR(1) -- 1 states have a conflict.
+- Built an LR(1) automaton with 159 states.
+- One shift/reduce conflict was silently solved.
+- 45 out of 159 states are represented.
+- 23 out of 62 symbols keep track of their start position.
+- 29 out of 62 symbols keep track of their end position.
+- 86 out of 159 states have a default reduction.
+- Read 59 sample input sentences and 23 error messages.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parserMessages.ml > parserMessages.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o parserMessages.cmo parserMessages.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o parser.cmx parser.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o parserMessages.cmx parserMessages.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules IO.ml > IO.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules IO.mli > IO.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o IO.cmi IO.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules infer.ml > infer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules infer.mli > infer.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o infer.cmi infer.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o IO.cmx IO.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules interface.ml > interface.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules interface.mli > interface.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o interface.cmi interface.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules nonterminalType.ml > nonterminalType.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules nonterminalType.mli > nonterminalType.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o nonterminalType.cmi nonterminalType.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o unparameterizedSyntax.cmx unparameterizedSyntax.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules tokenType.ml > tokenType.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules tokenType.mli > tokenType.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o tokenType.cmi tokenType.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o nonterminalType.cmx nonterminalType.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o tokenType.cmx tokenType.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt -q lexdep.mll
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lexdep.ml > lexdep.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o lexdep.cmo lexdep.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt -q lexmli.mll
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lexmli.ml > lexmli.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o lexmli.cmo lexmli.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o interface.cmx interface.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lexdep.cmx lexdep.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lexmli.cmx lexmli.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules keywordExpansion.ml > keywordExpansion.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules keywordExpansion.mli > keywordExpansion.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o keywordExpansion.cmi keywordExpansion.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules grammarFunctor.ml > grammarFunctor.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Boolean.ml > Boolean.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Boolean.mli > Boolean.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Fix.mli > Fix.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Fix.cmi Fix.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Boolean.cmi Boolean.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Fix.ml > Fix.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o Fix.cmx Fix.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules compressedBitSet.ml > compressedBitSet.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules compressedBitSet.mli > compressedBitSet.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o compressedBitSet.cmi compressedBitSet.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o gSet.cmx gSet.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules FixSolver.ml > FixSolver.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules FixSolver.mli > FixSolver.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o FixSolver.cmi FixSolver.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Maps.ml > Maps.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Maps.mli > Maps.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Maps.cmi Maps.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules patricia.ml > patricia.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules patricia.mli > patricia.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o patricia.cmi patricia.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o gMap.cmx gMap.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules time.ml > time.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules time.mli > time.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o time.cmi time.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o Boolean.cmx Boolean.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o compressedBitSet.cmx compressedBitSet.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o FixSolver.cmx FixSolver.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o Maps.cmx Maps.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o patricia.cmx patricia.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o time.cmx time.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o grammarFunctor.cmx grammarFunctor.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt -q lexer.mll
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lexer.ml > lexer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o lexer.cmo lexer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules nonTerminalDefinitionInlining.ml > nonTerminalDefinitionInlining.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules nonTerminalDefinitionInlining.mli > nonTerminalDefinitionInlining.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o nonTerminalDefinitionInlining.cmi nonTerminalDefinitionInlining.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules listMonad.ml > listMonad.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules listMonad.mli > listMonad.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o listMonad.cmi listMonad.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o listMonad.cmx listMonad.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parameterizedGrammar.ml > parameterizedGrammar.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parameterizedGrammar.mli > parameterizedGrammar.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o parameterizedGrammar.cmi parameterizedGrammar.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules mark.ml > mark.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules mark.mli > mark.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o mark.cmi mark.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules tarjan.ml > tarjan.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules tarjan.mli > tarjan.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o tarjan.cmi tarjan.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules unionFind.ml > unionFind.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules unionFind.mli > unionFind.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o unionFind.cmi unionFind.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o mark.cmx mark.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o tarjan.cmx tarjan.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o unionFind.cmx unionFind.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules partialGrammar.ml > partialGrammar.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules partialGrammar.mli > partialGrammar.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o partialGrammar.cmi partialGrammar.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules reachability.ml > reachability.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules reachability.mli > reachability.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o reachability.cmi reachability.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules unparameterizedPrinter.ml > unparameterizedPrinter.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules unparameterizedPrinter.mli > unparameterizedPrinter.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o unparameterizedPrinter.cmi unparameterizedPrinter.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o anonymous.cmx anonymous.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o Driver.cmx Driver.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o infer.cmx infer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o keywordExpansion.cmx keywordExpansion.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lexer.cmx lexer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o nonTerminalDefinitionInlining.cmx nonTerminalDefinitionInlining.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o parameterizedGrammar.cmx parameterizedGrammar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o partialGrammar.cmx partialGrammar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o reachability.cmx reachability.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o unparameterizedPrinter.cmx unparameterizedPrinter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o front.cmx front.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o grammar.cmx grammar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules invariant.ml > invariant.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules invariant.mli > invariant.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lr1.mli > lr1.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules item.mli > item.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lookahead.mli > lookahead.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o lookahead.cmi lookahead.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lr0.mli > lr0.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o item.cmi item.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o lr0.cmi lr0.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o lr1.cmi lr1.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o invariant.cmi invariant.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules conflict.ml > conflict.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules conflict.mli > conflict.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o conflict.cmi conflict.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules DependencyGraph.ml > DependencyGraph.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules DependencyGraph.mli > DependencyGraph.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o DependencyGraph.cmi DependencyGraph.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules dot.ml > dot.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules dot.mli > dot.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o dot.cmi dot.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o dot.cmx dot.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules derivation.ml > derivation.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules derivation.mli > derivation.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o derivation.cmi derivation.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules item.ml > item.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o item.cmx item.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lr0.ml > lr0.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lr1.ml > lr1.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lr0.cmx lr0.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules slr.ml > slr.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules slr.mli > slr.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o slr.cmi slr.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o slr.cmx slr.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lr1partial.ml > lr1partial.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules lr1partial.mli > lr1partial.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o lr1partial.cmi lr1partial.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lr1.cmx lr1.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o DependencyGraph.cmx DependencyGraph.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o derivation.cmx derivation.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o lr1partial.cmx lr1partial.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o conflict.cmx conflict.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o codePieces.cmx codePieces.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o invariant.cmx invariant.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules coqBackend.ml > coqBackend.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules coqBackend.mli > coqBackend.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o coqBackend.cmi coqBackend.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules inliner.ml > inliner.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules inliner.mli > inliner.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o inliner.cmi inliner.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules traverse.ml > traverse.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o traverse.cmo traverse.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o traverse.cmx traverse.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules interpret.ml > interpret.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules interpret.mli > interpret.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules referenceInterpreter.mli > referenceInterpreter.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules cst.mli > cst.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o cst.cmi cst.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o referenceInterpreter.cmi referenceInterpreter.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o interpret.cmi interpret.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules cst.ml > cst.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules pprint.ml > pprint.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules pprint.mli > pprint.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o pprint.cmi pprint.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o pprint.cmx pprint.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules referenceInterpreter.ml > referenceInterpreter.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o cst.cmx cst.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt -q segment.mll
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules segment.ml > segment.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o segment.cmo segment.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt -q sentenceLexer.mll
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules sentenceLexer.ml > sentenceLexer.ml.depends
+- ../_stage1/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --raw-depend --ocamldep '/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules' sentenceParser.mly > sentenceParser.mly.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules sentenceParserAux.ml > sentenceParserAux.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o sentenceParserAux.cmo sentenceParserAux.ml
+- ../_stage1/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --ocamlc '/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -safe-string -bin-annot' --infer sentenceParser.mly
+- + ../_stage1/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --ocamlc '/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -safe-string -bin-annot' --infer sentenceParser.mly
+- Grammar has 6 nonterminal symbols, among which 2 start symbols.
+- Grammar has 6 terminal symbols.
+- Grammar has 11 productions.
+- Built an LR(0) automaton with 21 states.
+- The grammar is SLR(1).
+- Built an LR(1) automaton with 27 states.
+- 7 out of 27 states are represented.
+- 0 out of 16 symbols keep track of their start position.
+- 0 out of 16 symbols keep track of their end position.
+- 13 out of 27 states have a default reduction.
+- The action table is 189 entries; 32 non-zero; 43 compressed.
+- The action table occupies roughly 136 bytes.
+- The goto table is 216 entries; 19 non-zero; 46 compressed.
+- The goto table occupies roughly 144 bytes.
+- The error table occupies roughly 56 bytes.
+- The default_reduction table occupies roughly 48 bytes.
+- The lhs table occupies roughly 40 bytes.
+- The trace table occupies roughly 8 bytes.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules sentenceParser.mli > sentenceParser.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o sentenceParser.cmi sentenceParser.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o sentenceLexer.cmo sentenceLexer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules sentenceParser.ml > sentenceParser.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o sentenceParserAux.cmx sentenceParserAux.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o sentenceParser.cmx sentenceParser.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o referenceInterpreter.cmx referenceInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o segment.cmx segment.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o sentenceLexer.cmx sentenceLexer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LRijkstra.ml > LRijkstra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LRijkstra.mli > LRijkstra.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -noassert -noassert -o LRijkstra.cmi LRijkstra.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules astar.ml > astar.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules astar.mli > astar.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o astar.cmi astar.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o interpret.cmx interpret.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LowIntegerPriorityQueue.ml > LowIntegerPriorityQueue.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LowIntegerPriorityQueue.mli > LowIntegerPriorityQueue.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o LowIntegerPriorityQueue.cmi LowIntegerPriorityQueue.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules resizableArray.ml > resizableArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules resizableArray.mli > resizableArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o resizableArray.cmi resizableArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o resizableArray.cmx resizableArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules MySet.ml > MySet.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules MySet.mli > MySet.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o MySet.cmi MySet.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o astar.cmx astar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o LowIntegerPriorityQueue.cmx LowIntegerPriorityQueue.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o MySet.cmx MySet.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules tableBackend.ml > tableBackend.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules tableBackend.mli > tableBackend.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o tableBackend.cmi tableBackend.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o codeBackend.cmx codeBackend.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o coqBackend.cmx coqBackend.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o inliner.cmx inliner.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -noassert -noassert -o LRijkstra.cmx LRijkstra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o tableBackend.cmx tableBackend.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o back.cmx back.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt -c -safe-string -bin-annot -g -o menhir.cmx menhir.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -g Fix.cmx Boolean.cmx InputFile.cmx installation.cmx keyword.cmx lineCount.cmx stringSet.cmx version.cmx settings.cmx printer.cmx action.cmx positions.cmx error.cmx menhirLib.cmx stringMap.cmx misc.cmx option.cmx parameters.cmx parserAux.cmx parser.cmx parserMessages.cmx Driver.cmx FixSolver.cmx IO.cmx Maps.cmx anonymous.cmx codeBits.cmx gSet.cmx compressedBitSet.cmx dot.cmx gMap.cmx patricia.cmx time.cmx unparameterizedSyntax.cmx grammarFunctor.cmx nonterminalType.cmx tokenType.cmx interface.cmx lexdep.cmx lexmli.cmx infer.cmx keywordExpansion.cmx lexer.cmx listMonad.cmx mark.cmx nonTerminalDefinitionInlining.cmx tarjan.cmx unionFind.cmx parameterizedGrammar.cmx partialGrammar.cmx reachability.cmx unparameterizedPrinter.cmx front.cmx grammar.cmx DependencyGraph.cmx resizableArray.cmx LowIntegerPriorityQueue.cmx MySet.cmx astar.cmx item.cmx derivation.cmx lr0.cmx slr.cmx lr1.cmx lr1partial.cmx conflict.cmx pprint.cmx cst.cmx invariant.cmx referenceInterpreter.cmx segment.cmx sentenceParserAux.cmx sentenceParser.cmx sentenceLexer.cmx interpret.cmx LRijkstra.cmx codePieces.cmx codeBackend.cmx coqBackend.cmx traverse.cmx inliner.cmx tableBackend.cmx back.cmx menhir.cmx -o menhir.native
+- # Parallel statistics: { count(total): 19(358), max: 11, min: 2, average(total): 3.737(1.145) }
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- cp -p fancy-parser.mly parser.mly
+- ../_stage2/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --raw-depend --ocamldep '/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules' parser.mly > parser.mly.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules action.mli > action.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules IL.mli > IL.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules stretch.mli > stretch.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules keyword.mli > keyword.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o keyword.cmi keyword.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o stretch.cmi stretch.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o IL.cmi IL.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules error.mli > error.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules positions.mli > positions.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o positions.cmi positions.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules misc.mli > misc.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules stringMap.mli > stringMap.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules stringSet.mli > stringSet.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o stringSet.cmi stringSet.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o stringMap.cmi stringMap.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parameters.ml > parameters.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules syntax.mli > syntax.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o action.cmi action.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InputFile.mli > InputFile.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o InputFile.cmi InputFile.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o syntax.cmi syntax.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules parserAux.mli > parserAux.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules General.mli > General.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o General.cmi General.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules General.ml > General.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Convert.mli > Convert.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Convert.cmi Convert.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Convert.ml > Convert.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules IncrementalEngine.ml > IncrementalEngine.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules EngineTypes.ml > EngineTypes.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o IncrementalEngine.cmo IncrementalEngine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Engine.mli > Engine.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o EngineTypes.cmo EngineTypes.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Engine.cmi Engine.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Engine.ml > Engine.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Printers.mli > Printers.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o Printers.cmi Printers.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules Printers.ml > Printers.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InfiniteArray.mli > InfiniteArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o InfiniteArray.cmi InfiniteArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InfiniteArray.ml > InfiniteArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules PackedIntArray.mli > PackedIntArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o PackedIntArray.cmi PackedIntArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules PackedIntArray.ml > PackedIntArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules RowDisplacement.mli > RowDisplacement.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o RowDisplacement.cmi RowDisplacement.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules RowDisplacement.ml > RowDisplacement.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LinearizedArray.mli > LinearizedArray.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o LinearizedArray.cmi LinearizedArray.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules LinearizedArray.ml > LinearizedArray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules TableFormat.ml > TableFormat.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InspectionTableFormat.ml > InspectionTableFormat.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InspectionTableInterpreter.mli > InspectionTableInterpreter.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o InspectionTableFormat.cmo InspectionTableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o TableFormat.cmo TableFormat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o InspectionTableInterpreter.cmi InspectionTableInterpreter.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules InspectionTableInterpreter.ml > InspectionTableInterpreter.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules TableInterpreter.mli > TableInterpreter.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o TableInterpreter.cmi TableInterpreter.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules TableInterpreter.ml > TableInterpreter.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules StaticVersion.mli > StaticVersion.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o StaticVersion.cmi StaticVersion.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt -modules StaticVersion.ml > StaticVersion.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o General.cmo General.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o Convert.cmo Convert.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o Engine.cmo Engine.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o Printers.cmo Printers.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o InfiniteArray.cmo InfiniteArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o PackedIntArray.cmo PackedIntArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o RowDisplacement.cmo RowDisplacement.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o LinearizedArray.cmo LinearizedArray.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o InspectionTableInterpreter.cmo InspectionTableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o TableInterpreter.cmo TableInterpreter.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o StaticVersion.cmo StaticVersion.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o error.cmi error.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o misc.cmi misc.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -g -o parameters.cmo parameters.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -c -safe-string -bin-annot -o parserAux.cmi parserAux.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -pack -g General.cmo Convert.cmo IncrementalEngine.cmo EngineTypes.cmo Engine.cmo Printers.cmo InfiniteArray.cmo PackedIntArray.cmo RowDisplacement.cmo LinearizedArray.cmo TableFormat.cmo InspectionTableFormat.cmo InspectionTableInterpreter.cmo TableInterpreter.cmo StaticVersion.cmo -o menhirLib.cmo
+- ../_stage2/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --ocamlc '/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -safe-string -bin-annot' --infer parser.mly
+- + ../_stage2/menhir.native -v -lg 1 -la 1 -lc 1 --table --infer --stdlib .. --strict --fixed-exception --canonical --ocamlc '/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt -safe-string -bin-annot' --infer parser.mly
+- Grammar has 32 nonterminal symbols, among which 1 start symbols.
+- Grammar has 27 terminal symbols.
+- Grammar has 77 productions.
+- Built an LR(0) automaton with 113 states.
+- The grammar is not SLR(1) -- 1 states have a conflict.
+- Built an LR(1) automaton with 159 states.
+- One shift/reduce conflict was silently solved.
+- 45 out of 159 states are represented.
+- 23 out of 62 symbols keep track of their start position.
+- 29 out of 62 symbols keep track of their end position.
+- 86 out of 159 states have a default reduction.
+- The action table is 4452 entries; 362 non-zero; 476 compressed.
+- The action table occupies roughly 1048 bytes.
+- The goto table is 5247 entries; 131 non-zero; 289 compressed.
+- The goto table occupies roughly 384 bytes.
+- The error table occupies roughly 592 bytes.
+- The default_reduction table occupies roughly 192 bytes.
+- The lhs table occupies roughly 112 bytes.
+- The trace table occupies roughly 8 bytes.
+- # Parallel statistics: { count(total): 2(69), max: 11, min: 5, average(total): 8.000(1.203) }
+- Bootstrap successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/menhir.20161115/src'
+- Creating menhirLib.ml
+- Creating menhirLib.mli
+-> compiled  menhir.20161115
+Processing 10/12: [menhir: make Makefile]
++ make "-f" "Makefile" "install" "PREFIX=/home/opam/.opam/ocaml-base-compiler.4.03.0" "docdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/doc/menhir" "libdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhir" "mandir=/home/opam/.opam/ocaml-base-compiler.4.03.0/man/man1" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/menhir.20161115)
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- install src/_stage2/menhir.native /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/menhir
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhir
+- install -m 644 src/standard.mly /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhir
+- Installing MenhirLib via ocamlfind.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhirLib/menhirLib.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhirLib/menhirLib.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhirLib/menhirLib.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhirLib/menhirLib.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhirLib/menhirLib.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhirLib/menhirLib.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhirLib/META
+- if [ -f manual.pdf ] ; then \
+-   mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/doc/menhir /home/opam/.opam/ocaml-base-compiler.4.03.0/man/man1 && \
+-   cp -r manual.pdf demos /home/opam/.opam/ocaml-base-compiler.4.03.0/doc/menhir && \
+-   cp -r menhir.1 /home/opam/.opam/ocaml-base-compiler.4.03.0/man/man1 ; \
+- fi
+-> installed menhir.20161115
+Processing 11/12: [tptp: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/tptp.0.3.2)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ tptp
+- Package version: ..................................... 0.3.2
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.03.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- menhir: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/menhir
+- pkg_zarith: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/zarith
+- pkg_pprint: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pprint
+- pkg_menhirlib: ....................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhirLib
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/tptp.0.3.2)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 24, characters 27-36:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 29, characters 19-28:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package menhirLib -package pprint -package zarith -modules src/tptp_ast.mli > src/tptp_ast.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_ast.cmi src/tptp_ast.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package menhirLib -package pprint -package zarith -modules src/tptp_ast.ml > src/tptp_ast.ml.depends
+- menhir --raw-depend --ocamldep '/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules' --base src/tptp_parser src/tptp_parser.mly > src/tptp_parser.mlypack.depends
+- + menhir --raw-depend --ocamldep '/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules' --base src/tptp_parser src/tptp_parser.mly > src/tptp_parser.mlypack.depends
+- File "src/tptp_parser.mly", line 50, characters 59-63:
+- Warning: the token PLUS is unused.
+- File "src/tptp_parser.mly", line 50, characters 54-58:
+- Warning: the token STAR is unused.
+- menhir --ocamlc '/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src' --infer --base src/tptp_parser src/tptp_parser.mly
+- + menhir --ocamlc '/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src' --infer --base src/tptp_parser src/tptp_parser.mly
+- File "src/tptp_parser.mly", line 50, characters 59-63:
+- Warning: the token PLUS is unused.
+- File "src/tptp_parser.mly", line 50, characters 54-58:
+- Warning: the token STAR is unused.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package menhirLib -package pprint -package zarith -modules src/tptp_parser.mli > src/tptp_parser.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_parser.cmi src/tptp_parser.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package menhirLib -package pprint -package zarith -modules src/tptp_parser.ml > src/tptp_parser.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package menhirLib -package pprint -package zarith -modules src/tptp_lexer.mli > src/tptp_lexer.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_lexer.cmi src/tptp_lexer.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt -q src/tptp_lexer.mll
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package menhirLib -package pprint -package zarith -modules src/tptp_lexer.ml > src/tptp_lexer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package menhirLib -package pprint -package zarith -modules src/tptp_printer.mli > src/tptp_printer.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_printer.cmi src/tptp_printer.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package menhirLib -package pprint -package zarith -modules src/tptp_printer.ml > src/tptp_printer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package menhirLib -package pprint -package zarith -modules src/tptp.mli > src/tptp.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp.cmi src/tptp.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package menhirLib -package pprint -package zarith -modules src/tptp.ml > src/tptp.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_ast.cmo src/tptp_ast.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_parser.cmo src/tptp_parser.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_lexer.cmo src/tptp_lexer.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_lexer.cmo src/tptp_lexer.ml
+- File "src/tptp_lexer.mll", line 26, characters 28-44:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_printer.cmo src/tptp_printer.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp.cmo src/tptp.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a src/tptp_ast.cmo src/tptp_parser.cmo src/tptp_lexer.cmo src/tptp_printer.cmo src/tptp.cmo -o src/tptp.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_ast.cmx src/tptp_ast.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_parser.cmx src/tptp_parser.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_parser.cmx src/tptp_parser.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Q, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_lexer.cmx src/tptp_lexer.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_lexer.cmx src/tptp_lexer.ml
+- File "src/tptp_lexer.mll", line 26, characters 28-44:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Z, and its interface was not compiled with -opaque
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Q, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_printer.cmx src/tptp_printer.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp_printer.cmx src/tptp_printer.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Z, and its interface was not compiled with -opaque
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Q, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package menhirLib -package pprint -package zarith -I src -o src/tptp.cmx src/tptp.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a src/tptp_ast.cmx src/tptp_parser.cmx src/tptp_lexer.cmx src/tptp_printer.cmx src/tptp.cmx -o src/tptp.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared src/tptp.cmxa src/tptp_ast.cmx src/tptp_parser.cmx src/tptp_lexer.cmx src/tptp_printer.cmx src/tptp.cmx -o src/tptp.cmxs
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+-> compiled  tptp.0.3.2
+Processing 12/12: [tptp: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/tptp.0.3.2)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- W: Cannot find source header for module Tptp_parser in library tptp
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_ast.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_lexer.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_printer.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_printer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_printer.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_printer.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_printer.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_lexer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_lexer.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_lexer.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_lexer.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_parser.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_parser.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_parser.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_parser.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_ast.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_ast.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_ast.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_ast.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_printer.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_lexer.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_parser.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/tptp_ast.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tptp/META
+-> installed tptp.0.3.2
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:17.44] Success
