@@ -1,0 +1,46 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 lru-cache /home/opam/opam-repository/cache
+[2016-12-22 16:19.52] Starting...
+[2016-12-22 16:19.52] Waiting for free pool slot to run
+[2016-12-22 17:58.58] Pool slot obtained, starting run
+[2016-12-22 17:58.58] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 lru-cache
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install lru-cache 0.2.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [lru-cache.0.2.0: dl]
+[lru-cache.0.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [lru-cache: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lru-cache.0.2.0)
+- ocamlfind ocamlc -c -annot -safe-string -g lru_cache.mli
+- ocamlfind ocamlc -c -annot -safe-string -g lru_cache.ml
+- ocamlfind ocamlc -o lru-cache.cma -a lru_cache.cmo
+- ocamlfind ocamlopt -c -annot -safe-string -g lru_cache.ml
+- ocamlfind ocamlopt -o lru-cache.cmxa -a lru_cache.cmx
+- ocamlfind ocamlopt -shared -o lru-cache.cmxs lru_cache.cmx
+-> compiled  lru-cache.0.2.0
+Processing  2/2: [lru-cache: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lru-cache.0.2.0)
+- ocamlfind install lru-cache META LICENSE \
+- 	lru-cache.cmxa lru-cache.cmxs lru_cache.o lru_cache.cmx lru-cache.a \
+- 	lru-cache.cma lru_cache.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lru-cache/lru_cache.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lru-cache/lru-cache.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lru-cache/lru-cache.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lru-cache/lru_cache.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lru-cache/lru_cache.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lru-cache/lru-cache.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lru-cache/lru-cache.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lru-cache/LICENSE
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lru-cache/META
+-> installed lru-cache.0.2.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:59.12] Success
