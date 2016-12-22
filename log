@@ -1,0 +1,228 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 msat /home/opam/opam-repository/cache
+[2016-12-22 16:18.22] Starting...
+[2016-12-22 16:18.22] Waiting for free pool slot to run
+[2016-12-22 16:59.16] Pool slot obtained, starting run
+[2016-12-22 16:59.16] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 msat
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install msat 0.5.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [msat.0.5.1: dl]
+[msat.0.5.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [msat: make disable_log]
++ make "disable_log" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/msat.0.5.1)
+- cd src/util; ln -sf log_dummy.ml log.ml
+Processing  1/2: [msat: make lib]
++ make "lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/msat.0.5.1)
+- ocamlbuild -log build.log -use-ocamlfind  msat.cma msat.cmxa msat.cmxs 
+- ocamlfind ocamldep -modules src/util/log.mli > src/util/log.mli.depends
+- ocamlfind ocamlc -c -bin-annot -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/log.cmi src/util/log.mli
+- ocamlfind ocamldep -modules src/util/log.ml > src/util/log.ml.depends
+- ocamlfind ocamldep -modules src/core/formula_intf.ml > src/core/formula_intf.ml.depends
+- ocamlfind ocamldep -modules src/core/theory_intf.ml > src/core/theory_intf.ml.depends
+- ocamlfind ocamldep -modules src/core/plugin_intf.ml > src/core/plugin_intf.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/plugin_intf.cmo src/core/plugin_intf.ml
+- ocamlfind ocamldep -modules src/core/expr_intf.ml > src/core/expr_intf.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/formula_intf.cmo src/core/formula_intf.ml
+- ocamlfind ocamldep -modules src/solver/tseitin_intf.ml > src/solver/tseitin_intf.ml.depends
+- ocamlfind ocamldep -modules src/core/res_intf.ml > src/core/res_intf.ml.depends
+- ocamlfind ocamldep -modules src/core/solver_types.mli > src/core/solver_types.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/expr_intf.cmo src/core/expr_intf.ml
+- ocamlfind ocamldep -modules src/core/solver_types_intf.ml > src/core/solver_types_intf.ml.depends
+- ocamlfind ocamldep -modules src/util/vec.mli > src/util/vec.mli.depends
+- ocamlfind ocamlc -c -bin-annot -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/vec.cmi src/util/vec.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/solver_types_intf.cmo src/core/solver_types_intf.ml
+- ocamlfind ocamlc -c -bin-annot -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/solver_types.cmi src/core/solver_types.mli
+- ocamlfind ocamldep -modules src/core/solver_intf.ml > src/core/solver_intf.ml.depends
+- ocamlfind ocamldep -modules src/core/res.mli > src/core/res.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/res_intf.cmo src/core/res_intf.ml
+- ocamlfind ocamlc -c -bin-annot -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/res.cmi src/core/res.mli
+- ocamlfind ocamldep -modules src/core/internal.mli > src/core/internal.mli.depends
+- ocamlfind ocamlc -c -bin-annot -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/internal.cmi src/core/internal.mli
+- ocamlfind ocamldep -modules src/core/internal.ml > src/core/internal.ml.depends
+- ocamlfind ocamldep -modules src/util/array_util.ml > src/util/array_util.ml.depends
+- ocamlfind ocamldep -modules src/util/iheap.mli > src/util/iheap.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/array_util.cmo src/util/array_util.ml
+- ocamlfind ocamlc -c -bin-annot -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/iheap.cmi src/util/iheap.mli
+- ocamlfind ocamldep -modules src/core/external.mli > src/core/external.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/solver_intf.cmo src/core/solver_intf.ml
+- ocamlfind ocamlc -c -bin-annot -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/external.cmi src/core/external.mli
+- ocamlfind ocamldep -modules src/core/external.ml > src/core/external.ml.depends
+- ocamlfind ocamldep -modules src/solver/solver.mli > src/solver/solver.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/theory_intf.cmo src/core/theory_intf.ml
+- ocamlfind ocamlc -c -bin-annot -color always -I src/solver -I src -I src/util -I src/core -I src/backend -I src/mcsat -I src/sat -I src/smt -o src/solver/solver.cmi src/solver/solver.mli
+- ocamlfind ocamldep -modules src/solver/solver.ml > src/solver/solver.ml.depends
+- ocamlfind ocamldep -modules src/solver/mcsolver.mli > src/solver/mcsolver.mli.depends
+- ocamlfind ocamlc -c -bin-annot -color always -I src/solver -I src -I src/util -I src/core -I src/backend -I src/mcsat -I src/sat -I src/smt -o src/solver/mcsolver.cmi src/solver/mcsolver.mli
+- ocamlfind ocamldep -modules src/solver/mcsolver.ml > src/solver/mcsolver.ml.depends
+- ocamlfind ocamldep -modules src/core/solver_types.ml > src/core/solver_types.ml.depends
+- ocamlfind ocamldep -modules src/core/res.ml > src/core/res.ml.depends
+- ocamlfind ocamldep -modules src/backend/backend_intf.ml > src/backend/backend_intf.ml.depends
+- ocamlfind ocamldep -modules src/backend/dot.mli > src/backend/dot.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/backend -I src -I src/util -I src/core -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/backend/backend_intf.cmo src/backend/backend_intf.ml
+- ocamlfind ocamlc -c -bin-annot -color always -I src/backend -I src -I src/util -I src/core -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/backend/dot.cmi src/backend/dot.mli
+- ocamlfind ocamldep -modules src/backend/dot.ml > src/backend/dot.ml.depends
+- ocamlfind ocamldep -modules src/backend/dedukti.mli > src/backend/dedukti.mli.depends
+- ocamlfind ocamlc -c -bin-annot -color always -I src/backend -I src -I src/util -I src/core -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/backend/dedukti.cmi src/backend/dedukti.mli
+- ocamlfind ocamldep -modules src/backend/dedukti.ml > src/backend/dedukti.ml.depends
+- ocamlfind ocamldep -modules src/solver/tseitin.mli > src/solver/tseitin.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/solver -I src -I src/util -I src/core -I src/backend -I src/mcsat -I src/sat -I src/smt -o src/solver/tseitin_intf.cmo src/solver/tseitin_intf.ml
+- ocamlfind ocamlc -c -bin-annot -color always -I src/solver -I src -I src/util -I src/core -I src/backend -I src/mcsat -I src/sat -I src/smt -o src/solver/tseitin.cmi src/solver/tseitin.mli
+- ocamlfind ocamldep -modules src/solver/tseitin.ml > src/solver/tseitin.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/log.cmo src/util/log.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/internal.cmo src/core/internal.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/internal.cmo src/core/internal.ml
+- [1mFile "[1msrc/core/internal.ml", line 182, characters 6-13[0m[0m:
+- [1;35mWarning[0m 32: unused value nb_vars.
+- [1mFile "[1msrc/core/internal.ml", line 378, characters 6-15[0m[0m:
+- [1;35mWarning[0m 32: unused value satisfied.
+- [1mFile "[1msrc/core/internal.ml", line 529, characters 6-19[0m[0m:
+- [1;35mWarning[0m 32: unused value max_lvl_atoms.
+- [1mFile "[1msrc/core/internal.ml", line 1059, characters 6-15[0m[0m:
+- [1;35mWarning[0m 32: unused value check_vec.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/external.cmo src/core/external.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/external.cmo src/core/external.ml
+- [1mFile "[1msrc/core/external.ml", line 51, characters 2-25[0m[0m:
+- [1;35mWarning[0m 34: unused type clause.
+- [1mFile "[1msrc/core/external.ml", line 52, characters 2-26[0m[0m:
+- [1;35mWarning[0m 34: unused type proof.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/solver -I src -I src/util -I src/core -I src/backend -I src/mcsat -I src/sat -I src/smt -o src/solver/solver.cmo src/solver/solver.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/solver -I src -I src/util -I src/core -I src/backend -I src/mcsat -I src/sat -I src/smt -o src/solver/mcsolver.cmo src/solver/mcsolver.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/solver_types.cmo src/core/solver_types.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/solver_types.cmo src/core/solver_types.ml
+- [1mFile "[1msrc/core/solver_types.ml", line 14, characters 0-11[0m[0m:
+- [1;35mWarning[0m 33: unused open Printf.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/res.cmo src/core/res.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/res.cmo src/core/res.ml
+- [1mFile "[1msrc/core/res.ml", line 17, characters 2-37[0m[0m:
+- [1;35mWarning[0m 34: unused type int_cl.
+- [1mFile "[1msrc/core/res.ml", line 20, characters 2-38[0m[0m:
+- [1;35mWarning[0m 38: unused extension constructor Resolution_error.
+- [1mFile "[1msrc/core/res.ml", line 23, characters 6-11[0m[0m:
+- [1;35mWarning[0m 32: unused value error.
+- [1mFile "[1msrc/core/res.ml", line 24, characters 6-10[0m[0m:
+- [1;35mWarning[0m 32: unused value warn.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/backend -I src -I src/util -I src/core -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/backend/dot.cmo src/backend/dot.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/backend -I src -I src/util -I src/core -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/backend/dot.cmo src/backend/dot.ml
+- [1mFile "[1msrc/backend/dot.ml", line 66, characters 4-698[0m[0m:
+- [1;35mWarning[0m 8: this pattern-matching is not exhaustive.
+- Here is an example of a value that is not matched:
+- Assumption
+- [1mFile "[1msrc/backend/dot.ml", line 63, characters 6-11[0m[0m:
+- [1;35mWarning[0m 32: unused value ttify.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/backend -I src -I src/util -I src/core -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/backend/dedukti.cmo src/backend/dedukti.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/backend -I src -I src/util -I src/core -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/backend/dedukti.cmo src/backend/dedukti.ml
+- [1mFile "[1msrc/backend/dedukti.ml", line 24, characters 6-17[0m[0m:
+- [1;35mWarning[0m 32: unused value clause_name.
+- [1mFile "[1msrc/backend/dedukti.ml", line 26, characters 6-15[0m[0m:
+- [1;35mWarning[0m 32: unused value pp_clause.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/solver -I src -I src/util -I src/core -I src/backend -I src/mcsat -I src/sat -I src/smt -o src/solver/tseitin.cmo src/solver/tseitin.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/solver -I src -I src/util -I src/core -I src/backend -I src/mcsat -I src/sat -I src/smt -o src/solver/tseitin.cmo src/solver/tseitin.ml
+- [1mFile "[1msrc/solver/tseitin.ml", line 128, characters 6-11[0m[0m:
+- [1;35mWarning[0m 32: unused value @.
+- ocamlfind ocamlc -pack -g -bin-annot src/util/log.cmo src/core/formula_intf.cmo src/core/plugin_intf.cmo src/core/theory_intf.cmo src/core/expr_intf.cmo src/solver/tseitin_intf.cmo src/core/solver_types_intf.cmo src/core/solver_types.cmo src/core/res_intf.cmo src/core/res.cmo src/core/solver_intf.cmo src/core/internal.cmo src/core/external.cmo src/solver/solver.cmo src/solver/mcsolver.cmo src/backend/backend_intf.cmo src/backend/dot.cmo src/backend/dedukti.cmo src/solver/tseitin.cmo -o src/msat.cmo
+- ocamlfind ocamldep -modules src/util/vec.ml > src/util/vec.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/vec.cmo src/util/vec.ml
+- ocamlfind ocamldep -modules src/util/iheap.ml > src/util/iheap.ml.depends
+- ocamlfind ocamldep -modules src/util/sparse_vec.mli > src/util/sparse_vec.mli.depends
+- ocamlfind ocamlc -c -bin-annot -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/sparse_vec.cmi src/util/sparse_vec.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/iheap.cmo src/util/iheap.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/iheap.cmo src/util/iheap.ml
+- [1mFile "[1msrc/util/iheap.ml", line 78, characters 4-12[0m[0m:
+- [1;35mWarning[0m 32: unused value increase.
+- ocamlfind ocamldep -modules src/util/sparse_vec.ml > src/util/sparse_vec.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/sparse_vec.cmo src/util/sparse_vec.ml
+- ocamlfind ocamlc -a src/util/array_util.cmo src/util/sparse_vec.cmo src/util/vec.cmo src/util/iheap.cmo src/msat.cmo -o src/msat.cma
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/plugin_intf.cmx src/core/plugin_intf.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/formula_intf.cmx src/core/formula_intf.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/expr_intf.cmx src/core/expr_intf.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/vec.cmx src/util/vec.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/solver_types_intf.cmx src/core/solver_types_intf.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/solver_types.cmx src/core/solver_types.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/solver_types.cmx src/core/solver_types.ml
+- [1mFile "[1msrc/core/solver_types.ml", line 14, characters 0-11[0m[0m:
+- [1;35mWarning[0m 33: unused open Printf.
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/log.cmx src/util/log.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/res_intf.cmx src/core/res_intf.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/res.cmx src/core/res.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/res.cmx src/core/res.ml
+- [1mFile "[1msrc/core/res.ml", line 17, characters 2-37[0m[0m:
+- [1;35mWarning[0m 34: unused type int_cl.
+- [1mFile "[1msrc/core/res.ml", line 20, characters 2-38[0m[0m:
+- [1;35mWarning[0m 38: unused extension constructor Resolution_error.
+- [1mFile "[1msrc/core/res.ml", line 23, characters 6-11[0m[0m:
+- [1;35mWarning[0m 32: unused value error.
+- [1mFile "[1msrc/core/res.ml", line 24, characters 6-10[0m[0m:
+- [1;35mWarning[0m 32: unused value warn.
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/sparse_vec.cmx src/util/sparse_vec.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/array_util.cmx src/util/array_util.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/iheap.cmx src/util/iheap.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/util -I src -I src/core -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/util/iheap.cmx src/util/iheap.ml
+- [1mFile "[1msrc/util/iheap.ml", line 78, characters 4-12[0m[0m:
+- [1;35mWarning[0m 32: unused value increase.
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/internal.cmx src/core/internal.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/internal.cmx src/core/internal.ml
+- [1mFile "[1msrc/core/internal.ml", line 182, characters 6-13[0m[0m:
+- [1;35mWarning[0m 32: unused value nb_vars.
+- [1mFile "[1msrc/core/internal.ml", line 378, characters 6-15[0m[0m:
+- [1;35mWarning[0m 32: unused value satisfied.
+- [1mFile "[1msrc/core/internal.ml", line 529, characters 6-19[0m[0m:
+- [1;35mWarning[0m 32: unused value max_lvl_atoms.
+- [1mFile "[1msrc/core/internal.ml", line 1059, characters 6-15[0m[0m:
+- [1;35mWarning[0m 32: unused value check_vec.
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/solver_intf.cmx src/core/solver_intf.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/external.cmx src/core/external.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/external.cmx src/core/external.ml
+- [1mFile "[1msrc/core/external.ml", line 51, characters 2-25[0m[0m:
+- [1;35mWarning[0m 34: unused type clause.
+- [1mFile "[1msrc/core/external.ml", line 52, characters 2-26[0m[0m:
+- [1;35mWarning[0m 34: unused type proof.
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/core -I src -I src/util -I src/backend -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/core/theory_intf.cmx src/core/theory_intf.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/backend -I src -I src/util -I src/core -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/backend/backend_intf.cmx src/backend/backend_intf.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/solver -I src -I src/util -I src/core -I src/backend -I src/mcsat -I src/sat -I src/smt -o src/solver/tseitin_intf.cmx src/solver/tseitin_intf.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/solver -I src -I src/util -I src/core -I src/backend -I src/mcsat -I src/sat -I src/smt -o src/solver/solver.cmx src/solver/solver.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/solver -I src -I src/util -I src/core -I src/backend -I src/mcsat -I src/sat -I src/smt -o src/solver/mcsolver.cmx src/solver/mcsolver.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/backend -I src -I src/util -I src/core -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/backend/dot.cmx src/backend/dot.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/backend -I src -I src/util -I src/core -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/backend/dot.cmx src/backend/dot.ml
+- [1mFile "[1msrc/backend/dot.ml", line 66, characters 4-698[0m[0m:
+- [1;35mWarning[0m 8: this pattern-matching is not exhaustive.
+- Here is an example of a value that is not matched:
+- Assumption
+- [1mFile "[1msrc/backend/dot.ml", line 63, characters 6-11[0m[0m:
+- [1;35mWarning[0m 32: unused value ttify.
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/backend -I src -I src/util -I src/core -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/backend/dedukti.cmx src/backend/dedukti.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/backend -I src -I src/util -I src/core -I src/solver -I src/mcsat -I src/sat -I src/smt -o src/backend/dedukti.cmx src/backend/dedukti.ml
+- [1mFile "[1msrc/backend/dedukti.ml", line 24, characters 6-17[0m[0m:
+- [1;35mWarning[0m 32: unused value clause_name.
+- [1mFile "[1msrc/backend/dedukti.ml", line 26, characters 6-15[0m[0m:
+- [1;35mWarning[0m 32: unused value pp_clause.
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/solver -I src -I src/util -I src/core -I src/backend -I src/mcsat -I src/sat -I src/smt -o src/solver/tseitin.cmx src/solver/tseitin.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -short-paths -w K -w X -w Y -strict-sequence -unbox-closures -for-pack Msat -inline 100 -O3 -unbox-closures-factor 20 -color always -I src/solver -I src -I src/util -I src/core -I src/backend -I src/mcsat -I src/sat -I src/smt -o src/solver/tseitin.cmx src/solver/tseitin.ml
+- [1mFile "[1msrc/solver/tseitin.ml", line 128, characters 6-11[0m[0m:
+- [1;35mWarning[0m 32: unused value @.
+- touch src/msat.mli  ; if  ocamlfind ocamlopt -pack -g -bin-annot -I src/util -I src/core -I src/solver -I src/backend src/util/log.cmx src/core/formula_intf.cmx src/core/plugin_intf.cmx src/core/theory_intf.cmx src/core/expr_intf.cmx src/solver/tseitin_intf.cmx src/core/solver_types_intf.cmx src/core/solver_types.cmx src/core/res_intf.cmx src/core/res.cmx src/core/solver_intf.cmx src/core/internal.cmx src/core/external.cmx src/solver/solver.cmx src/solver/mcsolver.cmx src/backend/backend_intf.cmx src/backend/dot.cmx src/backend/dedukti.cmx src/solver/tseitin.cmx -o src/msat.cmx  ; then  rm -f src/msat.mli  ; else  rm -f src/msat.mli  ; exit 1; fi
+- ocamlfind ocamlopt -a src/util/array_util.cmx src/util/sparse_vec.cmx src/util/vec.cmx src/util/iheap.cmx src/msat.cmx -o src/msat.cmxa
+- ocamlfind ocamlopt -shared src/msat.cmx -o src/msat.cmxs
+-> compiled  msat.0.5.1
+Processing  2/2: [msat: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/msat.0.5.1)
+- ocamlbuild -log build.log -use-ocamlfind  msat.cma msat.cmxa msat.cmxs 
+- ocamlfind install msat META _build/src/msat.cma _build/src/msat.cmxa _build/src/msat.cmxs _build/src/msat.a _build/src/msat.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/msat/msat.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/msat/msat.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/msat/msat.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/msat/msat.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/msat/msat.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/msat/META
+-> installed msat.0.5.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 16:59.33] Success
