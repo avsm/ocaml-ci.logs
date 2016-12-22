@@ -1,0 +1,1876 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 depyt /home/opam/opam-repository/cache
+[2016-12-22 16:19.32] Starting...
+[2016-12-22 16:19.32] Waiting for free pool slot to run
+[2016-12-22 17:44.51] Pool slot obtained, starting run
+[2016-12-22 17:44.51] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 depyt
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+#  - time
+# The following new OS packages need to be installed: time
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy time
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package time.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../time_1.7-25.1_amd64.deb ...
+Unpacking time (1.7-25.1) ...
+Setting up time (1.7-25.1) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install uchar         0.0.1                                 [required by jsonm]
+  - install optcomp       1.6                                   [required by ocplib-endian]
+  - install result        1.2                                   [required by depyt]
+  - install ocplib-endian 0.4                                   [required by depyt]
+  - install topkg         0.8.1                                 [required by depyt]
+  - install cstruct       1.0.1                                 [required by depyt]
+  - install uutf          1.0.0                                 [required by jsonm]
+  - install fmt           0.8.0                                 [required by depyt]
+  - install jsonm         1.0.0                                 [required by depyt]
+  - install depyt         0.1.0
+===== 10 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/10: [cstruct.1.0.1: dl]
+Processing  2/10: [cstruct.1.0.1: dl] [depyt.0.1.0: dl]
+Processing  3/10: [cstruct.1.0.1: dl] [depyt.0.1.0: dl] [fmt.0.8.0: dl]
+[depyt.0.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/10: [cstruct.1.0.1: dl] [fmt.0.8.0: dl]
+[cstruct.1.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/10: [fmt.0.8.0: dl]
+[fmt.0.8.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/10:
+Processing  4/10: [jsonm.1.0.0: dl]
+Processing  5/10: [jsonm.1.0.0: dl] [ocplib-endian.0.4: dl]
+Processing  6/10: [jsonm.1.0.0: dl] [ocplib-endian.0.4: dl] [optcomp.1.6: dl]
+[jsonm.1.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/10: [ocplib-endian.0.4: dl] [optcomp.1.6: dl]
+[ocplib-endian.0.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/10: [optcomp.1.6: dl]
+Processing  7/10: [optcomp.1.6: dl] [result.1.2: dl]
+Processing  8/10: [optcomp.1.6: dl] [result.1.2: dl] [topkg.0.8.1: dl]
+[optcomp.1.6] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/10: [result.1.2: dl] [topkg.0.8.1: dl]
+Processing  9/10: [result.1.2: dl] [topkg.0.8.1: dl] [uchar.0.0.1: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  9/10: [topkg.0.8.1: dl] [uchar.0.0.1: dl]
+Processing 10/10: [topkg.0.8.1: dl] [uchar.0.0.1: dl] [uutf.1.0.0: dl]
+[topkg.0.8.1] downloaded from file:///home/opam/opam-repository/cache
+Processing 10/10: [uchar.0.0.1: dl] [uutf.1.0.0: dl]
+[uchar.0.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing 10/10: [uutf.1.0.0: dl]
+[uutf.1.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing 10/10:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/20: [optcomp: ./configure]
+Processing  2/20: [optcomp: ./configure] [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+Processing  2/20: [optcomp: ./configure]
+Processing  3/20: [optcomp: ./configure] [uchar: ocaml]
++ ocaml "pkg/git.ml" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/uchar.0.0.1)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/uchar.0.0.1)
+-> compiled  uchar.0.0.1
+Processing  3/20: [optcomp: ./configure]
+-> installed result.1.2
+Processing  4/20: [optcomp: ./configure]
+Processing  5/20: [optcomp: ./configure] [topkg: ocaml build]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/optcomp.1.6)
+- File "./setup.ml", line 252, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 325, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 334, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 334, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 337, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 375, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 481, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 2507, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 5857, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5858, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5859, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5860, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5925, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5926, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5927, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5928, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ optcomp
+- Package version: ..................................... 1.6
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Build binaries: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_camlp4: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_quotations_o: ............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_lib: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+- File "./setup.ml", line 252, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 325, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 334, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 334, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 337, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 375, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 481, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 2507, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 5857, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5858, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5859, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5860, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5925, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5926, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5927, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5928, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ optcomp
+- Package version: ..................................... 1.6
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Build binaries: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_camlp4: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_quotations_o: ............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_lib: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+Processing  5/20: [optcomp: make] [topkg: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pkg-name" "topkg" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/topkg.0.8.1)
+- File "src/topkg_conf.ml", line 19, characters 8-30:
+- Warning 3: deprecated: Topkg_string.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.ml > src/topkg.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.mli > src/topkg.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmi src/topkg.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.ml > src/topkg_build.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.mli > src/topkg_build.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.mli > src/topkg_cmd.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.mli > src/topkg_fpath.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmi src/topkg_fpath.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.mli > src/topkg_codec.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmi src/topkg_cmd.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.mli > src/topkg_result.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmi src/topkg_result.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.mli > src/topkg_conf.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmi src/topkg_codec.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmi src/topkg_conf.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmi src/topkg_build.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.ml > src/topkg_cmd.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.ml > src/topkg_fpath.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.ml > src/topkg_string.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.mli > src/topkg_string.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmi src/topkg_string.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmx src/topkg_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmx src/topkg_fpath.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.ml > src/topkg_codec.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmx src/topkg_cmd.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.ml > src/topkg_os.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.mli > src/topkg_os.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmi src/topkg_os.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.ml > src/topkg_log.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.mli > src/topkg_log.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmi src/topkg_log.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.ml > src/topkg_result.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmx src/topkg_result.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmx src/topkg_log.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmx src/topkg_os.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.ml > src/topkg_conf.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.ml > src/topkg_vcs.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.mli > src/topkg_vcs.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmi src/topkg_vcs.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmx src/topkg_vcs.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmx src/topkg_codec.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmx src/topkg_conf.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.ml > src/topkg_distrib.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.mli > src/topkg_distrib.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmi src/topkg_distrib.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.ml > src/topkg_opam.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.mli > src/topkg_opam.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmi src/topkg_opam.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmx src/topkg_opam.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.ml > src/topkg_fexts.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.mli > src/topkg_fexts.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmi src/topkg_fexts.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.ml > src/topkg_install.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.mli > src/topkg_install.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.mli > src/topkg_test.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmi src/topkg_test.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmi src/topkg_install.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmx src/topkg_fexts.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.ml > src/topkg_test.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmx src/topkg_test.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.ml > src/topkg_ipc.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.mli > src/topkg_ipc.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.mli > src/topkg_pkg.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.mli > src/topkg_publish.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmi src/topkg_publish.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmi src/topkg_pkg.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmi src/topkg_ipc.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.ml > src/topkg_pkg.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmx src/topkg_build.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmx src/topkg_distrib.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.ml > src/topkg_publish.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmx src/topkg_publish.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmx src/topkg_pkg.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.ml > src/topkg_main.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.mli > src/topkg_main.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmi src/topkg_main.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmx src/topkg_ipc.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmx src/topkg_main.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmx src/topkg.ml
+- ocamlfind ocamlopt -a -package 'bytes result' src/topkg_string.cmx src/topkg_fpath.cmx src/topkg_cmd.cmx src/topkg_result.cmx src/topkg_log.cmx src/topkg_os.cmx src/topkg_codec.cmx src/topkg_vcs.cmx src/topkg_conf.cmx src/topkg_build.cmx src/topkg_opam.cmx src/topkg_distrib.cmx src/topkg_fexts.cmx src/topkg_test.cmx src/topkg_install.cmx src/topkg_publish.cmx src/topkg_pkg.cmx src/topkg_ipc.cmx src/topkg_main.cmx src/topkg.cmx -o src/topkg.cmxa
+- ocamlfind ocamlopt -shared -package 'bytes result' src/topkg.cmx -o src/topkg.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmo src/topkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmo src/topkg_build.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmo src/topkg_cmd.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmo src/topkg_codec.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmo src/topkg_conf.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmo src/topkg_distrib.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmo src/topkg_fexts.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmo src/topkg_fpath.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmo src/topkg_ipc.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmo src/topkg_log.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmo src/topkg_main.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmo src/topkg_opam.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmo src/topkg_os.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmo src/topkg_pkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmo src/topkg_publish.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmo src/topkg_result.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmo src/topkg_string.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmo src/topkg_test.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmo src/topkg_vcs.ml
+- ocamlfind ocamlc -a -package 'bytes result' src/topkg_string.cmo src/topkg_fpath.cmo src/topkg_cmd.cmo src/topkg_result.cmo src/topkg_log.cmo src/topkg_os.cmo src/topkg_codec.cmo src/topkg_vcs.cmo src/topkg_conf.cmo src/topkg_build.cmo src/topkg_opam.cmo src/topkg_distrib.cmo src/topkg_fexts.cmo src/topkg_test.cmo src/topkg_install.cmo src/topkg_publish.cmo src/topkg_pkg.cmo src/topkg_ipc.cmo src/topkg_main.cmo src/topkg.cmo -o src/topkg.cma
+- File "src/topkg_conf.ml", line 19, characters 8-30:
+- Warning 3: deprecated: Topkg_string.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.ml > src/topkg.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.mli > src/topkg.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmi src/topkg.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.ml > src/topkg_build.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.mli > src/topkg_build.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.mli > src/topkg_cmd.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.mli > src/topkg_fpath.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmi src/topkg_fpath.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.mli > src/topkg_codec.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmi src/topkg_cmd.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.mli > src/topkg_result.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmi src/topkg_result.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.mli > src/topkg_conf.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmi src/topkg_codec.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmi src/topkg_conf.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmi src/topkg_build.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.ml > src/topkg_cmd.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.ml > src/topkg_fpath.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.ml > src/topkg_string.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.mli > src/topkg_string.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmi src/topkg_string.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmx src/topkg_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmx src/topkg_fpath.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.ml > src/topkg_codec.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmx src/topkg_cmd.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.ml > src/topkg_os.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.mli > src/topkg_os.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmi src/topkg_os.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.ml > src/topkg_log.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.mli > src/topkg_log.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmi src/topkg_log.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.ml > src/topkg_result.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmx src/topkg_result.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmx src/topkg_log.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmx src/topkg_os.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.ml > src/topkg_conf.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.ml > src/topkg_vcs.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.mli > src/topkg_vcs.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmi src/topkg_vcs.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmx src/topkg_vcs.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmx src/topkg_codec.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmx src/topkg_conf.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.ml > src/topkg_distrib.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.mli > src/topkg_distrib.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmi src/topkg_distrib.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.ml > src/topkg_opam.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.mli > src/topkg_opam.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmi src/topkg_opam.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmx src/topkg_opam.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.ml > src/topkg_fexts.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.mli > src/topkg_fexts.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmi src/topkg_fexts.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.ml > src/topkg_install.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.mli > src/topkg_install.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.mli > src/topkg_test.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmi src/topkg_test.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmi src/topkg_install.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmx src/topkg_fexts.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.ml > src/topkg_test.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmx src/topkg_test.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.ml > src/topkg_ipc.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.mli > src/topkg_ipc.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.mli > src/topkg_pkg.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.mli > src/topkg_publish.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmi src/topkg_publish.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmi src/topkg_pkg.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmi src/topkg_ipc.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.ml > src/topkg_pkg.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmx src/topkg_build.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmx src/topkg_distrib.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.ml > src/topkg_publish.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmx src/topkg_publish.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmx src/topkg_pkg.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.ml > src/topkg_main.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.mli > src/topkg_main.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmi src/topkg_main.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmx src/topkg_ipc.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmx src/topkg_main.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmx src/topkg.ml
+- ocamlfind ocamlopt -a -package 'bytes result' src/topkg_string.cmx src/topkg_fpath.cmx src/topkg_cmd.cmx src/topkg_result.cmx src/topkg_log.cmx src/topkg_os.cmx src/topkg_codec.cmx src/topkg_vcs.cmx src/topkg_conf.cmx src/topkg_build.cmx src/topkg_opam.cmx src/topkg_distrib.cmx src/topkg_fexts.cmx src/topkg_test.cmx src/topkg_install.cmx src/topkg_publish.cmx src/topkg_pkg.cmx src/topkg_ipc.cmx src/topkg_main.cmx src/topkg.cmx -o src/topkg.cmxa
+- ocamlfind ocamlopt -shared -package 'bytes result' src/topkg.cmx -o src/topkg.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmo src/topkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmo src/topkg_build.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmo src/topkg_cmd.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmo src/topkg_codec.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmo src/topkg_conf.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmo src/topkg_distrib.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmo src/topkg_fexts.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmo src/topkg_fpath.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmo src/topkg_ipc.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmo src/topkg_log.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmo src/topkg_main.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmo src/topkg_opam.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmo src/topkg_os.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmo src/topkg_pkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmo src/topkg_publish.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmo src/topkg_result.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmo src/topkg_string.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmo src/topkg_test.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmo src/topkg_vcs.ml
+- ocamlfind ocamlc -a -package 'bytes result' src/topkg_string.cmo src/topkg_fpath.cmo src/topkg_cmd.cmo src/topkg_result.cmo src/topkg_log.cmo src/topkg_os.cmo src/topkg_codec.cmo src/topkg_vcs.cmo src/topkg_conf.cmo src/topkg_build.cmo src/topkg_opam.cmo src/topkg_distrib.cmo src/topkg_fexts.cmo src/topkg_test.cmo src/topkg_install.cmo src/topkg_publish.cmo src/topkg_pkg.cmo src/topkg_ipc.cmo src/topkg_main.cmo src/topkg.cmo -o src/topkg.cma
+-> compiled  topkg.0.8.1
+Processing  5/20: [optcomp: make]
+-> installed topkg.0.8.1
+Processing  6/20: [optcomp: make]
+Processing  7/20: [fmt: ocaml build] [optcomp: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/optcomp.1.6)
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- File "setup.ml", line 252, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 325, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 334, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 334, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 337, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 375, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 481, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 2507, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 5857, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5858, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5859, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5860, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5925, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5926, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5927, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5928, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- rm -f setup.cmx setup.cmi setup.o setup.obj setup.cmo
+- ./setup.exe -configure  
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ optcomp
+- Package version: ..................................... 1.6
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Build binaries: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_camlp4: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_quotations_o: ............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_lib: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+- ./setup.exe -build 
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/pa_optcomp.mli > src/pa_optcomp.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/pa_optcomp.cmi src/pa_optcomp.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -modules src/pa_optcomp.ml > src/pa_optcomp.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -I src -o src/pa_optcomp.cmo src/pa_optcomp.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/pa_optcomp.cmo -o src/optcomp.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -I src -o src/pa_optcomp.cmx src/pa_optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -I src -o src/pa_optcomp.cmx src/pa_optcomp.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/pa_optcomp.cmx -o src/optcomp.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/optcomp.cmxa src/pa_optcomp.cmx -o src/optcomp.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/optcomp_o.ml > src/optcomp_o.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/optcomp.ml > src/optcomp.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmo src/optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmo src/optcomp.ml
+- File "src/optcomp.ml", line 87, characters 26-39:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_o.cmo src/optcomp_o.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmx src/optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmx src/optcomp.ml
+- File "src/optcomp.ml", line 87, characters 26-39:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_o.cmx src/optcomp_o.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_o.cmx src/optcomp_o.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 camlp4fulllib.cmxa -g -linkpkg -package camlp4 -package camlp4.lib -package camlp4.quotations.o src/optcomp.cmxa src/optcomp.cmx src/optcomp_o.cmx -o src/optcomp_o.native
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/optcomp_r.ml > src/optcomp_r.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_r.cmo src/optcomp_r.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_r.cmx src/optcomp_r.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_r.cmx src/optcomp_r.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 camlp4fulllib.cmxa -g -linkpkg -package camlp4 -package camlp4.lib -package camlp4.quotations.o src/optcomp.cmxa src/optcomp.cmx src/optcomp_r.cmx -o src/optcomp_r.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 507, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 520, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- File "setup.ml", line 252, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 325, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 334, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 334, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 337, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 375, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 481, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 2507, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 5857, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5858, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5859, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5860, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5925, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5926, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5927, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5928, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- rm -f setup.cmx setup.cmi setup.o setup.obj setup.cmo
+- ./setup.exe -configure  
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ optcomp
+- Package version: ..................................... 1.6
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Build binaries: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_camlp4: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_quotations_o: ............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_lib: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+- ./setup.exe -build 
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/pa_optcomp.mli > src/pa_optcomp.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/pa_optcomp.cmi src/pa_optcomp.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -modules src/pa_optcomp.ml > src/pa_optcomp.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -I src -o src/pa_optcomp.cmo src/pa_optcomp.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/pa_optcomp.cmo -o src/optcomp.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -I src -o src/pa_optcomp.cmx src/pa_optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -syntax camlp4o -I src -o src/pa_optcomp.cmx src/pa_optcomp.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/pa_optcomp.cmx -o src/optcomp.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/optcomp.cmxa src/pa_optcomp.cmx -o src/optcomp.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/optcomp_o.ml > src/optcomp_o.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/optcomp.ml > src/optcomp.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmo src/optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmo src/optcomp.ml
+- File "src/optcomp.ml", line 87, characters 26-39:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_o.cmo src/optcomp_o.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmx src/optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp.cmx src/optcomp.ml
+- File "src/optcomp.ml", line 87, characters 26-39:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_o.cmx src/optcomp_o.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_o.cmx src/optcomp_o.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 camlp4fulllib.cmxa -g -linkpkg -package camlp4 -package camlp4.lib -package camlp4.quotations.o src/optcomp.cmxa src/optcomp.cmx src/optcomp_o.cmx -o src/optcomp_o.native
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -modules src/optcomp_r.ml > src/optcomp_r.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_r.cmo src/optcomp_r.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_r.cmx src/optcomp_r.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Parsers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Printers -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4/Camlp4Filters -g -I src -package camlp4 -package camlp4.lib -syntax camlp4o -package camlp4.quotations.o -I src -o src/optcomp_r.cmx src/optcomp_r.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 camlp4fulllib.cmxa -g -linkpkg -package camlp4 -package camlp4.lib -package camlp4.quotations.o src/optcomp.cmxa src/optcomp.cmx src/optcomp_r.cmx -o src/optcomp_r.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 507, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 520, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+-> compiled  optcomp.1.6
+Processing  7/20: [fmt: ocaml build]
+Processing  8/20: [fmt: ocaml build] [optcomp: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/optcomp.1.6)
+- ./setup.exe -install 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/pa_optcomp.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/pa_optcomp.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/pa_optcomp.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/META
+- ./setup.exe -install 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/pa_optcomp.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/optcomp.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/pa_optcomp.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/pa_optcomp.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp/META
+-> installed optcomp.1.6
+Processing  8/20: [fmt: ocaml build]
+Processing  9/20: [fmt: ocaml build] [ocplib-endian: ocaml setup.ml]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" "--with-base-unix" "true" "--with-cmdliner" "true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/fmt.0.8.0)
+- ocamlfind ocamldep -package result -modules src/fmt.ml > src/fmt.ml.depends
+- ocamlfind ocamldep -package result -modules src/fmt.mli > src/fmt.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package result -I src -I test -o src/fmt.cmi src/fmt.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package result -I src -I test -o src/fmt.cmx src/fmt.ml
+- ocamlfind ocamlopt -a -package result src/fmt.cmx -o src/fmt.cmxa
+- ocamlfind ocamlopt -shared -package result src/fmt.cmx -o src/fmt.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package result -I src -I test -o src/fmt.cmo src/fmt.ml
+- ocamlfind ocamlc -a -package result src/fmt.cmo -o src/fmt.cma
+- ocamlfind ocamldep -package unix -package result -modules src/fmt_tty.ml > src/fmt_tty.ml.depends
+- ocamlfind ocamldep -package unix -package result -modules src/fmt_tty.mli > src/fmt_tty.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmi src/fmt_tty.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmx src/fmt_tty.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmx src/fmt_tty.ml
+- File "src/fmt_tty.ml", line 46, characters 30-46:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlopt -a -package unix -package result src/fmt_tty.cmx -o src/fmt_tty.cmxa
+- ocamlfind ocamlopt -shared -package unix -package result src/fmt_tty.cmx -o src/fmt_tty.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmo src/fmt_tty.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmo src/fmt_tty.ml
+- File "src/fmt_tty.ml", line 46, characters 30-46:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlc -a -package unix -package result src/fmt_tty.cmo -o src/fmt_tty.cma
+- ocamlfind ocamldep -package cmdliner -package result -modules src/fmt_cli.ml > src/fmt_cli.ml.depends
+- ocamlfind ocamldep -package cmdliner -package result -modules src/fmt_cli.mli > src/fmt_cli.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package cmdliner -package result -I src -I test -o src/fmt_cli.cmi src/fmt_cli.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package cmdliner -package result -I src -I test -o src/fmt_cli.cmx src/fmt_cli.ml
+- ocamlfind ocamlopt -a -package cmdliner -package result src/fmt_cli.cmx -o src/fmt_cli.cmxa
+- ocamlfind ocamlopt -shared -package cmdliner -package result src/fmt_cli.cmx -o src/fmt_cli.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package cmdliner -package result -I src -I test -o src/fmt_cli.cmo src/fmt_cli.ml
+- ocamlfind ocamlc -a -package cmdliner -package result src/fmt_cli.cmo -o src/fmt_cli.cma
+- ocamlfind ocamldep -package compiler-libs.toplevel -package result -modules src/fmt_top.ml > src/fmt_top.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmo src/fmt_top.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmo src/fmt_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmx src/fmt_top.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmx src/fmt_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxa
+- + ocamlfind ocamlopt -a -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxs
+- + ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a -package compiler-libs.toplevel -package result src/fmt_top.cmo -o src/fmt_top.cma
+- + ocamlfind ocamlc -a -package compiler-libs.toplevel -package result src/fmt_top.cmo -o src/fmt_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamldep -package result -modules src/fmt.ml > src/fmt.ml.depends
+- ocamlfind ocamldep -package result -modules src/fmt.mli > src/fmt.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package result -I src -I test -o src/fmt.cmi src/fmt.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package result -I src -I test -o src/fmt.cmx src/fmt.ml
+- ocamlfind ocamlopt -a -package result src/fmt.cmx -o src/fmt.cmxa
+- ocamlfind ocamlopt -shared -package result src/fmt.cmx -o src/fmt.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package result -I src -I test -o src/fmt.cmo src/fmt.ml
+- ocamlfind ocamlc -a -package result src/fmt.cmo -o src/fmt.cma
+- ocamlfind ocamldep -package unix -package result -modules src/fmt_tty.ml > src/fmt_tty.ml.depends
+- ocamlfind ocamldep -package unix -package result -modules src/fmt_tty.mli > src/fmt_tty.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmi src/fmt_tty.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmx src/fmt_tty.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmx src/fmt_tty.ml
+- File "src/fmt_tty.ml", line 46, characters 30-46:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlopt -a -package unix -package result src/fmt_tty.cmx -o src/fmt_tty.cmxa
+- ocamlfind ocamlopt -shared -package unix -package result src/fmt_tty.cmx -o src/fmt_tty.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmo src/fmt_tty.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmo src/fmt_tty.ml
+- File "src/fmt_tty.ml", line 46, characters 30-46:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlc -a -package unix -package result src/fmt_tty.cmo -o src/fmt_tty.cma
+- ocamlfind ocamldep -package cmdliner -package result -modules src/fmt_cli.ml > src/fmt_cli.ml.depends
+- ocamlfind ocamldep -package cmdliner -package result -modules src/fmt_cli.mli > src/fmt_cli.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package cmdliner -package result -I src -I test -o src/fmt_cli.cmi src/fmt_cli.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package cmdliner -package result -I src -I test -o src/fmt_cli.cmx src/fmt_cli.ml
+- ocamlfind ocamlopt -a -package cmdliner -package result src/fmt_cli.cmx -o src/fmt_cli.cmxa
+- ocamlfind ocamlopt -shared -package cmdliner -package result src/fmt_cli.cmx -o src/fmt_cli.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package cmdliner -package result -I src -I test -o src/fmt_cli.cmo src/fmt_cli.ml
+- ocamlfind ocamlc -a -package cmdliner -package result src/fmt_cli.cmo -o src/fmt_cli.cma
+- ocamlfind ocamldep -package compiler-libs.toplevel -package result -modules src/fmt_top.ml > src/fmt_top.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmo src/fmt_top.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmo src/fmt_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmx src/fmt_top.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmx src/fmt_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxa
+- + ocamlfind ocamlopt -a -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxs
+- + ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a -package compiler-libs.toplevel -package result src/fmt_top.cmo -o src/fmt_top.cma
+- + ocamlfind ocamlc -a -package compiler-libs.toplevel -package result src/fmt_top.cmo -o src/fmt_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+-> compiled  fmt.0.8.0
+Processing  9/20: [ocplib-endian: ocaml setup.ml]
+-> installed fmt.0.8.0
+Processing 10/20: [ocplib-endian: ocaml setup.ml]
+-> installed uchar.0.0.1
+Processing 11/20: [ocplib-endian: ocaml setup.ml]
+Processing 12/20: [ocplib-endian: ocaml setup.ml] [uutf: ocaml build]
++ ocaml "setup.ml" "-configure" "--disable-debug" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocplib-endian.0.4)
+- File "./setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 246, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 246, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 257, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 287, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 384, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1253, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1258, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 4920, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4921, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 4922, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4923, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ocplib-endian
+- Package version: ..................................... 0.4
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ false
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_optcomp: ......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp
+- pkg_bigarray: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- 
+- File "./setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 246, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 246, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 257, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 287, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 384, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1253, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1258, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 4920, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4921, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 4922, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4923, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ocplib-endian
+- Package version: ..................................... 0.4
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ false
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_optcomp: ......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/optcomp
+- pkg_bigarray: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- 
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" "--with-cmdliner" "true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/uutf.1.0.0)
+- ocamlfind ocamldep -package bytes -package uchar -modules src/uutf.ml > src/uutf.ml.depends
+- ocamlfind ocamldep -package bytes -package uchar -modules src/uutf.mli > src/uutf.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmi src/uutf.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmx src/uutf.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmx src/uutf.ml
+- File "src/uutf.ml", line 34, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlopt -a -package bytes -package uchar src/uutf.cmx -o src/uutf.cmxa
+- ocamlfind ocamlopt -shared -package bytes -package uchar src/uutf.cmx -o src/uutf.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmo src/uutf.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmo src/uutf.ml
+- File "src/uutf.ml", line 34, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlc -a -package bytes -package uchar src/uutf.cmo -o src/uutf.cma
+- ocamlfind ocamldep -package unix -package cmdliner -package bytes -package uchar -modules test/utftrip.ml > test/utftrip.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package cmdliner -package bytes -package uchar -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package cmdliner -package bytes -package uchar -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- ocamlfind ocamlopt -linkpkg -g -package unix -package cmdliner -package bytes -package uchar src/uutf.cmx test/utftrip.cmx -o test/utftrip.native
+- ocamlfind ocamldep -package bytes -package uchar -modules src/uutf.ml > src/uutf.ml.depends
+- ocamlfind ocamldep -package bytes -package uchar -modules src/uutf.mli > src/uutf.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmi src/uutf.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmx src/uutf.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmx src/uutf.ml
+- File "src/uutf.ml", line 34, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlopt -a -package bytes -package uchar src/uutf.cmx -o src/uutf.cmxa
+- ocamlfind ocamlopt -shared -package bytes -package uchar src/uutf.cmx -o src/uutf.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmo src/uutf.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package uchar -I src -I test -o src/uutf.cmo src/uutf.ml
+- File "src/uutf.ml", line 34, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlc -a -package bytes -package uchar src/uutf.cmo -o src/uutf.cma
+- ocamlfind ocamldep -package unix -package cmdliner -package bytes -package uchar -modules test/utftrip.ml > test/utftrip.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package cmdliner -package bytes -package uchar -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package cmdliner -package bytes -package uchar -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- ocamlfind ocamlopt -linkpkg -g -package unix -package cmdliner -package bytes -package uchar src/uutf.cmx test/utftrip.cmx -o test/utftrip.native
+-> compiled  uutf.1.0.0
+Processing 12/20: [ocplib-endian: ocaml setup.ml]
+-> installed uutf.1.0.0
+Processing 13/20: [ocplib-endian: ocaml setup.ml]
+Processing 14/20: [jsonm: ocaml build] [ocplib-endian: ocaml setup.ml]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/jsonm.1.0.0)
+- ocamlfind ocamldep -package bytes -package uchar -package uutf -modules src/jsonm.ml > src/jsonm.ml.depends
+- ocamlfind ocamldep -package bytes -package uchar -package uutf -modules src/jsonm.mli > src/jsonm.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package uchar -package uutf -I src -I test -o src/jsonm.cmi src/jsonm.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package uchar -package uutf -I src -I test -o src/jsonm.cmx src/jsonm.ml
+- ocamlfind ocamlopt -a -package bytes -package uchar -package uutf src/jsonm.cmx -o src/jsonm.cmxa
+- ocamlfind ocamlopt -shared -package bytes -package uchar -package uutf src/jsonm.cmx -o src/jsonm.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package uchar -package uutf -I src -I test -o src/jsonm.cmo src/jsonm.ml
+- ocamlfind ocamlc -a -package bytes -package uchar -package uutf src/jsonm.cmo -o src/jsonm.cma
+- ocamlfind ocamldep -package unix -package bytes -package uchar -package uutf -modules test/jsontrip.ml > test/jsontrip.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package bytes -package uchar -package uutf -I test -I src -o test/jsontrip.cmo test/jsontrip.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package bytes -package uchar -package uutf -I test -I src -o test/jsontrip.cmx test/jsontrip.ml
+- ocamlfind ocamlopt -linkpkg -g -package unix -package bytes -package uchar -package uutf src/jsonm.cmx test/jsontrip.cmx -o test/jsontrip.native
+- ocamlfind ocamldep -package bytes -package uchar -package uutf -modules src/jsonm.ml > src/jsonm.ml.depends
+- ocamlfind ocamldep -package bytes -package uchar -package uutf -modules src/jsonm.mli > src/jsonm.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package uchar -package uutf -I src -I test -o src/jsonm.cmi src/jsonm.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package bytes -package uchar -package uutf -I src -I test -o src/jsonm.cmx src/jsonm.ml
+- ocamlfind ocamlopt -a -package bytes -package uchar -package uutf src/jsonm.cmx -o src/jsonm.cmxa
+- ocamlfind ocamlopt -shared -package bytes -package uchar -package uutf src/jsonm.cmx -o src/jsonm.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package bytes -package uchar -package uutf -I src -I test -o src/jsonm.cmo src/jsonm.ml
+- ocamlfind ocamlc -a -package bytes -package uchar -package uutf src/jsonm.cmo -o src/jsonm.cma
+- ocamlfind ocamldep -package unix -package bytes -package uchar -package uutf -modules test/jsontrip.ml > test/jsontrip.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package bytes -package uchar -package uutf -I test -I src -o test/jsontrip.cmo test/jsontrip.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package bytes -package uchar -package uutf -I test -I src -o test/jsontrip.cmx test/jsontrip.ml
+- ocamlfind ocamlopt -linkpkg -g -package unix -package bytes -package uchar -package uutf src/jsonm.cmx test/jsontrip.cmx -o test/jsontrip.native
+-> compiled  jsonm.1.0.0
+Processing 14/20: [ocplib-endian: ocaml setup.ml]
+-> installed jsonm.1.0.0
+Processing 15/20: [ocplib-endian: ocaml setup.ml]
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocplib-endian.0.4)
+- File "./setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 246, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 246, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 257, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 287, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 384, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1253, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1258, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 4920, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4921, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 4922, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4923, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package optcomp -package bigarray -modules src/endianString.mli > src/endianString.mli.depends
+- ocamlfind ocamlc -c -package optcomp -package bigarray -I src -o src/endianString.cmi src/endianString.mli
+- ocamlfind ocamldep -package optcomp -package camlp4 -package bigarray -syntax camlp4o -modules src/endianString.ml > src/endianString.ml.depends
+- ocamlfind ocamlc -c -package optcomp -package camlp4 -package bigarray -syntax camlp4o -I src -o src/endianString.cmo src/endianString.ml
+- + ocamlfind ocamlc -c -package optcomp -package camlp4 -package bigarray -syntax camlp4o -I src -o src/endianString.cmo src/endianString.ml
+- File "src/endianString.ml", line 68, characters 2-12:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/endianString.ml", line 72, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlfind ocamlc -a src/endianString.cmo -o src/ocplib_endian.cma
+- ocamlfind ocamlopt -c -package optcomp -package camlp4 -package bigarray -syntax camlp4o -inline 1000 -I src -o src/endianString.cmx src/endianString.ml
+- + ocamlfind ocamlopt -c -package optcomp -package camlp4 -package bigarray -syntax camlp4o -inline 1000 -I src -o src/endianString.cmx src/endianString.ml
+- File "src/endianString.ml", line 68, characters 2-12:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/endianString.ml", line 72, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlfind ocamlopt -a src/endianString.cmx -o src/ocplib_endian.cmxa
+- ocamlfind ocamlopt -shared -linkall src/ocplib_endian.cmxa -o src/ocplib_endian.cmxs
+- ocamlfind ocamldep -package optcomp -package bigarray -modules src/endianBigstring.mli > src/endianBigstring.mli.depends
+- ocamlfind ocamlc -c -package optcomp -package bigarray -I src -o src/endianBigstring.cmi src/endianBigstring.mli
+- ocamlfind ocamldep -package optcomp -package camlp4 -package bigarray -syntax camlp4o -modules src/endianBigstring.ml > src/endianBigstring.ml.depends
+- ocamlfind ocamlc -c -package optcomp -package camlp4 -package bigarray -syntax camlp4o -I src -o src/endianBigstring.cmo src/endianBigstring.ml
+- ocamlfind ocamlc -a src/endianBigstring.cmo -o src/bigstring.cma
+- ocamlfind ocamlopt -c -package optcomp -package camlp4 -package bigarray -syntax camlp4o -inline 1000 -I src -o src/endianBigstring.cmx src/endianBigstring.ml
+- ocamlfind ocamlopt -a src/endianBigstring.cmx -o src/bigstring.cmxa
+- ocamlfind ocamlopt -shared -linkall src/bigstring.cmxa -o src/bigstring.cmxs
+-> compiled  ocplib-endian.0.4
+Processing 16/20: [ocplib-endian: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocplib-endian.0.4)
+- File "./setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 246, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 246, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 257, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 287, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 384, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1253, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1258, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 4920, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4921, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 4922, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4923, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/endianString.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/ocplib_endian.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/ocplib_endian.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/ocplib_endian.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/ocplib_endian.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/endianString.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/endianString.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/endianBigstring.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/bigstring.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/bigstring.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/bigstring.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/bigstring.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/endianBigstring.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/endianBigstring.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian/META
+-> installed ocplib-endian.0.4
+Processing 17/20: [cstruct: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cstruct.1.0.1)
+- ocaml setup.ml -configure --disable-lwt --enable-unix --disable-async
+- File "./setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 246, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 246, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 257, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 287, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 384, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1253, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1258, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 4920, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4921, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 4922, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4923, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ cstruct
+- Package version: ..................................... 1.0.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- build the Lwt library: ............................... false
+- build the Async_unix library: ........................ false
+- build the UNIX library: .............................. true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_bigarray: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_ocplib_endian: ................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian
+- pkg_ocplib_endian_bigstring: ......................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocplib-endian
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_camlp4_lib: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_quotations_r: ............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_extend: ................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+- ocaml setup.ml -build -j 4
+- File "./setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 246, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 246, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 257, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 287, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 384, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1253, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1258, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 4920, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4921, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 4922, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4923, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 33, characters 18-27:
+- Warning: the tag "pkg_async" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 41, characters 16-28:
+- Warning: the tag "pkg_lwt.unix" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 59, characters 48-66:
+- Warning: the tag "pkg_cstruct.syntax" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- ocamlfind ocamlc -g -ccopt -O3 -ccopt -Wall -c lib/cstruct_stubs.c
+- mv cstruct_stubs.o lib/cstruct_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlmklib.opt -o lib/cstruct_stubs lib/cstruct_stubs.o
+- ocamlfind ocamldep -package ocplib-endian.bigstring -package ocplib-endian -package bigarray -modules lib/cstruct.mli > lib/cstruct.mli.depends
+- ocamlfind ocamlc -c -g -annot -ccopt -O3 -ccopt -Wall -package ocplib-endian.bigstring -package ocplib-endian -package bigarray -I lib -I lwt -I unix -I async -o lib/cstruct.cmi lib/cstruct.mli
+- ocamlfind ocamldep -package ocplib-endian.bigstring -package ocplib-endian -package bigarray -modules lib/cstruct.ml > lib/cstruct.ml.depends
+- ocamlfind ocamlc -c -g -annot -ccopt -O3 -ccopt -Wall -package ocplib-endian.bigstring -package ocplib-endian -package bigarray -I lib -I lwt -I unix -I async -o lib/cstruct.cmo lib/cstruct.ml
+- + ocamlfind ocamlc -c -g -annot -ccopt -O3 -ccopt -Wall -package ocplib-endian.bigstring -package ocplib-endian -package bigarray -I lib -I lwt -I unix -I async -o lib/cstruct.cmo lib/cstruct.ml
+- File "lib/cstruct.ml", line 102, characters 0-138:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/cstruct.ml", line 104, characters 0-132:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/cstruct.ml", line 106, characters 0-132:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/cstruct.ml", line 110, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/cstruct.ml", line 175, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/cstruct.ml", line 186, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -a -dllib -lcstruct_stubs -cclib -lcstruct_stubs lib/cstruct.cmo -o lib/cstruct.cma
+- ocamlfind ocamlopt -c -g -annot -ccopt -O3 -ccopt -Wall -package ocplib-endian.bigstring -package ocplib-endian -package bigarray -inline 10 -I lib -I lwt -I unix -I async -o lib/cstruct.cmx lib/cstruct.ml
+- + ocamlfind ocamlopt -c -g -annot -ccopt -O3 -ccopt -Wall -package ocplib-endian.bigstring -package ocplib-endian -package bigarray -inline 10 -I lib -I lwt -I unix -I async -o lib/cstruct.cmx lib/cstruct.ml
+- File "lib/cstruct.ml", line 102, characters 0-138:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/cstruct.ml", line 104, characters 0-132:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/cstruct.ml", line 106, characters 0-132:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/cstruct.ml", line 110, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/cstruct.ml", line 175, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/cstruct.ml", line 186, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -a -cclib -lcstruct_stubs lib/cstruct.cmx -o lib/cstruct.cmxa
+- ocamlfind ocamlopt -shared -I lib/ lib/cstruct.cmx -o lib/cstruct.cmxs
+- ocamlfind ocamldep -package unix -package ocplib-endian.bigstring -package ocplib-endian -package bigarray -modules unix/unix_cstruct.mli > unix/unix_cstruct.mli.depends
+- ocamlfind ocamlc -c -g -annot -I lib -package unix -package ocplib-endian.bigstring -package ocplib-endian -package bigarray -I unix -I lib -I lwt -I async -o unix/unix_cstruct.cmi unix/unix_cstruct.mli
+- ocamlfind ocamldep -package unix -package ocplib-endian.bigstring -package ocplib-endian -package bigarray -modules unix/unix_cstruct.ml > unix/unix_cstruct.ml.depends
+- ocamlfind ocamlc -c -g -annot -I lib -package unix -package ocplib-endian.bigstring -package ocplib-endian -package bigarray -I unix -I lib -I lwt -I async -o unix/unix_cstruct.cmo unix/unix_cstruct.ml
+- ocamlfind ocamlc -a unix/unix_cstruct.cmo -o unix/unix_cstruct.cma
+- ocamlfind ocamlopt -c -g -annot -I lib -package unix -package ocplib-endian.bigstring -package ocplib-endian -package bigarray -inline 10 -I unix -I lib -I lwt -I async -o unix/unix_cstruct.cmx unix/unix_cstruct.ml
+- ocamlfind ocamlopt -a unix/unix_cstruct.cmx -o unix/unix_cstruct.cmxa
+- ocamlfind ocamlopt -shared unix/unix_cstruct.cmx -o unix/unix_cstruct.cmxs
+- ocamlfind ocamldep -package camlp4.quotations.r -package camlp4.lib -package camlp4.extend -package camlp4 -package bigarray -syntax camlp4o -modules syntax/pa_cstruct.ml > syntax/pa_cstruct.ml.depends
+- ocamlfind ocamlc -c -g -annot -package camlp4.quotations.r -package camlp4.lib -package camlp4.extend -package camlp4 -package bigarray -syntax camlp4o -I syntax -I lwt -I unix -I lib -I async -o syntax/pa_cstruct.cmo syntax/pa_cstruct.ml
+- ocamlfind ocamlc -a syntax/pa_cstruct.cmo -o syntax/cstruct-syntax.cma
+- ocamlfind ocamlopt -c -g -annot -package camlp4.quotations.r -package camlp4.lib -package camlp4.extend -package camlp4 -package bigarray -syntax camlp4o -inline 10 -I syntax -I lwt -I unix -I lib -I async -o syntax/pa_cstruct.cmx syntax/pa_cstruct.ml
+- + ocamlfind ocamlopt -c -g -annot -package camlp4.quotations.r -package camlp4.lib -package camlp4.extend -package camlp4 -package bigarray -syntax camlp4o -inline 10 -I syntax -I lwt -I unix -I lib -I async -o syntax/pa_cstruct.cmx syntax/pa_cstruct.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a syntax/pa_cstruct.cmx -o syntax/cstruct-syntax.cmxa
+- ocamlfind ocamlopt -shared -linkall syntax/cstruct-syntax.cmxa -o syntax/cstruct-syntax.cmxs
+- # No parallelism done
+-> compiled  cstruct.1.0.1
+Processing 18/20: [cstruct: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cstruct.1.0.1)
+- ocaml setup.ml -install
+- File "./setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 246, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 246, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 257, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 287, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 384, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1253, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1258, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 4920, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4921, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 4922, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4923, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/cstruct.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/libcstruct_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/cstruct.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/cstruct.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/cstruct.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/cstruct.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/cstruct.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/cstruct.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/unix_cstruct.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/unix_cstruct.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/unix_cstruct.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/unix_cstruct.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/unix_cstruct.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/unix_cstruct.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/unix_cstruct.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/pa_cstruct.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/cstruct-syntax.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/cstruct-syntax.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/cstruct-syntax.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/cstruct-syntax.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/pa_cstruct.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/pa_cstruct.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cstruct/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllcstruct_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllcstruct_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+-> installed cstruct.1.0.1
+Processing 19/20: [depyt: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/depyt.0.1.0)
+- ocamlfind ocamldep -package 'cstruct fmt result jsonm ocplib-endian' -package bytes -modules src/depyt.ml > src/depyt.ml.depends
+- ocamlfind ocamldep -package 'cstruct fmt result jsonm ocplib-endian' -package bytes -modules src/depyt.mli > src/depyt.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'cstruct fmt result jsonm ocplib-endian' -warn-error +1..49 -w A-4-41-44 -package bytes -I src -o src/depyt.cmi src/depyt.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'cstruct fmt result jsonm ocplib-endian' -warn-error +1..49 -w A-4-41-44 -package bytes -I src -o src/depyt.cmx src/depyt.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'cstruct fmt result jsonm ocplib-endian' -warn-error +1..49 -w A-4-41-44 -package bytes -I src -o src/depyt.cmx src/depyt.ml
+- File "src/depyt.ml", line 588, characters 11-32:
+- Error: Unbound module EndianBytes
+- Command exited with code 2.
+- pkg.ml: [ERROR] cmd ['ocamlbuild' '-use-ocamlfind' '-classic-display' '-tag' 'debug'
+-      '-build-dir' '_build' 'opam' 'pkg/META' 'CHANGES.md' 'LICENSE.md'
+-      'README.md' 'src/depyt.a' 'src/depyt.cmxs' 'src/depyt.cmxa'
+-      'src/depyt.cma' 'src/depyt.cmx' 'src/depyt.cmi' 'src/depyt.mli']: exited with 10
+[ERROR] The compilation of depyt failed at "ocaml pkg/pkg.ml build --pinned false".
+
+#=== ERROR while compiling depyt.0.1.0 ========================================#
+# command              ocaml pkg/pkg.ml build --pinned false
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/depyt.0.1.0
+# exit-code            1
+# env-file             /home/opam/.opam/log/depyt-1-703493.env
+# output-file          /home/opam/.opam/log/depyt-1-703493.out
+### output ###
+# [...]
+# ocamlfind ocamldep -package 'cstruct fmt result jsonm ocplib-endian' -package bytes -modules src/depyt.ml > src/depyt.ml.depends
+# ocamlfind ocamldep -package 'cstruct fmt result jsonm ocplib-endian' -package bytes -modules src/depyt.mli > src/depyt.mli.depends
+# ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'cstruct fmt result jsonm ocplib-endian' -warn-error +1..49 -w A-4-41-44 -package bytes -I src -o src/depyt.cmi src/depyt.mli
+# ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'cstruct fmt result jsonm ocplib-endian' -warn-error +1..49 -w A-4-41-44 -package bytes -I src -o src/depyt.cmx src/depyt.ml
+# + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'cstruct fmt result jsonm ocplib-endian' -warn-error +1..49 -w A-4-41-44 -package bytes -I src -o src/depyt.cmx src/depyt.ml
+# File "src/depyt.ml", line 588, characters 11-32:
+# Error: Unbound module EndianBytes
+# Command exited with code 2.
+# pkg.ml: [ERROR] cmd ['ocamlbuild' '-use-ocamlfind' '-classic-display' '-tag' 'debug'
+#      '-build-dir' '_build' 'opam' 'pkg/META' 'CHANGES.md' 'LICENSE.md'
+#      'README.md' 'src/depyt.a' 'src/depyt.cmxs' 'src/depyt.cmxa'
+#      'src/depyt.cma' 'src/depyt.cmx' 'src/depyt.cmi' 'src/depyt.mli']: exited with 10
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build depyt 0.1.0
++- 
++- The following changes have been performed
+| - install cstruct       1.0.1
+| - install fmt           0.8.0
+| - install jsonm         1.0.0
+| - install ocplib-endian 0.4  
+| - install optcomp       1.6  
+| - install result        1.2  
+| - install topkg         0.8.1
+| - install uchar         0.0.1
+| - install uutf          1.0.0
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/backup/state-20161222174504.export"
+'opam install --verbose --yes --jobs=2 depyt' failed.
+[2016-12-22 17:45.28] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191" "opam" "depext" "-ivyj" "2" "depyt" exited with status 4
