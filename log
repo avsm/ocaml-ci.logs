@@ -1,0 +1,22 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 zephyrus /home/opam/opam-repository/cache
+[2016-12-22 16:20.43] Starting...
+[2016-12-22 16:20.43] Waiting for free pool slot to run
+[2016-12-22 18:28.33] Pool slot obtained, starting run
+[2016-12-22 18:28.33] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 zephyrus
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following dependencies couldn't be met:
+  - zephyrus -> atdgen < 1.4.0 -> ocaml < 4.02.0 -> ocaml-base-compiler < 4.02.0
+    conflict with the base packages of this switch
+  - zephyrus -> atdgen < 1.4.0 -> ocaml < 4.02.0 -> ocaml-system < 4.02.0
+    unmet availability conditions, e.g. sys-ocaml-version = "4.01.0"
+  - zephyrus -> atdgen < 1.4.0 -> ocaml < 4.02.0 -> ocaml-variants < 4.01.1~
+    conflict with the base packages of this switch
+
+No solution found, exiting
+'opam install --verbose --yes --jobs=2 zephyrus' failed.
+[2016-12-22 18:28.45] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191" "opam" "depext" "-ivyj" "2" "zephyrus" exited with status 3
