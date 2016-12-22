@@ -1,0 +1,1042 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 lastfm /home/opam/opam-repository/cache
+[2016-12-22 16:18.12] Starting...
+[2016-12-22 16:18.12] Waiting for free pool slot to run
+[2016-12-22 16:54.45] Pool slot obtained, starting run
+[2016-12-22 16:54.45] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 lastfm
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libpcre3-dev
+#  - m4
+#  - pkg-config
+# The following new OS packages need to be installed: libpcre3-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libpcre3-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libpcrecpp0v5:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libpcrecpp0v5_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcrecpp0v5:amd64 (2:8.38-3.1) ...
+Selecting previously unselected package libpcre16-3:amd64.
+Preparing to unpack .../libpcre16-3_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcre16-3:amd64 (2:8.38-3.1) ...
+Selecting previously unselected package libpcre32-3:amd64.
+Preparing to unpack .../libpcre32-3_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcre32-3:amd64 (2:8.38-3.1) ...
+Selecting previously unselected package libpcre3-dev:amd64.
+Preparing to unpack .../libpcre3-dev_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcre3-dev:amd64 (2:8.38-3.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libpcrecpp0v5:amd64 (2:8.38-3.1) ...
+Setting up libpcre16-3:amd64 (2:8.38-3.1) ...
+Setting up libpcre32-3:amd64 (2:8.38-3.1) ...
+Setting up libpcre3-dev:amd64 (2:8.38-3.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by conf-libpcre]
+  - install xmlm            1.2.0                               [required by xmlplaylist]
+  - install conf-libpcre    1                                   [required by pcre]
+  - install xmlplaylist     0.1.4                               [required by lastfm]
+  - install pcre            7.1.3                               [required by lastfm]
+  - install lastfm          0.3.1
+===== 6 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  3/6: [lastfm.0.3.1: dl]
+Processing  4/6: [lastfm.0.3.1: dl] [pcre.7.1.3: dl]
+Processing  5/6: [lastfm.0.3.1: dl] [pcre.7.1.3: dl] [xmlm.1.2.0: dl]
+[lastfm.0.3.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/6: [pcre.7.1.3: dl] [xmlm.1.2.0: dl]
+[pcre.7.1.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/6: [xmlm.1.2.0: dl]
+[xmlm.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/6:
+Processing  6/6: [xmlplaylist.0.1.4: dl]
+[xmlplaylist.0.1.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/12: [conf-pkg-config: pkg-config]
+Processing  2/12: [conf-pkg-config: pkg-config] [xmlm: ./pkg/pkg-git]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-pkg-config.1.0)
+- Usage:
+-   pkg-config [OPTION...]
+- 
+- Help Options:
+-   -h, --help                              Show help options
+- 
+- Application Options:
+-   --version                               output version of pkg-config
+-   --modversion                            output version for package
+-   --atleast-pkgconfig-version=VERSION     require given version of pkg-config
+-   --libs                                  output all linker flags
+-   --static                                output linker flags for static linking
+-   --short-errors                          print short errors
+-   --libs-only-l                           output -l flags
+-   --libs-only-other                       output other libs (e.g. -pthread)
+-   --libs-only-L                           output -L flags
+-   --cflags                                output all pre-processor and compiler flags
+-   --cflags-only-I                         output -I flags
+-   --cflags-only-other                     output cflags not covered by the cflags-only-I option
+-   --variable=NAME                         get the value of variable named NAME
+-   --define-variable=NAME=VALUE            set variable NAME to VALUE
+-   --exists                                return 0 if the module(s) exist
+-   --print-variables                       output list of variables defined by the module
+-   --uninstalled                           return 0 if the uninstalled version of one or more module(s) or their dependencies will be used
+-   --atleast-version=VERSION               return 0 if the module is at least version VERSION
+-   --exact-version=VERSION                 return 0 if the module is at exactly version VERSION
+-   --max-version=VERSION                   return 0 if the module is at no newer than version VERSION
+-   --list-all                              list all known packages
+-   --debug                                 show verbose debug information
+-   --print-errors                          show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)
+-   --silence-errors                        be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)
+-   --errors-to-stdout                      print errors from --print-errors to stdout not stderr
+-   --print-provides                        print which packages the package provides
+-   --print-requires                        print which packages the package requires
+-   --print-requires-private                print which packages the package requires for static linking
+-   --validate                              validate a package's .pc file
+-   --define-prefix                         try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --dont-define-prefix                    don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --prefix-variable=PREFIX                set the name of the variable that pkg-config automatically sets
+- 
+- Usage:
+-   pkg-config [OPTION...]
+- 
+- Help Options:
+-   -h, --help                              Show help options
+- 
+- Application Options:
+-   --version                               output version of pkg-config
+-   --modversion                            output version for package
+-   --atleast-pkgconfig-version=VERSION     require given version of pkg-config
+-   --libs                                  output all linker flags
+-   --static                                output linker flags for static linking
+-   --short-errors                          print short errors
+-   --libs-only-l                           output -l flags
+-   --libs-only-other                       output other libs (e.g. -pthread)
+-   --libs-only-L                           output -L flags
+-   --cflags                                output all pre-processor and compiler flags
+-   --cflags-only-I                         output -I flags
+-   --cflags-only-other                     output cflags not covered by the cflags-only-I option
+-   --variable=NAME                         get the value of variable named NAME
+-   --define-variable=NAME=VALUE            set variable NAME to VALUE
+-   --exists                                return 0 if the module(s) exist
+-   --print-variables                       output list of variables defined by the module
+-   --uninstalled                           return 0 if the uninstalled version of one or more module(s) or their dependencies will be used
+-   --atleast-version=VERSION               return 0 if the module is at least version VERSION
+-   --exact-version=VERSION                 return 0 if the module is at exactly version VERSION
+-   --max-version=VERSION                   return 0 if the module is at no newer than version VERSION
+-   --list-all                              list all known packages
+-   --debug                                 show verbose debug information
+-   --print-errors                          show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)
+-   --silence-errors                        be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)
+-   --errors-to-stdout                      print errors from --print-errors to stdout not stderr
+-   --print-provides                        print which packages the package provides
+-   --print-requires                        print which packages the package requires
+-   --print-requires-private                print which packages the package requires for static linking
+-   --validate                              validate a package's .pc file
+-   --define-prefix                         try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --dont-define-prefix                    don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --prefix-variable=PREFIX                set the name of the variable that pkg-config automatically sets
+- 
+-> compiled  conf-pkg-config.1.0
+Processing  2/12: [xmlm: ./pkg/pkg-git]
+-> installed conf-pkg-config.1.0
+Processing  3/12: [xmlm: ./pkg/pkg-git]
+Processing  4/12: [conf-libpcre: pkg-config libpcre] [xmlm: ./pkg/pkg-git]
++ ./pkg/pkg-git  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0)
+Processing  4/12: [conf-libpcre: pkg-config libpcre] [xmlm: ./pkg/build true]
++ pkg-config "libpcre" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-libpcre.1)
+-> compiled  conf-libpcre.1
+Processing  4/12: [xmlm: ./pkg/build true]
+-> installed conf-libpcre.1
+Processing  5/12: [xmlm: ./pkg/build true]
+Processing  6/12: [pcre: ocaml setup.ml] [xmlm: ./pkg/build true]
++ ./pkg/build "true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0)
+- ocamlfind ocamldep -modules src/xmlm.mli > src/xmlm.mli.depends
+- ocamlfind ocamlc -c -I src -I test -o src/xmlm.cmi src/xmlm.mli
+- ocamlfind ocamldep -modules src/xmlm.ml > src/xmlm.ml.depends
+- ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -a src/xmlm.cmo -o src/xmlm.cma
+- ocamlfind ocamlopt -a src/xmlm.cmx -o src/xmlm.cmxa
+- ocamlfind ocamlopt -shared src/xmlm.cmx -o src/xmlm.cmxs
+- ocamlfind ocamldep -modules test/xmltrip.ml > test/xmltrip.ml.depends
+- ocamlfind ocamldep -modules test/xhtml.ml > test/xhtml.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xhtml.cmo test/xhtml.ml
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xhtml.cmx test/xhtml.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -linkpkg src/xmlm.cmx test/xhtml.cmx test/xmltrip.cmx -o test/xmltrip.native
+- ocamlfind ocamldep -modules src/xmlm.mli > src/xmlm.mli.depends
+- ocamlfind ocamlc -c -I src -I test -o src/xmlm.cmi src/xmlm.mli
+- ocamlfind ocamldep -modules src/xmlm.ml > src/xmlm.ml.depends
+- ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -a src/xmlm.cmo -o src/xmlm.cma
+- ocamlfind ocamlopt -a src/xmlm.cmx -o src/xmlm.cmxa
+- ocamlfind ocamlopt -shared src/xmlm.cmx -o src/xmlm.cmxs
+- ocamlfind ocamldep -modules test/xmltrip.ml > test/xmltrip.ml.depends
+- ocamlfind ocamldep -modules test/xhtml.ml > test/xhtml.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xhtml.cmo test/xhtml.ml
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xhtml.cmx test/xhtml.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -linkpkg src/xmlm.cmx test/xhtml.cmx test/xmltrip.cmx -o test/xmltrip.native
+-> compiled  xmlm.1.2.0
+Processing  6/12: [pcre: ocaml setup.ml]
+[WARNING] Errors in /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0/xmlm.install, some fields have been ignored:
+            - At /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0/xmlm.install:1:0:
+              Invalid field opam-version
+
+-> installed xmlm.1.2.0
+Processing  7/12: [pcre: ocaml setup.ml]
+Processing  8/12: [pcre: ocaml setup.ml] [xmlplaylist: ./configure]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.7.1.3)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ pcre-ocaml
+- Package version: ..................................... 7.1.3
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.03.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- with_pcre_config: .................................... pcre-config
+- Strict compile-time checks: .......................... true
+- Build examples: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- pkg_bytes: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bytes
+- 
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ pcre-ocaml
+- Package version: ..................................... 7.1.3
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.03.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- with_pcre_config: .................................... pcre-config
+- Strict compile-time checks: .......................... true
+- Build examples: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- pkg_bytes: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bytes
+- 
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4)
+- configuring ocaml-xmlplaylist 0.1.4
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking build system type... x86_64-unknown-linux-gnu
+- checking host system type... x86_64-unknown-linux-gnu
+- checking for a BSD-compatible install... /usr/bin/install -c
+- checking that calling user is not root... ok
+- checking for gcc... (cached) gcc
+- checking whether we are using the GNU C compiler... (cached) yes
+- checking whether gcc accepts -g... (cached) yes
+- checking for gcc option to accept ISO C89... (cached) none needed
+- checking for ar... ar
+- checking for ocamlc... ocamlc
+- OCaml version is 4.03.0
+- checking if ocaml compiler supports first-class modules... yes
+- OCaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamldep.opt... ocamldep.opt
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamldoc.opt... ocamldoc.opt
+- checking for ocamlbuild... ocamlbuild
+- checking for camlidl... no
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- checking for camlp4... camlp4
+- checking for camlp4boot... camlp4boot
+- checking for camlp4o... camlp4o
+- checking for camlp4of... camlp4of
+- checking for camlp4oof... camlp4oof
+- checking for camlp4orf... camlp4orf
+- checking for camlp4prof... camlp4prof
+- checking for camlp4r... camlp4r
+- checking for camlp4rf... camlp4rf
+- checking for ocamlfind... ocamlfind
+- checking for ocaml standard library path... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for caml/threads.h... yes
+- checking for gcc option to produce PIC... -fPIC
+- checking for xmlm... ok
+- configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: creating src/META
+- config.status: creating src/Makefile
+- configuring ocaml-xmlplaylist 0.1.4
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking build system type... x86_64-unknown-linux-gnu
+- checking host system type... x86_64-unknown-linux-gnu
+- checking for a BSD-compatible install... /usr/bin/install -c
+- checking that calling user is not root... ok
+- checking for gcc... (cached) gcc
+- checking whether we are using the GNU C compiler... (cached) yes
+- checking whether gcc accepts -g... (cached) yes
+- checking for gcc option to accept ISO C89... (cached) none needed
+- checking for ar... ar
+- checking for ocamlc... ocamlc
+- OCaml version is 4.03.0
+- checking if ocaml compiler supports first-class modules... yes
+- OCaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamldep.opt... ocamldep.opt
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamldoc.opt... ocamldoc.opt
+- checking for ocamlbuild... ocamlbuild
+- checking for camlidl... no
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- checking for camlp4... camlp4
+- checking for camlp4boot... camlp4boot
+- checking for camlp4o... camlp4o
+- checking for camlp4of... camlp4of
+- checking for camlp4oof... camlp4oof
+- checking for camlp4orf... camlp4orf
+- checking for camlp4prof... camlp4prof
+- checking for camlp4r... camlp4r
+- checking for camlp4rf... camlp4rf
+- checking for ocamlfind... ocamlfind
+- checking for ocaml standard library path... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for caml/threads.h... yes
+- checking for gcc option to produce PIC... -fPIC
+- checking for xmlm... ok
+- configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: creating src/META
+- config.status: creating src/Makefile
+Processing  8/12: [pcre: ocaml setup.ml] [xmlplaylist: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4)
+- make -C src all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- making ._bcdi/xmlplaylist.di from xmlplaylist.mli
+- making ._d/xmlplaylist.d from xmlplaylist.ml
+- ocamlc.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm xmlplaylist.mli
+- ocamlc.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm xmlplaylist.ml
+- File "xmlplaylist.ml", line 65, characters 8-13:
+- Warning 41: Error belongs to several types: exn result
+- The first one was selected. Please disambiguate if this is wrong.
+- File "xmlplaylist.ml", line 111, characters 2-276:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 130, characters 2-347:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 146, characters 2-64:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 159, characters 2-201:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type format.
+- File "xmlplaylist.ml", line 168, characters 4-193:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 176, characters 4-182:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 183, characters 4-267:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 207, characters 4-188:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- ocamlc.opt -a    -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm   -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib  -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib     \
+- 			  -o xmlplaylist.cma  xmlplaylist.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- making ._ncdi/xmlplaylist.di from xmlplaylist.mli
+- ocamlopt.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm xmlplaylist.ml
+- File "xmlplaylist.ml", line 65, characters 8-13:
+- Warning 41: Error belongs to several types: exn result
+- The first one was selected. Please disambiguate if this is wrong.
+- File "xmlplaylist.ml", line 111, characters 2-276:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 130, characters 2-347:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 146, characters 2-64:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 159, characters 2-201:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type format.
+- File "xmlplaylist.ml", line 168, characters 4-193:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 176, characters 4-182:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 183, characters 4-267:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 207, characters 4-188:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- ocamlopt.opt -a     -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm   -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib  -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib      \
+- 			 -o xmlplaylist.cmxa xmlplaylist.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make -C src all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- making ._bcdi/xmlplaylist.di from xmlplaylist.mli
+- making ._d/xmlplaylist.d from xmlplaylist.ml
+- ocamlc.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm xmlplaylist.mli
+- ocamlc.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm xmlplaylist.ml
+- File "xmlplaylist.ml", line 65, characters 8-13:
+- Warning 41: Error belongs to several types: exn result
+- The first one was selected. Please disambiguate if this is wrong.
+- File "xmlplaylist.ml", line 111, characters 2-276:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 130, characters 2-347:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 146, characters 2-64:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 159, characters 2-201:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type format.
+- File "xmlplaylist.ml", line 168, characters 4-193:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 176, characters 4-182:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 183, characters 4-267:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 207, characters 4-188:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- ocamlc.opt -a    -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm   -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib  -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib     \
+- 			  -o xmlplaylist.cma  xmlplaylist.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- making ._ncdi/xmlplaylist.di from xmlplaylist.mli
+- ocamlopt.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm xmlplaylist.ml
+- File "xmlplaylist.ml", line 65, characters 8-13:
+- Warning 41: Error belongs to several types: exn result
+- The first one was selected. Please disambiguate if this is wrong.
+- File "xmlplaylist.ml", line 111, characters 2-276:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 130, characters 2-347:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 146, characters 2-64:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 159, characters 2-201:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type format.
+- File "xmlplaylist.ml", line 168, characters 4-193:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 176, characters 4-182:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 183, characters 4-267:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 207, characters 4-188:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- ocamlopt.opt -a     -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm   -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib  -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib      \
+- 			 -o xmlplaylist.cmxa xmlplaylist.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+-> compiled  xmlplaylist.0.1.4
+Processing  8/12: [pcre: ocaml setup.ml]
+Processing  9/12: [pcre: ocaml setup.ml] [xmlplaylist: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4)
+- make -C src install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: 'xmlplaylist.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: 'xmlplaylist.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  xmlplaylist META xmlplaylist.mli xmlplaylist.cmi xmlplaylist.cma xmlplaylist.cmxa xmlplaylist.cmx xmlplaylist.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/META
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make -C src install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: 'xmlplaylist.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: 'xmlplaylist.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  xmlplaylist META xmlplaylist.mli xmlplaylist.cmi xmlplaylist.cma xmlplaylist.cmxa xmlplaylist.cmx xmlplaylist.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/META
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+-> installed xmlplaylist.0.1.4
+Processing  9/12: [pcre: ocaml setup.ml]
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.7.1.3)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -g -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt '' -c lib/pcre_stubs.c
+- mv pcre_stubs.o lib/pcre_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlmklib -o lib/pcre_stubs -lpcre lib/pcre_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/pcre.mli > lib/pcre.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -package bytes -w Aer-44 -I lib -o lib/pcre.cmi lib/pcre.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -package bytes -w Aer-44 -I lib -o lib/pcre.cmi lib/pcre.mli
+- File "lib/pcre.mli", line 60, characters 12-63:
+- Warning 50: ambiguous documentation comment
+- File "lib/pcre.mli", line 192, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/pcre.ml > lib/pcre.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/pcre_compat.ml > lib/pcre_compat.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -package bytes -w Aer-44 -I lib -o lib/pcre_compat.cmo lib/pcre_compat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -package bytes -w Aer-44 -I lib -o lib/pcre.cmo lib/pcre.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -package bytes -w Aer-44 -I lib -o lib/pcre.cmo lib/pcre.ml
+- File "lib/pcre.ml", line 164, characters 0-76:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 166, characters 0-84:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 169, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 172, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 175, characters 0-111:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 178, characters 0-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 215, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 233, characters 0-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 240, characters 0-120:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 894, characters 0-63:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a -dllib -lpcre_stubs -cclib -lpcre_stubs -cclib -lpcre -cclib -lpcre lib/pcre_compat.cmo lib/pcre.cmo -o lib/pcre.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -package bytes -w Aer-44 -I lib -o lib/pcre_compat.cmx lib/pcre_compat.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -package bytes -w Aer-44 -I lib -o lib/pcre.cmx lib/pcre.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -package bytes -w Aer-44 -I lib -o lib/pcre.cmx lib/pcre.ml
+- File "lib/pcre.ml", line 164, characters 0-76:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 166, characters 0-84:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 169, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 172, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 175, characters 0-111:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 178, characters 0-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 215, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 233, characters 0-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 240, characters 0-120:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 894, characters 0-63:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a -cclib -lpcre_stubs -cclib -lpcre -cclib -lpcre lib/pcre_compat.cmx lib/pcre.cmx -o lib/pcre.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared -cclib -lpcre_stubs -I lib -cclib -lpcre lib/pcre.cmxa lib/pcre_compat.cmx lib/pcre.cmx -o lib/pcre.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules examples/cloc/cloc.ml > examples/cloc/cloc.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -I lib -package bytes -w Aer-44 -I examples/cloc -I lib -o examples/cloc/cloc.cmo examples/cloc/cloc.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-sequence -I lib -package bytes -w Aer-44 -I examples/cloc -I lib -o examples/cloc/cloc.cmx examples/cloc/cloc.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -g -I lib -linkpkg -package bytes lib/pcre.cmxa examples/cloc/cloc.cmx -o examples/cloc/cloc.native
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules examples/count_hash/count_hash.ml > examples/count_hash/count_hash.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -I lib -package bytes -w Aer-44 -I examples/count_hash -I lib -o examples/count_hash/count_hash.cmo examples/count_hash/count_hash.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-sequence -I lib -package bytes -w Aer-44 -I examples/count_hash -I lib -o examples/count_hash/count_hash.cmx examples/count_hash/count_hash.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -g -I lib -linkpkg -package bytes lib/pcre.cmxa examples/count_hash/count_hash.cmx -o examples/count_hash/count_hash.native
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules examples/pcregrep/pcregrep.ml > examples/pcregrep/pcregrep.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -I lib -package bytes -w Aer-44 -I examples/pcregrep -I lib -o examples/pcregrep/pcregrep.cmo examples/pcregrep/pcregrep.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-sequence -I lib -package bytes -w Aer-44 -I examples/pcregrep -I lib -o examples/pcregrep/pcregrep.cmx examples/pcregrep/pcregrep.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -g -I lib -linkpkg -package bytes lib/pcre.cmxa examples/pcregrep/pcregrep.cmx -o examples/pcregrep/pcregrep.native
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules examples/subst/subst.ml > examples/subst/subst.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -I lib -package bytes -w Aer-44 -I examples/subst -I lib -o examples/subst/subst.cmo examples/subst/subst.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-sequence -I lib -package bytes -w Aer-44 -I examples/subst -I lib -o examples/subst/subst.cmx examples/subst/subst.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -g -I lib -linkpkg -package bytes lib/pcre.cmxa examples/subst/subst.cmx -o examples/subst/subst.native
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+-> compiled  pcre.7.1.3
+Processing 10/12: [pcre: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.7.1.3)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/libpcre_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre_compat.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllpcre_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllpcre_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+-> installed pcre.7.1.3
+Processing 11/12: [lastfm: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1)
+- configuring ocaml-lastfm 0.3.1
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking build system type... x86_64-unknown-linux-gnu
+- checking host system type... x86_64-unknown-linux-gnu
+- checking for a BSD-compatible install... /usr/bin/install -c
+- checking that calling user is not root... ok
+- checking for gcc... (cached) gcc
+- checking whether we are using the GNU C compiler... (cached) yes
+- checking whether gcc accepts -g... (cached) yes
+- checking for gcc option to accept ISO C89... (cached) none needed
+- checking for ar... ar
+- checking for ocamlc... ocamlc
+- OCaml version is 4.03.0
+- checking if ocaml compiler supports first-class modules... yes
+- OCaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamldep.opt... ocamldep.opt
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamldoc.opt... ocamldoc.opt
+- checking for ocamlbuild... ocamlbuild
+- checking for camlidl... no
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- checking for camlp4... camlp4
+- checking for camlp4boot... camlp4boot
+- checking for camlp4o... camlp4o
+- checking for camlp4of... camlp4of
+- checking for camlp4oof... camlp4oof
+- checking for camlp4orf... camlp4orf
+- checking for camlp4prof... camlp4prof
+- checking for camlp4r... camlp4r
+- checking for camlp4rf... camlp4rf
+- checking for ocamlfind... ocamlfind
+- checking for ocaml standard library path... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for caml/threads.h... yes
+- checking for gcc option to produce PIC... -fPIC
+- checking for ocaml-pcre... ok
+- checking for ocaml-xmlplaylist... ok
+- checking for netclient from ocamlnet... Not found, will only build generic modules.
+- checking for ocaml bytes module... ok
+- configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: creating src/META
+- config.status: creating src/Makefile
+- config.status: creating src/lastfm_constants.ml
+- config.status: creating examples/Makefile.request
+- config.status: creating examples/Makefile.submit
+- config.status: creating examples/Makefile.download
+Processing 11/12: [lastfm: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1)
+- make -C src all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1/src'
+- making ._bcdi/lastfm_generic.di from lastfm_generic.mli
+- making ._d/lastfm_generic.d from lastfm_generic.ml
+- making ._d/lastfm_constants.d from lastfm_constants.ml
+- ocamlc.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bytes lastfm_constants.ml
+- ocamlc.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bytes lastfm_generic.mli
+- ocamlc.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bytes lastfm_generic.ml
+- File "lastfm_generic.ml", line 61, characters 41-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lastfm_generic.ml", line 317, characters 11-209:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type error.
+- File "lastfm_generic.ml", line 339, characters 6-207:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type rating.
+- File "lastfm_generic.ml", line 361, characters 6-95:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type error.
+- ocamlc.opt -a    -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bytes   -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib       \
+- 			  -o lastfm.cma  lastfm_constants.cmo lastfm_generic.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1/src'
+- making ._ncdi/lastfm_generic.di from lastfm_generic.mli
+- ocamlopt.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bytes lastfm_constants.ml
+- ocamlopt.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bytes lastfm_generic.ml
+- File "lastfm_generic.ml", line 61, characters 41-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lastfm_generic.ml", line 317, characters 11-209:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type error.
+- File "lastfm_generic.ml", line 339, characters 6-207:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type rating.
+- File "lastfm_generic.ml", line 361, characters 6-95:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type error.
+- ocamlopt.opt -a     -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bytes   -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib        \
+- 			 -o lastfm.cmxa lastfm_constants.cmx lastfm_generic.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1/src'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1/src'
+-> compiled  lastfm.0.3.1
+Processing 12/12: [lastfm: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1)
+- make -C src install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1/src'
+- ocamlc.opt -a    -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bytes   -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib       \
+- 			  -o lastfm.cma  lastfm_constants.cmo lastfm_generic.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1/src'
+- make[2]: 'lastfm.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1/src'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  lastfm META lastfm_generic.mli lastfm.mli lastfm_constants.cmi lastfm_generic.cmi lastfm.cma lastfm.cmxa lastfm_constants.cmx lastfm_generic.cmx lastfm.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/lastfm/lastfm.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/lastfm/lastfm_generic.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/lastfm/lastfm_constants.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/lastfm/lastfm.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/lastfm/lastfm.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/lastfm/lastfm_generic.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/lastfm/lastfm_constants.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/lastfm/lastfm.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/lastfm/lastfm_generic.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/lastfm/META
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lastfm.0.3.1/src'
+-> installed lastfm.0.3.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 16:55.10] Success
