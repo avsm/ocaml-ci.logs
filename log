@@ -1,0 +1,96 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 dum /home/opam/opam-repository/cache
+[2016-12-22 16:17.56] Starting...
+[2016-12-22 16:17.56] Waiting for free pool slot to run
+[2016-12-22 16:44.07] Pool slot obtained, starting run
+[2016-12-22 16:44.07] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 dum
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install easy-format 1.2.0                                   [required by dum]
+  - install dum         1.0.1
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [dum.1.0.1: dl]
+Processing  2/2: [dum.1.0.1: dl] [easy-format.1.2.0: dl]
+[easy-format.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [dum.1.0.1: dl]
+[dum.1.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [easy-format: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/easy-format.1.2.0)
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlc -c -dtypes easy_format.ml
+- touch bytecode
+- ocamlfind ocamlc -c easy_format.mli
+- ocamlfind ocamlopt -c -dtypes easy_format.ml
+- ocamlfind ocamlopt -I . -shared -linkall \
+-   -o easy_format.cmxs easy_format.cmx
+- touch nativecode
+-> compiled  easy-format.1.2.0
+Processing  2/4: [easy-format: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/easy-format.1.2.0)
+- echo "version = \"1.2.0\"" > META; cat META.tpl >> META
+- INSTALL_FILES="META easy_format.cmi easy_format.mli"; \
+- 	if test -f bytecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmo"; \
+- 	fi; \
+- 	if test -f nativecode; then \
+- 	  INSTALL_FILES="$INSTALL_FILES easy_format.cmx easy_format.o easy_format.cmxs"; \
+- 	fi; \
+- 	ocamlfind install easy-format $INSTALL_FILES
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/easy_format.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/easy-format/META
+-> installed easy-format.1.2.0
+Processing  3/4: [dum: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/dum.1.0.1)
+- echo "1.0.1" > VERSION
+- ocamlfind ocamlc -c -g dum.mli -package easy-format
+- ocamlfind ocamlc -c -g dum.ml -package easy-format
+- File "dum.ml", line 236, characters 9-25:
+- Warning 3: deprecated: Lazy.lazy_is_val
+- Use Lazy.is_val instead.
+- File "dum.ml", line 279, characters 16-29:
+- Warning 3: deprecated: Obj.final_tag
+- Replaced by custom_tag.
+- ocamlfind ocamlc -a -g -o dum.cma dum.cmo -package easy-format
+- touch done-all
+- ocamlfind ocamlc -c -g dum.mli -package easy-format
+- ocamlfind ocamlopt -c -g dum.ml -package easy-format
+- File "dum.ml", line 236, characters 9-25:
+- Warning 3: deprecated: Lazy.lazy_is_val
+- Use Lazy.is_val instead.
+- File "dum.ml", line 279, characters 16-29:
+- Warning 3: deprecated: Obj.final_tag
+- Replaced by custom_tag.
+- ocamlfind ocamlopt -a -g -o dum.cmxa dum.cmx -package easy-format
+- touch done-opt
+-> compiled  dum.1.0.1
+Processing  4/4: [dum: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/dum.1.0.1)
+- sed -e 's:@VERSION@:1.0.1:' META.in > META
+- ocamlfind install dum META dum.mli dum.cmi \
+- 	`test -f done-all && echo dum.cma || :`\
+- 	`test -f done-opt && echo dum.cmx dum.cmxa dum.o dum.a || :`
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/dum/dum.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/dum/dum.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/dum/dum.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/dum/dum.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/dum/dum.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/dum/dum.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/dum/dum.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/dum/META
+-> installed dum.1.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 16:44.22] Success
