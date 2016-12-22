@@ -1,0 +1,107 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 conf-tcl /home/opam/opam-repository/cache
+[2016-12-22 16:19.25] Starting...
+[2016-12-22 16:19.25] Waiting for free pool slot to run
+[2016-12-22 17:40.30] Pool slot obtained, starting run
+[2016-12-22 17:40.30] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 conf-tcl
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - pkg-config
+#  - tcl-dev
+# The following new OS packages need to be installed: tcl-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy tcl-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libtcl8.6:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libtcl8.6_8.6.5+dfsg-2_amd64.deb ...
+Unpacking libtcl8.6:amd64 (8.6.5+dfsg-2) ...
+Selecting previously unselected package tcl8.6.
+Preparing to unpack .../tcl8.6_8.6.5+dfsg-2_amd64.deb ...
+Unpacking tcl8.6 (8.6.5+dfsg-2) ...
+Selecting previously unselected package tcl.
+Preparing to unpack .../archives/tcl_8.6.0+9_amd64.deb ...
+Unpacking tcl (8.6.0+9) ...
+Selecting previously unselected package zlib1g-dev:amd64.
+Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-2ubuntu4_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4) ...
+Selecting previously unselected package tcl8.6-dev:amd64.
+Preparing to unpack .../tcl8.6-dev_8.6.5+dfsg-2_amd64.deb ...
+Unpacking tcl8.6-dev:amd64 (8.6.5+dfsg-2) ...
+Selecting previously unselected package tcl-dev:amd64.
+Preparing to unpack .../tcl-dev_8.6.0+9_amd64.deb ...
+Unpacking tcl-dev:amd64 (8.6.0+9) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libtcl8.6:amd64 (8.6.5+dfsg-2) ...
+Setting up tcl8.6 (8.6.5+dfsg-2) ...
+Setting up tcl (8.6.0+9) ...
+Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4) ...
+Setting up tcl8.6-dev:amd64 (8.6.5+dfsg-2) ...
+Setting up tcl-dev:amd64 (8.6.0+9) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by conf-tcl]
+  - install conf-tcl        1  
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-pkg-config: pkg-config]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-pkg-config.1.0)
+- Usage:
+-   pkg-config [OPTION...]
+- 
+- Help Options:
+-   -h, --help                              Show help options
+- 
+- Application Options:
+-   --version                               output version of pkg-config
+-   --modversion                            output version for package
+-   --atleast-pkgconfig-version=VERSION     require given version of pkg-config
+-   --libs                                  output all linker flags
+-   --static                                output linker flags for static linking
+-   --short-errors                          print short errors
+-   --libs-only-l                           output -l flags
+-   --libs-only-other                       output other libs (e.g. -pthread)
+-   --libs-only-L                           output -L flags
+-   --cflags                                output all pre-processor and compiler flags
+-   --cflags-only-I                         output -I flags
+-   --cflags-only-other                     output cflags not covered by the cflags-only-I option
+-   --variable=NAME                         get the value of variable named NAME
+-   --define-variable=NAME=VALUE            set variable NAME to VALUE
+-   --exists                                return 0 if the module(s) exist
+-   --print-variables                       output list of variables defined by the module
+-   --uninstalled                           return 0 if the uninstalled version of one or more module(s) or their dependencies will be used
+-   --atleast-version=VERSION               return 0 if the module is at least version VERSION
+-   --exact-version=VERSION                 return 0 if the module is at exactly version VERSION
+-   --max-version=VERSION                   return 0 if the module is at no newer than version VERSION
+-   --list-all                              list all known packages
+-   --debug                                 show verbose debug information
+-   --print-errors                          show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)
+-   --silence-errors                        be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)
+-   --errors-to-stdout                      print errors from --print-errors to stdout not stderr
+-   --print-provides                        print which packages the package provides
+-   --print-requires                        print which packages the package requires
+-   --print-requires-private                print which packages the package requires for static linking
+-   --validate                              validate a package's .pc file
+-   --define-prefix                         try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --dont-define-prefix                    don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --prefix-variable=PREFIX                set the name of the variable that pkg-config automatically sets
+- 
+-> compiled  conf-pkg-config.1.0
+-> installed conf-pkg-config.1.0
+Processing  3/4: [conf-tcl: sh check.sh]
++ sh "check.sh" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-tcl.1)
+-> compiled  conf-tcl.1
+-> installed conf-tcl.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:40.49] Success
