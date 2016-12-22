@@ -1,0 +1,59 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 dead_code_analyzer /home/opam/opam-repository/cache
+[2016-12-22 16:19.31] Starting...
+[2016-12-22 16:19.32] Waiting for free pool slot to run
+[2016-12-22 17:44.34] Pool slot obtained, starting run
+[2016-12-22 17:44.34] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 dead_code_analyzer
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install dead_code_analyzer 0.9
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [dead_code_analyzer.0.9: dl]
+[dead_code_analyzer.0.9] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [dead_code_analyzer: make all]
++ make "all" "opt" "man" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/dead_code_analyzer.0.9)
+- make -C src all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/dead_code_analyzer.0.9/src'
+- ocamlc -w +A-4-9-40-42 -I +compiler-libs -bin-annot -keep-locs -g -o dead_code_analyzer.byt ocamlcommon.cma deadCode.mli deadFlag.ml deadCommon.ml deadArg.mli deadType.mli deadObj.mli deadType.ml deadArg.ml deadMod.ml deadObj.ml deadCode.ml
+- File "deadType.ml", line 95, characters 30-41:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a case that is not matched:
+- (_::[]|[])
+- cp -rf . ../build
+- make clean
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/dead_code_analyzer.0.9/src'
+- rm -f *~ *.cm* *.a *.lib *.o *.obj dead_code_analyzer.byt dead_code_analyzer.opt
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/dead_code_analyzer.0.9/src'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/dead_code_analyzer.0.9/src'
+- make -C src opt
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/dead_code_analyzer.0.9/src'
+- ocamlopt -w +A-4-9-40-42 -I +compiler-libs -bin-annot -keep-locs -g -o dead_code_analyzer.opt ocamlcommon.cmxa deadCode.mli deadFlag.ml deadCommon.ml deadArg.mli deadType.mli deadObj.mli deadType.ml deadArg.ml deadMod.ml deadObj.ml deadCode.ml
+- File "deadType.ml", line 95, characters 30-41:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a case that is not matched:
+- (_::[]|[])
+- cp -rf . ../build
+- make clean
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/dead_code_analyzer.0.9/src'
+- rm -f *~ *.cm* *.a *.lib *.o *.obj dead_code_analyzer.byt dead_code_analyzer.opt
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/dead_code_analyzer.0.9/src'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/dead_code_analyzer.0.9/src'
+- make -C man all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/dead_code_analyzer.0.9/man'
+- ocamldoc -I +compiler-libs -man -man-mini ../src/deadCode.mli
+- rm -rf man3/
+- mkdir man3
+- mv *.3o man3/
+- mv man3/DeadCode.3o man3/dead_code_analyzer.3o
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/dead_code_analyzer.0.9/man'
+-> compiled  dead_code_analyzer.0.9
+-> installed dead_code_analyzer.0.9
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:44.51] Success
