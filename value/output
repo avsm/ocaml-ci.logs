@@ -1,0 +1,46 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes  base                                    [required by unix-dirent]
+  - install unix-dirent 0.3.4
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [unix-dirent.0.3.4: dl]
+[unix-dirent.0.3.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed base-bytes.base
+Processing  3/4: [unix-dirent: make build]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/unix-dirent.0.3.4)
+- ocamlfind: Package `ctypes' not found
+- ocamlfind: Package `lwt' not found
+- CTYPES_LIB_DIR= LWT_LIB_DIR= OCAML_LIB_DIR=/home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml ocamlbuild -use-ocamlfind -classic-display dirent.cma dirent.cmxa
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package bytes -modules lib/dirent.mli > lib/dirent.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -o lib/dirent.cmi lib/dirent.mli
+- ocamlfind ocamldep -package bytes -modules lib/dirent.ml > lib/dirent.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -o lib/dirent.cmo lib/dirent.ml
+- ocamlfind ocamlc -a lib/dirent.cmo -o lib/dirent.cma
+- ocamlfind ocamlopt -c -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -I lwt -I unix -o lib/dirent.cmx lib/dirent.ml
+- ocamlfind ocamlopt -a lib/dirent.cmx -o lib/dirent.cmxa
+-> compiled  unix-dirent.0.3.4
+Processing  4/4: [unix-dirent: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/unix-dirent.0.3.4)
+- ocamlfind install unix-dirent META \
+- 	_build/lib/dirent.mli _build/lib/dirent.cmi _build/lib/dirent.cmti _build/lib/dirent.cma _build/lib/dirent.cmxa \
+- 	_build/lib/dirent.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-dirent/dirent.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-dirent/dirent.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-dirent/dirent.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-dirent/dirent.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-dirent/dirent.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-dirent/dirent.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/unix-dirent/META
+-> installed unix-dirent.0.3.4
+Done.
+# Run eval `opam env` to update the current shell environment
