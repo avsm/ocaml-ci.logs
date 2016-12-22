@@ -1,0 +1,971 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocamlgraph 1.8.7                                    [required by functoria]
+  - install result     1.2                                      [required by fmt, rresult]
+  - install topkg      0.8.1                                    [required by fmt, rresult]
+  - install rresult    0.5.0                                    [required by functoria]
+  - install fmt        0.8.0                                    [required by functoria]
+  - install functoria  1.1.1
+===== 6 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/6: [fmt.0.8.0: dl]
+Processing  2/6: [fmt.0.8.0: dl] [functoria.1.1.1: dl]
+Processing  3/6: [fmt.0.8.0: dl] [functoria.1.1.1: dl] [ocamlgraph.1.8.7: dl]
+[fmt.0.8.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/6: [functoria.1.1.1: dl] [ocamlgraph.1.8.7: dl]
+[functoria.1.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/6: [ocamlgraph.1.8.7: dl]
+[ocamlgraph.1.8.7] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/6:
+Processing  4/6: [result.1.2: dl]
+Processing  5/6: [result.1.2: dl] [rresult.0.5.0: dl]
+Processing  6/6: [result.1.2: dl] [rresult.0.5.0: dl] [topkg.0.8.1: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6: [rresult.0.5.0: dl] [topkg.0.8.1: dl]
+[rresult.0.5.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6: [topkg.0.8.1: dl]
+[topkg.0.8.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/12: [ocamlgraph: ./configure]
+Processing  2/12: [ocamlgraph: ./configure] [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+Processing  2/12: [ocamlgraph: ./configure]
+-> installed result.1.2
+Processing  3/12: [ocamlgraph: ./configure]
+Processing  4/12: [ocamlgraph: ./configure] [topkg: ocaml build]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlgraph.1.8.7)
+- checking for ocamlc... ocamlc
+- ocaml version is 4.03.0
+- ocaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version... ok
+- checking for ocamlc.opt... ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking ocamlc.opt version... ok
+- checking for ocamldep... ocamldep
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- checking for ocamldoc... ocamldoc
+- checking for ocamldoc.opt... ocamldoc.opt
+- checking for ocamlweb... true
+- checking for ocamlfind... ocamlfind
+- OCamlfind detected and enabled
+- ocamlfind: Package `lablgtk2' not found
+- checking for /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/lablgtk2/lablgtk.cmxa... no
+- checking Win32 platform... no
+- configure: WARNING: lablgnomecanvas not found: the graph editor and view_graph will not be compiled
+- configure: creating ./config.status
+- config.status: creating Makefile
+- checking for ocamlc... ocamlc
+- ocaml version is 4.03.0
+- ocaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version... ok
+- checking for ocamlc.opt... ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking ocamlc.opt version... ok
+- checking for ocamldep... ocamldep
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- checking for ocamldoc... ocamldoc
+- checking for ocamldoc.opt... ocamldoc.opt
+- checking for ocamlweb... true
+- checking for ocamlfind... ocamlfind
+- OCamlfind detected and enabled
+- ocamlfind: Package `lablgtk2' not found
+- checking for /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/lablgtk2/lablgtk.cmxa... no
+- checking Win32 platform... no
+- configure: WARNING: lablgnomecanvas not found: the graph editor and view_graph will not be compiled
+- configure: creating ./config.status
+- config.status: creating Makefile
+Processing  4/12: [ocamlgraph: make] [topkg: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pkg-name" "topkg" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/topkg.0.8.1)
+- File "src/topkg_conf.ml", line 19, characters 8-30:
+- Warning 3: deprecated: Topkg_string.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.ml > src/topkg.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.mli > src/topkg.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmi src/topkg.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.ml > src/topkg_build.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.mli > src/topkg_build.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.mli > src/topkg_cmd.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.mli > src/topkg_fpath.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmi src/topkg_fpath.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.mli > src/topkg_codec.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmi src/topkg_cmd.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.mli > src/topkg_result.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmi src/topkg_result.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.mli > src/topkg_conf.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmi src/topkg_codec.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmi src/topkg_conf.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmi src/topkg_build.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.ml > src/topkg_cmd.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.ml > src/topkg_fpath.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.ml > src/topkg_string.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.mli > src/topkg_string.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmi src/topkg_string.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmx src/topkg_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmx src/topkg_fpath.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.ml > src/topkg_codec.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmx src/topkg_cmd.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.ml > src/topkg_os.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.mli > src/topkg_os.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmi src/topkg_os.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.ml > src/topkg_log.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.mli > src/topkg_log.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmi src/topkg_log.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.ml > src/topkg_result.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmx src/topkg_result.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmx src/topkg_log.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmx src/topkg_os.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.ml > src/topkg_conf.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.ml > src/topkg_vcs.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.mli > src/topkg_vcs.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmi src/topkg_vcs.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmx src/topkg_vcs.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmx src/topkg_codec.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmx src/topkg_conf.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.ml > src/topkg_distrib.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.mli > src/topkg_distrib.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmi src/topkg_distrib.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.ml > src/topkg_opam.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.mli > src/topkg_opam.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmi src/topkg_opam.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmx src/topkg_opam.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.ml > src/topkg_fexts.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.mli > src/topkg_fexts.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmi src/topkg_fexts.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.ml > src/topkg_install.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.mli > src/topkg_install.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.mli > src/topkg_test.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmi src/topkg_test.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmi src/topkg_install.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmx src/topkg_fexts.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.ml > src/topkg_test.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmx src/topkg_test.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.ml > src/topkg_ipc.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.mli > src/topkg_ipc.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.mli > src/topkg_pkg.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.mli > src/topkg_publish.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmi src/topkg_publish.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmi src/topkg_pkg.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmi src/topkg_ipc.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.ml > src/topkg_pkg.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmx src/topkg_build.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmx src/topkg_distrib.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.ml > src/topkg_publish.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmx src/topkg_publish.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmx src/topkg_pkg.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.ml > src/topkg_main.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.mli > src/topkg_main.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmi src/topkg_main.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmx src/topkg_ipc.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmx src/topkg_main.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmx src/topkg.ml
+- ocamlfind ocamlopt -a -package 'bytes result' src/topkg_string.cmx src/topkg_fpath.cmx src/topkg_cmd.cmx src/topkg_result.cmx src/topkg_log.cmx src/topkg_os.cmx src/topkg_codec.cmx src/topkg_vcs.cmx src/topkg_conf.cmx src/topkg_build.cmx src/topkg_opam.cmx src/topkg_distrib.cmx src/topkg_fexts.cmx src/topkg_test.cmx src/topkg_install.cmx src/topkg_publish.cmx src/topkg_pkg.cmx src/topkg_ipc.cmx src/topkg_main.cmx src/topkg.cmx -o src/topkg.cmxa
+- ocamlfind ocamlopt -shared -package 'bytes result' src/topkg.cmx -o src/topkg.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmo src/topkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmo src/topkg_build.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmo src/topkg_cmd.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmo src/topkg_codec.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmo src/topkg_conf.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmo src/topkg_distrib.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmo src/topkg_fexts.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmo src/topkg_fpath.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmo src/topkg_ipc.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmo src/topkg_log.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmo src/topkg_main.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmo src/topkg_opam.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmo src/topkg_os.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmo src/topkg_pkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmo src/topkg_publish.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmo src/topkg_result.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmo src/topkg_string.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmo src/topkg_test.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmo src/topkg_vcs.ml
+- ocamlfind ocamlc -a -package 'bytes result' src/topkg_string.cmo src/topkg_fpath.cmo src/topkg_cmd.cmo src/topkg_result.cmo src/topkg_log.cmo src/topkg_os.cmo src/topkg_codec.cmo src/topkg_vcs.cmo src/topkg_conf.cmo src/topkg_build.cmo src/topkg_opam.cmo src/topkg_distrib.cmo src/topkg_fexts.cmo src/topkg_test.cmo src/topkg_install.cmo src/topkg_publish.cmo src/topkg_pkg.cmo src/topkg_ipc.cmo src/topkg_main.cmo src/topkg.cmo -o src/topkg.cma
+- File "src/topkg_conf.ml", line 19, characters 8-30:
+- Warning 3: deprecated: Topkg_string.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.ml > src/topkg.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg.mli > src/topkg.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmi src/topkg.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.ml > src/topkg_build.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_build.mli > src/topkg_build.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.mli > src/topkg_cmd.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.mli > src/topkg_fpath.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmi src/topkg_fpath.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.mli > src/topkg_codec.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmi src/topkg_cmd.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.mli > src/topkg_result.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmi src/topkg_result.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.mli > src/topkg_conf.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmi src/topkg_codec.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmi src/topkg_conf.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmi src/topkg_build.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_cmd.ml > src/topkg_cmd.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fpath.ml > src/topkg_fpath.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.ml > src/topkg_string.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_string.mli > src/topkg_string.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmi src/topkg_string.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmx src/topkg_string.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmx src/topkg_fpath.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_codec.ml > src/topkg_codec.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmx src/topkg_cmd.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.ml > src/topkg_os.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_os.mli > src/topkg_os.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmi src/topkg_os.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.ml > src/topkg_log.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_log.mli > src/topkg_log.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmi src/topkg_log.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_result.ml > src/topkg_result.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmx src/topkg_result.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmx src/topkg_log.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmx src/topkg_os.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_conf.ml > src/topkg_conf.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.ml > src/topkg_vcs.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_vcs.mli > src/topkg_vcs.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmi src/topkg_vcs.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmx src/topkg_vcs.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmx src/topkg_codec.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmx src/topkg_conf.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.ml > src/topkg_distrib.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_distrib.mli > src/topkg_distrib.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmi src/topkg_distrib.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.ml > src/topkg_opam.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_opam.mli > src/topkg_opam.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmi src/topkg_opam.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmx src/topkg_opam.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.ml > src/topkg_fexts.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_fexts.mli > src/topkg_fexts.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmi src/topkg_fexts.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.ml > src/topkg_install.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_install.mli > src/topkg_install.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.mli > src/topkg_test.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmi src/topkg_test.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmi src/topkg_install.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmx src/topkg_fexts.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_test.ml > src/topkg_test.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmx src/topkg_test.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.ml > src/topkg_ipc.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_ipc.mli > src/topkg_ipc.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.mli > src/topkg_pkg.mli.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.mli > src/topkg_publish.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmi src/topkg_publish.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmi src/topkg_pkg.mli
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmi src/topkg_ipc.mli
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_pkg.ml > src/topkg_pkg.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmx src/topkg_build.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmx src/topkg_distrib.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmx src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_publish.ml > src/topkg_publish.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmx src/topkg_publish.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmx src/topkg_pkg.ml
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.ml > src/topkg_main.ml.depends
+- ocamlfind ocamldep -package 'bytes result' -modules src/topkg_main.mli > src/topkg_main.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmi src/topkg_main.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmx src/topkg_ipc.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmx src/topkg_main.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmx src/topkg.ml
+- ocamlfind ocamlopt -a -package 'bytes result' src/topkg_string.cmx src/topkg_fpath.cmx src/topkg_cmd.cmx src/topkg_result.cmx src/topkg_log.cmx src/topkg_os.cmx src/topkg_codec.cmx src/topkg_vcs.cmx src/topkg_conf.cmx src/topkg_build.cmx src/topkg_opam.cmx src/topkg_distrib.cmx src/topkg_fexts.cmx src/topkg_test.cmx src/topkg_install.cmx src/topkg_publish.cmx src/topkg_pkg.cmx src/topkg_ipc.cmx src/topkg_main.cmx src/topkg.cmx -o src/topkg.cmxa
+- ocamlfind ocamlopt -shared -package 'bytes result' src/topkg.cmx -o src/topkg.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg.cmo src/topkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_build.cmo src/topkg_build.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_cmd.cmo src/topkg_cmd.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_codec.cmo src/topkg_codec.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_conf.cmo src/topkg_conf.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_distrib.cmo src/topkg_distrib.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fexts.cmo src/topkg_fexts.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_fpath.cmo src/topkg_fpath.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_install.cmo src/topkg_install.ml
+- File "src/topkg_install.ml", line 145, characters 19-42:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 171, characters 35-58:
+- Warning 3: deprecated: Topkg_string.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/topkg_install.ml", line 183, characters 18-43:
+- Warning 3: deprecated: Topkg_string.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_ipc.cmo src/topkg_ipc.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_log.cmo src/topkg_log.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_main.cmo src/topkg_main.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_opam.cmo src/topkg_opam.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_os.cmo src/topkg_os.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_pkg.cmo src/topkg_pkg.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_publish.cmo src/topkg_publish.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_result.cmo src/topkg_result.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_string.cmo src/topkg_string.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_test.cmo src/topkg_test.ml
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package 'bytes result' -I src -I test -I src-care -I src-bin -o src/topkg_vcs.cmo src/topkg_vcs.ml
+- ocamlfind ocamlc -a -package 'bytes result' src/topkg_string.cmo src/topkg_fpath.cmo src/topkg_cmd.cmo src/topkg_result.cmo src/topkg_log.cmo src/topkg_os.cmo src/topkg_codec.cmo src/topkg_vcs.cmo src/topkg_conf.cmo src/topkg_build.cmo src/topkg_opam.cmo src/topkg_distrib.cmo src/topkg_fexts.cmo src/topkg_test.cmo src/topkg_install.cmo src/topkg_publish.cmo src/topkg_pkg.cmo src/topkg_ipc.cmo src/topkg_main.cmo src/topkg.cmo -o src/topkg.cma
+-> compiled  topkg.0.8.1
+Processing  4/12: [ocamlgraph: make]
+-> installed topkg.0.8.1
+Processing  5/12: [ocamlgraph: make]
+Processing  6/12: [fmt: ocaml build] [ocamlgraph: make]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" "--with-base-unix" "true" "--with-cmdliner" "true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/fmt.0.8.0)
+- ocamlfind ocamldep -package result -modules src/fmt.ml > src/fmt.ml.depends
+- ocamlfind ocamldep -package result -modules src/fmt.mli > src/fmt.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package result -I src -I test -o src/fmt.cmi src/fmt.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package result -I src -I test -o src/fmt.cmx src/fmt.ml
+- ocamlfind ocamlopt -a -package result src/fmt.cmx -o src/fmt.cmxa
+- ocamlfind ocamlopt -shared -package result src/fmt.cmx -o src/fmt.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package result -I src -I test -o src/fmt.cmo src/fmt.ml
+- ocamlfind ocamlc -a -package result src/fmt.cmo -o src/fmt.cma
+- ocamlfind ocamldep -package unix -package result -modules src/fmt_tty.ml > src/fmt_tty.ml.depends
+- ocamlfind ocamldep -package unix -package result -modules src/fmt_tty.mli > src/fmt_tty.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmi src/fmt_tty.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmx src/fmt_tty.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmx src/fmt_tty.ml
+- File "src/fmt_tty.ml", line 46, characters 30-46:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlopt -a -package unix -package result src/fmt_tty.cmx -o src/fmt_tty.cmxa
+- ocamlfind ocamlopt -shared -package unix -package result src/fmt_tty.cmx -o src/fmt_tty.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmo src/fmt_tty.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmo src/fmt_tty.ml
+- File "src/fmt_tty.ml", line 46, characters 30-46:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlc -a -package unix -package result src/fmt_tty.cmo -o src/fmt_tty.cma
+- ocamlfind ocamldep -package cmdliner -package result -modules src/fmt_cli.ml > src/fmt_cli.ml.depends
+- ocamlfind ocamldep -package cmdliner -package result -modules src/fmt_cli.mli > src/fmt_cli.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package cmdliner -package result -I src -I test -o src/fmt_cli.cmi src/fmt_cli.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package cmdliner -package result -I src -I test -o src/fmt_cli.cmx src/fmt_cli.ml
+- ocamlfind ocamlopt -a -package cmdliner -package result src/fmt_cli.cmx -o src/fmt_cli.cmxa
+- ocamlfind ocamlopt -shared -package cmdliner -package result src/fmt_cli.cmx -o src/fmt_cli.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package cmdliner -package result -I src -I test -o src/fmt_cli.cmo src/fmt_cli.ml
+- ocamlfind ocamlc -a -package cmdliner -package result src/fmt_cli.cmo -o src/fmt_cli.cma
+- ocamlfind ocamldep -package compiler-libs.toplevel -package result -modules src/fmt_top.ml > src/fmt_top.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmo src/fmt_top.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmo src/fmt_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmx src/fmt_top.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmx src/fmt_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxa
+- + ocamlfind ocamlopt -a -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxs
+- + ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a -package compiler-libs.toplevel -package result src/fmt_top.cmo -o src/fmt_top.cma
+- + ocamlfind ocamlc -a -package compiler-libs.toplevel -package result src/fmt_top.cmo -o src/fmt_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamldep -package result -modules src/fmt.ml > src/fmt.ml.depends
+- ocamlfind ocamldep -package result -modules src/fmt.mli > src/fmt.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package result -I src -I test -o src/fmt.cmi src/fmt.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package result -I src -I test -o src/fmt.cmx src/fmt.ml
+- ocamlfind ocamlopt -a -package result src/fmt.cmx -o src/fmt.cmxa
+- ocamlfind ocamlopt -shared -package result src/fmt.cmx -o src/fmt.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package result -I src -I test -o src/fmt.cmo src/fmt.ml
+- ocamlfind ocamlc -a -package result src/fmt.cmo -o src/fmt.cma
+- ocamlfind ocamldep -package unix -package result -modules src/fmt_tty.ml > src/fmt_tty.ml.depends
+- ocamlfind ocamldep -package unix -package result -modules src/fmt_tty.mli > src/fmt_tty.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmi src/fmt_tty.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmx src/fmt_tty.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmx src/fmt_tty.ml
+- File "src/fmt_tty.ml", line 46, characters 30-46:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlopt -a -package unix -package result src/fmt_tty.cmx -o src/fmt_tty.cmxa
+- ocamlfind ocamlopt -shared -package unix -package result src/fmt_tty.cmx -o src/fmt_tty.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmo src/fmt_tty.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package unix -package result -I src -I test -o src/fmt_tty.cmo src/fmt_tty.ml
+- File "src/fmt_tty.ml", line 46, characters 30-46:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlc -a -package unix -package result src/fmt_tty.cmo -o src/fmt_tty.cma
+- ocamlfind ocamldep -package cmdliner -package result -modules src/fmt_cli.ml > src/fmt_cli.ml.depends
+- ocamlfind ocamldep -package cmdliner -package result -modules src/fmt_cli.mli > src/fmt_cli.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package cmdliner -package result -I src -I test -o src/fmt_cli.cmi src/fmt_cli.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package cmdliner -package result -I src -I test -o src/fmt_cli.cmx src/fmt_cli.ml
+- ocamlfind ocamlopt -a -package cmdliner -package result src/fmt_cli.cmx -o src/fmt_cli.cmxa
+- ocamlfind ocamlopt -shared -package cmdliner -package result src/fmt_cli.cmx -o src/fmt_cli.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package cmdliner -package result -I src -I test -o src/fmt_cli.cmo src/fmt_cli.ml
+- ocamlfind ocamlc -a -package cmdliner -package result src/fmt_cli.cmo -o src/fmt_cli.cma
+- ocamlfind ocamldep -package compiler-libs.toplevel -package result -modules src/fmt_top.ml > src/fmt_top.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmo src/fmt_top.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmo src/fmt_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmx src/fmt_top.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -package result -I src -I test -o src/fmt_top.cmx src/fmt_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxa
+- + ocamlfind ocamlopt -a -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxs
+- + ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package result src/fmt_top.cmx -o src/fmt_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a -package compiler-libs.toplevel -package result src/fmt_top.cmo -o src/fmt_top.cma
+- + ocamlfind ocamlc -a -package compiler-libs.toplevel -package result src/fmt_top.cmo -o src/fmt_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+-> compiled  fmt.0.8.0
+Processing  6/12: [ocamlgraph: make]
+Processing  7/12: [ocamlgraph: make] [rresult: ocaml build]
++ ocaml "pkg/pkg.ml" "build" "--pinned" "false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/rresult.0.5.0)
+- ocamlfind ocamldep -package result -modules src/rresult.ml > src/rresult.ml.depends
+- ocamlfind ocamldep -package result -modules src/rresult.mli > src/rresult.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -package result -I src -I test -o src/rresult.cmi src/rresult.mli
+- ocamlfind ocamlopt -c -g -bin-annot -package result -I src -I test -o src/rresult.cmx src/rresult.ml
+- ocamlfind ocamlopt -a -package result src/rresult.cmx -o src/rresult.cmxa
+- ocamlfind ocamlopt -shared -package result src/rresult.cmx -o src/rresult.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -package result -I src -I test -o src/rresult.cmo src/rresult.ml
+- ocamlfind ocamlc -a -package result src/rresult.cmo -o src/rresult.cma
+- ocamlfind ocamldep -package compiler-libs.toplevel -package result -modules src/rresult_top.ml > src/rresult_top.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -package compiler-libs.toplevel -package result -I src -I test -o src/rresult_top.cmo src/rresult_top.ml
+- + ocamlfind ocamlc -c -g -bin-annot -package compiler-libs.toplevel -package result -I src -I test -o src/rresult_top.cmo src/rresult_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -package compiler-libs.toplevel -package result -I src -I test -o src/rresult_top.cmx src/rresult_top.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -package compiler-libs.toplevel -package result -I src -I test -o src/rresult_top.cmx src/rresult_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package compiler-libs.toplevel -package result src/rresult_top.cmx -o src/rresult_top.cmxa
+- + ocamlfind ocamlopt -a -package compiler-libs.toplevel -package result src/rresult_top.cmx -o src/rresult_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package result src/rresult_top.cmx -o src/rresult_top.cmxs
+- + ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package result src/rresult_top.cmx -o src/rresult_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a -package compiler-libs.toplevel -package result src/rresult_top.cmo -o src/rresult_top.cma
+- + ocamlfind ocamlc -a -package compiler-libs.toplevel -package result src/rresult_top.cmo -o src/rresult_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamldep -package result -modules src/rresult.ml > src/rresult.ml.depends
+- ocamlfind ocamldep -package result -modules src/rresult.mli > src/rresult.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -package result -I src -I test -o src/rresult.cmi src/rresult.mli
+- ocamlfind ocamlopt -c -g -bin-annot -package result -I src -I test -o src/rresult.cmx src/rresult.ml
+- ocamlfind ocamlopt -a -package result src/rresult.cmx -o src/rresult.cmxa
+- ocamlfind ocamlopt -shared -package result src/rresult.cmx -o src/rresult.cmxs
+- ocamlfind ocamlc -c -g -bin-annot -package result -I src -I test -o src/rresult.cmo src/rresult.ml
+- ocamlfind ocamlc -a -package result src/rresult.cmo -o src/rresult.cma
+- ocamlfind ocamldep -package compiler-libs.toplevel -package result -modules src/rresult_top.ml > src/rresult_top.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -package compiler-libs.toplevel -package result -I src -I test -o src/rresult_top.cmo src/rresult_top.ml
+- + ocamlfind ocamlc -c -g -bin-annot -package compiler-libs.toplevel -package result -I src -I test -o src/rresult_top.cmo src/rresult_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -package compiler-libs.toplevel -package result -I src -I test -o src/rresult_top.cmx src/rresult_top.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -package compiler-libs.toplevel -package result -I src -I test -o src/rresult_top.cmx src/rresult_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package compiler-libs.toplevel -package result src/rresult_top.cmx -o src/rresult_top.cmxa
+- + ocamlfind ocamlopt -a -package compiler-libs.toplevel -package result src/rresult_top.cmx -o src/rresult_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package result src/rresult_top.cmx -o src/rresult_top.cmxs
+- + ocamlfind ocamlopt -shared -package compiler-libs.toplevel -package result src/rresult_top.cmx -o src/rresult_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a -package compiler-libs.toplevel -package result src/rresult_top.cmo -o src/rresult_top.cma
+- + ocamlfind ocamlc -a -package compiler-libs.toplevel -package result src/rresult_top.cmo -o src/rresult_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+-> compiled  rresult.0.5.0
+Processing  7/12: [ocamlgraph: make]
+-> installed fmt.0.8.0
+Processing  8/12: [ocamlgraph: make]
+-> installed rresult.0.5.0
+Processing  9/12: [ocamlgraph: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlgraph.1.8.7)
+- sed -e s/VERSION/1.8.7/ -e s/CMA/graph.cma/ -e s/CMXA/graph.cmxa/ \
+- 	META.in > META
+- ocamllex.opt src/gml.mll
+- 26 states, 827 transitions, table size 3464 bytes
+- 2623 additional bytes used for bindings
+- rm -f src/version.ml
+- echo "let version = \""1.8.7"\"" > src/version.ml
+- echo "let date = \""`date`"\"" >> src/version.ml
+- rm -f .depend
+- ocamldep -slash -I src -I lib -I editor -I view_graph -I dgraph\
+- 	lib/*.ml lib/*.mli \
+- 	src/*.ml src/*.mli \
+- 	editor/*.mli editor/*.ml \
+- 	view_graph/*.mli view_graph/*.ml \
+- 	dgraph/*.mli dgraph/*.ml > .depend
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/sig.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/sig_pack.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dot_ast.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 lib/unionfind.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 lib/unionfind.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 lib/heap.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 lib/heap.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 lib/bitv.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 lib/bitv.ml
+- File "lib/bitv.ml", line 454, characters 27-39:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/version.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/util.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/util.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/blocks.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/persistent.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/persistent.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/imperative.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/imperative.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/delaunay.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/delaunay.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/builder.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/builder.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/classic.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/classic.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/rand.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/rand.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/oper.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/oper.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/components.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/components.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/path.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/path.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/nonnegative.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/nonnegative.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/traverse.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/traverse.ml
+- File "src/traverse.ml", line 60, characters 6-26:
+- Warning 32: unused value has_cycle_undirected.
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/coloring.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/coloring.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/topological.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/topological.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/kruskal.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/kruskal.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/flow.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/flow.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/prim.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/prim.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dominator.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dominator.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/graphviz.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/graphviz.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/gml.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/gml.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dot_parser.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dot_parser.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dot_lexer.ml
+- File "src/dot_lexer.mll", line 38, characters 21-37:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dot.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/dot.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/pack.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/pack.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/gmap.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/gmap.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/minsep.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/minsep.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/cliquetree.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/cliquetree.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/mcs_m.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/mcs_m.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/md.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/md.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/strat.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/strat.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/fixpoint.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/fixpoint.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/leaderlist.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/leaderlist.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/contraction.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/contraction.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/graphml.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/graphml.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/merge.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/merge.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/mincut.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/mincut.ml
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/clique.mli
+- ocamlc.opt -c -I src -I lib -g -dtypes -w +a -w -4 -w -44 -w -50 -w -48 -w -29 src/clique.ml
+- ocamlc.opt -I src -I lib -pack -g -o graph.cmo src/sig.cmi src/sig_pack.cmi src/dot_ast.cmi lib/unionfind.cmo lib/heap.cmo lib/bitv.cmo src/version.cmo src/util.cmo src/blocks.cmo src/persistent.cmo src/imperative.cmo src/delaunay.cmo src/builder.cmo src/classic.cmo src/rand.cmo src/oper.cmo src/components.cmo src/path.cmo src/nonnegative.cmo src/traverse.cmo src/coloring.cmo src/topological.cmo src/kruskal.cmo src/flow.cmo src/prim.cmo src/dominator.cmo src/graphviz.cmo src/gml.cmo src/dot_parser.cmo src/dot_lexer.cmo src/dot.cmo src/pack.cmo src/gmap.cmo src/minsep.cmo src/cliquetree.cmo src/mcs_m.cmo src/md.cmo src/strat.cmo src/fixpoint.cmo src/leaderlist.cmo src/contraction.cmo src/graphml.cmo src/merge.cmo src/mincut.cmo src/clique.cmo
+- ocamlc.opt -I src -I lib -a -g -o graph.cma graph.cmo
+- ocamlopt.opt -c -I src -I lib -for-pack Graph lib/unionfind.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph lib/heap.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph lib/bitv.ml
+- File "lib/bitv.ml", line 454, characters 27-39:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/version.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/util.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/blocks.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/persistent.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/imperative.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/delaunay.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/builder.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/classic.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/rand.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/oper.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/components.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/path.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/nonnegative.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/traverse.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/coloring.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/topological.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/kruskal.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/flow.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/prim.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/dominator.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/graphviz.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/gml.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/dot_parser.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/dot_lexer.ml
+- File "src/dot_lexer.mll", line 38, characters 21-37:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/dot.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/pack.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/gmap.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/minsep.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/cliquetree.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/mcs_m.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/md.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/strat.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/fixpoint.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/leaderlist.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/contraction.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/graphml.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/merge.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/mincut.ml
+- ocamlopt.opt -c -I src -I lib -for-pack Graph src/clique.ml
+- ocamlopt.opt -I src -I lib -pack -o graph.cmx src/sig.cmi src/sig_pack.cmi src/dot_ast.cmi lib/unionfind.cmx lib/heap.cmx lib/bitv.cmx src/version.cmx src/util.cmx src/blocks.cmx src/persistent.cmx src/imperative.cmx src/delaunay.cmx src/builder.cmx src/classic.cmx src/rand.cmx src/oper.cmx src/components.cmx src/path.cmx src/nonnegative.cmx src/traverse.cmx src/coloring.cmx src/topological.cmx src/kruskal.cmx src/flow.cmx src/prim.cmx src/dominator.cmx src/graphviz.cmx src/gml.cmx src/dot_parser.cmx src/dot_lexer.cmx src/dot.cmx src/pack.cmx src/gmap.cmx src/minsep.cmx src/cliquetree.cmx src/mcs_m.cmx src/md.cmx src/strat.cmx src/fixpoint.cmx src/leaderlist.cmx src/contraction.cmx src/graphml.cmx src/merge.cmx src/mincut.cmx src/clique.cmx
+- ocamlopt.opt -I src -I lib -a -o graph.cmxa graph.cmx
+- ocamlopt.opt -I src -I lib -shared -o graph.cmxs graph.cmx
+-> compiled  ocamlgraph.1.8.7
+Processing 10/12: [ocamlgraph: make install-findlib]
++ make "install-findlib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlgraph.1.8.7)
+- ocamlfind install  ocamlgraph META \
+- 	src/*.mli view_graph/*.mli dgraph/*.mli \
+- 	graph.a graph.cmx graph.cmo graph.cmi graph.cma graph.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/graph.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/graph.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/graph.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/graph.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/graph.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/graph.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/xDotDraw.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/xDot.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/dGraphViewItem.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/dGraphView.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/dGraphTreeModel.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/dGraphTreeLayout.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/dGraphSubTree.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/dGraphRandModel.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/dGraphModel.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/dGraphContainer.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/viewGraph_utils.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/viewGraph_select.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/viewGraph_core.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/util.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/traverse.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/topological.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/strat.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/sig_pack.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/sig.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/rand.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/prim.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/persistent.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/path.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/pack.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/oper.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/nonnegative.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/minsep.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/mincut.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/merge.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/md.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/mcs_m.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/leaderlist.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/kruskal.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/imperative.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/graphviz.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/graphml.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/gml.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/gmap.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/flow.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/fixpoint.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/dot_parser.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/dot_ast.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/dot.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/dominator.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/delaunay.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/contraction.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/components.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/coloring.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/cliquetree.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/clique.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/classic.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/builder.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph/META
+-> installed ocamlgraph.1.8.7
+Processing 11/12: [functoria: ./configure]
++ ./configure "--prefix=/home/opam/.opam/ocaml-base-compiler.4.03.0" "--disable-tests" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/functoria.1.1.1)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ functoria
+- Package version: ..................................... 1.1.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.03.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_cmdliner: ........................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cmdliner
+- pkg_fmt: ............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/fmt
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- pkg_dynlink: ......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- pkg_rresult: ......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/rresult
+- pkg_fmt_tty: ......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/fmt
+- pkg_ocamlgraph: ...................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlgraph
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- 
+Processing 11/12: [functoria: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/functoria.1.1.1)
+- ocaml setup.ml -build 
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 47, characters 51-60:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 58, characters 20-29:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package fmt -modules runtime/functoria_runtime.mli > runtime/functoria_runtime.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -package cmdliner -package fmt -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I runtime -o runtime/functoria_runtime.cmi runtime/functoria_runtime.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package fmt -modules runtime/functoria_runtime.ml > runtime/functoria_runtime.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package fmt -modules runtime/functoria_info.mli > runtime/functoria_info.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -package cmdliner -package fmt -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I runtime -o runtime/functoria_info.cmi runtime/functoria_info.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package fmt -modules runtime/functoria_info.ml > runtime/functoria_info.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -package cmdliner -package fmt -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I runtime -o runtime/functoria_runtime.cmo runtime/functoria_runtime.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -package cmdliner -package fmt -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I runtime -o runtime/functoria_info.cmo runtime/functoria_info.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a -dontlink unix runtime/functoria_runtime.cmo runtime/functoria_info.cmo -o runtime/functoria-runtime.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -package cmdliner -package fmt -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I runtime -o runtime/functoria_runtime.cmx runtime/functoria_runtime.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -package cmdliner -package fmt -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I runtime -o runtime/functoria_info.cmx runtime/functoria_info.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a -dontlink unix runtime/functoria_runtime.cmx runtime/functoria_info.cmx -o runtime/functoria-runtime.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared -dontlink unix runtime/functoria-runtime.cmxa runtime/functoria_runtime.cmx runtime/functoria_info.cmx -o runtime/functoria-runtime.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -modules lib/functoria.mli > lib/functoria.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -modules lib/functoria_key.mli > lib/functoria_key.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I lib -I runtime -o lib/functoria_key.cmi lib/functoria_key.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I lib -I runtime -o lib/functoria.cmi lib/functoria.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -modules lib/functoria.ml > lib/functoria.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -modules lib/functoria_misc.mli > lib/functoria_misc.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I lib -I runtime -o lib/functoria_misc.cmi lib/functoria_misc.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -modules lib/functoria_key.ml > lib/functoria_key.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -modules lib/functoria_misc.ml > lib/functoria_misc.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -modules lib/functoria_sigs.mli > lib/functoria_sigs.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I lib -I runtime -o lib/functoria_sigs.cmi lib/functoria_sigs.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I lib -I runtime -o lib/functoria.cmo lib/functoria.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I lib -I runtime -o lib/functoria_key.cmo lib/functoria_key.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I lib -I runtime -o lib/functoria_misc.cmo lib/functoria_misc.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/functoria_misc.cmo lib/functoria_key.cmo lib/functoria.cmo -o lib/functoria.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I lib -I runtime -o lib/functoria_misc.cmx lib/functoria_misc.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I lib -I runtime -o lib/functoria_key.cmx lib/functoria_key.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I lib -I runtime -o lib/functoria.cmx lib/functoria.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/functoria_misc.cmx lib/functoria_key.cmx lib/functoria.cmx -o lib/functoria.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/functoria.cmx -o lib/functoria.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -modules app/functoria_app.mli > app/functoria_app.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -I lib -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I app -I lib -o app/functoria_app.cmi app/functoria_app.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -modules app/functoria_app.ml > app/functoria_app.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -modules app/functoria_command_line.mli > app/functoria_command_line.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -modules app/functoria_graph.mli > app/functoria_graph.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -I lib -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I app -I lib -o app/functoria_command_line.cmi app/functoria_command_line.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -I lib -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I app -I lib -o app/functoria_graph.cmi app/functoria_graph.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -modules app/functoria_command_line.ml > app/functoria_command_line.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -modules app/functoria_graph.ml > app/functoria_graph.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -I lib -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I app -I lib -o app/functoria_app.cmo app/functoria_app.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -I lib -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I app -I lib -o app/functoria_app.cmo app/functoria_app.ml
+- File "app/functoria_app.ml", line 54, characters 15-31:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "app/functoria_app.ml", line 69, characters 15-31:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "app/functoria_app.ml", line 122, characters 19-35:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -I lib -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I app -I lib -o app/functoria_command_line.cmo app/functoria_command_line.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -I lib -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I app -I lib -o app/functoria_graph.cmo app/functoria_graph.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a app/functoria_command_line.cmo app/functoria_graph.cmo app/functoria_app.cmo -o app/functoria-app.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -I lib -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I app -I lib -o app/functoria_command_line.cmx app/functoria_command_line.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -I lib -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I app -I lib -o app/functoria_graph.cmx app/functoria_graph.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -I lib -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I app -I lib -o app/functoria_app.cmx app/functoria_app.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -short-paths -keep-locs -strict-sequence -I runtime -I lib -package cmdliner -package dynlink -package fmt -package fmt.tty -package ocamlgraph -package rresult -package unix -warn-error +1..49 -warn-error -45-3 -w A-40-42-44 -I app -I lib -o app/functoria_app.cmx app/functoria_app.ml
+- File "app/functoria_app.ml", line 54, characters 15-31:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "app/functoria_app.ml", line 69, characters 15-31:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "app/functoria_app.ml", line 122, characters 19-35:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a app/functoria_command_line.cmx app/functoria_graph.cmx app/functoria_app.cmx -o app/functoria-app.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared app/functoria-app.cmxa app/functoria_command_line.cmx app/functoria_graph.cmx app/functoria_app.cmx -o app/functoria-app.cmxs
+-> compiled  functoria.1.1.1
+Processing 12/12: [functoria: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/functoria.1.1.1)
+- ocaml setup.ml -install 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_key.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_key.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_key.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_key.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_key.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_misc.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_key.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_runtime.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_info.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria-runtime.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria-runtime.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria-runtime.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria-runtime.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_info.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_info.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_info.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_info.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_runtime.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_runtime.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_runtime.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_runtime.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_info.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_runtime.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_app.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria-app.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria-app.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria-app.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria-app.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_app.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_app.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_app.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_app.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_graph.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_command_line.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/functoria_app.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/functoria/META
+-> installed functoria.1.1.1
+Done.
+# Run eval `opam env` to update the current shell environment
