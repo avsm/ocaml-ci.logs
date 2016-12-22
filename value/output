@@ -1,0 +1,967 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install extlib-compat 1.6.1                                 [required by beluga]
+  - install ulex          1.1                                   [required by beluga]
+  - install beluga        0.8.2
+===== 3 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/3: [beluga.0.8.2: dl]
+Processing  2/3: [beluga.0.8.2: dl] [extlib-compat.1.6.1: dl]
+Processing  3/3: [beluga.0.8.2: dl] [extlib-compat.1.6.1: dl] [ulex.1.1: dl]
+[extlib-compat.1.6.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3: [beluga.0.8.2: dl] [ulex.1.1: dl]
+[beluga.0.8.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3: [ulex.1.1: dl]
+[ulex.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/6: [extlib-compat: make build]
+Processing  2/6: [extlib-compat: make build] [ulex: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ulex.1.1)
+- ocamlbuild -byte-plugin pa_ulex.cma ulexing.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt unix.cma -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cma myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmo -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -pp camlp4orf -modules pa_ulex.ml > pa_ulex.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules cset.ml > cset.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulex.mli > ulex.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o cset.cmo cset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulex.cmi ulex.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmo pa_ulex.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmo pa_ulex.ml
+- File "pa_ulex.ml", line 60, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulex.ml > ulex.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulex.cmo ulex.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -a cset.cmo ulex.cmo pa_ulex.cmo -o pa_ulex.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulexing.mli > ulexing.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulexing.cmi ulexing.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulexing.ml > ulexing.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules utf8.mli > utf8.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o utf8.cmi utf8.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulexing.cmo ulexing.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulexing.cmo ulexing.ml
+- File "ulexing.ml", line 45, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 123, characters 19-31:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 190, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "ulexing.ml", line 191, characters 26-80:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules utf8.ml > utf8.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o utf8.cmo utf8.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o utf8.cmo utf8.ml
+- File "utf8.ml", line 92, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "utf8.ml", line 113, characters 20-21:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -a utf8.cmo ulexing.cmo -o ulexing.cma
+- ocamlbuild -byte-plugin pa_ulex.cma ulexing.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt unix.cma -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cma myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmo -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -pp camlp4orf -modules pa_ulex.ml > pa_ulex.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules cset.ml > cset.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulex.mli > ulex.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o cset.cmo cset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulex.cmi ulex.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmo pa_ulex.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmo pa_ulex.ml
+- File "pa_ulex.ml", line 60, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulex.ml > ulex.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulex.cmo ulex.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -a cset.cmo ulex.cmo pa_ulex.cmo -o pa_ulex.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulexing.mli > ulexing.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulexing.cmi ulexing.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulexing.ml > ulexing.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules utf8.mli > utf8.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o utf8.cmi utf8.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulexing.cmo ulexing.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ulexing.cmo ulexing.ml
+- File "ulexing.ml", line 45, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 123, characters 19-31:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 190, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "ulexing.ml", line 191, characters 26-80:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules utf8.ml > utf8.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o utf8.cmo utf8.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o utf8.cmo utf8.ml
+- File "utf8.ml", line 92, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "utf8.ml", line 113, characters 20-21:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -a utf8.cmo ulexing.cmo -o ulexing.cma
+Processing  2/6: [extlib-compat: make build] [ulex: make all.opt]
++ make "all.opt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ulex.1.1)
+- ocamlbuild -byte-plugin pa_ulex.cma ulexing.cma pa_ulex.cmxa ulexing.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o cset.cmx cset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o ulex.cmx ulex.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmx pa_ulex.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmx pa_ulex.ml
+- File "pa_ulex.ml", line 60, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -a cset.cmx ulex.cmx pa_ulex.cmx -o pa_ulex.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o utf8.cmx utf8.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o utf8.cmx utf8.ml
+- File "utf8.ml", line 92, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "utf8.ml", line 113, characters 20-21:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o ulexing.cmx ulexing.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o ulexing.cmx ulexing.ml
+- File "ulexing.ml", line 45, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 123, characters 19-31:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 190, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "ulexing.ml", line 191, characters 26-80:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -a utf8.cmx ulexing.cmx -o ulexing.cmxa
+- ocamlbuild -byte-plugin pa_ulex.cma ulexing.cma pa_ulex.cmxa ulexing.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o cset.cmx cset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o ulex.cmx ulex.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmx pa_ulex.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 -pp camlp4orf -o pa_ulex.cmx pa_ulex.ml
+- File "pa_ulex.ml", line 60, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -a cset.cmx ulex.cmx pa_ulex.cmx -o pa_ulex.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o utf8.cmx utf8.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o utf8.cmx utf8.ml
+- File "utf8.ml", line 92, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "utf8.ml", line 113, characters 20-21:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o ulexing.cmx ulexing.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o ulexing.cmx ulexing.ml
+- File "ulexing.ml", line 45, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 123, characters 19-31:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "ulexing.ml", line 190, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "ulexing.ml", line 191, characters 26-80:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -a utf8.cmx ulexing.cmx -o ulexing.cmxa
+-> compiled  ulex.1.1
+Processing  2/6: [extlib-compat: make build]
+Processing  3/6: [extlib-compat: make build] [ulex: make install]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/extlib-compat.1.6.1)
+- ocamlc -g -c enum.mli enum.ml
+- ocamlc -g -c bitSet.mli bitSet.ml
+- File "bitSet.ml", line 23, characters 40-53:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitSet.ml", line 28, characters 64-75:
+- Warning 3: deprecated: String.fill
+- Use Bytes.fill instead.
+- ocamlc -g -c dynArray.mli dynArray.ml
+- ocamlc -g -c extArray.mli extArray.ml
+- camlp4of pr_o.cmo -D OCAML4 -impl extHashtbl.mlpp -o extHashtbl.ml
+- ocamlc -g -c extHashtbl.mli extHashtbl.ml
+- File "extHashtbl.ml", line 22, characters 4-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlc -g -c extList.mli extList.ml
+- ocamlc -g -c extString.mli extString.ml
+- File "extString.mli", line 185, characters 1-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "extString.mli", line 186, characters 1-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "extString.ml", line 28, characters 9-15:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 30, characters 2-12:
+- Warning 3: deprecated: unsafe_set
+- File "extString.ml", line 126, characters 2-8:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 173, characters 9-15:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 175, characters 21-31:
+- Warning 3: deprecated: unsafe_set
+- File "extString.ml", line 180, characters 10-16:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 182, characters 2-12:
+- Warning 3: deprecated: unsafe_set
+- File "extString.ml", line 212, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "extString.ml", line 215, characters 14-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "extString.ml", line 231, characters 12-18:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 250, characters 28-39:
+- Warning 3: deprecated: String.copy
+- ocamlc -g -c global.mli global.ml
+- ocamlc -g -c IO.mli IO.ml
+- File "IO.ml", line 65, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 119, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 180, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 324, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "IO.ml", line 752, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 769, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 771, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "IO.ml", line 788, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlc -g -c option.mli option.ml
+- ocamlc -g -c pMap.mli pMap.ml
+- ocamlc -g -c std.mli std.ml
+- File "std.ml", line 52, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "std.ml", line 65, characters 37-50:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "std.ml", line 67, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "std.ml", line 162, characters 14-27:
+- Warning 3: deprecated: Obj.final_tag
+- Replaced by custom_tag.
+- ocamlc -g -c uChar.mli uChar.ml
+- ocamlc -g -c uTF8.mli uTF8.ml
+- ocamlc -g -c base64.mli base64.ml
+- File "base64.ml", line 98, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlc -g -c unzip.mli unzip.ml
+- File "unzip.ml", line 172, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "unzip.ml", line 179, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "unzip.ml", line 191, characters 1-18:
+- Warning 3: deprecated: String.unsafe_set
+- File "unzip.ml", line 259, characters 1-18:
+- Warning 3: deprecated: String.unsafe_set
+- File "unzip.ml", line 436, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlc -g -c refList.mli refList.ml
+- ocamlc -g -c optParse.mli optParse.ml
+- ocamlc -g -c dllist.mli dllist.ml
+- ocamlc -g -c extLib.ml
+- ocamlc -g -a -o extLib.cma enum.cmo bitSet.cmo dynArray.cmo extArray.cmo extHashtbl.cmo extList.cmo extString.cmo global.cmo IO.cmo option.cmo pMap.cmo std.cmo uChar.cmo uTF8.cmo base64.cmo unzip.cmo refList.cmo optParse.cmo dllist.cmo extLib.cmo
+- ocamlopt -g -c enum.mli enum.ml
+- ocamlopt -g -c bitSet.mli bitSet.ml
+- File "bitSet.ml", line 23, characters 40-53:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitSet.ml", line 28, characters 64-75:
+- Warning 3: deprecated: String.fill
+- Use Bytes.fill instead.
+- ocamlopt -g -c dynArray.mli dynArray.ml
+- ocamlopt -g -c extArray.mli extArray.ml
+- ocamlopt -g -c extHashtbl.mli extHashtbl.ml
+- File "extHashtbl.ml", line 22, characters 4-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlopt -g -c extList.mli extList.ml
+- ocamlopt -g -c extString.mli extString.ml
+- File "extString.mli", line 185, characters 1-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "extString.mli", line 186, characters 1-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "extString.ml", line 28, characters 9-15:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 30, characters 2-12:
+- Warning 3: deprecated: unsafe_set
+- File "extString.ml", line 126, characters 2-8:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 173, characters 9-15:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 175, characters 21-31:
+- Warning 3: deprecated: unsafe_set
+- File "extString.ml", line 180, characters 10-16:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 182, characters 2-12:
+- Warning 3: deprecated: unsafe_set
+- File "extString.ml", line 212, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "extString.ml", line 215, characters 14-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "extString.ml", line 231, characters 12-18:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 250, characters 28-39:
+- Warning 3: deprecated: String.copy
+- ocamlopt -g -c global.mli global.ml
+- ocamlopt -g -c IO.mli IO.ml
+- File "IO.ml", line 65, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 119, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 180, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 324, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "IO.ml", line 752, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 769, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 771, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "IO.ml", line 788, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlopt -g -c option.mli option.ml
+- ocamlopt -g -c pMap.mli pMap.ml
+- ocamlopt -g -c std.mli std.ml
+- File "std.ml", line 52, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "std.ml", line 65, characters 37-50:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "std.ml", line 67, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "std.ml", line 162, characters 14-27:
+- Warning 3: deprecated: Obj.final_tag
+- Replaced by custom_tag.
+- ocamlopt -g -c uChar.mli uChar.ml
+- ocamlopt -g -c uTF8.mli uTF8.ml
+- ocamlopt -g -c base64.mli base64.ml
+- File "base64.ml", line 98, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlopt -g -c unzip.mli unzip.ml
+- File "unzip.ml", line 172, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "unzip.ml", line 179, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "unzip.ml", line 191, characters 1-18:
+- Warning 3: deprecated: String.unsafe_set
+- File "unzip.ml", line 259, characters 1-18:
+- Warning 3: deprecated: String.unsafe_set
+- File "unzip.ml", line 436, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlopt -g -c refList.mli refList.ml
+- ocamlopt -g -c optParse.mli optParse.ml
+- ocamlopt -g -c dllist.mli dllist.ml
+- ocamlopt -g -c extLib.ml
+- ocamlopt -g -a -o extLib.cmxa enum.cmx bitSet.cmx dynArray.cmx extArray.cmx extHashtbl.cmx extList.cmx extString.cmx global.cmx IO.cmx option.cmx pMap.cmx std.cmx uChar.cmx uTF8.cmx base64.cmx unzip.cmx refList.cmx optParse.cmx dllist.cmx extLib.cmx
+- ocamlopt -g -shared -linkall extLib.cmxa -o extLib.cmxs
+- ocamlc -g -c enum.mli enum.ml
+- ocamlc -g -c bitSet.mli bitSet.ml
+- File "bitSet.ml", line 23, characters 40-53:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitSet.ml", line 28, characters 64-75:
+- Warning 3: deprecated: String.fill
+- Use Bytes.fill instead.
+- ocamlc -g -c dynArray.mli dynArray.ml
+- ocamlc -g -c extArray.mli extArray.ml
+- camlp4of pr_o.cmo -D OCAML4 -impl extHashtbl.mlpp -o extHashtbl.ml
+- ocamlc -g -c extHashtbl.mli extHashtbl.ml
+- File "extHashtbl.ml", line 22, characters 4-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlc -g -c extList.mli extList.ml
+- ocamlc -g -c extString.mli extString.ml
+- File "extString.mli", line 185, characters 1-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "extString.mli", line 186, characters 1-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "extString.ml", line 28, characters 9-15:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 30, characters 2-12:
+- Warning 3: deprecated: unsafe_set
+- File "extString.ml", line 126, characters 2-8:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 173, characters 9-15:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 175, characters 21-31:
+- Warning 3: deprecated: unsafe_set
+- File "extString.ml", line 180, characters 10-16:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 182, characters 2-12:
+- Warning 3: deprecated: unsafe_set
+- File "extString.ml", line 212, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "extString.ml", line 215, characters 14-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "extString.ml", line 231, characters 12-18:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 250, characters 28-39:
+- Warning 3: deprecated: String.copy
+- ocamlc -g -c global.mli global.ml
+- ocamlc -g -c IO.mli IO.ml
+- File "IO.ml", line 65, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 119, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 180, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 324, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "IO.ml", line 752, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 769, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 771, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "IO.ml", line 788, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlc -g -c option.mli option.ml
+- ocamlc -g -c pMap.mli pMap.ml
+- ocamlc -g -c std.mli std.ml
+- File "std.ml", line 52, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "std.ml", line 65, characters 37-50:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "std.ml", line 67, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "std.ml", line 162, characters 14-27:
+- Warning 3: deprecated: Obj.final_tag
+- Replaced by custom_tag.
+- ocamlc -g -c uChar.mli uChar.ml
+- ocamlc -g -c uTF8.mli uTF8.ml
+- ocamlc -g -c base64.mli base64.ml
+- File "base64.ml", line 98, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlc -g -c unzip.mli unzip.ml
+- File "unzip.ml", line 172, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "unzip.ml", line 179, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "unzip.ml", line 191, characters 1-18:
+- Warning 3: deprecated: String.unsafe_set
+- File "unzip.ml", line 259, characters 1-18:
+- Warning 3: deprecated: String.unsafe_set
+- File "unzip.ml", line 436, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlc -g -c refList.mli refList.ml
+- ocamlc -g -c optParse.mli optParse.ml
+- ocamlc -g -c dllist.mli dllist.ml
+- ocamlc -g -c extLib.ml
+- ocamlc -g -a -o extLib.cma enum.cmo bitSet.cmo dynArray.cmo extArray.cmo extHashtbl.cmo extList.cmo extString.cmo global.cmo IO.cmo option.cmo pMap.cmo std.cmo uChar.cmo uTF8.cmo base64.cmo unzip.cmo refList.cmo optParse.cmo dllist.cmo extLib.cmo
+- ocamlopt -g -c enum.mli enum.ml
+- ocamlopt -g -c bitSet.mli bitSet.ml
+- File "bitSet.ml", line 23, characters 40-53:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitSet.ml", line 28, characters 64-75:
+- Warning 3: deprecated: String.fill
+- Use Bytes.fill instead.
+- ocamlopt -g -c dynArray.mli dynArray.ml
+- ocamlopt -g -c extArray.mli extArray.ml
+- ocamlopt -g -c extHashtbl.mli extHashtbl.ml
+- File "extHashtbl.ml", line 22, characters 4-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlopt -g -c extList.mli extList.ml
+- ocamlopt -g -c extString.mli extString.ml
+- File "extString.mli", line 185, characters 1-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "extString.mli", line 186, characters 1-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "extString.ml", line 28, characters 9-15:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 30, characters 2-12:
+- Warning 3: deprecated: unsafe_set
+- File "extString.ml", line 126, characters 2-8:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 173, characters 9-15:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 175, characters 21-31:
+- Warning 3: deprecated: unsafe_set
+- File "extString.ml", line 180, characters 10-16:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 182, characters 2-12:
+- Warning 3: deprecated: unsafe_set
+- File "extString.ml", line 212, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "extString.ml", line 215, characters 14-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "extString.ml", line 231, characters 12-18:
+- Warning 3: deprecated: create
+- Use Bytes.create instead.
+- File "extString.ml", line 250, characters 28-39:
+- Warning 3: deprecated: String.copy
+- ocamlopt -g -c global.mli global.ml
+- ocamlopt -g -c IO.mli IO.ml
+- File "IO.ml", line 65, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 119, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 180, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 324, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "IO.ml", line 752, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 769, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 771, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "IO.ml", line 788, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlopt -g -c option.mli option.ml
+- ocamlopt -g -c pMap.mli pMap.ml
+- ocamlopt -g -c std.mli std.ml
+- File "std.ml", line 52, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "std.ml", line 65, characters 37-50:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "std.ml", line 67, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "std.ml", line 162, characters 14-27:
+- Warning 3: deprecated: Obj.final_tag
+- Replaced by custom_tag.
+- ocamlopt -g -c uChar.mli uChar.ml
+- ocamlopt -g -c uTF8.mli uTF8.ml
+- ocamlopt -g -c base64.mli base64.ml
+- File "base64.ml", line 98, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlopt -g -c unzip.mli unzip.ml
+- File "unzip.ml", line 172, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "unzip.ml", line 179, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "unzip.ml", line 191, characters 1-18:
+- Warning 3: deprecated: String.unsafe_set
+- File "unzip.ml", line 259, characters 1-18:
+- Warning 3: deprecated: String.unsafe_set
+- File "unzip.ml", line 436, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlopt -g -c refList.mli refList.ml
+- ocamlopt -g -c optParse.mli optParse.ml
+- ocamlopt -g -c dllist.mli dllist.ml
+- ocamlopt -g -c extLib.ml
+- ocamlopt -g -a -o extLib.cmxa enum.cmx bitSet.cmx dynArray.cmx extArray.cmx extHashtbl.cmx extList.cmx extString.cmx global.cmx IO.cmx option.cmx pMap.cmx std.cmx uChar.cmx uTF8.cmx base64.cmx unzip.cmx refList.cmx optParse.cmx dllist.cmx extLib.cmx
+- ocamlopt -g -shared -linkall extLib.cmxa -o extLib.cmxs
+-> compiled  extlib-compat.1.6.1
+Processing  3/6: [ulex: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ulex.1.1)
+- ocamlbuild -byte-plugin pa_ulex.cma ulexing.cma
+- cd _build && make -f ../Makefile realinstall
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ulex.1.1/_build'
+- ocamlfind install ulex ../META ulexing.mli utf8.mli ulexing.cmi utf8.cmi ulexing.cmx utf8.cmx pa_ulex.cma ulexing.a ulexing.cma ulexing.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/pa_ulex.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/utf8.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/utf8.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/utf8.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/ulexing.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ulex/META
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ulex.1.1/_build'
+-> installed ulex.1.1
+Processing  4/6: [extlib-compat: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/extlib-compat.1.6.1)
+- ocamlfind install -patch-version 1.6.1 extlib META extLib.cma enum.mli bitSet.mli dynArray.mli extArray.mli extHashtbl.mli extList.mli extString.mli global.mli IO.mli option.mli pMap.mli std.mli uChar.mli uTF8.mli base64.mli unzip.mli refList.mli optParse.mli dllist.mli enum.cmi bitSet.cmi dynArray.cmi extArray.cmi extHashtbl.cmi extList.cmi extString.cmi global.cmi IO.cmi option.cmi pMap.cmi std.cmi uChar.cmi uTF8.cmi base64.cmi unzip.cmi refList.cmi optParse.cmi dllist.cmi extLib.cmi -optional extLib.cmxa enum.cmx bitSet.cmx dynArray.cmx extArray.cmx extHashtbl.cmx extList.cmx extString.cmx global.cmx IO.cmx option.cmx pMap.cmx std.cmx uChar.cmx uTF8.cmx base64.cmx unzip.cmx refList.cmx optParse.cmx dllist.cmx extLib.cmx extLib.cmxs extLib.a extLib.lib
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extLib.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extLib.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extLib.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/dllist.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/optParse.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/refList.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/unzip.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/base64.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/uTF8.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/uChar.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/std.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/pMap.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/option.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/IO.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/global.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extString.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extList.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extHashtbl.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extArray.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/dynArray.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/bitSet.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/enum.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extLib.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extLib.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/dllist.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/optParse.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/refList.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/unzip.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/base64.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/uTF8.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/uChar.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/std.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/pMap.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/option.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/IO.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/global.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extString.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extList.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extHashtbl.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extArray.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/dynArray.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/bitSet.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/enum.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/dllist.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/optParse.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/refList.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/unzip.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/base64.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/uTF8.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/uChar.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/std.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/pMap.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/option.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/IO.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/global.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extString.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extList.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extHashtbl.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extArray.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/dynArray.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/bitSet.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/enum.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/extLib.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/extlib/META
+-> installed extlib-compat.1.6.1
+Processing  5/6: [beluga: ocamlbuild 1]
++ ocamlbuild "-r" "-use-ocamlfind" "-j" "1" "src/beluga/main.native" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/beluga.0.8.2)
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -modules src/beluga/main.ml > src/beluga/main.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/abstract.mli > src/core/abstract.mli.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/id.mli > src/core/id.mli.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/syntax.ml > src/core/syntax.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/synapx.ml > src/core/synapx.ml.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/id.cmi src/core/id.mli
+- ocamlfind ocamldep -package camlp4 -modules src/core/pragma.ml > src/core/pragma.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/synint.ml > src/core/synint.ml.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/pragma.cmo src/core/pragma.ml
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/synint.cmo src/core/synint.ml
+- ocamlfind ocamldep -package camlp4 -modules src/core/synext.ml > src/core/synext.ml.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/synapx.cmo src/core/synapx.ml
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/synext.cmo src/core/synext.ml
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/syntax.cmo src/core/syntax.ml
+- ocamlfind ocamldep -modules src/beluga/beli.ml > src/beluga/beli.ml.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/abstract.cmi src/core/abstract.mli
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/command.mli > src/core/command.mli.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/debug.mli > src/core/debug.mli.depends
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/interactive.ml > src/core/interactive.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/context.mli > src/core/context.mli.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/coverage.mli > src/core/coverage.mli.depends
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/holes.mli > src/core/holes.mli.depends
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/logic.mli > src/core/logic.mli.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/monitor.mli > src/core/monitor.mli.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/pretty.mli > src/core/pretty.mli.depends
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/store.mli > src/core/store.mli.depends
+- ocamlfind ocamlc -c -annot -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/store.cmi src/core/store.mli
+- ocamlfind ocamldep -package camlp4 -modules src/core/substitution.mli > src/core/substitution.mli.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/whnf.mli > src/core/whnf.mli.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/context.cmi src/core/context.mli
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/coverage.cmi src/core/coverage.mli
+- ocamlfind ocamlc -c -annot -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/holes.cmi src/core/holes.mli
+- ocamlfind ocamlc -c -annot -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/logic.cmi src/core/logic.mli
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/monitor.cmi src/core/monitor.mli
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/pretty.cmi src/core/pretty.mli
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/substitution.cmi src/core/substitution.mli
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/whnf.cmi src/core/whnf.mli
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/parser.mli > src/core/parser.mli.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/lexer.mli > src/core/lexer.mli.depends
+- ocamlfind ocamldep -syntax camlp4o -package camlp4.extend -package camlp4 -modules src/core/token.ml > src/core/token.ml.depends
+- ocamlfind ocamlc -c -annot -syntax camlp4o -package camlp4.extend -package camlp4 -w -P -w -P -I src/core -o src/core/token.cmo src/core/token.ml
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/lexer.cmi src/core/lexer.mli
+- ocamlfind ocamldep -package camlp4 -modules src/core/recsgn.mli > src/core/recsgn.mli.depends
+- fatal: Not a git repository (or any of the parent directories): .git
+- ocamlfind ocamldep -package camlp4 -modules src/core/version.ml > src/core/version.ml.depends
+- ocamlfind ocamlc -c -annot -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/command.cmi src/core/command.mli
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/debug.cmi src/core/debug.mli
+- ocamlfind ocamlc -c -annot -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/interactive.cmo src/core/interactive.ml
+- + ocamlfind ocamlc -c -annot -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/interactive.cmo src/core/interactive.ml
+- File "src/core/interactive.ml", line 166, characters 40-56:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -annot -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/parser.cmi src/core/parser.mli
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/recsgn.cmi src/core/recsgn.mli
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/version.cmo src/core/version.ml
+- ocamlfind ocamldep -package camlp4 -modules src/core/cfg.ml > src/core/cfg.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/error.mli > src/core/error.mli.depends
+- ocamlfind ocamldep -package str -package camlp4 -modules src/core/html.mli > src/core/html.mli.depends
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/lfholes.mli > src/core/lfholes.mli.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/lfrecon.ml > src/core/lfrecon.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/apxnorm.ml > src/core/apxnorm.ml.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/error.cmi src/core/error.mli
+- ocamlfind ocamldep -package camlp4 -modules src/core/index.mli > src/core/index.mli.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/index.cmi src/core/index.mli
+- ocamlfind ocamldep -package camlp4 -modules src/core/check.mli > src/core/check.mli.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/convSigma.mli > src/core/convSigma.mli.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/ctxsub.mli > src/core/ctxsub.mli.depends
+- ocamlfind ocamlc -c -annot -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/lfholes.cmi src/core/lfholes.mli
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/subord.mli > src/core/subord.mli.depends
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/unify.ml > src/core/unify.ml.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/convSigma.cmi src/core/convSigma.mli
+- ocamlfind ocamlc -c -annot -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/subord.cmi src/core/subord.mli
+- ocamlfind ocamldep -package camlp4 -modules src/core/trail.mli > src/core/trail.mli.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/trail.cmi src/core/trail.mli
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/apxnorm.cmo src/core/apxnorm.ml
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/check.cmi src/core/check.mli
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/ctxsub.cmi src/core/ctxsub.mli
+- ocamlfind ocamlc -c -annot -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/unify.cmo src/core/unify.ml
+- ocamlfind ocamldep -package camlp4 -modules src/core/locs.mli > src/core/locs.mli.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/loctesting.ml > src/core/loctesting.ml.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/locs.cmi src/core/locs.mli
+- ocamlfind ocamldep -package camlp4 -modules src/core/sexp.ml > src/core/sexp.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/gensym.mli > src/core/gensym.mli.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/gensym.cmi src/core/gensym.mli
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/typeinfo.mli > src/core/typeinfo.mli.depends
+- ocamlfind ocamlc -c -annot -w -P -w -P -I src/beluga -I src/core -o src/beluga/beli.cmo src/beluga/beli.ml
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/cfg.cmo src/core/cfg.ml
+- ocamlfind ocamlc -c -annot -package str -package camlp4 -w -P -w -P -I src/core -o src/core/html.cmi src/core/html.mli
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/lfrecon.cmo src/core/lfrecon.ml
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/loctesting.cmo src/core/loctesting.ml
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/sexp.cmo src/core/sexp.ml
+- ocamlfind ocamlc -c -annot -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/typeinfo.cmi src/core/typeinfo.mli
+- ocamlfind ocamlc -c -annot -w -P -w -P -I src/beluga -I src/core -o src/beluga/main.cmo src/beluga/main.ml
+- + ocamlfind ocamlc -c -annot -w -P -w -P -I src/beluga -I src/core -o src/beluga/main.cmo src/beluga/main.ml
+- File "src/beluga/main.ml", line 71, characters 21-36:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- File "src/beluga/main.ml", line 77, characters 12-28:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/beluga/main.ml", line 81, characters 12-28:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamldep -package camlp4 -modules src/core/abstract.ml > src/core/abstract.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/context.ml > src/core/context.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/error.ml > src/core/error.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/id.ml > src/core/id.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/gensym.ml > src/core/gensym.ml.depends
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/gensym.cmx src/core/gensym.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/id.cmx src/core/id.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/pragma.cmx src/core/pragma.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/synint.cmx src/core/synint.ml
+- + ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/synint.cmx src/core/synint.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/synapx.cmx src/core/synapx.ml
+- + ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/synapx.cmx src/core/synapx.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/synext.cmx src/core/synext.ml
+- + ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/synext.cmx src/core/synext.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/syntax.cmx src/core/syntax.ml
+- + ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/syntax.cmx src/core/syntax.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamldep -package camlp4 -modules src/core/substitution.ml > src/core/substitution.ml.depends
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/error.cmx src/core/error.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/substitution.cmx src/core/substitution.ml
+- ocamlfind ocamldep -package camlp4 -modules src/core/debug.ml > src/core/debug.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/pretty.ml > src/core/pretty.ml.depends
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/context.cmx src/core/context.ml
+- ocamlfind ocamldep -package camlp4 -modules src/core/prettyext.ml > src/core/prettyext.ml.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/prettyext.cmo src/core/prettyext.ml
+- ocamlfind ocamldep -package str -package camlp4 -modules src/core/html.ml > src/core/html.ml.depends
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/store.ml > src/core/store.ml.depends
+- ocamlfind ocamlopt -c -annot -for-pack Core -package str -package camlp4 -w -P -w -P -I src/core -o src/core/html.cmx src/core/html.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/store.cmx src/core/store.ml
+- ocamlfind ocamldep -package camlp4 -modules src/core/whnf.ml > src/core/whnf.ml.depends
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/debug.cmx src/core/debug.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/prettyext.cmx src/core/prettyext.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/whnf.cmx src/core/whnf.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/pretty.cmx src/core/pretty.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/abstract.cmx src/core/abstract.ml
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/command.ml > src/core/command.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/check.ml > src/core/check.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/coverage.ml > src/core/coverage.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/convSigma.ml > src/core/convSigma.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/ctxsub.ml > src/core/ctxsub.ml.depends
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/subord.ml > src/core/subord.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/total.ml > src/core/total.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/order.ml > src/core/order.ml.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/order.cmo src/core/order.ml
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/total.cmo src/core/total.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/convSigma.cmx src/core/convSigma.ml
+- ocamlfind ocamldep -package camlp4 -modules src/core/monitor.ml > src/core/monitor.ml.depends
+- ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/subord.cmx src/core/subord.ml
+- ocamlfind ocamldep -package camlp4 -modules src/core/trail.ml > src/core/trail.ml.depends
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/monitor.cmx src/core/monitor.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/trail.cmx src/core/trail.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/order.cmx src/core/order.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/unify.cmx src/core/unify.ml
+- + ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/unify.cmx src/core/unify.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/ctxsub.cmx src/core/ctxsub.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/total.cmx src/core/total.ml
+- ocamlfind ocamldep -package camlp4 -modules src/core/lfcheck.ml > src/core/lfcheck.ml.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/lfcheck.cmo src/core/lfcheck.ml
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/typeinfo.ml > src/core/typeinfo.ml.depends
+- ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/typeinfo.cmx src/core/typeinfo.ml
+- + ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/typeinfo.cmx src/core/typeinfo.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/coverage.cmx src/core/coverage.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/lfcheck.cmx src/core/lfcheck.ml
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/holes.ml > src/core/holes.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/index.ml > src/core/index.ml.depends
+- ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/holes.cmx src/core/holes.ml
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/logic.ml > src/core/logic.ml.depends
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/check.cmx src/core/check.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/logic.cmx src/core/logic.ml
+- ocamlfind ocamldep -package extlib -package camlp4 -modules src/core/lfholes.ml > src/core/lfholes.ml.depends
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/index.cmx src/core/index.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/lfholes.cmx src/core/lfholes.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/apxnorm.cmx src/core/apxnorm.ml
+- ocamlfind ocamldep -package extlib -syntax camlp4o -package camlp4.extend -package camlp4 -modules src/core/parser.ml > src/core/parser.ml.depends
+- ocamlfind ocamldep -package ulex -syntax camlp4o -package camlp4.extend -package camlp4 -modules src/core/lexer.ml > src/core/lexer.ml.depends
+- ocamlfind ocamlopt -c -annot -for-pack Core -syntax camlp4o -package camlp4.extend -package camlp4 -w -P -w -P -I src/core -o src/core/token.cmx src/core/token.ml
+- + ocamlfind ocamlopt -c -annot -for-pack Core -syntax camlp4o -package camlp4.extend -package camlp4 -w -P -w -P -I src/core -o src/core/token.cmx src/core/token.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -c -annot -for-pack Core -package ulex -syntax camlp4o -package camlp4.extend -package camlp4 -w -P -w -P -I src/core -o src/core/lexer.cmx src/core/lexer.ml
+- + ocamlfind ocamlopt -c -annot -for-pack Core -package ulex -syntax camlp4o -package camlp4.extend -package camlp4 -w -P -w -P -I src/core -o src/core/lexer.cmx src/core/lexer.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamldep -package camlp4 -modules src/core/reconstruct.ml > src/core/reconstruct.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/reconstruct.mli > src/core/reconstruct.mli.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/reconstruct.cmi src/core/reconstruct.mli
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/lfrecon.cmx src/core/lfrecon.ml
+- ocamlfind ocamldep -package camlp4 -modules src/core/recsgn.ml > src/core/recsgn.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/opsem.ml > src/core/opsem.ml.depends
+- ocamlfind ocamldep -package camlp4 -modules src/core/opsem.mli > src/core/opsem.mli.depends
+- ocamlfind ocamlc -c -annot -package camlp4 -w -P -w -P -I src/core -o src/core/opsem.cmi src/core/opsem.mli
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/reconstruct.cmx src/core/reconstruct.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/opsem.cmx src/core/opsem.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/cfg.cmx src/core/cfg.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/interactive.cmx src/core/interactive.ml
+- + ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/interactive.cmx src/core/interactive.ml
+- File "src/core/interactive.ml", line 166, characters 40-56:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -syntax camlp4o -package camlp4.extend -package camlp4 -w -P -w -P -I src/core -o src/core/parser.cmx src/core/parser.ml
+- + ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -syntax camlp4o -package camlp4.extend -package camlp4 -w -P -w -P -I src/core -o src/core/parser.cmx src/core/parser.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/recsgn.cmx src/core/recsgn.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package extlib -package camlp4 -w -P -w -P -I src/core -o src/core/command.cmx src/core/command.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/version.cmx src/core/version.ml
+- ocamlfind ocamldep -package camlp4 -modules src/core/locs.ml > src/core/locs.ml.depends
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/locs.cmx src/core/locs.ml
+- ocamlfind ocamlopt -c -annot -w -P -w -P -I src/beluga -I src/core -o src/beluga/beli.cmx src/beluga/beli.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/loctesting.cmx src/core/loctesting.ml
+- ocamlfind ocamlopt -c -annot -for-pack Core -package camlp4 -w -P -w -P -I src/core -o src/core/sexp.cmx src/core/sexp.ml
+- ocamlfind ocamlopt -c -annot -w -P -w -P -I src/beluga -I src/core -o src/beluga/main.cmx src/beluga/main.ml
+- + ocamlfind ocamlopt -c -annot -w -P -w -P -I src/beluga -I src/core -o src/beluga/main.cmx src/beluga/main.ml
+- File "src/beluga/main.ml", line 71, characters 21-36:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- File "src/beluga/main.ml", line 77, characters 12-28:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/beluga/main.ml", line 81, characters 12-28:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -linkpkg -package 'unix, extlib, ulex, camlp4.lib, str' src/core/gensym.cmx src/core/id.cmx src/core/pragma.cmx src/core/synint.cmx src/core/synapx.cmx src/core/synext.cmx src/core/syntax.cmx src/core/error.cmx src/core/substitution.cmx src/core/context.cmx src/core/debug.cmx src/core/html.cmx src/core/store.cmx src/core/prettyext.cmx src/core/whnf.cmx src/core/pretty.cmx src/core/abstract.cmx src/core/index.cmx src/core/apxnorm.cmx src/core/cfg.cmx src/core/convSigma.cmx src/core/ctxsub.cmx src/core/monitor.cmx src/core/order.cmx src/core/subord.cmx src/core/trail.cmx src/core/unify.cmx src/core/total.cmx src/core/coverage.cmx src/core/typeinfo.cmx src/core/lfcheck.cmx src/core/check.cmx src/core/holes.cmx src/core/logic.cmx src/core/interactive.cmx src/core/token.cmx src/core/lexer.cmx src/core/lfholes.cmx src/core/lfrecon.cmx src/core/opsem.cmx src/core/parser.cmx src/core/reconstruct.cmx src/core/recsgn.cmx src/core/command.cmx src/core/version.cmx src/beluga/beli.cmx src/core/locs.cmx src/core/loctesting.cmx src/core/sexp.cmx src/beluga/main.cmx -o src/beluga/main.native
+-> compiled  beluga.0.8.2
+-> installed beluga.0.8.2
+Done.
+# Run eval `opam env` to update the current shell environment
