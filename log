@@ -1,0 +1,205 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 mikmatch /home/opam/opam-repository/cache
+[2016-12-22 16:18.17] Starting...
+[2016-12-22 16:18.17] Waiting for free pool slot to run
+[2016-12-22 16:56.51] Pool slot obtained, starting run
+[2016-12-22 16:56.51] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 mikmatch
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - libpcre3-dev
+#  - m4
+#  - pkg-config
+# The following new OS packages need to be installed: libpcre3-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libpcre3-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libpcrecpp0v5:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libpcrecpp0v5_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcrecpp0v5:amd64 (2:8.38-3.1) ...
+Selecting previously unselected package libpcre16-3:amd64.
+Preparing to unpack .../libpcre16-3_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcre16-3:amd64 (2:8.38-3.1) ...
+Selecting previously unselected package libpcre32-3:amd64.
+Preparing to unpack .../libpcre32-3_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcre32-3:amd64 (2:8.38-3.1) ...
+Selecting previously unselected package libpcre3-dev:amd64.
+Preparing to unpack .../libpcre3-dev_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcre3-dev:amd64 (2:8.38-3.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libpcrecpp0v5:amd64 (2:8.38-3.1) ...
+Setting up libpcre16-3:amd64 (2:8.38-3.1) ...
+Setting up libpcre32-3:amd64 (2:8.38-3.1) ...
+Setting up libpcre3-dev:amd64 (2:8.38-3.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install tophide  1.0.4                                      [required by mikmatch]
+  - install mikmatch 1.0.8
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [mikmatch.1.0.8: dl]
+Processing  2/2: [mikmatch.1.0.8: dl] [tophide.1.0.4: dl]
+[mikmatch.1.0.8] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [tophide.1.0.4: dl]
+[tophide.1.0.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [tophide: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/tophide.1.0.4)
+- cat META.in > META
+- echo 'version = "1.0.4"' >> META
+- ocamlc -I +compiler-libs -c tophide.ml
+-> compiled  tophide.1.0.4
+Processing  2/4: [tophide: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/tophide.1.0.4)
+- ocamlfind install tophide META tophide.cmi tophide.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tophide/tophide.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tophide/tophide.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/tophide/META
+-> installed tophide.1.0.4
+Processing  3/4: [mikmatch: make str]
++ make "str" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8)
+- cd common && make
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/common'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/common'
+- making ._d/select_lib.d from select_lib.ml
+- making ._d/regexp_ast.d from regexp_ast.ml
+- making ._d/constants.d from constants.ml
+- making ._d/charset.d from charset.ml
+- making ._d/messages.d from messages.ml
+- making ._d/global_def.d from global_def.ml
+- ocamlc -c -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 global_def.mli
+- ocamlc -c -pp "camlp4orf " -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 global_def.ml
+- ocamlc -c -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 messages.ml
+- ocamlc -c -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 charset.ml
+- File "charset.ml", line 37, characters 16-30:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "charset.ml", line 38, characters 16-30:
+- Warning 3: deprecated: Char.uppercase
+- Use Char.uppercase_ascii instead.
+- ocamlc -c -pp "camlp4orf " -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 constants.ml
+- ocamlc -c -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 regexp_ast.ml
+- ocamlc -c -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 select_lib.ml
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/common'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/common'
+- cd str && make
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/str'
+- sed -e "s/VERSION/1.0.8/" < META.template > META
+- ln -s ../common/mikmatch.mli mikmatch.mli
+- ln -s ../common/mikmatch.ml mikmatch.ml
+- ln -s ../common/match.ml match.ml
+- ln -s ../common/syntax_common.ml syntax_common.ml
+- ln -s ../common/mm_util.ml mm_util.ml
+- ln -s ../common/global_def.mli global_def.mli
+- ln -s ../common/global_def.ml global_def.ml
+- make RESULT=pa_mikmatch_str pabc bcl
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/str'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/str'
+- making ._bcdi/global_def.di from global_def.mli
+- making ._d/syntax_str.d from syntax_str.ml
+- making ._d/syntax_common.d from syntax_common.ml
+- making ._d/str_lib.d from str_lib.ml
+- making ._d/match.d from match.ml
+- making ._d/global_def.d from global_def.ml
+- making ._d/mm_util.d from mm_util.ml
+- ocamlc -c -pp "camlp4orf " -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 -I ../common mm_util.ml
+- File "mm_util.ml", line 49, characters 10-11:
+- Warning 11: this match case is unused.
+- ocamlc -c -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 -I ../common global_def.mli
+- ocamlc -c -pp "camlp4orf " -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 -I ../common global_def.ml
+- ocamlc -c -pp "camlp4orf " -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 -I ../common match.ml
+- ocamlc -c -pp "camlp4orf " -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 -I ../common str_lib.ml
+- File "str_lib.ml", line 47, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "str_lib.ml", line 48, characters 6-11:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "str_lib.ml", line 48, characters 21-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlc -c -pp "camlp4orf " -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 -I ../common syntax_common.ml
+- ocamlc -c -pp "camlp4orf " -dtypes -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4 -I ../common syntax_str.ml
+- ocamlc -pack -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4   -I ../common messages.cmo charset.cmo constants.cmo regexp_ast.cmo select_lib.cmo         \
+- 			  -o pa_mikmatch_str.cmo mm_util.cmo global_def.cmo match.cmo str_lib.cmo syntax_common.cmo syntax_str.cmo
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/str'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/str'
+- ocamlc -a -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/camlp4   -I ../common messages.cmo charset.cmo constants.cmo regexp_ast.cmo select_lib.cmo         \
+- 			  -o pa_mikmatch_str.cma  mm_util.cmo global_def.cmo match.cmo str_lib.cmo syntax_common.cmo syntax_str.cmo
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/str'
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/str'
+- ocamlc -c mikmatch.mli
+- ocamlc -a -o run_mikmatch_str.cma \
+- 	mikmatch.ml run_mikmatch_str.ml
+- File "mikmatch.ml", line 39, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "mikmatch.ml", line 43, characters 43-54:
+- Warning 3: deprecated: String.copy
+- File "mikmatch.ml", line 47, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "run_mikmatch_str.ml", line 8, characters 13-27:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "run_mikmatch_str.ml", line 9, characters 13-27:
+- Warning 3: deprecated: Char.uppercase
+- Use Char.uppercase_ascii instead.
+- ocamlopt -a -o run_mikmatch_str.cmxa \
+- 	mikmatch.ml run_mikmatch_str.ml
+- File "mikmatch.ml", line 39, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "mikmatch.ml", line 43, characters 43-54:
+- Warning 3: deprecated: String.copy
+- File "mikmatch.ml", line 47, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "run_mikmatch_str.ml", line 8, characters 13-27:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "run_mikmatch_str.ml", line 9, characters 13-27:
+- Warning 3: deprecated: Char.uppercase
+- Use Char.uppercase_ascii instead.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/str'
+-> compiled  mikmatch.1.0.8
+Processing  4/4: [mikmatch: make install-str]
++ make "install-str" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8)
+- cd str && make install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/str'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  mikmatch_str META pa_mikmatch_str.cma pa_mikmatch_str.cmo pa_mikmatch_str.cmi run_mikmatch_str.cma run_mikmatch_str.cmo run_mikmatch_str.cmi mikmatch.cmi mikmatch.cmo mikmatch.cmx mikmatch.mli run_mikmatch_str.cmxa run_mikmatch_str.cmx run_mikmatch_str.a run_mikmatch_str.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/run_mikmatch_str.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/run_mikmatch_str.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/run_mikmatch_str.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/run_mikmatch_str.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/mikmatch.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/mikmatch.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/mikmatch.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/mikmatch.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/run_mikmatch_str.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/run_mikmatch_str.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/run_mikmatch_str.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/pa_mikmatch_str.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/pa_mikmatch_str.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/pa_mikmatch_str.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/mikmatch_str/META
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/mikmatch.1.0.8/str'
+-> installed mikmatch.1.0.8
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 16:57.14] Success
