@@ -1,0 +1,224 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 xmlplaylist /home/opam/opam-repository/cache
+[2016-12-22 16:19.06] Starting...
+[2016-12-22 16:19.06] Waiting for free pool slot to run
+[2016-12-22 17:22.13] Pool slot obtained, starting run
+[2016-12-22 17:22.13] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 xmlplaylist
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install xmlm        1.2.0                                   [required by xmlplaylist]
+  - install xmlplaylist 0.1.4
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [xmlm.1.2.0: dl]
+Processing  2/2: [xmlm.1.2.0: dl] [xmlplaylist.0.1.4: dl]
+[xmlplaylist.0.1.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [xmlm.1.2.0: dl]
+[xmlm.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [xmlm: ./pkg/pkg-git]
++ ./pkg/pkg-git  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0)
+Processing  1/4: [xmlm: ./pkg/build true]
++ ./pkg/build "true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0)
+- ocamlfind ocamldep -modules src/xmlm.mli > src/xmlm.mli.depends
+- ocamlfind ocamlc -c -I src -I test -o src/xmlm.cmi src/xmlm.mli
+- ocamlfind ocamldep -modules src/xmlm.ml > src/xmlm.ml.depends
+- ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -a src/xmlm.cmo -o src/xmlm.cma
+- ocamlfind ocamlopt -a src/xmlm.cmx -o src/xmlm.cmxa
+- ocamlfind ocamlopt -shared src/xmlm.cmx -o src/xmlm.cmxs
+- ocamlfind ocamldep -modules test/xmltrip.ml > test/xmltrip.ml.depends
+- ocamlfind ocamldep -modules test/xhtml.ml > test/xhtml.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xhtml.cmo test/xhtml.ml
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xhtml.cmx test/xhtml.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -linkpkg src/xmlm.cmx test/xhtml.cmx test/xmltrip.cmx -o test/xmltrip.native
+-> compiled  xmlm.1.2.0
+[WARNING] Errors in /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0/xmlm.install, some fields have been ignored:
+            - At /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0/xmlm.install:1:0:
+              Invalid field opam-version
+
+-> installed xmlm.1.2.0
+Processing  3/4: [xmlplaylist: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4)
+- configuring ocaml-xmlplaylist 0.1.4
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking build system type... x86_64-unknown-linux-gnu
+- checking host system type... x86_64-unknown-linux-gnu
+- checking for a BSD-compatible install... /usr/bin/install -c
+- checking that calling user is not root... ok
+- checking for gcc... (cached) gcc
+- checking whether we are using the GNU C compiler... (cached) yes
+- checking whether gcc accepts -g... (cached) yes
+- checking for gcc option to accept ISO C89... (cached) none needed
+- checking for ar... ar
+- checking for ocamlc... ocamlc
+- OCaml version is 4.03.0
+- checking if ocaml compiler supports first-class modules... yes
+- OCaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamldep.opt... ocamldep.opt
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamldoc.opt... ocamldoc.opt
+- checking for ocamlbuild... ocamlbuild
+- checking for camlidl... no
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- checking for camlp4... camlp4
+- checking for camlp4boot... camlp4boot
+- checking for camlp4o... camlp4o
+- checking for camlp4of... camlp4of
+- checking for camlp4oof... camlp4oof
+- checking for camlp4orf... camlp4orf
+- checking for camlp4prof... camlp4prof
+- checking for camlp4r... camlp4r
+- checking for camlp4rf... camlp4rf
+- checking for ocamlfind... ocamlfind
+- checking for ocaml standard library path... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for caml/threads.h... yes
+- checking for gcc option to produce PIC... -fPIC
+- checking for xmlm... ok
+- configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: creating src/META
+- config.status: creating src/Makefile
+Processing  3/4: [xmlplaylist: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4)
+- make -C src all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- making ._bcdi/xmlplaylist.di from xmlplaylist.mli
+- making ._d/xmlplaylist.d from xmlplaylist.ml
+- ocamlc.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm xmlplaylist.mli
+- ocamlc.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm xmlplaylist.ml
+- File "xmlplaylist.ml", line 65, characters 8-13:
+- Warning 41: Error belongs to several types: exn result
+- The first one was selected. Please disambiguate if this is wrong.
+- File "xmlplaylist.ml", line 111, characters 2-276:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 130, characters 2-347:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 146, characters 2-64:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 159, characters 2-201:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type format.
+- File "xmlplaylist.ml", line 168, characters 4-193:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 176, characters 4-182:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 183, characters 4-267:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 207, characters 4-188:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- ocamlc.opt -a    -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm   -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib  -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib     \
+- 			  -o xmlplaylist.cma  xmlplaylist.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- making ._ncdi/xmlplaylist.di from xmlplaylist.mli
+- ocamlopt.opt -c -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm xmlplaylist.ml
+- File "xmlplaylist.ml", line 65, characters 8-13:
+- Warning 41: Error belongs to several types: exn result
+- The first one was selected. Please disambiguate if this is wrong.
+- File "xmlplaylist.ml", line 111, characters 2-276:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 130, characters 2-347:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 146, characters 2-64:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 159, characters 2-201:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type format.
+- File "xmlplaylist.ml", line 168, characters 4-193:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 176, characters 4-182:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 183, characters 4-267:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- File "xmlplaylist.ml", line 207, characters 4-188:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type xml.
+- ocamlopt.opt -a     -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlm   -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib  -ccopt -L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib      \
+- 			 -o xmlplaylist.cmxa xmlplaylist.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+-> compiled  xmlplaylist.0.1.4
+Processing  4/4: [xmlplaylist: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4)
+- make -C src install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: 'xmlplaylist.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- make[2]: 'xmlplaylist.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  xmlplaylist META xmlplaylist.mli xmlplaylist.cmi xmlplaylist.cma xmlplaylist.cmxa xmlplaylist.cmx xmlplaylist.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/xmlplaylist.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/xmlplaylist/META
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlplaylist.0.1.4/src'
+-> installed xmlplaylist.0.1.4
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:22.31] Success
