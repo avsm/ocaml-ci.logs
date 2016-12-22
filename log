@@ -1,0 +1,92 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 pa_qualified /home/opam/opam-repository/cache
+[2016-12-22 16:18.38] Starting...
+[2016-12-22 16:18.38] Waiting for free pool slot to run
+[2016-12-22 17:06.13] Pool slot obtained, starting run
+[2016-12-22 17:06.13] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 pa_qualified
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install pa_qualified 0.6
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [pa_qualified.0.6: dl]
+[pa_qualified.0.6] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [pa_qualified: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pa_qualified.0.6)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind: Package `camlp4.lib' not found
+- W: Field 'pkg_camlp4_lib' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.lib > '/tmp/oasis-c2f962.txt'' terminated with error code 2
+- E: Cannot find findlib package camlp4.lib
+- E: Failure("1 configuration error")
+[ERROR] The compilation of pa_qualified failed at "ocaml setup.ml -configure".
+
+#=== ERROR while compiling pa_qualified.0.6 ===================================#
+# command              ocaml setup.ml -configure
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pa_qualified.0.6
+# exit-code            1
+# env-file             /home/opam/.opam/log/pa_qualified-1-d2d111.env
+# output-file          /home/opam/.opam/log/pa_qualified-1-d2d111.out
+### output ###
+# [...]
+# Warning 3: deprecated: String.uncapitalize
+# Use String.uncapitalize_ascii instead.
+# File "setup.ml", line 5847, characters 11-28:
+# Warning 3: deprecated: String.capitalize
+# Use String.capitalize_ascii instead.
+# File "setup.ml", line 5848, characters 11-30:
+# Warning 3: deprecated: String.uncapitalize
+# Use String.uncapitalize_ascii instead.
+# ocamlfind: Package `camlp4.lib' not found
+# W: Field 'pkg_camlp4_lib' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.lib > '/tmp/oasis-c2f962.txt'' terminated with error code 2
+# E: Cannot find findlib package camlp4.lib
+# E: Failure("1 configuration error")
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build pa_qualified 0.6
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 pa_qualified' failed.
+[2016-12-22 17:06.28] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "pa_qualified" exited with status 4
