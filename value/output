@@ -1,0 +1,351 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_tools             5.0                           [required by ppx_deriving]
+  - install cppo                  1.4.0                         [required by ppx_deriving_protobuf]
+  - install result                1.2                           [required by ppx_deriving]
+  - install ppx_deriving          4.1                           [required by ppx_deriving_protobuf]
+  - install ppx_deriving_protobuf 2.5  
+===== 5 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/5: [cppo.1.4.0: dl]
+Processing  2/5: [cppo.1.4.0: dl] [ppx_deriving.4.1: dl]
+Processing  3/5: [cppo.1.4.0: dl] [ppx_deriving.4.1: dl] [ppx_deriving_protobuf.2.5: dl]
+[cppo.1.4.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/5: [ppx_deriving.4.1: dl] [ppx_deriving_protobuf.2.5: dl]
+Processing  4/5: [ppx_deriving.4.1: dl] [ppx_deriving_protobuf.2.5: dl] [ppx_tools.5.0: dl]
+[ppx_deriving.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/5: [ppx_deriving_protobuf.2.5: dl] [ppx_tools.5.0: dl]
+[ppx_deriving_protobuf.2.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/5: [ppx_tools.5.0: dl]
+Processing  5/5: [ppx_tools.5.0: dl] [result.1.2: dl]
+[ppx_tools.5.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/5: [result.1.2: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/5:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/10: [cppo: make]
+Processing  2/10: [cppo: make] [ppx_tools: make all]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.0)
+- echo 'let cppo_version = "1.4.0"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlopt -o cppo -dtypes unix.cmxa str.cmxa cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+- echo 'let cppo_version = "1.4.0"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlopt -o cppo -dtypes unix.cmxa str.cmxa cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+-> compiled  cppo.1.4.0
+Processing  2/10: [ppx_tools: make all]
+Processing  3/10: [ppx_tools: make all] [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+Processing  3/10: [ppx_tools: make all]
+Processing  4/10: [ppx_tools: make all] [cppo: make install-lib]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+-> compiled  ppx_tools.5.0
+Processing  4/10: [cppo: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.0)
+- ocamlfind install -patch-version 1.4.0 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/META
+-> installed cppo.1.4.0
+Processing  5/10: [ppx_tools: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/META
+-> installed ppx_tools.5.0
+-> installed result.1.2
+Processing  7/10: [ppx_deriving: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_deriving.4.1)
+- ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- cppo -V OCAML:4.04.0 -o src/ppx_deriving_main.ml src/ppx_deriving_main.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -modules src/ppx_deriving_main.ml > src/ppx_deriving_main.ml.depends
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving.mli > src/ppx_deriving.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmi src/ppx_deriving.mli
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmi src/ppx_deriving.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmo src/ppx_deriving_main.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmo src/ppx_deriving_main.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- cppo -V OCAML:4.04.0 -o src/ppx_deriving.ml src/ppx_deriving.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving.ml > src/ppx_deriving.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmx src/ppx_deriving.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmx src/ppx_deriving.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "src/ppx_deriving.cppo.ml", line 463, characters 17-34:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmx src/ppx_deriving_main.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmx src/ppx_deriving_main.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -linkpkg -g -linkall -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result src/ppx_deriving.cmx src/ppx_deriving_main.cmx -o src/ppx_deriving_main.native
+- + ocamlfind ocamlopt -linkpkg -g -linkall -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result src/ppx_deriving.cmx src/ppx_deriving_main.cmx -o src/ppx_deriving_main.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src/ppx_deriving.cmx -o src/ppx_deriving.cmxa
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmo src/ppx_deriving.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmo src/ppx_deriving.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "src/ppx_deriving.cppo.ml", line 463, characters 17-34:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind ocamlc -a src/ppx_deriving.cmo -o src/ppx_deriving.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving.cmx -o src/ppx_deriving.cmxs
+- ocamlfind ocamlopt -a src/ppx_deriving_main.cmx -o src/ppx_deriving_main.cmxa
+- ocamlfind ocamlc -a src/ppx_deriving_main.cmo -o src/ppx_deriving_main.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving_main.cmx -o src/ppx_deriving_main.cmxs
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving_runtime.ml > src/ppx_deriving_runtime.ml.depends
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving_runtime.mli > src/ppx_deriving_runtime.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmi src/ppx_deriving_runtime.mli
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmi src/ppx_deriving_runtime.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmx src/ppx_deriving_runtime.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmx src/ppx_deriving_runtime.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src/ppx_deriving_runtime.cmx -o src/ppx_deriving_runtime.cmxa
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmo src/ppx_deriving_runtime.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmo src/ppx_deriving_runtime.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a src/ppx_deriving_runtime.cmo -o src/ppx_deriving_runtime.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving_runtime.cmx -o src/ppx_deriving_runtime.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_create.ml src_plugins/ppx_deriving_create.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_create.ml > src_plugins/ppx_deriving_create.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmo src_plugins/ppx_deriving_create.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmo src_plugins/ppx_deriving_create.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmx src_plugins/ppx_deriving_create.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmx src_plugins/ppx_deriving_create.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_create.cmx -o src_plugins/ppx_deriving_create.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_create.cmo -o src_plugins/ppx_deriving_create.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_create.cmx -o src_plugins/ppx_deriving_create.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_enum.ml src_plugins/ppx_deriving_enum.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_enum.ml > src_plugins/ppx_deriving_enum.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmo src_plugins/ppx_deriving_enum.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmo src_plugins/ppx_deriving_enum.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmx src_plugins/ppx_deriving_enum.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmx src_plugins/ppx_deriving_enum.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_enum.cmx -o src_plugins/ppx_deriving_enum.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_enum.cmo -o src_plugins/ppx_deriving_enum.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_enum.cmx -o src_plugins/ppx_deriving_enum.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_eq.ml src_plugins/ppx_deriving_eq.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_eq.ml > src_plugins/ppx_deriving_eq.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmo src_plugins/ppx_deriving_eq.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmo src_plugins/ppx_deriving_eq.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmx src_plugins/ppx_deriving_eq.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmx src_plugins/ppx_deriving_eq.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_eq.cmx -o src_plugins/ppx_deriving_eq.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_eq.cmo -o src_plugins/ppx_deriving_eq.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_eq.cmx -o src_plugins/ppx_deriving_eq.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_fold.ml src_plugins/ppx_deriving_fold.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_fold.ml > src_plugins/ppx_deriving_fold.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmo src_plugins/ppx_deriving_fold.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmo src_plugins/ppx_deriving_fold.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmx src_plugins/ppx_deriving_fold.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmx src_plugins/ppx_deriving_fold.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_fold.cmx -o src_plugins/ppx_deriving_fold.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_fold.cmo -o src_plugins/ppx_deriving_fold.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_fold.cmx -o src_plugins/ppx_deriving_fold.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_iter.ml src_plugins/ppx_deriving_iter.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_iter.ml > src_plugins/ppx_deriving_iter.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmo src_plugins/ppx_deriving_iter.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmo src_plugins/ppx_deriving_iter.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmx src_plugins/ppx_deriving_iter.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmx src_plugins/ppx_deriving_iter.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_iter.cmx -o src_plugins/ppx_deriving_iter.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_iter.cmo -o src_plugins/ppx_deriving_iter.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_iter.cmx -o src_plugins/ppx_deriving_iter.cmxs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_create.cmx -o src_plugins/ppx_deriving_make.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_create.cmo -o src_plugins/ppx_deriving_make.cma
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_make.ml src_plugins/ppx_deriving_make.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_make.ml > src_plugins/ppx_deriving_make.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmo src_plugins/ppx_deriving_make.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmo src_plugins/ppx_deriving_make.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmx src_plugins/ppx_deriving_make.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmx src_plugins/ppx_deriving_make.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_make.cmx -o src_plugins/ppx_deriving_make.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_map.ml src_plugins/ppx_deriving_map.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_map.ml > src_plugins/ppx_deriving_map.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmo src_plugins/ppx_deriving_map.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmo src_plugins/ppx_deriving_map.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmx src_plugins/ppx_deriving_map.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmx src_plugins/ppx_deriving_map.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_map.cmx -o src_plugins/ppx_deriving_map.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_map.cmo -o src_plugins/ppx_deriving_map.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_map.cmx -o src_plugins/ppx_deriving_map.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_ord.ml src_plugins/ppx_deriving_ord.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_ord.ml > src_plugins/ppx_deriving_ord.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmo src_plugins/ppx_deriving_ord.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmo src_plugins/ppx_deriving_ord.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmx src_plugins/ppx_deriving_ord.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmx src_plugins/ppx_deriving_ord.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_ord.cmx -o src_plugins/ppx_deriving_ord.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_ord.cmo -o src_plugins/ppx_deriving_ord.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_ord.cmx -o src_plugins/ppx_deriving_ord.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_show.ml src_plugins/ppx_deriving_show.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_show.ml > src_plugins/ppx_deriving_show.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmo src_plugins/ppx_deriving_show.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmo src_plugins/ppx_deriving_show.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmx src_plugins/ppx_deriving_show.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmx src_plugins/ppx_deriving_show.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_show.cmx -o src_plugins/ppx_deriving_show.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_show.cmo -o src_plugins/ppx_deriving_show.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_show.cmx -o src_plugins/ppx_deriving_show.cmxs
+- + ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Ocamlbuild_cppo, and its interface was not compiled with -opaque
+-> compiled  ppx_deriving.4.1
+-> installed ppx_deriving.4.1
+Processing  9/10: [ppx_deriving_protobuf: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_deriving_protobuf.2.5)
+- ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- cppo -V OCAML:4.04.0 -o src/ppx_deriving_protobuf.ml src/ppx_deriving_protobuf.cppo.ml
+- ocamlfind ocamldep -package ppx_deriving.api -package ppx_tools.metaquot -modules src/ppx_deriving_protobuf.ml > src/ppx_deriving_protobuf.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package ppx_deriving.api -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@40 -I src -o src/ppx_deriving_protobuf.cmo src/ppx_deriving_protobuf.ml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package ppx_deriving.api -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@40 -I src -o src/ppx_deriving_protobuf.cmo src/ppx_deriving_protobuf.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package ppx_deriving.api -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@40 -I src -o src/ppx_deriving_protobuf.cmx src/ppx_deriving_protobuf.ml
+- + ocamlfind ocamlopt -c -bin-annot -safe-string -package ppx_deriving.api -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@40 -I src -o src/ppx_deriving_protobuf.cmx src/ppx_deriving_protobuf.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamlfind ocamlopt -a src/ppx_deriving_protobuf.cmx -o src/ppx_deriving_protobuf.cmxa
+- ocamlfind ocamlc -a src/ppx_deriving_protobuf.cmo -o src/ppx_deriving_protobuf.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving_protobuf.cmx -o src/ppx_deriving_protobuf.cmxs
+- ocamlfind ocamldep -package ppx_deriving.api -package ppx_tools.metaquot -modules src/protobuf.ml > src/protobuf.ml.depends
+- ocamlfind ocamldep -package ppx_deriving.api -package ppx_tools.metaquot -modules src/protobuf.mli > src/protobuf.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package ppx_deriving.api -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@40 -I src -o src/protobuf.cmi src/protobuf.mli
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package ppx_deriving.api -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@40 -I src -o src/protobuf.cmi src/protobuf.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package ppx_deriving.api -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@40 -I src -o src/protobuf.cmx src/protobuf.ml
+- + ocamlfind ocamlopt -c -bin-annot -safe-string -package ppx_deriving.api -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@40 -I src -o src/protobuf.cmx src/protobuf.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamlfind ocamlopt -a src/protobuf.cmx -o src/protobuf.cmxa
+- ocamlfind ocamlc -c -bin-annot -safe-string -package ppx_deriving.api -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@40 -I src -o src/protobuf.cmo src/protobuf.ml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package ppx_deriving.api -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@40 -I src -o src/protobuf.cmo src/protobuf.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamlfind ocamlc -a src/protobuf.cmo -o src/protobuf.cma
+- ocamlfind ocamlopt -shared src/protobuf.cmx -o src/protobuf.cmxs
+- + ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Ocamlbuild_cppo, and its interface was not compiled with -opaque
+-> compiled  ppx_deriving_protobuf.2.5
+-> installed ppx_deriving_protobuf.2.5
+Done.
+# Run eval `opam env` to update the current shell environment
