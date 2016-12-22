@@ -1,0 +1,645 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ppx_hardcaml /home/opam/opam-repository/cache
+[2016-12-22 16:20.20] Starting...
+[2016-12-22 16:20.20] Waiting for free pool slot to run
+[2016-12-22 18:13.52] Pool slot obtained, starting run
+[2016-12-22 18:13.52] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ppx_hardcaml
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+#  - ncurses-dev
+#  - pkg-config
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_tools    5.0                                    [required by ppx_hardcaml]
+  - install base-bytes   base                                   [required by hardcaml]
+  - install hardcaml     1.1.1                                  [required by ppx_hardcaml]
+  - install ppx_hardcaml 1.1.0
+===== 4 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/4: [hardcaml.1.1.1: dl]
+Processing  3/4: [hardcaml.1.1.1: dl] [ppx_hardcaml.1.1.0: dl]
+Processing  4/4: [hardcaml.1.1.1: dl] [ppx_hardcaml.1.1.0: dl] [ppx_tools.5.0: dl]
+[ppx_hardcaml.1.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4: [hardcaml.1.1.1: dl] [ppx_tools.5.0: dl]
+[hardcaml.1.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4: [ppx_tools.5.0: dl]
+[ppx_tools.5.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/8: [ppx_tools: make all]
+-> installed base-bytes.base
+Processing  3/8: [ppx_tools: make all]
+Processing  4/8: [hardcaml: make all] [ppx_tools: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+-> compiled  ppx_tools.5.0
+Processing  4/8: [hardcaml: make all]
+Processing  5/8: [hardcaml: make all] [ppx_tools: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/META
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/META
+-> installed ppx_tools.5.0
+Processing  5/8: [hardcaml: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/hardcaml.1.1.1)
+- ocaml setup.ml -configure
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ hardcaml
+- Package version: ..................................... 1.1.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_bytes: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bytes
+- pkg_bigarray: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_num: ............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/num
+- pkg_dynlink: ......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_camlp4: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- 
+- ocaml setup.ml -build
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- W: Cannot find source file matching module 'HardCamlDynlink' in library HardCamlDynlink
+- W: Cannot find source file matching module 'HardCaml' in library HardCaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/utils.mli > src/utils.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/utils.cmi src/utils.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/utils.ml > src/utils.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/comb.mli > src/comb.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/comb.cmi src/comb.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/comb.ml > src/comb.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/bits.mli > src/bits.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/bits.cmi src/bits.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/bits.ml > src/bits.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/bits_raw.mli > src/bits_raw.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/bits_raw.cmi src/bits_raw.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/bits_raw.ml > src/bits_raw.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/bits_ext.mli > src/bits_ext.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/bits_ext.cmi src/bits_ext.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/bits_ext.ml > src/bits_ext.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/signal.mli > src/signal.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/signal.cmi src/signal.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/signal.ml > src/signal.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/syntax.mli > src/syntax.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/syntax.cmi src/syntax.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/syntax.ml > src/syntax.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/circuit.mli > src/circuit.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/circuit.cmi src/circuit.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/circuit.ml > src/circuit.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/rtl.mli > src/rtl.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/transform.mli > src/transform.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/transform.cmi src/transform.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/rtl.cmi src/rtl.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/rtl.ml > src/rtl.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/fixed.mli > src/fixed.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/fixed.cmi src/fixed.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/fixed.ml > src/fixed.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/const_prop.mli > src/const_prop.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/const_prop.cmi src/const_prop.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/const_prop.ml > src/const_prop.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/transform.ml > src/transform.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/cyclesim.mli > src/cyclesim.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/cyclesim.cmi src/cyclesim.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/cyclesim.ml > src/cyclesim.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/cyclesim_ext.mli > src/cyclesim_ext.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/api.mli > src/api.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/cosim.mli > src/cosim.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/interface.mli > src/interface.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/vcd.mli > src/vcd.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/vcd_ext.mli > src/vcd_ext.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/cosim.cmi src/cosim.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/interface.cmi src/interface.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/vcd.cmi src/vcd.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/vcd_ext.cmi src/vcd_ext.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/api.cmi src/api.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/cyclesim_ext.cmi src/cyclesim_ext.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/cyclesim_ext.ml > src/cyclesim_ext.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/vcd.ml > src/vcd.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/vcd_ext.ml > src/vcd_ext.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/interface.ml > src/interface.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/recipe.mli > src/recipe.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/recipe.cmi src/recipe.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/recipe.ml > src/recipe.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/xilinx.mli > src/xilinx.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/xilinx.cmi src/xilinx.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/xilinx.ml > src/xilinx.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/c.mli > src/c.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/c.cmi src/c.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/c.ml > src/c.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/structural.mli > src/structural.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/structural.cmi src/structural.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/structural.ml > src/structural.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/structural_lib.mli > src/structural_lib.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/structural_lib.cmi src/structural_lib.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/structural_lib.ml > src/structural_lib.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/cosim.ml > src/cosim.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/api.ml > src/api.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/utils.cmo src/utils.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/comb.cmo src/comb.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/bits.cmo src/bits.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/bits_raw.cmo src/bits_raw.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/bits_ext.cmo src/bits_ext.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/signal.cmo src/signal.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/syntax.cmo src/syntax.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/circuit.cmo src/circuit.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/rtl.cmo src/rtl.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/rtl.cmo src/rtl.ml
+- File "src/rtl.ml", line 71, characters 17-33:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/rtl.ml", line 71, characters 38-54:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/fixed.cmo src/fixed.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/const_prop.cmo src/const_prop.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/transform.cmo src/transform.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/cyclesim.cmo src/cyclesim.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/cyclesim_ext.cmo src/cyclesim_ext.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/vcd.cmo src/vcd.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/vcd_ext.cmo src/vcd_ext.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/interface.cmo src/interface.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/recipe.cmo src/recipe.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/xilinx.cmo src/xilinx.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/c.cmo src/c.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/structural.cmo src/structural.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/structural_lib.cmo src/structural_lib.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/cosim.cmo src/cosim.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/api.cmo src/api.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -pack -g -annot -bin-annot src/utils.cmo src/comb.cmo src/bits.cmo src/bits_raw.cmo src/bits_ext.cmo src/signal.cmo src/syntax.cmo src/circuit.cmo src/const_prop.cmo src/transform.cmo src/rtl.cmo src/fixed.cmo src/cyclesim.cmo src/cosim.cmo src/interface.cmo src/vcd.cmo src/vcd_ext.cmo src/api.cmo src/cyclesim_ext.cmo src/recipe.cmo src/xilinx.cmo src/c.cmo src/structural.cmo src/structural_lib.cmo -o src/HardCaml.cmo
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/HardCaml.cmo -o src/HardCaml.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/utils.cmx src/utils.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/comb.cmx src/comb.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/bits.cmx src/bits.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/signal.cmx src/signal.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/circuit.cmx src/circuit.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/const_prop.cmx src/const_prop.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/transform.cmx src/transform.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/cyclesim.cmx src/cyclesim.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/rtl.cmx src/rtl.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/rtl.cmx src/rtl.ml
+- File "src/rtl.ml", line 71, characters 17-33:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/rtl.ml", line 71, characters 38-54:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/cosim.cmx src/cosim.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/vcd.cmx src/vcd.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/interface.cmx src/interface.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/vcd_ext.cmx src/vcd_ext.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/bits_ext.cmx src/bits_ext.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/api.cmx src/api.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/structural.cmx src/structural.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/bits_raw.cmx src/bits_raw.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/syntax.cmx src/syntax.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/fixed.cmx src/fixed.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/cyclesim_ext.cmx src/cyclesim_ext.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/recipe.cmx src/recipe.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/xilinx.cmx src/xilinx.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/c.cmx src/c.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCaml -I src -o src/structural_lib.cmx src/structural_lib.ml
+- touch src/HardCaml.mli  ; if  /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -pack -g -annot -bin-annot -I src src/utils.cmx src/comb.cmx src/bits.cmx src/bits_raw.cmx src/bits_ext.cmx src/signal.cmx src/syntax.cmx src/circuit.cmx src/const_prop.cmx src/transform.cmx src/rtl.cmx src/fixed.cmx src/cyclesim.cmx src/cosim.cmx src/interface.cmx src/vcd.cmx src/vcd_ext.cmx src/api.cmx src/cyclesim_ext.cmx src/recipe.cmx src/xilinx.cmx src/c.cmx src/structural.cmx src/structural_lib.cmx -o src/HardCaml.cmx  ; then  rm -f src/HardCaml.mli  ; else  rm -f src/HardCaml.mli  ; exit 1; fi
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/HardCaml.cmx -o src/HardCaml.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/HardCaml.cmxa src/HardCaml.cmx -o src/HardCaml.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/sim_provider.mli > src/sim_provider.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/sim_provider.cmi src/sim_provider.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -modules src/sim_provider.ml > src/sim_provider.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -I src -o src/sim_provider.cmo src/sim_provider.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -pack -g -annot -bin-annot src/sim_provider.cmo -o src/HardCamlDynlink.cmo
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/HardCamlDynlink.cmo -o src/HardCamlDynlink.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -for-pack HardCamlDynlink -I src -o src/sim_provider.cmx src/sim_provider.ml
+- touch src/HardCamlDynlink.mli  ; if  /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -pack -g -annot -bin-annot -I src src/sim_provider.cmx -o src/HardCamlDynlink.cmx  ; then  rm -f src/HardCamlDynlink.mli  ; else  rm -f src/HardCamlDynlink.mli  ; exit 1; fi
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/HardCamlDynlink.cmx -o src/HardCamlDynlink.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/HardCamlDynlink.cmxa src/HardCamlDynlink.cmx -o src/HardCamlDynlink.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bigarray -package bytes -package camlp4 -package dynlink -package num -pp camlp4orf -modules src/pa_hardcaml.ml > src/pa_hardcaml.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -pp camlp4orf -I src -o src/pa_hardcaml.cmo src/pa_hardcaml.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -pp camlp4orf -I src -o src/pa_hardcaml.cmo src/pa_hardcaml.ml
+- File "src/pa_hardcaml.ml", line 15, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/pa_hardcaml.cmo -o src/pa_hardcaml.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -pp camlp4orf -I src -o src/pa_hardcaml.cmx src/pa_hardcaml.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package bigarray -package bytes -package camlp4 -package dynlink -package num -pp camlp4orf -I src -o src/pa_hardcaml.cmx src/pa_hardcaml.ml
+- File "src/pa_hardcaml.ml", line 15, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/pa_hardcaml.cmx -o src/pa_hardcaml.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/pa_hardcaml.cmxa src/pa_hardcaml.cmx -o src/pa_hardcaml.cmxs
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+-> compiled  hardcaml.1.1.1
+Processing  6/8: [hardcaml: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/hardcaml.1.1.1)
+- ocaml setup.ml -build
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- W: Cannot find source file matching module 'HardCamlDynlink' in library HardCamlDynlink
+- W: Cannot find source file matching module 'HardCaml' in library HardCaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/HardCaml.cmxa src/HardCaml.cmx -o src/HardCaml.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/HardCamlDynlink.cmxa src/HardCamlDynlink.cmx -o src/HardCamlDynlink.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/pa_hardcaml.cmxa src/pa_hardcaml.cmx -o src/pa_hardcaml.cmxs
+- ocaml setup.ml -install
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/utils.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/comb.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/bits.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/bits_raw.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/bits_ext.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/signal.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/syntax.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/circuit.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/rtl.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/fixed.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/const_prop.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/transform.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/cyclesim.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/cyclesim_ext.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/vcd.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/vcd_ext.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/interface.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/recipe.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/xilinx.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/c.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/structural.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/structural_lib.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/cosim.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/api.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCaml.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCaml.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCaml.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCaml.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCaml.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCaml.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/api.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/api.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/api.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/cosim.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/cosim.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/cosim.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/structural_lib.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/structural_lib.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/structural_lib.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/structural.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/structural.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/structural.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/c.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/c.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/c.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/xilinx.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/xilinx.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/xilinx.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/recipe.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/recipe.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/recipe.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/interface.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/interface.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/interface.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/vcd_ext.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/vcd_ext.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/vcd_ext.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/vcd.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/vcd.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/vcd.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/cyclesim_ext.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/cyclesim_ext.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/cyclesim_ext.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/cyclesim.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/cyclesim.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/cyclesim.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/transform.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/transform.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/transform.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/const_prop.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/const_prop.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/const_prop.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/fixed.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/fixed.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/fixed.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/rtl.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/rtl.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/rtl.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/circuit.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/circuit.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/circuit.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/syntax.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/syntax.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/syntax.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/signal.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/signal.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/signal.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/bits_ext.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/bits_ext.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/bits_ext.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/bits_raw.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/bits_raw.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/bits_raw.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/bits.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/bits.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/bits.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/comb.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/comb.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/comb.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/utils.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/utils.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/utils.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCaml.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/pa_hardcaml.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/pa_hardcaml.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/pa_hardcaml.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/pa_hardcaml.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/pa_hardcaml.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/pa_hardcaml.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/pa_hardcaml.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/pa_hardcaml.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/pa_hardcaml.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/sim_provider.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCamlDynlink.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCamlDynlink.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCamlDynlink.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCamlDynlink.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCamlDynlink.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCamlDynlink.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/sim_provider.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/sim_provider.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/sim_provider.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/HardCamlDynlink.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/hardcaml/META
+-> installed hardcaml.1.1.1
+Processing  7/8: [ppx_hardcaml: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_hardcaml.1.1.0)
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package ppx_tools.metaquot -modules src/ppx_hardcaml.ml > src/ppx_hardcaml.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_hardcaml.cmo src/ppx_hardcaml.ml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_hardcaml.cmo src/ppx_hardcaml.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_hardcaml.cmx src/ppx_hardcaml.ml
+- + ocamlfind ocamlopt -c -bin-annot -safe-string -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_hardcaml.cmx src/ppx_hardcaml.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -linkpkg -package ppx_tools.metaquot src/ppx_hardcaml.cmx -o src/ppx_hardcaml.native
+- + ocamlfind ocamlopt -linkpkg -package ppx_tools.metaquot src/ppx_hardcaml.cmx -o src/ppx_hardcaml.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+-> compiled  ppx_hardcaml.1.1.0
+-> installed ppx_hardcaml.1.1.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:14.25] Success
