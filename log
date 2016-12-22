@@ -1,0 +1,559 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 lwt_named_threads /home/opam/opam-repository/cache
+[2016-12-22 16:18.15] Starting...
+[2016-12-22 16:18.15] Waiting for free pool slot to run
+[2016-12-22 16:55.55] Pool slot obtained, starting run
+[2016-12-22 16:55.55] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 lwt_named_threads
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+#  - ncurses-dev
+#  - pkg-config
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install objsize           0.18                              [required by lwt_named_threads]
+  - install base-bytes        base                              [required by extlib, lwt]
+  - install ppx_tools         5.0+4.03.0                        [required by lwt]
+  - install result            1.2                               [required by lwt]
+  - install cppo              1.4.1                             [required by extlib]
+  - install lwt               2.6.0                             [required by lwt_named_threads]
+  - install extlib            1.7.1                             [required by lwt_named_threads]
+  - install lwt_named_threads 0.1       
+===== 8 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/8: [cppo.1.4.1: dl]
+Processing  3/8: [cppo.1.4.1: dl] [extlib.1.7.1: dl]
+Processing  4/8: [cppo.1.4.1: dl] [extlib.1.7.1: dl] [lwt.2.6.0: dl]
+[cppo.1.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/8: [extlib.1.7.1: dl] [lwt.2.6.0: dl]
+[extlib.1.7.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/8: [lwt.2.6.0: dl]
+[lwt.2.6.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/8:
+Processing  5/8: [lwt_named_threads.0.1: dl]
+Processing  6/8: [lwt_named_threads.0.1: dl] [objsize.0.18: dl]
+Processing  7/8: [lwt_named_threads.0.1: dl] [objsize.0.18: dl] [ppx_tools.5.0+4.03.0: dl]
+[lwt_named_threads.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/8: [objsize.0.18: dl] [ppx_tools.5.0+4.03.0: dl]
+[objsize.0.18] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/8: [ppx_tools.5.0+4.03.0: dl]
+Processing  8/8: [ppx_tools.5.0+4.03.0: dl] [result.1.2: dl]
+[ppx_tools.5.0+4.03.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/8: [result.1.2: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/8:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/16: [objsize: make]
+Processing  3/16: [objsize: make] [ppx_tools: make all]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/objsize.0.18)
+- make: oasis: Command not found
+- make: oasis: Command not found
+- ocaml setup.ml -configure 
+- 
+- Configuration: 
+- ocamlfind: ..................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: ........................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ...................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: .................................. objsize
+- Package version: ............................... 0.18
+- os_type: ....................................... Unix
+- system: ........................................ linux
+- architecture: .................................. amd64
+- ccomp_type: .................................... cc
+- ocaml_version: ................................. 4.03.0
+- standard_library_default: ...................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .............................. /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .............................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ........................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ............................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ......................................... default
+- ext_obj: ....................................... .o
+- ext_asm: ....................................... .s
+- ext_lib: ....................................... .a
+- ext_dll: ....................................... .so
+- default_executable_name: ....................... a.out
+- systhread_supported: ........................... true
+- Install architecture-independent files dir: .... /usr/local
+- Install architecture-dependent files in dir: ... $prefix
+- User executables: .............................. $exec_prefix/bin
+- System admin executables: ...................... $exec_prefix/sbin
+- Program executables: ........................... $exec_prefix/libexec
+- Read-only single-machine data: ................. $prefix/etc
+- Modifiable architecture-independent data: ...... $prefix/com
+- Modifiable single-machine data: ................ $prefix/var
+- Object code libraries: ......................... $exec_prefix/lib
+- Read-only arch-independent data root: .......... $prefix/share
+- Read-only architecture-independent data: ....... $datarootdir
+- Info documentation: ............................ $datarootdir/info
+- Locale-dependent data: ......................... $datarootdir/locale
+- Man documentation: ............................. $datarootdir/man
+- Documentation root: ............................ $datarootdir/doc/$pkg_name
+- HTML documentation: ............................ $docdir
+- DVI documentation: ............................. $docdir
+- PDF documentation: ............................. $docdir
+- PS documentation: .............................. $docdir
+- findlib_version: ............................... 1.7.1
+- is_native: ..................................... true
+- suffix_program: ................................ 
+- Remove a file.: ................................ rm -f
+- Remove a directory.: ........................... rm -rf
+- Turn ocaml debug flag on: ...................... true
+- Turn ocaml profile flag on: .................... false
+- Compiler support generation of .cmxs.: ......... true
+- OCamlbuild additional flags: ................... 
+- camlp4: ........................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/camlp4
+- ocamldoc: ...................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- 
+- ocaml setup.ml -build 
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- Configuration "true: quiet, debug, tests", line 1, characters 20-25:
+- Warning: the tag "tests" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -g -ccopt -W -ccopt -Wall -ccopt -Wextra -ccopt -g -c c_objsize.c
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlmklib -o objsize_stubs c_objsize.o
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules objsize.mli > objsize.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -ccopt -W -ccopt -Wall -ccopt -Wextra -ccopt -g -o objsize.cmi objsize.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules objsize.ml > objsize.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -ccopt -W -ccopt -Wall -ccopt -Wextra -ccopt -g -o objsize.cmo objsize.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a -dllib -lobjsize_stubs -cclib -lobjsize_stubs objsize.cmo -o objsize.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -ccopt -W -ccopt -Wall -ccopt -Wextra -ccopt -g -o objsize.cmx objsize.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a -cclib -lobjsize_stubs objsize.cmx -o objsize.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared -I . objsize.cmxa objsize.cmx -o objsize.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -pp camlp4r -modules tests.ml > tests.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -ccopt -W -ccopt -Wall -ccopt -Wextra -ccopt -g -pp camlp4r -o tests.cmo tests.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -ccopt -W -ccopt -Wall -ccopt -Wextra -ccopt -g -pp camlp4r -o tests.cmx tests.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -g -I . -linkpkg objsize.cmxa tests.cmx -o tests.native
+- make: oasis: Command not found
+- make: oasis: Command not found
+- ocaml setup.ml -configure 
+- 
+- Configuration: 
+- ocamlfind: ..................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: ........................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ...................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: .................................. objsize
+- Package version: ............................... 0.18
+- os_type: ....................................... Unix
+- system: ........................................ linux
+- architecture: .................................. amd64
+- ccomp_type: .................................... cc
+- ocaml_version: ................................. 4.03.0
+- standard_library_default: ...................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .............................. /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .............................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ........................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ............................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ......................................... default
+- ext_obj: ....................................... .o
+- ext_asm: ....................................... .s
+- ext_lib: ....................................... .a
+- ext_dll: ....................................... .so
+- default_executable_name: ....................... a.out
+- systhread_supported: ........................... true
+- Install architecture-independent files dir: .... /usr/local
+- Install architecture-dependent files in dir: ... $prefix
+- User executables: .............................. $exec_prefix/bin
+- System admin executables: ...................... $exec_prefix/sbin
+- Program executables: ........................... $exec_prefix/libexec
+- Read-only single-machine data: ................. $prefix/etc
+- Modifiable architecture-independent data: ...... $prefix/com
+- Modifiable single-machine data: ................ $prefix/var
+- Object code libraries: ......................... $exec_prefix/lib
+- Read-only arch-independent data root: .......... $prefix/share
+- Read-only architecture-independent data: ....... $datarootdir
+- Info documentation: ............................ $datarootdir/info
+- Locale-dependent data: ......................... $datarootdir/locale
+- Man documentation: ............................. $datarootdir/man
+- Documentation root: ............................ $datarootdir/doc/$pkg_name
+- HTML documentation: ............................ $docdir
+- DVI documentation: ............................. $docdir
+- PDF documentation: ............................. $docdir
+- PS documentation: .............................. $docdir
+- findlib_version: ............................... 1.7.1
+- is_native: ..................................... true
+- suffix_program: ................................ 
+- Remove a file.: ................................ rm -f
+- Remove a directory.: ........................... rm -rf
+- Turn ocaml debug flag on: ...................... true
+- Turn ocaml profile flag on: .................... false
+- Compiler support generation of .cmxs.: ......... true
+- OCamlbuild additional flags: ................... 
+- camlp4: ........................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/camlp4
+- ocamldoc: ...................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- 
+- ocaml setup.ml -build 
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- Configuration "true: quiet, debug, tests", line 1, characters 20-25:
+- Warning: the tag "tests" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -g -ccopt -W -ccopt -Wall -ccopt -Wextra -ccopt -g -c c_objsize.c
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlmklib -o objsize_stubs c_objsize.o
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules objsize.mli > objsize.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -ccopt -W -ccopt -Wall -ccopt -Wextra -ccopt -g -o objsize.cmi objsize.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules objsize.ml > objsize.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -ccopt -W -ccopt -Wall -ccopt -Wextra -ccopt -g -o objsize.cmo objsize.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a -dllib -lobjsize_stubs -cclib -lobjsize_stubs objsize.cmo -o objsize.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -ccopt -W -ccopt -Wall -ccopt -Wextra -ccopt -g -o objsize.cmx objsize.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a -cclib -lobjsize_stubs objsize.cmx -o objsize.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared -I . objsize.cmxa objsize.cmx -o objsize.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -pp camlp4r -modules tests.ml > tests.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -ccopt -W -ccopt -Wall -ccopt -Wextra -ccopt -g -pp camlp4r -o tests.cmo tests.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -ccopt -W -ccopt -Wall -ccopt -Wextra -ccopt -g -pp camlp4r -o tests.cmx tests.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -g -I . -linkpkg objsize.cmxa tests.cmx -o tests.native
+-> compiled  objsize.0.18
+Processing  3/16: [ppx_tools: make all]
+Processing  4/16: [ppx_tools: make all] [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+Processing  4/16: [ppx_tools: make all]
+-> installed base-bytes.base
+Processing  5/16: [ppx_tools: make all]
+Processing  6/16: [cppo: make opt] [ppx_tools: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_tools.5.0+4.03.0)
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+-> compiled  ppx_tools.5.0+4.03.0
+Processing  6/16: [cppo: make opt]
+Processing  7/16: [cppo: make opt] [objsize: make install]
++ make "opt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/cppo.1.4.1)
+- echo 'let cppo_version = "1.4.1"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlfind ocamlopt -o cppo -dtypes -linkpkg -package "unix str bytes" cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+- echo 'let cppo_version = "1.4.1"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlfind ocamlopt -o cppo -dtypes -linkpkg -package "unix str bytes" cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+Processing  7/16: [cppo: make ocamlbuild] [objsize: make install]
++ make "ocamlbuild" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/cppo.1.4.1)
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+-> compiled  cppo.1.4.1
+Processing  7/16: [objsize: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/objsize.0.18)
+- make: oasis: Command not found
+- make: oasis: Command not found
+- ocaml setup.ml -install 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/objsize/objsize.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/objsize/libobjsize_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/objsize/objsize.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/objsize/objsize.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/objsize/objsize.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/objsize/objsize.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/objsize/objsize.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/objsize/objsize.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/objsize/objsize.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/objsize/objsize.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/objsize/objsize.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/objsize/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllobjsize_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllobjsize_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+-> installed objsize.0.18
+Processing  8/16: [cppo: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/cppo.1.4.1)
+- ocamlfind install -patch-version 1.4.1 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/cppo_ocamlbuild/META
+-> installed cppo.1.4.1
+Processing  9/16: [extlib: make build]
+Processing 10/16: [extlib: make build] [ppx_tools: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_tools.5.0+4.03.0)
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/META
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/META
+-> installed ppx_tools.5.0+4.03.0
+Processing 10/16: [extlib: make build]
+-> installed result.1.2
+Processing 11/16: [extlib: make build]
+Processing 12/16: [extlib: make build] [lwt: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" "--disable-libev" "--enable-camlp4" "--disable-react" "--disable-ssl" "--enable-unix" "--enable-preemptive" "--disable-glib" "--enable-ppx" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lwt.2.6.0)
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Field 'pkg_camlp4_quotations_o' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-cc584b.txt'' terminated with error code 2
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-56f8bd.txt'' terminated with error code 2")
+- E: Cannot find findlib package camlp4.quotations.o
+- E: Failure("1 configuration error")
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Field 'pkg_camlp4_quotations_o' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-cc584b.txt'' terminated with error code 2
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-56f8bd.txt'' terminated with error code 2")
+- E: Cannot find findlib package camlp4.quotations.o
+- E: Failure("1 configuration error")
+Processing 12/16: [extlib: make build]
+Processing 13/16: [extlib: make build]
++ make "minimal=1" "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/extlib.1.7.1)
+[ERROR] The compilation of lwt failed at "ocaml setup.ml -configure --prefix /home/opam/.opam/ocaml-base-compiler.4.03.0 --disable-libev --enable-camlp4 --disable-react --disable-ssl --enable-unix --enable-preemptive --disable-glib --enable-ppx".
+- fatal: Not a git repository (or any of the parent directories): .git
+- make -C src build
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/extlib.1.7.1/src'
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -i extBytes.ml > extBytes.mli
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extBytes.mli extBytes.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c enum.mli enum.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c bitSet.mli bitSet.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c dynArray.mli dynArray.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extArray.mli extArray.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extHashtbl.mli extHashtbl.ml
+- File "extHashtbl.ml", line 26, characters 2-90:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extList.mli extList.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extString.mli extString.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extBuffer.mli extBuffer.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c global.mli global.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c IO.mli IO.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c option.mli option.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c pMap.mli pMap.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c std.mli std.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c base64.mli base64.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c refList.mli refList.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c optParse.mli optParse.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c dllist.mli dllist.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extLib.ml
+- ocamlfind ocamlc -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -a -o extLib.cma extBytes.cmo enum.cmo bitSet.cmo dynArray.cmo extArray.cmo extHashtbl.cmo extList.cmo extString.cmo extBuffer.cmo global.cmo IO.cmo option.cmo pMap.cmo std.cmo base64.cmo refList.cmo optParse.cmo dllist.cmo extLib.cmo
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extBytes.mli extBytes.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c enum.mli enum.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c bitSet.mli bitSet.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c dynArray.mli dynArray.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extArray.mli extArray.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extHashtbl.mli extHashtbl.ml
+- File "extHashtbl.ml", line 26, characters 2-90:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extList.mli extList.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extString.mli extString.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extBuffer.mli extBuffer.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c global.mli global.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c IO.mli IO.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c option.mli option.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c pMap.mli pMap.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c std.mli std.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c base64.mli base64.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c refList.mli refList.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c optParse.mli optParse.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c dllist.mli dllist.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -c extLib.ml
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -a -o extLib.cmxa extBytes.cmx enum.cmx bitSet.cmx dynArray.cmx extArray.cmx extHashtbl.cmx extList.cmx extString.cmx extBuffer.cmx global.cmx IO.cmx option.cmx pMap.cmx std.cmx base64.cmx refList.cmx optParse.cmx dllist.cmx extLib.cmx
+- ocamlfind ocamlopt -pp "cppo -D OCAML4  -D OCAML4_02  -D OCAML4_03   -D WITH_BYTES" -g -package bytes -shared -linkall extLib.cmxa -o extLib.cmxs
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/extlib.1.7.1/src'
+-> compiled  extlib.1.7.1
+Processing 14/16: [extlib: make install]
++ make "minimal=1" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/extlib.1.7.1)
+- fatal: Not a git repository (or any of the parent directories): .git
+- make -C src VERSION=1.7.1 install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/extlib.1.7.1/src'
+- ocamlfind install -patch-version 1.7.1 extlib META extLib.cma extBytes.mli enum.mli bitSet.mli dynArray.mli extArray.mli extHashtbl.mli extList.mli extString.mli extBuffer.mli global.mli IO.mli option.mli pMap.mli std.mli base64.mli refList.mli optParse.mli dllist.mli extBytes.cmi enum.cmi bitSet.cmi dynArray.cmi extArray.cmi extHashtbl.cmi extList.cmi extString.cmi extBuffer.cmi global.cmi IO.cmi option.cmi pMap.cmi std.cmi base64.cmi refList.cmi optParse.cmi dllist.cmi extLib.cmi -optional extLib.cmxa extBytes.cmx enum.cmx bitSet.cmx dynArray.cmx extArray.cmx extHashtbl.cmx extList.cmx extString.cmx extBuffer.cmx global.cmx IO.cmx option.cmx pMap.cmx std.cmx base64.cmx refList.cmx optParse.cmx dllist.cmx extLib.cmx extLib.cmxs extLib.a extLib.lib
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extLib.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extLib.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extLib.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/dllist.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/optParse.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/refList.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/base64.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/std.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/pMap.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/option.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/IO.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/global.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extBuffer.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extString.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extList.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extHashtbl.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extArray.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/dynArray.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/bitSet.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/enum.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extBytes.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extLib.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extLib.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/dllist.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/optParse.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/refList.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/base64.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/std.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/pMap.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/option.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/IO.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/global.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extBuffer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extString.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extList.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extHashtbl.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extArray.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/dynArray.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/bitSet.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/enum.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extBytes.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/dllist.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/optParse.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/refList.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/base64.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/std.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/pMap.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/option.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/IO.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/global.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extBuffer.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extString.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extList.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extHashtbl.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extArray.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/dynArray.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/bitSet.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/enum.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extBytes.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/extLib.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/extlib/META
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/extlib.1.7.1/src'
+-> installed extlib.1.7.1
+
+#=== ERROR while compiling lwt.2.6.0 ==========================================#
+# command              ocaml setup.ml -configure --prefix /home/opam/.opam/ocaml-base-compiler.4.03.0 --disable-libev --enable-camlp4 --disable-react --disable-ssl --enable-unix --enable-preemptive --disable-glib --enable-ppx
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lwt.2.6.0
+# exit-code            1
+# env-file             /home/opam/.opam/log/lwt-1-b36dbe.env
+# output-file          /home/opam/.opam/log/lwt-1-b36dbe.out
+### output ###
+# ocamlfind: Package `camlp4.quotations.o' not found
+# W: Field 'pkg_camlp4_quotations_o' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-cc584b.txt'' terminated with error code 2
+# ocamlfind: Package `camlp4.quotations.o' not found
+# W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-56f8bd.txt'' terminated with error code 2")
+# E: Cannot find findlib package camlp4.quotations.o
+# E: Failure("1 configuration error")
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install lwt_named_threads 0.1
++- 
++- The following actions failed
+| - build lwt 2.6.0
++- 
++- The following changes have been performed
+| - install base-bytes base      
+| - install cppo       1.4.1     
+| - install extlib     1.7.1     
+| - install objsize    0.18      
+| - install ppx_tools  5.0+4.03.0
+| - install result     1.2       
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/backup/state-20161222165606.export"
+'opam install --verbose --yes --jobs=2 lwt_named_threads' failed.
+[2016-12-22 16:56.19] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "lwt_named_threads" exited with status 4
