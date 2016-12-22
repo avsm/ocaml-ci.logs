@@ -1,0 +1,90 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_tools  5.0+4.03.0                               [required by ppx_monoid]
+  - install ppx_monoid 0.2       
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ppx_monoid.0.2: dl]
+Processing  2/2: [ppx_monoid.0.2: dl] [ppx_tools.5.0+4.03.0: dl]
+[ppx_monoid.0.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [ppx_tools.5.0+4.03.0: dl]
+[ppx_tools.5.0+4.03.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [ppx_tools: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_tools.5.0+4.03.0)
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+-> compiled  ppx_tools.5.0+4.03.0
+Processing  2/4: [ppx_tools: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_tools.5.0+4.03.0)
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/META
+-> installed ppx_tools.5.0+4.03.0
+Processing  3/4: [ppx_monoid: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_monoid.0.2)
+- ocamlbuild \
+-       -use-ocamlfind \
+-       -package compiler-libs \
+-       -package ppx_tools.metaquot \
+-       -package ppx_tools \
+-       src/ppx_monoid.native
+- ocamlfind ocamldep -package ppx_tools -package ppx_tools.metaquot -package compiler-libs -modules src/ppx_monoid.ml > src/ppx_monoid.ml.depends
+- ocamlfind ocamlc -c -package ppx_tools -package ppx_tools.metaquot -package compiler-libs -I src -o src/ppx_monoid.cmo src/ppx_monoid.ml
+- + ocamlfind ocamlc -c -package ppx_tools -package ppx_tools.metaquot -package compiler-libs -I src -o src/ppx_monoid.cmo src/ppx_monoid.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -package ppx_tools -package ppx_tools.metaquot -package compiler-libs -I src -o src/ppx_monoid.cmx src/ppx_monoid.ml
+- + ocamlfind ocamlopt -c -package ppx_tools -package ppx_tools.metaquot -package compiler-libs -I src -o src/ppx_monoid.cmx src/ppx_monoid.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -linkpkg -package ppx_tools -package ppx_tools.metaquot -package compiler-libs src/ppx_monoid.cmx -o src/ppx_monoid.native
+- + ocamlfind ocamlopt -linkpkg -package ppx_tools -package ppx_tools.metaquot -package compiler-libs src/ppx_monoid.cmx -o src/ppx_monoid.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+-> compiled  ppx_monoid.0.2
+Processing  4/4: [ppx_monoid: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_monoid.0.2)
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_monoid/ppx_monoid.native
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_monoid/META
+-> installed ppx_monoid.0.2
+Done.
+# Run eval `opam env` to update the current shell environment
