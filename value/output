@@ -1,0 +1,97 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install operf-micro 1.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [operf-micro.1.1: dl]
+[operf-micro.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [operf-micro: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1)
+- make -C tools/operf-micro all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1/tools/operf-micro'
+- echo "let name = \"operf-micro\"" > static_config.ml
+- echo "let prefix = \"/home/opam/.opam/ocaml-base-compiler.4.03.0\"" >> static_config.ml
+- ocamlc -w +1..45-4-44-42-40 -g -bin-annot -principal -c static_config.mli
+- ocamlopt -w +1..45-4-44-42-40 -g -bin-annot -principal -c static_config.ml
+- ocamlopt -w +1..45-4-44-42-40 -g -bin-annot -principal -c utils.ml
+- File "utils.ml", line 69, characters 11-13:
+- Warning 41: Ok belongs to several types: result result
+- The first one was selected. Please disambiguate if this is wrong.
+- ocamlopt -w +1..45-4-44-42-40 -g -bin-annot -principal -c files.ml
+- ocamlyacc parser.mly
+- ocamlc -w +1..45-4-44-42-40 -g -bin-annot -principal -c files.ml
+- ocamlc -w +1..45-4-44-42-40 -g -bin-annot -principal -c parser.mli
+- ocamlopt -w +1..45-4-44-42-40 -g -bin-annot -principal -c parser.ml
+- ocamllex lexer.mll
+- 21 states, 475 transitions, table size 2026 bytes
+- ocamlopt -w +1..45-4-44-42-40 -g -bin-annot -principal -c lexer.ml
+- ocamlc -w +1..45-4-44-42-40 -g -bin-annot -principal -c loc.mli
+- ocamlopt -w +1..45-4-44-42-40 -g -bin-annot -principal -c loc.ml
+- ocamlc -w +1..45-4-44-42-40 -g -bin-annot -principal -c utils.ml
+- File "utils.ml", line 69, characters 11-13:
+- Warning 41: Ok belongs to several types: result result
+- The first one was selected. Please disambiguate if this is wrong.
+- ocamlc -w +1..45-4-44-42-40 -g -bin-annot -principal -c command.mli
+- ocamlopt -w +1..45-4-44-42-40 -g -bin-annot -principal -c command.ml
+- File "command.ml", line 1, characters 0-10:
+- Warning 45: this open statement shadows the constructor Ok (which is later used)
+- File "command.ml", line 281, characters 4-6:
+- Warning 41: Ok belongs to several types: Utils.result result
+- The first one was selected. Please disambiguate if this is wrong.
+- File "command.ml", line 286, characters 11-13:
+- Warning 41: Ok belongs to several types: Utils.result result
+- The first one was selected. Please disambiguate if this is wrong.
+- File "command.ml", line 291, characters 8-10:
+- Warning 41: Ok belongs to several types: Utils.result result
+- The first one was selected. Please disambiguate if this is wrong.
+- ocamlc -w +1..45-4-44-42-40 -g -bin-annot -principal -c detect_config.mli
+- ocamlopt -w +1..45-4-44-42-40 -g -bin-annot -principal -c detect_config.ml
+- ocamlc -w +1..45-4-44-42-40 -g -bin-annot -principal -c benchmark.mli
+- ocamlopt -w +1..45-4-44-42-40 -g -bin-annot -principal -c benchmark.ml
+- ocamlc -w +1..45-4-44-42-40 -g -bin-annot -principal -c ransac.mli
+- ocamlopt -w +1..45-4-44-42-40 -g -bin-annot -principal -c ransac.ml
+- ocamlc -w +1..45-4-44-42-40 -g -bin-annot -principal -c measurements.mli
+- ocamlopt -w +1..45-4-44-42-40 -g -bin-annot -principal -c measurements.ml
+- ocamlopt -w +1..45-4-44-42-40 -g -bin-annot -principal -c builder.ml
+- ocamlopt -w +1..45-4-44-42-40 -g -bin-annot -principal -c main.ml
+- File "main.ml", line 1, characters 0-10:
+- Warning 45: this open statement shadows the constructor Ok (which is later used)
+- File "main.ml", line 821, characters 4-9:
+- Warning 41: Error belongs to several types: exn result
+- The first one was selected. Please disambiguate if this is wrong.
+- ocamlopt -g -o builder.opt unix.cmxa static_config.cmx utils.cmx files.cmx parser.cmx lexer.cmx loc.cmx command.cmx detect_config.cmx benchmark.cmx ransac.cmx measurements.cmx builder.cmx main.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1/tools/operf-micro'
+- make -C share/operf-micro all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1/share/operf-micro'
+- ocamlc -c micro_bench_types.mli
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1/share/operf-micro'
+-> compiled  operf-micro.1.1
+Processing  2/2: [operf-micro: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1)
+- make -C tools/operf-micro all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1/tools/operf-micro'
+- make[1]: Nothing to be done for 'all'.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1/tools/operf-micro'
+- make -C share/operf-micro all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1/share/operf-micro'
+- make[1]: Nothing to be done for 'all'.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1/share/operf-micro'
+- make -C tools/operf-micro install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1/tools/operf-micro'
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/
+- cp -f builder.opt /home/opam/.opam/ocaml-base-compiler.4.03.0/bin//operf-micro
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1/tools/operf-micro'
+- make -C share/operf-micro install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1/share/operf-micro'
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/share//operf-micro/
+- cp -a cycles.c micro_bench_run.ml micro_bench_types.ml micro_bench_types.mli time_stamp_counter.ml benchmarks /home/opam/.opam/ocaml-base-compiler.4.03.0/share//operf-micro/
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/operf-micro.1.1/share/operf-micro'
+-> installed operf-micro.1.1
+Done.
+# Run eval `opam env` to update the current shell environment
