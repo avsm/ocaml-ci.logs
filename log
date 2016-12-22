@@ -1,0 +1,141 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 printbox /home/opam/opam-repository/cache
+[2016-12-22 16:20.22] Starting...
+[2016-12-22 16:20.22] Waiting for free pool slot to run
+[2016-12-22 18:15.16] Pool slot obtained, starting run
+[2016-12-22 18:15.16] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 printbox
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes base                                     [required by printbox]
+  - install printbox   0.1 
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [printbox.0.1: dl]
+[printbox.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed base-bytes.base
+Processing  3/4: [printbox: ./configure]
++ ./configure "--disable-html" "--enable-docs" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/printbox.0.1)
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ printbox
+- Package version: ..................................... 0.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: .........................
+- build the HTML rendering library: .................... false
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_bytes: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bytes
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+Processing  3/4: [printbox: make build]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/printbox.0.1)
+- ocaml setup.ml -build 
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 23, characters 23-32:
+- Warning: the tag "pkg_tyxml" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -modules src/PrintBox.mli > src/PrintBox.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -package bytes -w +a-4-44-29 -I src -I test -o src/PrintBox.cmi src/PrintBox.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -modules src/PrintBox.ml > src/PrintBox.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -modules src/PrintBox_text.mli > src/PrintBox_text.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -package bytes -w +a-4-44-29 -I src -I test -o src/PrintBox_text.cmi src/PrintBox_text.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -modules src/PrintBox_text.ml > src/PrintBox_text.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -package bytes -w +a-4-44-29 -I src -I test -o src/PrintBox.cmo src/PrintBox.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -package bytes -w +a-4-44-29 -I src -I test -o src/PrintBox_text.cmo src/PrintBox_text.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -short-paths -package bytes -w +a-4-44-29 -I src -I test -o src/PrintBox_text.cmo src/PrintBox_text.ml
+- File "src/PrintBox_text.ml", line 74, characters 4-48:
+- Warning 50: unattached documentation comment (ignored)
+- File "src/PrintBox_text.ml", line 78, characters 4-43:
+- Warning 50: unattached documentation comment (ignored)
+- File "src/PrintBox_text.ml", line 85, characters 4-68:
+- Warning 50: unattached documentation comment (ignored)
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/PrintBox.cmo src/PrintBox_text.cmo -o src/printbox.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -short-paths -package bytes -w +a-4-44-29 -I src -I test -o src/PrintBox.cmx src/PrintBox.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -short-paths -package bytes -w +a-4-44-29 -I src -I test -o src/PrintBox_text.cmx src/PrintBox_text.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -short-paths -package bytes -w +a-4-44-29 -I src -I test -o src/PrintBox_text.cmx src/PrintBox_text.ml
+- File "src/PrintBox_text.ml", line 74, characters 4-48:
+- Warning 50: unattached documentation comment (ignored)
+- File "src/PrintBox_text.ml", line 78, characters 4-43:
+- Warning 50: unattached documentation comment (ignored)
+- File "src/PrintBox_text.ml", line 85, characters 4-68:
+- Warning 50: unattached documentation comment (ignored)
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/PrintBox.cmx src/PrintBox_text.cmx -o src/printbox.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/printbox.cmxa src/PrintBox.cmx src/PrintBox_text.cmx -o src/printbox.cmxs
+-> compiled  printbox.0.1
+Processing  4/4: [printbox: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/printbox.0.1)
+- ocaml setup.ml -install 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/PrintBox.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/PrintBox_text.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/printbox.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/printbox.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/printbox.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/printbox.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/PrintBox_text.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/PrintBox_text.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/PrintBox_text.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/PrintBox_text.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/PrintBox.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/PrintBox.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/PrintBox.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/PrintBox.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/PrintBox_text.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/PrintBox.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/printbox/META
+-> installed printbox.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:15.35] Success
