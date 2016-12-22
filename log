@@ -1,0 +1,22 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 async-mvar /home/opam/opam-repository/cache
+[2016-12-22 16:19.10] Starting...
+[2016-12-22 16:19.10] Waiting for free pool slot to run
+[2016-12-22 17:23.57] Pool slot obtained, starting run
+[2016-12-22 17:23.57] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 async-mvar
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following dependencies couldn't be met:
+  - async-mvar -> core_kernel < 113.24.00 -> ocaml < 4.03 -> ocaml-base-compiler < 4.03.0
+    conflict with the base packages of this switch
+  - async-mvar -> core_kernel < 113.24.00 -> ocaml < 4.03 -> ocaml-system < 4.03.0
+    unmet availability conditions, e.g. sys-ocaml-version = "4.02.3"
+  - async-mvar -> core_kernel < 113.24.00 -> ocaml < 4.03 -> ocaml-variants < 4.02.4~
+    conflict with the base packages of this switch
+
+No solution found, exiting
+'opam install --verbose --yes --jobs=2 async-mvar' failed.
+[2016-12-22 17:24.13] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191" "opam" "depext" "-ivyj" "2" "async-mvar" exited with status 3
