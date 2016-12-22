@@ -1,0 +1,57 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ansicolor /home/opam/opam-repository/cache
+[2016-12-22 16:19.09] Starting...
+[2016-12-22 16:19.09] Waiting for free pool slot to run
+[2016-12-22 17:23.21] Pool slot obtained, starting run
+[2016-12-22 17:23.21] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ansicolor
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ansicolor 0.5
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ansicolor.0.5: dl]
+[ansicolor.0.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ansicolor: make]
++ make "OCAMLMAKEFILE=./OCamlMakefile" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ansicolor.0.5)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ansicolor.0.5'
+- making ._bcdi/ANSIColor.di from ANSIColor.mli
+- making ._d/ANSIColor.d from ANSIColor.ml
+- ocamlc -c ANSIColor.mli
+- ocamlc -c ANSIColor.ml
+- ocamlc -a             \
+- 			  -o ANSIColor.cma  ANSIColor.cmo
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ansicolor.0.5'
+-> compiled  ansicolor.0.5
+Processing  2/2: [ansicolor: make install]
++ make "install" "OCAMLMAKEFILE=./OCamlMakefile" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ansicolor.0.5)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ansicolor.0.5'
+- make[1]: 'ANSIColor.cma' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ansicolor.0.5'
+- echo "description = \"ANSI Color library\"" > META
+- echo "version = \"0.5\"" >> META
+- echo "archive(byte) = \"ANSIColor.cma\"" >> META
+- if [ -f ANSIColor.cmxa ]; then \
+- 	echo 'archive(native) = "ANSIColor.cmxa"' >> META; \
+- fi
+- if [ -f ANSIColor.cmxa ]; then \
+- 	ocamlfind install ansicolor META ANSIColor.cmxa ANSIColor.cma \
+- 								ANSIColor.cmo ANSIColor.cmi ANSIColor.mli; \
+- else \
+- 	ocamlfind install ansicolor META ANSIColor.cma ANSIColor.cmo \
+- 								ANSIColor.cmi ANSIColor.mli; \
+- fi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ansicolor/ANSIColor.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ansicolor/ANSIColor.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ansicolor/ANSIColor.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ansicolor/ANSIColor.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ansicolor/META
+-> installed ansicolor.0.5
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:23.35] Success
