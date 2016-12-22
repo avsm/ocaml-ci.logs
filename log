@@ -1,0 +1,316 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 mindstorm /home/opam/opam-repository/cache
+[2016-12-22 16:19.55] Starting...
+[2016-12-22 16:19.55] Waiting for free pool slot to run
+[2016-12-22 18:00.03] Pool slot obtained, starting run
+[2016-12-22 18:00.03] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 mindstorm
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libbluetooth-dev
+#  - m4
+# The following new OS packages need to be installed: libbluetooth-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libbluetooth-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libbluetooth3:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libbluetooth3_5.37-0ubuntu5_amd64.deb ...
+Unpacking libbluetooth3:amd64 (5.37-0ubuntu5) ...
+Selecting previously unselected package libbluetooth-dev.
+Preparing to unpack .../libbluetooth-dev_5.37-0ubuntu5_amd64.deb ...
+Unpacking libbluetooth-dev (5.37-0ubuntu5) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libbluetooth3:amd64 (5.37-0ubuntu5) ...
+Setting up libbluetooth-dev (5.37-0ubuntu5) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes base                                     [required by mindstorm]
+  - install cppo       1.4.1                                    [required by mindstorm]
+  - install mindstorm  0.6.1
+===== 3 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/3: [cppo.1.4.1: dl]
+Processing  3/3: [cppo.1.4.1: dl] [mindstorm.0.6.1: dl]
+[mindstorm.0.6.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3: [cppo.1.4.1: dl]
+[cppo.1.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed base-bytes.base
+Processing  3/6: [cppo: make opt]
++ make "opt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.1)
+- echo 'let cppo_version = "1.4.1"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlfind ocamlopt -o cppo -dtypes -linkpkg -package "unix str bytes" cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+Processing  3/6: [cppo: make ocamlbuild]
++ make "ocamlbuild" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.1)
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+-> compiled  cppo.1.4.1
+Processing  4/6: [cppo: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.1)
+- ocamlfind install -patch-version 1.4.1 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/META
+-> installed cppo.1.4.1
+Processing  5/6: [mindstorm: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/mindstorm.0.6.1)
+- File "./setup.ml", line 316, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 316, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 328, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 366, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 472, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1823, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1829, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ mindstorm
+- Package version: ..................................... 0.6.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- usb_include: ......................................... 
+- Whether libusb development files are installed: ...... false
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- cppo: ................................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/cppo
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_bytes: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bytes
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/mindstorm.0.6.1)
+- File "./setup.ml", line 316, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 316, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 328, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 366, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 472, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1823, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1829, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -DARCH64 -c src/mindstorm_stubs.c
+- mv mindstorm_stubs.o src/mindstorm_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlmklib -o src/mindstorm_stubs -lbluetooth src/mindstorm_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -pp 'cppo -D LINUX -D AMD64 -V OCAML:4.04.0' -package bytes -package unix -modules src/mindstorm.mli > src/mindstorm.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -package unix -modules src/mindstorm_EV3.mli > src/mindstorm_EV3.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -package unix -modules src/mindstorm_NXT.mli > src/mindstorm_NXT.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -ccopt -DARCH64 -package bytes -package unix -I src -o src/mindstorm_EV3.cmi src/mindstorm_EV3.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -ccopt -DARCH64 -package bytes -package unix -I src -o src/mindstorm_NXT.cmi src/mindstorm_NXT.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -pp 'cppo -D LINUX -D AMD64 -V OCAML:4.04.0' -ccopt -DARCH64 -package bytes -package unix -I src -o src/mindstorm.cmi src/mindstorm.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package bytes -package unix -modules src/mindstorm.ml > src/mindstorm.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -pp 'cppo -D LINUX -D AMD64 -V OCAML:4.04.0' -package bytes -package unix -modules src/mindstorm_NXT.ml > src/mindstorm_NXT.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -pp 'cppo -D LINUX -D AMD64 -V OCAML:4.04.0' -package bytes -package unix -modules src/mindstorm_common.ml > src/mindstorm_common.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -pp 'cppo -D LINUX -D AMD64 -V OCAML:4.04.0' -ccopt -DARCH64 -package bytes -package unix -I src -o src/mindstorm_common.cmo src/mindstorm_common.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -pp 'cppo -D LINUX -D AMD64 -V OCAML:4.04.0' -package bytes -package unix -modules src/mindstorm_EV3.ml > src/mindstorm_EV3.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -ccopt -DARCH64 -package bytes -package unix -I src -o src/mindstorm.cmo src/mindstorm.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -pp 'cppo -D LINUX -D AMD64 -V OCAML:4.04.0' -ccopt -DARCH64 -package bytes -package unix -I src -o src/mindstorm_NXT.cmo src/mindstorm_NXT.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -pp 'cppo -D LINUX -D AMD64 -V OCAML:4.04.0' -ccopt -DARCH64 -package bytes -package unix -I src -o src/mindstorm_EV3.cmo src/mindstorm_EV3.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -dllib -lmindstorm_stubs -cclib -lmindstorm_stubs -cclib -lbluetooth src/mindstorm_common.cmo src/mindstorm_EV3.cmo src/mindstorm_NXT.cmo src/mindstorm.cmo -o src/mindstorm.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -pp 'cppo -D LINUX -D AMD64 -V OCAML:4.04.0' -inline 10 -ccopt -DARCH64 -package bytes -package unix -I src -o src/mindstorm_common.cmx src/mindstorm_common.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -pp 'cppo -D LINUX -D AMD64 -V OCAML:4.04.0' -inline 10 -ccopt -DARCH64 -package bytes -package unix -I src -o src/mindstorm_EV3.cmx src/mindstorm_EV3.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -pp 'cppo -D LINUX -D AMD64 -V OCAML:4.04.0' -inline 10 -ccopt -DARCH64 -package bytes -package unix -I src -o src/mindstorm_NXT.cmx src/mindstorm_NXT.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -inline 10 -ccopt -DARCH64 -package bytes -package unix -I src -o src/mindstorm.cmx src/mindstorm.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -cclib -lmindstorm_stubs -cclib -lbluetooth src/mindstorm_common.cmx src/mindstorm_EV3.cmx src/mindstorm_NXT.cmx src/mindstorm.cmx -o src/mindstorm.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -I src src/mindstorm.cmxa src/mindstorm_common.cmx src/mindstorm_EV3.cmx src/mindstorm_NXT.cmx src/mindstorm.cmx -o src/mindstorm.cmxs
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 707, characters 11-27:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uppercase
+- Use String.uppercase_ascii instead.
+- File "myocamlbuild.ml", line 708, characters 13-29:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uppercase
+- Use String.uppercase_ascii instead.
+-> compiled  mindstorm.0.6.1
+Processing  6/6: [mindstorm: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/mindstorm.0.6.1)
+- File "./setup.ml", line 316, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 316, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 328, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 366, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 472, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1823, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1829, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm_NXT.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm_EV3.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/libmindstorm_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm_EV3.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm_EV3.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm_EV3.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm_EV3.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm_NXT.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm_NXT.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm_NXT.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm_NXT.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm_common.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm_EV3.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm_NXT.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/mindstorm.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/mindstorm/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllmindstorm_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllmindstorm_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+-> installed mindstorm.0.6.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:00.25] Success
