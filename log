@@ -1,0 +1,38 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 hmap /home/opam/opam-repository/cache
+[2016-12-22 16:19.42] Starting...
+[2016-12-22 16:19.42] Waiting for free pool slot to run
+[2016-12-22 17:53.18] Pool slot obtained, starting run
+[2016-12-22 17:53.18] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 hmap
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install hmap 0.8.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [hmap.0.8.0: dl]
+[hmap.0.8.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [hmap: ocaml]
++ ocaml "pkg/git.ml" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/hmap.0.8.0)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/hmap.0.8.0)
+- ocamlfind ocamldep -modules src/hmap.ml > src/hmap.ml.depends
+- ocamlfind ocamldep -modules src/hmap.mli > src/hmap.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -I src -I test -o src/hmap.cmi src/hmap.mli
+- ocamlfind ocamlopt -c -bin-annot -safe-string -I src -I test -o src/hmap.cmx src/hmap.ml
+- ocamlfind ocamlopt -a src/hmap.cmx -o src/hmap.cmxa
+- ocamlfind ocamlc -c -bin-annot -safe-string -I src -I test -o src/hmap.cmo src/hmap.ml
+- ocamlfind ocamlc -a src/hmap.cmo -o src/hmap.cma
+- ocamlfind ocamlopt -shared src/hmap.cmx -o src/hmap.cmxs
+-> compiled  hmap.0.8.0
+-> installed hmap.0.8.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:53.33] Success
