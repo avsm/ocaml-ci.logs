@@ -1,0 +1,97 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 landmarks /home/opam/opam-repository/cache
+[2016-12-22 16:18.12] Starting...
+[2016-12-22 16:18.12] Waiting for free pool slot to run
+[2016-12-22 16:54.43] Pool slot obtained, starting run
+[2016-12-22 16:54.43] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 landmarks
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install landmarks 1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [landmarks.1.0: dl]
+[landmarks.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [landmarks: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/landmarks.1.0)
+- ocamldep -I . *.mli *.ml > .depend
+- ocamlopt -ccopt -fPIC -c clock.c
+- ocamlc -w +A-30-42-41-48-40-4 -safe-string -strict-sequence -bin-annot -c landmark_misc.ml
+- ocamlc -w +A-30-42-41-48-40-4 -safe-string -strict-sequence -bin-annot -c landmark_graph.mli
+- ocamlc -w +A-30-42-41-48-40-4 -safe-string -strict-sequence -bin-annot -c landmark_graph.ml
+- ocamlc -w +A-30-42-41-48-40-4 -safe-string -strict-sequence -bin-annot -c landmark.mli
+- ocamlc -w +A-30-42-41-48-40-4 -safe-string -strict-sequence -bin-annot -c landmark.ml
+- ocamlmklib -o landmarks clock.o landmark_misc.cmo landmark_graph.cmo landmark.cmo
+- ocamlopt -I . -w +A-30-42-41-48-40-4 -safe-string -strict-sequence -bin-annot -c landmark_misc.ml
+- ocamlopt -I . -w +A-30-42-41-48-40-4 -safe-string -strict-sequence -bin-annot -c landmark_graph.ml
+- ocamlopt -I . -w +A-30-42-41-48-40-4 -safe-string -strict-sequence -bin-annot -c landmark.ml
+- ocamlmklib -o landmarks clock.o landmark_misc.cmx landmark_graph.cmx landmark.cmx
+- ocamlc -a -o landmarks-noc.cma landmark_misc.cmo landmark_graph.cmo landmark.cmo
+- ocamlc -w +A-30-42-41-48-40-4 -safe-string -strict-sequence -bin-annot -c landmark_threads.mli
+- ocamlopt -w +A-30-42-41-48-40-4 -safe-string -strict-sequence -bin-annot -thread -c landmark_threads.ml
+- ocamlmklib -o landmarks-threads clock.o landmark_misc.cmx landmark_graph.cmx landmark.cmx landmark_threads.cmx
+- ocamlc -w +A-30-42-41-48-40-4 -safe-string -strict-sequence -bin-annot -thread -c landmark_threads.ml
+- ocamlmklib -o landmarks-threads clock.o landmark_misc.cmo landmark_graph.cmo landmark.cmo landmark_threads.cmo
+- ocamlopt -shared -o landmarks.cmxs clock.o landmark_misc.cmx landmark_graph.cmx landmark.cmx
+- ocamlmktop -custom -o landmarks.top clock.o landmark_misc.cmo landmark_graph.cmo landmark.cmo
+- ocamlopt -w +A-4-30-42-41-48-40 -safe-string -strict-sequence -bin-annot -I +compiler-libs -c ppx_landmarks.ml
+- ocamlopt -w +A-4-30-42-41-48-40 -safe-string -strict-sequence -bin-annot -I +compiler-libs ocamlcommon.cmxa -o ppx_landmarks ppx_landmarks.cmx 
+- [WARNING] Findlib and the package `gen_js_api` are required to build the landmarks viewer. 
+-> compiled  landmarks.1.0
+Processing  2/2: [landmarks: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/landmarks.1.0)
+- ocamlfind install landmarks META src/landmark.cmo src/landmark_threads.cmo src/landmark_graph.cmo src/landmark_misc.cmo src/landmarks-threads.cma src/landmarks-noc.cma src/landmarks.cma src/landmark.cmi src/landmark_graph.cmi src/landmark_threads.cmi src/landmark_misc.cmi src/landmark_graph.cmt src/landmark.cmt src/landmark_misc.cmt src/landmark_threads.cmt src/landmark.cmti src/landmark_threads.cmti src/landmark_graph.cmti src/landmark.mli src/landmark_graph.mli src/landmark_threads.mli src/landmark.cmx src/landmark_graph.cmx src/landmark_misc.cmx src/landmark_threads.cmx src/landmarks-threads.cmxa src/landmarks.cmxa src/landmarks.cmxs src/liblandmarks-threads.a src/landmarks.a src/liblandmarks.a src/landmarks-threads.a src/clock.o src/landmark_graph.o src/landmark_misc.o src/landmark_threads.o src/landmark.o src/dlllandmarks-threads.so src/dlllandmarks.so ppx/ppx_landmarks tools/landmarks_viewer/landmarks_viewer.html 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmarks_viewer.html
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/ppx_landmarks
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_threads.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_misc.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_graph.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/clock.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmarks-threads.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/liblandmarks.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmarks.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/liblandmarks-threads.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmarks.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmarks.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmarks-threads.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_threads.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_misc.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_graph.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_threads.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_graph.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_graph.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_threads.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_threads.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_misc.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_graph.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_misc.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_threads.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_graph.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmarks.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmarks-noc.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmarks-threads.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_misc.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_graph.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark_threads.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/landmark.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/landmarks/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dlllandmarks.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dlllandmarks.so.owner
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dlllandmarks-threads.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dlllandmarks-threads.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+-> installed landmarks.1.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 16:55.00] Success
