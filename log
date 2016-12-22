@@ -1,0 +1,32 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 result /home/opam/opam-repository/cache
+[2016-12-22 16:20.26] Starting...
+[2016-12-22 16:20.26] Waiting for free pool slot to run
+[2016-12-22 18:16.59] Pool slot obtained, starting run
+[2016-12-22 18:16.59] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 result
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install result 1.2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [result.1.2: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+-> installed result.1.2
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:17.15] Success
