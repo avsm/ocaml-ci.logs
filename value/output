@@ -1,0 +1,36 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ago 0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ago.0.3: dl]
+[ago.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ago: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ago.0.3)
+- ocamlbuild -libs unix ago.native
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ago.ml > ago.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamllex.opt -q agolex.mll
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules agolex.ml > agolex.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o agolex.cmo agolex.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o ago.cmo ago.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o agolex.cmx agolex.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o ago.cmx ago.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa agolex.cmx ago.cmx -o ago.native
+- pod2man -s 1 -r "Alpha" -c "opam.ocaml.org" ago.pod > ago.1
+-> compiled  ago.0.3
+Processing  2/2: [ago: make install]
++ make "PREFIX=/home/opam/.opam/ocaml-base-compiler.4.04.0" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ago.0.3)
+- ocamlbuild -libs unix ago.native
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/bin
+- install -d /home/opam/.opam/ocaml-base-compiler.4.04.0/man/man1
+- install ago.native /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ago
+- install ago.1 /home/opam/.opam/ocaml-base-compiler.4.04.0/man/man1
+-> installed ago.0.3
+Done.
+# Run eval `opam env` to update the current shell environment
