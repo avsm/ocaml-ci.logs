@@ -1,0 +1,377 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 sequoia /home/opam/opam-repository/cache
+[2016-12-22 16:20.28] Starting...
+[2016-12-22 16:20.28] Waiting for free pool slot to run
+[2016-12-22 18:17.53] Pool slot obtained, starting run
+[2016-12-22 18:17.53] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 sequoia
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_tools 5.0                                       [required by sequoia]
+  - install sequoia   0.1.0
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ppx_tools.5.0: dl]
+Processing  2/2: [ppx_tools.5.0: dl] [sequoia.0.1.0: dl]
+[sequoia.0.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [ppx_tools.5.0: dl]
+[ppx_tools.5.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [ppx_tools: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+-> compiled  ppx_tools.5.0
+Processing  2/4: [ppx_tools: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/META
+-> installed ppx_tools.5.0
+Processing  3/4: [sequoia: ./configure]
++ ./configure "--prefix=/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sequoia.0.1.0)
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ sequoia
+- Package version: ..................................... 0.1.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: .........................
+- Build the MySQL driver: .............................. true
+- Build the SQLite driver: ............................. true
+- Build the ppx syntax extension: ...................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_compiler_libs_common: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- pkg_ppx_tools: ....................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+Processing  3/4: [sequoia: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sequoia.0.1.0)
+- ocaml setup.ml -build 
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia.mli > lib/sequoia.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_delete.mli > lib/sequoia_delete.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_driver.ml > lib/sequoia_driver.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_expr.mli > lib/sequoia_expr.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_common.ml > lib/sequoia_common.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_param.ml > lib/sequoia_param.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_param.cmo lib/sequoia_param.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_lit.mli > lib/sequoia_lit.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_common.cmo lib/sequoia_common.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_vector.ml > lib/sequoia_vector.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_vector.cmo lib/sequoia_vector.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_lit.cmi lib/sequoia_lit.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_query_common.mli > lib/sequoia_query_common.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_expr.cmi lib/sequoia_expr.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_field.mli > lib/sequoia_field.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_table.mli > lib/sequoia_table.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_table.cmi lib/sequoia_table.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_field.cmi lib/sequoia_field.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_driver.cmo lib/sequoia_driver.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_query_common.cmi lib/sequoia_query_common.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_insert.mli > lib/sequoia_insert.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_replace.mli > lib/sequoia_replace.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_select.mli > lib/sequoia_select.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_update.mli > lib/sequoia_update.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_delete.cmi lib/sequoia_delete.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_insert.cmi lib/sequoia_insert.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_replace.cmi lib/sequoia_replace.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_select.cmi lib/sequoia_select.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_update.cmi lib/sequoia_update.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia.cmi lib/sequoia.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia.ml > lib/sequoia.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_delete.ml > lib/sequoia_delete.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_expr.ml > lib/sequoia_expr.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_field.ml > lib/sequoia_field.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_insert.ml > lib/sequoia_insert.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_lit.ml > lib/sequoia_lit.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_query_common.ml > lib/sequoia_query_common.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_replace.ml > lib/sequoia_replace.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_select.ml > lib/sequoia_select.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_table.ml > lib/sequoia_table.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/sequoia_update.ml > lib/sequoia_update.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia.cmo lib/sequoia.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_delete.cmo lib/sequoia_delete.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_expr.cmo lib/sequoia_expr.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_field.cmo lib/sequoia_field.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_insert.cmo lib/sequoia_insert.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_lit.cmo lib/sequoia_lit.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_query_common.cmo lib/sequoia_query_common.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_replace.cmo lib/sequoia_replace.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_select.cmo lib/sequoia_select.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_table.cmo lib/sequoia_table.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_update.cmo lib/sequoia_update.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a lib/sequoia_param.cmo lib/sequoia_common.cmo lib/sequoia_driver.cmo lib/sequoia_vector.cmo lib/sequoia_lit.cmo lib/sequoia_expr.cmo lib/sequoia_table.cmo lib/sequoia_field.cmo lib/sequoia_query_common.cmo lib/sequoia_delete.cmo lib/sequoia_insert.cmo lib/sequoia_replace.cmo lib/sequoia_select.cmo lib/sequoia_update.cmo lib/sequoia.cmo -o lib/sequoia.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_param.cmx lib/sequoia_param.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_common.cmx lib/sequoia_common.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_driver.cmx lib/sequoia_driver.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_vector.cmx lib/sequoia_vector.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_lit.cmx lib/sequoia_lit.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_expr.cmx lib/sequoia_expr.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_table.cmx lib/sequoia_table.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_field.cmx lib/sequoia_field.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_query_common.cmx lib/sequoia_query_common.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_delete.cmx lib/sequoia_delete.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_insert.cmx lib/sequoia_insert.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_replace.cmx lib/sequoia_replace.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_select.cmx lib/sequoia_select.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia_update.cmx lib/sequoia_update.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -o lib/sequoia.cmx lib/sequoia.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a lib/sequoia_param.cmx lib/sequoia_common.cmx lib/sequoia_driver.cmx lib/sequoia_vector.cmx lib/sequoia_lit.cmx lib/sequoia_expr.cmx lib/sequoia_table.cmx lib/sequoia_field.cmx lib/sequoia_query_common.cmx lib/sequoia_delete.cmx lib/sequoia_insert.cmx lib/sequoia_replace.cmx lib/sequoia_select.cmx lib/sequoia_update.cmx lib/sequoia.cmx -o lib/sequoia.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared lib/sequoia.cmxa lib/sequoia_param.cmx lib/sequoia_common.cmx lib/sequoia_driver.cmx lib/sequoia_vector.cmx lib/sequoia_lit.cmx lib/sequoia_expr.cmx lib/sequoia_table.cmx lib/sequoia_field.cmx lib/sequoia_query_common.cmx lib/sequoia_delete.cmx lib/sequoia_insert.cmx lib/sequoia_replace.cmx lib/sequoia_select.cmx lib/sequoia_update.cmx lib/sequoia.cmx -o lib/sequoia.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -modules lib/drivers/mysql/sequoia_mysql.ml > lib/drivers/mysql/sequoia_mysql.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -package unix -I lib/drivers/mysql -I lib -o lib/drivers/mysql/sequoia_mysql.cmo lib/drivers/mysql/sequoia_mysql.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a lib/drivers/mysql/sequoia_mysql.cmo -o lib/drivers/mysql/sequoia_mysql.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -package unix -I lib/drivers/mysql -I lib -o lib/drivers/mysql/sequoia_mysql.cmx lib/drivers/mysql/sequoia_mysql.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a lib/drivers/mysql/sequoia_mysql.cmx -o lib/drivers/mysql/sequoia_mysql.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared lib/drivers/mysql/sequoia_mysql.cmxa lib/drivers/mysql/sequoia_mysql.cmx -o lib/drivers/mysql/sequoia_mysql.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules lib/drivers/sqlite/sequoia_sqlite.ml > lib/drivers/sqlite/sequoia_sqlite.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -I lib -I lib/drivers/sqlite -I lib -o lib/drivers/sqlite/sequoia_sqlite.cmo lib/drivers/sqlite/sequoia_sqlite.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a lib/drivers/sqlite/sequoia_sqlite.cmo -o lib/drivers/sqlite/sequoia_sqlite.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -I lib -I lib/drivers/sqlite -I lib -o lib/drivers/sqlite/sequoia_sqlite.cmx lib/drivers/sqlite/sequoia_sqlite.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a lib/drivers/sqlite/sequoia_sqlite.cmx -o lib/drivers/sqlite/sequoia_sqlite.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared lib/drivers/sqlite/sequoia_sqlite.cmxa lib/drivers/sqlite/sequoia_sqlite.cmx -o lib/drivers/sqlite/sequoia_sqlite.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools -package compiler-libs.common -modules lib/ppx/sequoia_ppx.ml > lib/ppx/sequoia_ppx.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -package ppx_tools -package compiler-libs.common -I lib/ppx -o lib/ppx/sequoia_ppx.cmo lib/ppx/sequoia_ppx.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -package ppx_tools -package compiler-libs.common -I lib/ppx -o lib/ppx/sequoia_ppx.cmo lib/ppx/sequoia_ppx.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a lib/ppx/sequoia_ppx.cmo -o lib/ppx/sequoia_ppx.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -package ppx_tools -package compiler-libs.common -I lib/ppx -o lib/ppx/sequoia_ppx.cmx lib/ppx/sequoia_ppx.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -package ppx_tools -package compiler-libs.common -I lib/ppx -o lib/ppx/sequoia_ppx.cmx lib/ppx/sequoia_ppx.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a lib/ppx/sequoia_ppx.cmx -o lib/ppx/sequoia_ppx.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared lib/ppx/sequoia_ppx.cmxa lib/ppx/sequoia_ppx.cmx -o lib/ppx/sequoia_ppx.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools -package compiler-libs.common -modules lib/ppx/ppx_sequoia.ml > lib/ppx/ppx_sequoia.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -package ppx_tools -package compiler-libs.common -I lib/ppx -o lib/ppx/ppx_sequoia.cmo lib/ppx/ppx_sequoia.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -warn-error A -package ppx_tools -package compiler-libs.common -I lib/ppx -o lib/ppx/ppx_sequoia.cmo lib/ppx/ppx_sequoia.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -package ppx_tools -package compiler-libs.common -I lib/ppx -o lib/ppx/ppx_sequoia.cmx lib/ppx/ppx_sequoia.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -warn-error A -package ppx_tools -package compiler-libs.common -I lib/ppx -o lib/ppx/ppx_sequoia.cmx lib/ppx/ppx_sequoia.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -linkpkg -package ppx_tools -package compiler-libs.common lib/ppx/ppx_sequoia.cmx -o lib/ppx/ppx_sequoia.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -linkpkg -package ppx_tools -package compiler-libs.common lib/ppx/ppx_sequoia.cmx -o lib/ppx/ppx_sequoia.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -modules lib_test/ppx/t.ml > lib_test/ppx/t.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -modules lib_test/ppx/tables.ml > lib_test/ppx/tables.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -ppx lib/ppx/ppx_sequoia.native -g -annot -bin-annot -warn-error A -I lib -I lib/drivers/mysql -I lib/ppx -package unix -I lib_test/ppx -I lib -I lib/drivers/mysql -I lib/ppx -o lib_test/ppx/tables.cmo lib_test/ppx/tables.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -ppx lib/ppx/ppx_sequoia.native -g -annot -bin-annot -warn-error A -I lib -I lib/drivers/mysql -I lib/ppx -package unix -I lib_test/ppx -I lib -I lib/drivers/mysql -I lib/ppx -o lib_test/ppx/t.cmo lib_test/ppx/t.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -ppx lib/ppx/ppx_sequoia.native -g -annot -bin-annot -warn-error A -I lib -I lib/drivers/mysql -I lib/ppx -package unix -I lib_test/ppx -I lib -I lib/drivers/mysql -I lib/ppx -o lib_test/ppx/tables.cmx lib_test/ppx/tables.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -ppx lib/ppx/ppx_sequoia.native -g -annot -bin-annot -warn-error A -I lib -I lib/drivers/mysql -I lib/ppx -package unix -I lib_test/ppx -I lib -I lib/drivers/mysql -I lib/ppx -o lib_test/ppx/t.cmx lib_test/ppx/t.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -linkpkg -package unix lib/ppx/sequoia_ppx.cmxa lib/sequoia.cmxa lib/drivers/mysql/sequoia_mysql.cmxa lib_test/ppx/tables.cmx lib_test/ppx/t.cmx -o lib_test/ppx/t.native
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package unix -modules lib_test/ppx/readme.ml > lib_test/ppx/readme.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -ppx lib/ppx/ppx_sequoia.native -g -annot -bin-annot -warn-error A -I lib -I lib/drivers/mysql -I lib/ppx -package unix -I lib_test/ppx -I lib -I lib/drivers/mysql -I lib/ppx -o lib_test/ppx/readme.cmo lib_test/ppx/readme.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -ppx lib/ppx/ppx_sequoia.native -g -annot -bin-annot -warn-error A -I lib -I lib/drivers/mysql -I lib/ppx -package unix -I lib_test/ppx -I lib -I lib/drivers/mysql -I lib/ppx -o lib_test/ppx/readme.cmx lib_test/ppx/readme.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -linkpkg -package unix lib/ppx/sequoia_ppx.cmxa lib/sequoia.cmxa lib/drivers/mysql/sequoia_mysql.cmxa lib_test/ppx/readme.cmx -o lib_test/ppx/readme.native
+-> compiled  sequoia.0.1.0
+Processing  4/4: [sequoia: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sequoia.0.1.0)
+- ocaml setup.ml -install 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_common.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_delete.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_driver.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_expr.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_field.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_insert.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_lit.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_param.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_query_common.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_replace.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_select.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_table.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_update.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_vector.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_vector.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_vector.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_vector.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_update.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_update.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_update.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_update.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_table.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_table.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_table.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_table.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_select.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_select.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_select.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_select.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_replace.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_replace.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_replace.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_replace.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_query_common.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_query_common.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_query_common.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_query_common.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_param.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_param.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_param.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_lit.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_lit.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_lit.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_lit.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_insert.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_insert.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_insert.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_insert.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_field.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_field.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_field.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_field.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_expr.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_expr.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_expr.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_expr.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_driver.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_driver.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_driver.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_delete.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_delete.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_delete.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_delete.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_common.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_common.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_common.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_vector.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_update.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_table.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_select.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_replace.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_query_common.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_param.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_lit.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_insert.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_field.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_expr.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_driver.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_delete.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_common.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_sqlite.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_sqlite.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_sqlite.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_sqlite.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_sqlite.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_sqlite.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_sqlite.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_sqlite.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_sqlite.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_ppx.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_ppx.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_ppx.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_ppx.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_ppx.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_ppx.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_ppx.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_ppx.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_ppx.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_mysql.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_mysql.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_mysql.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_mysql.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_mysql.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_mysql.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_mysql.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_mysql.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/sequoia_mysql.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sequoia/META
+-> installed sequoia.0.1.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:18.20] Success
