@@ -1,0 +1,46 @@
+=== docker run sha256:d7e7dfca2b781a2903c36e322486f2954a953d4c9550e78c88537eae7135ccca opam depext -ivyj 2 gedcom /home/opam/opam-repository/cache
+[2016-12-22 23:11.53] Starting...
+[2016-12-22 23:11.53] Waiting for free pool slot to run
+[2016-12-22 23:38.07] Pool slot obtained, starting run
+[2016-12-22 23:38.07] docker run sha256:d7e7dfca2b781a2903c36e322486f2954a953d4c9550e78c88537eae7135ccca opam depext -ivyj 2 gedcom
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install gedcom 1.0.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [gedcom.1.0.0: dl]
+[gedcom.1.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [gedcom: make build]
++ make "-C" "src/" "build" (CWD=/home/opam/.opam/default/.opam-switch/build/gedcom.1.0.0)
+- make: Entering directory '/home/opam/.opam/default/.opam-switch/build/gedcom.1.0.0/src'
+- ocamlbuild -use-ocamlfind -tags rectypes -pkgs str gedcom.a gedcom.cmxa gedcom.cma gedcom.cmi
+- ocamlfind ocamldep -package str -modules gedcom.ml > gedcom.ml.depends
+- ocamlfind ocamldep -package str -modules gedcom.mli > gedcom.mli.depends
+- ocamlfind ocamlc -c -rectypes -package str -o gedcom.cmi gedcom.mli
+- ocamlfind ocamlopt -c -rectypes -package str -o gedcom.cmx gedcom.ml
+- ocamlfind ocamlopt -a -package str gedcom.cmx -o gedcom.cmxa
+- ocamlfind ocamlc -c -rectypes -package str -o gedcom.cmo gedcom.ml
+- ocamlfind ocamlc -a -package str gedcom.cmo -o gedcom.cma
+- make: Leaving directory '/home/opam/.opam/default/.opam-switch/build/gedcom.1.0.0/src'
+-> compiled  gedcom.1.0.0
+Processing  2/2: [gedcom: make install]
++ make "-C" "src/" "install" (CWD=/home/opam/.opam/default/.opam-switch/build/gedcom.1.0.0)
+- make: Entering directory '/home/opam/.opam/default/.opam-switch/build/gedcom.1.0.0/src'
+- ocamlfind install gedcom META _build/gedcom.a _build/gedcom.cmxa _build/gedcom.cma _build/gedcom.cmi
+- Installed /home/opam/.opam/default/lib/gedcom/gedcom.cmi
+- Installed /home/opam/.opam/default/lib/gedcom/gedcom.cma
+- Installed /home/opam/.opam/default/lib/gedcom/gedcom.cmxa
+- Installed /home/opam/.opam/default/lib/gedcom/gedcom.a
+- Installed /home/opam/.opam/default/lib/gedcom/META
+- make: Leaving directory '/home/opam/.opam/default/.opam-switch/build/gedcom.1.0.0/src'
+-> installed gedcom.1.0.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 23:38.20] Success
