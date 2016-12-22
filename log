@@ -1,0 +1,1191 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 tyxml-ppx /home/opam/opam-repository/cache
+[2016-12-22 16:18.59] Starting...
+[2016-12-22 16:18.59] Waiting for free pool slot to run
+[2016-12-22 17:18.44] Pool slot obtained, starting run
+[2016-12-22 17:18.44] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 tyxml-ppx
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install uutf       0.9.4                                    [required by markup, tyxml]
+  - install base-bytes base                                     [required by tyxml]
+  - install ppx_tools  5.0+4.03.0                               [required by tyxml-ppx]
+  - install markup     0.7.2                                    [required by tyxml-ppx]
+  - install re         1.7.1                                    [required by tyxml]
+  - install tyxml      4.0.1                                    [required by tyxml-ppx]
+  - install tyxml-ppx  4.0.1     
+===== 7 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/7: [markup.0.7.2: dl]
+Processing  3/7: [markup.0.7.2: dl] [ppx_tools.5.0+4.03.0: dl]
+Processing  4/7: [markup.0.7.2: dl] [ppx_tools.5.0+4.03.0: dl] [re.1.7.1: dl]
+[ppx_tools.5.0+4.03.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/7: [markup.0.7.2: dl] [re.1.7.1: dl]
+[markup.0.7.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/7: [re.1.7.1: dl]
+[re.1.7.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/7:
+Processing  5/7: [tyxml.4.0.1: dl]
+Processing  6/7: [tyxml.4.0.1: dl]
+Processing  7/7: [tyxml.4.0.1: dl] [uutf.0.9.4: dl]
+[tyxml.4.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/7: [uutf.0.9.4: dl]
+[uutf.0.9.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/7:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/14: [ppx_tools: make all]
+Processing  3/14: [ppx_tools: make all] [uutf: ocaml]
++ ocaml "pkg/git.ml" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/uutf.0.9.4)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+-> compiled  uutf.0.9.4
+Processing  3/14: [ppx_tools: make all]
+-> installed base-bytes.base
+Processing  4/14: [ppx_tools: make all]
+Processing  5/14: [ppx_tools: make all] [re: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/re.1.7.1)
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ re
+- Package version: ..................................... 1.7.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.03.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: .........................
+- Enable building benchmarks: .......................... false
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_bytes: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bytes
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- 
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ re
+- Package version: ..................................... 1.7.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.03.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: .........................
+- Enable building benchmarks: .......................... false
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_bytes: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bytes
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- 
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_tools.5.0+4.03.0)
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+-> compiled  ppx_tools.5.0+4.03.0
+Processing  5/14: [re: ocaml setup.ml]
+Processing  6/14: [re: ocaml setup.ml] [ppx_tools: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_tools.5.0+4.03.0)
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/META
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/META
+-> installed ppx_tools.5.0+4.03.0
+Processing  6/14: [re: ocaml setup.ml]
+Processing  7/14: [re: ocaml setup.ml] [uutf: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" "cmdliner=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/uutf.0.9.4)
+- ocamlfind ocamldep -package cmdliner -modules test/utftrip.ml > test/utftrip.ml.depends
+- ocamlfind ocamldep -modules src/uutf.mli > src/uutf.mli.depends
+- ocamlfind ocamlc -c -bin-annot -I src -I test -o src/uutf.cmi src/uutf.mli
+- ocamlfind ocamlc -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- + ocamlfind ocamlc -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- File "test/utftrip.ml", line 42, characters 50-63:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 43, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 102, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 136, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 161, characters 44-57:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 219, characters 54-67:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 221, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 233, characters 32-45:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamldep -modules src/uutf.ml > src/uutf.ml.depends
+- ocamlfind ocamlopt -c -bin-annot -I src -I test -o src/uutf.cmx src/uutf.ml
+- + ocamlfind ocamlopt -c -bin-annot -I src -I test -o src/uutf.cmx src/uutf.ml
+- File "src/uutf.ml", line 22, characters 31-48:
+- Warning 3: deprecated: String.unsafe_set
+- File "src/uutf.ml", line 45, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/uutf.ml", line 68, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 492, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 496, characters 25-38:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 676, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 679, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- + ocamlfind ocamlopt -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- File "test/utftrip.ml", line 42, characters 50-63:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 43, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 102, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 136, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 161, characters 44-57:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 219, characters 54-67:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 221, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 233, characters 32-45:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -linkpkg unix.cmxa -package cmdliner src/uutf.cmx test/utftrip.cmx -o test/utftrip.native
+- ocamlfind ocamlopt -a src/uutf.cmx -o src/uutf.cmxa
+- ocamlfind ocamlc -c -bin-annot -I src -I test -o src/uutf.cmo src/uutf.ml
+- + ocamlfind ocamlc -c -bin-annot -I src -I test -o src/uutf.cmo src/uutf.ml
+- File "src/uutf.ml", line 22, characters 31-48:
+- Warning 3: deprecated: String.unsafe_set
+- File "src/uutf.ml", line 45, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/uutf.ml", line 68, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 492, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 496, characters 25-38:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 676, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 679, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -a src/uutf.cmo -o src/uutf.cma
+- ocamlfind ocamlopt -shared src/uutf.cmx -o src/uutf.cmxs
+- ocamlfind ocamldep -package cmdliner -modules test/utftrip.ml > test/utftrip.ml.depends
+- ocamlfind ocamldep -modules src/uutf.mli > src/uutf.mli.depends
+- ocamlfind ocamlc -c -bin-annot -I src -I test -o src/uutf.cmi src/uutf.mli
+- ocamlfind ocamlc -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- + ocamlfind ocamlc -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- File "test/utftrip.ml", line 42, characters 50-63:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 43, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 102, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 136, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 161, characters 44-57:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 219, characters 54-67:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 221, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 233, characters 32-45:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamldep -modules src/uutf.ml > src/uutf.ml.depends
+- ocamlfind ocamlopt -c -bin-annot -I src -I test -o src/uutf.cmx src/uutf.ml
+- + ocamlfind ocamlopt -c -bin-annot -I src -I test -o src/uutf.cmx src/uutf.ml
+- File "src/uutf.ml", line 22, characters 31-48:
+- Warning 3: deprecated: String.unsafe_set
+- File "src/uutf.ml", line 45, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/uutf.ml", line 68, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 492, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 496, characters 25-38:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 676, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 679, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- + ocamlfind ocamlopt -c -bin-annot -package cmdliner -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- File "test/utftrip.ml", line 42, characters 50-63:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 43, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 102, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 136, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 161, characters 44-57:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 219, characters 54-67:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 221, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 233, characters 32-45:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -linkpkg unix.cmxa -package cmdliner src/uutf.cmx test/utftrip.cmx -o test/utftrip.native
+- ocamlfind ocamlopt -a src/uutf.cmx -o src/uutf.cmxa
+- ocamlfind ocamlc -c -bin-annot -I src -I test -o src/uutf.cmo src/uutf.ml
+- + ocamlfind ocamlc -c -bin-annot -I src -I test -o src/uutf.cmo src/uutf.ml
+- File "src/uutf.ml", line 22, characters 31-48:
+- Warning 3: deprecated: String.unsafe_set
+- File "src/uutf.ml", line 45, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/uutf.ml", line 68, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 492, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 496, characters 25-38:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 676, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 679, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -a src/uutf.cmo -o src/uutf.cma
+- ocamlfind ocamlopt -shared src/uutf.cmx -o src/uutf.cmxs
+-> installed uutf.0.9.4
+Processing  7/14: [re: ocaml setup.ml]
+Processing  8/14: [markup: make build] [re: ocaml setup.ml]
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/re.1.7.1)
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 43, characters 34-43:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 49, characters 36-45:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 55, characters 37-46:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 61, characters 36-45:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 67, characters 35-44:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 76, characters 36-45:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 81, characters 38-52:
+- Warning: the tag "pkg_core_bench" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 85, characters 25-39:
+- Warning: the tag "pkg_core_bench" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 91, characters 36-45:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 94, characters 23-32:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re.mli > lib/re.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re.cmi lib/re.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re.cmi lib/re.mli
+- File "lib/re.mli", line 130, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 137, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 143, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 151, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 157, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 165, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 175, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 180, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 185, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 187, characters 17-78:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 188, characters 17-38:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 190, characters 16-43:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 197, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 199, characters 17-78:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 200, characters 17-38:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 201, characters 17-42:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 202, characters 17-44:
+- Warning 50: unattached documentation comment (ignored)
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re.ml > lib/re.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_automata.mli > lib/re_automata.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_cset.mli > lib/re_cset.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_cset.cmi lib/re_cset.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_fmt.ml > lib/re_fmt.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_automata.cmi lib/re_automata.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_fmt.cmo lib/re_fmt.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_cset.ml > lib/re_cset.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_automata.ml > lib/re_automata.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re.cmo lib/re.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_cset.cmo lib/re_cset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_automata.cmo lib/re_automata.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_fmt.cmo lib/re_cset.cmo lib/re_automata.cmo lib/re.cmo -o lib/re.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_fmt.cmx lib/re_fmt.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_cset.cmx lib/re_cset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_automata.cmx lib/re_automata.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re.cmx lib/re.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_fmt.cmx lib/re_cset.cmx lib/re_automata.cmx lib/re.cmx -o lib/re.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re.cmxa lib/re_fmt.cmx lib/re_cset.cmx lib/re_automata.cmx lib/re.cmx -o lib/re.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_emacs.mli > lib/re_emacs.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_emacs.cmi lib/re_emacs.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_emacs.ml > lib/re_emacs.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_emacs.cmo lib/re_emacs.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_emacs.cmo -o lib/re_emacs.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_emacs.cmx lib/re_emacs.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_emacs.cmx -o lib/re_emacs.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re_emacs.cmxa lib/re_emacs.cmx -o lib/re_emacs.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_str.mli > lib/re_str.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_str.cmi lib/re_str.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_str.ml > lib/re_str.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_str.cmo lib/re_str.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_str.cmo -o lib/re_str.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_str.cmx lib/re_str.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_str.cmx -o lib/re_str.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re_str.cmxa lib/re_str.cmx -o lib/re_str.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_posix.mli > lib/re_posix.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_posix.cmi lib/re_posix.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_posix.ml > lib/re_posix.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_posix.cmo lib/re_posix.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_posix.cmo -o lib/re_posix.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_posix.cmx lib/re_posix.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_posix.cmx -o lib/re_posix.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re_posix.cmxa lib/re_posix.cmx -o lib/re_posix.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_glob.mli > lib/re_glob.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_glob.cmi lib/re_glob.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_glob.ml > lib/re_glob.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_glob.cmo lib/re_glob.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_glob.cmo -o lib/re_glob.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_glob.cmx lib/re_glob.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_glob.cmx -o lib/re_glob.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re_glob.cmxa lib/re_glob.cmx -o lib/re_glob.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_perl.mli > lib/re_perl.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_perl.cmi lib/re_perl.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_perl.ml > lib/re_perl.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_perl.cmo lib/re_perl.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_perl.cmo -o lib/re_perl.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_perl.cmx lib/re_perl.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_perl.cmx -o lib/re_perl.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re_perl.cmxa lib/re_perl.cmx -o lib/re_perl.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_pcre.mli > lib/re_pcre.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_pcre.cmi lib/re_pcre.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_pcre.ml > lib/re_pcre.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_pcre.cmo lib/re_pcre.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_pcre.cmo -o lib/re_pcre.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_pcre.cmx lib/re_pcre.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_pcre.cmx -o lib/re_pcre.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re_pcre.cmxa lib/re_pcre.cmx -o lib/re_pcre.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 43, characters 34-43:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 49, characters 36-45:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 55, characters 37-46:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 61, characters 36-45:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 67, characters 35-44:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 76, characters 36-45:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 81, characters 38-52:
+- Warning: the tag "pkg_core_bench" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 85, characters 25-39:
+- Warning: the tag "pkg_core_bench" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 91, characters 36-45:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 94, characters 23-32:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re.mli > lib/re.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re.cmi lib/re.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re.cmi lib/re.mli
+- File "lib/re.mli", line 130, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 137, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 143, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 151, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 157, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 165, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 175, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 180, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 185, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 187, characters 17-78:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 188, characters 17-38:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 190, characters 16-43:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 197, characters 17-34:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 199, characters 17-78:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 200, characters 17-38:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 201, characters 17-42:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/re.mli", line 202, characters 17-44:
+- Warning 50: unattached documentation comment (ignored)
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re.ml > lib/re.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_automata.mli > lib/re_automata.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_cset.mli > lib/re_cset.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_cset.cmi lib/re_cset.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_fmt.ml > lib/re_fmt.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_automata.cmi lib/re_automata.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_fmt.cmo lib/re_fmt.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_cset.ml > lib/re_cset.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_automata.ml > lib/re_automata.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re.cmo lib/re.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_cset.cmo lib/re_cset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_automata.cmo lib/re_automata.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_fmt.cmo lib/re_cset.cmo lib/re_automata.cmo lib/re.cmo -o lib/re.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_fmt.cmx lib/re_fmt.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_cset.cmx lib/re_cset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_automata.cmx lib/re_automata.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re.cmx lib/re.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_fmt.cmx lib/re_cset.cmx lib/re_automata.cmx lib/re.cmx -o lib/re.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re.cmxa lib/re_fmt.cmx lib/re_cset.cmx lib/re_automata.cmx lib/re.cmx -o lib/re.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_emacs.mli > lib/re_emacs.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_emacs.cmi lib/re_emacs.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_emacs.ml > lib/re_emacs.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_emacs.cmo lib/re_emacs.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_emacs.cmo -o lib/re_emacs.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_emacs.cmx lib/re_emacs.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_emacs.cmx -o lib/re_emacs.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re_emacs.cmxa lib/re_emacs.cmx -o lib/re_emacs.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_str.mli > lib/re_str.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_str.cmi lib/re_str.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_str.ml > lib/re_str.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_str.cmo lib/re_str.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_str.cmo -o lib/re_str.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_str.cmx lib/re_str.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_str.cmx -o lib/re_str.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re_str.cmxa lib/re_str.cmx -o lib/re_str.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_posix.mli > lib/re_posix.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_posix.cmi lib/re_posix.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_posix.ml > lib/re_posix.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_posix.cmo lib/re_posix.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_posix.cmo -o lib/re_posix.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_posix.cmx lib/re_posix.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_posix.cmx -o lib/re_posix.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re_posix.cmxa lib/re_posix.cmx -o lib/re_posix.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_glob.mli > lib/re_glob.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_glob.cmi lib/re_glob.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_glob.ml > lib/re_glob.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_glob.cmo lib/re_glob.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_glob.cmo -o lib/re_glob.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_glob.cmx lib/re_glob.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_glob.cmx -o lib/re_glob.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re_glob.cmxa lib/re_glob.cmx -o lib/re_glob.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_perl.mli > lib/re_perl.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_perl.cmi lib/re_perl.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_perl.ml > lib/re_perl.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_perl.cmo lib/re_perl.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_perl.cmo -o lib/re_perl.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_perl.cmx lib/re_perl.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_perl.cmx -o lib/re_perl.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re_perl.cmxa lib/re_perl.cmx -o lib/re_perl.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_pcre.mli > lib/re_pcre.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_pcre.cmi lib/re_pcre.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -package bytes -modules lib/re_pcre.ml > lib/re_pcre.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_pcre.cmo lib/re_pcre.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a lib/re_pcre.cmo -o lib/re_pcre.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -w +a-40-42-44-3-4-48 -warn-error +1..49 -g -annot -bin-annot -I lib -I lib -I lib -package bytes -I lib -o lib/re_pcre.cmx lib/re_pcre.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a lib/re_pcre.cmx -o lib/re_pcre.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared lib/re_pcre.cmxa lib/re_pcre.cmx -o lib/re_pcre.cmxs
+-> compiled  re.1.7.1
+Processing  8/14: [markup: make build]
+Processing  9/14: [markup: make build] [re: ocaml setup.ml]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/markup.0.7.2)
+- ocamlbuild -use-ocamlfind -j 0 -no-links -cflags -g,-w,+A-4-9-44-45-48,-warn-error,+A-3,-bin-annot,-safe-string markup.cma markup.cmxa
+- ocamlfind ocamldep -package uutf -modules src/markup.mli > src/markup.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/kstream.mli > src/kstream.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/common.ml > src/common.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/common.cmo src/common.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/kstream.cmi src/kstream.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup.cmi src/markup.mli
+- ocamlfind ocamldep -package uutf -modules src/markup.ml > src/markup.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/detect.mli > src/detect.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/encoding.ml > src/encoding.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/error.ml > src/error.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/error.cmo src/error.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/encoding.cmo src/encoding.ml
+- ocamlfind ocamldep -package uutf -modules src/html_parser.mli > src/html_parser.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/html_tokenizer.mli > src/html_tokenizer.mli.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_tokenizer.cmi src/html_tokenizer.mli
+- ocamlfind ocamldep -package uutf -modules src/html_writer.mli > src/html_writer.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/input.mli > src/input.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/markup__xml_parser.mli > src/markup__xml_parser.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/xml_tokenizer.mli > src/xml_tokenizer.mli.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_tokenizer.cmi src/xml_tokenizer.mli
+- ocamlfind ocamldep -package uutf -modules src/stream_io.ml > src/stream_io.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/utility.ml > src/utility.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/entities.ml > src/entities.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/entities.cmo src/entities.ml
+- ocamlfind ocamldep -package uutf -modules src/xml_writer.mli > src/xml_writer.mli.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/detect.cmi src/detect.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_parser.cmi src/html_parser.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_writer.cmi src/html_writer.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/input.cmi src/input.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup__xml_parser.cmi src/markup__xml_parser.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/stream_io.cmo src/stream_io.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/utility.cmo src/utility.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_writer.cmi src/xml_writer.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup.cmo src/markup.ml
+- ocamlfind ocamldep -package uutf -modules src/detect.ml > src/detect.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/html_parser.ml > src/html_parser.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/namespace.mli > src/namespace.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/text.ml > src/text.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/namespace.cmi src/namespace.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/text.cmo src/text.ml
+- ocamlfind ocamldep -package uutf -modules src/html_tokenizer.ml > src/html_tokenizer.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/html_writer.ml > src/html_writer.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/input.ml > src/input.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/kstream.ml > src/kstream.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup__xml_parser.ml > src/markup__xml_parser.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/xml_tokenizer.ml > src/xml_tokenizer.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/xml_writer.ml > src/xml_writer.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/detect.cmo src/detect.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_parser.cmo src/html_parser.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_tokenizer.cmo src/html_tokenizer.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_writer.cmo src/html_writer.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/input.cmo src/input.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/kstream.cmo src/kstream.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup__xml_parser.cmo src/markup__xml_parser.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_tokenizer.cmo src/xml_tokenizer.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_writer.cmo src/xml_writer.ml
+- + ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/detect.cmo src/detect.ml
+- File "src/detect.ml", line 55, characters 8-24:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/detect.ml", line 225, characters 44-58:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 239, characters 39-53:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 251, characters 27-41:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 318, characters 43-57:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 465, characters 31-45:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- + ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_tokenizer.cmo src/xml_tokenizer.ml
+- File "src/xml_tokenizer.ml", line 382, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/xml_tokenizer.ml", line 422, characters 11-27:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/xml_tokenizer.ml", line 438, characters 35-51:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/xml_tokenizer.ml", line 498, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- + ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_parser.cmo src/html_parser.ml
+- File "src/html_parser.ml", line 231, characters 22-38:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/html_parser.ml", line 2771, characters 46-62:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/html_parser.ml", line 2780, characters 19-35:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamldep -package uutf -modules src/namespace.ml > src/namespace.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/namespace.cmo src/namespace.ml
+- ocamlfind ocamlc -a -package uutf src/common.cmo src/error.cmo src/kstream.cmo src/encoding.cmo src/input.cmo src/stream_io.cmo src/text.cmo src/xml_tokenizer.cmo src/detect.cmo src/entities.cmo src/html_tokenizer.cmo src/namespace.cmo src/html_parser.cmo src/html_writer.cmo src/markup__xml_parser.cmo src/utility.cmo src/xml_writer.cmo src/markup.cmo -o src/markup.cma
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/common.cmx src/common.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/error.cmx src/error.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/kstream.cmx src/kstream.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/text.cmx src/text.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/encoding.cmx src/encoding.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/input.cmx src/input.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/stream_io.cmx src/stream_io.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_tokenizer.cmx src/xml_tokenizer.ml
+- + ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_tokenizer.cmx src/xml_tokenizer.ml
+- File "src/xml_tokenizer.ml", line 382, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/xml_tokenizer.ml", line 422, characters 11-27:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/xml_tokenizer.ml", line 438, characters 35-51:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/xml_tokenizer.ml", line 498, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/entities.cmx src/entities.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_tokenizer.cmx src/html_tokenizer.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/namespace.cmx src/namespace.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/detect.cmx src/detect.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_parser.cmx src/html_parser.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_writer.cmx src/html_writer.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup__xml_parser.cmx src/markup__xml_parser.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/utility.cmx src/utility.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_writer.cmx src/xml_writer.ml
+- + ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/detect.cmx src/detect.ml
+- File "src/detect.ml", line 55, characters 8-24:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/detect.ml", line 225, characters 44-58:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 239, characters 39-53:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 251, characters 27-41:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 318, characters 43-57:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 465, characters 31-45:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- + ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_parser.cmx src/html_parser.ml
+- File "src/html_parser.ml", line 231, characters 22-38:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/html_parser.ml", line 2771, characters 46-62:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/html_parser.ml", line 2780, characters 19-35:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup.cmx src/markup.ml
+- ocamlfind ocamlopt -a -package uutf src/common.cmx src/error.cmx src/kstream.cmx src/encoding.cmx src/input.cmx src/stream_io.cmx src/text.cmx src/xml_tokenizer.cmx src/detect.cmx src/entities.cmx src/html_tokenizer.cmx src/namespace.cmx src/html_parser.cmx src/html_writer.cmx src/markup__xml_parser.cmx src/utility.cmx src/xml_writer.cmx src/markup.cmx -o src/markup.cmxa
+- # Parallel statistics: { count(total): 7(53), max: 9, min: 2, average(total): 4.714(1.491) }
+- ! ocamlfind query lwt > /dev/null 2> /dev/null || (  ocamlbuild -use-ocamlfind -j 0 -no-links -cflags -g,-w,+A-4-9-44-45-48,-warn-error,+A-3,-bin-annot,-safe-string markup_lwt.cma markup_lwt.cmxa )
+- ! ocamlfind query lwt.unix > /dev/null 2> /dev/null || (  ocamlbuild -use-ocamlfind -j 0 -no-links -cflags -g,-w,+A-4-9-44-45-48,-warn-error,+A-3,-bin-annot,-safe-string markup_lwt_unix.cma markup_lwt_unix.cmxa )
+- ocamlbuild -use-ocamlfind -j 0 -no-links -cflags -g,-w,+A-4-9-44-45-48,-warn-error,+A-3,-bin-annot,-safe-string markup.cma markup.cmxa
+- ocamlfind ocamldep -package uutf -modules src/markup.mli > src/markup.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/kstream.mli > src/kstream.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/common.ml > src/common.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/common.cmo src/common.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/kstream.cmi src/kstream.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup.cmi src/markup.mli
+- ocamlfind ocamldep -package uutf -modules src/markup.ml > src/markup.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/detect.mli > src/detect.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/encoding.ml > src/encoding.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/error.ml > src/error.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/error.cmo src/error.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/encoding.cmo src/encoding.ml
+- ocamlfind ocamldep -package uutf -modules src/html_parser.mli > src/html_parser.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/html_tokenizer.mli > src/html_tokenizer.mli.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_tokenizer.cmi src/html_tokenizer.mli
+- ocamlfind ocamldep -package uutf -modules src/html_writer.mli > src/html_writer.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/input.mli > src/input.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/markup__xml_parser.mli > src/markup__xml_parser.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/xml_tokenizer.mli > src/xml_tokenizer.mli.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_tokenizer.cmi src/xml_tokenizer.mli
+- ocamlfind ocamldep -package uutf -modules src/stream_io.ml > src/stream_io.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/utility.ml > src/utility.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/entities.ml > src/entities.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/entities.cmo src/entities.ml
+- ocamlfind ocamldep -package uutf -modules src/xml_writer.mli > src/xml_writer.mli.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/detect.cmi src/detect.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_parser.cmi src/html_parser.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_writer.cmi src/html_writer.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/input.cmi src/input.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup__xml_parser.cmi src/markup__xml_parser.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/stream_io.cmo src/stream_io.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/utility.cmo src/utility.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_writer.cmi src/xml_writer.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup.cmo src/markup.ml
+- ocamlfind ocamldep -package uutf -modules src/detect.ml > src/detect.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/html_parser.ml > src/html_parser.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/namespace.mli > src/namespace.mli.depends
+- ocamlfind ocamldep -package uutf -modules src/text.ml > src/text.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/namespace.cmi src/namespace.mli
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/text.cmo src/text.ml
+- ocamlfind ocamldep -package uutf -modules src/html_tokenizer.ml > src/html_tokenizer.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/html_writer.ml > src/html_writer.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/input.ml > src/input.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/kstream.ml > src/kstream.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/markup__xml_parser.ml > src/markup__xml_parser.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/xml_tokenizer.ml > src/xml_tokenizer.ml.depends
+- ocamlfind ocamldep -package uutf -modules src/xml_writer.ml > src/xml_writer.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/detect.cmo src/detect.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_parser.cmo src/html_parser.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_tokenizer.cmo src/html_tokenizer.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_writer.cmo src/html_writer.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/input.cmo src/input.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/kstream.cmo src/kstream.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup__xml_parser.cmo src/markup__xml_parser.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_tokenizer.cmo src/xml_tokenizer.ml
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_writer.cmo src/xml_writer.ml
+- + ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/detect.cmo src/detect.ml
+- File "src/detect.ml", line 55, characters 8-24:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/detect.ml", line 225, characters 44-58:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 239, characters 39-53:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 251, characters 27-41:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 318, characters 43-57:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 465, characters 31-45:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- + ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_tokenizer.cmo src/xml_tokenizer.ml
+- File "src/xml_tokenizer.ml", line 382, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/xml_tokenizer.ml", line 422, characters 11-27:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/xml_tokenizer.ml", line 438, characters 35-51:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/xml_tokenizer.ml", line 498, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- + ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_parser.cmo src/html_parser.ml
+- File "src/html_parser.ml", line 231, characters 22-38:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/html_parser.ml", line 2771, characters 46-62:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/html_parser.ml", line 2780, characters 19-35:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamldep -package uutf -modules src/namespace.ml > src/namespace.ml.depends
+- ocamlfind ocamlc -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/namespace.cmo src/namespace.ml
+- ocamlfind ocamlc -a -package uutf src/common.cmo src/error.cmo src/kstream.cmo src/encoding.cmo src/input.cmo src/stream_io.cmo src/text.cmo src/xml_tokenizer.cmo src/detect.cmo src/entities.cmo src/html_tokenizer.cmo src/namespace.cmo src/html_parser.cmo src/html_writer.cmo src/markup__xml_parser.cmo src/utility.cmo src/xml_writer.cmo src/markup.cmo -o src/markup.cma
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/common.cmx src/common.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/error.cmx src/error.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/kstream.cmx src/kstream.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/text.cmx src/text.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/encoding.cmx src/encoding.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/input.cmx src/input.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/stream_io.cmx src/stream_io.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_tokenizer.cmx src/xml_tokenizer.ml
+- + ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_tokenizer.cmx src/xml_tokenizer.ml
+- File "src/xml_tokenizer.ml", line 382, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/xml_tokenizer.ml", line 422, characters 11-27:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/xml_tokenizer.ml", line 438, characters 35-51:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/xml_tokenizer.ml", line 498, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/entities.cmx src/entities.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_tokenizer.cmx src/html_tokenizer.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/namespace.cmx src/namespace.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/detect.cmx src/detect.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_parser.cmx src/html_parser.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_writer.cmx src/html_writer.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup__xml_parser.cmx src/markup__xml_parser.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/utility.cmx src/utility.ml
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/xml_writer.cmx src/xml_writer.ml
+- + ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/detect.cmx src/detect.ml
+- File "src/detect.ml", line 55, characters 8-24:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/detect.ml", line 225, characters 44-58:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 239, characters 39-53:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 251, characters 27-41:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 318, characters 43-57:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/detect.ml", line 465, characters 31-45:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- + ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/html_parser.cmx src/html_parser.ml
+- File "src/html_parser.ml", line 231, characters 22-38:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/html_parser.ml", line 2771, characters 46-62:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "src/html_parser.ml", line 2780, characters 19-35:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -g -w +A-4-9-44-45-48 -warn-error +A-3 -bin-annot -safe-string -package uutf -I src -I doc -I test -I test/pages -I test/dependency -I test/performance -I test/js_of_ocaml -o src/markup.cmx src/markup.ml
+- ocamlfind ocamlopt -a -package uutf src/common.cmx src/error.cmx src/kstream.cmx src/encoding.cmx src/input.cmx src/stream_io.cmx src/text.cmx src/xml_tokenizer.cmx src/detect.cmx src/entities.cmx src/html_tokenizer.cmx src/namespace.cmx src/html_parser.cmx src/html_writer.cmx src/markup__xml_parser.cmx src/utility.cmx src/xml_writer.cmx src/markup.cmx -o src/markup.cmxa
+- # Parallel statistics: { count(total): 7(53), max: 9, min: 2, average(total): 4.714(1.491) }
+- ! ocamlfind query lwt > /dev/null 2> /dev/null || (  ocamlbuild -use-ocamlfind -j 0 -no-links -cflags -g,-w,+A-4-9-44-45-48,-warn-error,+A-3,-bin-annot,-safe-string markup_lwt.cma markup_lwt.cmxa )
+- ! ocamlfind query lwt.unix > /dev/null 2> /dev/null || (  ocamlbuild -use-ocamlfind -j 0 -no-links -cflags -g,-w,+A-4-9-44-45-48,-warn-error,+A-3,-bin-annot,-safe-string markup_lwt_unix.cma markup_lwt_unix.cmxa )
+-> compiled  markup.0.7.2
+Processing  9/14: [re: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/re.1.7.1)
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_automata.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_cset.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_fmt.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_str.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_str.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_str.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_str.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_str.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_str.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_str.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_str.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_str.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_str.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_posix.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_posix.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_posix.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_posix.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_posix.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_posix.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_posix.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_posix.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_posix.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_posix.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_perl.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_perl.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_perl.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_perl.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_perl.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_perl.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_perl.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_perl.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_perl.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_perl.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_pcre.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_pcre.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_pcre.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_pcre.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_pcre.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_pcre.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_pcre.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_pcre.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_pcre.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_pcre.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_glob.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_glob.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_glob.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_glob.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_glob.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_glob.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_glob.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_glob.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_glob.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_glob.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_emacs.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_emacs.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_emacs.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_emacs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_emacs.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_emacs.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_emacs.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_emacs.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_emacs.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/re_emacs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/re/META
+- W: Nothing to install for findlib library 'fort_unit'
+-> installed re.1.7.1
+Processing 10/14: [markup: make ocamlfind-install]
++ make "ocamlfind-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/markup.0.7.2)
+- ocamlfind install markup src/META -optional _build/src/markup.cma _build/src/markup.cmxa _build/src/markup.a _build/src/markup.cmi _build/src/markup.mli _build/src/markup.cmti _build/src/markup.cmt _build/src/markup.cmx _build/src/markup_lwt.cma _build/src/markup_lwt.cmxa _build/src/markup_lwt.a _build/src/markup_lwt.cmi _build/src/markup_lwt.mli _build/src/markup_lwt.cmti _build/src/markup_lwt.cmt _build/src/markup_lwt.cmx _build/src/markup_lwt_unix.cma _build/src/markup_lwt_unix.cmxa _build/src/markup_lwt_unix.a _build/src/markup_lwt_unix.cmi _build/src/markup_lwt_unix.mli _build/src/markup_lwt_unix.cmti _build/src/markup_lwt_unix.cmt _build/src/markup_lwt_unix.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/markup/markup.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/markup/markup.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/markup/markup.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/markup/markup.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/markup/markup.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/markup/markup.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/markup/markup.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/markup/markup.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/markup/META
+-> installed markup.0.7.2
+Processing 11/14: [tyxml: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--enable-syntax" "--enable-ppx" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/tyxml.4.0.1)
+- ocamlfind: Package `camlp4.lib' not found
+- W: Field 'pkg_camlp4_lib' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.lib > '/tmp/oasis-03d4e3.txt'' terminated with error code 2
+- E: Cannot find findlib package camlp4.lib
+- E: Failure("1 configuration error")
+[ERROR] The compilation of tyxml failed at "ocaml setup.ml -configure --enable-syntax --enable-ppx --prefix /home/opam/.opam/ocaml-base-compiler.4.03.0".
+
+#=== ERROR while compiling tyxml.4.0.1 ========================================#
+# command              ocaml setup.ml -configure --enable-syntax --enable-ppx --prefix /home/opam/.opam/ocaml-base-compiler.4.03.0
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/tyxml.4.0.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/tyxml-1-543ebd.env
+# output-file          /home/opam/.opam/log/tyxml-1-543ebd.out
+### output ###
+# ocamlfind: Package `camlp4.lib' not found
+# W: Field 'pkg_camlp4_lib' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.lib > '/tmp/oasis-03d4e3.txt'' terminated with error code 2
+# E: Cannot find findlib package camlp4.lib
+# E: Failure("1 configuration error")
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install tyxml-ppx 4.0.1
++- 
++- The following actions failed
+| - build tyxml 4.0.1
++- 
++- The following changes have been performed
+| - install base-bytes base      
+| - install markup     0.7.2     
+| - install ppx_tools  5.0+4.03.0
+| - install re         1.7.1     
+| - install uutf       0.9.4     
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/backup/state-20161222171853.export"
+'opam install --verbose --yes --jobs=2 tyxml-ppx' failed.
+[2016-12-22 17:19.08] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "tyxml-ppx" exited with status 4
