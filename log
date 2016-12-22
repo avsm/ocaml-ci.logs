@@ -1,0 +1,217 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 ocamllint /home/opam/opam-repository/cache
+[2016-12-22 16:18.30] Starting...
+[2016-12-22 16:18.30] Waiting for free pool slot to run
+[2016-12-22 17:01.31] Pool slot obtained, starting run
+[2016-12-22 17:01.31] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 ocamllint
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_tools 5.0+4.03.0                                [required by ocamllint]
+  - install ocamllint 0.3.0     
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocamllint.0.3.0: dl]
+Processing  2/2: [ocamllint.0.3.0: dl] [ppx_tools.5.0+4.03.0: dl]
+[ppx_tools.5.0+4.03.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [ocamllint.0.3.0: dl]
+[ocamllint.0.3.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [ppx_tools: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_tools.5.0+4.03.0)
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+-> compiled  ppx_tools.5.0+4.03.0
+Processing  2/4: [ppx_tools: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ppx_tools.5.0+4.03.0)
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ppx_tools/META
+-> installed ppx_tools.5.0+4.03.0
+Processing  3/4: [ocamllint: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamllint.0.3.0)
+- ocamlbuild -use-ocamlfind ocamllint.cma ocamllint.cmxa ppx_lint.cma ppx_lint.cmxa ppx_lint.native ppx_lint.native
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -modules config.mli > config.mli.depends
+- ocamlfind ocamldep -package compiler-libs.common -modules context.mli > context.mli.depends
+- ocamlfind ocamldep -modules warning.mli > warning.mli.depends
+- ocamlfind ocamlc -c -package compiler-libs.common -for-pack Ocamllint -I 4.03 -o context.cmi context.mli
+- + ocamlfind ocamlc -c -package compiler-libs.common -for-pack Ocamllint -I 4.03 -o context.cmi context.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -c -for-pack Ocamllint -I 4.03 -o warning.cmi warning.mli
+- ocamlfind ocamlc -c -for-pack Ocamllint -I 4.03 -o config.cmi config.mli
+- ocamlfind ocamldep -modules config.ml > config.ml.depends
+- ocamlfind ocamldep -package compiler-libs.common -modules context.ml > context.ml.depends
+- ocamlfind ocamldep -package compiler-libs.common -modules plugin.mli > plugin.mli.depends
+- ocamlfind ocamlc -c -package compiler-libs.common -for-pack Ocamllint -I 4.03 -o plugin.cmi plugin.mli
+- + ocamlfind ocamlc -c -package compiler-libs.common -for-pack Ocamllint -I 4.03 -o plugin.cmi plugin.mli
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamldep -package compiler-libs.common -modules plugin.ml > plugin.ml.depends
+- ocamlfind ocamldep -modules warning.ml > warning.ml.depends
+- ocamlfind ocamlc -c -for-pack Ocamllint -I 4.03 -o config.cmo config.ml
+- + ocamlfind ocamlc -c -for-pack Ocamllint -I 4.03 -o config.cmo config.ml
+- File "config.ml", line 5, characters 34-59:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- ocamlfind ocamlc -c -package compiler-libs.common -for-pack Ocamllint -I 4.03 -o context.cmo context.ml
+- + ocamlfind ocamlc -c -package compiler-libs.common -for-pack Ocamllint -I 4.03 -o context.cmo context.ml
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -c -package compiler-libs.common -for-pack Ocamllint -I 4.03 -o plugin.cmo plugin.ml
+- + ocamlfind ocamlc -c -package compiler-libs.common -for-pack Ocamllint -I 4.03 -o plugin.cmo plugin.ml
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -c -for-pack Ocamllint -I 4.03 -o warning.cmo warning.ml
+- ocamlfind ocamlc -pack context.cmo warning.cmo config.cmo plugin.cmo -o ocamllint.cmo
+- ocamlfind ocamlc -a ocamllint.cmo -o ocamllint.cma
+- ocamlfind ocamlopt -c -package compiler-libs.common -for-pack Ocamllint -I 4.03 -o context.cmx context.ml
+- + ocamlfind ocamlopt -c -package compiler-libs.common -for-pack Ocamllint -I 4.03 -o context.cmx context.ml
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -for-pack Ocamllint -I 4.03 -o warning.cmx warning.ml
+- ocamlfind ocamlopt -c -for-pack Ocamllint -I 4.03 -o config.cmx config.ml
+- + ocamlfind ocamlopt -c -for-pack Ocamllint -I 4.03 -o config.cmx config.ml
+- File "config.ml", line 5, characters 34-59:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- ocamlfind ocamlopt -c -package compiler-libs.common -for-pack Ocamllint -I 4.03 -o plugin.cmx plugin.ml
+- + ocamlfind ocamlopt -c -package compiler-libs.common -for-pack Ocamllint -I 4.03 -o plugin.cmx plugin.ml
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- touch ocamllint.mli  ; if  ocamlfind ocamlopt -pack context.cmx warning.cmx config.cmx plugin.cmx -o ocamllint.cmx  ; then  rm -f ocamllint.mli  ; else  rm -f ocamllint.mli  ; exit 1; fi
+- ocamlfind ocamlopt -a ocamllint.cmx -o ocamllint.cmxa
+- ocamlfind ocamldep -package compiler-libs.common -package str -package ppx_tools.metaquot -package dynlink -modules ppx_lint.ml > ppx_lint.ml.depends
+- ocamlfind ocamldep -package compiler-libs.common -package str -package ppx_tools.metaquot -modules rules.mli > rules.mli.depends
+- ocamlfind ocamlc -c -package compiler-libs.common -package str -package ppx_tools.metaquot -I 4.03 -o rules.cmi rules.mli
+- + ocamlfind ocamlc -c -package compiler-libs.common -package str -package ppx_tools.metaquot -I 4.03 -o rules.cmi rules.mli
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -c -package compiler-libs.common -package str -package ppx_tools.metaquot -package dynlink -I 4.03 -o ppx_lint.cmo ppx_lint.ml
+- + ocamlfind ocamlc -c -package compiler-libs.common -package str -package ppx_tools.metaquot -package dynlink -I 4.03 -o ppx_lint.cmo ppx_lint.ml
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamldep -package compiler-libs.common -package str -package ppx_tools.metaquot -modules rules.ml > rules.ml.depends
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools -modules ast_tools.mli > ast_tools.mli.depends
+- ocamlfind ocamldep -modules typo.mli > typo.mli.depends
+- ocamlfind ocamlc -c -package compiler-libs.common -package ppx_tools -I 4.03 -o ast_tools.cmi ast_tools.mli
+- + ocamlfind ocamlc -c -package compiler-libs.common -package ppx_tools -I 4.03 -o ast_tools.cmi ast_tools.mli
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -c -I 4.03 -o typo.cmi typo.mli
+- ocamlfind ocamlc -c -package compiler-libs.common -package str -package ppx_tools.metaquot -I 4.03 -o rules.cmo rules.ml
+- + ocamlfind ocamlc -c -package compiler-libs.common -package str -package ppx_tools.metaquot -I 4.03 -o rules.cmo rules.ml
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- File "rules.ml", line 84, characters 6-22:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "rules.ml", line 87, characters 6-22:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools -modules ast_tools.ml > ast_tools.ml.depends
+- ocamlfind ocamldep -package compiler-libs.common -modules 4.03/compat.ml > 4.03/compat.ml.depends
+- ocamlfind ocamlc -c -package compiler-libs.common -I 4.03 -o 4.03/compat.cmo 4.03/compat.ml
+- + ocamlfind ocamlc -c -package compiler-libs.common -I 4.03 -o 4.03/compat.cmo 4.03/compat.ml
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamldep -modules typo.ml > typo.ml.depends
+- ocamlfind ocamlc -c -package compiler-libs.common -package ppx_tools -I 4.03 -o ast_tools.cmo ast_tools.ml
+- + ocamlfind ocamlc -c -package compiler-libs.common -package ppx_tools -I 4.03 -o ast_tools.cmo ast_tools.ml
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -c -I 4.03 -o typo.cmo typo.ml
+- ocamlfind ocamlc -a -package compiler-libs.common -package str -package ppx_tools.metaquot -package dynlink ocamllint.cmo 4.03/compat.cmo ast_tools.cmo typo.cmo rules.cmo ppx_lint.cmo -o ppx_lint.cma
+- + ocamlfind ocamlc -a -package compiler-libs.common -package str -package ppx_tools.metaquot -package dynlink ocamllint.cmo 4.03/compat.cmo ast_tools.cmo typo.cmo rules.cmo ppx_lint.cmo -o ppx_lint.cma
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -package compiler-libs.common -I 4.03 -o 4.03/compat.cmx 4.03/compat.ml
+- + ocamlfind ocamlopt -c -package compiler-libs.common -I 4.03 -o 4.03/compat.cmx 4.03/compat.ml
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -package compiler-libs.common -package ppx_tools -I 4.03 -o ast_tools.cmx ast_tools.ml
+- + ocamlfind ocamlopt -c -package compiler-libs.common -package ppx_tools -I 4.03 -o ast_tools.cmx ast_tools.ml
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -I 4.03 -o typo.cmx typo.ml
+- ocamlfind ocamlopt -c -package compiler-libs.common -package str -package ppx_tools.metaquot -I 4.03 -o rules.cmx rules.ml
+- + ocamlfind ocamlopt -c -package compiler-libs.common -package str -package ppx_tools.metaquot -I 4.03 -o rules.cmx rules.ml
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- File "rules.ml", line 84, characters 6-22:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "rules.ml", line 87, characters 6-22:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -package compiler-libs.common -package str -package ppx_tools.metaquot -package dynlink -I 4.03 -o ppx_lint.cmx ppx_lint.ml
+- + ocamlfind ocamlopt -c -package compiler-libs.common -package str -package ppx_tools.metaquot -package dynlink -I 4.03 -o ppx_lint.cmx ppx_lint.ml
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a -package compiler-libs.common -package str -package ppx_tools.metaquot -package dynlink 4.03/compat.cmx ast_tools.cmx ocamllint.cmx typo.cmx rules.cmx ppx_lint.cmx -o ppx_lint.cmxa
+- + ocamlfind ocamlopt -a -package compiler-libs.common -package str -package ppx_tools.metaquot -package dynlink 4.03/compat.cmx ast_tools.cmx ocamllint.cmx typo.cmx rules.cmx ppx_lint.cmx -o ppx_lint.cmxa
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -linkpkg -package compiler-libs.common -package str -package ppx_tools.metaquot -package dynlink 4.03/compat.cmx ast_tools.cmx ocamllint.cmx typo.cmx rules.cmx ppx_lint.cmx -o ppx_lint.native
+- + ocamlfind ocamlopt -linkpkg -package compiler-libs.common -package str -package ppx_tools.metaquot -package dynlink 4.03/compat.cmx ast_tools.cmx ocamllint.cmx typo.cmx rules.cmx ppx_lint.cmx -o ppx_lint.native
+- findlib: [WARNING] Interface config.cmi occurs in several directories: ., /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/compiler-libs
+-> compiled  ocamllint.0.3.0
+Processing  4/4: [ocamllint: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamllint.0.3.0)
+- ocamlfind remove ocamllint
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamllint
+- ocamlfind install ocamllint META _build/ocamllint.cma _build/ocamllint.cmxa _build/ppx_lint.cma _build/ppx_lint.cmxa _build/ppx_lint.native config.mli plugin.mli warning.mli _build/ocamllint.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamllint/ocamllint.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamllint/warning.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamllint/plugin.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamllint/config.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamllint/ppx_lint.native
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamllint/ppx_lint.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamllint/ppx_lint.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamllint/ocamllint.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamllint/ocamllint.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamllint/META
+-> installed ocamllint.0.3.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:01.51] Success
