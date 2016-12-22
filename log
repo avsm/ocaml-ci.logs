@@ -1,0 +1,901 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 lemonade-sqlite /home/opam/opam-repository/cache
+[2016-12-22 16:18.13] Starting...
+[2016-12-22 16:18.13] Waiting for free pool slot to run
+[2016-12-22 16:55.02] Pool slot obtained, starting run
+[2016-12-22 16:55.02] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 lemonade-sqlite
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - bmake
+#  - libsqlite3-dev
+#  - m4
+#  - pkg-config
+# The following new OS packages need to be installed: bmake libsqlite3-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy bmake libsqlite3-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package bmake.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../bmake_20160220-2_amd64.deb ...
+Unpacking bmake (20160220-2) ...
+Selecting previously unselected package libsqlite3-dev:amd64.
+Preparing to unpack .../libsqlite3-dev_3.11.0-1ubuntu1_amd64.deb ...
+Unpacking libsqlite3-dev:amd64 (3.11.0-1ubuntu1) ...
+Setting up bmake (20160220-2) ...
+Setting up libsqlite3-dev:amd64 (3.11.0-1ubuntu1) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by sqlite3]
+  - install conf-bmake      1.0                                 [required by lemonade-sqlite]
+  - install sqlite3         4.1.0                               [required by lemonade-sqlite]
+  - install bsdowl          3.0.0-20150830                      [required by lemonade-sqlite]
+  - install broken          0.4.2                               [required by lemonade-sqlite]
+  - install mixture         1.0.0                               [required by lemonade]
+  - install lemonade        0.6.0                               [required by lemonade-sqlite]
+  - install lemonade-sqlite 0.1.0         
+===== 8 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/8: [broken.0.4.2: dl]
+Processing  2/8: [broken.0.4.2: dl] [bsdowl.3.0.0-20150830: dl]
+Processing  3/8: [broken.0.4.2: dl] [bsdowl.3.0.0-20150830: dl]
+Processing  4/8: [broken.0.4.2: dl] [bsdowl.3.0.0-20150830: dl]
+Processing  5/8: [broken.0.4.2: dl] [bsdowl.3.0.0-20150830: dl] [lemonade.0.6.0: dl]
+[broken.0.4.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/8: [bsdowl.3.0.0-20150830: dl] [lemonade.0.6.0: dl]
+[bsdowl.3.0.0-20150830] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/8: [lemonade.0.6.0: dl]
+[lemonade.0.6.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/8:
+Processing  6/8: [lemonade-sqlite.0.1.0: dl]
+Processing  7/8: [lemonade-sqlite.0.1.0: dl] [mixture.1.0.0: dl]
+Processing  8/8: [lemonade-sqlite.0.1.0: dl] [mixture.1.0.0: dl] [sqlite3.4.1.0: dl]
+[lemonade-sqlite.0.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/8: [mixture.1.0.0: dl] [sqlite3.4.1.0: dl]
+[mixture.1.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/8: [sqlite3.4.1.0: dl]
+[sqlite3.4.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/8:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/16: [conf-bmake: sh bmake]
+Processing  2/16: [conf-bmake: sh bmake] [conf-pkg-config: pkg-config]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-pkg-config.1.0)
+- Usage:
+-   pkg-config [OPTION...]
+- 
+- Help Options:
+-   -h, --help                              Show help options
+- 
+- Application Options:
+-   --version                               output version of pkg-config
+-   --modversion                            output version for package
+-   --atleast-pkgconfig-version=VERSION     require given version of pkg-config
+-   --libs                                  output all linker flags
+-   --static                                output linker flags for static linking
+-   --short-errors                          print short errors
+-   --libs-only-l                           output -l flags
+-   --libs-only-other                       output other libs (e.g. -pthread)
+-   --libs-only-L                           output -L flags
+-   --cflags                                output all pre-processor and compiler flags
+-   --cflags-only-I                         output -I flags
+-   --cflags-only-other                     output cflags not covered by the cflags-only-I option
+-   --variable=NAME                         get the value of variable named NAME
+-   --define-variable=NAME=VALUE            set variable NAME to VALUE
+-   --exists                                return 0 if the module(s) exist
+-   --print-variables                       output list of variables defined by the module
+-   --uninstalled                           return 0 if the uninstalled version of one or more module(s) or their dependencies will be used
+-   --atleast-version=VERSION               return 0 if the module is at least version VERSION
+-   --exact-version=VERSION                 return 0 if the module is at exactly version VERSION
+-   --max-version=VERSION                   return 0 if the module is at no newer than version VERSION
+-   --list-all                              list all known packages
+-   --debug                                 show verbose debug information
+-   --print-errors                          show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)
+-   --silence-errors                        be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)
+-   --errors-to-stdout                      print errors from --print-errors to stdout not stderr
+-   --print-provides                        print which packages the package provides
+-   --print-requires                        print which packages the package requires
+-   --print-requires-private                print which packages the package requires for static linking
+-   --validate                              validate a package's .pc file
+-   --define-prefix                         try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --dont-define-prefix                    don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --prefix-variable=PREFIX                set the name of the variable that pkg-config automatically sets
+- 
+- Usage:
+-   pkg-config [OPTION...]
+- 
+- Help Options:
+-   -h, --help                              Show help options
+- 
+- Application Options:
+-   --version                               output version of pkg-config
+-   --modversion                            output version for package
+-   --atleast-pkgconfig-version=VERSION     require given version of pkg-config
+-   --libs                                  output all linker flags
+-   --static                                output linker flags for static linking
+-   --short-errors                          print short errors
+-   --libs-only-l                           output -l flags
+-   --libs-only-other                       output other libs (e.g. -pthread)
+-   --libs-only-L                           output -L flags
+-   --cflags                                output all pre-processor and compiler flags
+-   --cflags-only-I                         output -I flags
+-   --cflags-only-other                     output cflags not covered by the cflags-only-I option
+-   --variable=NAME                         get the value of variable named NAME
+-   --define-variable=NAME=VALUE            set variable NAME to VALUE
+-   --exists                                return 0 if the module(s) exist
+-   --print-variables                       output list of variables defined by the module
+-   --uninstalled                           return 0 if the uninstalled version of one or more module(s) or their dependencies will be used
+-   --atleast-version=VERSION               return 0 if the module is at least version VERSION
+-   --exact-version=VERSION                 return 0 if the module is at exactly version VERSION
+-   --max-version=VERSION                   return 0 if the module is at no newer than version VERSION
+-   --list-all                              list all known packages
+-   --debug                                 show verbose debug information
+-   --print-errors                          show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)
+-   --silence-errors                        be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)
+-   --errors-to-stdout                      print errors from --print-errors to stdout not stderr
+-   --print-provides                        print which packages the package provides
+-   --print-requires                        print which packages the package requires
+-   --print-requires-private                print which packages the package requires for static linking
+-   --validate                              validate a package's .pc file
+-   --define-prefix                         try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --dont-define-prefix                    don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --prefix-variable=PREFIX                set the name of the variable that pkg-config automatically sets
+- 
+-> compiled  conf-pkg-config.1.0
+Processing  2/16: [conf-bmake: sh bmake]
+-> installed conf-pkg-config.1.0
+Processing  3/16: [conf-bmake: sh bmake]
+Processing  4/16: [conf-bmake: sh bmake] [sqlite3: ocaml setup.ml]
++ sh "./detect_program.sh" "./conf-bmake.config" "bmake" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-bmake.1.0)
+- Debug: program: bmake
+- Debug: output: ./conf-bmake.config
+- Debug: pwd: /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-bmake.1.0
+- Debug: Looking for bmake in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- Debug: Looking for bmake in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- Debug: Looking for bmake in /usr/local/sbin
+- Debug: Looking for bmake in /usr/local/bin
+- Debug: Looking for bmake in /usr/sbin
+- Debug: Looking for bmake in /usr/bin
+- Debug: program: bmake
+- Debug: output: ./conf-bmake.config
+- Debug: pwd: /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-bmake.1.0
+- Debug: Looking for bmake in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- Debug: Looking for bmake in /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- Debug: Looking for bmake in /usr/local/sbin
+- Debug: Looking for bmake in /usr/local/bin
+- Debug: Looking for bmake in /usr/sbin
+- Debug: Looking for bmake in /usr/bin
+-> compiled  conf-bmake.1.0
+Processing  4/16: [sqlite3: ocaml setup.ml]
+-> installed conf-bmake.1.0
+Processing  5/16: [sqlite3: ocaml setup.ml]
+Processing  6/16: [bsdowl: ./configure] [sqlite3: ocaml setup.ml]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/bsdowl.3.0.0-20150830)
+- checking build system type... x86_64-unknown-linux-gnu
+- checking host system type... x86_64-unknown-linux-gnu
+- checking for a modern BSD Make program... bmake
+- checking for gawk... no
+- checking for mawk... mawk
+- checking for grep that handles long lines and -e... /bin/grep
+- checking for a BSD-compatible install... /usr/bin/install -c
+- checking whether ln -s works... yes
+- checking for a thread-safe mkdir -p... /bin/mkdir -p
+- checking for ocamlc... ocamlc
+- OCaml version is 4.03.0
+- OCaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for dynlink.cmxa... yes
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamlbuild... ocamlbuild
+- checking for a sed that does not truncate output... /bin/sed
+- checking for id that handles -g, -u and -n... id
+- checking whether tar -z works... yes
+- checking whether tar -j works... yes
+- checking whether tar -J works... yes
+- checking for ocamlfind... yes
+- checking for mingw32-gcc... no
+- checking for i586-mingw32msvc-cc... no
+- checking for mingw32-ar... no
+- checking for i586-mingw32msvc-ar... no
+- checking for noweb... no
+- checking for gpg... yes
+- checking for tex... no
+- configure: creating ./config.status
+- config.status: creating Makefile.config
+- config.status: creating bps/bps.bpsconfig.mk
+- 
+- ** Configuration Summary **
+- 
+- Optional Features:
+-   --enable-test-findlib=yes
+-   --enable-test-py-setuptools=no
+-   --enable-test-mingw32=no
+-   --enable-test-noweb=no
+-   --enable-test-gpg=yes
+-   --enable-test-texmf=no
+-   --enable-test-metapost=no
+- 
+- Optional Packages:
+-   --with-credentials=su
+- 
+- checking build system type... x86_64-unknown-linux-gnu
+- checking host system type... x86_64-unknown-linux-gnu
+- checking for a modern BSD Make program... bmake
+- checking for gawk... no
+- checking for mawk... mawk
+- checking for grep that handles long lines and -e... /bin/grep
+- checking for a BSD-compatible install... /usr/bin/install -c
+- checking whether ln -s works... yes
+- checking for a thread-safe mkdir -p... /bin/mkdir -p
+- checking for ocamlc... ocamlc
+- OCaml version is 4.03.0
+- OCaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for dynlink.cmxa... yes
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamlbuild... ocamlbuild
+- checking for a sed that does not truncate output... /bin/sed
+- checking for id that handles -g, -u and -n... id
+- checking whether tar -z works... yes
+- checking whether tar -j works... yes
+- checking whether tar -J works... yes
+- checking for ocamlfind... yes
+- checking for mingw32-gcc... no
+- checking for i586-mingw32msvc-cc... no
+- checking for mingw32-ar... no
+- checking for i586-mingw32msvc-ar... no
+- checking for noweb... no
+- checking for gpg... yes
+- checking for tex... no
+- configure: creating ./config.status
+- config.status: creating Makefile.config
+- config.status: creating bps/bps.bpsconfig.mk
+- 
+- ** Configuration Summary **
+- 
+- Optional Features:
+-   --enable-test-findlib=yes
+-   --enable-test-py-setuptools=no
+-   --enable-test-mingw32=no
+-   --enable-test-noweb=no
+-   --enable-test-gpg=yes
+-   --enable-test-texmf=no
+-   --enable-test-metapost=no
+- 
+- Optional Packages:
+-   --with-credentials=su
+- 
+Processing  6/16: [bsdowl: /usr/bin/bmake build] [sqlite3: ocaml setup.ml]
++ /usr/bin/bmake "-r" "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/bsdowl.3.0.0-20150830)
+- ===> bps (build)
+- ===> ocaml (build)
+- ===> texmf (build)
+- ===> langc (build)
+- ===> noweb (build)
+- ===> config (build)
+- ===> script (build)
+- ===> misc (build)
+- ===> www (build)
+- ===> support (build)
+- /bin/sed -e 's|@PACKAGE@|bsdowl|g' -e 's|@VERSION@|3.0.0-20150830|g' -e 's|@prefix@|/home/opam/.opam/ocaml-base-compiler.4.03.0|g' -e 's|@exec_prefix@|/home/opam/.opam/ocaml-base-compiler.4.03.0|g' -e 's|@bindir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/bin|g' -e 's|@sbindir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/sbin|g' -e 's|@libexecdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/libexec|g' -e 's|@datarootdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share|g' -e 's|@datadir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share|g' -e 's|@sysconfdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/etc|g' -e 's|@sharedstatedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/com|g' -e 's|@localstatedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/var|g' -e 's|@runstatedir@|@runstatedir@|g' -e 's|@includedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/include|g' -e 's|@docdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/doc/bsdowl|g' -e 's|@infodir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/info|g' -e 's|@libdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/lib|g' -e 's|@localedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/locale|g' -e 's|@mandir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/man|g' -e 's|@BINDIR@|/home/opam/.opam/ocaml-base-compiler.4.03.0/bin|g' < mp2png.sh > mp2png
+- ===> bps (build)
+- ===> ocaml (build)
+- ===> texmf (build)
+- ===> langc (build)
+- ===> noweb (build)
+- ===> config (build)
+- ===> script (build)
+- ===> misc (build)
+- ===> www (build)
+- ===> support (build)
+- /bin/sed -e 's|@PACKAGE@|bsdowl|g' -e 's|@VERSION@|3.0.0-20150830|g' -e 's|@prefix@|/home/opam/.opam/ocaml-base-compiler.4.03.0|g' -e 's|@exec_prefix@|/home/opam/.opam/ocaml-base-compiler.4.03.0|g' -e 's|@bindir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/bin|g' -e 's|@sbindir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/sbin|g' -e 's|@libexecdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/libexec|g' -e 's|@datarootdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share|g' -e 's|@datadir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share|g' -e 's|@sysconfdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/etc|g' -e 's|@sharedstatedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/com|g' -e 's|@localstatedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/var|g' -e 's|@runstatedir@|@runstatedir@|g' -e 's|@includedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/include|g' -e 's|@docdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/doc/bsdowl|g' -e 's|@infodir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/info|g' -e 's|@libdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/lib|g' -e 's|@localedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/locale|g' -e 's|@mandir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/man|g' -e 's|@BINDIR@|/home/opam/.opam/ocaml-base-compiler.4.03.0/bin|g' < mp2png.sh > mp2png
+-> compiled  bsdowl.3.0.0-20150830
+Processing  6/16: [sqlite3: ocaml setup.ml]
+Processing  7/16: [sqlite3: ocaml setup.ml] [bsdowl: /usr/bin/bmake install]
++ /usr/bin/bmake "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/bsdowl.3.0.0-20150830)
+- ===> bps (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.init.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.bpsconfig.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.package.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.uses.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.module.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.external.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.product.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.architecture.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.configuration.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.credentials.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.objdir.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.own.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.man.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.usertarget.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.clean.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.subdir.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.files.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.autoconf.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.preparatives.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.replace.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.project.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.m4.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.noweb.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.test-expected.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> ocaml (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.uses.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.module.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.external.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.build.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.depend.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.find.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.meta.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.init.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.lex.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.lib.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.pack.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.main.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.object.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.prog.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.dirs.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.source.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.compile.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.tools.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.yacc.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.odoc.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.manual.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.toplevel.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> texmf (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.init.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.uses.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.module.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.external.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.depend.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.clean.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.build.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.mpost.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.draft.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.bibtex.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.index.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 tex.doc.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 plain.files.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 latex.doc.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 latex.files.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 mpost.doc.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 mpost.files.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> langc (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.init.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.build.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.uses.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.module.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.external.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.depend.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.prog.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.lib.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> noweb (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/texmf-local/tex/latex/bsdowl
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 nwlatex.tex /home/opam/.opam/ocaml-base-compiler.4.03.0/share/texmf-local/tex/latex/bsdowl
+- install -o opam -g opam -m 440 nwlatex.css /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> config (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 conf.dotfile.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 conf.freebsd.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> script (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 script.main.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 shell.prog.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 shell.lib.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 python.prog.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 python.lib.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 python.init.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 python.uses.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 python.setuptools.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> misc (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 elisp.lib.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 generic.files.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 generic.subdir.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 generic.project.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 generic.test.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> www (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 www.files.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 www.sgml.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> support (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- install -o opam -g opam -m 550 mp2png /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- ===> bps (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.init.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.bpsconfig.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.package.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.uses.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.module.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.external.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.product.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.architecture.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.configuration.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.credentials.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.objdir.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.own.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.man.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.usertarget.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.clean.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.subdir.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.files.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.autoconf.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.preparatives.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.replace.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.project.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.m4.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.noweb.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 bps.test-expected.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> ocaml (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.uses.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.module.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.external.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.build.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.depend.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.find.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.meta.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.init.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.lex.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.lib.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.pack.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.main.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.object.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.prog.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.dirs.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.source.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.compile.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.tools.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.yacc.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.odoc.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.manual.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 ocaml.toplevel.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> texmf (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.init.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.uses.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.module.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.external.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.depend.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.clean.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.build.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.mpost.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.draft.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.bibtex.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 texmf.index.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 tex.doc.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 plain.files.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 latex.doc.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 latex.files.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 mpost.doc.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 mpost.files.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> langc (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.init.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.build.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.uses.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.module.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.external.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.depend.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.prog.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 langc.lib.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> noweb (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/texmf-local/tex/latex/bsdowl
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 nwlatex.tex /home/opam/.opam/ocaml-base-compiler.4.03.0/share/texmf-local/tex/latex/bsdowl
+- install -o opam -g opam -m 440 nwlatex.css /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> config (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 conf.dotfile.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 conf.freebsd.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> script (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 script.main.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 shell.prog.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 shell.lib.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 python.prog.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 python.lib.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 python.init.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 python.uses.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 python.setuptools.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> misc (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 elisp.lib.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 generic.files.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 generic.subdir.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 generic.project.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 generic.test.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> www (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 www.files.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- install -o opam -g opam -m 440 www.sgml.mk /home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl
+- ===> support (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- install -o opam -g opam -m 550 mp2png /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+-> installed bsdowl.3.0.0-20150830
+Processing  7/16: [sqlite3: ocaml setup.ml]
+Processing  8/16: [broken: ./configure] [sqlite3: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sqlite3.4.1.0)
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ sqlite3
+- Package version: ..................................... 4.1.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.03.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: .........................
+- Strict compile-time checks: .......................... true
+- Try to check against a homebrewed sqlite3: ........... false
+- Enable loadable extensions: .......................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- 
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ sqlite3
+- Package version: ..................................... 4.1.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.03.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: .........................
+- Strict compile-time checks: .......................... true
+- Try to check against a homebrewed sqlite3: ........... false
+- Enable loadable extensions: .......................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- 
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2)
+- checking for ocamlc... ocamlc
+- OCaml version is 4.03.0
+- OCaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for dynlink.cmxa... yes
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamlbuild... ocamlbuild
+- checking for ocamlfind... ocamlfind
+- checking for findlib package unix... found
+- configure: creating ./config.status
+- config.status: creating Makefile.config
+- checking for ocamlc... ocamlc
+- OCaml version is 4.03.0
+- OCaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for dynlink.cmxa... yes
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamlbuild... ocamlbuild
+- checking for ocamlfind... ocamlfind
+- checking for findlib package unix... found
+- configure: creating ./config.status
+- config.status: creating Makefile.config
+Processing  8/16: [broken: /usr/bin/bmake all] [sqlite3: ocaml setup.ml]
++ /usr/bin/bmake "-I/home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl" "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2)
+- /usr/bin/bmake depend
+- ===> src (depend)
+- (cd /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src && ocamldep -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I +. -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src broken.ml broken.mli broken.ml broken.mli) | sh -c '/bin/sed -e "s@/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/*@@g" -e "s@/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/*@@g"' -- OCAMLDEP_FILTER  > .depend
+- ===> meta (depend)
+- ===> manual (depend)
+- ===> testsuite (depend)
+- ===> testsuite/unit-testing (depend)
+- (cd /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/testsuite/unit-testing && ocamldep -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I +. -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -native testBroken.ml main.ml) | sh -c '/bin/sed -e "s@/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/*@@g" -e "s@/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/*@@g"' -- OCAMLDEP_FILTER  > .depend
+- ===> testsuite/trip-trap (depend)
+- (cd /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/testsuite/trip-trap && ocamldep -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I +. -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -native main.ml) | sh -c '/bin/sed -e "s@/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/*@@g" -e "s@/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/*@@g"' -- OCAMLDEP_FILTER  > .depend
+- /usr/bin/bmake build
+- ===> src (build)
+- ocamlfind ocamlc -c -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -o broken.cmi broken.mli
+- ocamlfind ocamlopt -c -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -o broken.cmx broken.ml
+- ocamlopt -a -o broken.cmxa broken.cmx
+- ocamlfind ocamlc -c -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -o broken.cmo broken.ml
+- ocamlc -a -o broken.cma broken.cmo
+- ===> meta (build)
+- /bin/sed -e 's|@PACKAGE@|broken|g' -e 's|@VERSION@|0.4.2|g' -e 's|@prefix@|/home/opam/.opam/ocaml-base-compiler.4.03.0|g' -e 's|@exec_prefix@|/home/opam/.opam/ocaml-base-compiler.4.03.0|g' -e 's|@bindir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/bin|g' -e 's|@sbindir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/sbin|g' -e 's|@libexecdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/libexec|g' -e 's|@datarootdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share|g' -e 's|@datadir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share|g' -e 's|@sysconfdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/etc|g' -e 's|@sharedstatedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/com|g' -e 's|@localstatedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/var|g' -e 's|@runstatedir@|@runstatedir@|g' -e 's|@includedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/include|g' -e 's|@docdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/doc/broken|g' -e 's|@infodir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/info|g' -e 's|@libdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/lib|g' -e 's|@ocamllibdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/lib|g' -e 's|@localedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/locale|g' -e 's|@mandir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/man|g' broken.in > broken
+- ===> manual (build)
+- ===> testsuite (build)
+- /usr/bin/bmake doc
+- ===> src (doc)
+- ocamlfind ocamldoc -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -t "Ocamldoc dump for broken" -short-functors -dump broken.odoc broken.ml broken.mli
+- ===> meta (doc)
+- ===> manual (doc)
+- rm -R -f broken_html.temp broken_html
+- mkdir broken_html.temp
+- ocamlfind ocamldoc -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -t "Broken Testing Framework" -short-functors -load /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/broken.odoc -html -charset utf-8 -intro intro.text -d broken_html.temp 
+- cp /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/Library/Data/broken.css broken_html.temp/style.css
+- mv broken_html.temp broken_html
+- ===> testsuite (doc)
+- ===> testsuite/unit-testing (doc)
+- ===> testsuite/trip-trap (doc)
+- /usr/bin/bmake depend
+- ===> src (depend)
+- (cd /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src && ocamldep -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I +. -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src broken.ml broken.mli broken.ml broken.mli) | sh -c '/bin/sed -e "s@/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/*@@g" -e "s@/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/*@@g"' -- OCAMLDEP_FILTER  > .depend
+- ===> meta (depend)
+- ===> manual (depend)
+- ===> testsuite (depend)
+- ===> testsuite/unit-testing (depend)
+- (cd /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/testsuite/unit-testing && ocamldep -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I +. -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -native testBroken.ml main.ml) | sh -c '/bin/sed -e "s@/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/*@@g" -e "s@/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/*@@g"' -- OCAMLDEP_FILTER  > .depend
+- ===> testsuite/trip-trap (depend)
+- (cd /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/testsuite/trip-trap && ocamldep -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I +. -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -native main.ml) | sh -c '/bin/sed -e "s@/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/*@@g" -e "s@/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/*@@g"' -- OCAMLDEP_FILTER  > .depend
+- /usr/bin/bmake build
+- ===> src (build)
+- ocamlfind ocamlc -c -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -o broken.cmi broken.mli
+- ocamlfind ocamlopt -c -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -o broken.cmx broken.ml
+- ocamlopt -a -o broken.cmxa broken.cmx
+- ocamlfind ocamlc -c -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -o broken.cmo broken.ml
+- ocamlc -a -o broken.cma broken.cmo
+- ===> meta (build)
+- /bin/sed -e 's|@PACKAGE@|broken|g' -e 's|@VERSION@|0.4.2|g' -e 's|@prefix@|/home/opam/.opam/ocaml-base-compiler.4.03.0|g' -e 's|@exec_prefix@|/home/opam/.opam/ocaml-base-compiler.4.03.0|g' -e 's|@bindir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/bin|g' -e 's|@sbindir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/sbin|g' -e 's|@libexecdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/libexec|g' -e 's|@datarootdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share|g' -e 's|@datadir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share|g' -e 's|@sysconfdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/etc|g' -e 's|@sharedstatedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/com|g' -e 's|@localstatedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/var|g' -e 's|@runstatedir@|@runstatedir@|g' -e 's|@includedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/include|g' -e 's|@docdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/doc/broken|g' -e 's|@infodir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/info|g' -e 's|@libdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/lib|g' -e 's|@ocamllibdir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/lib|g' -e 's|@localedir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/locale|g' -e 's|@mandir@|/home/opam/.opam/ocaml-base-compiler.4.03.0/share/man|g' broken.in > broken
+- ===> manual (build)
+- ===> testsuite (build)
+- /usr/bin/bmake doc
+- ===> src (doc)
+- ocamlfind ocamldoc -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -t "Ocamldoc dump for broken" -short-functors -dump broken.odoc broken.ml broken.mli
+- ===> meta (doc)
+- ===> manual (doc)
+- rm -R -f broken_html.temp broken_html
+- mkdir broken_html.temp
+- ocamlfind ocamldoc -package "unix" -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -I /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src -t "Broken Testing Framework" -short-functors -load /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/src/broken.odoc -html -charset utf-8 -intro intro.text -d broken_html.temp 
+- cp /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/Library/Data/broken.css broken_html.temp/style.css
+- mv broken_html.temp broken_html
+- ===> testsuite (doc)
+- ===> testsuite/unit-testing (doc)
+- ===> testsuite/trip-trap (doc)
+-> compiled  broken.0.4.2
+Processing  8/16: [sqlite3: ocaml setup.ml]
+Processing  9/16: [sqlite3: ocaml setup.ml] [broken: /usr/bin/bmake install]
+[ERROR] The installation of broken failed at "/usr/bin/bmake -I/home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl install".
++ /usr/bin/bmake "-I/home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2)
+- ===> src (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+- install -o opam -g opam -m 440 broken.cmxa /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+- install -o opam -g opam -m 440 broken.a /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+- install -o opam -g opam -m 440 broken.cma /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+- install -o opam -g opam -m 440 broken.cmi /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+- ===> meta (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+- install -o opam -g opam -m 440 broken /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken/META
+- ===> manual (install)
+- install -d -o opam -g opam /home/opam/.opam/ocaml-base-compiler.4.03.0/share/doc/broken/html
+- (cd broken_html && sh -c '(find $1 -depth $3 | cpio -dump $2 >/dev/null 2>&1) && find $1 -depth $3 -type d -exec chmod 755 $2/{} \; && find $1 -depth $3 -type f -exec chmod 440 $2/{} \;' COPYTREE_DOC . /home/opam/.opam/ocaml-base-compiler.4.03.0/share/doc/broken/html)
+- *** Error code 127
+- 
+- Stop.
+- bmake[1]: stopped in /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/manual
+- *** Error code 1
+- 
+- Stop.
+- bmake: stopped in /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2
+- ===> src (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+- install -o opam -g opam -m 440 broken.cmxa /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+- install -o opam -g opam -m 440 broken.a /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+- install -o opam -g opam -m 440 broken.cma /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+- install -o opam -g opam -m 440 broken.cmi /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+- ===> meta (install)
+- install -d /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+- install -o opam -g opam -m 440 broken /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken/META
+- ===> manual (install)
+- install -d -o opam -g opam /home/opam/.opam/ocaml-base-compiler.4.03.0/share/doc/broken/html
+- (cd broken_html && sh -c '(find $1 -depth $3 | cpio -dump $2 >/dev/null 2>&1) && find $1 -depth $3 -type d -exec chmod 755 $2/{} \; && find $1 -depth $3 -type f -exec chmod 440 $2/{} \;' COPYTREE_DOC . /home/opam/.opam/ocaml-base-compiler.4.03.0/share/doc/broken/html)
+- *** Error code 127
+- 
+- Stop.
+- bmake[1]: stopped in /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/manual
+- *** Error code 1
+- 
+- Stop.
+- bmake: stopped in /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2
+Processing  9/16: [sqlite3: ocaml setup.ml] [broken: ocamlfind remove]
++ ocamlfind "remove" "broken"
+- Removed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+- Removed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken
+Processing  9/16: [sqlite3: ocaml setup.ml] [broken: rm]
++ rm "-rf" "/home/opam/.opam/ocaml-base-compiler.4.03.0/share/doc/broken"
+Processing  9/16: [sqlite3: ocaml setup.ml]
+Processing 10/16: [sqlite3: ocaml setup.ml]
+Processing 11/16: [sqlite3: ocaml setup.ml]
+Processing 12/16: [sqlite3: ocaml setup.ml]
+Processing 13/16: [sqlite3: ocaml setup.ml]
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sqlite3.4.1.0)
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- bcs false, proc_env false
+- ----------pkg_export: ------------
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -g -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt -Wno-keyword-macro -c src/sqlite3_stubs.c
+- mv sqlite3_stubs.o src/sqlite3_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlmklib -o src/sqlite3_stubs -lsqlite3 -lpthread -lsqlite3 src/sqlite3_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/sqlite3.mli > src/sqlite3.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt -Wno-keyword-macro -w Aer-44 -I src -o src/sqlite3.cmi src/sqlite3.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamldep -modules src/sqlite3.ml > src/sqlite3.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt -Wno-keyword-macro -w Aer-44 -I src -o src/sqlite3.cmo src/sqlite3.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlc -a -dllib -lsqlite3_stubs -cclib -lsqlite3_stubs -cclib -lsqlite3 -cclib -lpthread -cclib -lsqlite3 -cclib -lsqlite3 src/sqlite3.cmo -o src/sqlite3.cma
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt -Wno-keyword-macro -w Aer-44 -I src -o src/sqlite3.cmx src/sqlite3.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -a -cclib -lsqlite3_stubs -cclib -lsqlite3 -cclib -lpthread -cclib -lsqlite3 -cclib -lsqlite3 src/sqlite3.cmx -o src/sqlite3.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind ocamlopt -shared -cclib -lsqlite3_stubs -I src -cclib -lsqlite3 src/sqlite3.cmxa src/sqlite3.cmx -o src/sqlite3.cmxs
+-> compiled  sqlite3.4.1.0
+Processing 14/16: [sqlite3: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sqlite3.4.1.0)
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sqlite3/sqlite3.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sqlite3/libsqlite3_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sqlite3/sqlite3.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sqlite3/sqlite3.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sqlite3/sqlite3.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sqlite3/sqlite3.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sqlite3/sqlite3.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sqlite3/sqlite3.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sqlite3/sqlite3.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sqlite3/sqlite3.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sqlite3/sqlite3.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sqlite3/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllsqlite3_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllsqlite3_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+-> installed sqlite3.4.1.0
+
+#=== ERROR while installing broken.0.4.2 ======================================#
+# command              /usr/bin/bmake -I/home/opam/.opam/ocaml-base-compiler.4.03.0/share/bsdowl install
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2
+# exit-code            1
+# env-file             /home/opam/.opam/log/broken-1-562576.env
+# output-file          /home/opam/.opam/log/broken-1-562576.out
+### output ###
+# [...]
+# install -o opam -g opam -m 440 broken /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/broken/META
+# ===> manual (install)
+# install -d -o opam -g opam /home/opam/.opam/ocaml-base-compiler.4.03.0/share/doc/broken/html
+# (cd broken_html && sh -c '(find $1 -depth $3 | cpio -dump $2 >/dev/null 2>&1) && find $1 -depth $3 -type d -exec chmod 755 $2/{} \; && find $1 -depth $3 -type f -exec chmod 440 $2/{} \;' COPYTREE_DOC . /home/opam/.opam/ocaml-base-compiler.4.03.0/share/doc/broken/html)
+# *** Error code 127
+# 
+# Stop.
+# bmake[1]: stopped in /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2/manual
+# *** Error code 1
+# 
+# Stop.
+# bmake: stopped in /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/broken.0.4.2
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install lemonade        0.6.0
+| - install lemonade-sqlite 0.1.0
+| - install mixture         1.0.0
++- 
++- The following actions failed
+| - install broken 0.4.2
++- 
++- The following changes have been performed
+| - install bsdowl          3.0.0-20150830
+| - install conf-bmake      1.0           
+| - install conf-pkg-config 1.0           
+| - install sqlite3         4.1.0         
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/backup/state-20161222165516.export"
+'opam install --verbose --yes --jobs=2 lemonade-sqlite' failed.
+[2016-12-22 16:55.27] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "lemonade-sqlite" exited with status 4
