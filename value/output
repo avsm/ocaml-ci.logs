@@ -1,0 +1,62 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libblas-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libblas-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libgfortran3:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libgfortran3_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+Unpacking libgfortran3:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+Selecting previously unselected package libgfortran-5-dev:amd64.
+Preparing to unpack .../libgfortran-5-dev_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+Unpacking libgfortran-5-dev:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+Selecting previously unselected package gfortran-5.
+Preparing to unpack .../gfortran-5_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+Unpacking gfortran-5 (5.4.0-6ubuntu1~16.04.4) ...
+Selecting previously unselected package gfortran.
+Preparing to unpack .../gfortran_4%3a5.3.1-1ubuntu1_amd64.deb ...
+Unpacking gfortran (4:5.3.1-1ubuntu1) ...
+Selecting previously unselected package libblas-common.
+Preparing to unpack .../libblas-common_3.6.0-2ubuntu2_amd64.deb ...
+Unpacking libblas-common (3.6.0-2ubuntu2) ...
+Selecting previously unselected package libblas3.
+Preparing to unpack .../libblas3_3.6.0-2ubuntu2_amd64.deb ...
+Unpacking libblas3 (3.6.0-2ubuntu2) ...
+Selecting previously unselected package libblas-dev.
+Preparing to unpack .../libblas-dev_3.6.0-2ubuntu2_amd64.deb ...
+Unpacking libblas-dev (3.6.0-2ubuntu2) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libgfortran3:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+Setting up libgfortran-5-dev:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+Setting up gfortran-5 (5.4.0-6ubuntu1~16.04.4) ...
+Setting up gfortran (4:5.3.1-1ubuntu1) ...
+update-alternatives: using /usr/bin/gfortran to provide /usr/bin/f95 (f95) in auto mode
+update-alternatives: using /usr/bin/gfortran to provide /usr/bin/f77 (f77) in auto mode
+Setting up libblas-common (3.6.0-2ubuntu2) ...
+Setting up libblas3 (3.6.0-2ubuntu2) ...
+update-alternatives: using /usr/lib/libblas/libblas.so.3 to provide /usr/lib/libblas.so.3 (libblas.so.3) in auto mode
+Setting up libblas-dev (3.6.0-2ubuntu2) ...
+update-alternatives: using /usr/lib/libblas/libblas.so to provide /usr/lib/libblas.so (libblas.so) in auto mode
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-blas 1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-blas: sh cc $CFLAGS test.c -lblas]
++ sh "-exc" "cc $CFLAGS test.c -lblas" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-blas.1)
+- + cc test.c -lblas
+-> compiled  conf-blas.1
+-> installed conf-blas.1
+Done.
+# Run eval `opam env` to update the current shell environment
