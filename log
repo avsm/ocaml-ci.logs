@@ -1,0 +1,81 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 camlprime /home/opam/opam-repository/cache
+[2016-12-22 16:19.19] Starting...
+[2016-12-22 16:19.19] Waiting for free pool slot to run
+[2016-12-22 17:37.49] Pool slot obtained, starting run
+[2016-12-22 17:37.49] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 camlprime
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install camlprime 0.5
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [camlprime.0.5: dl]
+[camlprime.0.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [camlprime: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlprime.0.5)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlprime.0.5'
+- ocamlfind ocamldep prime.mli > ._bcdi/prime.di
+- ocamlfind ocamldep math.mli > ._bcdi/math.di
+- ocamlfind ocamldep rand.mli > ._bcdi/rand.di
+- ocamlfind ocamldep lazyList.mli > ._bcdi/lazyList.di
+- ocamlfind ocamldep prime.ml > ._d/prime.d
+- ocamlfind ocamldep math.ml > ._d/math.d
+- ocamlfind ocamldep rand.ml > ._d/rand.d
+- ocamlfind ocamldep lazyList.ml > ._d/lazyList.d
+- ocamlfind ocamlc -package num,threads -c -thread lazyList.mli
+- ocamlfind ocamlc -package num,threads -c -thread lazyList.ml
+- ocamlfind ocamlc -package num,threads -c -thread rand.mli
+- ocamlfind ocamlc -package num,threads -c -thread rand.ml
+- ocamlfind ocamlc -package num,threads -c -thread math.mli
+- ocamlfind ocamlc -package num,threads -c -thread math.ml
+- ocamlfind ocamlc -package num,threads -c -thread prime.mli
+- ocamlfind ocamlc -package num,threads -c -thread prime.ml
+- ocamlfind ocamlc -a -thread                -o camlprime.cma lazyList.cmo rand.cmo math.cmo prime.cmo
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlprime.0.5'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlprime.0.5'
+- ocamlfind ocamldep -native prime.mli > ._ncdi/prime.di
+- ocamlfind ocamldep -native math.mli > ._ncdi/math.di
+- ocamlfind ocamldep -native rand.mli > ._ncdi/rand.di
+- ocamlfind ocamldep -native lazyList.mli > ._ncdi/lazyList.di
+- ocamlfind ocamlopt -package num,threads -c -thread lazyList.ml
+- ocamlfind ocamlopt -package num,threads -c -thread rand.ml
+- ocamlfind ocamlopt -package num,threads -c -thread math.ml
+- ocamlfind ocamlopt -package num,threads -c -thread prime.ml
+- ocamlfind ocamlopt -a -thread                -o camlprime.cmxa lazyList.cmx rand.cmx math.cmx prime.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlprime.0.5'
+-> compiled  camlprime.0.5
+Processing  2/2: [camlprime: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlprime.0.5)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlprime.0.5'
+- make[1]: 'camlprime.cma' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlprime.0.5'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlprime.0.5'
+- make[1]: 'camlprime.cmxa' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlprime.0.5'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  camlprime META META prime.mli lazyList.mli math.mli rand.mli math.cmi rand.cmi prime.cmi lazyList.cmi camlprime.cma camlprime.cmxa camlprime.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlprime/camlprime.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlprime/camlprime.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlprime/camlprime.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlprime/lazyList.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlprime/prime.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlprime/rand.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlprime/math.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlprime/rand.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlprime/math.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlprime/lazyList.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlprime/prime.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlprime/META
+- 
+- Installation successful.
+-> installed camlprime.0.5
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:38.05] Success
