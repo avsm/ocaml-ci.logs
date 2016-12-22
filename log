@@ -1,0 +1,183 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 distributed /home/opam/opam-repository/cache
+[2016-12-22 16:17.54] Starting...
+[2016-12-22 16:17.54] Waiting for free pool slot to run
+[2016-12-22 16:43.17] Pool slot obtained, starting run
+[2016-12-22 16:43.17] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 distributed
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+#  - ncurses-dev
+#  - pkg-config
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by conf-ncurses]
+  - install conf-ncurses    1                                   [required by lwt]
+  - install lwt             2.4.5                               [required by distributed]
+  - install distributed     0.3.0
+===== 4 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  3/4: [distributed.0.3.0: dl]
+Processing  4/4: [distributed.0.3.0: dl] [lwt.2.4.5: dl]
+[distributed.0.3.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4: [lwt.2.4.5: dl]
+[lwt.2.4.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/8: [conf-pkg-config: pkg-config]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-pkg-config.1.0)
+- Usage:
+-   pkg-config [OPTION...]
+- 
+- Help Options:
+-   -h, --help                              Show help options
+- 
+- Application Options:
+-   --version                               output version of pkg-config
+-   --modversion                            output version for package
+-   --atleast-pkgconfig-version=VERSION     require given version of pkg-config
+-   --libs                                  output all linker flags
+-   --static                                output linker flags for static linking
+-   --short-errors                          print short errors
+-   --libs-only-l                           output -l flags
+-   --libs-only-other                       output other libs (e.g. -pthread)
+-   --libs-only-L                           output -L flags
+-   --cflags                                output all pre-processor and compiler flags
+-   --cflags-only-I                         output -I flags
+-   --cflags-only-other                     output cflags not covered by the cflags-only-I option
+-   --variable=NAME                         get the value of variable named NAME
+-   --define-variable=NAME=VALUE            set variable NAME to VALUE
+-   --exists                                return 0 if the module(s) exist
+-   --print-variables                       output list of variables defined by the module
+-   --uninstalled                           return 0 if the uninstalled version of one or more module(s) or their dependencies will be used
+-   --atleast-version=VERSION               return 0 if the module is at least version VERSION
+-   --exact-version=VERSION                 return 0 if the module is at exactly version VERSION
+-   --max-version=VERSION                   return 0 if the module is at no newer than version VERSION
+-   --list-all                              list all known packages
+-   --debug                                 show verbose debug information
+-   --print-errors                          show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)
+-   --silence-errors                        be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)
+-   --errors-to-stdout                      print errors from --print-errors to stdout not stderr
+-   --print-provides                        print which packages the package provides
+-   --print-requires                        print which packages the package requires
+-   --print-requires-private                print which packages the package requires for static linking
+-   --validate                              validate a package's .pc file
+-   --define-prefix                         try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --dont-define-prefix                    don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --prefix-variable=PREFIX                set the name of the variable that pkg-config automatically sets
+- 
+-> compiled  conf-pkg-config.1.0
+-> installed conf-pkg-config.1.0
+-> installed conf-ncurses.1
+Processing  5/8: [lwt: ./configure]
++ ./configure "--disable-libev" "--disable-react" "--disable-ssl" "--enable-unix" "--enable-extra" "--enable-preemptive" "--disable-glib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lwt.2.4.5)
+- File "./setup.ml", line 254, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 294, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 294, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 303, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 303, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 306, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 344, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 450, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1737, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1743, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 2419, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 5764, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5765, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5766, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5767, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5832, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5833, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5834, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5835, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Field 'pkg_camlp4_quotations_o' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-6af182.txt'' terminated with error code 2
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-af54dc.txt'' terminated with error code 2")
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-146ad8.txt'' terminated with error code 2")
+- E: Cannot find findlib package camlp4.quotations.o
+- E: Failure("1 configuration error")
+[ERROR] The compilation of lwt failed at "./configure --disable-libev --disable-react --disable-ssl --enable-unix --enable-extra --enable-preemptive --disable-glib".
+
+#=== ERROR while compiling lwt.2.4.5 ==========================================#
+# command              ./configure --disable-libev --disable-react --disable-ssl --enable-unix --enable-extra --enable-preemptive --disable-glib
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lwt.2.4.5
+# exit-code            1
+# env-file             /home/opam/.opam/log/lwt-1-6cc03f.env
+# output-file          /home/opam/.opam/log/lwt-1-6cc03f.out
+### output ###
+# [...]
+# Use String.uncapitalize_ascii instead.
+# File "setup.ml", line 5835, characters 31-48:
+# Warning 3: deprecated: String.capitalize
+# Use String.capitalize_ascii instead.
+# ocamlfind: Package `camlp4.quotations.o' not found
+# W: Field 'pkg_camlp4_quotations_o' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-6af182.txt'' terminated with error code 2
+# ocamlfind: Package `camlp4.quotations.o' not found
+# W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-af54dc.txt'' terminated with error code 2")
+# ocamlfind: Package `camlp4.quotations.o' not found
+# W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-146ad8.txt'' terminated with error code 2")
+# E: Cannot find findlib package camlp4.quotations.o
+# E: Failure("1 configuration error")
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install distributed 0.3.0
++- 
++- The following actions failed
+| - build lwt 2.4.5
++- 
++- The following changes have been performed
+| - install conf-ncurses    1  
+| - install conf-pkg-config 1.0
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/backup/state-20161222164327.export"
+'opam install --verbose --yes --jobs=2 distributed' failed.
+[2016-12-22 16:43.34] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "distributed" exited with status 4
