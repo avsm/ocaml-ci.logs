@@ -1,0 +1,64 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 bigstring /home/opam/opam-repository/cache
+[2016-12-22 16:19.16] Starting...
+[2016-12-22 16:19.16] Waiting for free pool slot to run
+[2016-12-22 17:35.16] Pool slot obtained, starting run
+[2016-12-22 17:35.16] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 bigstring
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes base                                     [required by bigstring]
+  - install bigstring  0.1.1
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [bigstring.0.1.1: dl]
+[bigstring.0.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed base-bytes.base
+Processing  3/4: [bigstring: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/bigstring.0.1.1)
+- ocamlbuild -use-ocamlfind bigstring.cma bigstring.cmxa bigstring.cmxs
+- ocamlfind ocamldep -package bytes -package bigarray -modules src/bigstring.mli > src/bigstring.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -w +a-4-44 -package bytes -package bigarray -I src -o src/bigstring.cmi src/bigstring.mli
+- ocamlfind ocamldep -package bytes -package bigarray -modules src/bigstring.ml > src/bigstring.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -w +a-4-44 -package bytes -package bigarray -I src -o src/bigstring.cmo src/bigstring.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -w +a-4-44 -package bytes -package bigarray -I src -o src/bigstring.cmo src/bigstring.ml
+- File "src/bigstring.ml", line 289, characters 25-39:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/bigstring.ml", line 291, characters 25-39:
+- Warning 3: deprecated: Char.uppercase
+- Use Char.uppercase_ascii instead.
+- ocamlfind ocamlc -a -package bytes -package bigarray src/bigstring.cmo -o src/bigstring.cma
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -w +a-4-44 -package bytes -package bigarray -I src -o src/bigstring.cmx src/bigstring.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -w +a-4-44 -package bytes -package bigarray -I src -o src/bigstring.cmx src/bigstring.ml
+- File "src/bigstring.ml", line 289, characters 25-39:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "src/bigstring.ml", line 291, characters 25-39:
+- Warning 3: deprecated: Char.uppercase
+- Use Char.uppercase_ascii instead.
+- ocamlfind ocamlopt -a -package bytes -package bigarray src/bigstring.cmx -o src/bigstring.cmxa
+- ocamlfind ocamlopt -shared -package bytes -package bigarray src/bigstring.cmx -o src/bigstring.cmxs
+-> compiled  bigstring.0.1.1
+Processing  4/4: [bigstring: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/bigstring.0.1.1)
+- ocamlbuild -use-ocamlfind bigstring.cma bigstring.cmxa bigstring.cmxs
+- ocamlfind install bigstring META _build/src/bigstring.cma _build/src/bigstring.cmxa _build/src/bigstring.cmxs _build/src/bigstring.cmi _build/src/bigstring.cmx _build/src/bigstring.a _build/src/*.mli 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bigstring/bigstring.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bigstring/bigstring.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bigstring/bigstring.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bigstring/bigstring.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bigstring/bigstring.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bigstring/bigstring.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bigstring/bigstring.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bigstring/META
+-> installed bigstring.0.1.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:35.33] Success
