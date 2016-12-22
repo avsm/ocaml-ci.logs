@@ -1,0 +1,95 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 libevent /home/opam/opam-repository/cache
+[2016-12-22 16:18.13] Starting...
+[2016-12-22 16:18.13] Waiting for free pool slot to run
+[2016-12-22 16:55.07] Pool slot obtained, starting run
+[2016-12-22 16:55.07] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 libevent
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libevent-dev
+#  - m4
+# The following new OS packages need to be installed: libevent-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libevent-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libevent-2.0-5:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libevent-2.0-5_2.0.21-stable-2_amd64.deb ...
+Unpacking libevent-2.0-5:amd64 (2.0.21-stable-2) ...
+Selecting previously unselected package libevent-core-2.0-5:amd64.
+Preparing to unpack .../libevent-core-2.0-5_2.0.21-stable-2_amd64.deb ...
+Unpacking libevent-core-2.0-5:amd64 (2.0.21-stable-2) ...
+Selecting previously unselected package libevent-extra-2.0-5:amd64.
+Preparing to unpack .../libevent-extra-2.0-5_2.0.21-stable-2_amd64.deb ...
+Unpacking libevent-extra-2.0-5:amd64 (2.0.21-stable-2) ...
+Selecting previously unselected package libevent-openssl-2.0-5:amd64.
+Preparing to unpack .../libevent-openssl-2.0-5_2.0.21-stable-2_amd64.deb ...
+Unpacking libevent-openssl-2.0-5:amd64 (2.0.21-stable-2) ...
+Selecting previously unselected package libevent-pthreads-2.0-5:amd64.
+Preparing to unpack .../libevent-pthreads-2.0-5_2.0.21-stable-2_amd64.deb ...
+Unpacking libevent-pthreads-2.0-5:amd64 (2.0.21-stable-2) ...
+Selecting previously unselected package libevent-dev.
+Preparing to unpack .../libevent-dev_2.0.21-stable-2_amd64.deb ...
+Unpacking libevent-dev (2.0.21-stable-2) ...
+Setting up libevent-2.0-5:amd64 (2.0.21-stable-2) ...
+Setting up libevent-core-2.0-5:amd64 (2.0.21-stable-2) ...
+Setting up libevent-extra-2.0-5:amd64 (2.0.21-stable-2) ...
+Setting up libevent-openssl-2.0-5:amd64 (2.0.21-stable-2) ...
+Setting up libevent-pthreads-2.0-5:amd64 (2.0.21-stable-2) ...
+Setting up libevent-dev (2.0.21-stable-2) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install libevent 0.7.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [libevent.0.7.0: dl]
+[libevent.0.7.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [libevent: make depend]
++ make "depend" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/libevent.0.7.0)
+- Makefile:104: depend: No such file or directory
+- gcc -MM *.c > depend
+- ocamldep *.mli *.ml >> depend
+- make: 'depend' is up to date.
+Processing  1/2: [libevent: make all]
++ make "all" "allopt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/libevent.0.7.0)
+- ocamlc -c -ccopt "-DFULL_UNROLL -Wall -O2 -I/usr/local/include" event_stubs.c
+- ocamlmklib -oc mloevent event_stubs.o \
+- -L/usr/local/lib -levent
+- ocamlc -c  libevent.mli
+- ocamlc -c  -nolabels libevent.ml
+- ocamlmklib -o liboevent libevent.cmo -oc mloevent \
+- -L/usr/local/lib -levent
+- ocamlopt -c  -nolabels libevent.ml
+- ocamlmklib -o liboevent libevent.cmx -oc mloevent \
+- -L/usr/local/lib -levent
+-> compiled  libevent.0.7.0
+Processing  2/2: [libevent: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/libevent.0.7.0)
+- { test ! -f liboevent.cmxa || extra="liboevent.cmxa libevent.cmx liboevent.a"; }; \
+- ocamlfind install libevent -patch-version 0.7.0 META libevent.cmi libevent.mli liboevent.cma \
+- dllmloevent.so libmloevent.a $extra
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/libevent/liboevent.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/libevent/libevent.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/libevent/liboevent.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/libevent/libmloevent.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/libevent/liboevent.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/libevent/libevent.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/libevent/libevent.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/libevent/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllmloevent.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllmloevent.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+-> installed libevent.0.7.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 16:55.25] Success
