@@ -1,0 +1,137 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 xstr /home/opam/opam-repository/cache
+[2016-12-22 16:20.42] Starting...
+[2016-12-22 16:20.42] Waiting for free pool slot to run
+[2016-12-22 18:28.09] Pool slot obtained, starting run
+[2016-12-22 18:28.09] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 xstr
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install xstr 0.2.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [xstr.0.2.1: dl]
+[xstr.0.2.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [xstr: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xstr.0.2.1)
+- Makefile:95: depend: No such file or directory
+- ocamldep  *.ml *.mli >depend
+- ocamlc -g    -c xstr_split.mli
+- ocamlc -g    -c xstr_split.ml
+- File "xstr_split.ml", line 35, characters 12-24:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "xstr_split.ml", line 88, characters 29-30:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "xstr_split.ml", line 126, characters 28-29:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- ocamlc -g    -c xstr_search.mli
+- ocamlc -g    -c xstr_search.ml
+- File "xstr_search.ml", line 104, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "xstr_search.ml", line 171, characters 18-19:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "xstr_search.ml", line 30, characters 6-7:
+- Warning 26: unused variable l.
+- ocamlc -g    -c xstr_match.mli
+- ocamlc -g    -c xstr_match.ml
+- File "xstr_match.ml", line 42, characters 19-31:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "xstr_match.ml", line 43, characters 20-32:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "xstr_match.ml", line 62, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "xstr_match.ml", line 72, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "xstr_match.ml", line 82, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "xstr_match.ml", line 142, characters 4-45:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "xstr_match.ml", line 143, characters 4-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "xstr_match.ml", line 593, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlc -g    -a -o xstr.cma xstr_split.cmo xstr_search.cmo xstr_match.cmo
+Processing  1/2: [xstr: make opt]
++ make "opt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xstr.0.2.1)
+- ocamlopt    -c xstr_split.ml
+- File "xstr_split.ml", line 35, characters 12-24:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "xstr_split.ml", line 88, characters 29-30:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "xstr_split.ml", line 126, characters 28-29:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- ocamlopt    -c xstr_search.ml
+- File "xstr_search.ml", line 104, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "xstr_search.ml", line 171, characters 18-19:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "xstr_search.ml", line 30, characters 6-7:
+- Warning 26: unused variable l.
+- ocamlopt    -c xstr_match.ml
+- File "xstr_match.ml", line 42, characters 19-31:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "xstr_match.ml", line 43, characters 20-32:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "xstr_match.ml", line 62, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "xstr_match.ml", line 72, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "xstr_match.ml", line 82, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "xstr_match.ml", line 142, characters 4-45:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "xstr_match.ml", line 143, characters 4-41:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "xstr_match.ml", line 593, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlopt    -a -o xstr.cmxa xstr_split.cmx xstr_search.cmx xstr_match.cmx
+-> compiled  xstr.0.2.1
+Processing  2/2: [xstr: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xstr.0.2.1)
+- { test ! -f xstr.cmxa || extra="*.cmxa *.a"; }; \
+- ocamlfind install xstr *.mli *.cmi *.cma META $extra
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xstr/xstr.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xstr/xstr.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xstr/xstr.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xstr/xstr_split.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xstr/xstr_search.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xstr/xstr_match.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xstr/xstr_split.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xstr/xstr_search.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xstr/xstr_match.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/xstr/META
+-> installed xstr.0.2.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:28.24] Success
