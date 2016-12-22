@@ -1,0 +1,70 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install camlgpc 1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [camlgpc.1.0: dl]
+[camlgpc.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [camlgpc: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlgpc.1.0)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlgpc.1.0'
+- ocamlc -c -cc "cc" -ccopt "-fPIC  \
+- 			-DPIC -DNATIVE_CODE   \
+- 			    -o gpc.o " gpc.c 
+- ocamlc -c -cc "cc" -ccopt "-fPIC  \
+- 			-DPIC -DNATIVE_CODE   \
+- 			    -o gpcml.o " gpcml.c 
+- ar rcs libcamlgpc_stubs.a  gpc.o gpcml.o
+- ocamlc -c clip.mli
+- ocamlopt -c -g clip.ml
+- ocamlopt -a              -cclib -lcamlgpc_stubs   \
+- 			 -o camlgpc.cmxa clip.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlgpc.1.0'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlgpc.1.0'
+- make[1]: 'libcamlgpc_stubs.a' is up to date.
+- ocamlc -c -g clip.ml
+- ocamlmklib          \
+- 			-o camlgpc_stubs  gpc.o gpcml.o  \
+- 			
+- ocamlc -a -dllib dllcamlgpc_stubs.so -custom              \
+- 			-cclib -lcamlgpc_stubs   -o camlgpc.cma  clip.cmo
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlgpc.1.0'
+- rm -rf doc/camlgpc/html
+- mkdir -p doc/camlgpc/html
+- ocamldoc -html -d doc/camlgpc/html clip.mli
+-> compiled  camlgpc.1.0
+Processing  2/2: [camlgpc: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlgpc.1.0)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlgpc.1.0'
+- make[1]: 'libcamlgpc_stubs.a' is up to date.
+- make[1]: 'camlgpc.cmxa' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlgpc.1.0'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlgpc.1.0'
+- make[1]: 'libcamlgpc_stubs.a' is up to date.
+- make[1]: 'camlgpc.cma' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlgpc.1.0'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  camlgpc META camlgpc.a camlgpc.cma camlgpc.cmxa libcamlgpc_stubs.a dllcamlgpc_stubs.* clip.mli clip.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlgpc/clip.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlgpc/clip.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlgpc/libcamlgpc_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlgpc/camlgpc.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlgpc/camlgpc.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlgpc/camlgpc.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlgpc/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllcamlgpc_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllcamlgpc_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+-> installed camlgpc.1.0
+Done.
+# Run eval `opam env` to update the current shell environment
