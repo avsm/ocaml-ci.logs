@@ -1,0 +1,341 @@
+=== docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 ocamlyices /home/opam/opam-repository/cache
+[2016-12-22 16:18.30] Starting...
+[2016-12-22 16:18.31] Waiting for free pool slot to run
+[2016-12-22 17:01.51] Pool slot obtained, starting run
+[2016-12-22 17:01.51] docker run sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9 opam depext -ivyj 2 ocamlyices
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install camlidl    1.05                                     [required by ocamlyices]
+  - install ocamlyices 0.7.1
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [camlidl.1.05: dl]
+Processing  2/2: [camlidl.1.05: dl] [ocamlyices.0.7.1: dl]
+[ocamlyices.0.7.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [camlidl.1.05: dl]
+[camlidl.1.05] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [camlidl: patch]
+Processing  1/4: [camlidl: mv]
++ mv "config/Makefile.unix" "config/Makefile" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05)
+Processing  1/4: [camlidl: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05)
+- cd compiler; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/compiler'
+- rm -f config.ml
+- sed -e 's|%%CPP%%|cpp|' \
+-           config.mlp > config.ml
+- chmod -w config.ml
+- ocamlc -g -warn-error -31 -c config.mli
+- ocamlc -g -warn-error -31 -c config.ml
+- ocamlc -g -warn-error -31 -c utils.mli
+- ocamlc -g -warn-error -31 -c utils.ml
+- File "utils.ml", line 51, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlc -g -warn-error -31 -c clflags.ml
+- ocamlc -g -warn-error -31 -c idltypes.mli
+- ocamlc -g -warn-error -31 -c prefix.mli
+- ocamlc -g -warn-error -31 -c prefix.ml
+- ocamlc -g -warn-error -31 -c lexpr.mli
+- ocamlc -g -warn-error -31 -c lexpr.ml
+- File "lexpr.ml", line 268, characters 10-16:
+- Warning 26: unused variable trail'.
+- ocamlc -g -warn-error -31 -c cvttyp.mli
+- ocamlc -g -warn-error -31 -c cvttyp.ml
+- File "cvttyp.ml", line 126, characters 49-66:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "cvttyp.ml", line 127, characters 20-39:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "cvttyp.ml", line 132, characters 49-66:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "cvttyp.ml", line 135, characters 25-44:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c variables.mli
+- ocamlc -g -warn-error -31 -c variables.ml
+- ocamlc -g -warn-error -31 -c array.mli
+- ocamlc -g -warn-error -31 -c array.ml
+- ocamlc -g -warn-error -31 -c struct.mli
+- ocamlc -g -warn-error -31 -c struct.ml
+- ocamlc -g -warn-error -31 -c enum.mli
+- ocamlc -g -warn-error -31 -c enum.ml
+- ocamlc -g -warn-error -31 -c union.mli
+- ocamlc -g -warn-error -31 -c union.ml
+- ocamlc -g -warn-error -31 -c cvtval.mli
+- ocamlc -g -warn-error -31 -c cvtval.ml
+- ocamlc -g -warn-error -31 -c structdecl.mli
+- ocamlc -g -warn-error -31 -c structdecl.ml
+- File "structdecl.ml", line 30, characters 27-46:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "structdecl.ml", line 39, characters 19-38:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c enumdecl.mli
+- ocamlc -g -warn-error -31 -c enumdecl.ml
+- File "enumdecl.ml", line 30, characters 28-47:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "enumdecl.ml", line 32, characters 37-54:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c uniondecl.mli
+- ocamlc -g -warn-error -31 -c uniondecl.ml
+- File "uniondecl.ml", line 30, characters 28-47:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "uniondecl.ml", line 37, characters 24-41:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c typedef.mli
+- ocamlc -g -warn-error -31 -c typedef.ml
+- File "typedef.ml", line 48, characters 30-49:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "typedef.ml", line 50, characters 25-44:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "typedef.ml", line 53, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c funct.mli
+- ocamlc -g -warn-error -31 -c funct.ml
+- File "funct.ml", line 104, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c constdecl.mli
+- ocamlc -g -warn-error -31 -c constdecl.ml
+- File "constdecl.ml", line 34, characters 26-45:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "constdecl.ml", line 54, characters 13-32:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "constdecl.ml", line 36, characters 4-24:
+- Warning 26: unused variable ty.
+- ocamlc -g -warn-error -31 -c intf.mli
+- ocamlc -g -warn-error -31 -c intf.ml
+- File "intf.ml", line 46, characters 21-40:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 51, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 52, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 62, characters 18-37:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 162, characters 17-36:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 163, characters 18-37:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 199, characters 21-40:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 260, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 312, characters 12-16:
+- Warning 26: unused variable outs.
+- File "intf.ml", line 312, characters 7-10:
+- Warning 26: unused variable ins.
+- ocamlc -g -warn-error -31 -c file.mli
+- ocamlc -g -warn-error -31 -c file.ml
+- File "file.ml", line 216, characters 31-47:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlc -g -warn-error -31 -c predef.mli
+- ocamlc -g -warn-error -31 -c predef.ml
+- ocamllex linenum.mll
+- 16 states, 331 transitions, table size 1420 bytes
+- ocamlc -g -warn-error -31 -c linenum.mli
+- ocamlc -g -warn-error -31 -c linenum.ml
+- ocamlc -g -warn-error -31 -c parse_aux.mli
+- ocamlc -g -warn-error -31 -c parse_aux.ml
+- File "parse_aux.ml", line 167, characters 23-54:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 169, characters 42-74:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 171, characters 22-47:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 230, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "parse_aux.ml", line 459, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlyacc -v parser_midl.mly
+- 12 shift/reduce conflicts.
+- ocamlc -g -warn-error -31 -c parser_midl.mli
+- ocamlc -g -warn-error -31 -c parser_midl.ml
+- ocamllex lexer_midl.mll
+- 129 states, 1747 transitions, table size 7762 bytes
+- ocamlc -g -warn-error -31 -c lexer_midl.mli
+- ocamlc -g -warn-error -31 -c lexer_midl.ml
+- ocamlc -g -warn-error -31 -c parse.mli
+- ocamlc -g -warn-error -31 -c parse.ml
+- ocamlc -g -warn-error -31 -c fixlabels.mli
+- ocamlc -g -warn-error -31 -c fixlabels.ml
+- ocamlc -g -warn-error -31 -c normalize.mli
+- ocamlc -g -warn-error -31 -c normalize.ml
+- ocamlc -g -warn-error -31 -c main.ml
+- ocamlc -g -warn-error -31 -o camlidl config.cmo utils.cmo clflags.cmo prefix.cmo lexpr.cmo cvttyp.cmo variables.cmo array.cmo struct.cmo enum.cmo union.cmo cvtval.cmo structdecl.cmo enumdecl.cmo uniondecl.cmo typedef.cmo funct.cmo constdecl.cmo intf.cmo file.cmo predef.cmo linenum.cmo parse_aux.cmo parser_midl.cmo lexer_midl.cmo parse.cmo fixlabels.cmo normalize.cmo main.cmo
+- File "array.cmo", line 1:
+- Warning 31: files array.cmo and /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/stdlib.cma(Array) both define a module named Array
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/compiler'
+- cd runtime; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/runtime'
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" idlalloc.c
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" comintf.c
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" comerror.c
+- comerror.c: In function 'camlidl_error':
+- comerror.c:52:8: warning: unused variable 'msg' [-Wunused-variable]
+-    char msg[1024];
+-         ^
+- In file included from /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/mlvalues.h:20:0,
+-                  from comerror.c:20:
+- comerror.c: In function 'camlidl_uncaught_exception':
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/compatibility.h:255:31: warning: implicit declaration of function 'caml_format_exception' [-Wimplicit-function-declaration]
+-  #define format_caml_exception caml_format_exception /*SP*/
+-                                ^
+- comerror.c:171:16: note: in expansion of macro 'format_caml_exception'
+-    char * msg = format_caml_exception(exn_bucket);
+-                 ^
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/compatibility.h:255:31: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+-  #define format_caml_exception caml_format_exception /*SP*/
+-                                ^
+- comerror.c:171:16: note: in expansion of macro 'format_caml_exception'
+-    char * msg = format_caml_exception(exn_bucket);
+-                 ^
+- rm -f dllcamlidl.so
+- ocamlmklib -o camlidl  idlalloc.o comintf.o comerror.o 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/runtime'
+- cd lib; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/lib'
+- ocamlc -g -warn-error -31 -c com.mli
+- ocamlc -g -warn-error -31 -c com.ml
+- ocamlc -g -warn-error -31 -a -o com.cma com.cmo
+- ocamlopt -c com.ml
+- ocamlopt -a -o com.cmxa com.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/lib'
+- cd tools; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/tools'
+- make[1]: Nothing to be done for 'all'.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/tools'
+-> compiled  camlidl.1.05
+-> installed camlidl.1.05
+Processing  3/4: [ocamlyices: ./configure]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlyices.0.7.1)
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking for g++... g++
+- checking whether we are using the GNU C++ compiler... yes
+- checking whether g++ accepts -g... yes
+- checking for ranlib... ranlib
+- checking for ocamlc... ocamlc
+- checking for Ocaml version... 4.03.0
+- checking for Ocaml stdlib path... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlfind... ocamlfind
+- checking for ocamlopt... ocamlopt
+- checking for Ocaml version consistency... yes
+- checking for ocamldoc... ocamldoc
+- checking for camlidl... camlidl
+- checking for camlidl's package... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl
+- configure: add camlidl to library search path
+- checking how to run the C preprocessor... gcc -E
+- checking for grep that handles long lines and -e... /bin/grep
+- checking for egrep... /bin/grep -E
+- checking for ANSI C header files... yes
+- checking for sys/types.h... yes
+- checking for sys/stat.h... yes
+- checking for stdlib.h... yes
+- checking for string.h... yes
+- checking for memory.h... yes
+- checking for strings.h... yes
+- checking for inttypes.h... 
+- yes
+- checking for stdint.h... yes
+- checking for unistd.h... yes
+- checking caml/camlidlruntime.h usability... yes
+- checking caml/camlidlruntime.h presence... yes
+- checking for caml/camlidlruntime.h... yes
+- checking for __gmpz_init... no
+- checking for yices_version... no
+- configure: error: Cannot find yices.
+- 
+- Please download and install Yices 1.0.34 or more recent (but not 2).
+- (1) Download the tarball from Yices' official website:
+-   http://yices.csl.sri.com/download.shtml
+- (2) Install it on your system (libraries and headers).
+- You may use either the following command as root:
+-   wget -q -O- http://git.io/sWxMmg | sh -s yices-XYZ.tar.gz
+- or this one as a sudoer:
+-   wget -q -O- http://git.io/sWxMmg | sudo sh -s yices-XYZ.tar.gz
+- In both case, yices-XYZ.tar.gz should be replaced with the path to the
+- downloaded tarball. Also, additional parameters can be added to specify
+- installation directories (root and library path), e.g.:
+-   wget -q -O- http://git.io/sWxMmg | sh -s <yices-XYZ.tar.gz> /opt /opt/lib64
+-   
+[ERROR] The compilation of ocamlyices failed at "./configure".
+
+#=== ERROR while compiling ocamlyices.0.7.1 ===================================#
+# command              ./configure
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlyices.0.7.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/ocamlyices-1-0325cb.env
+# output-file          /home/opam/.opam/log/ocamlyices-1-0325cb.out
+### output ###
+# [...]
+# (1) Download the tarball from Yices' official website:
+#   http://yices.csl.sri.com/download.shtml
+# (2) Install it on your system (libraries and headers).
+# You may use either the following command as root:
+#   wget -q -O- http://git.io/sWxMmg | sh -s yices-XYZ.tar.gz
+# or this one as a sudoer:
+#   wget -q -O- http://git.io/sWxMmg | sudo sh -s yices-XYZ.tar.gz
+# In both case, yices-XYZ.tar.gz should be replaced with the path to the
+# downloaded tarball. Also, additional parameters can be added to specify
+# installation directories (root and library path), e.g.:
+#   wget -q -O- http://git.io/sWxMmg | sh -s <yices-XYZ.tar.gz> /opt /opt/lib64
+#   
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build ocamlyices 0.7.1
++- 
++- The following changes have been performed
+| - install camlidl 1.05
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/backup/state-20161222170200.export"
+'opam install --verbose --yes --jobs=2 ocamlyices' failed.
+[2016-12-22 17:02.10] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:566e37f7c12f20d848798cb313110a537d3ab3b50f2e7325c08969d0b12410f9" "opam" "depext" "-ivyj" "2" "ocamlyices" exited with status 4
