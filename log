@@ -1,0 +1,71 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 conf-ida /home/opam/opam-repository/cache
+[2016-12-22 16:19.23] Starting...
+[2016-12-22 16:19.23] Waiting for free pool slot to run
+[2016-12-22 17:39.48] Pool slot obtained, starting run
+[2016-12-22 17:39.48] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 conf-ida
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-ida 0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-ida: sh find-ida.sh]
++ sh "-x" "find-ida.sh" "linux" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-ida.0.1)
+- + IFS=
+- 
+- + HEADLESS=false
+- + find
+- + [ -z ]
+- + find_command idaq64
+- + which idaq64
+- + command=
+- + [  ]
+- + [ ]
+- + locate_linux
+- + locate -w -r idaq64$
+- find-ida.sh: 1: find-ida.sh: locate: not found
+- + sort -n -r
+- + results=
+- + [ -z ]
+- + HEADLESS=true
+- + [ -z ]
+- + echo failed to locate IDA Pro
+- failed to locate IDA Pro
+- + exit 1
+[ERROR] The compilation of conf-ida failed at "sh -x find-ida.sh linux".
+
+#=== ERROR while compiling conf-ida.0.1 =======================================#
+# command              sh -x find-ida.sh linux
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-ida.0.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-ida-1-58c514.env
+# output-file          /home/opam/.opam/log/conf-ida-1-58c514.out
+### output ###
+# [...]
+# + [ ]
+# + locate_linux
+# + locate -w -r idaq64$
+# find-ida.sh: 1: find-ida.sh: locate: not found
+# + sort -n -r
+# + results=
+# + [ -z ]
+# + HEADLESS=true
+# + [ -z ]
+# + echo failed to locate IDA Pro
+# failed to locate IDA Pro
+# + exit 1
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-ida 0.1
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-ida' failed.
+[2016-12-22 17:40.02] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191" "opam" "depext" "-ivyj" "2" "conf-ida" exited with status 4
