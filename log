@@ -1,0 +1,89 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 lpi /home/opam/opam-repository/cache
+[2016-12-22 16:19.52] Starting...
+[2016-12-22 16:19.52] Waiting for free pool slot to run
+[2016-12-22 17:58.52] Pool slot obtained, starting run
+[2016-12-22 17:58.52] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 lpi
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install lpi 0.0.2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [lpi.0.0.2: dl]
+[lpi.0.0.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [lpi: ocamllex]
++ ocamllex "src/lexer.mll" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2)
+- 93 states, 3649 transitions, table size 15154 bytes
+Processing  1/2: [lpi: ocamlyacc]
++ ocamlyacc "src/parser.mly" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2)
+- 1 shift/reduce conflict.
+Processing  1/2: [lpi: make depend]
++ make "-C" "src/" "depend" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2)
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2/src'
+- ocamldep -I . *.ml > ../objects/.depend
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2/src'
+Processing  1/2: [lpi: make]
++ make "-C" "src/" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2)
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2/src'
+- ocamlc -I .     -c ast.mli
+- ocamlc -I .     -c ast.ml
+- ocamlc -I .     -c environment.ml
+- ocamlc -I .     -c basis.mli
+- ocamlc -I .     -c basis.ml
+- ocamlc -I .     -c parser.mli
+- ocamlc -I .     -c parser.ml
+- ocamlc -I .     -c lexer.ml
+- ocamlc -I .     -c staticsemantics.ml
+- ocamlc -I .     -c interpret.mli
+- ocamlc -I .     -c interpret.ml
+- ocamlc -a -I .     unix.cma ast.cmo environment.cmo basis.cmo parser.cmo lexer.cmo staticsemantics.cmo interpret.cmo -o ../lpi.cma
+- mv ./*.cm* ../objects
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2/src'
+Processing  1/2: [lpi: make lpi]
++ make "-C" "src/" "lpi" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2)
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2/src'
+- ocamlc -I .     -c ast.mli
+- ocamlc -I .     -c environment.ml
+- ocamlc -I .     -c staticsemantics.ml
+- ocamlc -I .     -c interpret.mli
+- ocamlc -I .     -c basis.mli
+- ocamlc -I .     -c interpreter.ml
+- ocamlc -o ../lpi-repl -I .     ../lpi.cma interpreter.cmo
+- mv ./*.cm* ../objects
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2/src'
+-> compiled  lpi.0.0.2
+Processing  2/2: [lpi: make install]
++ make "-C" "src/" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2)
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2/src'
+- ocamlfind install lpi ../META ../lpi.cma ../lpi-repl \
+- ../objects/*.cm*
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/staticsemantics.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/staticsemantics.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/parser.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/parser.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/lexer.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/lexer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/interpreter.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/interpreter.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/interpret.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/interpret.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/environment.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/environment.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/basis.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/basis.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/ast.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/ast.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/lpi-repl
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/lpi.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/lpi/META
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/lpi.0.0.2/src'
+-> installed lpi.0.0.2
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:59.07] Success
