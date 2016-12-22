@@ -1,0 +1,852 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 orm /home/opam/opam-repository/cache
+[2016-12-22 16:20.13] Starting...
+[2016-12-22 16:20.13] Waiting for free pool slot to run
+[2016-12-22 18:09.29] Pool slot obtained, starting run
+[2016-12-22 18:09.29] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 orm
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - libsqlite3-dev
+#  - m4
+#  - pkg-config
+# The following new OS packages need to be installed: libsqlite3-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libsqlite3-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libsqlite3-dev:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libsqlite3-dev_3.11.0-1ubuntu1_amd64.deb ...
+Unpacking libsqlite3-dev:amd64 (3.11.0-1ubuntu1) ...
+Setting up libsqlite3-dev:amd64 (3.11.0-1ubuntu1) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install type_conv       113.00.02                           [required by dyntype]
+  - install conf-pkg-config 1.0                                 [required by sqlite3]
+  - install dyntype         0.9.0                               [required by orm]
+  - install sqlite3         4.1.0                               [required by orm]
+  - install orm             0.7.1    
+===== 5 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/5: [dyntype.0.9.0: dl]
+Processing  3/5: [dyntype.0.9.0: dl] [orm.0.7.1: dl]
+Processing  4/5: [dyntype.0.9.0: dl] [orm.0.7.1: dl] [sqlite3.4.1.0: dl]
+[dyntype.0.9.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/5: [orm.0.7.1: dl] [sqlite3.4.1.0: dl]
+[orm.0.7.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/5: [sqlite3.4.1.0: dl]
+[sqlite3.4.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/5:
+Processing  5/5: [type_conv.113.00.02: dl]
+[type_conv.113.00.02] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/5:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/10: [conf-pkg-config: pkg-config]
+Processing  2/10: [conf-pkg-config: pkg-config] [type_conv: make]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-pkg-config.1.0)
+- Usage:
+-   pkg-config [OPTION...]
+- 
+- Help Options:
+-   -h, --help                              Show help options
+- 
+- Application Options:
+-   --version                               output version of pkg-config
+-   --modversion                            output version for package
+-   --atleast-pkgconfig-version=VERSION     require given version of pkg-config
+-   --libs                                  output all linker flags
+-   --static                                output linker flags for static linking
+-   --short-errors                          print short errors
+-   --libs-only-l                           output -l flags
+-   --libs-only-other                       output other libs (e.g. -pthread)
+-   --libs-only-L                           output -L flags
+-   --cflags                                output all pre-processor and compiler flags
+-   --cflags-only-I                         output -I flags
+-   --cflags-only-other                     output cflags not covered by the cflags-only-I option
+-   --variable=NAME                         get the value of variable named NAME
+-   --define-variable=NAME=VALUE            set variable NAME to VALUE
+-   --exists                                return 0 if the module(s) exist
+-   --print-variables                       output list of variables defined by the module
+-   --uninstalled                           return 0 if the uninstalled version of one or more module(s) or their dependencies will be used
+-   --atleast-version=VERSION               return 0 if the module is at least version VERSION
+-   --exact-version=VERSION                 return 0 if the module is at exactly version VERSION
+-   --max-version=VERSION                   return 0 if the module is at no newer than version VERSION
+-   --list-all                              list all known packages
+-   --debug                                 show verbose debug information
+-   --print-errors                          show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)
+-   --silence-errors                        be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)
+-   --errors-to-stdout                      print errors from --print-errors to stdout not stderr
+-   --print-provides                        print which packages the package provides
+-   --print-requires                        print which packages the package requires
+-   --print-requires-private                print which packages the package requires for static linking
+-   --validate                              validate a package's .pc file
+-   --define-prefix                         try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --dont-define-prefix                    don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --prefix-variable=PREFIX                set the name of the variable that pkg-config automatically sets
+- 
+- Usage:
+-   pkg-config [OPTION...]
+- 
+- Help Options:
+-   -h, --help                              Show help options
+- 
+- Application Options:
+-   --version                               output version of pkg-config
+-   --modversion                            output version for package
+-   --atleast-pkgconfig-version=VERSION     require given version of pkg-config
+-   --libs                                  output all linker flags
+-   --static                                output linker flags for static linking
+-   --short-errors                          print short errors
+-   --libs-only-l                           output -l flags
+-   --libs-only-other                       output other libs (e.g. -pthread)
+-   --libs-only-L                           output -L flags
+-   --cflags                                output all pre-processor and compiler flags
+-   --cflags-only-I                         output -I flags
+-   --cflags-only-other                     output cflags not covered by the cflags-only-I option
+-   --variable=NAME                         get the value of variable named NAME
+-   --define-variable=NAME=VALUE            set variable NAME to VALUE
+-   --exists                                return 0 if the module(s) exist
+-   --print-variables                       output list of variables defined by the module
+-   --uninstalled                           return 0 if the uninstalled version of one or more module(s) or their dependencies will be used
+-   --atleast-version=VERSION               return 0 if the module is at least version VERSION
+-   --exact-version=VERSION                 return 0 if the module is at exactly version VERSION
+-   --max-version=VERSION                   return 0 if the module is at no newer than version VERSION
+-   --list-all                              list all known packages
+-   --debug                                 show verbose debug information
+-   --print-errors                          show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)
+-   --silence-errors                        be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)
+-   --errors-to-stdout                      print errors from --print-errors to stdout not stderr
+-   --print-provides                        print which packages the package provides
+-   --print-requires                        print which packages the package requires
+-   --print-requires-private                print which packages the package requires for static linking
+-   --validate                              validate a package's .pc file
+-   --define-prefix                         try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --dont-define-prefix                    don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --prefix-variable=PREFIX                set the name of the variable that pkg-config automatically sets
+- 
+-> compiled  conf-pkg-config.1.0
+Processing  2/10: [type_conv: make]
+-> installed conf-pkg-config.1.0
+Processing  3/10: [type_conv: make]
+Processing  4/10: [sqlite3: ocaml setup.ml] [type_conv: make]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sqlite3.4.1.0)
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ sqlite3
+- Package version: ..................................... 4.1.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: .........................
+- Strict compile-time checks: .......................... true
+- Try to check against a homebrewed sqlite3: ........... false
+- Enable loadable extensions: .......................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ sqlite3
+- Package version: ..................................... 4.1.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: .........................
+- Strict compile-time checks: .......................... true
+- Try to check against a homebrewed sqlite3: ........... false
+- Enable loadable extensions: .......................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/type_conv.113.00.02)
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- File "setup.ml", line 316, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 316, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 328, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 366, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 472, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 1823, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 1829, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- rm -f setup.cmx setup.cmi setup.o setup.obj setup.cmo
+- ./setup.exe -configure 
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ type_conv
+- Package version: ..................................... 113.00.00
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- camlp4o: ............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/camlp4o
+- pkg_camlp4_quotations: ............................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_extend: ................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- 
+- ./setup.exe -build 
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -syntax camlp4o -package camlp4.quotations -package camlp4.extend -modules src/pa_type_conv.mli > src/pa_type_conv.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -syntax camlp4o -package camlp4.quotations -package camlp4.extend -I src -o src/pa_type_conv.cmi src/pa_type_conv.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.extend -modules src/pa_type_conv.ml > src/pa_type_conv.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.extend -I src -o src/pa_type_conv.cmo src/pa_type_conv.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.extend -I src -o src/pa_type_conv.cmo src/pa_type_conv.ml
+- File "src/pa_type_conv.ml", line 291, characters 6-20:
+- Warning 3: deprecated: Format.bprintf
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/pa_type_conv.cmo -o src/pa_type_conv.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.extend -I src -o src/pa_type_conv.cmx src/pa_type_conv.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.extend -I src -o src/pa_type_conv.cmx src/pa_type_conv.ml
+- File "src/pa_type_conv.ml", line 291, characters 6-20:
+- Warning 3: deprecated: Format.bprintf
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/pa_type_conv.cmx -o src/pa_type_conv.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/pa_type_conv.cmxa src/pa_type_conv.cmx -o src/pa_type_conv.cmxs
+- + ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- File "setup.ml", line 316, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 316, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 328, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 366, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 472, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 1823, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 1829, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- rm -f setup.cmx setup.cmi setup.o setup.obj setup.cmo
+- ./setup.exe -configure 
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ type_conv
+- Package version: ..................................... 113.00.00
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- camlp4o: ............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/camlp4o
+- pkg_camlp4_quotations: ............................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- pkg_camlp4_extend: ................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4
+- 
+- ./setup.exe -build 
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -syntax camlp4o -package camlp4.quotations -package camlp4.extend -modules src/pa_type_conv.mli > src/pa_type_conv.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -syntax camlp4o -package camlp4.quotations -package camlp4.extend -I src -o src/pa_type_conv.cmi src/pa_type_conv.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.extend -modules src/pa_type_conv.ml > src/pa_type_conv.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.extend -I src -o src/pa_type_conv.cmo src/pa_type_conv.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.extend -I src -o src/pa_type_conv.cmo src/pa_type_conv.ml
+- File "src/pa_type_conv.ml", line 291, characters 6-20:
+- Warning 3: deprecated: Format.bprintf
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/pa_type_conv.cmo -o src/pa_type_conv.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.extend -I src -o src/pa_type_conv.cmx src/pa_type_conv.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.extend -I src -o src/pa_type_conv.cmx src/pa_type_conv.ml
+- File "src/pa_type_conv.ml", line 291, characters 6-20:
+- Warning 3: deprecated: Format.bprintf
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/pa_type_conv.cmx -o src/pa_type_conv.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/pa_type_conv.cmxa src/pa_type_conv.cmx -o src/pa_type_conv.cmxs
+- + ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+-> compiled  type_conv.113.00.02
+Processing  4/10: [sqlite3: ocaml setup.ml]
+Processing  5/10: [sqlite3: ocaml setup.ml] [type_conv: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/type_conv.113.00.02)
+- ./setup.exe -install 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/META
+- ./setup.exe -install 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/pa_type_conv.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/type_conv/META
+-> installed type_conv.113.00.02
+Processing  5/10: [sqlite3: ocaml setup.ml]
+Processing  6/10: [dyntype: make] [sqlite3: ocaml setup.ml]
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sqlite3.4.1.0)
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- bcs false, proc_env false
+- ----------pkg_export: ------------
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt -Wno-keyword-macro -c src/sqlite3_stubs.c
+- mv sqlite3_stubs.o src/sqlite3_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlmklib -o src/sqlite3_stubs -lsqlite3 -lpthread -lsqlite3 src/sqlite3_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules src/sqlite3.mli > src/sqlite3.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt -Wno-keyword-macro -w Aer-44 -I src -o src/sqlite3.cmi src/sqlite3.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules src/sqlite3.ml > src/sqlite3.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt -Wno-keyword-macro -w Aer-44 -I src -o src/sqlite3.cmo src/sqlite3.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -dllib -lsqlite3_stubs -cclib -lsqlite3_stubs -cclib -lsqlite3 -cclib -lpthread -cclib -lsqlite3 -cclib -lsqlite3 src/sqlite3.cmo -o src/sqlite3.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt -Wno-keyword-macro -w Aer-44 -I src -o src/sqlite3.cmx src/sqlite3.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -cclib -lsqlite3_stubs -cclib -lsqlite3 -cclib -lpthread -cclib -lsqlite3 -cclib -lsqlite3 src/sqlite3.cmx -o src/sqlite3.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -cclib -lsqlite3_stubs -I src -cclib -lsqlite3 src/sqlite3.cmxa src/sqlite3.cmx -o src/sqlite3.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- bcs false, proc_env false
+- ----------pkg_export: ------------
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -g -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt -Wno-keyword-macro -c src/sqlite3_stubs.c
+- mv sqlite3_stubs.o src/sqlite3_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlmklib -o src/sqlite3_stubs -lsqlite3 -lpthread -lsqlite3 src/sqlite3_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules src/sqlite3.mli > src/sqlite3.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt -Wno-keyword-macro -w Aer-44 -I src -o src/sqlite3.cmi src/sqlite3.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -modules src/sqlite3.ml > src/sqlite3.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt -Wno-keyword-macro -w Aer-44 -I src -o src/sqlite3.cmo src/sqlite3.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -dllib -lsqlite3_stubs -cclib -lsqlite3_stubs -cclib -lsqlite3 -cclib -lpthread -cclib -lsqlite3 -cclib -lsqlite3 src/sqlite3.cmo -o src/sqlite3.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-sequence -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt -Wno-keyword-macro -w Aer-44 -I src -o src/sqlite3.cmx src/sqlite3.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -cclib -lsqlite3_stubs -cclib -lsqlite3 -cclib -lpthread -cclib -lsqlite3 -cclib -lsqlite3 src/sqlite3.cmx -o src/sqlite3.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -cclib -lsqlite3_stubs -I src -cclib -lsqlite3 src/sqlite3.cmxa src/sqlite3.cmx -o src/sqlite3.cmxs
+-> compiled  sqlite3.4.1.0
+Processing  6/10: [dyntype: make]
+Processing  7/10: [dyntype: make] [sqlite3: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sqlite3.4.1.0)
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/libsqlite3_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllsqlite3_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllsqlite3_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/libsqlite3_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/sqlite3.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sqlite3/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllsqlite3_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllsqlite3_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+-> installed sqlite3.4.1.0
+Processing  7/10: [dyntype: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/dyntype.0.9.0)
+- ocamlbuild dyntype.cmxa dyntype.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "lib/_tags", line 1, characters 5-14:
+- Warning: the tag "pkg_camp4" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "lib_test/_tags", line 1, characters 5-14:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- ocamlfind ocamldep -package type_conv -modules lib/type.mli > lib/type.mli.depends
+- ocamlfind ocamlc -c -annot -package type_conv -I lib -I lib_test -I pa_lib -o lib/type.cmi lib/type.mli
+- ocamlfind ocamldep -package type_conv -modules lib/type.ml > lib/type.ml.depends
+- ocamlfind ocamldep -package type_conv -modules lib/value.mli > lib/value.mli.depends
+- ocamlfind ocamlc -c -annot -package type_conv -I lib -I lib_test -I pa_lib -o lib/value.cmi lib/value.mli
+- ocamlfind ocamldep -package type_conv -modules lib/value.ml > lib/value.ml.depends
+- ocamlfind ocamlc -c -annot -package type_conv -I lib -I lib_test -I pa_lib -o lib/type.cmo lib/type.ml
+- ocamlfind ocamlc -c -annot -package type_conv -I lib -I lib_test -I pa_lib -o lib/value.cmo lib/value.ml
+- ocamlfind ocamlc -pack -annot lib/type.cmo lib/value.cmo -o lib/dyntype.cmo
+- ocamlfind ocamlopt -c -annot -package type_conv -for-pack Dyntype -I lib -I lib_test -I pa_lib -o lib/type.cmx lib/type.ml
+- ocamlfind ocamlopt -c -annot -package type_conv -for-pack Dyntype -I lib -I lib_test -I pa_lib -o lib/value.cmx lib/value.ml
+- touch lib/dyntype.mli  ; if  ocamlfind ocamlopt -pack -annot -I lib lib/type.cmx lib/value.cmx -o lib/dyntype.cmx  ; then  rm -f lib/dyntype.mli  ; else  rm -f lib/dyntype.mli  ; exit 1; fi
+- ocamlfind ocamlopt -a -package type_conv lib/dyntype.cmx -o lib/dyntype.cmxa
+- ocamlfind ocamlc -a -package type_conv lib/dyntype.cmo -o lib/dyntype.cma
+- ocamlbuild pa_dyntype.cma pa_dyntype.cmxs
+- File "lib/_tags", line 1, characters 5-14:
+- Warning: the tag "pkg_camp4" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "lib_test/_tags", line 1, characters 5-14:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- ocamlfind ocamldep -package camlp4.quotations -package camlp4 -syntax camlp4o -modules pa_lib/p4_helpers.ml > pa_lib/p4_helpers.ml.depends
+- ocamlfind ocamldep -package camlp4.quotations -package camlp4 -syntax camlp4o -modules pa_lib/p4_type.ml > pa_lib/p4_type.ml.depends
+- ocamlfind ocamlc -c -annot -package camlp4.quotations -package camlp4 -syntax camlp4o -I pa_lib -I lib_test -I lib -o pa_lib/p4_helpers.cmo pa_lib/p4_helpers.ml
+- ocamlfind ocamldep -package camlp4.quotations -package camlp4 -syntax camlp4o -modules pa_lib/p4_value.ml > pa_lib/p4_value.ml.depends
+- ocamlfind ocamldep -package type_conv -package camlp4.quotations -package camlp4 -syntax camlp4o -modules pa_lib/pa_type.ml > pa_lib/pa_type.ml.depends
+- ocamlfind ocamlc -c -annot -package camlp4.quotations -package camlp4 -syntax camlp4o -I pa_lib -I lib_test -I lib -o pa_lib/p4_type.cmo pa_lib/p4_type.ml
+- ocamlfind ocamldep -package type_conv -package camlp4.quotations -package camlp4 -syntax camlp4o -modules pa_lib/pa_value.ml > pa_lib/pa_value.ml.depends
+- ocamlfind ocamlc -c -annot -package camlp4.quotations -package camlp4 -syntax camlp4o -I pa_lib -I lib_test -I lib -o pa_lib/p4_value.cmo pa_lib/p4_value.ml
+- ocamlfind ocamlc -c -annot -package type_conv -package camlp4.quotations -package camlp4 -syntax camlp4o -I pa_lib -I lib_test -I lib -o pa_lib/pa_type.cmo pa_lib/pa_type.ml
+- ocamlfind ocamlc -c -annot -package type_conv -package camlp4.quotations -package camlp4 -syntax camlp4o -I pa_lib -I lib_test -I lib -o pa_lib/pa_value.cmo pa_lib/pa_value.ml
+- ocamlfind ocamlc -pack -annot pa_lib/p4_helpers.cmo pa_lib/p4_type.cmo pa_lib/p4_value.cmo pa_lib/pa_type.cmo pa_lib/pa_value.cmo -o pa_lib/pa_dyntype.cmo
+- ocamlfind ocamlc -a -package type_conv -package camlp4.quotations -package camlp4 lib/dyntype.cmo pa_lib/pa_dyntype.cmo -o pa_lib/pa_dyntype.cma
+- ocamlfind ocamlopt -c -annot -package camlp4.quotations -package camlp4 -syntax camlp4o -for-pack Pa_dyntype -I pa_lib -I lib_test -I lib -o pa_lib/p4_helpers.cmx pa_lib/p4_helpers.ml
+- ocamlfind ocamlopt -c -annot -package camlp4.quotations -package camlp4 -syntax camlp4o -for-pack Pa_dyntype -I pa_lib -I lib_test -I lib -o pa_lib/p4_type.cmx pa_lib/p4_type.ml
+- + ocamlfind ocamlopt -c -annot -package camlp4.quotations -package camlp4 -syntax camlp4o -for-pack Pa_dyntype -I pa_lib -I lib_test -I lib -o pa_lib/p4_type.cmx pa_lib/p4_type.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -c -annot -package camlp4.quotations -package camlp4 -syntax camlp4o -for-pack Pa_dyntype -I pa_lib -I lib_test -I lib -o pa_lib/p4_value.cmx pa_lib/p4_value.ml
+- + ocamlfind ocamlopt -c -annot -package camlp4.quotations -package camlp4 -syntax camlp4o -for-pack Pa_dyntype -I pa_lib -I lib_test -I lib -o pa_lib/p4_value.cmx pa_lib/p4_value.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -c -annot -package type_conv -package camlp4.quotations -package camlp4 -syntax camlp4o -for-pack Pa_dyntype -I pa_lib -I lib_test -I lib -o pa_lib/pa_type.cmx pa_lib/pa_type.ml
+- + ocamlfind ocamlopt -c -annot -package type_conv -package camlp4.quotations -package camlp4 -syntax camlp4o -for-pack Pa_dyntype -I pa_lib -I lib_test -I lib -o pa_lib/pa_type.cmx pa_lib/pa_type.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -c -annot -package type_conv -package camlp4.quotations -package camlp4 -syntax camlp4o -for-pack Pa_dyntype -I pa_lib -I lib_test -I lib -o pa_lib/pa_value.cmx pa_lib/pa_value.ml
+- + ocamlfind ocamlopt -c -annot -package type_conv -package camlp4.quotations -package camlp4 -syntax camlp4o -for-pack Pa_dyntype -I pa_lib -I lib_test -I lib -o pa_lib/pa_value.cmx pa_lib/pa_value.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- touch pa_lib/pa_dyntype.mli  ; if  ocamlfind ocamlopt -pack -annot -I pa_lib pa_lib/p4_helpers.cmx pa_lib/p4_type.cmx pa_lib/p4_value.cmx pa_lib/pa_type.cmx pa_lib/pa_value.cmx -o pa_lib/pa_dyntype.cmx  ; then  rm -f pa_lib/pa_dyntype.mli  ; else  rm -f pa_lib/pa_dyntype.mli  ; exit 1; fi
+- ocamlfind ocamlopt -shared -package type_conv -package camlp4.quotations -package camlp4 pa_lib/pa_dyntype.cmx -o pa_lib/pa_dyntype.cmxs
+-> compiled  dyntype.0.9.0
+Processing  8/10: [dyntype: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/dyntype.0.9.0)
+- ocamlfind remove dyntype || true
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/dyntype
+- ocamlfind install dyntype META -optional _build/pa_lib/pa_dyntype.cmi _build/lib/dyntype.cmi _build/pa_lib/pa_dyntype.cma _build/lib/dyntype.cma _build/pa_lib/pa_dyntype.cmxa _build/lib/dyntype.cmxa _build/pa_lib/pa_dyntype.a _build/lib/dyntype.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/dyntype/dyntype.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/dyntype/dyntype.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/dyntype/dyntype.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/dyntype/pa_dyntype.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/dyntype/dyntype.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/dyntype/pa_dyntype.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/dyntype/META
+-> installed dyntype.0.9.0
+Processing  9/10: [orm: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1)
+- make -C lib/
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make -C syntax all
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib/syntax'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib/syntax'
+- ocamlfind ocamldep -pp "camlp4orf " -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 pa_orm.ml > ._d/pa_orm.d
+- ocamlfind ocamldep -pp "camlp4orf " -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 p4_orm_appengine.ml > ._d/p4_orm_appengine.d
+- ocamlfind ocamldep -pp "camlp4orf " -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 p4_orm_sqlite.ml > ._d/p4_orm_sqlite.d
+- ocamlfind ocamldep -pp "camlp4orf " -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 p4_utils.ml > ._d/p4_utils.d
+- ocamlfind ocamldep -pp "camlp4orf " -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 pa_hash.ml > ._d/pa_hash.d
+- ocamlfind ocamldep -pp "camlp4orf " -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 p4_hash.ml > ._d/p4_hash.d
+- ocamlfind ocamlc -package dyntype,dyntype.syntax -c -pp "camlp4orf " -annot -g -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 p4_hash.ml
+- ocamlfind ocamlc -package dyntype,dyntype.syntax -c -pp "camlp4orf " -annot -g -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 pa_hash.ml
+- ocamlfind ocamlc -package dyntype,dyntype.syntax -c -pp "camlp4orf " -annot -g -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 p4_utils.ml
+- ocamlfind ocamlc -package dyntype,dyntype.syntax -c -pp "camlp4orf " -annot -g -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 p4_orm_sqlite.ml
+- ocamlfind ocamlc -package dyntype,dyntype.syntax -c -pp "camlp4orf " -annot -g -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 p4_orm_appengine.ml
+- ocamlfind ocamlc -package dyntype,dyntype.syntax -c -pp "camlp4orf " -annot -g -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4 pa_orm.ml
+- ocamlfind ocamlc -a -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/camlp4    -g            -o pa_orm.cma p4_hash.cmo pa_hash.cmo p4_utils.cmo p4_orm_sqlite.cmo p4_orm_appengine.cmo pa_orm.cmo
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib/syntax'
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib/syntax'
+- make -f Makefile.orm all
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- ocamlfind ocamldep sig.ml > ._d/sig.d
+- ocamlfind ocamldep db.ml > ._d/db.d
+- ocamlfind ocamldep sql_cache.ml > ._d/sql_cache.d
+- ocamlfind ocamldep sql_delete.ml > ._d/sql_delete.d
+- ocamlfind ocamldep sql_get.ml > ._d/sql_get.d
+- ocamlfind ocamldep sql_save.ml > ._d/sql_save.d
+- ocamlfind ocamldep sql_init.ml > ._d/sql_init.d
+- ocamlfind ocamldep sql_backend.ml > ._d/sql_backend.d
+- ocamlfind ocamldep weakid.ml > ._d/weakid.d
+- ocamlc -c -cc "cc" -ccopt "-fPIC  \
+- 			-DPIC -DNATIVE_CODE   \
+- 			    -o custom_unix_stubs.o " custom_unix_stubs.c
+- ar rcs liborm_stubs.a  custom_unix_stubs.o
+- ocamlfind ocamlc -package sqlite3,dyntype.syntax -c -annot weakid.mli
+- ocamlfind ocamlopt -package sqlite3,dyntype.syntax -c -annot -for-pack Orm weakid.ml
+- File "weakid.ml", line 71, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "weakid.ml", line 239, characters 16-22:
+- Warning 3: deprecated: create
+- Use Array.make instead.
+- ocamlfind ocamlopt -package sqlite3,dyntype.syntax -c -annot -for-pack Orm sql_backend.ml
+- File "sql_backend.ml", line 263, characters 66-86:
+- Warning 43: the label field is not optional.
+- File "sql_backend.ml", line 264, characters 78-97:
+- Warning 43: the label field is not optional.
+- File "sql_backend.ml", line 267, characters 73-93:
+- Warning 43: the label field is not optional.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Dyntype, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -package sqlite3,dyntype.syntax -c -annot -for-pack Orm sql_init.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Dyntype, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -package sqlite3,dyntype.syntax -c -annot -for-pack Orm sql_save.ml
+- File "sql_save.ml", line 138, characters 12-24:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Dyntype, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -package sqlite3,dyntype.syntax -c -annot -for-pack Orm sql_get.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Dyntype, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -package sqlite3,dyntype.syntax -c -annot -for-pack Orm sql_delete.ml
+- ocamlfind ocamlopt -package sqlite3,dyntype.syntax -c -annot -for-pack Orm sql_cache.ml
+- ocamlfind ocamlc -package sqlite3,dyntype.syntax -c -annot db.mli
+- ocamlfind ocamlopt -package sqlite3,dyntype.syntax -c -annot -for-pack Orm db.ml
+- ocamlfind ocamlopt -package sqlite3,dyntype.syntax -c -annot -for-pack Orm sig.ml
+- ocamlfind ocamlopt -pack -o orm.cmx   weakid.cmx sql_backend.cmx sql_init.cmx sql_save.cmx sql_get.cmx sql_delete.cmx sql_cache.cmx db.cmx sig.cmx
+- ocamlfind ocamlopt -a  -cclib -lorm_stubs    -o orm.cmxa orm.cmx
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: 'liborm_stubs.a' is up to date.
+- ocamlfind ocamlc -package sqlite3,dyntype.syntax -c -annot -g -for-pack Orm weakid.ml
+- File "weakid.ml", line 71, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "weakid.ml", line 239, characters 16-22:
+- Warning 3: deprecated: create
+- Use Array.make instead.
+- ocamlfind ocamlc -package sqlite3,dyntype.syntax -c -annot -g -for-pack Orm sql_backend.ml
+- File "sql_backend.ml", line 263, characters 66-86:
+- Warning 43: the label field is not optional.
+- File "sql_backend.ml", line 264, characters 78-97:
+- Warning 43: the label field is not optional.
+- File "sql_backend.ml", line 267, characters 73-93:
+- Warning 43: the label field is not optional.
+- ocamlfind ocamlc -package sqlite3,dyntype.syntax -c -annot -g -for-pack Orm sql_init.ml
+- ocamlfind ocamlc -package sqlite3,dyntype.syntax -c -annot -g -for-pack Orm sql_save.ml
+- File "sql_save.ml", line 138, characters 12-24:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- ocamlfind ocamlc -package sqlite3,dyntype.syntax -c -annot -g -for-pack Orm sql_get.ml
+- ocamlfind ocamlc -package sqlite3,dyntype.syntax -c -annot -g -for-pack Orm sql_delete.ml
+- ocamlfind ocamlc -package sqlite3,dyntype.syntax -c -annot -g -for-pack Orm sql_cache.ml
+- ocamlfind ocamlc -package sqlite3,dyntype.syntax -c -annot -g -for-pack Orm db.ml
+- ocamlfind ocamlc -package sqlite3,dyntype.syntax -c -annot -g -for-pack Orm sig.ml
+- ocamlfind ocamlc -pack -o orm.cmo -g  weakid.cmo sql_backend.cmo sql_init.cmo sql_save.cmo sql_get.cmo sql_delete.cmo sql_cache.cmo db.cmo sig.cmo
+- ocamlmklib         \
+- 			-o orm_stubs  custom_unix_stubs.o   \
+- 			
+- ocamlfind ocamlc -a -dllib dllorm_stubs.so -custom     -g         -cclib -lorm_stubs    -o orm.cma orm.cmo
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+-> compiled  orm.0.7.1
+Processing 10/10: [orm: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1)
+- make -C lib/
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make -C syntax all
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib/syntax'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib/syntax'
+- make[3]: 'pa_orm.cma' is up to date.
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib/syntax'
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib/syntax'
+- make -f Makefile.orm all
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: 'liborm_stubs.a' is up to date.
+- ocamlfind ocamlopt -pack -o orm.cmx   weakid.cmx sql_backend.cmx sql_init.cmx sql_save.cmx sql_get.cmx sql_delete.cmx sql_cache.cmx db.cmx sig.cmx
+- ocamlfind ocamlopt -a  -cclib -lorm_stubs    -o orm.cmxa orm.cmx
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: 'liborm_stubs.a' is up to date.
+- ocamlfind ocamlc -a -dllib dllorm_stubs.so -custom     -g         -cclib -lorm_stubs    -o orm.cma orm.cmo
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make -C lib/ install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make -C syntax all
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib/syntax'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib/syntax'
+- make[3]: 'pa_orm.cma' is up to date.
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib/syntax'
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib/syntax'
+- make -f Makefile.orm all
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: 'liborm_stubs.a' is up to date.
+- make[3]: 'orm.cmxa' is up to date.
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: 'liborm_stubs.a' is up to date.
+- make[3]: 'orm.cma' is up to date.
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make -f Makefile.orm libinstall
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: 'liborm_stubs.a' is up to date.
+- make[3]: 'orm.cmxa' is up to date.
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[3]: 'liborm_stubs.a' is up to date.
+- make[3]: 'orm.cma' is up to date.
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  orm META orm.cmx orm.cmxa orm.cma orm.cmi orm.a dllorm_stubs.so liborm_stubs.a syntax/pa_orm.cma 
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/orm/pa_orm.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/orm/liborm_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/orm/orm.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/orm/orm.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/orm/orm.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/orm/orm.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/orm/orm.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/orm/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllorm_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllorm_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/orm.0.7.1/lib'
+-> installed orm.0.7.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:10.01] Success
