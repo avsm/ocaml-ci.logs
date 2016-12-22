@@ -1,0 +1,1444 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ppx_fail /home/opam/opam-repository/cache
+[2016-12-22 16:20.20] Starting...
+[2016-12-22 16:20.20] Waiting for free pool slot to run
+[2016-12-22 18:13.46] Pool slot obtained, starting run
+[2016-12-22 18:13.46] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 ppx_fail
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_tools   5.0                                     [required by ppx_fail]
+  - install ppx_core    113.33.01+4.03                          [required by ppx_fail]
+  - install ppx_optcomp 113.33.01+4.03                          [required by ppx_driver]
+  - install ppx_driver  113.33.01+4.03                          [required by ppx_fail]
+  - install ppx_here    113.33.00                               [required by ppx_fail]
+  - install ppx_fail    113.33.00+4.03
+===== 6 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/6: [ppx_core.113.33.01+4.03: dl]
+Processing  2/6: [ppx_core.113.33.01+4.03: dl] [ppx_driver.113.33.01+4.03: dl]
+Processing  3/6: [ppx_core.113.33.01+4.03: dl] [ppx_driver.113.33.01+4.03: dl] [ppx_fail.113.33.00+4.03: dl]
+[ppx_driver.113.33.01+4.03] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/6: [ppx_core.113.33.01+4.03: dl] [ppx_fail.113.33.00+4.03: dl]
+[ppx_core.113.33.01+4.03] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/6: [ppx_fail.113.33.00+4.03: dl]
+[ppx_fail.113.33.00+4.03] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/6:
+Processing  4/6: [ppx_here.113.33.00: dl]
+Processing  5/6: [ppx_here.113.33.00: dl] [ppx_optcomp.113.33.01+4.03: dl]
+Processing  6/6: [ppx_here.113.33.00: dl] [ppx_optcomp.113.33.01+4.03: dl] [ppx_tools.5.0: dl]
+[ppx_here.113.33.00] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6: [ppx_optcomp.113.33.01+4.03: dl] [ppx_tools.5.0: dl]
+[ppx_optcomp.113.33.01+4.03] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6: [ppx_tools.5.0: dl]
+[ppx_tools.5.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/12: [ppx_tools: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+-> compiled  ppx_tools.5.0
+Processing  2/12: [ppx_tools: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/META
+-> installed ppx_tools.5.0
+Processing  3/12: [ppx_core: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_core.113.33.01+4.03)
+- File "./setup.ml", line 316, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 316, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 328, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 366, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 472, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1823, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1829, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ppx_core
+- Package version: ..................................... 113.33.01+4.03
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_compiler_libs_common: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- pkg_compiler_libs_bytecomp: .......................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- pkg_ppx_tools_metaquot: .............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools
+- 
+Processing  3/12: [ppx_core: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_core.113.33.01+4.03)
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- File "setup.ml", line 316, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 316, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 328, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 366, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 472, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 1823, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 1829, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- for f in setup.*; do [ $f = setup.exe -o $f = setup.ml ] || rm -f $f; done
+- ./setup.exe -configure 
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ppx_core
+- Package version: ..................................... 113.33.01+4.03
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_compiler_libs_common: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- pkg_compiler_libs_bytecomp: .......................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- pkg_ppx_tools_metaquot: .............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools
+- 
+- ./setup.exe -build 
+- W: Cannot find source file matching module 'ppx_core' in library ppx_core
+- W: Cannot find source file matching module 'Ast_builder_generated' in library ppx_core
+- W: Cannot find source file matching module 'Ast_pattern_generated' in library ppx_core
+- W: Cannot find source file matching module 'Ast_traverse_fold' in library ppx_core
+- W: Cannot find source file matching module 'Ast_traverse_fold_map' in library ppx_core
+- W: Cannot find source file matching module 'Ast_traverse_iter' in library ppx_core
+- W: Cannot find source file matching module 'Ast_traverse_map' in library ppx_core
+- W: Cannot find source file matching module 'Ast_traverse_map_with_context' in library ppx_core
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_builder.mli > src/ast_builder.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -predicates ppx_driver -modules src/gen/gen_ast_builder.ml > src/gen/gen_ast_builder.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -predicates ppx_driver -modules src/gen/common.ml > src/gen/common.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/common.cmo src/gen/common.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/common.cmo src/gen/common.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/gen_ast_builder.cmo src/gen/gen_ast_builder.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/gen_ast_builder.cmo src/gen/gen_ast_builder.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package compiler-libs.bytecomp src/gen/common.cmo src/gen/gen_ast_builder.cmo -o src/gen/gen_ast_builder.byte
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package compiler-libs.bytecomp src/gen/common.cmo src/gen/gen_ast_builder.cmo -o src/gen/gen_ast_builder.byte
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- src/gen/gen_ast_builder.byte -I +compiler-libs Parsetree
+- mv ast_builder_generated.ml src/ast_builder_generated.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_builder_generated.ml > src/ast_builder_generated.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_builder_intf.ml > src/ast_builder_intf.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_builder_generated.cmo src/ast_builder_generated.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_builder_generated.cmo src/ast_builder_generated.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_builder_intf.cmo src/ast_builder_intf.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_builder_intf.cmo src/ast_builder_intf.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_builder.cmi src/ast_builder.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_builder.cmi src/ast_builder.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_builder.ml > src/ast_builder.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_pattern.mli > src/ast_pattern.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_pattern0.ml > src/ast_pattern0.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -predicates ppx_driver -modules src/gen/gen_ast_pattern.ml > src/gen/gen_ast_pattern.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/gen_ast_pattern.cmo src/gen/gen_ast_pattern.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/gen_ast_pattern.cmo src/gen/gen_ast_pattern.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package compiler-libs.bytecomp src/gen/common.cmo src/gen/gen_ast_pattern.cmo -o src/gen/gen_ast_pattern.byte
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package compiler-libs.bytecomp src/gen/common.cmo src/gen/gen_ast_pattern.cmo -o src/gen/gen_ast_pattern.byte
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- src/gen/gen_ast_pattern.byte -I +compiler-libs Parsetree
+- mv ast_pattern_generated.ml src/ast_pattern_generated.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_pattern_generated.ml > src/ast_pattern_generated.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_pattern0.cmo src/ast_pattern0.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_pattern0.cmo src/ast_pattern0.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/common.mli > src/common.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_traverse.mli > src/ast_traverse.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -predicates ppx_driver -modules src/gen/gen.ml > src/gen/gen.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/gen.cmo src/gen/gen.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/gen.cmo src/gen/gen.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package compiler-libs.bytecomp src/gen/common.cmo src/gen/gen.cmo -o src/gen/gen.byte
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package compiler-libs.bytecomp src/gen/common.cmo src/gen/gen.cmo -o src/gen/gen.byte
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- src/gen/gen.byte -I +compiler-libs Parsetree
+- mv ast_traverse_map.ml src/ast_traverse_map.ml
+- mv ast_traverse_map.mli src/ast_traverse_map.mli
+- mv ast_traverse_iter.ml src/ast_traverse_iter.ml
+- mv ast_traverse_iter.mli src/ast_traverse_iter.mli
+- mv ast_traverse_fold.ml src/ast_traverse_fold.ml
+- mv ast_traverse_fold.mli src/ast_traverse_fold.mli
+- mv ast_traverse_fold_map.ml src/ast_traverse_fold_map.ml
+- mv ast_traverse_fold_map.mli src/ast_traverse_fold_map.mli
+- mv ast_traverse_map_with_context.ml src/ast_traverse_map_with_context.ml
+- mv ast_traverse_map_with_context.mli src/ast_traverse_map_with_context.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_traverse_fold.mli > src/ast_traverse_fold.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_traverse_fold_map.mli > src/ast_traverse_fold_map.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_traverse_iter.mli > src/ast_traverse_iter.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_traverse_map.mli > src/ast_traverse_map.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_traverse_map_with_context.mli > src/ast_traverse_map_with_context.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_traverse_fold.cmi src/ast_traverse_fold.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_traverse_fold.cmi src/ast_traverse_fold.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_traverse_fold_map.cmi src/ast_traverse_fold_map.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_traverse_fold_map.cmi src/ast_traverse_fold_map.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_traverse_iter.cmi src/ast_traverse_iter.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_traverse_iter.cmi src/ast_traverse_iter.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_traverse_map.cmi src/ast_traverse_map.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_traverse_map.cmi src/ast_traverse_map.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_traverse_map_with_context.cmi src/ast_traverse_map_with_context.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_traverse_map_with_context.cmi src/ast_traverse_map_with_context.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_traverse.cmi src/ast_traverse.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_traverse.cmi src/ast_traverse.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/common.cmi src/common.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/common.cmi src/common.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_pattern_generated.cmo src/ast_pattern_generated.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_pattern_generated.cmo src/ast_pattern_generated.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_pattern.cmi src/ast_pattern.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/ast_pattern.cmi src/ast_pattern.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_pattern.ml > src/ast_pattern.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_traverse.ml > src/ast_traverse.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_traverse_fold.ml > src/ast_traverse_fold.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_traverse_fold_map.ml > src/ast_traverse_fold_map.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_traverse_iter.ml > src/ast_traverse_iter.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_traverse_map.ml > src/ast_traverse_map.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/ast_traverse_map_with_context.ml > src/ast_traverse_map_with_context.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/attribute.mli > src/attribute.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/attribute.cmi src/attribute.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/attribute.cmi src/attribute.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/attribute.ml > src/attribute.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/name.mli > src/name.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/name.cmi src/name.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/name.cmi src/name.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/caller_id.ml > src/caller_id.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/common.ml > src/common.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/extension.mli > src/extension.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/extension.cmi src/extension.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/extension.cmi src/extension.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/extension.ml > src/extension.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/file_path.mli > src/file_path.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/file_path.cmi src/file_path.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -predicates ppx_driver -w -40 -I src -o src/file_path.cmi src/file_path.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/file_path.ml > src/file_path.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/name.ml > src/name.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/caller_id.cmo src/caller_id.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/caller_id.cmo src/caller_id.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/spellcheck.ml > src/spellcheck.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/spellcheck.cmo src/spellcheck.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/spellcheck.cmo src/spellcheck.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -predicates ppx_driver -predicates ppx_driver -modules src/std.ml > src/std.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_builder.cmo src/ast_builder.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_builder.cmo src/ast_builder.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_pattern.cmo src/ast_pattern.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_pattern.cmo src/ast_pattern.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse.cmo src/ast_traverse.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse.cmo src/ast_traverse.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_fold.cmo src/ast_traverse_fold.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_fold.cmo src/ast_traverse_fold.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_fold_map.cmo src/ast_traverse_fold_map.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_fold_map.cmo src/ast_traverse_fold_map.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_iter.cmo src/ast_traverse_iter.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_iter.cmo src/ast_traverse_iter.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_map.cmo src/ast_traverse_map.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_map.cmo src/ast_traverse_map.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_map_with_context.cmo src/ast_traverse_map_with_context.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_map_with_context.cmo src/ast_traverse_map_with_context.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/attribute.cmo src/attribute.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/attribute.cmo src/attribute.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/common.cmo src/common.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/common.cmo src/common.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/extension.cmo src/extension.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/extension.cmo src/extension.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/file_path.cmo src/file_path.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/file_path.cmo src/file_path.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/name.cmo src/name.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/name.cmo src/name.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/std.cmo src/std.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/std.cmo src/std.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -pack -g -annot -bin-annot src/ast_builder_generated.cmo src/ast_builder_intf.cmo src/ast_builder.cmo src/ast_pattern0.cmo src/ast_traverse_fold.cmo src/ast_traverse_fold_map.cmo src/ast_traverse_iter.cmo src/ast_traverse_map.cmo src/ast_traverse_map_with_context.cmo src/ast_traverse.cmo src/common.cmo src/ast_pattern_generated.cmo src/ast_pattern.cmo src/caller_id.cmo src/spellcheck.cmo src/name.cmo src/attribute.cmo src/extension.cmo src/file_path.cmo src/std.cmo -o src/ppx_core.cmo
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -thread src/ppx_core.cmo -o src/ppx_core.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_builder_generated.cmx src/ast_builder_generated.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_builder_generated.cmx src/ast_builder_generated.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_builder_intf.cmx src/ast_builder_intf.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_builder_intf.cmx src/ast_builder_intf.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_pattern0.cmx src/ast_pattern0.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_pattern0.cmx src/ast_pattern0.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_builder.cmx src/ast_builder.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_builder.cmx src/ast_builder.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_fold.cmx src/ast_traverse_fold.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_fold.cmx src/ast_traverse_fold.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_fold_map.cmx src/ast_traverse_fold_map.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_fold_map.cmx src/ast_traverse_fold_map.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_iter.cmx src/ast_traverse_iter.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_iter.cmx src/ast_traverse_iter.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_map.cmx src/ast_traverse_map.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_map.cmx src/ast_traverse_map.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_map_with_context.cmx src/ast_traverse_map_with_context.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse_map_with_context.cmx src/ast_traverse_map_with_context.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse.cmx src/ast_traverse.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_traverse.cmx src/ast_traverse.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/common.cmx src/common.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/common.cmx src/common.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_pattern_generated.cmx src/ast_pattern_generated.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_pattern_generated.cmx src/ast_pattern_generated.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_pattern.cmx src/ast_pattern.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/ast_pattern.cmx src/ast_pattern.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/caller_id.cmx src/caller_id.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/caller_id.cmx src/caller_id.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/spellcheck.cmx src/spellcheck.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/spellcheck.cmx src/spellcheck.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/name.cmx src/name.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/name.cmx src/name.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/attribute.cmx src/attribute.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/attribute.cmx src/attribute.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/extension.cmx src/extension.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/extension.cmx src/extension.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/file_path.cmx src/file_path.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/file_path.cmx src/file_path.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/std.cmx src/std.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package compiler-libs.common -for-pack Ppx_core -predicates ppx_driver -w -40 -I src -o src/std.cmx src/std.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- touch src/ppx_core.mli  ; if  /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -pack -g -annot -bin-annot -I src src/ast_builder_generated.cmx src/ast_builder_intf.cmx src/ast_builder.cmx src/ast_pattern0.cmx src/ast_traverse_fold.cmx src/ast_traverse_fold_map.cmx src/ast_traverse_iter.cmx src/ast_traverse_map.cmx src/ast_traverse_map_with_context.cmx src/ast_traverse.cmx src/common.cmx src/ast_pattern_generated.cmx src/ast_pattern.cmx src/caller_id.cmx src/spellcheck.cmx src/name.cmx src/attribute.cmx src/extension.cmx src/file_path.cmx src/std.cmx -o src/ppx_core.cmx  ; then  rm -f src/ppx_core.mli  ; else  rm -f src/ppx_core.mli  ; exit 1; fi
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -thread src/ppx_core.cmx -o src/ppx_core.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -linkall -I src src/ppx_core.cmxa -o src/ppx_core.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/common.cmx src/gen/common.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/common.cmx src/gen/common.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/gen.cmx src/gen/gen.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/gen.cmx src/gen/gen.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package compiler-libs.bytecomp src/gen/common.cmx src/gen/gen.cmx -o src/gen/gen.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package compiler-libs.bytecomp src/gen/common.cmx src/gen/gen.cmx -o src/gen/gen.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/gen_ast_pattern.cmx src/gen/gen_ast_pattern.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/gen_ast_pattern.cmx src/gen/gen_ast_pattern.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package compiler-libs.bytecomp src/gen/common.cmx src/gen/gen_ast_pattern.cmx -o src/gen/gen_ast_pattern.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package compiler-libs.bytecomp src/gen/common.cmx src/gen/gen_ast_pattern.cmx -o src/gen/gen_ast_pattern.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/gen_ast_builder.cmx src/gen/gen_ast_builder.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package compiler-libs.bytecomp -predicates ppx_driver -w -40 -I src/gen -o src/gen/gen_ast_builder.cmx src/gen/gen_ast_builder.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package compiler-libs.bytecomp src/gen/common.cmx src/gen/gen_ast_builder.cmx -o src/gen/gen_ast_builder.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package compiler-libs.bytecomp src/gen/common.cmx src/gen/gen_ast_builder.cmx -o src/gen/gen_ast_builder.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- + ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- make ppx_core.install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_core.113.33.01+4.03'
+- ocaml -I js-utils js-utils/gen_install.ml
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_core.113.33.01+4.03'
+-> compiled  ppx_core.113.33.01+4.03
+-> installed ppx_core.113.33.01+4.03
+Processing  5/12: [ppx_optcomp: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_optcomp.113.33.01+4.03)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ppx_optcomp
+- Package version: ..................................... 113.33.00+4.03
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_ppx_core: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_core
+- pkg_ppx_tools_metaquot: .............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools
+- 
+Processing  5/12: [ppx_optcomp: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_optcomp.113.33.01+4.03)
+- ocamlopt -o setup.exe setup.ml || \
+-   ocamlc -o setup.exe setup.ml || true
+- for f in setup.*; do [ $f = setup.exe -o $f = setup.ml ] || rm -f $f; done
+- ./setup.exe -configure 
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ppx_optcomp
+- Package version: ..................................... 113.33.00+4.03
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_ppx_core: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_core
+- pkg_ppx_tools_metaquot: .............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools
+- 
+- ./setup.exe -build 
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools.metaquot -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules src/ppx_optcomp.mli > src/ppx_optcomp.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_optcomp.cmi src/ppx_optcomp.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_optcomp.cmi src/ppx_optcomp.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools.metaquot -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules src/ppx_optcomp.ml > src/ppx_optcomp.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_optcomp.cmo src/ppx_optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_optcomp.cmo src/ppx_optcomp.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -thread src/ppx_optcomp.cmo -o src/ppx_optcomp.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_optcomp.cmx src/ppx_optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_optcomp.cmx src/ppx_optcomp.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -thread src/ppx_optcomp.cmx -o src/ppx_optcomp.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -linkall -I src src/ppx_optcomp.cmxa -o src/ppx_optcomp.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools.metaquot -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules bin/optcomp.ml > bin/optcomp.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_tools.metaquot -package ppx_core -predicates ppx_driver -w -40 -I bin -I src -o bin/optcomp.cmo bin/optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_tools.metaquot -package ppx_core -predicates ppx_driver -w -40 -I bin -I src -o bin/optcomp.cmo bin/optcomp.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_tools.metaquot -package ppx_core -predicates ppx_driver -w -40 -I bin -I src -o bin/optcomp.cmx bin/optcomp.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_tools.metaquot -package ppx_core -predicates ppx_driver -w -40 -I bin -I src -o bin/optcomp.cmx bin/optcomp.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package ppx_core src/ppx_optcomp.cmxa bin/optcomp.cmx -o bin/optcomp.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package ppx_core src/ppx_optcomp.cmxa bin/optcomp.cmx -o bin/optcomp.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- make ppx_optcomp.install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_optcomp.113.33.01+4.03'
+- ocaml -I js-utils js-utils/gen_install.ml
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_optcomp.113.33.01+4.03'
+-> compiled  ppx_optcomp.113.33.01+4.03
+-> installed ppx_optcomp.113.33.01+4.03
+Processing  7/12: [ppx_driver: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_driver.113.33.01+4.03)
+- File "./setup.ml", line 316, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 316, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 328, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 366, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 472, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1823, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1829, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ppx_driver
+- Package version: ..................................... 113.33.01+4.03
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_ppx_core: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_core
+- pkg_ppx_optcomp: ..................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_optcomp
+- pkg_ocamlbuild: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild
+- 
+Processing  7/12: [ppx_driver: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_driver.113.33.01+4.03)
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- File "setup.ml", line 316, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 316, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 328, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 366, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 472, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 1823, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 1829, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- for f in setup.*; do [ $f = setup.exe -o $f = setup.ml ] || rm -f $f; done
+- ./setup.exe -configure 
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ppx_driver
+- Package version: ..................................... 113.33.01+4.03
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_ppx_core: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_core
+- pkg_ppx_optcomp: ..................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_optcomp
+- pkg_ocamlbuild: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild
+- 
+- ./setup.exe -build 
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_optcomp -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules src/ppx_driver.mli > src/ppx_driver.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_driver.cmi src/ppx_driver.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_driver.cmi src/ppx_driver.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_optcomp -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules src/ppx_driver.ml > src/ppx_driver.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_driver.cmo src/ppx_driver.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_driver.cmo src/ppx_driver.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -thread src/ppx_driver.cmo -o src/ppx_driver.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_driver.cmx src/ppx_driver.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_driver.cmx src/ppx_driver.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -thread src/ppx_driver.cmx -o src/ppx_driver.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -linkall -I src src/ppx_driver.cmxa -o src/ppx_driver.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_optcomp -package ppx_core -package ocamlbuild -predicates ppx_driver -predicates ppx_driver -modules ocamlbuild_plugin/ppx_driver_ocamlbuild.mli > ocamlbuild_plugin/ppx_driver_ocamlbuild.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -package ocamlbuild -predicates ppx_driver -w -40 -I ocamlbuild_plugin -I src -o ocamlbuild_plugin/ppx_driver_ocamlbuild.cmi ocamlbuild_plugin/ppx_driver_ocamlbuild.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -package ocamlbuild -predicates ppx_driver -w -40 -I ocamlbuild_plugin -I src -o ocamlbuild_plugin/ppx_driver_ocamlbuild.cmi ocamlbuild_plugin/ppx_driver_ocamlbuild.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_optcomp -package ppx_core -package ocamlbuild -predicates ppx_driver -predicates ppx_driver -modules ocamlbuild_plugin/ppx_driver_ocamlbuild.ml > ocamlbuild_plugin/ppx_driver_ocamlbuild.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -package ocamlbuild -predicates ppx_driver -w -40 -I ocamlbuild_plugin -I src -o ocamlbuild_plugin/ppx_driver_ocamlbuild.cmo ocamlbuild_plugin/ppx_driver_ocamlbuild.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -package ocamlbuild -predicates ppx_driver -w -40 -I ocamlbuild_plugin -I src -o ocamlbuild_plugin/ppx_driver_ocamlbuild.cmo ocamlbuild_plugin/ppx_driver_ocamlbuild.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -thread ocamlbuild_plugin/ppx_driver_ocamlbuild.cmo -o ocamlbuild_plugin/ppx_driver_ocamlbuild.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -package ocamlbuild -predicates ppx_driver -w -40 -I ocamlbuild_plugin -I src -o ocamlbuild_plugin/ppx_driver_ocamlbuild.cmx ocamlbuild_plugin/ppx_driver_ocamlbuild.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -package ocamlbuild -predicates ppx_driver -w -40 -I ocamlbuild_plugin -I src -o ocamlbuild_plugin/ppx_driver_ocamlbuild.cmx ocamlbuild_plugin/ppx_driver_ocamlbuild.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -thread ocamlbuild_plugin/ppx_driver_ocamlbuild.cmx -o ocamlbuild_plugin/ppx_driver_ocamlbuild.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -linkall -I ocamlbuild_plugin ocamlbuild_plugin/ppx_driver_ocamlbuild.cmxa -o ocamlbuild_plugin/ppx_driver_ocamlbuild.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_optcomp -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules runner/ppx_driver_runner.ml > runner/ppx_driver_runner.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I runner -I src -o runner/ppx_driver_runner.cmo runner/ppx_driver_runner.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I runner -I src -o runner/ppx_driver_runner.cmo runner/ppx_driver_runner.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -linkall -thread runner/ppx_driver_runner.cmo -o runner/ppx_driver_runner.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I runner -I src -o runner/ppx_driver_runner.cmx runner/ppx_driver_runner.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I runner -I src -o runner/ppx_driver_runner.cmx runner/ppx_driver_runner.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -linkall -thread runner/ppx_driver_runner.cmx -o runner/ppx_driver_runner.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -linkall -I runner runner/ppx_driver_runner.cmxa -o runner/ppx_driver_runner.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_optcomp -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules runner_as_ppx/ppx_driver_runner_as_ppx.ml > runner_as_ppx/ppx_driver_runner_as_ppx.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I runner_as_ppx -I src -o runner_as_ppx/ppx_driver_runner_as_ppx.cmo runner_as_ppx/ppx_driver_runner_as_ppx.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I runner_as_ppx -I src -o runner_as_ppx/ppx_driver_runner_as_ppx.cmo runner_as_ppx/ppx_driver_runner_as_ppx.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -linkall -thread runner_as_ppx/ppx_driver_runner_as_ppx.cmo -o runner_as_ppx/ppx_driver_runner_as_ppx.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I runner_as_ppx -I src -o runner_as_ppx/ppx_driver_runner_as_ppx.cmx runner_as_ppx/ppx_driver_runner_as_ppx.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_optcomp -package ppx_core -predicates ppx_driver -w -40 -I runner_as_ppx -I src -o runner_as_ppx/ppx_driver_runner_as_ppx.cmx runner_as_ppx/ppx_driver_runner_as_ppx.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -linkall -thread runner_as_ppx/ppx_driver_runner_as_ppx.cmx -o runner_as_ppx/ppx_driver_runner_as_ppx.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -linkall -I runner_as_ppx runner_as_ppx/ppx_driver_runner_as_ppx.cmxa -o runner_as_ppx/ppx_driver_runner_as_ppx.cmxs
+- + ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- make ppx_driver.install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_driver.113.33.01+4.03'
+- ocaml -I js-utils js-utils/gen_install.ml
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_driver.113.33.01+4.03'
+-> compiled  ppx_driver.113.33.01+4.03
+-> installed ppx_driver.113.33.01+4.03
+Processing  9/12: [ppx_here: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_here.113.33.00)
+- File "./setup.ml", line 316, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 316, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 328, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 366, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 472, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1823, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1829, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ppx_here
+- Package version: ..................................... 113.33.00
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_ppx_core: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_core
+- pkg_ppx_driver: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_driver
+- 
+Processing  9/12: [ppx_here: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_here.113.33.00)
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- File "setup.ml", line 316, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 316, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 328, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 366, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 472, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 1823, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 1829, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- for f in setup.*; do [ $f = setup.exe -o $f = setup.ml ] || rm -f $f; done
+- ./setup.exe -configure 
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ppx_here
+- Package version: ..................................... 113.33.00
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_ppx_core: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_core
+- pkg_ppx_driver: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_driver
+- 
+- ./setup.exe -build 
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_driver -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules expander/ppx_here_expander.mli > expander/ppx_here_expander.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I expander -o expander/ppx_here_expander.cmi expander/ppx_here_expander.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I expander -o expander/ppx_here_expander.cmi expander/ppx_here_expander.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_driver -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules expander/ppx_here_expander.ml > expander/ppx_here_expander.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I expander -o expander/ppx_here_expander.cmo expander/ppx_here_expander.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I expander -o expander/ppx_here_expander.cmo expander/ppx_here_expander.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -thread expander/ppx_here_expander.cmo -o expander/ppx_here_expander.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I expander -o expander/ppx_here_expander.cmx expander/ppx_here_expander.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I expander -o expander/ppx_here_expander.cmx expander/ppx_here_expander.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -thread expander/ppx_here_expander.cmx -o expander/ppx_here_expander.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -linkall -I expander expander/ppx_here_expander.cmxa -o expander/ppx_here_expander.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_driver -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules src/ppx_here.mli > src/ppx_here.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I src -I expander -o src/ppx_here.cmi src/ppx_here.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I src -I expander -o src/ppx_here.cmi src/ppx_here.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_driver -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules src/ppx_here.ml > src/ppx_here.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I src -I expander -o src/ppx_here.cmo src/ppx_here.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I src -I expander -o src/ppx_here.cmo src/ppx_here.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -linkall -thread src/ppx_here.cmo -o src/ppx_here.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I src -I expander -o src/ppx_here.cmx src/ppx_here.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I src -I expander -o src/ppx_here.cmx src/ppx_here.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -linkall -thread src/ppx_here.cmx -o src/ppx_here.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -linkall -I src src/ppx_here.cmxa -o src/ppx_here.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_driver -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules as_ppx/ppx.ml > as_ppx/ppx.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I expander -I src -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I as_ppx -I src -o as_ppx/ppx.cmo as_ppx/ppx.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I expander -I src -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I as_ppx -I src -o as_ppx/ppx.cmo as_ppx/ppx.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I expander -I src -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I as_ppx -I src -o as_ppx/ppx.cmx as_ppx/ppx.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I expander -I src -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I as_ppx -I src -o as_ppx/ppx.cmx as_ppx/ppx.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -thread -linkpkg -package ppx_driver -package ppx_core -predicates ppx_driver expander/ppx_here_expander.cmxa src/ppx_here.cmxa as_ppx/ppx.cmx -o as_ppx/ppx.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -thread -linkpkg -package ppx_driver -package ppx_core -predicates ppx_driver expander/ppx_here_expander.cmxa src/ppx_here.cmxa as_ppx/ppx.cmx -o as_ppx/ppx.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- + ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- make ppx_here.install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_here.113.33.00'
+- ocaml -I js-utils js-utils/gen_install.ml
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_here.113.33.00'
+-> compiled  ppx_here.113.33.00
+-> installed ppx_here.113.33.00
+Processing 11/12: [ppx_fail: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_fail.113.33.00+4.03)
+- File "./setup.ml", line 316, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 316, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 325, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 328, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 366, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 472, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1823, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1829, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ppx_fail
+- Package version: ..................................... 113.33.00+4.03
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_ppx_core: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_core
+- pkg_ppx_driver: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_driver
+- pkg_ppx_here_expander: ............................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_here
+- pkg_ppx_tools_metaquot: .............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools
+- 
+Processing 11/12: [ppx_fail: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_fail.113.33.00+4.03)
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- File "setup.ml", line 316, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 316, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 325, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 328, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 366, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 472, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 1823, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 1829, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- for f in setup.*; do [ $f = setup.exe -o $f = setup.ml ] || rm -f $f; done
+- ./setup.exe -configure 
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ppx_fail
+- Package version: ..................................... 113.33.00+4.03
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_ppx_core: ........................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_core
+- pkg_ppx_driver: ...................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_driver
+- pkg_ppx_here_expander: ............................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_here
+- pkg_ppx_tools_metaquot: .............................. /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools
+- 
+- ./setup.exe -build 
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules src/ppx_fail.mli > src/ppx_fail.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_fail.cmi src/ppx_fail.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_fail.cmi src/ppx_fail.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules src/ppx_fail.ml > src/ppx_fail.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_fail.cmo src/ppx_fail.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_fail.cmo src/ppx_fail.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a -linkall -thread src/ppx_fail.cmo -o src/ppx_fail.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_fail.cmx src/ppx_fail.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I src -o src/ppx_fail.cmx src/ppx_fail.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a -linkall -thread src/ppx_fail.cmx -o src/ppx_fail.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared -linkall -I src src/ppx_fail.cmxa -o src/ppx_fail.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver -predicates ppx_driver -modules as_ppx/ppx.ml > as_ppx/ppx.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I as_ppx -I src -o as_ppx/ppx.cmo as_ppx/ppx.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I as_ppx -I src -o as_ppx/ppx.cmo as_ppx/ppx.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I as_ppx -I src -o as_ppx/ppx.cmx as_ppx/ppx.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -no-alias-deps -thread -I src -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver -w -40 -I as_ppx -I src -o as_ppx/ppx.cmx as_ppx/ppx.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver src/ppx_fail.cmxa as_ppx/ppx.cmx -o as_ppx/ppx.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -thread -linkpkg -package ppx_tools.metaquot -package ppx_here.expander -package ppx_driver -package ppx_core -predicates ppx_driver src/ppx_fail.cmxa as_ppx/ppx.cmx -o as_ppx/ppx.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- + ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- make ppx_fail.install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_fail.113.33.00+4.03'
+- ocaml -I js-utils js-utils/gen_install.ml
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_fail.113.33.00+4.03'
+-> compiled  ppx_fail.113.33.00+4.03
+-> installed ppx_fail.113.33.00+4.03
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:14.32] Success
