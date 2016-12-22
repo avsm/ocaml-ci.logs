@@ -1,0 +1,37 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocamlbuild-atdgen 0.1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ocamlbuild-atdgen.0.1.0: dl]
+[ocamlbuild-atdgen.0.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocamlbuild-atdgen: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocamlbuild-atdgen.0.1.0)
+- ocamlbuild -use-ocamlfind -package ocamlbuild ocamlbuild_atdgen.cma ocamlbuild_atdgen.cmxa ocamlbuild_atdgen.a
+- ocamlfind ocamldep -package ocamlbuild -modules lib/ocamlbuild_atdgen.ml > lib/ocamlbuild_atdgen.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -I lib -o lib/ocamlbuild_atdgen.cmo lib/ocamlbuild_atdgen.ml
+- ocamlfind ocamlc -a -package ocamlbuild lib/ocamlbuild_atdgen.cmo -o lib/ocamlbuild_atdgen.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -I lib -o lib/ocamlbuild_atdgen.cmx lib/ocamlbuild_atdgen.ml
+- ocamlfind ocamlopt -a -package ocamlbuild lib/ocamlbuild_atdgen.cmx -o lib/ocamlbuild_atdgen.cmxa
+-> compiled  ocamlbuild-atdgen.0.1.0
+Processing  2/2: [ocamlbuild-atdgen: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocamlbuild-atdgen.0.1.0)
+- ocamlbuild -use-ocamlfind -package ocamlbuild ocamlbuild_atdgen.cma ocamlbuild_atdgen.cmxa ocamlbuild_atdgen.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild_atdgen/ocamlbuild_atdgen.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild_atdgen/ocamlbuild_atdgen.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild_atdgen/ocamlbuild_atdgen.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild_atdgen/ocamlbuild_atdgen.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild_atdgen/ocamlbuild_atdgen.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild_atdgen/ocamlbuild_atdgen.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild_atdgen/ocamlbuild_atdgen.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild_atdgen/META
+-> installed ocamlbuild-atdgen.0.1.0
+Done.
+# Run eval `opam env` to update the current shell environment
