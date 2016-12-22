@@ -1,0 +1,287 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install cppo         1.4.0                                  [required by ppx_bigarray]
+  - install ppx_bigarray 2.0.0
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [cppo.1.4.0: dl]
+Processing  2/2: [cppo.1.4.0: dl] [ppx_bigarray.2.0.0: dl]
+[cppo.1.4.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [ppx_bigarray.2.0.0: dl]
+[ppx_bigarray.2.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [cppo: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.0)
+- echo 'let cppo_version = "1.4.0"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlopt -o cppo -dtypes unix.cmxa str.cmxa cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+-> compiled  cppo.1.4.0
+Processing  2/4: [cppo: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.0)
+- ocamlfind install -patch-version 1.4.0 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/META
+-> installed cppo.1.4.0
+Processing  3/4: [ppx_bigarray: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_bigarray.2.0.0)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ppx_bigarray
+- Package version: ..................................... 0.1.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_compiler_libs_common: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_bigarray.2.0.0)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -modules src/ppx_bigarray.ml > src/ppx_bigarray.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray.cmo src/ppx_bigarray.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray.cmo src/ppx_bigarray.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -a src/ppx_bigarray.cmo -o src/ppx_bigarray.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray.cmx src/ppx_bigarray.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray.cmx src/ppx_bigarray.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -a src/ppx_bigarray.cmx -o src/ppx_bigarray.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -shared src/ppx_bigarray.cmxa src/ppx_bigarray.cmx -o src/ppx_bigarray.cmxs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -modules src/ppx_bigarray_ex.ml > src/ppx_bigarray_ex.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -modules src/error.ml > src/error.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -modules src/extAst.ml > src/extAst.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -modules src/nestedMatrix.mli > src/nestedMatrix.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/error.cmo src/error.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/error.cmo src/error.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "src/error.ml", line 14, characters 23-72:
+- Warning 45: this open statement shadows the constructor Error (which is later used)
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/extAst.cmo src/extAst.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/extAst.cmo src/extAst.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/nestedMatrix.cmi src/nestedMatrix.mli
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/nestedMatrix.cmi src/nestedMatrix.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray_ex.cmo src/ppx_bigarray_ex.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray_ex.cmo src/ppx_bigarray_ex.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -modules src/nestedMatrix.ml > src/nestedMatrix.ml.depends
+- cppo -V OCAML:4.04.0 -o src/compat.ml src/compat.cppo.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamldep -package compiler-libs.common -modules src/compat.ml > src/compat.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/compat.cmo src/compat.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/compat.cmo src/compat.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/error.cmx src/error.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/error.cmx src/error.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "src/error.ml", line 14, characters 23-72:
+- Warning 45: this open statement shadows the constructor Error (which is later used)
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/extAst.cmx src/extAst.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/extAst.cmx src/extAst.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/compat.cmx src/compat.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/compat.cmx src/compat.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/nestedMatrix.cmx src/nestedMatrix.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/nestedMatrix.cmx src/nestedMatrix.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray_ex.cmx src/ppx_bigarray_ex.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray_ex.cmx src/ppx_bigarray_ex.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -linkpkg -package compiler-libs.common src/compat.cmx src/error.cmx src/extAst.cmx src/nestedMatrix.cmx src/ppx_bigarray_ex.cmx -o src/ppx_bigarray_ex.native
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind ocamlopt -linkpkg -g -linkpkg -package compiler-libs.common src/compat.cmx src/error.cmx src/extAst.cmx src/nestedMatrix.cmx src/ppx_bigarray_ex.cmx -o src/ppx_bigarray_ex.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- + ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 518, characters 43-62:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "myocamlbuild.ml", line 531, characters 51-70:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Ocamlbuild_cppo, and its interface was not compiled with -opaque
+-> compiled  ppx_bigarray.2.0.0
+Processing  4/4: [ppx_bigarray: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_bigarray.2.0.0)
+- File "./setup.ml", line 318, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 318, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 327, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 330, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 368, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 474, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1825, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1831, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_bigarray/ppx_bigarray.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_bigarray/ppx_bigarray.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_bigarray/ppx_bigarray.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_bigarray/ppx_bigarray.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_bigarray/ppx_bigarray.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_bigarray/ppx_bigarray.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_bigarray/ppx_bigarray.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_bigarray/ppx_bigarray.annot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_bigarray/ppx_bigarray.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_bigarray/META
+-> installed ppx_bigarray.2.0.0
+Done.
+# Run eval `opam env` to update the current shell environment
