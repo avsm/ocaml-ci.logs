@@ -1,0 +1,85 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 camlzip /home/opam/opam-repository/cache
+[2016-12-22 16:19.19] Starting...
+[2016-12-22 16:19.19] Waiting for free pool slot to run
+[2016-12-22 17:37.54] Pool slot obtained, starting run
+[2016-12-22 17:37.54] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 camlzip
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+#  - zlib1g-dev
+# The following new OS packages need to be installed: zlib1g-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy zlib1g-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package zlib1g-dev:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-2ubuntu4_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4) ...
+Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install camlzip 1.06
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [camlzip.1.06: dl]
+[camlzip.1.06] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [camlzip: patch]
+Processing  1/2: [camlzip: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlzip.1.06)
+- ocamlc -g -safe-string -c -ccopt -g -ccopt -I/usr/include zlibstubs.c
+- ocamlmklib -oc camlzip zlibstubs.o \
+-             -L/usr/lib -lz
+- ocamlc -g -safe-string -c zlib.mli
+- ocamlc -g -safe-string -c zlib.ml
+- ocamlc -g -safe-string -c zip.mli
+- ocamlc -g -safe-string -c zip.ml
+- ocamlc -g -safe-string -c gzip.mli
+- ocamlc -g -safe-string -c gzip.ml
+- ocamlmklib -o zip -oc camlzip zlib.cmo zip.cmo gzip.cmo \
+-             -L/usr/lib -lz
+Processing  1/2: [camlzip: make allopt]
++ make "allopt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlzip.1.06)
+- ocamlopt -safe-string -c zlib.ml
+- ocamlopt -safe-string -c zip.ml
+- ocamlopt -safe-string -c gzip.ml
+- ocamlmklib -o zip -oc camlzip zlib.cmx zip.cmx gzip.cmx \
+-             -L/usr/lib -lz
+- ocamlopt -safe-string -shared -linkall -I ./ -o zip.cmxs zip.cmxa
+-> compiled  camlzip.1.06
+Processing  2/2: [camlzip: make install-findlib]
++ make "install-findlib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlzip.1.06)
+- ocamlfind install zip META *.mli *.a *.cmi *.cma zip.cmx gzip.cmx zlib.cmx zip.cmxa zip.cmxs dllcamlzip.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zlib.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/gzip.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zlib.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/gzip.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/libcamlzip.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zlib.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/gzip.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllcamlzip.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllcamlzip.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- echo 'directory="../zip"' >> META && ocamlfind install camlzip META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlzip/META
+-> installed camlzip.1.06
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 17:38.12] Success
