@@ -1,0 +1,50 @@
+=== docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 process /home/opam/opam-repository/cache
+[2016-12-22 16:20.22] Starting...
+[2016-12-22 16:20.22] Waiting for free pool slot to run
+[2016-12-22 18:15.17] Pool slot obtained, starting run
+[2016-12-22 18:15.17] docker run sha256:5f51f8aec026b8fbf6d2c9b95ca5b832eac63bd00457c49bdf8a4c1846e80191 opam depext -ivyj 2 process
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes base                                     [required by process]
+  - install process    0.2.1
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [process.0.2.1: dl]
+[process.0.2.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed base-bytes.base
+Processing  3/4: [process: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/process.0.2.1)
+- ocamlbuild -use-ocamlfind -classic-display process.cma process.cmxa process.cmx
+- ocamlfind ocamldep -package bytes -modules lib/process.mli > lib/process.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -o lib/process.cmi lib/process.mli
+- ocamlfind ocamldep -package bytes -modules lib/process.ml > lib/process.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -o lib/process.cmo lib/process.ml
+- ocamlfind ocamlc -a -package bytes lib/process.cmo -o lib/process.cma
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -principal -strict-sequence -package bytes -w @5@8@10@11@12@14@23@24@26@29 -I lib -o lib/process.cmx lib/process.ml
+- ocamlfind ocamlopt -a -package bytes lib/process.cmx -o lib/process.cmxa
+-> compiled  process.0.2.1
+Processing  4/4: [process: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/process.0.2.1)
+- ocamlfind install process META \
+- 	_build/lib/process.mli _build/lib/process.cmi _build/lib/process.cmti _build/lib/process.cma _build/lib/process.cmxa _build/lib/process.cmx \
+- 	_build/lib/process.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/process/process.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/process/process.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/process/process.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/process/process.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/process/process.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/process/process.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/process/process.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/process/META
+-> installed process.0.2.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-22 18:15.32] Success
