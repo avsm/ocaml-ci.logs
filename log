@@ -1,0 +1,94 @@
+=== opam depext -ivyj 2 gammu
+[2016-12-23 18:50.27] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install gammu 0.9.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [gammu.0.9.3: dl]
+[gammu.0.9.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [gammu: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/gammu.0.9.3)
+- File "./setup.ml", line 320, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 320, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 329, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 329, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 332, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 370, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 476, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1827, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1833, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5847, characters 11-28:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5848, characters 11-30:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+[ERROR] The compilation of gammu failed at "ocaml setup.ml -configure --prefix /home/opam/.opam/ocaml-base-compiler.4.04.0".
+
+#=== ERROR while compiling gammu.0.9.3 ========================================#
+# command              ocaml setup.ml -configure --prefix /home/opam/.opam/ocaml-base-compiler.4.04.0
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/gammu.0.9.3
+# exit-code            1
+# env-file             /home/opam/.opam/log/gammu-1-d2d111.env
+# output-file          /home/opam/.opam/log/gammu-1-d2d111.out
+### output ###
+# [...]
+# File "setup.ml", line 5847, characters 11-28:
+# Warning 3: deprecated: String.capitalize
+# Use String.capitalize_ascii instead.
+# File "setup.ml", line 5848, characters 11-30:
+# Warning 3: deprecated: String.uncapitalize
+# Use String.uncapitalize_ascii instead.
+# Package gammu was not found in the pkg-config search path.
+# Perhaps you should add the directory containing `gammu.pc'
+# to the PKG_CONFIG_PATH environment variable
+# Package 'gammu', required by 'world', not found
+# Exception: End_of_file.
+# E: Failure("Command 'ocaml config.ml' terminated with error code 2")
+
+- Package gammu was not found in the pkg-config search path.
+- Perhaps you should add the directory containing `gammu.pc'
+- to the PKG_CONFIG_PATH environment variable
+- Package 'gammu', required by 'world', not found
+- Exception: End_of_file.
+- E: Failure("Command 'ocaml config.ml' terminated with error code 2")
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build gammu 0.9.3
++- 
+- No changes have been performed
+
+=-=- gammu.0.9.3 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext gammu.0.9.3' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 gammu' failed.
+[2016-12-23 20:09.27] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "gammu" exited with status 4
