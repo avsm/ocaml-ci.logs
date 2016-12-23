@@ -1,0 +1,35 @@
+=== opam depext -ivyj 2 annot
+[2016-12-23 18:49.52] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install annot 1.1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [annot.1.1.0: dl]
+[annot.1.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [annot: ./configure]
++ ./configure "--prefix=/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/annot.1.1.0)
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build annot 1.1.0
++- 
+- No changes have been performed
+[ERROR] The compilation of annot failed at "./configure --prefix=/home/opam/.opam/ocaml-base-compiler.4.04.0".
+
+#=== ERROR while compiling annot.1.1.0 ========================================#
+# command              ./configure --prefix=/home/opam/.opam/ocaml-base-compiler.4.04.0
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/annot.1.1.0
+# exit-code            127
+# env-file             /home/opam/.opam/log/annot-1-d2d111.env
+# output-file          /home/opam/.opam/log/annot-1-d2d111.out
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 annot' failed.
+[2016-12-23 19:43.07] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "annot" exited with status 4
