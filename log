@@ -1,0 +1,39 @@
+=== opam depext -ivyj 2 ppx_blob
+[2016-12-23 21:15.00] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_blob 0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ppx_blob.0.1: dl]
+[ppx_blob.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ppx_blob: make native-code]
++ make "native-code" (CWD=/home/opam/.opam/default/.opam-switch/build/ppx_blob.0.1)
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/ppx_blob.0.1'
+- ocamlfind ocamldep ppx_blob.ml > ._d/ppx_blob.d
+- ocamlfind ocamlopt -package compiler-libs.common, -c -g -w -3 ppx_blob.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt \
+- 			-package compiler-libs.common, -linkpkg \
+- 			        -g        -o ppx_blob \
+- 			ppx_blob.cmx
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/ppx_blob.0.1'
+-> compiled  ppx_blob.0.1
+Processing  2/2: [ppx_blob: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/ppx_blob.0.1)
+- ocamlfind install ppx_blob META ppx_blob
+- Installed /home/opam/.opam/default/lib/ppx_blob/ppx_blob
+- Installed /home/opam/.opam/default/lib/ppx_blob/META
+-> installed ppx_blob.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 21:43.15] Success
