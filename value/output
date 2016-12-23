@@ -1,0 +1,47 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install opal 0.1.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [opal.0.1.1: dl]
+[opal.0.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [opal: make ncl]
++ make "ncl" "bcl" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/opal.0.1.1)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/opal.0.1.1'
+- ocamldep opal.ml > ._d/opal.d
+- ocamlopt -c opal.ml
+- ocamlopt -a                -o opal.cmxa opal.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/opal.0.1.1'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/opal.0.1.1'
+- ocamlc -c opal.ml
+- ocamlc -a                -o opal.cma opal.cmo
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/opal.0.1.1'
+-> compiled  opal.0.1.1
+Processing  2/2: [opal: make libinstall]
++ make "libinstall" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/opal.0.1.1)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/opal.0.1.1'
+- ocamlopt -a                -o opal.cmxa opal.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/opal.0.1.1'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/opal.0.1.1'
+- make[1]: 'opal.cma' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/opal.0.1.1'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  opal META META opal.cma opal.cmxa opal.cmi opal.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/opal/opal.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/opal/opal.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/opal/opal.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/opal/opal.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/opal/META
+- 
+- Installation successful.
+-> installed opal.0.1.1
+Done.
+# Run eval `opam env` to update the current shell environment
