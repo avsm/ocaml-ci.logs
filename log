@@ -1,0 +1,541 @@
+=== opam depext -ivyj 2 duppy
+[2016-12-23 21:14.14] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - pcre-dev
+#  - pkgconfig
+m4
+pkgconfig
+# The following new OS packages need to be installed: pcre-dev
+The following command needs to be run through "sudo":
+    apk add pcre-dev
+(1/4) Installing libpcre16 (8.38-r1)
+(2/4) Installing libpcre32 (8.38-r1)
+(3/4) Installing libpcrecpp (8.38-r1)
+(4/4) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 424 MiB in 86 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by conf-libpcre]
+  - install conf-libpcre    1                                   [required by pcre]
+  - install pcre            7.0.2                               [required by duppy]
+  - install duppy           0.5.2
+===== 4 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  3/4: [duppy.0.5.2: dl]
+Processing  4/4: [duppy.0.5.2: dl] [pcre.7.0.2: dl]
+[duppy.0.5.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4: [pcre.7.0.2: dl]
+[pcre.7.0.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/8: [conf-pkg-config: pkg-config]
++ pkg-config "--help" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-pkg-config.1.0)
+- usage: pkgconf [OPTIONS] [LIBRARIES]
+- 
+- basic options:
+- 
+-   --help                            this message
+-   --about                           print pkgconf version and license to stdout
+-   --version                         print supported pkg-config version to stdout
+-   --atleast-pkgconfig-version       check whether or not pkgconf is compatible
+-                                     with a specified pkg-config version
+-   --errors-to-stdout                print all errors on stdout instead of stderr
+-   --silence-errors                  explicitly be silent about errors
+-   --list-all                        list all known packages
+-   --list-package-names              list all known package names
+-   --simulate                        simulate walking the calculated dependency graph
+-   --no-cache                        do not cache already seen packages when
+-                                     walking the dependency graph
+- 
+- checking specific pkg-config database entries:
+- 
+-   --atleast-version                 require a specific version of a module
+-   --exact-version                   require an exact version of a module
+-   --max-version                     require a maximum version of a module
+-   --exists                          check whether or not a module exists
+-   --uninstalled                     check whether or not an uninstalled module will be used
+-   --no-uninstalled                  never use uninstalled modules when satisfying dependencies
+-   --maximum-traverse-depth          maximum allowed depth for dependency graph
+-   --static                          be more aggressive when computing dependency graph
+-                                     (for static linking)
+-   --env-only                        look only for package entries in PKG_CONFIG_PATH
+-   --ignore-conflicts                ignore 'conflicts' rules in modules
+-   --validate                        validate specific .pc files for correctness
+- 
+- querying specific pkg-config database fields:
+- 
+-   --define-variable=varname=value   define variable 'varname' as 'value'
+-   --variable=varname                print specified variable entry to stdout
+-   --cflags                          print required CFLAGS to stdout
+-   --cflags-only-I                   print required include-dir CFLAGS to stdout
+-   --cflags-only-other               print required non-include-dir CFLAGS to stdout
+-   --libs                            print required linker flags to stdout
+-   --libs-only-L                     print required LDPATH linker flags to stdout
+-   --libs-only-l                     print required LIBNAME linker flags to stdout
+-   --libs-only-other                 print required other linker flags to stdout
+-   --print-requires                  print required dependency frameworks to stdout
+-   --print-requires-private          print required dependency frameworks for static
+-                                     linking to stdout
+-   --print-variables                 print all known variables in module to stdout
+-   --digraph                         print entire dependency graph in graphviz 'dot' format
+-   --keep-system-cflags              keep -I/usr/include entries in cflags output
+-   --keep-system-libs                keep -L/usr/lib entries in libs output
+- 
+- report bugs to <http://github.com/pkgconf/pkgconf/issues>.
+-> compiled  conf-pkg-config.1.0
+-> installed conf-pkg-config.1.0
+Processing  3/8: [conf-libpcre: pkg-config libpcre]
++ pkg-config "libpcre" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-libpcre.1)
+-> compiled  conf-libpcre.1
+-> installed conf-libpcre.1
+Processing  5/8: [pcre: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/pcre.7.0.2)
+- ocaml setup.ml -configure 
+- File "setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ pcre-ocaml
+- Package version: ..................................... 7.0.2
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- with_pcre_config: .................................... pcre-config
+- Strict compile-time checks: .......................... true
+- Build examples: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- ocamldoc: ............................................ /usr/bin/ocamldoc
+- 
+- ocaml setup.ml -build 
+- File "setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamlc -g -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt '' -c lib/pcre_stubs.c
+- mv pcre_stubs.o lib/pcre_stubs.o
+- /usr/bin/ocamlmklib -o lib/pcre_stubs -lpcre lib/pcre_stubs.o
+- ocamlfind ocamldep -modules lib/pcre.mli > lib/pcre.mli.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmi lib/pcre.mli
+- + ocamlfind ocamlc -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmi lib/pcre.mli
+- File "lib/pcre.mli", line 60, characters 12-63:
+- Warning 50: ambiguous documentation comment
+- File "lib/pcre.mli", line 65, characters 21-53:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 66, characters 21-135:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 68, characters 21-70:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 69, characters 21-127:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 71, characters 21-67:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 72, characters 21-72:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 73, characters 21-66:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 74, characters 21-108:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 76, characters 21-75:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 77, characters 21-197:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 80, characters 21-78:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 81, characters 21-120:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 83, characters 21-77:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 96, characters 15-59:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 97, characters 15-77:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 98, characters 15-65:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 99, characters 15-74:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 100, characters 15-47:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 140, characters 19-47:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 141, characters 19-74:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 142, characters 19-45:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 147, characters 17-56:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 148, characters 17-61:
+- Warning 50: unattached documentation comment (ignored)
+- File "lib/pcre.mli", line 149, characters 17-65:
+- Warning 50: unattached documentation comment (ignored)
+- ocamlfind ocamldep -modules lib/pcre.ml > lib/pcre.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmo lib/pcre.ml
+- + ocamlfind ocamlc -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmo lib/pcre.ml
+- File "lib/pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlfind ocamlc -a -dllib -lpcre_stubs -cclib -lpcre_stubs -cclib -lpcre -cclib -lpcre lib/pcre.cmo -o lib/pcre.cma
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmx lib/pcre.ml
+- + ocamlfind ocamlopt -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmx lib/pcre.ml
+- File "lib/pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlfind ocamlopt -a -cclib -lpcre_stubs -cclib -lpcre -cclib -lpcre lib/pcre.cmx -o lib/pcre.cmxa
+- ocamlfind ocamlopt -shared -I lib -cclib -lpcre lib/pcre.cmx -o lib/pcre.cmxs
+- ocamlfind ocamldep -modules examples/cloc/cloc.ml > examples/cloc/cloc.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/cloc -I lib -o examples/cloc/cloc.cmo examples/cloc/cloc.ml
+- + ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/cloc -I lib -o examples/cloc/cloc.cmo examples/cloc/cloc.ml
+- File "examples/cloc/cloc.ml", line 5, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/cloc -I lib -o examples/cloc/cloc.cmx examples/cloc/cloc.ml
+- + ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/cloc -I lib -o examples/cloc/cloc.cmx examples/cloc/cloc.ml
+- File "examples/cloc/cloc.ml", line 5, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -g -I lib -linkpkg lib/pcre.cmxa examples/cloc/cloc.cmx -o examples/cloc/cloc.native
+- ocamlfind ocamldep -modules examples/count_hash/count_hash.ml > examples/count_hash/count_hash.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/count_hash -I lib -o examples/count_hash/count_hash.cmo examples/count_hash/count_hash.ml
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/count_hash -I lib -o examples/count_hash/count_hash.cmx examples/count_hash/count_hash.ml
+- ocamlfind ocamlopt -g -I lib -linkpkg lib/pcre.cmxa examples/count_hash/count_hash.cmx -o examples/count_hash/count_hash.native
+- ocamlfind ocamldep -modules examples/pcregrep/pcregrep.ml > examples/pcregrep/pcregrep.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/pcregrep -I lib -o examples/pcregrep/pcregrep.cmo examples/pcregrep/pcregrep.ml
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/pcregrep -I lib -o examples/pcregrep/pcregrep.cmx examples/pcregrep/pcregrep.ml
+- ocamlfind ocamlopt -g -I lib -linkpkg lib/pcre.cmxa examples/pcregrep/pcregrep.cmx -o examples/pcregrep/pcregrep.native
+- ocamlfind ocamldep -modules examples/subst/subst.ml > examples/subst/subst.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/subst -I lib -o examples/subst/subst.cmo examples/subst/subst.ml
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/subst -I lib -o examples/subst/subst.cmx examples/subst/subst.ml
+- ocamlfind ocamlopt -g -I lib -linkpkg lib/pcre.cmxa examples/subst/subst.cmx -o examples/subst/subst.native
+-> compiled  pcre.7.0.2
+Processing  6/8: [pcre: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/pcre.7.0.2)
+- ocaml setup.ml -install 
+- File "setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- Installed /home/opam/.opam/default/lib/pcre/pcre.mli
+- Installed /home/opam/.opam/default/lib/pcre/libpcre_stubs.a
+- Installed /home/opam/.opam/default/lib/pcre/pcre.cma
+- Installed /home/opam/.opam/default/lib/pcre/pcre.cmxa
+- Installed /home/opam/.opam/default/lib/pcre/pcre.a
+- Installed /home/opam/.opam/default/lib/pcre/pcre.cmxs
+- Installed /home/opam/.opam/default/lib/pcre/pcre.cmi
+- Installed /home/opam/.opam/default/lib/pcre/pcre.cmx
+- Installed /home/opam/.opam/default/lib/pcre/META
+- Installed /home/opam/.opam/default/lib/stublibs/dllpcre_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllpcre_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+-> installed pcre.7.0.2
+Processing  7/8: [duppy: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2)
+- configuring ocaml-duppy 0.5.2
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking build system type... x86_64-unknown-linux-gnu
+- checking host system type... x86_64-unknown-linux-gnu
+- checking for a BSD-compatible install... /usr/bin/install -c
+- checking that calling user is not root... ok
+- checking for gcc... (cached) gcc
+- checking whether we are using the GNU C compiler... (cached) yes
+- checking whether gcc accepts -g... (cached) yes
+- checking for gcc option to accept ISO C89... (cached) none needed
+- checking for ar... ar
+- checking for ocamlc... ocamlc
+- OCaml version is 4.02.3
+- checking if ocaml compiler supports first-class modules... yes
+- OCaml library path is /usr/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamldep.opt... ocamldep.opt
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamldoc.opt... ocamldoc.opt
+- checking for ocamlbuild... ocamlbuild
+- checking for camlidl... no
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- checking for camlp4... camlp4
+- checking for camlp4boot... camlp4boot
+- checking for camlp4o... camlp4o
+- checking for camlp4of... camlp4of
+- checking for camlp4oof... camlp4oof
+- checking for camlp4orf... camlp4orf
+- checking for camlp4prof... camlp4prof
+- checking for camlp4r... camlp4r
+- checking for camlp4rf... camlp4rf
+- checking for ocamlfind... ocamlfind
+- checking for ocaml standard library path... /usr/lib/ocaml
+- checking for caml/threads.h... no
+- checking for gcc option to produce PIC... -fPIC
+- checking for ocaml pcre module... ok
+- checking for ocaml bytes module... ok
+- configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: creating src/META
+- config.status: creating src/Makefile
+- config.status: creating examples/Makefile.telnet
+- config.status: creating examples/Makefile.http
+Processing  7/8: [duppy: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2)
+- make -C src all
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2/src'
+- ocamlfind ocamlc -c -package camlp4 -package camlp4.quotations.o -package camlp4.extend -syntax camlp4o pa_duppy.mli
+- ocamlfind ocamlc -c -package camlp4 -package camlp4.quotations.o -package camlp4.extend -syntax camlp4o pa_duppy.ml
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2/src'
+- making ._bcdi/duppy.di from duppy.mli
+- making ._d/duppy.d from duppy.ml
+- ocamlc.opt -thread -c -cc "gcc" -ccopt "-fPIC -g -O2 -I/home/opam/.opam/default/include -Wall -DCAML_NAME_SPACE \
+- 			-DPIC -fPIC -I/home/opam/.opam/default/include  \
+- 			  -I/home/opam/.opam/default/lib/pcre -I/home/opam/.opam/default/lib/bytes  -o duppy_stubs.o " duppy_stubs.c 
+- ar rcs libduppy_stubs.a  duppy_stubs.o
+- ocamlc.opt -thread -c -dtypes -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/default/lib/pcre -I /home/opam/.opam/default/lib/bytes duppy.mli
+- ocamlc.opt -thread -c -dtypes -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/default/lib/pcre -I /home/opam/.opam/default/lib/bytes duppy.ml
+- File "duppy.ml", line 451, characters 25-189:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Pcre.split_result.
+- File "duppy.ml", line 451, characters 25-189:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Pcre.split_result.
+- File "duppy.ml", line 448, characters 17-875:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Pcre.split_result.
+- File "duppy.ml", line 448, characters 17-875:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Pcre.split_result.
+- File "duppy.ml", line 442, characters 8-1559:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type marker.
+- File "duppy.ml", line 442, characters 8-1559:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type marker.
+- File "duppy.ml", line 961, characters 7-124:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Io.failure.
+- File "duppy.ml", line 961, characters 7-124:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Io.failure.
+- ocamlmklib    -I /home/opam/.opam/default/lib/pcre -I /home/opam/.opam/default/lib/bytes      \
+- 			-o duppy_stubs  duppy_stubs.o  \
+- 			
+- ocamlc.opt -thread -a -dllib dllduppy_stubs.so    -I /home/opam/.opam/default/lib/pcre -I /home/opam/.opam/default/lib/bytes   -ccopt -L/home/opam/.opam/default/lib       \
+- 			-cclib -lduppy_stubs   -o duppy.cma  duppy.cmo
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2/src'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2/src'
+- making ._ncdi/duppy.di from duppy.mli
+- make[2]: 'libduppy_stubs.a' is up to date.
+- ocamlopt.opt -thread -c -dtypes -g -w +A@5-7@8@11@12@20-35-44-45 -I /home/opam/.opam/default/lib/pcre -I /home/opam/.opam/default/lib/bytes duppy.ml
+- File "duppy.ml", line 451, characters 25-189:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Pcre.split_result.
+- File "duppy.ml", line 451, characters 25-189:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Pcre.split_result.
+- File "duppy.ml", line 448, characters 17-875:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Pcre.split_result.
+- File "duppy.ml", line 448, characters 17-875:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Pcre.split_result.
+- File "duppy.ml", line 442, characters 8-1559:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type marker.
+- File "duppy.ml", line 442, characters 8-1559:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type marker.
+- File "duppy.ml", line 961, characters 7-124:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Io.failure.
+- File "duppy.ml", line 961, characters 7-124:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Io.failure.
+- ocamlopt.opt -thread -a     -I /home/opam/.opam/default/lib/pcre -I /home/opam/.opam/default/lib/bytes   -ccopt -L/home/opam/.opam/default/lib      -cclib -lduppy_stubs   \
+- 			 -o duppy.cmxa duppy.cmx
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2/src'
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2/src'
+-> compiled  duppy.0.5.2
+Processing  8/8: [duppy: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2)
+- make -C src install
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2/src'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2/src'
+- make[2]: 'libduppy_stubs.a' is up to date.
+- make[2]: 'duppy.cma' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2/src'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2/src'
+- make[2]: 'libduppy_stubs.a' is up to date.
+- make[2]: 'duppy.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2/src'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  duppy META pa_duppy.cmo pa_duppy.cmi pa_duppy.mli duppy.mli duppy.cmi pa_duppy.cmi duppy.cma duppy.cmxa duppy.cmx duppy.a libduppy_stubs.a dllduppy_stubs.so
+- Installed /home/opam/.opam/default/lib/duppy/libduppy_stubs.a
+- Installed /home/opam/.opam/default/lib/duppy/duppy.a
+- Installed /home/opam/.opam/default/lib/duppy/duppy.cmx
+- Installed /home/opam/.opam/default/lib/duppy/duppy.cmxa
+- Installed /home/opam/.opam/default/lib/duppy/duppy.cma
+- Installed /home/opam/.opam/default/lib/duppy/pa_duppy.cmi
+- Installed /home/opam/.opam/default/lib/duppy/duppy.cmi
+- Installed /home/opam/.opam/default/lib/duppy/duppy.mli
+- Installed /home/opam/.opam/default/lib/duppy/pa_duppy.mli
+- ocamlfind: [WARNING] Overwriting file /home/opam/.opam/default/lib/duppy/pa_duppy.cmi
+- Installed /home/opam/.opam/default/lib/duppy/pa_duppy.cmi
+- Installed /home/opam/.opam/default/lib/duppy/pa_duppy.cmo
+- Installed /home/opam/.opam/default/lib/duppy/META
+- Installed /home/opam/.opam/default/lib/stublibs/dllduppy_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllduppy_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/duppy.0.5.2/src'
+-> installed duppy.0.5.2
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 21:20.06] Success
