@@ -1,0 +1,91 @@
+=== opam depext -ivyj 2 sundialsml
+[2016-12-23 18:49.38] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install sundialsml 2.7.0p0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [sundialsml.2.7.0p0: dl]
+[sundialsml.2.7.0p0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [sundialsml: ./configure]
++ ./configure "--stubdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/" "--libdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/" "--docdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/doc/" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sundialsml.2.7.0p0)
+- expr: warning: '^\([^,]*\),*': using '^' as the first character
+- of a basic regular expression is not portable; it is ignored
+- expr: warning: '^[^,]*,\([^,]*\),*': using '^' as the first character
+- of a basic regular expression is not portable; it is ignored
+- expr: warning: '^[^,]*,[^,]*,\([^,]*\)': using '^' as the first character
+- of a basic regular expression is not portable; it is ignored
+- 
+- Configuration (2.7.0p0)
+- -----------------------
+-   OCaml                 /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml (4.03.0)
+-   Sundials               (without lapack)
+-     -parallel           not installed
+-     -nvector: pthreads  not installed
+-     -nvector: openmp    not installed
+-     -SuperLU_MT         not installed
+-     -KLU                not installed
+-     -examples           NOT FOUND
+-   OCamlMPI              NOT FOUND
+-   MathJax (for docs)    https://cdn.mathjax.org/mathjax/latest/ (rendering needs network)
+- 
+-   Architecture          x86_64
+- 
+- Installation paths
+-   prefix:               /usr/local/
+-   libdir:               /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/
+-   stubdir:              /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/
+-   docdir:               /home/opam/.opam/ocaml-base-compiler.4.03.0/doc/
+- 
+- Some errors occurred during configuration:
+- 	Can't link C code to sundials.  Is sundials installed properly?
+- 	Saved test code as __configure_test_file__realtype.c
+- 	Compilation command was:
+- 	cc  -o __configure_test_file__realtype __configure_test_file__realtype.c
+- 	error interpreting sundials_config.h
+- 	error interpreting sundials_config.h
+- 
+[ERROR] The compilation of sundialsml failed at "./configure --stubdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/ --libdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ --docdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/doc/".
+
+#=== ERROR while compiling sundialsml.2.7.0p0 =================================#
+# command              ./configure --stubdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/ --libdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ --docdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/doc/
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sundialsml.2.7.0p0
+# exit-code            1
+# env-file             /home/opam/.opam/log/sundialsml-1-d2d111.env
+# output-file          /home/opam/.opam/log/sundialsml-1-d2d111.out
+### output ###
+# Installation paths
+# [...]
+#   stubdir:              /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/
+#   docdir:               /home/opam/.opam/ocaml-base-compiler.4.03.0/doc/
+# 
+# Some errors occurred during configuration:
+# 	Can't link C code to sundials.  Is sundials installed properly?
+# 	Saved test code as __configure_test_file__realtype.c
+# 	Compilation command was:
+# 	cc  -o __configure_test_file__realtype __configure_test_file__realtype.c
+# 	error interpreting sundials_config.h
+# 	error interpreting sundials_config.h
+# 
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build sundialsml 2.7.0p0
++- 
+- No changes have been performed
+
+=-=- sundialsml.2.7.0p0 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext sundialsml.2.7.0p0' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 sundialsml' failed.
+[2016-12-23 19:36.09] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "sundialsml" exited with status 4
