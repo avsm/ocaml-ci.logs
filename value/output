@@ -1,0 +1,132 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install tdk 0.2.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [tdk.0.2.0: dl]
+[tdk.0.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [tdk: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/tdk.0.2.0)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ tdk
+- Package version: ..................................... 0.2.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- ocamldoc: ............................................ /usr/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/tdk.0.2.0)
+- W: Cannot find source file matching module 'tdk' in library tdk
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 24, characters 35-44:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 27, characters 35-44:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 29, characters 23-32:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules lib/s.mli > lib/s.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I lib -o lib/s.cmi lib/s.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules lib/bdd.mli > lib/bdd.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I lib -o lib/bdd.cmi lib/bdd.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules lib/bdd.ml > lib/bdd.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules lib/vcr.mli > lib/vcr.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I lib -o lib/vcr.cmi lib/vcr.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules lib/vcr.ml > lib/vcr.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules lib/vlr.mli > lib/vlr.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I lib -o lib/vlr.cmi lib/vlr.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules lib/vlr.ml > lib/vlr.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I lib -o lib/bdd.cmo lib/bdd.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I lib -o lib/vcr.cmo lib/vcr.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I lib -o lib/vlr.cmo lib/vlr.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -pack -g -annot -bin-annot lib/s.cmi lib/vlr.cmo lib/vcr.cmo lib/bdd.cmo -o lib/tdk.cmo
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a lib/tdk.cmo -o lib/tdk.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -for-pack Tdk -I lib -o lib/vlr.cmx lib/vlr.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -for-pack Tdk -I lib -o lib/vcr.cmx lib/vcr.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -for-pack Tdk -I lib -o lib/bdd.cmx lib/bdd.ml
+- touch lib/tdk.mli  ; if  /home/opam/.opam/default/bin/ocamlfind ocamlopt -pack -g -annot -bin-annot -I lib lib/s.cmi lib/vlr.cmx lib/vcr.cmx lib/bdd.cmx -o lib/tdk.cmx  ; then  rm -f lib/tdk.mli  ; else  rm -f lib/tdk.mli  ; exit 1; fi
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a lib/tdk.cmx -o lib/tdk.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared lib/tdk.cmxa lib/tdk.cmx -o lib/tdk.cmxs
+-> compiled  tdk.0.2.0
+Processing  2/2: [tdk: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/default/.opam-switch/build/tdk.0.2.0)
+- Installed /home/opam/.opam/default/lib/tdk/s.mli
+- Installed /home/opam/.opam/default/lib/tdk/bdd.mli
+- Installed /home/opam/.opam/default/lib/tdk/vcr.mli
+- Installed /home/opam/.opam/default/lib/tdk/vlr.mli
+- Installed /home/opam/.opam/default/lib/tdk/tdk.cmt
+- Installed /home/opam/.opam/default/lib/tdk/tdk.cmi
+- Installed /home/opam/.opam/default/lib/tdk/tdk.cma
+- Installed /home/opam/.opam/default/lib/tdk/tdk.cmxa
+- Installed /home/opam/.opam/default/lib/tdk/tdk.a
+- Installed /home/opam/.opam/default/lib/tdk/tdk.cmxs
+- Installed /home/opam/.opam/default/lib/tdk/vlr.cmti
+- Installed /home/opam/.opam/default/lib/tdk/vlr.cmt
+- Installed /home/opam/.opam/default/lib/tdk/vlr.annot
+- Installed /home/opam/.opam/default/lib/tdk/vcr.cmti
+- Installed /home/opam/.opam/default/lib/tdk/vcr.cmt
+- Installed /home/opam/.opam/default/lib/tdk/vcr.annot
+- Installed /home/opam/.opam/default/lib/tdk/bdd.cmti
+- Installed /home/opam/.opam/default/lib/tdk/bdd.cmt
+- Installed /home/opam/.opam/default/lib/tdk/bdd.annot
+- Installed /home/opam/.opam/default/lib/tdk/s.cmti
+- Installed /home/opam/.opam/default/lib/tdk/tdk.cmx
+- Installed /home/opam/.opam/default/lib/tdk/META
+-> installed tdk.0.2.0
+Done.
+# Run eval `opam env` to update the current shell environment
