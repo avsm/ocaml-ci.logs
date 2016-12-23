@@ -1,0 +1,163 @@
+=== opam depext -ivyj 2 cstruct
+[2016-12-23 21:14.12] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install cstruct 0.4.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [cstruct.0.4.1: dl]
+[cstruct.0.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [cstruct: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/cstruct.0.4.1)
+- cd unix && make all
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/cstruct.0.4.1/unix'
+- ocaml setup.ml -configure
+- File "/home/avsm/.opam/system/build/oasis.0.3.0/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/home/avsm/.opam/system/build/oasis.0.3.0/src/oasis/OASISLibrary.ml", line 402, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ..................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: ........................................ /usr/bin/ocamlc.opt
+- ocamlopt: ...................................... /usr/bin/ocamlopt.opt
+- ocamlbuild: .................................... /usr/bin/ocamlbuild
+- Package name: .................................. cstruct
+- Package version: ............................... 0.4.1
+- os_type: ....................................... Unix
+- system: ........................................ linux
+- architecture: .................................. amd64
+- ccomp_type: .................................... cc
+- ocaml_version: ................................. 4.02.3
+- standard_library_default: ...................... /usr/lib/ocaml
+- standard_library: .............................. /usr/lib/ocaml
+- standard_runtime: .............................. /usr/bin/ocamlrun
+- bytecomp_c_compiler: ........................... gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ............................. gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ......................................... default
+- ext_obj: ....................................... .o
+- ext_asm: ....................................... .s
+- ext_lib: ....................................... .a
+- ext_dll: ....................................... .so
+- default_executable_name: ....................... a.out
+- systhread_supported: ........................... true
+- Install architecture-independent files dir: .... /usr/local
+- Install architecture-dependent files in dir: ... $prefix
+- User executables: .............................. $exec_prefix/bin
+- System admin executables: ...................... $exec_prefix/sbin
+- Program executables: ........................... $exec_prefix/libexec
+- Read-only single-machine data: ................. $prefix/etc
+- Modifiable architecture-independent data: ...... $prefix/com
+- Modifiable single-machine data: ................ $prefix/var
+- Object code libraries: ......................... $exec_prefix/lib
+- Read-only arch-independent data root: .......... $prefix/share
+- Read-only architecture-independent data: ....... $datarootdir
+- Info documentation: ............................ $datarootdir/info
+- Locale-dependent data: ......................... $datarootdir/locale
+- Man documentation: ............................. $datarootdir/man
+- Documentation root: ............................ $datarootdir/doc/$pkg_name
+- HTML documentation: ............................ $docdir
+- DVI documentation: ............................. $docdir
+- PDF documentation: ............................. $docdir
+- PS documentation: .............................. $docdir
+- findlib_version: ............................... 1.7.1
+- is_native: ..................................... true
+- suffix_program: ................................ 
+- Remove a file.: ................................ rm -f
+- Remove a directory.: ........................... rm -rf
+- Turn ocaml debug flag on: ...................... true
+- Turn ocaml profile flag on: .................... false
+- Compiler support generation of .cmxs.: ......... true
+- OCamlbuild additional flags: ................... 
+- pkg_bigarray: .................................. /usr/lib/ocaml
+- pkg_camlp4_lib: ................................ /usr/lib/ocaml/camlp4
+- pkg_camlp4_quotations_o: ....................... /usr/lib/ocaml/camlp4
+- pkg_camlp4_extend: ............................. /usr/lib/ocaml/camlp4
+- 
+- ocaml setup.ml -build -j 4
+- File "/home/avsm/.opam/system/build/oasis.0.3.0/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/home/avsm/.opam/system/build/oasis.0.3.0/src/oasis/OASISLibrary.ml", line 402, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 31, characters 47-57:
+- Warning: the tag "pa_optcomp" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 31, characters 35-45:
+- Warning: the tag "pa_lwt_log" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 31, characters 27-33:
+- Warning: the tag "pa_lwt" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 31, characters 11-25:
+- Warning: the tag "pa_lwt_options" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 32, characters 54-65:
+- Warning: the tag "pa_optcomp" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 32, characters 41-52:
+- Warning: the tag "pa_lwt_log" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 32, characters 32-39:
+- Warning: the tag "pa_lwt" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 32, characters 15-30:
+- Warning: the tag "pa_lwt_options" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- ocamlfind ocamlc -g -ccopt -O3 -c lib/cstruct_stubs.c
+- + ocamlfind ocamlc -g -ccopt -O3 -c lib/cstruct_stubs.c
+- lib/cstruct_stubs.c: In function 'caml_bigarray_base_offset':
+- lib/cstruct_stubs.c:36:5: error: unknown type name 'off_t'
+-      off_t len = (ba->data - ba->proxy->data);
+-      ^
+- lib/cstruct_stubs.c: In function 'caml_bigarray_shift_left':
+- lib/cstruct_stubs.c:55:3: error: unknown type name 'off_t'
+-    off_t avail = ba->data - ba->proxy->data;
+-    ^
+- lib/cstruct_stubs.c:56:3: error: unknown type name 'off_t'
+-    off_t len = Int_val(v_len);
+-    ^
+- Command exited with code 2.
+- E: Failure("Command ''/usr/bin/ocamlbuild' lib/libcstruct_stubs.a lib/dllcstruct_stubs.so lib/cstruct.cma lib/cstruct.cmxa lib/cstruct.a lib/cstruct.cmxs syntax/cstruct-syntax.cma syntax/cstruct-syntax.cmxa syntax/cstruct-syntax.a syntax/cstruct-syntax.cmxs -tag debug -j 4' terminated with error code 10")
+- Makefile:13: recipe for target 'build' failed
+- make[1]: *** [build] Error 1
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/cstruct.0.4.1/unix'
+- Makefile:11: recipe for target 'all' failed
+- make: *** [all] Error 2
+
+[ERROR] The compilation of cstruct failed at "make".
+
+#=== ERROR while compiling cstruct.0.4.1 ======================================#
+# command              make
+# path                 /home/opam/.opam/default/.opam-switch/build/cstruct.0.4.1
+# exit-code            2
+# env-file             /home/opam/.opam/log/cstruct-1-d2d111.env
+# output-file          /home/opam/.opam/log/cstruct-1-d2d111.out
+### output ###
+# lib/cstruct_stubs.c:55:3: error: unknown type name 'off_t'
+# [...]
+#    ^
+# lib/cstruct_stubs.c:56:3: error: unknown type name 'off_t'
+#    off_t len = Int_val(v_len);
+#    ^
+# Command exited with code 2.
+# E: Failure("Command ''/usr/bin/ocamlbuild' lib/libcstruct_stubs.a lib/dllcstruct_stubs.so lib/cstruct.cma lib/cstruct.cmxa lib/cstruct.a lib/cstruct.cmxs syntax/cstruct-syntax.cma syntax/cstruct-syntax.cmxa syntax/cstruct-syntax.a syntax/cstruct-syntax.cmxs -tag debug -j 4' terminated with error code 10")
+# Makefile:13: recipe for target 'build' failed
+# make[1]: *** [build] Error 1
+# make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/cstruct.0.4.1/unix'
+# Makefile:11: recipe for target 'all' failed
+# make: *** [all] Error 2
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build cstruct 0.4.1
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 cstruct' failed.
+[2016-12-23 21:17.50] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "cstruct" exited with status 4
