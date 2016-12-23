@@ -1,0 +1,180 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install lpd 1.2.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [lpd.1.2.1: dl]
+[lpd.1.2.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [lpd: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/lpd.1.2.1)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ lpd
+- Package version: ..................................... 1.2.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Build the examples.: ................................. true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_unix: ............................................ /usr/lib/ocaml
+- ocamldoc: ............................................ /usr/bin/ocamldoc
+- pkg_threads: ......................................... /usr/lib/ocaml
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/lpd.1.2.1)
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package threads -package unix -modules socket.mli > socket.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package threads -package unix -thread -o socket.cmi socket.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package threads -package unix -modules socket.ml > socket.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package threads -package unix -thread -o socket.cmo socket.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package threads -package unix -thread -o socket.cmo socket.ml
+- File "socket.ml", line 25, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "socket.ml", line 39, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "socket.ml", line 89, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a socket.cmo -o socket.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package threads -package unix -thread -o socket.cmx socket.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package threads -package unix -thread -o socket.cmx socket.ml
+- File "socket.ml", line 25, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "socket.ml", line 39, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "socket.ml", line 89, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a socket.cmx -o socket.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared socket.cmx -o socket.cmxs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package threads -package unix -modules lpd.mli > lpd.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package threads -package unix -thread -o lpd.cmi lpd.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package threads -package unix -modules lpd.ml > lpd.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package threads -package unix -thread -o lpd.cmo lpd.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package threads -package unix -thread -o lpd.cmo lpd.ml
+- File "lpd.ml", line 59, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lpd.ml", line 77, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a lpd.cmo -o lpd.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package threads -package unix -thread -o lpd.cmx lpd.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package threads -package unix -thread -o lpd.cmx lpd.ml
+- File "lpd.ml", line 59, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lpd.ml", line 77, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a lpd.cmx -o lpd.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared lpd.cmx -o lpd.cmxs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package threads -package unix -modules lpd_to_win.ml > lpd_to_win.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package threads -package unix -thread -o lpd_to_win.cmo lpd_to_win.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package threads -package unix -thread -o lpd_to_win.cmx lpd_to_win.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -g -linkpkg -package threads -package unix -thread socket.cmxa lpd.cmxa lpd_to_win.cmx -o lpd_to_win.native
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package threads -package unix -modules page_counter.ml > page_counter.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package threads -package unix -thread -o page_counter.cmo page_counter.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package threads -package unix -thread -o page_counter.cmo page_counter.ml
+- File "page_counter.ml", line 120, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "page_counter.ml", line 124, characters 26-43:
+- Warning 3: deprecated: String.unsafe_set
+- File "page_counter.ml", line 131, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package threads -package unix -thread -o page_counter.cmx page_counter.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package threads -package unix -thread -o page_counter.cmx page_counter.ml
+- File "page_counter.ml", line 120, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "page_counter.ml", line 124, characters 26-43:
+- Warning 3: deprecated: String.unsafe_set
+- File "page_counter.ml", line 131, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -g -linkpkg -package unix socket.cmxa lpd.cmxa page_counter.cmx -o page_counter.native
+-> compiled  lpd.1.2.1
+Processing  2/2: [lpd: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/default/.opam-switch/build/lpd.1.2.1)
+- Installed /home/opam/.opam/default/lib/lpd/lpd.mli
+- Installed /home/opam/.opam/default/lib/lpd/lpd.cma
+- Installed /home/opam/.opam/default/lib/lpd/lpd.cmxa
+- Installed /home/opam/.opam/default/lib/lpd/lpd.a
+- Installed /home/opam/.opam/default/lib/lpd/lpd.cmxs
+- Installed /home/opam/.opam/default/lib/lpd/lpd.cmi
+- Installed /home/opam/.opam/default/lib/lpd/lpd.cmti
+- Installed /home/opam/.opam/default/lib/lpd/lpd.cmt
+- Installed /home/opam/.opam/default/lib/lpd/lpd.annot
+- Installed /home/opam/.opam/default/lib/lpd/lpd.cmx
+- Installed /home/opam/.opam/default/lib/lpd/socket.mli
+- Installed /home/opam/.opam/default/lib/lpd/socket.cma
+- Installed /home/opam/.opam/default/lib/lpd/socket.cmxa
+- Installed /home/opam/.opam/default/lib/lpd/socket.a
+- Installed /home/opam/.opam/default/lib/lpd/socket.cmxs
+- Installed /home/opam/.opam/default/lib/lpd/socket.cmi
+- Installed /home/opam/.opam/default/lib/lpd/socket.cmti
+- Installed /home/opam/.opam/default/lib/lpd/socket.cmt
+- Installed /home/opam/.opam/default/lib/lpd/socket.annot
+- Installed /home/opam/.opam/default/lib/lpd/socket.cmx
+- Installed /home/opam/.opam/default/lib/lpd/META
+-> installed lpd.1.2.1
+Done.
+# Run eval `opam env` to update the current shell environment
