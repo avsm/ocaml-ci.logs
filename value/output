@@ -1,0 +1,346 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - pcre-dev
+#  - pkgconfig
+m4
+pkgconfig
+# The following new OS packages need to be installed: pcre-dev
+The following command needs to be run through "sudo":
+    apk add pcre-dev
+(1/4) Installing libpcre16 (8.38-r1)
+(2/4) Installing libpcre32 (8.38-r1)
+(3/4) Installing libpcrecpp (8.38-r1)
+(4/4) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 424 MiB in 86 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by conf-libpcre]
+  - install conf-libpcre    1                                   [required by pcre]
+  - install pcre            6.2.5                               [required by ocamldbi]
+  - install ocamldbi        0.9.11
+===== 4 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  3/4: [ocamldbi.0.9.11: dl]
+Processing  4/4: [ocamldbi.0.9.11: dl] [pcre.6.2.5: dl]
+[ocamldbi.0.9.11] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4: [pcre.6.2.5: dl]
+[pcre.6.2.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/8: [conf-pkg-config: pkg-config]
++ pkg-config "--help" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-pkg-config.1.0)
+- usage: pkgconf [OPTIONS] [LIBRARIES]
+- 
+- basic options:
+- 
+-   --help                            this message
+-   --about                           print pkgconf version and license to stdout
+-   --version                         print supported pkg-config version to stdout
+-   --atleast-pkgconfig-version       check whether or not pkgconf is compatible
+-                                     with a specified pkg-config version
+-   --errors-to-stdout                print all errors on stdout instead of stderr
+-   --silence-errors                  explicitly be silent about errors
+-   --list-all                        list all known packages
+-   --list-package-names              list all known package names
+-   --simulate                        simulate walking the calculated dependency graph
+-   --no-cache                        do not cache already seen packages when
+-                                     walking the dependency graph
+- 
+- checking specific pkg-config database entries:
+- 
+-   --atleast-version                 require a specific version of a module
+-   --exact-version                   require an exact version of a module
+-   --max-version                     require a maximum version of a module
+-   --exists                          check whether or not a module exists
+-   --uninstalled                     check whether or not an uninstalled module will be used
+-   --no-uninstalled                  never use uninstalled modules when satisfying dependencies
+-   --maximum-traverse-depth          maximum allowed depth for dependency graph
+-   --static                          be more aggressive when computing dependency graph
+-                                     (for static linking)
+-   --env-only                        look only for package entries in PKG_CONFIG_PATH
+-   --ignore-conflicts                ignore 'conflicts' rules in modules
+-   --validate                        validate specific .pc files for correctness
+- 
+- querying specific pkg-config database fields:
+- 
+-   --define-variable=varname=value   define variable 'varname' as 'value'
+-   --variable=varname                print specified variable entry to stdout
+-   --cflags                          print required CFLAGS to stdout
+-   --cflags-only-I                   print required include-dir CFLAGS to stdout
+-   --cflags-only-other               print required non-include-dir CFLAGS to stdout
+-   --libs                            print required linker flags to stdout
+-   --libs-only-L                     print required LDPATH linker flags to stdout
+-   --libs-only-l                     print required LIBNAME linker flags to stdout
+-   --libs-only-other                 print required other linker flags to stdout
+-   --print-requires                  print required dependency frameworks to stdout
+-   --print-requires-private          print required dependency frameworks for static
+-                                     linking to stdout
+-   --print-variables                 print all known variables in module to stdout
+-   --digraph                         print entire dependency graph in graphviz 'dot' format
+-   --keep-system-cflags              keep -I/usr/include entries in cflags output
+-   --keep-system-libs                keep -L/usr/lib entries in libs output
+- 
+- report bugs to <http://github.com/pkgconf/pkgconf/issues>.
+-> compiled  conf-pkg-config.1.0
+-> installed conf-pkg-config.1.0
+Processing  3/8: [conf-libpcre: pkg-config libpcre]
++ pkg-config "libpcre" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-libpcre.1)
+-> compiled  conf-libpcre.1
+-> installed conf-libpcre.1
+Processing  5/8: [pcre: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5)
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+- ocamldep pcre.mli > ._bcdi/pcre.di
+- ocamldep pcre.ml > ._d/pcre.d
+- ocamlc -c -cc "cc" -ccopt "-fPIC -O2  \
+- 			-DPIC   \
+- 			    -o pcre_stubs.o " pcre_stubs.c
+- ar rcs libpcre_stubs.a  pcre_stubs.o
+- ocamlc -c pcre.mli
+- ocamlc -c pcre.ml
+- File "pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlmklib         \
+- 			-o pcre_stubs  pcre_stubs.o   \
+- 			-lpcre
+- ocamlc -a -cclib -lpcre_stubs    -dllib dllpcre_stubs.so -custom     -cclib "-lpcre"        -o pcre.cma pcre.cmo
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+- ocamldep -native pcre.mli > ._ncdi/pcre.di
+- make[2]: 'libpcre_stubs.a' is up to date.
+- ocamlopt -c pcre.ml
+- File "pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlopt -a -cclib -lpcre_stubs         -cclib "-lpcre"       -o pcre.cmxa pcre.cmx
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+-> compiled  pcre.6.2.5
+Processing  6/8: [pcre: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5)
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  pcre META pcre.mli pcre.cmi pcre.cma pcre.cmxa pcre.a libpcre_stubs.a dllpcre_stubs.so
+- Installed /home/opam/.opam/default/lib/pcre/libpcre_stubs.a
+- Installed /home/opam/.opam/default/lib/pcre/pcre.a
+- Installed /home/opam/.opam/default/lib/pcre/pcre.cmxa
+- Installed /home/opam/.opam/default/lib/pcre/pcre.cma
+- Installed /home/opam/.opam/default/lib/pcre/pcre.cmi
+- Installed /home/opam/.opam/default/lib/pcre/pcre.mli
+- Installed /home/opam/.opam/default/lib/pcre/META
+- Installed /home/opam/.opam/default/lib/stublibs/dllpcre_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllpcre_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+-> installed pcre.6.2.5
+Processing  7/8: [ocamldbi: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/ocamldbi.0.9.11)
+- sed  -e 's/@PACKAGE@/ocamldbi/' \
+- 	-e 's/@VERSION@/0.9.11/' \
+- 	< META.in > META
+- ocamlc -g -I /home/opam/.opam/default/lib/pcre -c dbi.mli
+- ocamlc -g -I /home/opam/.opam/default/lib/pcre -c dbi.ml
+- File "dbi.ml", line 188, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "dbi.ml", line 189, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 195, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 196, characters 7-24:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 198, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 199, characters 7-24:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 201, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 202, characters 7-24:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 204, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 205, characters 7-24:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 208, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 211, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 212, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 213, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 215, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 220, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 226, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "dbi.ml", line 227, characters 2-14:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "dbi.ml", line 230, characters 4-21:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "dbi.ml", line 231, characters 4-21:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "dbi.ml", line 233, characters 2-16:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlc -g -I /home/opam/.opam/default/lib/pcre -a dbi.cmo -o dbi.cma
+- ocamlopt -w s -I /home/opam/.opam/default/lib/pcre -c dbi.ml
+- File "dbi.ml", line 188, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "dbi.ml", line 189, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 195, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 196, characters 7-24:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 198, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 199, characters 7-24:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 201, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 202, characters 7-24:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 204, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 205, characters 7-24:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 208, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 211, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 212, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 213, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 215, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 220, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "dbi.ml", line 226, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "dbi.ml", line 227, characters 2-14:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "dbi.ml", line 230, characters 4-21:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "dbi.ml", line 231, characters 4-21:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "dbi.ml", line 233, characters 2-16:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlopt -w s -I /home/opam/.opam/default/lib/pcre -a dbi.cmx -o dbi.cmxa
+- rm -rf html
+- mkdir -p html
+- ocamldoc -html -stars -sort -colorize-code -I /home/opam/.opam/default/lib/pcre -d html dbi.mli 
+-> compiled  ocamldbi.0.9.11
+Processing  8/8: [ocamldbi: make install]
++ make "install" "OCAMLDBIDIR=/home/opam/.opam/default/lib/ocamldbi" "DOCDIR=/home/opam/.opam/default/doc/ocamldbi" (CWD=/home/opam/.opam/default/.opam-switch/build/ocamldbi.0.9.11)
+- install -c -m 0755 -d /home/opam/.opam/default/lib/ocamldbi
+- install -c -m 0644 META /home/opam/.opam/default/lib/ocamldbi
+- install -c -m 0644 dbi.cma  \
+-   /home/opam/.opam/default/lib/ocamldbi
+- install -c -m 0644 dbi.cmxa dbi.a  \
+-    /home/opam/.opam/default/lib/ocamldbi
+- install -c -m 0644 dbi.mli dbi.cmi  \
+- 	 /home/opam/.opam/default/lib/ocamldbi
+- install -c -m 0755 -d /home/opam/.opam/default/doc/ocamldbi
+- install -c -m 0644 AUTHORS FAQ README TODO /home/opam/.opam/default/doc/ocamldbi
+- install -c -m 0755 -d /home/opam/.opam/default/doc/ocamldbi/html
+- install -c -m 0644 html/*.html /home/opam/.opam/default/doc/ocamldbi/html
+-> installed ocamldbi.0.9.11
+Done.
+# Run eval `opam env` to update the current shell environment
