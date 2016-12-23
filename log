@@ -1,0 +1,83 @@
+=== opam depext -ivyj 2 frama-c-base
+[2016-12-23 18:50.26] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocamlgraph   1.8.7                                  [required by frama-c-base]
+  - install frama-c-base 20161101
+       Why3 can be used by the WP plug-in for running additional automatic solvers
+       Coq can be used with the WP plug-in for proving interactively proof obligations
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [frama-c-base.20161101: dl]
+Processing  2/2: [frama-c-base.20161101: dl] [ocamlgraph.1.8.7: dl]
+[ocamlgraph.1.8.7] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [frama-c-base.20161101: dl]
+[frama-c-base.20161101] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [ocamlgraph: ./configure]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocamlgraph.1.8.7)
+- checking for ocamlc... ocamlc
+- ocaml version is 4.04.0
+- ocaml library path is /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version... ok
+- checking for ocamlc.opt... ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking ocamlc.opt version... ok
+- checking for ocamldep... ocamldep
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- checking for ocamldoc... ocamldoc
+- checking for ocamldoc.opt... ocamldoc.opt
+- checking for ocamlweb... true
+- checking for ocamlfind... ocamlfind
+- OCamlfind detected and enabled
+- ocamlfind: Package `lablgtk2' not found
+- checking for /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/lablgtk2/lablgtk.cmxa... no
+- checking Win32 platform... no
+- configure: WARNING: lablgnomecanvas not found: the graph editor and view_graph will not be compiled
+- configure: creating ./config.status
+- config.status: creating Makefile
+Processing  1/4: [ocamlgraph: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocamlgraph.1.8.7)
+- autoconf
+- make: autoconf: Command not found
+- Makefile:610: recipe for target 'configure' failed
+- make: *** [configure] Error 127
+[ERROR] The compilation of ocamlgraph failed at "make".
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+#=== ERROR while compiling ocamlgraph.1.8.7 ===================================#
+# command              make
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocamlgraph.1.8.7
+# exit-code            2
+# env-file             /home/opam/.opam/log/ocamlgraph-1-6cc03f.env
+# output-file          /home/opam/.opam/log/ocamlgraph-1-6cc03f.out
+### output ###
+# autoconf
+# make: autoconf: Command not found
+# Makefile:610: recipe for target 'configure' failed
+# make: *** [configure] Error 127
+
++- The following actions were aborted
+| - install frama-c-base 20161101
++- 
++- The following actions failed
+| - build ocamlgraph 1.8.7
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 frama-c-base' failed.
+[2016-12-23 20:08.53] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "frama-c-base" exited with status 4
