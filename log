@@ -1,0 +1,37 @@
+=== opam depext -ivyj 2 uchar
+[2016-12-23 00:10.03] Starting...
+[2016-12-23 00:10.03] Waiting for free pool slot to run
+[2016-12-23 01:17.00] Pool slot obtained, starting run
+[2016-12-23 01:17.00] docker run sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b opam depext -ivyj 2 uchar
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install uchar 0.0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [uchar.0.0.1: dl]
+[uchar.0.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [uchar: ocaml]
++ ocaml "pkg/git.ml" (CWD=/home/opam/.opam/default/.opam-switch/build/uchar.0.0.1)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/default/.opam-switch/build/uchar.0.0.1)
+- /usr/bin/ocamldep.opt -modules src/uchar.ml > src/uchar.ml.depends
+- /usr/bin/ocamldep.opt -modules src/uchar.mli > src/uchar.mli.depends
+- /usr/bin/ocamlc.opt -c -bin-annot -I src -o src/uchar.cmi src/uchar.mli
+- /usr/bin/ocamlopt.opt -c -bin-annot -I src -o src/uchar.cmx src/uchar.ml
+- /usr/bin/ocamlopt.opt -a src/uchar.cmx -o src/uchar.cmxa
+- /usr/bin/ocamlc.opt -c -bin-annot -I src -o src/uchar.cmo src/uchar.ml
+- /usr/bin/ocamlc.opt -a src/uchar.cmo -o src/uchar.cma
+- /usr/bin/ocamlopt.opt -shared src/uchar.cmx -o src/uchar.cmxs
+-> compiled  uchar.0.0.1
+-> installed uchar.0.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 01:17.13] Success
