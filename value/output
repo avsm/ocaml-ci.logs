@@ -1,0 +1,77 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install xmlm     1.2.0                                      [required by ocamlrss]
+  - install ocamlrss 2.0  
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocamlrss.2.0: dl]
+Processing  2/2: [ocamlrss.2.0: dl] [xmlm.1.2.0: dl]
+[ocamlrss.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [xmlm.1.2.0: dl]
+[xmlm.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [xmlm: ./pkg/pkg-git]
++ ./pkg/pkg-git  (CWD=/home/opam/.opam/default/.opam-switch/build/xmlm.1.2.0)
+Processing  1/4: [xmlm: ./pkg/build true]
++ ./pkg/build "true" (CWD=/home/opam/.opam/default/.opam-switch/build/xmlm.1.2.0)
+- ocamlfind ocamldep -modules src/xmlm.mli > src/xmlm.mli.depends
+- ocamlfind ocamlc -c -I src -I test -o src/xmlm.cmi src/xmlm.mli
+- ocamlfind ocamldep -modules src/xmlm.ml > src/xmlm.ml.depends
+- ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- ocamlfind ocamlc -a src/xmlm.cmo -o src/xmlm.cma
+- ocamlfind ocamlopt -a src/xmlm.cmx -o src/xmlm.cmxa
+- ocamlfind ocamlopt -shared src/xmlm.cmx -o src/xmlm.cmxs
+- ocamlfind ocamldep -modules test/xmltrip.ml > test/xmltrip.ml.depends
+- ocamlfind ocamldep -modules test/xhtml.ml > test/xhtml.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xhtml.cmo test/xhtml.ml
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xhtml.cmx test/xhtml.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- ocamlfind ocamlopt -linkpkg src/xmlm.cmx test/xhtml.cmx test/xmltrip.cmx -o test/xmltrip.native
+-> compiled  xmlm.1.2.0
+[WARNING] Errors in /home/opam/.opam/default/.opam-switch/build/xmlm.1.2.0/xmlm.install, some fields have been ignored:
+            - At /home/opam/.opam/default/.opam-switch/build/xmlm.1.2.0/xmlm.install:1:0:
+              Invalid field opam-version
+
+-> installed xmlm.1.2.0
+Processing  3/4: [ocamlrss: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/ocamlrss.2.0)
+- ocamlfind ocamlc -package xmlm,unix -annot -c rss_date.mli
+- ocamlfind ocamlc -package xmlm,unix -annot -c rss_types.ml
+- ocamlfind ocamlc -package xmlm,unix -annot -c rss_io.ml
+- ocamlfind ocamlc -package xmlm,unix -annot -c rss.mli
+- ocamlfind ocamlc -package xmlm,unix -annot -c rss_date.ml
+- File "rss_date.ml", line 220, characters 10-280:
+- Warning 25: bad style, all clauses in this pattern-matching are guarded.
+- ocamlfind ocamlc -package xmlm,unix -annot -c rss.ml
+- ocamlfind ocamlc -package xmlm,unix -annot -o rss.cma -a rss_date.cmo rss_types.cmo rss_io.cmo rss.cmo
+- ocamlfind ocamlopt -package xmlm,unix  -c rss_date.ml
+- File "rss_date.ml", line 220, characters 10-280:
+- Warning 25: bad style, all clauses in this pattern-matching are guarded.
+- ocamlfind ocamlopt -package xmlm,unix  -c rss_types.ml
+- ocamlfind ocamlopt -package xmlm,unix  -c rss_io.ml
+- ocamlfind ocamlopt -package xmlm,unix  -c rss.ml
+- ocamlfind ocamlopt -package xmlm,unix  -o rss.cmxa -a rss_date.cmx rss_types.cmx rss_io.cmx rss.cmx
+-> compiled  ocamlrss.2.0
+Processing  4/4: [ocamlrss: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/ocamlrss.2.0)
+- ocamlfind ocamlc -package xmlm,unix -annot -o rss.cma -a rss_date.cmo rss_types.cmo rss_io.cmo rss.cmo
+- ocamlfind install rss META LICENSE rss.cmi rss.cma rss.cmxa rss.a
+- Installed /home/opam/.opam/default/lib/rss/rss.a
+- Installed /home/opam/.opam/default/lib/rss/rss.cmxa
+- Installed /home/opam/.opam/default/lib/rss/rss.cma
+- Installed /home/opam/.opam/default/lib/rss/rss.cmi
+- Installed /home/opam/.opam/default/lib/rss/LICENSE
+- Installed /home/opam/.opam/default/lib/rss/META
+-> installed ocamlrss.2.0
+Done.
+# Run eval `opam env` to update the current shell environment
