@@ -1,0 +1,68 @@
+=== opam depext -ivyj 2 conf-ida
+[2016-12-23 23:09.10] Starting...
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-ida 0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-ida: sh find-ida.sh]
++ sh "-x" "find-ida.sh" "linux" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-ida.0.1)
+- + IFS=
+- 
+- + HEADLESS=false
+- + find
+- + [ -z ]
+- + find_command idaq64
+- + which idaq64
+- + command=
+- + [  ]
+- + [ ]
+- + locate_linux
+- + locate -w -r idaq64$
+- find-ida.sh: 1: find-ida.sh: locate: not found
+- + sort -n -r
+- + results=
+- + [ -z ]
+- + HEADLESS=true
+- + [ -z ]
+- + echo failed to locate IDA Pro
+- failed to locate IDA Pro
+- + exit 1
+[ERROR] The compilation of conf-ida failed at "sh -x find-ida.sh linux".
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-ida 0.1
++- 
+- No changes have been performed
+
+#=== ERROR while compiling conf-ida.0.1 =======================================#
+# command              sh -x find-ida.sh linux
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-ida.0.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-ida-1-58c514.env
+# output-file          /home/opam/.opam/log/conf-ida-1-58c514.out
+### output ###
+# [...]
+# + [ ]
+# + locate_linux
+# + locate -w -r idaq64$
+# find-ida.sh: 1: find-ida.sh: locate: not found
+# + sort -n -r
+# + results=
+# + [ -z ]
+# + HEADLESS=true
+# + [ -z ]
+# + echo failed to locate IDA Pro
+# failed to locate IDA Pro
+# + exit 1
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-ida' failed.
+[2016-12-23 23:29.15] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:185bd672adc7562ca824985ad959068094f7fa80e70faaacf5e70ef4b6c54a01" "opam" "depext" "-ivyj" "2" "conf-ida" exited with status 4
