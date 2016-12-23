@@ -1,0 +1,35 @@
+=== opam depext -ivyj 2 conf-glade
+[2016-12-23 18:50.08] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-glade 2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-glade: pkg-config libglade-2.0]
++ pkg-config "libglade-2.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-glade.2)
+[ERROR] The compilation of conf-glade failed at "pkg-config libglade-2.0".
+
+#=== ERROR while compiling conf-glade.2 =======================================#
+# command              pkg-config libglade-2.0
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-glade.2
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-glade-1-7afd23.env
+# output-file          /home/opam/.opam/log/conf-glade-1-7afd23.out
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-glade 2
++- 
+- No changes have been performed
+
+=-=- conf-glade.2 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-glade.2' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-glade' failed.
+[2016-12-23 20:00.46] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "conf-glade" exited with status 4
