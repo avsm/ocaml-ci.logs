@@ -1,0 +1,289 @@
+=== opam depext -ivyj 2 ocamlfuse
+[2016-12-23 21:14.46] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install camlidl   1.05                                      [required by ocamlfuse]
+  - install ocamlfuse 2.7.1-cvs4
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [camlidl.1.05: dl]
+Processing  2/2: [camlidl.1.05: dl] [ocamlfuse.2.7.1-cvs4: dl]
+[camlidl.1.05] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [ocamlfuse.2.7.1-cvs4: dl]
+[ocamlfuse.2.7.1-cvs4] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [camlidl: patch]
+Processing  1/4: [camlidl: mv]
++ mv "config/Makefile.unix" "config/Makefile" (CWD=/home/opam/.opam/default/.opam-switch/build/camlidl.1.05)
+Processing  1/4: [camlidl: make all]
++ make "all" (CWD=/home/opam/.opam/default/.opam-switch/build/camlidl.1.05)
+- cd compiler; make all
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/camlidl.1.05/compiler'
+- rm -f config.ml
+- sed -e 's|%%CPP%%|cpp|' \
+-           config.mlp > config.ml
+- chmod -w config.ml
+- ocamlc -g -c config.mli
+- ocamlc -g -c config.ml
+- ocamlc -g -c utils.mli
+- ocamlc -g -c utils.ml
+- File "utils.ml", line 51, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlc -g -c clflags.ml
+- ocamlc -g -c idltypes.mli
+- ocamlc -g -c prefix.mli
+- ocamlc -g -c prefix.ml
+- ocamlc -g -c lexpr.mli
+- ocamlc -g -c lexpr.ml
+- File "lexpr.ml", line 268, characters 10-16:
+- Warning 26: unused variable trail'.
+- ocamlc -g -c cvttyp.mli
+- ocamlc -g -c cvttyp.ml
+- ocamlc -g -c variables.mli
+- ocamlc -g -c variables.ml
+- ocamlc -g -c array.mli
+- ocamlc -g -c array.ml
+- ocamlc -g -c struct.mli
+- ocamlc -g -c struct.ml
+- ocamlc -g -c enum.mli
+- ocamlc -g -c enum.ml
+- ocamlc -g -c union.mli
+- ocamlc -g -c union.ml
+- ocamlc -g -c cvtval.mli
+- ocamlc -g -c cvtval.ml
+- ocamlc -g -c structdecl.mli
+- ocamlc -g -c structdecl.ml
+- ocamlc -g -c enumdecl.mli
+- ocamlc -g -c enumdecl.ml
+- ocamlc -g -c uniondecl.mli
+- ocamlc -g -c uniondecl.ml
+- ocamlc -g -c typedef.mli
+- ocamlc -g -c typedef.ml
+- ocamlc -g -c funct.mli
+- ocamlc -g -c funct.ml
+- ocamlc -g -c constdecl.mli
+- ocamlc -g -c constdecl.ml
+- File "constdecl.ml", line 36, characters 4-24:
+- Warning 26: unused variable ty.
+- ocamlc -g -c intf.mli
+- ocamlc -g -c intf.ml
+- File "intf.ml", line 312, characters 12-16:
+- Warning 26: unused variable outs.
+- File "intf.ml", line 312, characters 7-10:
+- Warning 26: unused variable ins.
+- ocamlc -g -c file.mli
+- ocamlc -g -c file.ml
+- ocamlc -g -c predef.mli
+- ocamlc -g -c predef.ml
+- ocamllex linenum.mll
+- 16 states, 331 transitions, table size 1420 bytes
+- ocamlc -g -c linenum.mli
+- ocamlc -g -c linenum.ml
+- ocamlc -g -c parse_aux.mli
+- ocamlc -g -c parse_aux.ml
+- File "parse_aux.ml", line 167, characters 23-54:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 169, characters 42-74:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 171, characters 22-47:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- ocamlyacc -v parser_midl.mly
+- 12 shift/reduce conflicts.
+- ocamlc -g -c parser_midl.mli
+- ocamlc -g -c parser_midl.ml
+- ocamllex lexer_midl.mll
+- 129 states, 1747 transitions, table size 7762 bytes
+- ocamlc -g -c lexer_midl.mli
+- ocamlc -g -c lexer_midl.ml
+- ocamlc -g -c parse.mli
+- ocamlc -g -c parse.ml
+- ocamlc -g -c fixlabels.mli
+- ocamlc -g -c fixlabels.ml
+- ocamlc -g -c normalize.mli
+- ocamlc -g -c normalize.ml
+- ocamlc -g -c main.ml
+- ocamlc -g -o camlidl config.cmo utils.cmo clflags.cmo prefix.cmo lexpr.cmo cvttyp.cmo variables.cmo array.cmo struct.cmo enum.cmo union.cmo cvtval.cmo structdecl.cmo enumdecl.cmo uniondecl.cmo typedef.cmo funct.cmo constdecl.cmo intf.cmo file.cmo predef.cmo linenum.cmo parse_aux.cmo parser_midl.cmo lexer_midl.cmo parse.cmo fixlabels.cmo normalize.cmo main.cmo
+- File "array.cmo", line 1:
+- Warning 31: files array.cmo and /usr/lib/ocaml/stdlib.cma(Array) both define a module named Array
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/camlidl.1.05/compiler'
+- cd runtime; make all
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/camlidl.1.05/runtime'
+- ocamlc -g -ccopt "-Wall -g" idlalloc.c
+- ocamlc -g -ccopt "-Wall -g" comintf.c
+- ocamlc -g -ccopt "-Wall -g" comerror.c
+- comerror.c: In function 'camlidl_error':
+- comerror.c:52:8: warning: unused variable 'msg' [-Wunused-variable]
+-    char msg[1024];
+-         ^
+- In file included from /usr/lib/ocaml/caml/mlvalues.h:18:0,
+-                  from comerror.c:20:
+- comerror.c: In function 'camlidl_uncaught_exception':
+- /usr/lib/ocaml/caml/compatibility.h:249:31: warning: implicit declaration of function 'caml_format_exception' [-Wimplicit-function-declaration]
+-  #define format_caml_exception caml_format_exception /*SP*/
+-                                ^
+- comerror.c:171:16: note: in expansion of macro 'format_caml_exception'
+-    char * msg = format_caml_exception(exn_bucket);
+-                 ^
+- /usr/lib/ocaml/caml/compatibility.h:249:31: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+-  #define format_caml_exception caml_format_exception /*SP*/
+-                                ^
+- comerror.c:171:16: note: in expansion of macro 'format_caml_exception'
+-    char * msg = format_caml_exception(exn_bucket);
+-                 ^
+- rm -f dllcamlidl.so
+- ocamlmklib -o camlidl  idlalloc.o comintf.o comerror.o 
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/camlidl.1.05/runtime'
+- cd lib; make all
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/camlidl.1.05/lib'
+- ocamlc -g -c com.mli
+- ocamlc -g -c com.ml
+- ocamlc -g -a -o com.cma com.cmo
+- ocamlopt -c com.ml
+- ocamlopt -a -o com.cmxa com.cmx
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/camlidl.1.05/lib'
+- cd tools; make all
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/camlidl.1.05/tools'
+- make[1]: Nothing to be done for 'all'.
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/camlidl.1.05/tools'
+-> compiled  camlidl.1.05
+-> installed camlidl.1.05
+Processing  3/4: [ocamlfuse: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/ocamlfuse.2.7.1-cvs4)
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ ocamlfuse
+- Package version: ..................................... 2.7.1-cvs4
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- make: ................................................ /usr/bin/make
+- pkg_unix: ............................................ /usr/lib/ocaml
+- pkg_threads: ......................................... /usr/lib/ocaml
+- pkg_bigarray: ........................................ /usr/lib/ocaml
+- pkg_camlidl: ......................................... /home/opam/.opam/default/lib/camlidl
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/ocamlfuse.2.7.1-cvs4)
+- make: Entering directory '/home/opam/.opam/default/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- camlidl -header  \
+- 			 Fuse_bindings.idl
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- making ._ncdi/Fuse_bindings.di from Fuse_bindings.mli
+- making ._d/Fuse_bindings.d from Fuse_bindings.ml
+- making ._d/Fuse.d from Fuse.ml
+- making ._d/Fuse_lib.d from Fuse_lib.ml
+- making ._d/Unix_util.d from Unix_util.ml
+- making ._d/Thread_pool.d from Thread_pool.ml
+- making ._d/Result.d from Result.ml
+- ocamlc -c -cc "cc" -ccopt "-fPIC -D_FILE_OFFSET_BITS=64 -I. -pthread \
+- 			-DPIC -DNATIVE_CODE   \
+- 			  -I/home/opam/.opam/default/lib/camlidl  -o Fuse_bindings_stubs.o " Fuse_bindings_stubs.c 
+- In file included from Fuse_bindings_stubs.c:17:0:
+- Fuse_bindings.h:17:18: fatal error: fuse.h: No such file or directory
+- compilation terminated.
+- ../OCamlMakefile:1013: recipe for target 'Fuse_bindings_stubs.o' failed
+- make[1]: *** [Fuse_bindings_stubs.o] Error 2
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- ../OCamlMakefile:725: recipe for target 'native-code-library' failed
+- make: *** [native-code-library] Error 2
+- make: Leaving directory '/home/opam/.opam/default/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- E: Failure("Command 'make -C lib INCDIRS=/home/opam/.opam/default/lib/camlidl' terminated with error code 2")
+[ERROR] The compilation of ocamlfuse failed at "ocaml setup.ml -build".
+
+#=== ERROR while compiling ocamlfuse.2.7.1-cvs4 ===============================#
+# command              ocaml setup.ml -build
+# path                 /home/opam/.opam/default/.opam-switch/build/ocamlfuse.2.7.1-cvs4
+# exit-code            1
+# env-file             /home/opam/.opam/log/ocamlfuse-1-0325cb.env
+# output-file          /home/opam/.opam/log/ocamlfuse-1-0325cb.out
+### output ###
+# ocamlc -c -cc "cc" -ccopt "-fPIC -D_FILE_OFFSET_BITS=64 -I. -pthread \
+# [...]
+# 			  -I/home/opam/.opam/default/lib/camlidl  -o Fuse_bindings_stubs.o " Fuse_bindings_stubs.c 
+# In file included from Fuse_bindings_stubs.c:17:0:
+# Fuse_bindings.h:17:18: fatal error: fuse.h: No such file or directory
+# compilation terminated.
+# ../OCamlMakefile:1013: recipe for target 'Fuse_bindings_stubs.o' failed
+# make[1]: *** [Fuse_bindings_stubs.o] Error 2
+# make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+# ../OCamlMakefile:725: recipe for target 'native-code-library' failed
+# make: *** [native-code-library] Error 2
+# make: Leaving directory '/home/opam/.opam/default/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+# E: Failure("Command 'make -C lib INCDIRS=/home/opam/.opam/default/lib/camlidl' terminated with error code 2")
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build ocamlfuse 2.7.1-cvs4
++- 
++- The following changes have been performed
+| - install camlidl 1.05
++- 
+
+=-=- ocamlfuse.2.7.1-cvs4 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext ocamlfuse.2.7.1-cvs4' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/default/.opam-switch/backup/state-20161223213657.export"
+'opam install --verbose --yes --jobs=2 ocamlfuse' failed.
+[2016-12-23 21:37.09] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "ocamlfuse" exited with status 4
