@@ -1,0 +1,35 @@
+=== opam depext -ivyj 2 conf-wxwidgets
+[2016-12-23 18:50.12] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-wxwidgets 3.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-wxwidgets: wx-config]
++ wx-config "--libs" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-wxwidgets.3.0)
+[ERROR] The compilation of conf-wxwidgets failed at "wx-config --libs".
+
+#=== ERROR while compiling conf-wxwidgets.3.0 =================================#
+# command              wx-config --libs
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-wxwidgets.3.0
+# exit-code            127
+# env-file             /home/opam/.opam/log/conf-wxwidgets-1-7afd23.env
+# output-file          /home/opam/.opam/log/conf-wxwidgets-1-7afd23.out
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-wxwidgets 3.0
++- 
+- No changes have been performed
+
+=-=- conf-wxwidgets.3.0 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package requires wxWidgets 3.0 development packages installed on your system
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-wxwidgets' failed.
+[2016-12-23 20:01.43] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "conf-wxwidgets" exited with status 4
