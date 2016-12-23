@@ -1,0 +1,65 @@
+=== opam depext -ivyj 2 ppx_blob
+[2016-12-23 18:51.09] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_blob 0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ppx_blob.0.1: dl]
+[ppx_blob.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ppx_blob: make native-code]
++ make "native-code" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_blob.0.1)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_blob.0.1'
+- ocamlfind ocamldep ppx_blob.ml > ._d/ppx_blob.d
+- ocamlfind ocamlopt -package compiler-libs.common, -c -g -w -3 ppx_blob.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "ppx_blob.ml", line 29, characters 58-70:
+- Error: This variant pattern is expected to have type Parsetree.constant
+-        The constructor Const_string does not belong to type Parsetree.constant
+- Hint: Did you mean Pconst_string?
+- OCamlMakefile:1076: recipe for target 'ppx_blob.cmx' failed
+- make[1]: *** [ppx_blob.cmx] Error 2
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_blob.0.1'
+- OCamlMakefile:777: recipe for target 'native-code' failed
+- make: *** [native-code] Error 2
+[ERROR] The compilation of ppx_blob failed at "make native-code".
+
+#=== ERROR while compiling ppx_blob.0.1 =======================================#
+# command              make native-code
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_blob.0.1
+# exit-code            2
+# env-file             /home/opam/.opam/log/ppx_blob-1-d2d111.env
+# output-file          /home/opam/.opam/log/ppx_blob-1-d2d111.out
+### output ###
+# [...]
+# ocamlfind ocamldep ppx_blob.ml > ._d/ppx_blob.d
+# ocamlfind ocamlopt -package compiler-libs.common, -c -g -w -3 ppx_blob.ml
+# findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+# File "ppx_blob.ml", line 29, characters 58-70:
+# Error: This variant pattern is expected to have type Parsetree.constant
+#        The constructor Const_string does not belong to type Parsetree.constant
+# Hint: Did you mean Pconst_string?
+# OCamlMakefile:1076: recipe for target 'ppx_blob.cmx' failed
+# make[1]: *** [ppx_blob.cmx] Error 2
+# make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_blob.0.1'
+# OCamlMakefile:777: recipe for target 'native-code' failed
+# make: *** [native-code] Error 2
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build ppx_blob 0.1
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 ppx_blob' failed.
+[2016-12-23 20:30.07] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "ppx_blob" exited with status 4
