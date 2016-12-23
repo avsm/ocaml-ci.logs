@@ -1,0 +1,77 @@
+=== opam depext -ivyj 2 assimp
+[2016-12-23 18:49.54] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install result 1.2                                          [required by assimp]
+  - install assimp 0.3
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [assimp.0.3: dl]
+Processing  2/2: [assimp.0.3: dl] [result.1.2: dl]
+[assimp.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [result.1.2: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+-> installed result.1.2
+Processing  3/4: [assimp: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/assimp.0.3)
+- ocamlfind c -package result -c assimp.mli
+- ocamlfind c -package result -c assimp.ml
+- ocamlfind c -c -ccopt "-std=gnu99 -ffast-math" ml_assimp.c
+- ml_assimp.c:10:26: fatal error: assimp/scene.h: No such file or directory
+- compilation terminated.
+- Makefile:14: recipe for target 'ml_assimp.o' failed
+- make: *** [ml_assimp.o] Error 2
+[ERROR] The compilation of assimp failed at "make".
+
+#=== ERROR while compiling assimp.0.3 =========================================#
+# command              make
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/assimp.0.3
+# exit-code            2
+# env-file             /home/opam/.opam/log/assimp-1-8b8a2d.env
+# output-file          /home/opam/.opam/log/assimp-1-8b8a2d.out
+### output ###
+# ocamlfind c -package result -c assimp.mli
+# ocamlfind c -package result -c assimp.ml
+# ocamlfind c -c -ccopt "-std=gnu99 -ffast-math" ml_assimp.c
+# ml_assimp.c:10:26: fatal error: assimp/scene.h: No such file or directory
+# compilation terminated.
+# Makefile:14: recipe for target 'ml_assimp.o' failed
+# make: *** [ml_assimp.o] Error 2
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build assimp 0.3
++- 
++- The following changes have been performed
+| - install result 1.2
++- 
+
+=-=- assimp.0.3 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext assimp.0.3' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/backup/state-20161223194326.export"
+'opam install --verbose --yes --jobs=2 assimp' failed.
+[2016-12-23 19:43.35] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "assimp" exited with status 4
