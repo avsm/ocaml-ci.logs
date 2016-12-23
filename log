@@ -1,0 +1,54 @@
+=== opam depext -ivyj 2 lbfgs
+[2016-12-23 21:14.30] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes base                                     [required by lbfgs]
+  - install lbfgs      0.8.8
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [lbfgs.0.8.8: dl]
+[lbfgs.0.8.8] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed base-bytes.base
+Processing  3/4: [lbfgs: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" "--disable-lacaml" (CWD=/home/opam/.opam/default/.opam-switch/build/lbfgs.0.8.8)
+- Please install one of these fortran compilers: x86_64-linux-gnu-gfortran, gfortran, g95, g77.
+- If you use a different compiler, send its name to the author (see _oasis file).
+[ERROR] The compilation of lbfgs failed at "ocaml setup.ml -configure --prefix /home/opam/.opam/default --disable-lacaml".
+
+#=== ERROR while compiling lbfgs.0.8.8 ========================================#
+# command              ocaml setup.ml -configure --prefix /home/opam/.opam/default --disable-lacaml
+# path                 /home/opam/.opam/default/.opam-switch/build/lbfgs.0.8.8
+# exit-code            1
+# env-file             /home/opam/.opam/log/lbfgs-1-d2d111.env
+# output-file          /home/opam/.opam/log/lbfgs-1-d2d111.out
+### output ###
+# Please install one of these fortran compilers: x86_64-linux-gnu-gfortran, gfortran, g95, g77.
+# If you use a different compiler, send its name to the author (see _oasis file).
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build lbfgs 0.8.8
++- 
++- The following changes have been performed
+| - install base-bytes base
++- 
+
+=-=- lbfgs.0.8.8 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext lbfgs.0.8.8' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/default/.opam-switch/backup/state-20161223212920.export"
+'opam install --verbose --yes --jobs=2 lbfgs' failed.
+[2016-12-23 21:29.29] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "lbfgs" exited with status 4
