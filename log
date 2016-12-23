@@ -1,0 +1,15 @@
+=== opam depext -ivyj 2 lemonade
+[2016-12-23 18:50.39] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - bmake
+#  - m4
+m4
+# The following new OS packages need to be installed: bmake
+The following command needs to be run through "sudo":
+    apk add bmake
+ERROR: unsatisfiable constraints:
+  bmake (missing):
+    required by: world[bmake]
+OS package installation failed
+[2016-12-23 20:16.51] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "lemonade" exited with status 1
