@@ -1,0 +1,30 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install minilight 1.6
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [minilight.1.6: dl]
+[minilight.1.6] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [minilight: ocamlopt.opt 100]
++ ocamlopt.opt "-verbose" "-unsafe" "-nodynlink" "-inline" "100" "-I" "ocaml/src" "-o" "minilight-ocaml" "unix.cmxa" "ocaml/src/random2.ml" "ocaml/src/vector3f.ml" "ocaml/src/triangle.ml" "ocaml/src/spatialIndex.mli" "ocaml/src/spatialIndex.ml" "ocaml/src/scene.ml" "ocaml/src/surfacePoint.ml" "ocaml/src/rayTracer.ml" "ocaml/src/image.ml" "ocaml/src/camera.ml" "ocaml/src/minilight.ml" (CWD=/home/opam/.opam/default/.opam-switch/build/minilight.1.6)
+- + as -o 'ocaml/src/random2.o' '/tmp/camlasm0f176c.s'
+- + as -o 'ocaml/src/vector3f.o' '/tmp/camlasmd1c65d.s'
+- + as -o 'ocaml/src/triangle.o' '/tmp/camlasm593cc5.s'
+- + as -o 'ocaml/src/spatialIndex.o' '/tmp/camlasmce76df.s'
+- + as -o 'ocaml/src/scene.o' '/tmp/camlasmbca3ad.s'
+- + as -o 'ocaml/src/surfacePoint.o' '/tmp/camlasm9221a5.s'
+- + as -o 'ocaml/src/rayTracer.o' '/tmp/camlasmaeff49.s'
+- + as -o 'ocaml/src/image.o' '/tmp/camlasm59acaa.s'
+- + as -o 'ocaml/src/camera.o' '/tmp/camlasmd6fc5b.s'
+- + as -o 'ocaml/src/minilight.o' '/tmp/camlasm610a52.s'
+- + as -o '/tmp/camlstartup8eac05.o' '/tmp/camlstartupfc1d64.s'
+- + gcc -Wl,--as-needed -fno-pie  -Wl,-E -o 'minilight-ocaml'   '-Locaml/src' '-L/usr/lib/ocaml'  '/tmp/camlstartup8eac05.o' '/usr/lib/ocaml/std_exit.o' 'ocaml/src/minilight.o' 'ocaml/src/camera.o' 'ocaml/src/image.o' 'ocaml/src/rayTracer.o' 'ocaml/src/surfacePoint.o' 'ocaml/src/scene.o' 'ocaml/src/spatialIndex.o' 'ocaml/src/triangle.o' 'ocaml/src/vector3f.o' 'ocaml/src/random2.o' '/usr/lib/ocaml/unix.a' '/usr/lib/ocaml/stdlib.a' '-lunix' '/usr/lib/ocaml/libasmrun.a' -lm 
+-> compiled  minilight.1.6
+-> installed minilight.1.6
+Done.
+# Run eval `opam env` to update the current shell environment
