@@ -1,0 +1,70 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - zlib-dev
+m4
+# The following new OS packages need to be installed: zlib-dev
+The following command needs to be run through "sudo":
+    apk add zlib-dev
+(1/1) Installing zlib-dev (1.2.8-r2)
+OK: 422 MiB in 83 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install camlzip 1.06
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [camlzip.1.06: dl]
+[camlzip.1.06] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [camlzip: patch]
+Processing  1/2: [camlzip: make all]
++ make "all" (CWD=/home/opam/.opam/default/.opam-switch/build/camlzip.1.06)
+- ocamlc -g -safe-string -c -ccopt -g -ccopt -I/usr/include zlibstubs.c
+- ocamlmklib -oc camlzip zlibstubs.o \
+-             -L/usr/lib -lz
+- ocamlc -g -safe-string -c zlib.mli
+- ocamlc -g -safe-string -c zlib.ml
+- ocamlc -g -safe-string -c zip.mli
+- ocamlc -g -safe-string -c zip.ml
+- ocamlc -g -safe-string -c gzip.mli
+- ocamlc -g -safe-string -c gzip.ml
+- ocamlmklib -o zip -oc camlzip zlib.cmo zip.cmo gzip.cmo \
+-             -L/usr/lib -lz
+Processing  1/2: [camlzip: make allopt]
++ make "allopt" (CWD=/home/opam/.opam/default/.opam-switch/build/camlzip.1.06)
+- ocamlopt -safe-string -c zlib.ml
+- ocamlopt -safe-string -c zip.ml
+- ocamlopt -safe-string -c gzip.ml
+- ocamlmklib -o zip -oc camlzip zlib.cmx zip.cmx gzip.cmx \
+-             -L/usr/lib -lz
+- ocamlopt -safe-string -shared -linkall -I ./ -o zip.cmxs zip.cmxa
+-> compiled  camlzip.1.06
+Processing  2/2: [camlzip: make install-findlib]
++ make "install-findlib" (CWD=/home/opam/.opam/default/.opam-switch/build/camlzip.1.06)
+- ocamlfind install zip META *.mli *.a *.cmi *.cma zlib.cmx gzip.cmx zip.cmx zip.cmxa zip.cmxs dllcamlzip.so
+- Installed /home/opam/.opam/default/lib/zip/zip.cmxs
+- Installed /home/opam/.opam/default/lib/zip/zip.cmxa
+- Installed /home/opam/.opam/default/lib/zip/zip.cmx
+- Installed /home/opam/.opam/default/lib/zip/gzip.cmx
+- Installed /home/opam/.opam/default/lib/zip/zlib.cmx
+- Installed /home/opam/.opam/default/lib/zip/zip.cma
+- Installed /home/opam/.opam/default/lib/zip/zlib.cmi
+- Installed /home/opam/.opam/default/lib/zip/zip.cmi
+- Installed /home/opam/.opam/default/lib/zip/gzip.cmi
+- Installed /home/opam/.opam/default/lib/zip/zip.a
+- Installed /home/opam/.opam/default/lib/zip/libcamlzip.a
+- Installed /home/opam/.opam/default/lib/zip/zlib.mli
+- Installed /home/opam/.opam/default/lib/zip/zip.mli
+- Installed /home/opam/.opam/default/lib/zip/gzip.mli
+- Installed /home/opam/.opam/default/lib/zip/META
+- Installed /home/opam/.opam/default/lib/stublibs/dllcamlzip.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllcamlzip.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+- echo 'directory="../zip"' >> META && ocamlfind install camlzip META
+- Installed /home/opam/.opam/default/lib/camlzip/META
+-> installed camlzip.1.06
+Done.
+# Run eval `opam env` to update the current shell environment
