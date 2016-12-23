@@ -1,0 +1,94 @@
+=== opam depext -ivyj 2 yajl
+[2016-12-23 18:49.48] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install yajl 0.7.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [yajl.0.7.3: dl]
+[yajl.0.7.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [yajl: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/yajl.0.7.3)
+- grep: unrecognized option: only-matching
+- BusyBox v1.24.2 (2016-11-01 12:56:05 GMT) multi-call binary.
+- 
+- Usage: grep [-HhnlLoqvsriwFE] [-m N] [-A/B/C N] PATTERN/-e PATTERN.../-f FILE [FILE]...
+- 
+- Search for PATTERN in FILEs (or stdin)
+- 
+- 	-H	Add 'filename:' prefix
+- 	-h	Do not add 'filename:' prefix
+- 	-n	Add 'line_no:' prefix
+- 	-l	Show only names of files that match
+- 	-L	Show only names of files that don't match
+- 	-c	Show only count of matching lines
+- 	-o	Show only the matching part of line
+- 	-q	Quiet. Return 0 if PATTERN is found, 1 otherwise
+- 	-v	Select non-matching lines
+- 	-s	Suppress open and read errors
+- 	-r	Recurse
+- 	-i	Ignore case
+- 	-w	Match whole words only
+- 	-x	Match whole lines only
+- 	-F	PATTERN is a literal (not regexp)
+- 	-E	PATTERN is an extended regexp
+- 	-m N	Match up to N times per file
+- 	-A N	Print N lines of trailing context
+- 	-B N	Print N lines of leading context
+- 	-C N	Same as '-A N -B N'
+- 	-e PTRN	Pattern to match
+- 	-f FILE	Read pattern from file
+- # --
+- # work around yajl's ruby configure script; the following is all it does:
+- mkdir -p upstream/build
+- cd upstream/build && cmake -DCMAKE_INSTALL_PREFIX=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/yajl.0.7.3/upstream/local ..
+- /bin/sh: cmake: not found
+- Makefile:36: recipe for target '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/yajl.0.7.3/upstream/local/lib/libyajl_s.a' failed
+- make: *** [/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/yajl.0.7.3/upstream/local/lib/libyajl_s.a] Error 127
+[ERROR] The installation of yajl failed at "make install".
+Processing  2/2: [yajl: ocamlfind remove]
++ ocamlfind "remove" "yajl"
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/yajl
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+#=== ERROR while installing yajl.0.7.3 ========================================#
+# command              make install
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/yajl.0.7.3
+# exit-code            2
+# env-file             /home/opam/.opam/log/yajl-1-d2d111.env
+# output-file          /home/opam/.opam/log/yajl-1-d2d111.out
+### output ###
+# Search for PATTERN in FILEs (or stdin)
+# [...]
+# 	-B N	Print N lines of leading context
+# 	-C N	Same as '-A N -B N'
+# 	-e PTRN	Pattern to match
+# 	-f FILE	Read pattern from file
+# # --
+# # work around yajl's ruby configure script; the following is all it does:
+# mkdir -p upstream/build
+# cd upstream/build && cmake -DCMAKE_INSTALL_PREFIX=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/yajl.0.7.3/upstream/local ..
+# /bin/sh: cmake: not found
+# Makefile:36: recipe for target '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/yajl.0.7.3/upstream/local/lib/libyajl_s.a' failed
+# make: *** [/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/yajl.0.7.3/upstream/local/lib/libyajl_s.a] Error 127
+
++- The following actions failed
+| - install yajl 0.7.3
++- 
+- No changes have been performed
+
+=-=- yajl.0.7.3 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext yajl.0.7.3' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 yajl' failed.
+[2016-12-23 19:42.13] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "yajl" exited with status 4
