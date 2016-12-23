@@ -1,0 +1,53 @@
+=== opam depext -ivyj 2 opam-installext
+[2016-12-23 18:49.15] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install opam-installext 1.0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [opam-installext.1.0.1: dl]
+[opam-installext.1.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [opam-installext: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/opam-installext.1.0.1)
+- ./configure
+- Detected Linux kernel.
+- Unknown Linux distribution, and no lsb-release or similar found.
+- Please submit a bug report or patch at:
+- https://github.com/ocaml/opam-installext/issues
+- Makefile:16: recipe for target 'opam-installext' failed
+- make: *** [opam-installext] Error 1
+[ERROR] The compilation of opam-installext failed at "make".
+
+#=== ERROR while compiling opam-installext.1.0.1 ==============================#
+# command              make
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/opam-installext.1.0.1
+# exit-code            2
+# env-file             /home/opam/.opam/log/opam-installext-1-d2d111.env
+# output-file          /home/opam/.opam/log/opam-installext-1-d2d111.out
+### output ###
+# ./configure
+# Detected Linux kernel.
+# Unknown Linux distribution, and no lsb-release or similar found.
+# Please submit a bug report or patch at:
+# https://github.com/ocaml/opam-installext/issues
+# Makefile:16: recipe for target 'opam-installext' failed
+# make: *** [opam-installext] Error 1
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build opam-installext 1.0.1
++- 
+- No changes have been performed
+
+=-=- opam-installext.1.0.1 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> installext is deprecated. Please `opam install depext` instead.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 opam-installext' failed.
+[2016-12-23 19:25.32] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "opam-installext" exited with status 4
