@@ -1,0 +1,41 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - camlp4-extra
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install config-file 1.2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [config-file.1.2: dl]
+[config-file.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [config-file: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/config-file.1.2)
+- checking for ocamlfind... /home/opam/.opam/default/bin/ocamlfind
+- checking for camlp4... /usr/bin/camlp4
+- configure: creating ./config.status
+- config.status: creating master.Makefile
+Processing  1/2: [config-file: make all]
++ make "all" (CWD=/home/opam/.opam/default/.opam-switch/build/config-file.1.2)
+- /home/opam/.opam/default/bin/ocamlfind ocamlc   -c config_file.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamlc   -c config_file.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt   -c config_file.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -o config_file.cmxs -shared config_file.cmx
+-> compiled  config-file.1.2
+Processing  2/2: [config-file: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/config-file.1.2)
+- Installed /home/opam/.opam/default/lib/config-file/config_file.cmxs
+- Installed /home/opam/.opam/default/lib/config-file/config_file.o
+- Installed /home/opam/.opam/default/lib/config-file/config_file.cmx
+- Installed /home/opam/.opam/default/lib/config-file/config_file.cmo
+- Installed /home/opam/.opam/default/lib/config-file/config_file.cmi
+- Installed /home/opam/.opam/default/lib/config-file/config_file.mli
+- Installed /home/opam/.opam/default/lib/config-file/META
+-> installed config-file.1.2
+Done.
+# Run eval `opam env` to update the current shell environment
