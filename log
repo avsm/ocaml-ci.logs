@@ -1,0 +1,89 @@
+=== opam depext -ivyj 2 topology
+[2016-12-23 18:49.40] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - linux-headers
+#  - m4
+#  - ncurses-dev
+#  - pkgconfig
+m4
+ncurses-dev
+pkgconfig
+# The following new OS packages need to be installed: linux-headers
+The following command needs to be run through "sudo":
+    apk add linux-headers
+(1/1) Installing linux-headers (4.4.6-r1)
+OK: 428 MiB in 83 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocamlgraph 1.8.1                                    [required by topology]
+  - install topology   0.1.0
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocamlgraph.1.8.1: dl]
+Processing  2/2: [ocamlgraph.1.8.1: dl] [topology.0.1.0: dl]
+[topology.0.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [ocamlgraph.1.8.1: dl]
+[ocamlgraph.1.8.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [ocamlgraph: ./configure]
++ ./configure "--prefix=/home/opam/.opam/ocaml-base-compiler.4.03.0" "--exec-prefix=/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlgraph.1.8.1)
+- checking for ocamlc... ocamlc
+- ocaml version is 4.03.0
+- ocaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version... ok
+- checking for ocamlc.opt... ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking ocamlc.opt version... ok
+- checking for ocamldep... ocamldep
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- checking for ocamldoc... ocamldoc
+- checking for ocamldoc.opt... ocamldoc.opt
+- checking for ocamlweb... true
+- checking for ocamlfind... ocamlfind
+- checking for /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/lablgtk2/lablgtk.cmxa... no
+- checking Win32 platform... no
+- configure: WARNING: lablgnomecanvas not found: the graph editor and view_graph will not be compiled
+- configure: creating ./config.status
+- config.status: creating Makefile
+Processing  1/4: [ocamlgraph: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlgraph.1.8.1)
+- autoconf
+- make: autoconf: Command not found
+- Makefile:526: recipe for target 'configure' failed
+- make: *** [configure] Error 127
+[ERROR] The compilation of ocamlgraph failed at "make".
+
+#=== ERROR while compiling ocamlgraph.1.8.1 ===================================#
+# command              make
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlgraph.1.8.1
+# exit-code            2
+# env-file             /home/opam/.opam/log/ocamlgraph-1-865888.env
+# output-file          /home/opam/.opam/log/ocamlgraph-1-865888.out
+### output ###
+# autoconf
+# make: autoconf: Command not found
+# Makefile:526: recipe for target 'configure' failed
+# make: *** [configure] Error 127
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install topology 0.1.0
++- 
++- The following actions failed
+| - build ocamlgraph 1.8.1
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 topology' failed.
+[2016-12-23 19:37.47] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "topology" exited with status 4
