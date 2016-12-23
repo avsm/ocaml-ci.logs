@@ -1,0 +1,21 @@
+=== opam depext -ivyj 2 afl-persistent
+[2016-12-23 00:04.34] Starting...
+[2016-12-23 00:04.34] Waiting for free pool slot to run
+[2016-12-23 00:04.34] Pool slot obtained, starting run
+[2016-12-23 00:04.34] docker run sha256:034ed8563be12c33ea85e67359fb536b870c53770efda920bcbb2f163afd99d5 opam depext -ivyj 2 afl-persistent
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following dependencies couldn't be met:
+  - afl-persistent -> ocaml >= 4.05 -> ocaml-variants < 4.05.1~
+    conflict with the base packages of this switch
+  - afl-persistent -> ocaml >= 4.05 -> ocaml-system >= 4.05.0
+    unknown package
+  - afl-persistent -> ocaml >= 4.05 -> ocaml-base-compiler >= 4.05.0
+    unknown package
+
+No solution found, exiting
+'opam install --verbose --yes --jobs=2 afl-persistent' failed.
+[2016-12-23 00:04.45] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:034ed8563be12c33ea85e67359fb536b870c53770efda920bcbb2f163afd99d5" "opam" "depext" "-ivyj" "2" "afl-persistent" exited with status 3
