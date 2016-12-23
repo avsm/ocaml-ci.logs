@@ -1,0 +1,49 @@
+=== opam depext -ivyj 2 ppx_sexp
+[2016-12-23 00:09.45] Starting...
+[2016-12-23 00:09.45] Waiting for free pool slot to run
+[2016-12-23 01:05.31] Pool slot obtained, starting run
+[2016-12-23 01:05.31] docker run sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b opam depext -ivyj 2 ppx_sexp
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_sexp 0.3.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ppx_sexp.0.3.0: dl]
+[ppx_sexp.0.3.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ppx_sexp: ./build]
++ ./build  (CWD=/home/opam/.opam/default/.opam-switch/build/ppx_sexp.0.3.0)
+- /usr/bin/ocamldep.opt -modules ppx_sexp.ml > ppx_sexp.ml.depends
+- /usr/bin/ocamlc.opt -c -I /usr/lib/ocaml/compiler-libs -o ppx_sexp.cmo ppx_sexp.ml
+- /usr/bin/ocamlopt.opt -c -I /usr/lib/ocaml/compiler-libs -o ppx_sexp.cmx ppx_sexp.ml
+- /usr/bin/ocamlopt.opt -I /usr/lib/ocaml/compiler-libs /usr/lib/ocaml/compiler-libs/ocamlcommon.cmxa ppx_sexp.cmx -o ppx_sexp.native
+- /usr/bin/ocamldep.opt -modules ppxSexp.mli > ppxSexp.mli.depends
+- /usr/bin/ocamlc.opt -c -o ppxSexp.cmi ppxSexp.mli
+- /usr/bin/ocamldep.opt -modules ppxSexp.ml > ppxSexp.ml.depends
+- /usr/bin/ocamlc.opt -c -o ppxSexp.cmo ppxSexp.ml
+- /usr/bin/ocamlc.opt -a ppxSexp.cmo -o ppxSexp.cma
+- /usr/bin/ocamlopt.opt -c -o ppxSexp.cmx ppxSexp.ml
+- /usr/bin/ocamlopt.opt -a ppxSexp.cmx -o ppxSexp.cmxa
+-> compiled  ppx_sexp.0.3.0
+Processing  2/2: [ppx_sexp: ./install]
++ ./install  (CWD=/home/opam/.opam/default/.opam-switch/build/ppx_sexp.0.3.0)
+- Installed /home/opam/.opam/default/lib/ppx_sexp/ppxSexp.a
+- Installed /home/opam/.opam/default/lib/ppx_sexp/ppx_sexp.ml
+- Installed /home/opam/.opam/default/lib/ppx_sexp/ppxSexp.ml
+- Installed /home/opam/.opam/default/lib/ppx_sexp/ppxSexp.mli
+- Installed /home/opam/.opam/default/lib/ppx_sexp/ppxSexp.cmxa
+- Installed /home/opam/.opam/default/lib/ppx_sexp/ppxSexp.cma
+- Installed /home/opam/.opam/default/lib/ppx_sexp/ppx_sexp.cmi
+- Installed /home/opam/.opam/default/lib/ppx_sexp/ppxSexp.cmi
+- Installed /home/opam/.opam/default/lib/ppx_sexp/ppx_sexp.native
+- Installed /home/opam/.opam/default/lib/ppx_sexp/META
+-> installed ppx_sexp.0.3.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 01:05.45] Success
