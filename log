@@ -1,0 +1,266 @@
+=== opam depext -ivyj 2 merlin-extend
+[2016-12-23 21:14.34] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install cppo          0.9.4                                 [required by merlin-extend]
+  - install merlin-extend 0.3  
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [cppo.0.9.4: dl]
+Processing  2/2: [cppo.0.9.4: dl] [merlin-extend.0.3: dl]
+[cppo.0.9.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [merlin-extend.0.3: dl]
+[merlin-extend.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [cppo: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/cppo.0.9.4)
+- echo 'let cppo_version = "0.9.4"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 354 states, 13186 transitions, table size 54868 bytes
+- 3462 additional bytes used for bindings
+- ocamlopt -o cppo -dtypes unix.cmxa cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+-> compiled  cppo.0.9.4
+Processing  2/4: [cppo: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/default/.opam-switch/build/cppo.0.9.4)
+- ocamlfind install -patch-version 0.9.4 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/META
+-> installed cppo.0.9.4
+Processing  3/4: [merlin-extend: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/merlin-extend.0.3)
+[ERROR] The compilation of merlin-extend failed at "make".
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/merlin-extend.0.3'
+- ocamlfind ocamldep -native extend_driver.mli > ._ncdi/extend_driver.di
+- ocamlfind ocamldep -native extend_main.mli > ._ncdi/extend_main.di
+- ocamlfind ocamldep -native extend_helper.mli > ._ncdi/extend_helper.di
+- ocamlfind ocamldep extend_driver.ml > ._d/extend_driver.d
+- ocamlfind ocamldep extend_main.ml > ._d/extend_main.d
+- ocamlfind ocamldep -pp "cppo -V OCAML:`ocamlc -version` " extend_helper.ml > ._d/extend_helper.d
+- cppo: unknown option '-V'.
+- Usage: cppo [OPTIONS] [FILE1 [FILE2 ...]]
+- Options:
+-   -D DEF
+-           Equivalent of interpreting '#define DEF' before processing the
+-           input
+-   -U IDENT
+-           Equivalent of interpreting '#undef IDENT' before processing the
+-           input
+-   -I DIR
+-           Add directory DIR to the search path for included files
+-   -o FILE
+-           Output file
+-   -q 
+-           Identify and preserve camlp4 quotations
+-   -s 
+-           Output line directives pointing to the exact source location of 
+-           each token, including those coming from the body of macro 
+-           definitions.  This behavior is off by default.
+-   -n 
+-           Do not output any line directive other than those found in the 
+-           input (overrides -s).
+-   -version 
+-           Print the version of the program and exit.
+-   -x NAME:CMD_TEMPLATE
+-           Define a custom preprocessor target section starting with:
+-             #ext "NAME"
+-           and ending with:
+-             #endext
+- 
+-           NAME must be a lowercase identifier of the form [a-z][A-Za-z0-9_]*
+- 
+-           CMD_TEMPLATE is a command template supporting the following
+-           special sequences:
+-             %F  file name (unescaped; beware of potential scripting attacks)
+-             %B  number of the first line
+-             %E  number of the last line
+-             %%  a single percent sign
+- 
+-           Filename, first line number and last line number are also
+-           available from the following environment variables:
+-           CPPO_FILE, CPPO_FIRST_LINE, CPPO_LAST_LINE.
+- 
+-           The command produced is expected to read the data lines from stdin
+-           and to write its output to stdout.
+-   -help  Display this list of options
+-   --help  Display this list of options
+- File "extend_helper.ml", line 1:
+- Error: Error while running external preprocessor
+- Command line: cppo -V OCAML:`ocamlc -version`  'extend_helper.ml' > /tmp/ocamlppb6da6e
+- 
+- make[1]: *** Deleting file '._d/extend_helper.d'
+- ocamlfind ocamldep extend_protocol.ml > ._d/extend_protocol.d
+- ocamlfind ocamldep -pp "cppo -V OCAML:`ocamlc -version` " extend_helper.ml > ._d/extend_helper.d
+- cppo: unknown option '-V'.
+- Usage: cppo [OPTIONS] [FILE1 [FILE2 ...]]
+- Options:
+-   -D DEF
+-           Equivalent of interpreting '#define DEF' before processing the
+-           input
+-   -U IDENT
+-           Equivalent of interpreting '#undef IDENT' before processing the
+-           input
+-   -I DIR
+-           Add directory DIR to the search path for included files
+-   -o FILE
+-           Output file
+-   -q 
+-           Identify and preserve camlp4 quotations
+-   -s 
+-           Output line directives pointing to the exact source location of 
+-           each token, including those coming from the body of macro 
+-           definitions.  This behavior is off by default.
+-   -n 
+-           Do not output any line directive other than those found in the 
+-           input (overrides -s).
+-   -version 
+-           Print the version of the program and exit.
+-   -x NAME:CMD_TEMPLATE
+-           Define a custom preprocessor target section starting with:
+-             #ext "NAME"
+-           and ending with:
+-             #endext
+- 
+-           NAME must be a lowercase identifier of the form [a-z][A-Za-z0-9_]*
+- 
+-           CMD_TEMPLATE is a command template supporting the following
+-           special sequences:
+-             %F  file name (unescaped; beware of potential scripting attacks)
+-             %B  number of the first line
+-             %E  number of the last line
+-             %%  a single percent sign
+- 
+-           Filename, first line number and last line number are also
+-           available from the following environment variables:
+-           CPPO_FILE, CPPO_FIRST_LINE, CPPO_LAST_LINE.
+- 
+-           The command produced is expected to read the data lines from stdin
+-           and to write its output to stdout.
+-   -help  Display this list of options
+-   --help  Display this list of options
+- File "extend_helper.ml", line 1:
+- Error: Error while running external preprocessor
+- Command line: cppo -V OCAML:`ocamlc -version`  'extend_helper.ml' > /tmp/ocamlppa2f022
+- 
+- make[1]: *** Deleting file '._d/extend_helper.d'
+- ocamlfind ocamlopt -package compiler-libs -c -g extend_protocol.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -package compiler-libs -c -g extend_helper.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -package compiler-libs -c -pp "cppo -V OCAML:`ocamlc -version` " -g extend_helper.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- cppo: unknown option '-V'.
+- Usage: cppo [OPTIONS] [FILE1 [FILE2 ...]]
+- Options:
+-   -D DEF
+-           Equivalent of interpreting '#define DEF' before processing the
+-           input
+-   -U IDENT
+-           Equivalent of interpreting '#undef IDENT' before processing the
+-           input
+-   -I DIR
+-           Add directory DIR to the search path for included files
+-   -o FILE
+-           Output file
+-   -q 
+-           Identify and preserve camlp4 quotations
+-   -s 
+-           Output line directives pointing to the exact source location of 
+-           each token, including those coming from the body of macro 
+-           definitions.  This behavior is off by default.
+-   -n 
+-           Do not output any line directive other than those found in the 
+-           input (overrides -s).
+-   -version 
+-           Print the version of the program and exit.
+-   -x NAME:CMD_TEMPLATE
+-           Define a custom preprocessor target section starting with:
+-             #ext "NAME"
+-           and ending with:
+-             #endext
+- 
+-           NAME must be a lowercase identifier of the form [a-z][A-Za-z0-9_]*
+- 
+-           CMD_TEMPLATE is a command template supporting the following
+-           special sequences:
+-             %F  file name (unescaped; beware of potential scripting attacks)
+-             %B  number of the first line
+-             %E  number of the last line
+-             %%  a single percent sign
+- 
+-           Filename, first line number and last line number are also
+-           available from the following environment variables:
+-           CPPO_FILE, CPPO_FIRST_LINE, CPPO_LAST_LINE.
+- 
+-           The command produced is expected to read the data lines from stdin
+-           and to write its output to stdout.
+-   -help  Display this list of options
+-   --help  Display this list of options
+- File "extend_helper.ml", line 1:
+- Error: Error while running external preprocessor
+- Command line: cppo -V OCAML:`ocamlc -version`  'extend_helper.ml' > /tmp/ocamlppd1d935
+- 
+- OCamlMakefile:1076: recipe for target 'extend_helper.cmx' failed
+- make[1]: *** [extend_helper.cmx] Error 2
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/merlin-extend.0.3'
+- OCamlMakefile:801: recipe for target 'native-code-library' failed
+- make: *** [native-code-library] Error 2
+
+#=== ERROR while compiling merlin-extend.0.3 ==================================#
+# command              make
+# path                 /home/opam/.opam/default/.opam-switch/build/merlin-extend.0.3
+# exit-code            2
+# env-file             /home/opam/.opam/log/merlin-extend-1-2dea01.env
+# output-file          /home/opam/.opam/log/merlin-extend-1-2dea01.out
+### output ###
+# Options:
+# [...]
+#   -help  Display this list of options
+#   --help  Display this list of options
+# File "extend_helper.ml", line 1:
+# Error: Error while running external preprocessor
+# Command line: cppo -V OCAML:`ocamlc -version`  'extend_helper.ml' > /tmp/ocamlppd1d935
+# 
+# OCamlMakefile:1076: recipe for target 'extend_helper.cmx' failed
+# make[1]: *** [extend_helper.cmx] Error 2
+# make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/merlin-extend.0.3'
+# OCamlMakefile:801: recipe for target 'native-code-library' failed
+# make: *** [native-code-library] Error 2
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build merlin-extend 0.3
++- 
++- The following changes have been performed
+| - install cppo 0.9.4
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/default/.opam-switch/backup/state-20161223213119.export"
+'opam install --verbose --yes --jobs=2 merlin-extend' failed.
+[2016-12-23 21:31.28] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "merlin-extend" exited with status 4
