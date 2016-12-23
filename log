@@ -1,0 +1,35 @@
+=== opam depext -ivyj 2 conf-lua
+[2016-12-23 21:14.07] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-lua 1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-lua: pkg-config lua]
++ pkg-config "lua" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-lua.1)
+[ERROR] The compilation of conf-lua failed at "pkg-config lua".
+
+#=== ERROR while compiling conf-lua.1 =========================================#
+# command              pkg-config lua
+# path                 /home/opam/.opam/default/.opam-switch/build/conf-lua.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-lua-1-7afd23.env
+# output-file          /home/opam/.opam/log/conf-lua-1-7afd23.out
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-lua 1
++- 
+- No changes have been performed
+
+=-=- conf-lua.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-lua.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-lua' failed.
+[2016-12-23 21:16.22] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "conf-lua" exited with status 4
