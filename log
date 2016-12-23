@@ -1,0 +1,75 @@
+=== opam depext -ivyj 2 delimcc
+[2016-12-23 21:14.13] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install delimcc 0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [delimcc.0: dl]
+[delimcc.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [delimcc: patch]
+Processing  1/2: [delimcc: make all]
++ make "all" (CWD=/home/opam/.opam/default/.opam-switch/build/delimcc.0)
+- gcc -fPIC -Wall -I./ocaml-byterun-3.11 -I/usr/lib/ocaml/caml -O2   -c -o stacks.o stacks.c
+- stacks.c: In function 'dbg_print_trapsp':
+- stacks.c:134:19: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ptrdiff_t {aka const long int}' [-Wformat=]
+-    fprintf(stderr, "captured k %p (%x)\n",captured_k,t);
+-                    ^
+- stacks.c: In function 'dbg_print_trapsp_simple':
+- stacks.c:144:19: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'ptrdiff_t {aka const long int}' [-Wformat=]
+-    fprintf(stderr, "%s; k %p (%x)\n",String_val(title),captured_k,t);
+-                    ^
+- gcc -fPIC -Wall -I./ocaml-byterun-3.11 -I/usr/lib/ocaml/caml -O2   -c -o delim_serialize.o delim_serialize.c
+- ocamlmklib -oc delimcc -dllpath . stacks.o delim_serialize.o
+- ocamlc -c delimcc.mli
+- ocamlc -c delimcc.ml
+- File "delimcc.ml", line 614, characters 12-62:
+- Warning 21: this statement never returns (or has an unsound type.)
+- ocamlmklib -o delimcc -oc delimcc -dllpath . delimcc.cmo
+Processing  1/2: [delimcc: make opt]
++ make "opt" (CWD=/home/opam/.opam/default/.opam-switch/build/delimcc.0)
+- gcc -c -DCAML_NAME_SPACE -DNATIVE_CODE -DTARGET_amd64 -DSYS_linux -O2 -fPIC -Wall \
+- -I./ocaml-byterun-3.11 -I/usr/lib/ocaml/caml stacks-native.c
+- stacks-native.c: In function 'dbg_print_trapsp_simple':
+- stacks-native.c:607:19: warning: format '%x' expects argument of type 'unsigned int', but argument 5 has type 'ptrdiff_t {aka const long int}' [-Wformat=]
+-    fprintf(stderr, "%s; k %p (%x)\n",String_val(title),captured_k,t);
+-                    ^
+- stacks-native.c: In function 'dbg_print_trapsp':
+- stacks-native.c:618:19: warning: format '%x' expects argument of type 'unsigned int', but argument 4 has type 'ptrdiff_t {aka const long int}' [-Wformat=]
+-    fprintf(stderr, "captured k %p (%x)\n",captured_k,t);
+-                    ^
+- ocamlmklib -oc delimccopt -dllpath . \
+- stacks-native.o delim_serialize.o
+- ocamlopt -c delimcc.ml
+- File "delimcc.ml", line 614, characters 12-62:
+- Warning 21: this statement never returns (or has an unsound type.)
+- ocamlmklib -o delimcc -oc delimccopt -dllpath .  delimcc.cmx
+-> compiled  delimcc.0
+Processing  2/2: [delimcc: make findlib-install]
++ make "findlib-install" (CWD=/home/opam/.opam/default/.opam-switch/build/delimcc.0)
+- ocamlfind install  delimcc META dlldelimcc.so libdelimcc.a delimcc.cma delimcc.cmi dlldelimccopt.so libdelimccopt.a delimcc.cmxa delimcc.a delimcc.mli
+- Installed /home/opam/.opam/default/lib/delimcc/delimcc.mli
+- Installed /home/opam/.opam/default/lib/delimcc/delimcc.a
+- Installed /home/opam/.opam/default/lib/delimcc/delimcc.cmxa
+- Installed /home/opam/.opam/default/lib/delimcc/libdelimccopt.a
+- Installed /home/opam/.opam/default/lib/delimcc/delimcc.cmi
+- Installed /home/opam/.opam/default/lib/delimcc/delimcc.cma
+- Installed /home/opam/.opam/default/lib/delimcc/libdelimcc.a
+- Installed /home/opam/.opam/default/lib/delimcc/META
+- Installed /home/opam/.opam/default/lib/stublibs/dlldelimccopt.so
+- Installed /home/opam/.opam/default/lib/stublibs/dlldelimccopt.so.owner
+- Installed /home/opam/.opam/default/lib/stublibs/dlldelimcc.so
+- Installed /home/opam/.opam/default/lib/stublibs/dlldelimcc.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+-> installed delimcc.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 21:18.51] Success
