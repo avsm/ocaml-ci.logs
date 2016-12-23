@@ -1,0 +1,190 @@
+=== opam depext -ivyj 2 mesh
+[2016-12-23 21:14.34] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install mesh 0.7.6
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [mesh.0.7.6: dl]
+[mesh.0.7.6] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [mesh: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/mesh.0.7.6)
+- File "setup.ml", line 215, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1795, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ mesh
+- Package version: ..................................... 0.7.6
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Enable if you build on a system with libtriangle: .... false
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_bigarray: ........................................ /usr/lib/ocaml
+- pkg_graphics: ........................................ /usr/lib/ocaml
+- ocamldoc: ............................................ /usr/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/mesh.0.7.6)
+- File "setup.ml", line 215, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1795, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 39, characters 39-49:
+- Warning: the tag "pkg_lacaml" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 46, characters 39-49:
+- Warning: the tag "pkg_lacaml" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 48, characters 18-28:
+- Warning: the tag "pkg_lacaml" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- ocamlfind ocamldep -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -modules src/mesh.ml > src/mesh.ml.depends
+- ocamlfind ocamldep -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -modules src/easymesh.ml > src/easymesh.ml.depends
+- ocamlfind ocamlc -c -g -annot -I src -ccopt -DTRILIBRARY -ccopt -DEXTERNAL_TEST -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -I src -o src/mesh.cmo src/mesh.ml
+- + ocamlfind ocamlc -c -g -annot -I src -ccopt -DTRILIBRARY -ccopt -DEXTERNAL_TEST -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -I src -o src/mesh.cmo src/mesh.ml
+- File "src/meshFC.ml", line 117, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "src/meshFC.ml", line 121, characters 37-45:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/meshFC.ml", line 200, characters 6-15:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/meshFC.ml", line 117, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "src/meshFC.ml", line 121, characters 37-45:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/meshFC.ml", line 200, characters 6-15:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/meshFC.ml", line 485, characters 6-7:
+- Warning 26: unused variable v.
+- File "src/meshFC.ml", line 485, characters 6-7:
+- Warning 26: unused variable v.
+- ocamlfind ocamlc -c -g -annot -I src -ccopt -DTRILIBRARY -ccopt -DEXTERNAL_TEST -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -I src -o src/easymesh.cmo src/easymesh.ml
+- ocamlfind ocamlc -a src/mesh.cmo src/easymesh.cmo -o src/mesh.cma
+- ocamlfind ocamlopt -c -g -annot -I src -ccopt -DTRILIBRARY -ccopt -DEXTERNAL_TEST -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -I src -o src/mesh.cmx src/mesh.ml
+- + ocamlfind ocamlopt -c -g -annot -I src -ccopt -DTRILIBRARY -ccopt -DEXTERNAL_TEST -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -I src -o src/mesh.cmx src/mesh.ml
+- File "src/meshFC.ml", line 117, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "src/meshFC.ml", line 121, characters 37-45:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/meshFC.ml", line 200, characters 6-15:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/meshFC.ml", line 117, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "src/meshFC.ml", line 121, characters 37-45:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/meshFC.ml", line 200, characters 6-15:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/meshFC.ml", line 485, characters 6-7:
+- Warning 26: unused variable v.
+- File "src/meshFC.ml", line 485, characters 6-7:
+- Warning 26: unused variable v.
+- ocamlfind ocamlopt -c -g -annot -I src -ccopt -DTRILIBRARY -ccopt -DEXTERNAL_TEST -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -I src -o src/easymesh.cmx src/easymesh.ml
+- ocamlfind ocamlopt -a src/mesh.cmx src/easymesh.cmx -o src/mesh.cmxa
+- ocamlfind ocamlopt -shared src/mesh.cmx -o src/mesh.cmxs
+- ocamlfind ocamldep -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -modules src/mesh_display.ml > src/mesh_display.ml.depends
+- ocamlfind ocamlc -c -g -annot -I src -ccopt -DTRILIBRARY -ccopt -DEXTERNAL_TEST -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -I src -o src/mesh_display.cmo src/mesh_display.ml
+- + ocamlfind ocamlc -c -g -annot -I src -ccopt -DTRILIBRARY -ccopt -DEXTERNAL_TEST -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -I src -o src/mesh_display.cmo src/mesh_display.ml
+- File "src/mesh_display.ml", line 23, characters 5-13:
+- Error: Unbound module Graphics
+- Command exited with code 2.
+- E: Failure("Command ''/usr/bin/ocamlbuild' src/mesh.cma src/mesh.cmxa src/mesh.a src/mesh.cmxs src/mesh_display.cma src/mesh_display.cmxa src/mesh_display.a src/mesh_display.cmxs src/libmesh_triangle_stubs.a src/dllmesh_triangle_stubs.so src/mesh_triangle.cma src/mesh_triangle.cmxa src/mesh_triangle.a src/mesh_triangle.cmxs -tag debug' terminated with error code 10")
+[ERROR] The compilation of mesh failed at "ocaml setup.ml -build".
+
+#=== ERROR while compiling mesh.0.7.6 =========================================#
+# command              ocaml setup.ml -build
+# path                 /home/opam/.opam/default/.opam-switch/build/mesh.0.7.6
+# exit-code            1
+# env-file             /home/opam/.opam/log/mesh-1-ad8886.env
+# output-file          /home/opam/.opam/log/mesh-1-ad8886.out
+### output ###
+# [...]
+# File "src/meshFC.ml", line 485, characters 6-7:
+# Warning 26: unused variable v.
+# ocamlfind ocamlopt -c -g -annot -I src -ccopt -DTRILIBRARY -ccopt -DEXTERNAL_TEST -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -I src -o src/easymesh.cmx src/easymesh.ml
+# ocamlfind ocamlopt -a src/mesh.cmx src/easymesh.cmx -o src/mesh.cmxa
+# ocamlfind ocamlopt -shared src/mesh.cmx -o src/mesh.cmxs
+# ocamlfind ocamldep -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -modules src/mesh_display.ml > src/mesh_display.ml.depends
+# ocamlfind ocamlc -c -g -annot -I src -ccopt -DTRILIBRARY -ccopt -DEXTERNAL_TEST -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -I src -o src/mesh_display.cmo src/mesh_display.ml
+# + ocamlfind ocamlc -c -g -annot -I src -ccopt -DTRILIBRARY -ccopt -DEXTERNAL_TEST -package graphics -package camlp4.macro -package bigarray -syntax camlp4o -ppopt -Isrc -I src -o src/mesh_display.cmo src/mesh_display.ml
+# File "src/mesh_display.ml", line 23, characters 5-13:
+# Error: Unbound module Graphics
+# Command exited with code 2.
+# E: Failure("Command ''/usr/bin/ocamlbuild' src/mesh.cma src/mesh.cmxa src/mesh.a src/mesh.cmxs src/mesh_display.cma src/mesh_display.cmxa src/mesh_display.a src/mesh_display.cmxs src/libmesh_triangle_stubs.a src/dllmesh_triangle_stubs.so src/mesh_triangle.cma src/mesh_triangle.cmxa src/mesh_triangle.a src/mesh_triangle.cmxs -tag debug' terminated with error code 10")
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build mesh 0.7.6
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 mesh' failed.
+[2016-12-23 21:31.42] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "mesh" exited with status 4
