@@ -1,0 +1,114 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install magic-mime 1.0.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [magic-mime.1.0.0: dl]
+[magic-mime.1.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [magic-mime: ./configure]
++ ./configure "--prefix=/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/magic-mime.1.0.0)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ magic-mime
+- Package version: ..................................... 1.0.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- 
+Processing  1/2: [magic-mime: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/magic-mime.1.0.0)
+- ocaml setup.ml -build 
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules magic_mime.mli > magic_mime.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -o magic_mime.cmi magic_mime.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules magic_mime.ml > magic_mime.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules mime_types.mli > mime_types.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -o mime_types.cmi mime_types.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules mime_types.ml > mime_types.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -o magic_mime.cmo magic_mime.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -o mime_types.cmo mime_types.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a mime_types.cmo magic_mime.cmo -o magic-mime.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -o mime_types.cmx mime_types.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -o magic_mime.cmx magic_mime.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a mime_types.cmx magic_mime.cmx -o magic-mime.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared magic-mime.cmxa mime_types.cmx magic_mime.cmx -o magic-mime.cmxs
+-> compiled  magic-mime.1.0.0
+Processing  2/2: [magic-mime: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/magic-mime.1.0.0)
+- ocaml setup.ml -install 
+- Installed /home/opam/.opam/default/lib/magic-mime/magic_mime.mli
+- Installed /home/opam/.opam/default/lib/magic-mime/mime_types.mli
+- Installed /home/opam/.opam/default/lib/magic-mime/magic-mime.cma
+- Installed /home/opam/.opam/default/lib/magic-mime/magic-mime.cmxa
+- Installed /home/opam/.opam/default/lib/magic-mime/magic-mime.a
+- Installed /home/opam/.opam/default/lib/magic-mime/magic-mime.cmxs
+- Installed /home/opam/.opam/default/lib/magic-mime/mime_types.cmi
+- Installed /home/opam/.opam/default/lib/magic-mime/mime_types.cmti
+- Installed /home/opam/.opam/default/lib/magic-mime/mime_types.cmt
+- Installed /home/opam/.opam/default/lib/magic-mime/mime_types.annot
+- Installed /home/opam/.opam/default/lib/magic-mime/magic_mime.cmi
+- Installed /home/opam/.opam/default/lib/magic-mime/magic_mime.cmti
+- Installed /home/opam/.opam/default/lib/magic-mime/magic_mime.cmt
+- Installed /home/opam/.opam/default/lib/magic-mime/magic_mime.annot
+- Installed /home/opam/.opam/default/lib/magic-mime/mime_types.cmx
+- Installed /home/opam/.opam/default/lib/magic-mime/magic_mime.cmx
+- Installed /home/opam/.opam/default/lib/magic-mime/META
+-> installed magic-mime.1.0.0
+Done.
+# Run eval `opam env` to update the current shell environment
