@@ -1,0 +1,46 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install dumpast 0.2.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [dumpast.0.2.0: dl]
+[dumpast.0.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [dumpast: make]
++ make "HAS_ANNOT=false" "OCAML_VERSION=402" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/dumpast.0.2.0)
+- [04mall[m [1;34m=>[m lib bin
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/dumpast.0.2.0'
+- bin-ocaml-dumpast         [32m<=[m [01mprepare[m bin-ocaml-dumpast
+- dumpast.ml                [32m<=[m [01mprepare[m unit-dumpast-bin-ocaml-dumpast
+- dumpast.cml-byte          [32m<=[m [01mpp-byte[m unit-dumpast-bin-ocaml-dumpast
+- parse_compat.ml           [32m<=[m [01mprepare[m unit-parse_compat-bin-ocaml-dumpast
+- dumpast.ml.d              [32m<=[m [01mdep[m unit-dumpast-bin-ocaml-dumpast
+- parse_compat.cml-byte     [32m<=[m [01mpp-byte[m unit-parse_compat-bin-ocaml-dumpast
+- parse_compat.ml.d         [32m<=[m [01mdep[m unit-parse_compat-bin-ocaml-dumpast
+- make[1]: Nothing to be done for 'lib'.
+- parse_compat.cmi parse_compat.cmo [32m<=[m [01mcompile-byte[m unit-parse_compat-bin-ocaml-dumpast
+- dumpast.cmi dumpast.cmo   [32m<=[m [01mcompile-byte[m unit-dumpast-bin-ocaml-dumpast
+- File "_build/bin-ocaml-dumpast/dumpast.cml-byte", line 31, characters 4-21:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocaml-dumpast.byte        [32m<=[m [01mlink-byte[m bin-ocaml-dumpast
+- parse_compat.cml-native   [32m<=[m [01mpp-native[m unit-parse_compat-bin-ocaml-dumpast
+- parse_compat.cmx          [32m<=[m [01mcompile-native[m unit-parse_compat-bin-ocaml-dumpast
+- dumpast.cml-native        [32m<=[m [01mpp-native[m unit-dumpast-bin-ocaml-dumpast
+- dumpast.cmx               [32m<=[m [01mcompile-native[m unit-dumpast-bin-ocaml-dumpast
+- File "_build/bin-ocaml-dumpast/dumpast.cml-native", line 31, characters 4-21:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocaml-dumpast.native      [32m<=[m [01mlink-native[m bin-ocaml-dumpast
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/dumpast.0.2.0'
+- [32m==>[m Done!
+-> compiled  dumpast.0.2.0
+-> installed dumpast.0.2.0
+Done.
+# Run eval `opam env` to update the current shell environment
