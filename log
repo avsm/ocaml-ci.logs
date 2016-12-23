@@ -1,0 +1,66 @@
+=== opam depext -ivyj 2 minilight
+[2016-12-23 18:49.00] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install minilight 1.6
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [minilight.1.6: dl]
+[minilight.1.6] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [minilight: ocamlopt.opt 100]
++ ocamlopt.opt "-verbose" "-unsafe" "-nodynlink" "-inline" "100" "-I" "ocaml/src" "-o" "minilight-ocaml" "unix.cmxa" "ocaml/src/random2.ml" "ocaml/src/vector3f.ml" "ocaml/src/triangle.ml" "ocaml/src/spatialIndex.mli" "ocaml/src/spatialIndex.ml" "ocaml/src/scene.ml" "ocaml/src/surfacePoint.ml" "ocaml/src/rayTracer.ml" "ocaml/src/image.ml" "ocaml/src/camera.ml" "ocaml/src/minilight.ml" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/minilight.1.6)
+- + as -o 'ocaml/src/random2.o' '/tmp/camlasm88f30e.s'
+- + as -o 'ocaml/src/vector3f.o' '/tmp/camlasmf76e91.s'
+- + as -o 'ocaml/src/triangle.o' '/tmp/camlasm07d19b.s'
+- + as -o 'ocaml/src/spatialIndex.o' '/tmp/camlasm7e48fc.s'
+- + as -o 'ocaml/src/scene.o' '/tmp/camlasm3148fe.s'
+- + as -o 'ocaml/src/surfacePoint.o' '/tmp/camlasmce54f5.s'
+- + as -o 'ocaml/src/rayTracer.o' '/tmp/camlasm0356fb.s'
+- + as -o 'ocaml/src/image.o' '/tmp/camlasm645291.s'
+- + as -o 'ocaml/src/camera.o' '/tmp/camlasmecddc2.s'
+- + as -o 'ocaml/src/minilight.o' '/tmp/camlasm29cb86.s'
+- + as -o '/tmp/camlstartupb1bec2.o' '/tmp/camlstartup8835bd.s'
+- + gcc -o 'minilight-ocaml'   '-Locaml/src' '-L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml'  '/tmp/camlstartupb1bec2.o' '/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/std_exit.o' 'ocaml/src/minilight.o' 'ocaml/src/camera.o' 'ocaml/src/image.o' 'ocaml/src/rayTracer.o' 'ocaml/src/surfacePoint.o' 'ocaml/src/scene.o' 'ocaml/src/spatialIndex.o' 'ocaml/src/triangle.o' 'ocaml/src/vector3f.o' 'ocaml/src/random2.o' '/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/unix.a' '/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/stdlib.a' '-lunix' '/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/libasmrun.a' -lm 
+- /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/../../../../x86_64-alpine-linux-musl/bin/ld: ocaml/src/camera.o: relocation R_X86_64_PC32 against undefined symbol `tan' can not be used when making a shared object; recompile with -fPIC
+- /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/../../../../x86_64-alpine-linux-musl/bin/ld: final link failed: Bad value
+- collect2: error: ld returned 1 exit status
+- File "caml_startup", line 1:
+- Error: Error during linking
+[ERROR] The compilation of minilight failed at "ocamlopt.opt -verbose -unsafe -nodynlink -inline 100 -I ocaml/src -o minilight-ocaml unix.cmxa ocaml/src/random2.ml ocaml/src/vector3f.ml ocaml/src/triangle.ml ocaml/src/spatialIndex.mli ocaml/src/spatialIndex.ml ocaml/src/scene.ml ocaml/src/surfacePoint.ml ocaml/src/rayTracer.ml ocaml/src/image.ml ocaml/src/camera.ml ocaml/src/minilight.ml".
+
+#=== ERROR while compiling minilight.1.6 ======================================#
+# command              ocamlopt.opt -verbose -unsafe -nodynlink -inline 100 -I ocaml/src -o minilight-ocaml unix.cmxa ocaml/src/random2.ml ocaml/src/vector3f.ml ocaml/src/triangle.ml ocaml/src/spatialIndex.mli ocaml/src/spatialIndex.ml ocaml/src/scene.ml ocaml/src/surfacePoint.ml ocaml/src/rayTracer.ml ocaml/src/image.ml ocaml/src/camera.ml ocaml/src/minilight.ml
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/minilight.1.6
+# exit-code            2
+# env-file             /home/opam/.opam/log/minilight-1-ad8886.env
+# output-file          /home/opam/.opam/log/minilight-1-ad8886.out
+### output ###
+# [...]
+# + as -o 'ocaml/src/surfacePoint.o' '/tmp/camlasmce54f5.s'
+# + as -o 'ocaml/src/rayTracer.o' '/tmp/camlasm0356fb.s'
+# + as -o 'ocaml/src/image.o' '/tmp/camlasm645291.s'
+# + as -o 'ocaml/src/camera.o' '/tmp/camlasmecddc2.s'
+# + as -o 'ocaml/src/minilight.o' '/tmp/camlasm29cb86.s'
+# + as -o '/tmp/camlstartupb1bec2.o' '/tmp/camlstartup8835bd.s'
+# + gcc -o 'minilight-ocaml'   '-Locaml/src' '-L/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml'  '/tmp/camlstartupb1bec2.o' '/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/std_exit.o' 'ocaml/src/minilight.o' 'ocaml/src/camera.o' 'ocaml/src/image.o' 'ocaml/src/rayTracer.o' 'ocaml/src/surfacePoint.o' 'ocaml/src/scene.o' 'ocaml/src/spatialIndex.o' 'ocaml/src/triangle.o' 'ocaml/src/ve[...]
+# /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/../../../../x86_64-alpine-linux-musl/bin/ld: ocaml/src/camera.o: relocation R_X86_64_PC32 against undefined symbol `tan' can not be used when making a shared object; recompile with -fPIC
+# /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/../../../../x86_64-alpine-linux-musl/bin/ld: final link failed: Bad value
+# collect2: error: ld returned 1 exit status
+# File "caml_startup", line 1:
+# Error: Error during linking
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build minilight 1.6
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 minilight' failed.
+[2016-12-23 19:19.13] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "minilight" exited with status 4
