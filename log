@@ -1,0 +1,73 @@
+=== opam depext -ivyj 2 ocamlgraph
+[2016-12-23 18:49.11] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocamlgraph 1.8.7
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ocamlgraph.1.8.7: dl]
+[ocamlgraph.1.8.7] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocamlgraph: ./configure]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlgraph.1.8.7)
+- checking for ocamlc... ocamlc
+- ocaml version is 4.03.0
+- ocaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version... ok
+- checking for ocamlc.opt... ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking ocamlc.opt version... ok
+- checking for ocamldep... ocamldep
+- checking for ocamllex... ocamllex
+- checking for ocamllex.opt... ocamllex.opt
+- checking for ocamlyacc... ocamlyacc
+- checking for ocamldoc... ocamldoc
+- checking for ocamldoc.opt... ocamldoc.opt
+- checking for ocamlweb... true
+- checking for ocamlfind... ocamlfind
+- OCamlfind detected and enabled
+- ocamlfind: Package `lablgtk2' not found
+- checking for /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/lablgtk2/lablgtk.cmxa... no
+- checking Win32 platform... no
+- configure: WARNING: lablgnomecanvas not found: the graph editor and view_graph will not be compiled
+- configure: creating ./config.status
+- config.status: creating Makefile
+Processing  1/2: [ocamlgraph: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlgraph.1.8.7)
+- autoconf
+- make: autoconf: Command not found
+- Makefile:610: recipe for target 'configure' failed
+- make: *** [configure] Error 127
+[ERROR] The compilation of ocamlgraph failed at "make".
+
+#=== ERROR while compiling ocamlgraph.1.8.7 ===================================#
+# command              make
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlgraph.1.8.7
+# exit-code            2
+# env-file             /home/opam/.opam/log/ocamlgraph-1-ad8886.env
+# output-file          /home/opam/.opam/log/ocamlgraph-1-ad8886.out
+### output ###
+# autoconf
+# make: autoconf: Command not found
+# Makefile:610: recipe for target 'configure' failed
+# make: *** [configure] Error 127
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build ocamlgraph 1.8.7
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 ocamlgraph' failed.
+[2016-12-23 19:23.13] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "ocamlgraph" exited with status 4
