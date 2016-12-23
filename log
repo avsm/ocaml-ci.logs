@@ -1,0 +1,40 @@
+=== opam depext -ivyj 2 conf-libgsasl
+[2016-12-23 21:14.06] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-libgsasl 1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-libgsasl: cc test.c]
++ cc "-c" "test.c" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-libgsasl.1)
+- test.c:1:19: fatal error: gsasl.h: No such file or directory
+- compilation terminated.
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-libgsasl 1
++- 
+- No changes have been performed
+
+=-=- conf-libgsasl.1 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-libgsasl.1' may help you find the correct installation for your system.
+[ERROR] The compilation of conf-libgsasl failed at "cc -c test.c".
+
+#=== ERROR while compiling conf-libgsasl.1 ====================================#
+# command              cc -c test.c
+# path                 /home/opam/.opam/default/.opam-switch/build/conf-libgsasl.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-libgsasl-1-58c514.env
+# output-file          /home/opam/.opam/log/conf-libgsasl-1-58c514.out
+### output ###
+# test.c:1:19: fatal error: gsasl.h: No such file or directory
+# compilation terminated.
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-libgsasl' failed.
+[2016-12-23 21:16.15] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "conf-libgsasl" exited with status 4
