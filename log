@@ -1,0 +1,155 @@
+=== opam depext -ivyj 2 xmldiff
+[2016-12-23 18:49.48] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install xmlm    1.2.0                                       [required by xmldiff]
+  - install xmldiff 0.5.0
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [xmldiff.0.5.0: dl]
+Processing  2/2: [xmldiff.0.5.0: dl] [xmlm.1.2.0: dl]
+[xmlm.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [xmldiff.0.5.0: dl]
+[xmldiff.0.5.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [xmlm: ./pkg/pkg-git]
++ ./pkg/pkg-git  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0)
+Processing  1/4: [xmlm: ./pkg/build true]
++ ./pkg/build "true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0)
+- ocamlfind ocamldep -modules src/xmlm.mli > src/xmlm.mli.depends
+- ocamlfind ocamlc -c -I src -I test -o src/xmlm.cmi src/xmlm.mli
+- ocamlfind ocamldep -modules src/xmlm.ml > src/xmlm.ml.depends
+- ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -a src/xmlm.cmo -o src/xmlm.cma
+- ocamlfind ocamlopt -a src/xmlm.cmx -o src/xmlm.cmxa
+- ocamlfind ocamlopt -shared src/xmlm.cmx -o src/xmlm.cmxs
+- ocamlfind ocamldep -modules test/xmltrip.ml > test/xmltrip.ml.depends
+- ocamlfind ocamldep -modules test/xhtml.ml > test/xhtml.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xhtml.cmo test/xhtml.ml
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xhtml.cmx test/xhtml.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -linkpkg src/xmlm.cmx test/xhtml.cmx test/xmltrip.cmx -o test/xmltrip.native
+-> compiled  xmlm.1.2.0
+[WARNING] Errors in /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0/xmlm.install, some fields have been ignored:
+            - At /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmlm.1.2.0/xmlm.install:1:0:
+              Invalid field opam-version
+
+-> installed xmlm.1.2.0
+Processing  3/4: [xmldiff: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmldiff.0.5.0)
+- checking for ocamlc... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc
+- found OCaml version 4.3.0 (4.03.0)
+- checking for ocamlfind... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- checking for camlp4... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/camlp4
+- checking for ocamlprof... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlprof
+- checking for ocamlmktop... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlmktop
+- checking for ocamlmklib... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlmklib
+- checking for ocamlyacc... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlyacc
+- checking for ocamllex... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex
+- checking for ocamldoc... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- checking for ocamldep... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep
+- checking for ocamlopt... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt
+- checking for ocaml... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocaml
+- checking for ocamlc.opt... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- we can use /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- checking for ocamlopt.opt... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- we can use /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- checking for ocamldep.opt... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt
+- we can use /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt
+- checking for ocamldoc.opt... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc.opt
+- we can use /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc.opt
+- checking for ocamllex.opt... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt
+- we can use /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt
+- Objective-Caml version 4.3.0 (4.03.0)
+- interpreter:                /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocaml
+- bytecode compiler:          /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- native code compiler:       /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- documentation generator(s): /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc, /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc.opt
+- lexer generator:            /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex.opt
+- parser generator:           /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlyacc
+- dependencies generator:     /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep.opt
+- library builder:            /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlmklib
+- toplevel builder:           /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlmktop
+- profiler:                   /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlprof
+- camlp4:                     /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/camlp4
+- ocamlfind:                  /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- 
+- ### checking required tools and libraries ###
+- checking for xmlm... ok
+- checking for js_of_ocaml... ocamlfind: Package `js_of_ocaml' not found
+- Package js_of_ocaml not found
+- checking for js_of_ocaml... no
+- Cannot find js_of_ocaml
+- xmldiff.js package will NOT be available
+- 
+- ###
+- configure: creating ./config.status
+- config.status: creating master.Makefile
+- config.status: creating META
+- 
+- ### Results of configuration ###
+- 
+- Version is 0.5.0
+- Packages to be installed: xmldiff 
+- 
+Processing  3/4: [xmldiff: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmldiff.0.5.0)
+- autoconf
+- make: autoconf: Command not found
+- Makefile:102: recipe for target 'configure' failed
+- make: *** [configure] Error 127
+[ERROR] The compilation of xmldiff failed at "make all".
+
+#=== ERROR while compiling xmldiff.0.5.0 ======================================#
+# command              make all
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xmldiff.0.5.0
+# exit-code            2
+# env-file             /home/opam/.opam/log/xmldiff-1-48c407.env
+# output-file          /home/opam/.opam/log/xmldiff-1-48c407.out
+### output ###
+# autoconf
+# make: autoconf: Command not found
+# Makefile:102: recipe for target 'configure' failed
+# make: *** [configure] Error 127
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build xmldiff 0.5.0
++- 
++- The following changes have been performed
+| - install xmlm 1.2.0
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/backup/state-20161223194147.export"
+'opam install --verbose --yes --jobs=2 xmldiff' failed.
+[2016-12-23 19:41.57] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "xmldiff" exited with status 4
