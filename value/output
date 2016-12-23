@@ -1,0 +1,32 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_include 1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ppx_include.1.0: dl]
+[ppx_include.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ppx_include: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/default/.opam-switch/build/ppx_include.1.0)
+- ocamlfind ocamlopt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package compiler-libs.common -modules src/ppx_include.ml > src/ppx_include.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package compiler-libs.common -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_include.cmo src/ppx_include.ml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -package compiler-libs.common -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_include.cmo src/ppx_include.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package compiler-libs.common -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_include.cmx src/ppx_include.ml
+- + ocamlfind ocamlopt -c -bin-annot -safe-string -package compiler-libs.common -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_include.cmx src/ppx_include.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -linkpkg -package compiler-libs.common src/ppx_include.cmx -o src/ppx_include.native
+- + ocamlfind ocamlopt -linkpkg -package compiler-libs.common src/ppx_include.cmx -o src/ppx_include.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+-> compiled  ppx_include.1.0
+-> installed ppx_include.1.0
+Done.
+# Run eval `opam env` to update the current shell environment
