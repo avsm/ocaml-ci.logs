@@ -1,0 +1,105 @@
+=== opam depext -ivyj 2 oolc
+[2016-12-23 00:09.31] Starting...
+[2016-12-23 00:09.31] Waiting for free pool slot to run
+[2016-12-23 00:57.31] Pool slot obtained, starting run
+[2016-12-23 00:57.31] docker run sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b opam depext -ivyj 2 oolc
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install oolc 0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [oolc.0.3: dl]
+[oolc.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [oolc: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/oolc.0.3)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ oolc
+- Package version: ..................................... 0.3
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/oolc.0.3)
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules oolc.mli > oolc.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -o oolc.cmi oolc.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules oolc.ml > oolc.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -o oolc.cmo oolc.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a oolc.cmo -o oolc.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -o oolc.cmx oolc.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a oolc.cmx -o oolc.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared oolc.cmxa oolc.cmx -o oolc.cmxs
+-> compiled  oolc.0.3
+Processing  2/2: [oolc: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/default/.opam-switch/build/oolc.0.3)
+- Installed /home/opam/.opam/default/lib/oolc/oolc.mli
+- Installed /home/opam/.opam/default/lib/oolc/oolc.cma
+- Installed /home/opam/.opam/default/lib/oolc/oolc.cmxa
+- Installed /home/opam/.opam/default/lib/oolc/oolc.a
+- Installed /home/opam/.opam/default/lib/oolc/oolc.cmxs
+- Installed /home/opam/.opam/default/lib/oolc/oolc.cmi
+- Installed /home/opam/.opam/default/lib/oolc/oolc.cmti
+- Installed /home/opam/.opam/default/lib/oolc/oolc.cmt
+- Installed /home/opam/.opam/default/lib/oolc/oolc.annot
+- Installed /home/opam/.opam/default/lib/oolc/oolc.cmx
+- Installed /home/opam/.opam/default/lib/oolc/META
+-> installed oolc.0.3
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 00:57.47] Success
