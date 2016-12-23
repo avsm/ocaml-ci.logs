@@ -1,0 +1,30 @@
+=== opam depext -ivyj 2 cppo
+[2016-12-23 21:14.11] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install cppo 0.9.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [cppo.0.9.3: dl]
+[cppo.0.9.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [cppo: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/cppo.0.9.3)
+- echo 'let cppo_version = "0.9.3"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 354 states, 13186 transitions, table size 54868 bytes
+- 3462 additional bytes used for bindings
+- ocamlopt -o cppo -dtypes unix.cmxa cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+-> compiled  cppo.0.9.3
+-> installed cppo.0.9.3
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 21:17.16] Success
