@@ -1,0 +1,26 @@
+=== opam depext -ivyj 2 odig
+[2016-12-23 00:09.30] Starting...
+[2016-12-23 00:09.30] Waiting for free pool slot to run
+[2016-12-23 00:56.56] Pool slot obtained, starting run
+[2016-12-23 00:56.56] docker run sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b opam depext -ivyj 2 odig
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - camlp4-extra
+#  - debianutils
+#  - m4
+#  - ncurses-dev
+#  - perl
+#  - pkg-config
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following dependencies couldn't be met:
+  - odig -> ocaml >= 4.03 -> ocaml-variants < 4.05.1~
+    conflict with the base packages of this switch
+  - odig -> ocaml >= 4.03 -> ocaml-system >= 4.03.0
+    unmet availability conditions, e.g. sys-ocaml-version = "4.03.0"
+  - odig -> ocaml >= 4.03 -> ocaml-base-compiler >= 4.03.0
+    conflict with the base packages of this switch
+
+No solution found, exiting
+'opam install --verbose --yes --jobs=2 odig' failed.
+[2016-12-23 00:57.10] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b" "opam" "depext" "-ivyj" "2" "odig" exited with status 3
