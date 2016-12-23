@@ -1,0 +1,50 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install gg 0.9.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [gg.0.9.1: dl]
+[gg.0.9.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [gg: ocaml]
++ ocaml "pkg/git.ml" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/gg.0.9.1)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/gg.0.9.1)
+- ocamlfind ocamldep -package bigarray -modules src/gg.ml > src/gg.ml.depends
+- ocamlfind ocamldep -package bigarray -modules src/gg.mli > src/gg.mli.depends
+- ocamlfind ocamlc -c -annot -bin-annot -package bigarray -I src -I test -o src/gg.cmi src/gg.mli
+- ocamlfind ocamlopt -c -annot -bin-annot -package bigarray -I src -I test -o src/gg.cmx src/gg.ml
+- ocamlfind ocamlopt -a -package bigarray src/gg.cmx -o src/gg.cmxa
+- ocamlfind ocamlc -c -annot -bin-annot -package bigarray -I src -I test -o src/gg.cmo src/gg.ml
+- ocamlfind ocamlc -a -package bigarray src/gg.cmo -o src/gg.cma
+- ocamlfind ocamlopt -shared -package bigarray src/gg.cmx -o src/gg.cmxs
+- ocamlfind ocamldep -package bigarray -package compiler-libs.toplevel -modules src/gg_top.ml > src/gg_top.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -package bigarray -package compiler-libs.toplevel -I src -I test -o src/gg_top.cmo src/gg_top.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -package bigarray -package compiler-libs.toplevel -I src -I test -o src/gg_top.cmo src/gg_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamlfind ocamlopt -c -annot -bin-annot -package bigarray -package compiler-libs.toplevel -I src -I test -o src/gg_top.cmx src/gg_top.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -package bigarray -package compiler-libs.toplevel -I src -I test -o src/gg_top.cmx src/gg_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package bigarray -package compiler-libs.toplevel src/gg_top.cmx -o src/gg_top.cmxa
+- + ocamlfind ocamlopt -a -package bigarray -package compiler-libs.toplevel src/gg_top.cmx -o src/gg_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamlfind ocamlc -a -package bigarray -package compiler-libs.toplevel src/gg_top.cmo -o src/gg_top.cma
+- + ocamlfind ocamlc -a -package bigarray -package compiler-libs.toplevel src/gg_top.cmo -o src/gg_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamlfind ocamlopt -shared -package bigarray -package compiler-libs.toplevel src/gg_top.cmx -o src/gg_top.cmxs
+- + ocamlfind ocamlopt -shared -package bigarray -package compiler-libs.toplevel src/gg_top.cmx -o src/gg_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+-> compiled  gg.0.9.1
+-> installed gg.0.9.1
+Done.
+# Run eval `opam env` to update the current shell environment
