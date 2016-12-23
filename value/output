@@ -1,0 +1,96 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - libuv-dev
+#  - pkgconfig
+# The following scripts need to be run:
+#  - https://gist.githubusercontent.com/fdopen/cbfb14114f4ec423a1a4/raw/6ba4cef74e94a7307391bddb7ff20db5d8065bfe/install-libuv.sh
+pkgconfig
+# The following new OS packages need to be installed: libuv-dev
+The following command needs to be run through "sudo":
+    apk add libuv-dev
+(1/2) Installing libuv (1.9.1-r0)
+(2/2) Installing libuv-dev (1.9.1-r0)
+OK: 424 MiB in 84 packages
+# OS packages installation successful
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   + 73set5 -e 
+ 100   735+  set  -u 
+ 0  +  set  -x
+ 0  +  V=1.9.15
+362      0 --:--:-- --:--:-- --:--:--  5568+ which1 pkg-config
+00   735  100   735    0     0   5359      0 --:--:-- --:--:-- --:--:--  5568
++ pkg-config libuv --atleast-version=1
++ exit 0
+Source installation scripts run successfully
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by conf-libuv]
+  - install conf-libuv      1  
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-pkg-config: pkg-config]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-pkg-config.1.0)
+- usage: pkgconf [OPTIONS] [LIBRARIES]
+- 
+- basic options:
+- 
+-   --help                            this message
+-   --about                           print pkgconf version and license to stdout
+-   --version                         print supported pkg-config version to stdout
+-   --atleast-pkgconfig-version       check whether or not pkgconf is compatible
+-                                     with a specified pkg-config version
+-   --errors-to-stdout                print all errors on stdout instead of stderr
+-   --silence-errors                  explicitly be silent about errors
+-   --list-all                        list all known packages
+-   --list-package-names              list all known package names
+-   --simulate                        simulate walking the calculated dependency graph
+-   --no-cache                        do not cache already seen packages when
+-                                     walking the dependency graph
+- 
+- checking specific pkg-config database entries:
+- 
+-   --atleast-version                 require a specific version of a module
+-   --exact-version                   require an exact version of a module
+-   --max-version                     require a maximum version of a module
+-   --exists                          check whether or not a module exists
+-   --uninstalled                     check whether or not an uninstalled module will be used
+-   --no-uninstalled                  never use uninstalled modules when satisfying dependencies
+-   --maximum-traverse-depth          maximum allowed depth for dependency graph
+-   --static                          be more aggressive when computing dependency graph
+-                                     (for static linking)
+-   --env-only                        look only for package entries in PKG_CONFIG_PATH
+-   --ignore-conflicts                ignore 'conflicts' rules in modules
+-   --validate                        validate specific .pc files for correctness
+- 
+- querying specific pkg-config database fields:
+- 
+-   --define-variable=varname=value   define variable 'varname' as 'value'
+-   --variable=varname                print specified variable entry to stdout
+-   --cflags                          print required CFLAGS to stdout
+-   --cflags-only-I                   print required include-dir CFLAGS to stdout
+-   --cflags-only-other               print required non-include-dir CFLAGS to stdout
+-   --libs                            print required linker flags to stdout
+-   --libs-only-L                     print required LDPATH linker flags to stdout
+-   --libs-only-l                     print required LIBNAME linker flags to stdout
+-   --libs-only-other                 print required other linker flags to stdout
+-   --print-requires                  print required dependency frameworks to stdout
+-   --print-requires-private          print required dependency frameworks for static
+-                                     linking to stdout
+-   --print-variables                 print all known variables in module to stdout
+-   --digraph                         print entire dependency graph in graphviz 'dot' format
+-   --keep-system-cflags              keep -I/usr/include entries in cflags output
+-   --keep-system-libs                keep -L/usr/lib entries in libs output
+- 
+- report bugs to <http://github.com/pkgconf/pkgconf/issues>.
+-> compiled  conf-pkg-config.1.0
+-> installed conf-pkg-config.1.0
+Processing  3/4: [conf-libuv: pkg-config libuv]
++ pkg-config "libuv" "--atleast-version=1" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-libuv.1)
+-> compiled  conf-libuv.1
+-> installed conf-libuv.1
+Done.
+# Run eval `opam env` to update the current shell environment
