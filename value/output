@@ -1,0 +1,61 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+#  - ncurses-dev
+#  - pkg-config
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install mtime 0.8.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [mtime.0.8.3: dl]
+[mtime.0.8.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [mtime: ocaml]
++ ocaml "pkg/git.ml" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/mtime.0.8.3)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+-> compiled  mtime.0.8.3
+Processing  2/2: [mtime: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" "jsoo=false" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/mtime.0.8.3)
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamlc -g -c src-os/mtime_stubs.c
+- mv mtime_stubs.o src-os/mtime_stubs.o
+- ocamlfind ocamlmklib -o src-os/mtime_stubs src-os/mtime_stubs.o
+- ocamlfind ocamldep -modules src-os/mtime_base.ml > src-os/mtime_base.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -I src-os -o src-os/mtime_base.cmo src-os/mtime_base.ml
+- ocamlfind ocamldep -modules src-os/mtime.ml > src-os/mtime.ml.depends
+- ocamlfind ocamldep -modules src-os/mtime.mli > src-os/mtime.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -I src-os -o src-os/mtime.cmi src-os/mtime.mli
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -I src-os -o src-os/mtime_base.cmx src-os/mtime_base.ml
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -I src-os -o src-os/mtime.cmx src-os/mtime.ml
+- ocamlfind ocamlopt -a -cclib -lmtime_stubs -cclib -lrt src-os/mtime_base.cmx src-os/mtime.cmx -o src-os/mtime.cmxa
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -I src-os -o src-os/mtime.cmo src-os/mtime.ml
+- ocamlfind ocamlc -a -dllib -lmtime_stubs -cclib -lrt src-os/mtime_base.cmo src-os/mtime.cmo -o src-os/mtime.cma
+- ocamlfind ocamlopt -shared src-os/libmtime_stubs.a src-os/mtime.cmx -o src-os/mtime.cmxs
+- ocamlfind ocamldep -package compiler-libs.toplevel -modules src-os/mtime_top.ml > src-os/mtime_top.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -I src-os -o src-os/mtime_top.cmo src-os/mtime_top.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.toplevel -I src-os -o src-os/mtime_top.cmo src-os/mtime_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -I src-os -o src-os/mtime_top.cmx src-os/mtime_top.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.toplevel -I src-os -o src-os/mtime_top.cmx src-os/mtime_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package compiler-libs.toplevel src-os/mtime_top.cmx -o src-os/mtime_top.cmxa
+- + ocamlfind ocamlopt -a -package compiler-libs.toplevel src-os/mtime_top.cmx -o src-os/mtime_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a -package compiler-libs.toplevel src-os/mtime_top.cmo -o src-os/mtime_top.cma
+- + ocamlfind ocamlc -a -package compiler-libs.toplevel src-os/mtime_top.cmo -o src-os/mtime_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared -package compiler-libs.toplevel src-os/mtime_top.cmx -o src-os/mtime_top.cmxs
+- + ocamlfind ocamlopt -shared -package compiler-libs.toplevel src-os/mtime_top.cmx -o src-os/mtime_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+-> installed mtime.0.8.3
+Done.
+# Run eval `opam env` to update the current shell environment
