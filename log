@@ -1,0 +1,142 @@
+=== opam depext -ivyj 2 ctypes
+[2016-12-23 21:14.12] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - pkgconfig
+m4
+pkgconfig
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ctypes 0.2.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ctypes.0.2.3: dl]
+[ctypes.0.2.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ctypes: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/ctypes.0.2.3)
+- ocaml src/discover/discover.ml -ocamlc "ocamlfind ocamlc"
+- testing for brew: .............................. unavailable
+- testing for pkg-config: ........................ available
+- testing for libffi: ............................ unavailable
+- 
+- The following recquired C libraries are missing: libffi.
+- Please install them and retry. If they are installed in a non-standard location
+- or need special flags, set the environment variables <LIB>_CFLAGS and <LIB>_LIBS
+- accordingly and retry.
+- 
+- For example, if libffi is installed in /opt/local, you can type:
+- 
+- export LIBFFI_CFLAGS=-I/opt/local/include
+- export LIBFFI_LIBS=-L/opt/local/lib
+- 
+- ocamlfind opt -c -o _build/src/configure/make_primitive_details.cmx     -I _build/src/configure  src/configure/make_primitive_details.ml
+- cd _build/src/configure && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -o make_primitive_details_stubs.o ../../../src/configure/make_primitive_details_stubs.c
+- ocamlfind opt -I _build -linkpkg      -o _build/configure.native _build/src/configure/make_primitive_details.cmx _build/src/configure/make_primitive_details_stubs.o
+- _build/configure.native > src/ctypes/ctypes_primitives.ml
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/common.cmo -I _build/src/ctypes  src/ctypes/common.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/unsigned.cmi -I _build/src/ctypes  src/ctypes/unsigned.mli
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/unsigned.cmo -I _build/src/ctypes  src/ctypes/unsigned.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/signed.cmi -I _build/src/ctypes  src/ctypes/signed.mli
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/signed.cmo -I _build/src/ctypes  src/ctypes/signed.ml
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/primitives.cmo -I _build/src/ctypes  src/ctypes/primitives.ml
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/ctypes_primitives.cmo -I _build/src/ctypes  src/ctypes/ctypes_primitives.ml
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/ctypes_raw.cmo -I _build/src/ctypes  src/ctypes/ctypes_raw.ml
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/memory_stubs.cmo -I _build/src/ctypes  src/ctypes/memory_stubs.ml
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/std_view_stubs.cmo -I _build/src/ctypes  src/ctypes/std_view_stubs.ml
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/value_printing_stubs.cmo -I _build/src/ctypes  src/ctypes/value_printing_stubs.ml
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/bigarray_stubs.cmo -I _build/src/ctypes  src/ctypes/bigarray_stubs.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/ctypes_bigarray.cmi -I _build/src/ctypes  src/ctypes/ctypes_bigarray.mli
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/ctypes_bigarray.cmo -I _build/src/ctypes  src/ctypes/ctypes_bigarray.ml
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/static.cmo -I _build/src/ctypes  src/ctypes/static.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/structs.cmi -I _build/src/ctypes  src/ctypes/structs.mli
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/structs.cmo -I _build/src/ctypes  src/ctypes/structs.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/structs_computed.cmi -I _build/src/ctypes  src/ctypes/structs_computed.mli
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/structs_computed.cmo -I _build/src/ctypes  src/ctypes/structs_computed.ml
+- File "src/ctypes/structs_computed.ml", line 28, characters 2-591:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a value that is not matched:
+- Primitive _
+- File "src/ctypes/structs_computed.ml", line 44, characters 61-820:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a value that is not matched:
+- Primitive _
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/type_printing.cmo -I _build/src/ctypes  src/ctypes/type_printing.ml
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/memory.cmo -I _build/src/ctypes  src/ctypes/memory.ml
+- File "src/ctypes/memory.ml", line 302, characters 15-72:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a value that is not matched:
+- {reftype=Primitive _}
+- File "src/ctypes/memory.ml", line 303, characters 15-101:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a value that is not matched:
+- {reftype=Array (Primitive _, _)}
+- ocamlfind ocamlc -c -o _build/src/ctypes/coerce.cmi -I _build/src/ctypes  src/ctypes/coerce.mli
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/coerce.cmo -I _build/src/ctypes  src/ctypes/coerce.ml
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/std_views.cmo -I _build/src/ctypes  src/ctypes/std_views.ml
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/value_printing.cmo -I _build/src/ctypes  src/ctypes/value_printing.ml
+- File "src/ctypes/value_printing.ml", line 25, characters 12-182:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a value that is not matched:
+- {structured={reftype=Primitive _}}
+- File "src/ctypes/value_printing.ml", line 31, characters 12-184:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a value that is not matched:
+- {structured={reftype=Primitive _}}
+- ocamlfind ocamlc -c -o _build/src/ctypes/ctypes.cmi -I _build/src/ctypes  src/ctypes/ctypes.mli
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/ctypes.cmo -I _build/src/ctypes  src/ctypes/ctypes.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/posixTypes.cmi -I _build/src/ctypes  src/ctypes/posixTypes.mli
+- ocamlfind ocamlc -package bigarray    -c -o _build/src/ctypes/posixTypes.cmo -I _build/src/ctypes  src/ctypes/posixTypes.ml
+- ocamlfind ocamlc -a  -cclib -lctypes_stubs -dllib -lctypes_stubs -package bigarray   -o _build/ctypes.cma _build/src/ctypes/common.cmo _build/src/ctypes/unsigned.cmo _build/src/ctypes/signed.cmo _build/src/ctypes/primitives.cmo _build/src/ctypes/ctypes_primitives.cmo _build/src/ctypes/ctypes_raw.cmo _build/src/ctypes/memory_stubs.cmo _build/src/ctypes/std_view_stubs.cmo _build/src/ctypes/value_printing_stubs.cmo _build/src/ctypes/bigarray_stubs.cmo _build/src/ctypes/ctypes_bigarray.cmo _build/src/ctypes/static.cmo _build/src/ctypes/structs.cmo _build/src/ctypes/structs_computed.cmo _build/src/ctypes/type_printing.cmo _build/src/ctypes/memory.cmo _build/src/ctypes/coerce.cmo _build/src/ctypes/std_views.cmo _build/src/ctypes/value_printing.cmo _build/src/ctypes/ctypes.cmo _build/src/ctypes/posixTypes.cmo
+- cd _build/src/ctypes && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -o unsigned_stubs.o ../../../src/ctypes/unsigned_stubs.c
+[ERROR] The compilation of ctypes failed at "make".
+- cd _build/src/ctypes && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -o posix_types_stubs.o ../../../src/ctypes/posix_types_stubs.c
+- ../../../src/ctypes/posix_types_stubs.c: In function '_underlying_type':
+- ../../../src/ctypes/posix_types_stubs.c:58:1: warning: control reaches end of non-void function [-Wreturn-type]
+-  }
+-  ^
+- cd _build/src/ctypes && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -o raw_pointer_stubs.o ../../../src/ctypes/raw_pointer_stubs.c
+- In file included from ../../../src/ctypes/raw_pointer_stubs.c:13:0:
+- ../../../src/ctypes/type_info_stubs.h:15:17: fatal error: ffi.h: No such file or directory
+- compilation terminated.
+- Makefile.rules:61: recipe for target '_build/src/ctypes/raw_pointer_stubs.o' failed
+- make: *** [_build/src/ctypes/raw_pointer_stubs.o] Error 2
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build ctypes 0.2.3
++- 
+- No changes have been performed
+
+=-=- ctypes.0.2.3 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext ctypes.0.2.3' may help you find the correct installation for your system.
+
+#=== ERROR while compiling ctypes.0.2.3 =======================================#
+# command              make
+# path                 /home/opam/.opam/default/.opam-switch/build/ctypes.0.2.3
+# exit-code            2
+# env-file             /home/opam/.opam/log/ctypes-1-d2d111.env
+# output-file          /home/opam/.opam/log/ctypes-1-d2d111.out
+### output ###
+# [...]
+# cd _build/src/ctypes && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -o unsigned_stubs.o ../../../src/ctypes/unsigned_stubs.c
+# cd _build/src/ctypes && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -o posix_types_stubs.o ../../../src/ctypes/posix_types_stubs.c
+# ../../../src/ctypes/posix_types_stubs.c: In function '_underlying_type':
+# ../../../src/ctypes/posix_types_stubs.c:58:1: warning: control reaches end of non-void function [-Wreturn-type]
+#  }
+#  ^
+# cd _build/src/ctypes && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -o raw_pointer_stubs.o ../../../src/ctypes/raw_pointer_stubs.c
+# In file included from ../../../src/ctypes/raw_pointer_stubs.c:13:0:
+# ../../../src/ctypes/type_info_stubs.h:15:17: fatal error: ffi.h: No such file or directory
+# compilation terminated.
+# Makefile.rules:61: recipe for target '_build/src/ctypes/raw_pointer_stubs.o' failed
+# make: *** [_build/src/ctypes/raw_pointer_stubs.o] Error 2
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 ctypes' failed.
+[2016-12-23 21:18.00] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "ctypes" exited with status 4
