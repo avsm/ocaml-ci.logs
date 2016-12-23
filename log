@@ -1,0 +1,73 @@
+=== opam depext -ivyj 2 glpk
+[2016-12-23 18:50.29] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install glpk 0.1.8
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [glpk.0.1.8: dl]
+[glpk.0.1.8] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [glpk: make byte]
++ make "byte" "opt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/glpk.0.1.8)
+- make -C src byte
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/glpk.0.1.8/src'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/glpk.0.1.8/src'
+- making ._bcdi/glpk.di from glpk.mli
+- making ._d/glpk.d from glpk.ml
+- ocamlc -c -cc "cc" -ccopt "-fPIC -Wall -DCAML_NAME_SPACE -g \
+- 			-DPIC   \
+- 			 -Ioldapi/   -o glpk_stubs.o " glpk_stubs.c 
+- glpk_stubs.c:32:18: fatal error: glpk.h: No such file or directory
+- compilation terminated.
+- OCamlMakefile:1013: recipe for target 'glpk_stubs.o' failed
+- make[2]: *** [glpk_stubs.o] Error 2
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/glpk.0.1.8/src'
+- OCamlMakefile:716: recipe for target 'byte-code-library' failed
+- make[1]: *** [byte-code-library] Error 2
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/glpk.0.1.8/src'
+- Makefile:12: recipe for target 'byte' failed
+- make: *** [byte] Error 2
+[ERROR] The compilation of glpk failed at "make byte opt".
+
+#=== ERROR while compiling glpk.0.1.8 =========================================#
+# command              make byte opt
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/glpk.0.1.8
+# exit-code            2
+# env-file             /home/opam/.opam/log/glpk-1-d2d111.env
+# output-file          /home/opam/.opam/log/glpk-1-d2d111.out
+### output ###
+# ocamlc -c -cc "cc" -ccopt "-fPIC -Wall -DCAML_NAME_SPACE -g \
+# [...]
+# 			 -Ioldapi/   -o glpk_stubs.o " glpk_stubs.c 
+# glpk_stubs.c:32:18: fatal error: glpk.h: No such file or directory
+# compilation terminated.
+# OCamlMakefile:1013: recipe for target 'glpk_stubs.o' failed
+# make[2]: *** [glpk_stubs.o] Error 2
+# make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/glpk.0.1.8/src'
+# OCamlMakefile:716: recipe for target 'byte-code-library' failed
+# make[1]: *** [byte-code-library] Error 2
+# make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/glpk.0.1.8/src'
+# Makefile:12: recipe for target 'byte' failed
+# make: *** [byte] Error 2
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build glpk 0.1.8
++- 
+- No changes have been performed
+
+=-=- glpk.0.1.8 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext glpk.0.1.8' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 glpk' failed.
+[2016-12-23 20:10.11] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "glpk" exited with status 4
