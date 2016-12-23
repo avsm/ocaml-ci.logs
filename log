@@ -1,0 +1,1237 @@
+=== opam depext -ivyj 2 nbd
+[2016-12-23 18:49.06] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - linux-headers
+#  - m4
+#  - ncurses-dev
+#  - pcre-dev
+#  - pkgconfig
+m4
+ncurses-dev
+pkgconfig
+# The following new OS packages need to be installed: linux-headers pcre-dev
+The following command needs to be run through "sudo":
+    apk add linux-headers pcre-dev
+(1/5) Installing linux-headers (4.4.6-r1)
+(2/5) Installing libpcre16 (8.38-r1)
+(3/5) Installing libpcre32 (8.38-r1)
+(4/5) Installing libpcrecpp (8.38-r1)
+(5/5) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 430 MiB in 87 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install obuild          0.1.8                               [required by nbd]
+  - install conf-pkg-config 1.0                                 [required by conf-ncurses]
+  - install bitstring       2.1.0                               [required by nbd]
+  - install conf-ncurses    1                                   [required by lwt]
+  - install lwt             2.4.5                               [required by nbd]
+  - install nbd             0.9.0
+===== 6 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/6: [bitstring.2.1.0: dl]
+Processing  2/6: [bitstring.2.1.0: dl]
+Processing  3/6: [bitstring.2.1.0: dl]
+Processing  4/6: [bitstring.2.1.0: dl] [lwt.2.4.5: dl]
+Processing  5/6: [bitstring.2.1.0: dl] [lwt.2.4.5: dl] [nbd.0.9.0: dl]
+[nbd.0.9.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/6: [bitstring.2.1.0: dl] [lwt.2.4.5: dl]
+[bitstring.2.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/6: [lwt.2.4.5: dl]
+[lwt.2.4.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/6:
+Processing  6/6: [obuild.0.1.8: dl]
+[obuild.0.1.8] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/12: [bitstring: patch]
+Processing  2/12: [bitstring: patch] [conf-pkg-config: pkg-config]
+Processing  2/12: [bitstring: ./configure] [conf-pkg-config: pkg-config]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-pkg-config.1.0)
+- usage: pkgconf [OPTIONS] [LIBRARIES]
+- 
+- basic options:
+- 
+-   --help                            this message
+-   --about                           print pkgconf version and license to stdout
+-   --version                         print supported pkg-config version to stdout
+-   --atleast-pkgconfig-version       check whether or not pkgconf is compatible
+-                                     with a specified pkg-config version
+-   --errors-to-stdout                print all errors on stdout instead of stderr
+-   --silence-errors                  explicitly be silent about errors
+-   --list-all                        list all known packages
+-   --list-package-names              list all known package names
+-   --simulate                        simulate walking the calculated dependency graph
+-   --no-cache                        do not cache already seen packages when
+-                                     walking the dependency graph
+- 
+- checking specific pkg-config database entries:
+- 
+-   --atleast-version                 require a specific version of a module
+-   --exact-version                   require an exact version of a module
+-   --max-version                     require a maximum version of a module
+-   --exists                          check whether or not a module exists
+-   --uninstalled                     check whether or not an uninstalled module will be used
+-   --no-uninstalled                  never use uninstalled modules when satisfying dependencies
+-   --maximum-traverse-depth          maximum allowed depth for dependency graph
+-   --static                          be more aggressive when computing dependency graph
+-                                     (for static linking)
+-   --env-only                        look only for package entries in PKG_CONFIG_PATH
+-   --ignore-conflicts                ignore 'conflicts' rules in modules
+-   --validate                        validate specific .pc files for correctness
+- 
+- querying specific pkg-config database fields:
+- 
+-   --define-variable=varname=value   define variable 'varname' as 'value'
+-   --variable=varname                print specified variable entry to stdout
+-   --cflags                          print required CFLAGS to stdout
+-   --cflags-only-I                   print required include-dir CFLAGS to stdout
+-   --cflags-only-other               print required non-include-dir CFLAGS to stdout
+-   --libs                            print required linker flags to stdout
+-   --libs-only-L                     print required LDPATH linker flags to stdout
+-   --libs-only-l                     print required LIBNAME linker flags to stdout
+-   --libs-only-other                 print required other linker flags to stdout
+-   --print-requires                  print required dependency frameworks to stdout
+-   --print-requires-private          print required dependency frameworks for static
+-                                     linking to stdout
+-   --print-variables                 print all known variables in module to stdout
+-   --digraph                         print entire dependency graph in graphviz 'dot' format
+-   --keep-system-cflags              keep -I/usr/include entries in cflags output
+-   --keep-system-libs                keep -L/usr/lib entries in libs output
+- 
+- report bugs to <http://github.com/pkgconf/pkgconf/issues>.
+- usage: pkgconf [OPTIONS] [LIBRARIES]
+- 
+- basic options:
+- 
+-   --help                            this message
+-   --about                           print pkgconf version and license to stdout
+-   --version                         print supported pkg-config version to stdout
+-   --atleast-pkgconfig-version       check whether or not pkgconf is compatible
+-                                     with a specified pkg-config version
+-   --errors-to-stdout                print all errors on stdout instead of stderr
+-   --silence-errors                  explicitly be silent about errors
+-   --list-all                        list all known packages
+-   --list-package-names              list all known package names
+-   --simulate                        simulate walking the calculated dependency graph
+-   --no-cache                        do not cache already seen packages when
+-                                     walking the dependency graph
+- 
+- checking specific pkg-config database entries:
+- 
+-   --atleast-version                 require a specific version of a module
+-   --exact-version                   require an exact version of a module
+-   --max-version                     require a maximum version of a module
+-   --exists                          check whether or not a module exists
+-   --uninstalled                     check whether or not an uninstalled module will be used
+-   --no-uninstalled                  never use uninstalled modules when satisfying dependencies
+-   --maximum-traverse-depth          maximum allowed depth for dependency graph
+-   --static                          be more aggressive when computing dependency graph
+-                                     (for static linking)
+-   --env-only                        look only for package entries in PKG_CONFIG_PATH
+-   --ignore-conflicts                ignore 'conflicts' rules in modules
+-   --validate                        validate specific .pc files for correctness
+- 
+- querying specific pkg-config database fields:
+- 
+-   --define-variable=varname=value   define variable 'varname' as 'value'
+-   --variable=varname                print specified variable entry to stdout
+-   --cflags                          print required CFLAGS to stdout
+-   --cflags-only-I                   print required include-dir CFLAGS to stdout
+-   --cflags-only-other               print required non-include-dir CFLAGS to stdout
+-   --libs                            print required linker flags to stdout
+-   --libs-only-L                     print required LDPATH linker flags to stdout
+-   --libs-only-l                     print required LIBNAME linker flags to stdout
+-   --libs-only-other                 print required other linker flags to stdout
+-   --print-requires                  print required dependency frameworks to stdout
+-   --print-requires-private          print required dependency frameworks for static
+-                                     linking to stdout
+-   --print-variables                 print all known variables in module to stdout
+-   --digraph                         print entire dependency graph in graphviz 'dot' format
+-   --keep-system-cflags              keep -I/usr/include entries in cflags output
+-   --keep-system-libs                keep -L/usr/lib entries in libs output
+- 
+- report bugs to <http://github.com/pkgconf/pkgconf/issues>.
+-> compiled  conf-pkg-config.1.0
+Processing  2/12: [bitstring: ./configure]
+Processing  3/12: [bitstring: ./configure] [obuild: ./bootstrap]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/bitstring.2.1.0)
+- checking for a sed that does not truncate output... /bin/sed
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking for a BSD-compatible install... /usr/bin/install -c
+- checking how to run the C preprocessor... gcc -E
+- checking for function prototypes... yes
+- checking whether gcc and cc understand -c and -o together... yes
+- checking for grep that handles long lines and -e... /bin/grep
+- checking for egrep... /bin/grep -E
+- checking for ANSI C header files... yes
+- checking for sys/types.h... yes
+- checking for sys/stat.h... yes
+- checking for stdlib.h... yes
+- checking for string.h... yes
+- checking for memory.h... yes
+- checking for strings.h... yes
+- checking for inttypes.h... yes
+- checking for stdint.h... yes
+- checking for unistd.h... yes
+- checking whether byte ordering is bigendian... no
+- checking byteswap.h usability... yes
+- checking byteswap.h presence... yes
+- checking for byteswap.h... yes
+- checking for ocamlc... ocamlc
+- OCaml version is 4.03.0
+- OCaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamlbuild... ocamlbuild
+- checking for ocamlfind... ocamlfind
+- checking for camlp4of.opt... camlp4of.opt
+- checking for OCaml findlib package extlib... not found
+- checking for OCaml findlib package cil... not found
+- checking for time... /usr/bin/time
+- checking for diff... /usr/bin/diff
+- checking for gprof... gprof
+- checking for bisect-report... no
+- configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: creating META
+- config.status: creating bitstring_config.ml
+- config.status: creating cil-tools/Makefile
+- config.status: creating config.h
+- checking for a sed that does not truncate output... /bin/sed
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking for a BSD-compatible install... /usr/bin/install -c
+- checking how to run the C preprocessor... gcc -E
+- checking for function prototypes... yes
+- checking whether gcc and cc understand -c and -o together... yes
+- checking for grep that handles long lines and -e... /bin/grep
+- checking for egrep... /bin/grep -E
+- checking for ANSI C header files... yes
+- checking for sys/types.h... yes
+- checking for sys/stat.h... yes
+- checking for stdlib.h... yes
+- checking for string.h... yes
+- checking for memory.h... yes
+- checking for strings.h... yes
+- checking for inttypes.h... yes
+- checking for stdint.h... yes
+- checking for unistd.h... yes
+- checking whether byte ordering is bigendian... no
+- checking byteswap.h usability... yes
+- checking byteswap.h presence... yes
+- checking for byteswap.h... yes
+- checking for ocamlc... ocamlc
+- OCaml version is 4.03.0
+- OCaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamlbuild... ocamlbuild
+- checking for ocamlfind... ocamlfind
+- checking for camlp4of.opt... camlp4of.opt
+- checking for OCaml findlib package extlib... not found
+- checking for OCaml findlib package cil... not found
+- checking for time... /usr/bin/time
+- checking for diff... /usr/bin/diff
+- checking for gprof... gprof
+- checking for bisect-report... no
+- configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: creating META
+- config.status: creating bitstring_config.ml
+- config.status: creating cil-tools/Makefile
+- config.status: creating config.h
+Processing  3/12: [bitstring: make] [obuild: ./bootstrap]
++ make "srcdir=./" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/bitstring.2.1.0)
+- rm -f .depend .depend-t
+- ocamlfind ocamldep  \
+-   bitstring.ml bitstring.mli \
+-   bitstring_objinfo.ml | \
+-   /bin/sed 's/ :/:/' | \
+-   /bin/sed 's/ *$//' | \
+-   /bin/sed -e :a -e '/ *\\$/N; s/ *\\\n */ /; ta' >> .depend-t
+- ocamlfind ocamldep  -pp camlp4of \
+-   bitstring_persistent.ml bitstring_persistent.mli \
+-   create_test_pattern.ml | \
+-   /bin/sed 's/ :/:/' | \
+-   /bin/sed 's/ *$//' | \
+-   /bin/sed -e :a -e '/ *\\$/N; s/ *\\\n */ /; ta' >> .depend-t
+- mv .depend-t .depend
+- ocamlfind ocamlc -g  -c bitstring_types.ml
+- ocamlfind ocamlc -g  -c bitstring_config.ml
+- gcc -g -O2 -Wall -Werror -fPIC -I. -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml   -c -o bitstring_c.o bitstring_c.c
+- ocamlfind ocamlc -g  -c bitstring.mli
+- File "bitstring.mli", line 977, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.mli", line 979, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.mli", line 981, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.mli", line 983, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.mli", line 985, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.mli", line 987, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlfind ocamlc -g  -c bitstring.ml
+- File "bitstring.ml", line 64, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 74, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 93, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 103, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 728, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 730, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 732, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 734, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 736, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 738, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 1095, characters 1-22:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1099, characters 1-36:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1214, characters 4-34:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1259, characters 4-96:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1267, characters 25-45:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlc -g  -c bitmatch.ml
+- ocamlmklib -o bitstring bitstring_types.cmo bitstring_config.cmo bitstring_c.o bitstring.cmo bitmatch.cmo
+- ocamlfind ocamlc -g  \
+-   -I +camlp4 -pp camlp4of -c bitstring_persistent.mli
+- ocamlfind ocamlc -g  \
+-   -I +camlp4 -pp camlp4of -c bitstring_persistent.ml
+- ocamlfind ocamlc -a -g -o bitstring_persistent.cma bitstring_persistent.cmo
+- ocamlfind ocamlopt -g  -c bitstring_types.ml
+- ocamlfind ocamlopt -g  -c bitstring_config.ml
+- ocamlfind ocamlopt -g  -c bitstring.ml
+- File "bitstring.ml", line 64, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 74, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 93, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 103, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 728, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 730, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 732, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 734, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 736, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 738, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 1095, characters 1-22:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1099, characters 1-36:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1214, characters 4-34:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1259, characters 4-96:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1267, characters 25-45:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -g  -c bitmatch.ml
+- ocamlmklib -o bitstring bitstring_types.cmx bitstring_config.cmx bitstring_c.o bitstring.cmx bitmatch.cmx
+- ocamlfind ocamlopt -g  \
+-   -I +camlp4 -pp camlp4of -c bitstring_persistent.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -g -o bitstring_persistent.cmxa bitstring_persistent.cmx
+- ocamlfind ocamlc -I +camlp4 \
+-   -pp camlp4of -c pa_bitstring.ml -o pa_bitstring.cmo
+- ocamlfind ocamlc -g  -c bitstring_objinfo.ml
+- ocamlfind ocamlc -I +camlp4 unix.cma dynlink.cma camlp4lib.cma \
+-   -g -linkpkg \
+-   bitstring.cma bitstring_persistent.cma \
+-   bitstring_objinfo.cmo -o bitstring-objinfo
+- rm -f .depend .depend-t
+- ocamlfind ocamldep  \
+-   bitstring.ml bitstring.mli \
+-   bitstring_objinfo.ml | \
+-   /bin/sed 's/ :/:/' | \
+-   /bin/sed 's/ *$//' | \
+-   /bin/sed -e :a -e '/ *\\$/N; s/ *\\\n */ /; ta' >> .depend-t
+- ocamlfind ocamldep  -pp camlp4of \
+-   bitstring_persistent.ml bitstring_persistent.mli \
+-   create_test_pattern.ml | \
+-   /bin/sed 's/ :/:/' | \
+-   /bin/sed 's/ *$//' | \
+-   /bin/sed -e :a -e '/ *\\$/N; s/ *\\\n */ /; ta' >> .depend-t
+- mv .depend-t .depend
+- ocamlfind ocamlc -g  -c bitstring_types.ml
+- ocamlfind ocamlc -g  -c bitstring_config.ml
+- gcc -g -O2 -Wall -Werror -fPIC -I. -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml   -c -o bitstring_c.o bitstring_c.c
+- ocamlfind ocamlc -g  -c bitstring.mli
+- File "bitstring.mli", line 977, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.mli", line 979, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.mli", line 981, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.mli", line 983, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.mli", line 985, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.mli", line 987, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlfind ocamlc -g  -c bitstring.ml
+- File "bitstring.ml", line 64, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 74, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 93, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 103, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 728, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 730, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 732, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 734, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 736, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 738, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 1095, characters 1-22:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1099, characters 1-36:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1214, characters 4-34:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1259, characters 4-96:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1267, characters 25-45:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlc -g  -c bitmatch.ml
+- ocamlmklib -o bitstring bitstring_types.cmo bitstring_config.cmo bitstring_c.o bitstring.cmo bitmatch.cmo
+- ocamlfind ocamlc -g  \
+-   -I +camlp4 -pp camlp4of -c bitstring_persistent.mli
+- ocamlfind ocamlc -g  \
+-   -I +camlp4 -pp camlp4of -c bitstring_persistent.ml
+- ocamlfind ocamlc -a -g -o bitstring_persistent.cma bitstring_persistent.cmo
+- ocamlfind ocamlopt -g  -c bitstring_types.ml
+- ocamlfind ocamlopt -g  -c bitstring_config.ml
+- ocamlfind ocamlopt -g  -c bitstring.ml
+- File "bitstring.ml", line 64, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 74, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 93, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 103, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bitstring.ml", line 728, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 730, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 732, characters 0-131:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 734, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 736, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 738, characters 0-127:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bitstring.ml", line 1095, characters 1-22:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1099, characters 1-36:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1214, characters 4-34:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1259, characters 4-96:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "bitstring.ml", line 1267, characters 25-45:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -g  -c bitmatch.ml
+- ocamlmklib -o bitstring bitstring_types.cmx bitstring_config.cmx bitstring_c.o bitstring.cmx bitmatch.cmx
+- ocamlfind ocamlopt -g  \
+-   -I +camlp4 -pp camlp4of -c bitstring_persistent.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Camlp4, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -g -o bitstring_persistent.cmxa bitstring_persistent.cmx
+- ocamlfind ocamlc -I +camlp4 \
+-   -pp camlp4of -c pa_bitstring.ml -o pa_bitstring.cmo
+- ocamlfind ocamlc -g  -c bitstring_objinfo.ml
+- ocamlfind ocamlc -I +camlp4 unix.cma dynlink.cma camlp4lib.cma \
+-   -g -linkpkg \
+-   bitstring.cma bitstring_persistent.cma \
+-   bitstring_objinfo.cmo -o bitstring-objinfo
+-> compiled  bitstring.2.1.0
+Processing  3/12: [obuild: ./bootstrap]
+Processing  4/12: [obuild: ./bootstrap] [bitstring: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/bitstring.2.1.0)
+- ocamlfind install bitstring META *.mli *.cmx *.cma *.cmxa *.a *.so \
+- 	bitstring.cmi \
+- 	bitstring_persistent.cmi \
+- 	pa_bitstring.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/pa_bitstring.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_persistent.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/libbitstring.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_persistent.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_persistent.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_persistent.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_types.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_persistent.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_config.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitmatch.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_persistent.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllbitstring.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllbitstring.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+- ocamlfind install bitstring META *.mli *.cmx *.cma *.cmxa *.a *.so \
+- 	bitstring.cmi \
+- 	bitstring_persistent.cmi \
+- 	pa_bitstring.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/pa_bitstring.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_persistent.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/libbitstring.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_persistent.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_persistent.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_persistent.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_types.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_persistent.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_config.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitmatch.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring_persistent.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/bitstring.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/bitstring/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllbitstring.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllbitstring.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+-> installed bitstring.2.1.0
+Processing  4/12: [obuild: ./bootstrap]
+-> installed conf-pkg-config.1.0
+Processing  5/12: [obuild: ./bootstrap]
+Processing  6/12: [obuild: ./bootstrap]
+-> installed conf-ncurses.1
+Processing  7/12: [obuild: ./bootstrap]
+Processing  8/12: [lwt: ./configure] [obuild: ./bootstrap]
++ ./configure "--disable-libev" "--disable-react" "--disable-ssl" "--enable-unix" "--enable-extra" "--enable-preemptive" "--disable-glib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lwt.2.4.5)
+- File "./setup.ml", line 254, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 294, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 294, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 303, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 303, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 306, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 344, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 450, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1737, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1743, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 2419, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 5764, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5765, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5766, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5767, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5832, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5833, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5834, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5835, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Field 'pkg_camlp4_quotations_o' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-8d7274.txt'' terminated with error code 2
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-b70602.txt'' terminated with error code 2")
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-fd6abf.txt'' terminated with error code 2")
+- E: Cannot find findlib package camlp4.quotations.o
+- E: Failure("1 configuration error")
+- File "./setup.ml", line 254, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 294, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 294, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 303, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 303, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 306, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 344, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 450, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1737, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1743, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 2419, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 5764, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5765, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5766, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5767, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5832, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5833, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5834, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5835, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Field 'pkg_camlp4_quotations_o' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-8d7274.txt'' terminated with error code 2
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-b70602.txt'' terminated with error code 2")
+- ocamlfind: Package `camlp4.quotations.o' not found
+- W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-fd6abf.txt'' terminated with error code 2")
+- E: Cannot find findlib package camlp4.quotations.o
+- E: Failure("1 configuration error")
+Processing  8/12: [obuild: ./bootstrap]
+Processing  9/12: [obuild: ./bootstrap]
++ ./bootstrap  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/obuild.0.1.8)
+[ERROR] The compilation of lwt failed at "./configure --disable-libev --disable-react --disable-ssl --enable-unix --enable-extra --enable-preemptive --disable-glib".
+- COMPILING fugue
+- COMPILING filepath
+- COMPILING filesystem
+- BUILDING library obuild_ext.cmxa
+- COMPILING types
+- COMPILING gconf
+- COMPILING filetype
+- COMPILING dag
+- File "dag.ml", line 194, characters 23-34:
+- Warning 3: deprecated: String.copy
+- File "dag.ml", line 197, characters 39-62:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- COMPILING libname
+- COMPILING pp
+- File "pp.ml", line 13, characters 26-42:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- COMPILING expr
+- COMPILING utils
+- COMPILING modname
+- File "modname.ml", line 22, characters 12-26:
+- Warning 3: deprecated: Char.uppercase
+- Use Char.uppercase_ascii instead.
+- File "modname.ml", line 27, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "modname.ml", line 28, characters 27-46:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "modname.ml", line 47, characters 34-51:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "modname.ml", line 49, characters 12-29:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- COMPILING taskdep
+- COMPILING helper
+- COMPILING dagutils
+- COMPILING process
+- File "process.ml", line 57, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- COMPILING findlibConf
+- COMPILING scheduler
+- COMPILING prog
+- COMPILING dependencies
+- File "dependencies.ml", line 60, characters 10-20:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "dependencies.ml", line 61, characters 10-20:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- COMPILING generators
+- COMPILING hier
+- File "hier.ml", line 88, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "hier.ml", line 194, characters 28-45:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- COMPILING meta
+- COMPILING metacache
+- COMPILING target
+- COMPILING dist
+- COMPILING project
+- File "project.ml", line 84, characters 8-24:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "project.ml", line 96, characters 53-70:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "project.ml", line 105, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "project.ml", line 207, characters 15-31:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "project.ml", line 224, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "project.ml", line 255, characters 17-33:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "project.ml", line 267, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "project.ml", line 386, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "project.ml", line 477, characters 15-31:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "project.ml", line 488, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- COMPILING analyze
+- File "analyze.ml", line 110, characters 23-39:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- COMPILING configure
+- File "configure.ml", line 34, characters 57-73:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- COMPILING prepare
+- File "prepare.ml", line 379, characters 10-113:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a value that is not matched:
+- DirectoryEntry _
+- COMPILING buildprogs
+- COMPILING build
+- COMPILING exception
+- BUILDING library obuild.cmxa
+- COMPILING sdist
+- COMPILING doc
+- COMPILING init
+- File "init.ml", line 98, characters 45-62:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- COMPILING help
+- COMPILING install
+- COMPILING path_generated
+- COMPILING main
+- LINKING obuild.bootstrap
+- Configuring obuild-0.1.8...
+- [ 1 of 56] Compiling Ext.Fugue                     
+- [ 2 of 56] Intfing Ext.Filepath                  
+- [ 3 of 56] Compiling Ext.Filepath                  
+- [ 4 of 56] Intfing Ext.Filesystem                
+- [ 5 of 56] Compiling Ext.Filesystem                
+- File "ext/filesystem.ml", line 18, characters 11-216:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Unix.file_kind.
+- 
+- [ 6 of 56] Packing Ext                           
+- [ 7 of 56] Linking library dist/build/lib-obuild.ext/obuild_ext.cmxa
+- [ 7 of 56] Linking library dist/build/lib-obuild.ext/obuild_ext.cmxs
+- [ 7 of 56] Linking library dist/build/lib-obuild.ext/obuild_ext.d.cmxa
+- [ 7 of 56] Linking library dist/build/lib-obuild.ext/obuild_ext.d.cmxs
+- [ 7 of 56] Linking library dist/build/lib-obuild.ext/obuild_ext.p.cmxa
+- [ 7 of 56] Linking library dist/build/lib-obuild.ext/obuild_ext.p.cmxs
+- [ 7 of 56] Linking library dist/build/lib-obuild.ext/obuild_ext.cma
+- [ 7 of 56] Linking library dist/build/lib-obuild.ext/obuild_ext.d.cma
+- [ 8 of 56] Checking dist/build/lib-obuild.ext
+- [ 9 of 56] Compiling Obuild.Filetype               
+- [10 of 56] Compiling Obuild.Gconf                  
+- [11 of 56] Compiling Obuild.Pp                     
+- [12 of 56] Compiling Obuild.Dag                    
+- File "obuild/pp.ml", line 13, characters 26-42:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- 
+- [13 of 56] Compiling Obuild.Expr                   
+- File "obuild/dag.ml", line 194, characters 23-34:
+- Warning 3: deprecated: String.copy
+- File "obuild/dag.ml", line 197, characters 39-62:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- 
+- [14 of 56] Compiling Obuild.Modname                
+- File "obuild/expr.ml", line 157, characters 8-232:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Token.t.
+- File "obuild/expr.ml", line 150, characters 4-849:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Token.t.
+- File "obuild/expr.ml", line 174, characters 4-205:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Token.t.
+- File "obuild/expr.ml", line 209, characters 2-232:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Token.t.
+- 
+- [15 of 56] Compiling Obuild.Types                  
+- File "obuild/modname.ml", line 22, characters 12-26:
+- Warning 3: deprecated: Char.uppercase
+- Use Char.uppercase_ascii instead.
+- File "obuild/modname.ml", line 27, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "obuild/modname.ml", line 28, characters 27-46:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "obuild/modname.ml", line 47, characters 34-51:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "obuild/modname.ml", line 49, characters 12-29:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- [16 of 56] Compiling Obuild.Taskdep                
+- [17 of 56] Compiling Obuild.Libname                
+- [18 of 56] Compiling Obuild.Utils                  
+- [19 of 56] Compiling Obuild.Dagutils               
+- [20 of 56] Compiling Obuild.Helper                 
+- [21 of 56] Compiling Obuild.Process                
+- File "obuild/process.ml", line 57, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "obuild/process.ml", line 94, characters 2-193:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Unix.process_status.
+- 
+- [22 of 56] Compiling Obuild.Scheduler              
+- [23 of 56] Compiling Obuild.FindlibConf            
+- [24 of 56] Compiling Obuild.Prog                   
+- [25 of 56] Compiling Obuild.Meta                   
+- [26 of 56] Compiling Obuild.Generators             
+- File "obuild/meta.ml", line 127, characters 27-155:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Predicate.t.
+- File "obuild/meta.ml", line 137, characters 29-147:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Predicate.t.
+- File "obuild/meta.ml", line 313, characters 28-300:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type t.
+- File "obuild/meta.ml", line 322, characters 48-235:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type t.
+- File "obuild/meta.ml", line 328, characters 48-251:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type t.
+- File "obuild/meta.ml", line 319, characters 40-683:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type t.
+- File "obuild/meta.ml", line 345, characters 8-454:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type t.
+- File "obuild/meta.ml", line 359, characters 8-411:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type t.
+- File "obuild/meta.ml", line 371, characters 8-410:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type t.
+- File "obuild/meta.ml", line 383, characters 8-190:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type t.
+- File "obuild/meta.ml", line 390, characters 8-242:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type t.
+- File "obuild/meta.ml", line 399, characters 26-158:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type t.
+- File "obuild/meta.ml", line 404, characters 8-144:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type t.
+- File "obuild/meta.ml", line 410, characters 8-251:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type t.
+- File "obuild/meta.ml", line 335, characters 31-4237:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type t.
+- File "obuild/meta.ml", line 5, characters 0-11:
+- Warning 33: unused open Helper.
+- File "obuild/meta.ml", line 6, characters 0-10:
+- Warning 33: unused open Gconf.
+- 
+- [27 of 56] Compiling Obuild.Dependencies           
+- File "obuild/generators.ml", line 55, characters 10-101:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Filetype.t.
+- 
+- [28 of 56] Compiling Obuild.Hier                   
+- File "obuild/dependencies.ml", line 60, characters 10-20:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "obuild/dependencies.ml", line 61, characters 10-20:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- 
+- [29 of 56] Compiling Obuild.Metacache              
+- File "obuild/hier.ml", line 88, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "obuild/hier.ml", line 194, characters 28-45:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "obuild/hier.ml", line 3, characters 0-10:
+- Warning 33: unused open Types.
+- 
+- [30 of 56] Compiling Obuild.Target                 
+- File "obuild/metacache.ml", line 1, characters 0-9:
+- Warning 33: unused open Meta.
+- 
+- [31 of 56] Compiling Obuild.Project                
+- [32 of 56] Compiling Obuild.Dist                   
+- File "obuild/project.ml", line 84, characters 8-24:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "obuild/project.ml", line 96, characters 53-70:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "obuild/project.ml", line 105, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "obuild/project.ml", line 207, characters 15-31:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "obuild/project.ml", line 224, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "obuild/project.ml", line 255, characters 17-33:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "obuild/project.ml", line 267, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "obuild/project.ml", line 386, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "obuild/project.ml", line 477, characters 15-31:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "obuild/project.ml", line 488, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- 
+- [33 of 56] Compiling Obuild.Analyze                
+- File "obuild/analyze.ml", line 59, characters 8-94:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Target.Name.t.
+- File "obuild/analyze.ml", line 110, characters 23-39:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "obuild/analyze.ml", line 184, characters 22-466:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Meta.Predicate.t.
+- File "obuild/analyze.ml", line 208, characters 10-182:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Target.Name.t.
+- 
+- [34 of 56] Compiling Obuild.Configure              
+- [35 of 56] Compiling Obuild.Prepare                
+- File "obuild/configure.ml", line 34, characters 57-73:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- 
+- File "obuild/prepare.ml", line 168, characters 8-93:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Analyze.dependency_tag.
+- File "obuild/prepare.ml", line 218, characters 17-557:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Filetype.t.
+- File "obuild/prepare.ml", line 379, characters 10-113:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a value that is not matched:
+- DirectoryEntry _
+- File "obuild/prepare.ml", line 489, characters 10-224:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type compile_step.
+- File "obuild/prepare.ml", line 552, characters 6-99:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Analyze.dep_type.
+- File "obuild/prepare.ml", line 202, characters 9-16:
+- Warning 27: unused variable srcPath.
+- File "obuild/prepare.ml", line 233, characters 13-20:
+- Warning 27: unused variable srcPath.
+- File "obuild/prepare.ml", line 239, characters 37-41:
+- Warning 27: unused variable path.
+- 
+- [36 of 56] Compiling Obuild.Buildprogs             
+- File "obuild/buildprogs.ml", line 69, characters 14-206:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Filetype.t.
+- File "obuild/buildprogs.ml", line 66, characters 17-23:
+- Warning 27: unused variable srcDir.
+- 
+- [37 of 56] Compiling Obuild.Build                  
+- File "obuild/build.ml", line 60, characters 45-688:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Filetype.t.
+- File "obuild/build.ml", line 59, characters 4-1138:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Filetype.t.
+- File "obuild/build.ml", line 89, characters 6-63:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Types.ocaml_compiled_type.
+- File "obuild/build.ml", line 89, characters 6-63:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Types.ocaml_compilation_option.
+- File "obuild/build.ml", line 150, characters 20-196:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Hier.file_entry.
+- File "obuild/build.ml", line 349, characters 22-124:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Types.ocaml_compilation_option.
+- File "obuild/build.ml", line 360, characters 13-458:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Target.Name.t.
+- File "obuild/build.ml", line 481, characters 40-160:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Prepare.compile_step.
+- 
+- [38 of 56] Compiling Obuild.Exception              
+- [39 of 56] Packing Obuild                        
+- [40 of 56] Linking library dist/build/lib-obuild/obuild.cmxa
+- [40 of 56] Linking library dist/build/lib-obuild/obuild.cmxs
+- [40 of 56] Linking library dist/build/lib-obuild/obuild.d.cmxa
+- [40 of 56] Linking library dist/build/lib-obuild/obuild.d.cmxs
+- [40 of 56] Linking library dist/build/lib-obuild/obuild.p.cmxa
+- [40 of 56] Linking library dist/build/lib-obuild/obuild.p.cmxs
+- [40 of 56] Linking library dist/build/lib-obuild/obuild.cma
+- [40 of 56] Linking library dist/build/lib-obuild/obuild.d.cma
+- [41 of 56] Checking dist/build/lib-obuild
+- [42 of 56] Compiling Assimilate_oasis              
+- [43 of 56] Compiling Simple                        
+- [44 of 56] Compiling Install                       
+- File "src/install.ml", line 21, characters 6-245:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Obuild.Filetype.t.
+- File "src/install.ml", line 27, characters 4-116:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Obuild.Filetype.t.
+- File "src/install.ml", line 43, characters 31-137:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Obuild.Target.Name.t.
+- File "src/install.ml", line 47, characters 31-137:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Obuild.Target.Name.t.
+- 
+- [45 of 56] Compiling Doc                           
+- [46 of 56] Compiling Sdist                         
+- File "src/doc.ml", line 15, characters 8-16:
+- Warning 27: unused variable projFile.
+- 
+- [47 of 56] Compiling Help                          
+- File "src/sdist.ml", line 28, characters 14-178:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Obuild.Filetype.t.
+- File "src/sdist.ml", line 36, characters 12-154:
+- Warning 4: this pattern-matching is fragile.
+- It will remain exhaustive when constructors are added to type Obuild.Filetype.t.
+- File "src/sdist.ml", line 9, characters 17-27:
+- Warning 27: unused variable isSnapshot.
+- 
+- [48 of 56] Compiling Path_generated                
+- [49 of 56] Compiling Init                          
+- [50 of 56] Linking executable dist/build/obuild-from-oasis/obuild-from-oasis
+- File "src/init.ml", line 98, characters 45-62:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- [51 of 56] Linking executable dist/build/obuild-simple/obuild-simple
+- [52 of 56] Compiling Main                          
+- [53 of 56] Checking dist/build/obuild-from-oasis
+- [54 of 56] Checking dist/build/obuild-simple
+- [55 of 56] Linking executable dist/build/obuild/obuild
+- [56 of 56] Checking dist/build/obuild
+- 
+- real	0m5.818s
+- user	0m0.008s
+- sys	0m0.000s
+-> compiled  obuild.0.1.8
+-> installed obuild.0.1.8
+
+#=== ERROR while compiling lwt.2.4.5 ==========================================#
+# command              ./configure --disable-libev --disable-react --disable-ssl --enable-unix --enable-extra --enable-preemptive --disable-glib
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/lwt.2.4.5
+# exit-code            1
+# env-file             /home/opam/.opam/log/lwt-1-b1a82b.env
+# output-file          /home/opam/.opam/log/lwt-1-b1a82b.out
+### output ###
+# [...]
+# Use String.uncapitalize_ascii instead.
+# File "setup.ml", line 5835, characters 31-48:
+# Warning 3: deprecated: String.capitalize
+# Use String.capitalize_ascii instead.
+# ocamlfind: Package `camlp4.quotations.o' not found
+# W: Field 'pkg_camlp4_quotations_o' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-8d7274.txt'' terminated with error code 2
+# ocamlfind: Package `camlp4.quotations.o' not found
+# W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-b70602.txt'' terminated with error code 2")
+# ocamlfind: Package `camlp4.quotations.o' not found
+# W: Failure("Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.o > '/tmp/oasis-fd6abf.txt'' terminated with error code 2")
+# E: Cannot find findlib package camlp4.quotations.o
+# E: Failure("1 configuration error")
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install nbd 0.9.0
++- 
++- The following actions failed
+| - build lwt 2.4.5
++- 
++- The following changes have been performed
+| - install bitstring       2.1.0
+| - install conf-ncurses    1    
+| - install conf-pkg-config 1.0  
+| - install obuild          0.1.8
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/backup/state-20161223192137.export"
+'opam install --verbose --yes --jobs=2 nbd' failed.
+[2016-12-23 19:21.53] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "nbd" exited with status 4
