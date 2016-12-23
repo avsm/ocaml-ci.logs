@@ -1,0 +1,125 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocamlclean 2.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ocamlclean.2.0: dl]
+[ocamlclean.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocamlclean: patch]
+Processing  1/2: [ocamlclean: ./configure]
++ ./configure "-prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/ocamlclean.2.0)
+- ** OCamlClean configuration completed successfully **
+Processing  1/2: [ocamlclean: make all]
++ make "all" (CWD=/home/opam/.opam/default/.opam-switch/build/ocamlclean.2.0)
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/ocamlclean.2.0/src'
+- cp /home/opam/.opam/default/.opam-switch/build/ocamlclean.2.0/etc/config.ml config.ml
+- /usr/bin/ocamlbuild -cflags -w,Ae -lflags -w,Ae -no-links -classic-display -cflag -g main.native
+- /usr/bin/ocamldep.opt -modules main.ml > main.ml.depends
+- /usr/bin/ocamldep.opt -modules cleanbra.ml > cleanbra.ml.depends
+- /usr/bin/ocamldep.opt -modules instr.ml > instr.ml.depends
+- /usr/bin/ocamlc.opt -c -w Ae -g -o instr.cmo instr.ml
+- /usr/bin/ocamldep.opt -modules cleanenvs.ml > cleanenvs.ml.depends
+- /usr/bin/ocamldep.opt -modules step1.ml > step1.ml.depends
+- /usr/bin/ocamldep.opt -modules code.ml > code.ml.depends
+- /usr/bin/ocamldep.opt -modules index.ml > index.ml.depends
+- /usr/bin/ocamlc.opt -c -w Ae -g -o index.cmo index.ml
+- + /usr/bin/ocamlc.opt -c -w Ae -g -o index.cmo index.ml
+- File "index.ml", line 23, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "index.ml", line 24, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /usr/bin/ocamlc.opt -c -w Ae -g -o code.cmo code.ml
+- + /usr/bin/ocamlc.opt -c -w Ae -g -o code.cmo code.ml
+- File "code.ml", line 68, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /usr/bin/ocamldep.opt -modules step2.ml > step2.ml.depends
+- /usr/bin/ocamldep.opt -modules prim.ml > prim.ml.depends
+- /usr/bin/ocamlc.opt -c -w Ae -g -o prim.cmo prim.ml
+- /usr/bin/ocamlc.opt -c -w Ae -g -o step1.cmo step1.ml
+- + /usr/bin/ocamlc.opt -c -w Ae -g -o step1.cmo step1.ml
+- File "step1.ml", line 94, characters 13-22:
+- Warning 3: deprecated: Sort.list
+- Use List.sort instead.
+- File "step1.ml", line 144, characters 17-29:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- /usr/bin/ocamlc.opt -c -w Ae -g -o step2.cmo step2.ml
+- /usr/bin/ocamldep.opt -modules config.ml > config.ml.depends
+- /usr/bin/ocamldep.opt -modules data.ml > data.ml.depends
+- /usr/bin/ocamldep.opt -modules dump.ml > dump.ml.depends
+- /usr/bin/ocamldep.opt -modules globalise.ml > globalise.ml.depends
+- /usr/bin/ocamlc.opt -c -w Ae -g -o data.cmo data.ml
+- /usr/bin/ocamldep.opt -modules rmnop.ml > rmnop.ml.depends
+- /usr/bin/ocamlc.opt -c -w Ae -g -o rmnop.cmo rmnop.ml
+- /usr/bin/ocamldep.opt -modules linker.ml > linker.ml.depends
+- /usr/bin/ocamlc.opt -c -w Ae -g -o dump.cmo dump.ml
+- /usr/bin/ocamldep.opt -modules loader.ml > loader.ml.depends
+- /usr/bin/ocamldep.opt -modules step3.ml > step3.ml.depends
+- /usr/bin/ocamlc.opt -c -w Ae -g -o cleanbra.cmo cleanbra.ml
+- /usr/bin/ocamlc.opt -c -w Ae -g -o cleanenvs.cmo cleanenvs.ml
+- /usr/bin/ocamlc.opt -c -w Ae -g -o config.cmo config.ml
+- /usr/bin/ocamlc.opt -c -w Ae -g -o globalise.cmo globalise.ml
+- /usr/bin/ocamlc.opt -c -w Ae -g -o linker.cmo linker.ml
+- /usr/bin/ocamlc.opt -c -w Ae -g -o loader.cmo loader.ml
+- /usr/bin/ocamlc.opt -c -w Ae -g -o step3.cmo step3.ml
+- /usr/bin/ocamlc.opt -c -w Ae -g -o main.cmo main.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o instr.cmx instr.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o index.cmx index.ml
+- + /usr/bin/ocamlopt.opt -c -w Ae -g -o index.cmx index.ml
+- File "index.ml", line 23, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "index.ml", line 24, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o code.cmx code.ml
+- + /usr/bin/ocamlopt.opt -c -w Ae -g -o code.cmx code.ml
+- File "code.ml", line 68, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o prim.cmx prim.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o step1.cmx step1.ml
+- + /usr/bin/ocamlopt.opt -c -w Ae -g -o step1.cmx step1.ml
+- File "step1.ml", line 94, characters 13-22:
+- Warning 3: deprecated: Sort.list
+- Use List.sort instead.
+- File "step1.ml", line 144, characters 17-29:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o step2.cmx step2.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o data.cmx data.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o rmnop.cmx rmnop.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o dump.cmx dump.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o cleanbra.cmx cleanbra.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o cleanenvs.cmx cleanenvs.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o config.cmx config.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o globalise.cmx globalise.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o linker.cmx linker.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o loader.cmx loader.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o step3.cmx step3.ml
+- /usr/bin/ocamlopt.opt -c -w Ae -g -o main.cmx main.ml
+- /usr/bin/ocamlopt.opt -w Ae instr.cmx cleanbra.cmx index.cmx code.cmx prim.cmx step1.cmx step2.cmx cleanenvs.cmx config.cmx data.cmx dump.cmx rmnop.cmx globalise.cmx linker.cmx loader.cmx step3.cmx main.cmx -o main.native
+- cp _build/main.native /home/opam/.opam/default/.opam-switch/build/ocamlclean.2.0/bin/ocamlclean
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/ocamlclean.2.0/src'
+-> compiled  ocamlclean.2.0
+Processing  2/2: [ocamlclean: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/ocamlclean.2.0)
+- make[1]: Nothing to be done for 'ocamlclean'.
+- mkdir -p "/home/opam/.opam/default/bin"
+- mkdir -p "/home/opam/.opam/default/man/man1/man1"
+- cp bin/ocamlclean "/home/opam/.opam/default/bin/ocamlclean"
+- cp man/ocamlclean.1.gz "/home/opam/.opam/default/man/man1/man1/ocamlclean.1.gz"
+-> installed ocamlclean.2.0
+Done.
+# Run eval `opam env` to update the current shell environment
