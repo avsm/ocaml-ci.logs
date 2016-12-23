@@ -1,0 +1,106 @@
+=== opam depext -ivyj 2 pipebang
+[2016-12-23 18:49.21] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install pipebang 109.12.00
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [pipebang.109.12.00: dl]
+[pipebang.109.12.00] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [pipebang: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pipebang.109.12.00)
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- File "setup.ml", line 211, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 244, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 244, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 252, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 252, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 255, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 285, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 382, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "setup.ml", line 1251, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 1256, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 1791, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 4920, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4921, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 4922, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4923, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- rm -f setup.cmx setup.cmi setup.o setup.obj setup.cmo
+- ./setup.exe -configure 
+- ocamlfind: Package `camlp4.lib' not found
+- W: Field 'pkg_camlp4_lib' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.lib > '/tmp/oasis-2a2990.txt'' terminated with error code 2
+- E: Cannot find findlib package camlp4.lib
+- E: Failure("1 configuration error")
+- Makefile:51: recipe for target 'setup.data' failed
+- make: *** [setup.data] Error 1
+
+[ERROR] The compilation of pipebang failed at "make".
+
+#=== ERROR while compiling pipebang.109.12.00 =================================#
+# command              make
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pipebang.109.12.00
+# exit-code            2
+# env-file             /home/opam/.opam/log/pipebang-1-d2d111.env
+# output-file          /home/opam/.opam/log/pipebang-1-d2d111.out
+### output ###
+# [...]
+# Use String.uncapitalize_ascii instead.
+# File "setup.ml", line 4923, characters 31-48:
+# Warning 3: deprecated: String.capitalize
+# Use String.capitalize_ascii instead.
+# rm -f setup.cmx setup.cmi setup.o setup.obj setup.cmo
+# ./setup.exe -configure 
+# ocamlfind: Package `camlp4.lib' not found
+# W: Field 'pkg_camlp4_lib' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.lib > '/tmp/oasis-2a2990.txt'' terminated with error code 2
+# E: Cannot find findlib package camlp4.lib
+# E: Failure("1 configuration error")
+# Makefile:51: recipe for target 'setup.data' failed
+# make: *** [setup.data] Error 1
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build pipebang 109.12.00
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 pipebang' failed.
+[2016-12-23 19:28.00] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "pipebang" exited with status 4
