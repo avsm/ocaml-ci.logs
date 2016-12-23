@@ -1,0 +1,47 @@
+=== opam depext -ivyj 2 conf-graphviz
+[2016-12-23 18:50.08] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-which    1                                     [required by conf-graphviz]
+  - install conf-graphviz 0.1
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-which: which which]
++ which "which" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-which.1)
+- /usr/bin/which
+-> compiled  conf-which.1
+-> installed conf-which.1
+Processing  3/4: [conf-graphviz: which dot]
++ which "dot" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-graphviz.0.1)
+[ERROR] The compilation of conf-graphviz failed at "which dot".
+
+#=== ERROR while compiling conf-graphviz.0.1 ==================================#
+# command              which dot
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-graphviz.0.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-graphviz-1-5f1023.env
+# output-file          /home/opam/.opam/log/conf-graphviz-1-5f1023.out
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-graphviz 0.1
++- 
++- The following changes have been performed
+| - install conf-which 1
++- 
+
+=-=- conf-graphviz.0.1 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-graphviz.0.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/backup/state-20161223200048.export"
+'opam install --verbose --yes --jobs=2 conf-graphviz' failed.
+[2016-12-23 20:00.57] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "conf-graphviz" exited with status 4
