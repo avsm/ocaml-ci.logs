@@ -1,0 +1,35 @@
+=== opam depext -ivyj 2 conf-sdl-mixer
+[2016-12-23 21:14.08] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-sdl-mixer 1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-sdl-mixer: pkg-config SDL_mixer]
++ pkg-config "SDL_mixer" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-sdl-mixer.1)
+[ERROR] The compilation of conf-sdl-mixer failed at "pkg-config SDL_mixer".
+
+#=== ERROR while compiling conf-sdl-mixer.1 ===================================#
+# command              pkg-config SDL_mixer
+# path                 /home/opam/.opam/default/.opam-switch/build/conf-sdl-mixer.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-sdl-mixer-1-7afd23.env
+# output-file          /home/opam/.opam/log/conf-sdl-mixer-1-7afd23.out
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-sdl-mixer 1
++- 
+- No changes have been performed
+
+=-=- conf-sdl-mixer.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-sdl-mixer.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-sdl-mixer' failed.
+[2016-12-23 21:16.39] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "conf-sdl-mixer" exited with status 4
