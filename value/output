@@ -1,0 +1,178 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libnlopt-dev
+#  - libnlopt0
+#  - m4
+# The following new OS packages need to be installed: libnlopt-dev libnlopt0
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libnlopt-dev libnlopt0
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libnlopt0:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libnlopt0_2.4.2+dfsg-2_amd64.deb ...
+Unpacking libnlopt0:amd64 (2.4.2+dfsg-2) ...
+Selecting previously unselected package libnlopt-dev.
+Preparing to unpack .../libnlopt-dev_2.4.2+dfsg-2_amd64.deb ...
+Unpacking libnlopt-dev (2.4.2+dfsg-2) ...
+Setting up libnlopt0:amd64 (2.4.2+dfsg-2) ...
+Setting up libnlopt-dev (2.4.2+dfsg-2) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install nlopt-ocaml 0.5.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [nlopt-ocaml.0.5.1: dl]
+[nlopt-ocaml.0.5.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [nlopt-ocaml: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/nlopt-ocaml.0.5.1)
+- File "setup.ml", line 247, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2502, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ nlopt
+- Package version: ..................................... 0.5.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- ocamldoc: ............................................ /usr/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/nlopt-ocaml.0.5.1)
+- File "setup.ml", line 247, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2502, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt '-std=c99' -ccopt -O3 -ccopt -Wall -c src/nlopt_wrapper.c
+- mv nlopt_wrapper.o src/nlopt_wrapper.o
+- /home/opam/.opam/default/bin/ocamlfind ocamlmklib -o src/nlopt_stubs -lnlopt src/nlopt_wrapper.o
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules src/nlopt.mli > src/nlopt.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -ccopt '-std=c99' -ccopt -O3 -ccopt -Wall -I src -o src/nlopt.cmi src/nlopt.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules src/nlopt.ml > src/nlopt.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -ccopt '-std=c99' -ccopt -O3 -ccopt -Wall -I src -o src/nlopt.cmo src/nlopt.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -ccopt '-std=c99' -ccopt -O3 -ccopt -Wall -I src -o src/nlopt.cmo src/nlopt.ml
+- File "src/nlopt.ml", line 156, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "src/nlopt.ml", line 170, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "src/nlopt.ml", line 207, characters 12-24:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "src/nlopt.ml", line 246, characters 13-25:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a -dllib -lnlopt_stubs -cclib -lnlopt_stubs -cclib -lnlopt src/nlopt.cmo -o src/nlopt.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -ccopt '-std=c99' -ccopt -O3 -ccopt -Wall -I src -o src/nlopt.cmx src/nlopt.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -ccopt '-std=c99' -ccopt -O3 -ccopt -Wall -I src -o src/nlopt.cmx src/nlopt.ml
+- File "src/nlopt.ml", line 156, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "src/nlopt.ml", line 170, characters 11-23:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "src/nlopt.ml", line 207, characters 12-24:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "src/nlopt.ml", line 246, characters 13-25:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a -cclib -lnlopt_stubs -cclib -lnlopt src/nlopt.cmx -o src/nlopt.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared -I src src/nlopt.cmx -o src/nlopt.cmxs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules examples/rosenbrock.ml > examples/rosenbrock.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -I src -I examples -I src -o examples/rosenbrock.cmo examples/rosenbrock.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -I src -I examples -I src -o examples/rosenbrock.cmx examples/rosenbrock.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -g -I src -linkpkg src/nlopt.cmxa examples/rosenbrock.cmx -o examples/rosenbrock.native
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules examples/tutorial.ml > examples/tutorial.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -I src -I examples -I src -o examples/tutorial.cmo examples/tutorial.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -I src -I examples -I src -o examples/tutorial.cmx examples/tutorial.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -g -I src -linkpkg src/nlopt.cmxa examples/tutorial.cmx -o examples/tutorial.native
+-> compiled  nlopt-ocaml.0.5.1
+Processing  2/2: [nlopt-ocaml: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/default/.opam-switch/build/nlopt-ocaml.0.5.1)
+- File "setup.ml", line 247, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2502, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- Installed /home/opam/.opam/default/lib/nlopt/nlopt.mli
+- Installed /home/opam/.opam/default/lib/nlopt/libnlopt_stubs.a
+- Installed /home/opam/.opam/default/lib/nlopt/nlopt.cma
+- Installed /home/opam/.opam/default/lib/nlopt/nlopt.cmxa
+- Installed /home/opam/.opam/default/lib/nlopt/nlopt.a
+- Installed /home/opam/.opam/default/lib/nlopt/nlopt.cmxs
+- Installed /home/opam/.opam/default/lib/nlopt/nlopt.cmi
+- Installed /home/opam/.opam/default/lib/nlopt/nlopt.cmx
+- Installed /home/opam/.opam/default/lib/nlopt/META
+- Installed /home/opam/.opam/default/lib/stublibs/dllnlopt_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllnlopt_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+-> installed nlopt-ocaml.0.5.1
+Done.
+# Run eval `opam env` to update the current shell environment
