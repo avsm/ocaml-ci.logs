@@ -1,0 +1,645 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - pcre-dev
+#  - pkgconfig
+m4
+pkgconfig
+# The following new OS packages need to be installed: pcre-dev
+The following command needs to be run through "sudo":
+    apk add pcre-dev
+(1/4) Installing libpcre16 (8.38-r1)
+(2/4) Installing libpcre32 (8.38-r1)
+(3/4) Installing libpcrecpp (8.38-r1)
+(4/4) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 424 MiB in 86 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by conf-libpcre]
+  - install conf-libpcre    1                                   [required by pcre]
+  - install pcre            6.2.5                               [required by annexlib]
+  - install annexlib        0.13.5
+===== 4 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [annexlib.0.13.5: dl]
+Processing  2/4: [annexlib.0.13.5: dl]
+Processing  3/4: [annexlib.0.13.5: dl]
+Processing  4/4: [annexlib.0.13.5: dl] [pcre.6.2.5: dl]
+[annexlib.0.13.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4: [pcre.6.2.5: dl]
+[pcre.6.2.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/8: [conf-pkg-config: pkg-config]
++ pkg-config "--help" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-pkg-config.1.0)
+- usage: pkgconf [OPTIONS] [LIBRARIES]
+- 
+- basic options:
+- 
+-   --help                            this message
+-   --about                           print pkgconf version and license to stdout
+-   --version                         print supported pkg-config version to stdout
+-   --atleast-pkgconfig-version       check whether or not pkgconf is compatible
+-                                     with a specified pkg-config version
+-   --errors-to-stdout                print all errors on stdout instead of stderr
+-   --silence-errors                  explicitly be silent about errors
+-   --list-all                        list all known packages
+-   --list-package-names              list all known package names
+-   --simulate                        simulate walking the calculated dependency graph
+-   --no-cache                        do not cache already seen packages when
+-                                     walking the dependency graph
+- 
+- checking specific pkg-config database entries:
+- 
+-   --atleast-version                 require a specific version of a module
+-   --exact-version                   require an exact version of a module
+-   --max-version                     require a maximum version of a module
+-   --exists                          check whether or not a module exists
+-   --uninstalled                     check whether or not an uninstalled module will be used
+-   --no-uninstalled                  never use uninstalled modules when satisfying dependencies
+-   --maximum-traverse-depth          maximum allowed depth for dependency graph
+-   --static                          be more aggressive when computing dependency graph
+-                                     (for static linking)
+-   --env-only                        look only for package entries in PKG_CONFIG_PATH
+-   --ignore-conflicts                ignore 'conflicts' rules in modules
+-   --validate                        validate specific .pc files for correctness
+- 
+- querying specific pkg-config database fields:
+- 
+-   --define-variable=varname=value   define variable 'varname' as 'value'
+-   --variable=varname                print specified variable entry to stdout
+-   --cflags                          print required CFLAGS to stdout
+-   --cflags-only-I                   print required include-dir CFLAGS to stdout
+-   --cflags-only-other               print required non-include-dir CFLAGS to stdout
+-   --libs                            print required linker flags to stdout
+-   --libs-only-L                     print required LDPATH linker flags to stdout
+-   --libs-only-l                     print required LIBNAME linker flags to stdout
+-   --libs-only-other                 print required other linker flags to stdout
+-   --print-requires                  print required dependency frameworks to stdout
+-   --print-requires-private          print required dependency frameworks for static
+-                                     linking to stdout
+-   --print-variables                 print all known variables in module to stdout
+-   --digraph                         print entire dependency graph in graphviz 'dot' format
+-   --keep-system-cflags              keep -I/usr/include entries in cflags output
+-   --keep-system-libs                keep -L/usr/lib entries in libs output
+- 
+- report bugs to <http://github.com/pkgconf/pkgconf/issues>.
+-> compiled  conf-pkg-config.1.0
+-> installed conf-pkg-config.1.0
+Processing  3/8: [conf-libpcre: pkg-config libpcre]
++ pkg-config "libpcre" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-libpcre.1)
+-> compiled  conf-libpcre.1
+-> installed conf-libpcre.1
+Processing  5/8: [pcre: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5)
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+- ocamldep pcre.mli > ._bcdi/pcre.di
+- ocamldep pcre.ml > ._d/pcre.d
+- ocamlc -c -cc "cc" -ccopt "-fPIC -O2  \
+- 			-DPIC   \
+- 			    -o pcre_stubs.o " pcre_stubs.c
+- ar rcs libpcre_stubs.a  pcre_stubs.o
+- ocamlc -c pcre.mli
+- ocamlc -c pcre.ml
+- File "pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlmklib         \
+- 			-o pcre_stubs  pcre_stubs.o   \
+- 			-lpcre
+- ocamlc -a -cclib -lpcre_stubs    -dllib dllpcre_stubs.so -custom     -cclib "-lpcre"        -o pcre.cma pcre.cmo
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+- ocamldep -native pcre.mli > ._ncdi/pcre.di
+- make[2]: 'libpcre_stubs.a' is up to date.
+- ocamlopt -c pcre.ml
+- File "pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlopt -a -cclib -lpcre_stubs         -cclib "-lpcre"       -o pcre.cmxa pcre.cmx
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+-> compiled  pcre.6.2.5
+Processing  6/8: [pcre: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5)
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  pcre META pcre.mli pcre.cmi pcre.cma pcre.cmxa pcre.a libpcre_stubs.a dllpcre_stubs.so
+- Installed /home/opam/.opam/default/lib/pcre/libpcre_stubs.a
+- Installed /home/opam/.opam/default/lib/pcre/pcre.a
+- Installed /home/opam/.opam/default/lib/pcre/pcre.cmxa
+- Installed /home/opam/.opam/default/lib/pcre/pcre.cma
+- Installed /home/opam/.opam/default/lib/pcre/pcre.cmi
+- Installed /home/opam/.opam/default/lib/pcre/pcre.mli
+- Installed /home/opam/.opam/default/lib/pcre/META
+- Installed /home/opam/.opam/default/lib/stublibs/dllpcre_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllpcre_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/pcre.6.2.5/lib'
+-> installed pcre.6.2.5
+Processing  7/8: [annexlib: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/annexlib.0.13.5)
+- checking for gcc... gcc
+- checking for C compiler default output... a.out
+- checking whether the C compiler works... yes
+- checking whether we are cross compiling... no
+- checking for suffix of executables... 
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ANSI C... none needed
+- checking for ranlib... ranlib
+- checking for ocamlopt... opt
+- checking how to run the C preprocessor... gcc -E
+- checking for egrep... grep -E
+- checking for ANSI C header files... yes
+- checking for sys/types.h... yes
+- checking for sys/stat.h... yes
+- checking for stdlib.h... yes
+- checking for string.h... yes
+- checking for memory.h... yes
+- checking for strings.h... yes
+- checking for inttypes.h... yes
+- checking for stdint.h... yes
+- checking for unistd.h... yes
+- checking for unistd.h... (cached) yes
+- checking netdb.h usability... yes
+- checking netdb.h presence... yes
+- checking for netdb.h... yes
+- checking for sys/types.h... (cached) yes
+- checking sys/time.h usability... yes
+- checking sys/time.h presence... yes
+- checking for sys/time.h... yes
+- checking sys/resource.h usability... yes
+- checking sys/resource.h presence... yes
+- checking for sys/resource.h... yes
+- checking sys/sendfile.h usability... yes
+- checking sys/sendfile.h presence... yes
+- checking for sys/sendfile.h... yes
+- checking features.h usability... yes
+- checking features.h presence... yes
+- checking for features.h... yes
+- checking for setservent... 
+- yes
+- checking for getservent... yes
+- checking for endservent... yes
+- checking for strptime... yes
+- checking for pread... yes
+- checking for pwrite... yes
+- checking for gettimeofday... yes
+- checking for getrusage... yes
+- checking for setrlimit... yes
+- checking for getrlimit... yes
+- checking for setpgid... yes
+- checking for getpgid... yes
+- checking for setpgrp... yes
+- checking for getpgrp... yes
+- checking whether setpgrp takes no argument... yes
+- configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: creating config.h
+Processing  7/8: [annexlib: make all]
++ make "all" (CWD=/home/opam/.opam/default/.opam-switch/build/annexlib.0.13.5)
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/annexlib.0.13.5'
+- making ._bcdi/variant.di from variant.mli
+- making ._bcdi/syslog.di from syslog.mli
+- making ._bcdi/find.di from find.mli
+- making ._bcdi/glob.di from glob.mli
+- making ._bcdi/unixExtras.di from unixExtras.mli
+- making ._bcdi/time.di from time.mli
+- making ._bcdi/iOExtras.di from iOExtras.mli
+- making ._bcdi/strExtras.di from strExtras.mli
+- making ._bcdi/charExtras.di from charExtras.mli
+- making ._bcdi/locale.di from locale.mli
+- making ._bcdi/option.di from option.mli
+- making ._bcdi/listExtras.di from listExtras.mli
+- making ._bcdi/arrayExtras.di from arrayExtras.mli
+- making ._d/variant.d from variant.ml
+- making ._d/syslog.d from syslog.ml
+- making ._d/find.d from find.ml
+- making ._d/glob.d from glob.ml
+- making ._d/unixExtras.d from unixExtras.ml
+- making ._d/time.d from time.ml
+- making ._d/iOExtras.d from iOExtras.ml
+- making ._d/strExtras.d from strExtras.ml
+- making ._d/charExtras.d from charExtras.ml
+- making ._d/locale.d from locale.ml
+- making ._d/option.d from option.ml
+- making ._d/listExtras.d from listExtras.ml
+- making ._d/arrayExtras.d from arrayExtras.ml
+- ocamlc -c -cc "gcc" -ccopt "-fPIC -DPIC -g -O2 -fPIC -DPIC -Wall -Wno-unused \
+- 			    -o util_stubs.o " util_stubs.c 
+- ar rcs libannexlib_stubs.a  util_stubs.o
+- ocamlfind ocamlc -package pcre,unix -c arrayExtras.mli
+- ocamlfind ocamlc -package pcre,unix -c arrayExtras.ml
+- ocamlfind ocamlc -package pcre,unix -c listExtras.mli
+- ocamlfind ocamlc -package pcre,unix -c listExtras.ml
+- ocamlfind ocamlc -package pcre,unix -c option.mli
+- ocamlfind ocamlc -package pcre,unix -c option.ml
+- ocamlfind ocamlc -package pcre,unix -c locale.mli
+- ocamlfind ocamlc -package pcre,unix -c locale.ml
+- ocamlfind ocamlc -package pcre,unix -c charExtras.mli
+- ocamlfind ocamlc -package pcre,unix -c charExtras.ml
+- File "charExtras.ml", line 31, characters 35-37:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- ocamlfind ocamlc -package pcre,unix -c strExtras.mli
+- ocamlfind ocamlc -package pcre,unix -c strExtras.ml
+- File "strExtras.ml", line 143, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "strExtras.ml", line 145, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 151, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "strExtras.ml", line 153, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 160, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 166, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 197, characters 15-26:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 198, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 204, characters 15-26:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 205, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 273, characters 1-12:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 281, characters 12-23:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 286, characters 1-18:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 287, characters 1-18:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 294, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "strExtras.ml", line 296, characters 24-39:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "strExtras.ml", line 308, characters 6-17:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 315, characters 6-17:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 325, characters 1-12:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 337, characters 1-12:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 363, characters 18-29:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 367, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "strExtras.ml", line 403, characters 50-61:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 456, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "strExtras.ml", line 457, characters 28-40:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlc -package pcre,unix -c iOExtras.mli
+- ocamlfind ocamlc -package pcre,unix -c iOExtras.ml
+- File "iOExtras.ml", line 77, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -package pcre,unix -c time.mli
+- ocamlfind ocamlc -package pcre,unix -c time.ml
+- ocamlfind ocamlc -package pcre,unix -c unixExtras.mli
+- ocamlfind ocamlc -package pcre,unix -c unixExtras.ml
+- File "unixExtras.ml", line 71, characters 17-19:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- ocamlfind ocamlc -package pcre,unix -c glob.mli
+- ocamlfind ocamlc -package pcre,unix -c glob.ml
+- File "glob.ml", line 26, characters 8-10:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "glob.ml", line 35, characters 8-10:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "glob.ml", line 44, characters 8-10:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "glob.ml", line 100, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "glob.ml", line 101, characters 3-14:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "glob.ml", line 102, characters 3-14:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "glob.ml", line 106, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "glob.ml", line 107, characters 3-14:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "glob.ml", line 239, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "glob.ml", line 244, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "glob.ml", line 244, characters 28-47:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "glob.ml", line 246, characters 8-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlc -package pcre,unix -c find.mli
+- ocamlfind ocamlc -package pcre,unix -c find.ml
+- ocamlfind ocamlc -package pcre,unix -c syslog.mli
+- ocamlfind ocamlc -package pcre,unix -c syslog.ml
+- ocamlfind ocamlc -package pcre,unix -c variant.mli
+- ocamlfind ocamlc -package pcre,unix -c variant.ml
+- ocamlmklib          \
+- 			-o annexlib_stubs  util_stubs.o  \
+- 			
+- ocamlfind ocamlc -a -dllib dllannexlib_stubs.so              \
+- 			-cclib -lannexlib_stubs   -o annexlib.cma  arrayExtras.cmo listExtras.cmo option.cmo locale.cmo charExtras.cmo strExtras.cmo iOExtras.cmo time.cmo unixExtras.cmo glob.cmo find.cmo syslog.cmo variant.cmo
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/annexlib.0.13.5'
+Processing  7/8: [annexlib: make opt]
++ make "opt" (CWD=/home/opam/.opam/default/.opam-switch/build/annexlib.0.13.5)
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/annexlib.0.13.5'
+- making ._ncdi/variant.di from variant.mli
+- making ._ncdi/syslog.di from syslog.mli
+- making ._ncdi/find.di from find.mli
+- making ._ncdi/glob.di from glob.mli
+- making ._ncdi/unixExtras.di from unixExtras.mli
+- making ._ncdi/time.di from time.mli
+- making ._ncdi/iOExtras.di from iOExtras.mli
+- making ._ncdi/strExtras.di from strExtras.mli
+- making ._ncdi/charExtras.di from charExtras.mli
+- making ._ncdi/locale.di from locale.mli
+- making ._ncdi/option.di from option.mli
+- making ._ncdi/listExtras.di from listExtras.mli
+- making ._ncdi/arrayExtras.di from arrayExtras.mli
+- make[1]: 'libannexlib_stubs.a' is up to date.
+- ocamlfind ocamlopt -package pcre,unix -c arrayExtras.ml
+- ocamlfind ocamlopt -package pcre,unix -c listExtras.ml
+- ocamlfind ocamlopt -package pcre,unix -c option.ml
+- ocamlfind ocamlopt -package pcre,unix -c locale.ml
+- ocamlfind ocamlopt -package pcre,unix -c charExtras.ml
+- File "charExtras.ml", line 31, characters 35-37:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- ocamlfind ocamlopt -package pcre,unix -c strExtras.ml
+- File "strExtras.ml", line 143, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "strExtras.ml", line 145, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 151, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "strExtras.ml", line 153, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 160, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 166, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 197, characters 15-26:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 198, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 204, characters 15-26:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 205, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 273, characters 1-12:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 281, characters 12-23:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 286, characters 1-18:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 287, characters 1-18:
+- Warning 3: deprecated: String.unsafe_set
+- File "strExtras.ml", line 294, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "strExtras.ml", line 296, characters 24-39:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "strExtras.ml", line 308, characters 6-17:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 315, characters 6-17:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 325, characters 1-12:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 337, characters 1-12:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 363, characters 18-29:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 367, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "strExtras.ml", line 403, characters 50-61:
+- Warning 3: deprecated: String.copy
+- File "strExtras.ml", line 456, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "strExtras.ml", line 457, characters 28-40:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -package pcre,unix -c iOExtras.ml
+- File "iOExtras.ml", line 77, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -package pcre,unix -c time.ml
+- ocamlfind ocamlopt -package pcre,unix -c unixExtras.ml
+- File "unixExtras.ml", line 71, characters 17-19:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- ocamlfind ocamlopt -package pcre,unix -c glob.ml
+- File "glob.ml", line 26, characters 8-10:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "glob.ml", line 35, characters 8-10:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "glob.ml", line 44, characters 8-10:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "glob.ml", line 100, characters 9-22:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "glob.ml", line 101, characters 3-14:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "glob.ml", line 102, characters 3-14:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "glob.ml", line 106, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "glob.ml", line 107, characters 3-14:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "glob.ml", line 239, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "glob.ml", line 244, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "glob.ml", line 244, characters 28-47:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "glob.ml", line 246, characters 8-23:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -package pcre,unix -c find.ml
+- ocamlfind ocamlopt -package pcre,unix -c syslog.ml
+- ocamlfind ocamlopt -package pcre,unix -c variant.ml
+- ocamlfind ocamlopt -a              -cclib -lannexlib_stubs   \
+- 			 -o annexlib.cmxa arrayExtras.cmx listExtras.cmx option.cmx locale.cmx charExtras.cmx strExtras.cmx iOExtras.cmx time.cmx unixExtras.cmx glob.cmx find.cmx syslog.cmx variant.cmx
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/annexlib.0.13.5'
+-> compiled  annexlib.0.13.5
+Processing  8/8: [annexlib: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/annexlib.0.13.5)
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/annexlib.0.13.5'
+- make[1]: 'libannexlib_stubs.a' is up to date.
+- make[1]: 'annexlib.cma' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/annexlib.0.13.5'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  annexlib META locale.mli charExtras.mli iOExtras.mli variant.mli glob.mli unixExtras.mli time.mli find.mli listExtras.mli syslog.mli option.mli strExtras.mli arrayExtras.mli variant.cmi unixExtras.cmi find.cmi listExtras.cmi syslog.cmi option.cmi strExtras.cmi arrayExtras.cmi time.cmi glob.cmi locale.cmi charExtras.cmi iOExtras.cmi annexlib.cma listExtras.cmx syslog.cmx option.cmx strExtras.cmx locale.cmx arrayExtras.cmx time.cmx glob.cmx charExtras.cmx iOExtras.cmx variant.cmx unixExtras.cmx find.cmx annexlib.cmxa annexlib.a libannexlib_stubs.a dllannexlib_stubs.so
+- Installed /home/opam/.opam/default/lib/annexlib/libannexlib_stubs.a
+- Installed /home/opam/.opam/default/lib/annexlib/annexlib.a
+- Installed /home/opam/.opam/default/lib/annexlib/annexlib.cmxa
+- Installed /home/opam/.opam/default/lib/annexlib/find.cmx
+- Installed /home/opam/.opam/default/lib/annexlib/unixExtras.cmx
+- Installed /home/opam/.opam/default/lib/annexlib/variant.cmx
+- Installed /home/opam/.opam/default/lib/annexlib/iOExtras.cmx
+- Installed /home/opam/.opam/default/lib/annexlib/charExtras.cmx
+- Installed /home/opam/.opam/default/lib/annexlib/glob.cmx
+- Installed /home/opam/.opam/default/lib/annexlib/time.cmx
+- Installed /home/opam/.opam/default/lib/annexlib/arrayExtras.cmx
+- Installed /home/opam/.opam/default/lib/annexlib/locale.cmx
+- Installed /home/opam/.opam/default/lib/annexlib/strExtras.cmx
+- Installed /home/opam/.opam/default/lib/annexlib/option.cmx
+- Installed /home/opam/.opam/default/lib/annexlib/syslog.cmx
+- Installed /home/opam/.opam/default/lib/annexlib/listExtras.cmx
+- Installed /home/opam/.opam/default/lib/annexlib/annexlib.cma
+- Installed /home/opam/.opam/default/lib/annexlib/iOExtras.cmi
+- Installed /home/opam/.opam/default/lib/annexlib/charExtras.cmi
+- Installed /home/opam/.opam/default/lib/annexlib/locale.cmi
+- Installed /home/opam/.opam/default/lib/annexlib/glob.cmi
+- Installed /home/opam/.opam/default/lib/annexlib/time.cmi
+- Installed /home/opam/.opam/default/lib/annexlib/arrayExtras.cmi
+- Installed /home/opam/.opam/default/lib/annexlib/strExtras.cmi
+- Installed /home/opam/.opam/default/lib/annexlib/option.cmi
+- Installed /home/opam/.opam/default/lib/annexlib/syslog.cmi
+- Installed /home/opam/.opam/default/lib/annexlib/listExtras.cmi
+- Installed /home/opam/.opam/default/lib/annexlib/find.cmi
+- Installed /home/opam/.opam/default/lib/annexlib/unixExtras.cmi
+- Installed /home/opam/.opam/default/lib/annexlib/variant.cmi
+- Installed /home/opam/.opam/default/lib/annexlib/arrayExtras.mli
+- Installed /home/opam/.opam/default/lib/annexlib/strExtras.mli
+- Installed /home/opam/.opam/default/lib/annexlib/option.mli
+- Installed /home/opam/.opam/default/lib/annexlib/syslog.mli
+- Installed /home/opam/.opam/default/lib/annexlib/listExtras.mli
+- Installed /home/opam/.opam/default/lib/annexlib/find.mli
+- Installed /home/opam/.opam/default/lib/annexlib/time.mli
+- Installed /home/opam/.opam/default/lib/annexlib/unixExtras.mli
+- Installed /home/opam/.opam/default/lib/annexlib/glob.mli
+- Installed /home/opam/.opam/default/lib/annexlib/variant.mli
+- Installed /home/opam/.opam/default/lib/annexlib/iOExtras.mli
+- Installed /home/opam/.opam/default/lib/annexlib/charExtras.mli
+- Installed /home/opam/.opam/default/lib/annexlib/locale.mli
+- Installed /home/opam/.opam/default/lib/annexlib/META
+- Installed /home/opam/.opam/default/lib/stublibs/dllannexlib_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllannexlib_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+-> installed annexlib.0.13.5
+Done.
+# Run eval `opam env` to update the current shell environment
