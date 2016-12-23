@@ -1,0 +1,166 @@
+=== opam depext -ivyj 2 fftw3
+[2016-12-23 00:08.54] Starting...
+[2016-12-23 00:08.54] Waiting for free pool slot to run
+[2016-12-23 00:35.27] Pool slot obtained, starting run
+[2016-12-23 00:35.27] docker run sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b opam depext -ivyj 2 fftw3
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libfftw3-dev
+#  - m4
+# The following new OS packages need to be installed: libfftw3-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libfftw3-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libfftw3-double3:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libfftw3-double3_3.3.4-2ubuntu1_amd64.deb ...
+Unpacking libfftw3-double3:amd64 (3.3.4-2ubuntu1) ...
+Selecting previously unselected package libfftw3-long3:amd64.
+Preparing to unpack .../libfftw3-long3_3.3.4-2ubuntu1_amd64.deb ...
+Unpacking libfftw3-long3:amd64 (3.3.4-2ubuntu1) ...
+Selecting previously unselected package libfftw3-quad3:amd64.
+Preparing to unpack .../libfftw3-quad3_3.3.4-2ubuntu1_amd64.deb ...
+Unpacking libfftw3-quad3:amd64 (3.3.4-2ubuntu1) ...
+Selecting previously unselected package libfftw3-single3:amd64.
+Preparing to unpack .../libfftw3-single3_3.3.4-2ubuntu1_amd64.deb ...
+Unpacking libfftw3-single3:amd64 (3.3.4-2ubuntu1) ...
+Selecting previously unselected package libfftw3-bin.
+Preparing to unpack .../libfftw3-bin_3.3.4-2ubuntu1_amd64.deb ...
+Unpacking libfftw3-bin (3.3.4-2ubuntu1) ...
+Selecting previously unselected package libfftw3-dev:amd64.
+Preparing to unpack .../libfftw3-dev_3.3.4-2ubuntu1_amd64.deb ...
+Unpacking libfftw3-dev:amd64 (3.3.4-2ubuntu1) ...
+Setting up libfftw3-double3:amd64 (3.3.4-2ubuntu1) ...
+Setting up libfftw3-long3:amd64 (3.3.4-2ubuntu1) ...
+Setting up libfftw3-quad3:amd64 (3.3.4-2ubuntu1) ...
+Setting up libfftw3-single3:amd64 (3.3.4-2ubuntu1) ...
+Setting up libfftw3-bin (3.3.4-2ubuntu1) ...
+Setting up libfftw3-dev:amd64 (3.3.4-2ubuntu1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install fftw3 0.7.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [fftw3.0.7.3: dl]
+[fftw3.0.7.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [fftw3: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/default" "--sbindir=/home/opam/.opam/default/lib/fftw3/sbin" "--libexecdir=/home/opam/.opam/default/lib/fftw3/libexec" "--sysconfdir=/home/opam/.opam/default/lib/fftw3/etc" "--sharedstatedir=/home/opam/.opam/default/lib/fftw3/com" "--localstatedir=/home/opam/.opam/default/lib/fftw3/var" "--libdir=/home/opam/.opam/default/lib/fftw3/lib" "--includedir=/home/opam/.opam/default/lib/fftw3/include" "--datarootdir=/home/opam/.opam/default/lib/fftw3/share" (CWD=/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3)
+- configuring fftw3 0.7.3
+- checking for ocaml... /home/opam/.opam/default/bin/ocaml
+- checking for ocamlc... /usr/bin/ocamlc
+- ocaml version is 4.02.3
+- Enable safe-string
+- ocaml library path is /usr/lib/ocaml
+- checking for ocamlopt... /usr/bin/ocamlopt
+- checking ocamlopt version... ok
+- checking for ocamlc.opt... /usr/bin/ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocamlopt.opt... /usr/bin/ocamlopt.opt
+- checking ocamlc.opt version... ok
+- checking for ocamldep... /usr/bin/ocamldep
+- checking for ocamldoc... /usr/bin/ocamldoc
+- checking for ocamlfind... /home/opam/.opam/default/bin/ocamlfind
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking for libfftw3 (double precision)... ok
+- checking for libfftw3f (single precision)... ok
+- checking for OCaml library lacaml... not found; use --with-lacaml=PATH to indicate its location (Some examples will not be compiled.)
+- checking for OCaml library archimedes... not found; use --with-archimedes=PATH to indicate its location (Examples will not produce graphics.)
+- configure: creating ./config.status
+- config.status: creating opam/opam
+- config.status: creating Makefile
+- config.status: creating src/META
+- config.status: creating src/Makefile
+- config.status: creating tests/Makefile
+- config.status: creating examples/Makefile
+Processing  1/2: [fftw3: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3)
+- make -C src all
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3/src'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3/src'
+- /usr/bin/ocamldep fftw3.mli > ._bcdi/fftw3.di
+- /usr/bin/ocamldep fftw3.ml > ._d/fftw3.d
+- /usr/bin/ocamldep fftw3S.ml > ._d/fftw3S.d
+- /usr/bin/ocamldep fftw3D.ml > ._d/fftw3D.d
+- /usr/bin/ocamldep fftw3_geomF.ml > ._d/fftw3_geomF.d
+- /usr/bin/ocamldep fftw3_geomC.ml > ._d/fftw3_geomC.d
+- /usr/bin/ocamldep fftw3_utils.ml > ._d/fftw3_utils.d
+- /usr/bin/ocamlc.opt -c -cc "cc" -ccopt "-fPIC -g -O2 -DFFTW3F_EXISTS -DHASH_EXISTS \
+- 			-DPIC   \
+- 			    -o fftw3_stubs.o " fftw3_stubs.c
+- ar rcs libfftw3_stubs.a  fftw3_stubs.o
+- /usr/bin/ocamlc.opt -c -annot -safe-string fftw3_utils.ml
+- /usr/bin/ocamlc.opt -c -annot -safe-string fftw3_geomC.ml
+- /usr/bin/ocamlc.opt -c -annot -safe-string fftw3_geomF.ml
+- /usr/bin/ocamlc.opt -c -annot -safe-string fftw3D.ml
+- /usr/bin/ocamlc.opt -c -annot -safe-string fftw3S.ml
+- /usr/bin/ocamlc.opt -c -annot -safe-string fftw3.mli
+- /usr/bin/ocamlc.opt -c -annot -safe-string fftw3.ml
+- ocamlmklib         \
+- 			-o fftw3_stubs  fftw3_stubs.o -lm -lfftw3 -lfftw3f  \
+- 			
+- /usr/bin/ocamlc.opt -a -cclib -lfftw3_stubs -cclib -lm -cclib -lfftw3 -cclib -lfftw3f   -dllib dllfftw3_stubs.so -custom             -o fftw3.cma fftw3_utils.cmo fftw3_geomC.cmo fftw3_geomF.cmo fftw3D.cmo fftw3S.cmo fftw3.cmo
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3/src'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3/src'
+- /usr/bin/ocamldep -native fftw3.mli > ._ncdi/fftw3.di
+- make[2]: 'libfftw3_stubs.a' is up to date.
+- /usr/bin/ocamlopt.opt -c -annot -safe-string fftw3_utils.ml
+- /usr/bin/ocamlopt.opt -c -annot -safe-string fftw3_geomC.ml
+- /usr/bin/ocamlopt.opt -c -annot -safe-string fftw3_geomF.ml
+- /usr/bin/ocamlopt.opt -c -annot -safe-string fftw3D.ml
+- /usr/bin/ocamlopt.opt -c -annot -safe-string fftw3S.ml
+- /usr/bin/ocamlopt.opt -c -annot -safe-string fftw3.ml
+- /usr/bin/ocamlopt.opt -a -cclib -lfftw3_stubs -cclib -lm -cclib -lfftw3 -cclib -lfftw3f               -o fftw3.cmxa fftw3_utils.cmx fftw3_geomC.cmx fftw3_geomF.cmx fftw3D.cmx fftw3S.cmx fftw3.cmx
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3/src'
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3/src'
+-> compiled  fftw3.0.7.3
+Processing  2/2: [fftw3: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3)
+- make -C src install
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3/src'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3/src'
+- make[2]: 'libfftw3_stubs.a' is up to date.
+- /usr/bin/ocamlc.opt -a -cclib -lfftw3_stubs -cclib -lm -cclib -lfftw3 -cclib -lfftw3f   -dllib dllfftw3_stubs.so -custom             -o fftw3.cma fftw3_utils.cmo fftw3_geomC.cmo fftw3_geomF.cmo fftw3D.cmo fftw3S.cmo fftw3.cmo
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3/src'
+- make[2]: Entering directory '/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3/src'
+- make[2]: 'libfftw3_stubs.a' is up to date.
+- make[2]: 'fftw3.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3/src'
+- 
+- Installing library with ocamlfind
+- /home/opam/.opam/default/bin/ocamlfind install  fftw3 META fftw3.mli fftw3.cmi fftw3.cma fftw3.cmxa fftw3.a libfftw3_stubs.a dllfftw3_stubs.so
+- Installed /home/opam/.opam/default/lib/fftw3/libfftw3_stubs.a
+- Installed /home/opam/.opam/default/lib/fftw3/fftw3.a
+- Installed /home/opam/.opam/default/lib/fftw3/fftw3.cmxa
+- Installed /home/opam/.opam/default/lib/fftw3/fftw3.cma
+- Installed /home/opam/.opam/default/lib/fftw3/fftw3.cmi
+- Installed /home/opam/.opam/default/lib/fftw3/fftw3.mli
+- Installed /home/opam/.opam/default/lib/fftw3/META
+- Installed /home/opam/.opam/default/lib/stublibs/dllfftw3_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllfftw3_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/fftw3.0.7.3/src'
+-> installed fftw3.0.7.3
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 00:35.46] Success
