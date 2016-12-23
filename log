@@ -1,0 +1,69 @@
+=== opam depext -ivyj 2 frenetic
+[2016-12-23 17:51.36] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - linux-headers
+#  - m4
+#  - ncurses-dev
+#  - openssl-dev
+#  - pcre-dev
+#  - pkgconfig
+#  - zlib-dev
+m4
+ncurses-dev
+pkgconfig
+# The following new OS packages need to be installed: linux-headers openssl-dev pcre-dev zlib-dev
+The following command needs to be run through "sudo":
+    apk add linux-headers openssl-dev pcre-dev zlib-dev
+(1/7) Installing linux-headers (4.4.6-r1)
+(2/7) Installing zlib-dev (1.2.8-r2)
+(3/7) Installing openssl-dev (1.0.2j-r0)
+(4/7) Installing libpcre16 (8.38-r1)
+(5/7) Installing libpcre32 (8.38-r1)
+(6/7) Installing libpcrecpp (8.38-r1)
+(7/7) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 437 MiB in 89 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by conf-ncurses]
+  - install ounit           2.0.0                               [required by frenetic]
+  - install optcomp         1.6                                 [required by ocplib-endian]
+  - install conf-ncurses    1                                   [required by lwt]
+  - install ocplib-endian   0.3                                 [required by cstruct]
+  - install lwt             2.4.5                               [required by frenetic]
+  - install cstruct         1.2.0                               [required by frenetic]
+  - install packet          0.1.1                               [required by frenetic]
+  - install openflow        0.1.1                               [required by frenetic]
+  - install frenetic        1.0  
+===== 10 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  3/10: [cstruct.1.2.0: dl]
+Processing  4/10: [cstruct.1.2.0: dl] [frenetic.1.0: http]
+Processing  5/10: [cstruct.1.2.0: dl] [frenetic.1.0: http] [lwt.2.4.5: dl]
+[cstruct.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/10: [frenetic.1.0: http] [lwt.2.4.5: dl]
+[lwt.2.4.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/10: [frenetic.1.0: http]
+Processing  6/10: [frenetic.1.0: http] [ocplib-endian.0.3: dl]
+[ocplib-endian.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/10: [frenetic.1.0: http]
+Processing  7/10: [frenetic.1.0: http] [openflow.0.1.1: dl]
+Processing  8/10: [frenetic.1.0: http] [openflow.0.1.1: dl] [optcomp.1.6: dl]
+[openflow.0.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/10: [frenetic.1.0: http] [optcomp.1.6: dl]
+[optcomp.1.6] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/10: [frenetic.1.0: http]
+Processing  9/10: [frenetic.1.0: http] [ounit.2.0.0: dl]
+Processing 10/10: [frenetic.1.0: http] [ounit.2.0.0: dl] [packet.0.1.1: dl]
+[ounit.2.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing 10/10: [frenetic.1.0: http] [packet.0.1.1: dl]
+[packet.0.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing 10/10: [frenetic.1.0: http]
+[ERROR] The sources of the following couldn't be obtained, aborting:
+          - frenetic.1.0
+
+'opam install --verbose --yes --jobs=2 frenetic' failed.
+[2016-12-23 18:11.48] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:cfbeef9d775638d0b94a878f95261d5f7c85e15274df23042f44dfae382a7975" "opam" "depext" "-ivyj" "2" "frenetic" exited with status 66
