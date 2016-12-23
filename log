@@ -1,0 +1,68 @@
+=== opam depext -ivyj 2 conf-bap-llvm
+[2016-12-23 21:14.04] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-which    1                                     [required by conf-bap-llvm]
+  - install conf-bap-llvm 1
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-which: which which]
++ which "which" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-which.1)
+- /usr/bin/which
+-> compiled  conf-which.1
+-> installed conf-which.1
+Processing  3/4: [conf-bap-llvm: sh configure]
++ sh "-x" "configure" "linux" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-bap-llvm.1)
+- + configs=llvm-config-3.4 llvm-config-mp-3.4 llvm-config-3.8 llvm-config-mp-3.8 llvm-config
+- + config=
+- + which 
+- + which llvm-config-3.4
+- + which llvm-config-mp-3.4
+- + which llvm-config-3.8
+- + which llvm-config-mp-3.8
+- + which llvm-config
+- + which 
+- + exit 1
+[ERROR] The compilation of conf-bap-llvm failed at "sh -x configure linux".
+
+#=== ERROR while compiling conf-bap-llvm.1 ====================================#
+# command              sh -x configure linux
+# path                 /home/opam/.opam/default/.opam-switch/build/conf-bap-llvm.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-bap-llvm-1-ffb3fd.env
+# output-file          /home/opam/.opam/log/conf-bap-llvm-1-ffb3fd.out
+### output ###
+# + configs=llvm-config-3.4 llvm-config-mp-3.4 llvm-config-3.8 llvm-config-mp-3.8 llvm-config
+# + config=
+# + which 
+# + which llvm-config-3.4
+# + which llvm-config-mp-3.4
+# + which llvm-config-3.8
+# + which llvm-config-mp-3.8
+# + which llvm-config
+# + which 
+# + exit 1
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-bap-llvm 1
++- 
++- The following changes have been performed
+| - install conf-which 1
++- 
+
+=-=- conf-bap-llvm.1 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-bap-llvm.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/default/.opam-switch/backup/state-20161223211526.export"
+'opam install --verbose --yes --jobs=2 conf-bap-llvm' failed.
+[2016-12-23 21:15.34] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "conf-bap-llvm" exited with status 4
