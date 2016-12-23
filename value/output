@@ -1,0 +1,62 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install result    1.2                                       [required by stb_image]
+  - install stb_image 0.3
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [result.1.2: dl]
+Processing  2/2: [result.1.2: dl] [stb_image.0.3: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [stb_image.0.3: dl]
+[stb_image.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+-> installed result.1.2
+Processing  3/4: [stb_image: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/stb_image.0.3)
+- ocamlfind c -package result -c stb_image.mli
+- ocamlfind c -package result -c stb_image.ml
+- ocamlfind c -c -ccopt "-O3 -std=gnu99 -ffast-math" ml_stb_image.c
+- ocamlfind mklib -o _stb_image_stubs ml_stb_image.o
+- ocamlfind c -package result -a -custom -o stb_image.cma stb_image.cmo \
+-        -dllib dll_stb_image_stubs.so \
+-        -cclib -l_stb_image_stubs
+- ocamlfind opt -package result -c stb_image.ml
+- ocamlfind opt -package result -a -o stb_image.cmxa stb_image.cmx \
+-        -cclib -l_stb_image_stubs
+-> compiled  stb_image.0.3
+Processing  4/4: [stb_image: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/stb_image.0.3)
+- ocamlfind install stb_image stb_image.a stb_image.cmi stb_image.cmo stb_image.cma stb_image.cmx stb_image.cmxa stb_image.ml stb_image.mli lib_stb_image_stubs.a dll_stb_image_stubs.so META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image/lib_stb_image_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image/stb_image.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image/stb_image.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image/stb_image.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image/stb_image.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image/stb_image.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image/stb_image.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image/stb_image.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image/stb_image.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_image/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dll_stb_image_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dll_stb_image_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+-> installed stb_image.0.3
+Done.
+# Run eval `opam env` to update the current shell environment
