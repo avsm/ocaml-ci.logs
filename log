@@ -1,0 +1,61 @@
+=== opam depext -ivyj 2 ocamlweb
+[2016-12-23 18:49.11] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocamlweb 1.39
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ocamlweb.1.39: dl]
+[ocamlweb.1.39] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocamlweb: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" "--sbindir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlweb/sbin" "--libexecdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlweb/libexec" "--sysconfdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlweb/etc" "--sharedstatedir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlweb/com" "--localstatedir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlweb/var" "--libdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlweb/lib" "--includedir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlweb/include" "--datarootdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlweb/share" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlweb.1.39)
+- checking for ocamlc... ocamlc
+- ocaml version is 4.03.0
+- ocaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking ocamlopt version... ok
+- checking for ocamlc.opt... ocamlc.opt
+- checking ocamlc.opt version... ok
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking ocamlc.opt version... ok
+- checking for ocamldep... ocamldep
+- checking for mktexlsr... true
+- configure: WARNING: Cannot find mktexlsr.
+- configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: WARNING:  'Makefile.in' seems to ignore the --datarootdir setting
+Processing  1/2: [ocamlweb: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlweb.1.39)
+- autoconf
+- make: autoconf: Command not found
+- Makefile:259: recipe for target 'configure' failed
+- make: *** [configure] Error 127
+[ERROR] The compilation of ocamlweb failed at "make".
+
+#=== ERROR while compiling ocamlweb.1.39 ======================================#
+# command              make
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlweb.1.39
+# exit-code            2
+# env-file             /home/opam/.opam/log/ocamlweb-1-d8a4ae.env
+# output-file          /home/opam/.opam/log/ocamlweb-1-d8a4ae.out
+### output ###
+# autoconf
+# make: autoconf: Command not found
+# Makefile:259: recipe for target 'configure' failed
+# make: *** [configure] Error 127
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build ocamlweb 1.39
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 ocamlweb' failed.
+[2016-12-23 19:23.30] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "ocamlweb" exited with status 4
