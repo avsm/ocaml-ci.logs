@@ -1,0 +1,99 @@
+=== Building base image for opam archive (15b3d5) (e04b99)
+[2016-12-23 00:07.18] Starting...
+Sending build context to Docker daemon 2.048 kB
+Step 1/4 : FROM ocaml/opam:alpine_ocaml-4.03.0
+ ---> 4d1e8432fde5
+Step 2/4 : WORKDIR /home/opam/opam-repository
+ ---> e541a8408a88
+Removing intermediate container 06df8bd980d4
+Step 3/4 : RUN git pull origin master &&   git checkout 15b3d5b2e40e4ebfac4519c6f0afd3be5da675b4 &&   opam update -uy
+ ---> Running in 5658996dfa7c
+[91mFrom git://github.com/ocaml/opam-repository
+ * branch            master     -> FETCH_HEAD
+[0m[91m   c32ba76..15b3d5b  master     -> origin/master
+[0mUpdating c32ba76..15b3d5b
+Fast-forward
+ compilers/4.05.0/4.05.0+pr832/4.05.0+pr832.descr   |   1 -
+ compilers/4.05.0/4.05.0+pr941/4.05.0+pr941.descr   |   1 -
+ compilers/4.05.0/4.05.0+pr976/4.05.0+pr976.descr   |   1 -
+ .../4.05.0+pr981.comp}                             |   2 +-
+ compilers/4.05.0/4.05.0+pr981/4.05.0+pr981.descr   |   1 +
+ compilers/4.05.0/4.05.0+pr983/4.05.0+pr983.comp    |  11 ++
+ compilers/4.05.0/4.05.0+pr983/4.05.0+pr983.descr   |   1 +
+ .../4.05.0+pr984.comp}                             |   2 +-
+ compilers/4.05.0/4.05.0+pr984/4.05.0+pr984.descr   |   1 +
+ .../4.05.0+pr985.comp}                             |   2 +-
+ compilers/4.05.0/4.05.0+pr985/4.05.0+pr985.descr   |   1 +
+ packages/delimcc/delimcc.0/files/ocaml.4.04.patch  | 121 +++++++++++++++++++++
+ packages/delimcc/delimcc.0/opam                    |   5 +-
+ packages/eliom/eliom.6.1.0/descr                   |  10 ++
+ packages/eliom/eliom.6.1.0/opam                    |  22 ++++
+ packages/eliom/eliom.6.1.0/url                     |   2 +
+ packages/js_of_ocaml/js_of_ocaml.2.8.4/descr       |   1 +
+ packages/js_of_ocaml/js_of_ocaml.2.8.4/opam        |  39 +++++++
+ packages/js_of_ocaml/js_of_ocaml.2.8.4/url         |   2 +
+ packages/portia/portia.0.1/opam                    |   5 +-
+ packages/portia/portia.1.0/descr                   |   1 +
+ packages/portia/portia.1.0/opam                    |  21 ++++
+ packages/portia/portia.1.0/url                     |   2 +
+ .../ppx_jsobject_conv.0.3.7/descr                  |   8 ++
+ .../ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/opam |  23 ++++
+ .../ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/url  |   3 +
+ packages/rubytt/rubytt.0.1/descr                   |   5 +-
+ packages/rubytt/rubytt.0.1/files/rubytt.install    |   1 +
+ packages/rubytt/rubytt.0.1/opam                    |  14 +--
+ packages/rubytt/rubytt.0.1/url                     |   2 +-
+ 30 files changed, 286 insertions(+), 25 deletions(-)
+ delete mode 100644 compilers/4.05.0/4.05.0+pr832/4.05.0+pr832.descr
+ delete mode 100644 compilers/4.05.0/4.05.0+pr941/4.05.0+pr941.descr
+ delete mode 100644 compilers/4.05.0/4.05.0+pr976/4.05.0+pr976.descr
+ rename compilers/4.05.0/{4.05.0+pr832/4.05.0+pr832.comp => 4.05.0+pr981/4.05.0+pr981.comp} (77%)
+ create mode 100644 compilers/4.05.0/4.05.0+pr981/4.05.0+pr981.descr
+ create mode 100644 compilers/4.05.0/4.05.0+pr983/4.05.0+pr983.comp
+ create mode 100644 compilers/4.05.0/4.05.0+pr983/4.05.0+pr983.descr
+ rename compilers/4.05.0/{4.05.0+pr941/4.05.0+pr941.comp => 4.05.0+pr984/4.05.0+pr984.comp} (77%)
+ create mode 100644 compilers/4.05.0/4.05.0+pr984/4.05.0+pr984.descr
+ rename compilers/4.05.0/{4.05.0+pr976/4.05.0+pr976.comp => 4.05.0+pr985/4.05.0+pr985.comp} (77%)
+ create mode 100644 compilers/4.05.0/4.05.0+pr985/4.05.0+pr985.descr
+ create mode 100644 packages/delimcc/delimcc.0/files/ocaml.4.04.patch
+ create mode 100644 packages/eliom/eliom.6.1.0/descr
+ create mode 100644 packages/eliom/eliom.6.1.0/opam
+ create mode 100644 packages/eliom/eliom.6.1.0/url
+ create mode 100644 packages/js_of_ocaml/js_of_ocaml.2.8.4/descr
+ create mode 100644 packages/js_of_ocaml/js_of_ocaml.2.8.4/opam
+ create mode 100644 packages/js_of_ocaml/js_of_ocaml.2.8.4/url
+ create mode 100644 packages/portia/portia.1.0/descr
+ create mode 100644 packages/portia/portia.1.0/opam
+ create mode 100644 packages/portia/portia.1.0/url
+ create mode 100644 packages/ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/descr
+ create mode 100644 packages/ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/opam
+ create mode 100644 packages/ppx_jsobject_conv/ppx_jsobject_conv.0.3.7/url
+ create mode 100644 packages/rubytt/rubytt.0.1/files/rubytt.install
+[91mNote: checking out '15b3d5b2e40e4ebfac4519c6f0afd3be5da675b4'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 15b3d5b... Merge pull request #8144 from bactrian/sync-prs-1482451201
+[0m
+=-=- Updating package repositories =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[default: local] Command started
+[default: local] Command started
+[default: local] Command started
+[default] /home/opam/opam-repository synchronized
+
+Already up-to-date.
+ ---> b643d3069d8b
+Removing intermediate container 5658996dfa7c
+Step 4/4 : LABEL "com.docker.datakit.builton" '1482451638.71' "com.docker.datakit.digest" 'e04b99d7df0acee12793dbec5c5b3326'
+ ---> Running in 2f015a1dd271
+ ---> dce586b2e603
+Removing intermediate container 2f015a1dd271
+Successfully built dce586b2e603
+Recorded container (sha256:dce586b2e6034081112563ccc2c19863603525947190be0e40235d7b728fd182)[2016-12-23 00:07.34] Success
