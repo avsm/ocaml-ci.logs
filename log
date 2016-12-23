@@ -1,0 +1,75 @@
+=== opam depext -ivyj 2 aio
+[2016-12-23 18:49.51] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install aio 0.0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [aio.0.0.3: dl]
+[aio.0.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [aio: patch]
+Processing  1/2: [aio: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3)
+[ERROR] The compilation of aio failed at "make".
+
+#=== ERROR while compiling aio.0.0.3 ==========================================#
+# command              make
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3
+# exit-code            2
+# env-file             /home/opam/.opam/log/aio-1-a71bb4.env
+# output-file          /home/opam/.opam/log/aio-1-a71bb4.out
+### output ###
+# ocamlc -c -cc "cc" -ccopt "-fPIC -O2 -g -W -Wall \
+# [...]
+# 			    -o aio_stubs.o " aio_stubs.c
+# aio_stubs.c:27:20: fatal error: libaio.h: No such file or directory
+# compilation terminated.
+# ../OCamlMakefile:1124: recipe for target 'aio_stubs.o' failed
+# make[2]: *** [aio_stubs.o] Error 2
+# make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+# ../OCamlMakefile:784: recipe for target 'byte-code-library' failed
+# make[1]: *** [byte-code-library] Error 2
+# make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+# Makefile:2: recipe for target 'all' failed
+# make: *** [all] Error 2
+
+- make -C lib all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- ocamldep aio.mli > ._bcdi/aio.di
+- ocamldep aio.ml > ._d/aio.d
+- ocamldep aio_buffer.ml > ._d/aio_buffer.d
+- ocamlc -c -cc "cc" -ccopt "-fPIC -O2 -g -W -Wall \
+- 			-DPIC   \
+- 			    -o aio_stubs.o " aio_stubs.c
+- aio_stubs.c:27:20: fatal error: libaio.h: No such file or directory
+- compilation terminated.
+- ../OCamlMakefile:1124: recipe for target 'aio_stubs.o' failed
+- make[2]: *** [aio_stubs.o] Error 2
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- ../OCamlMakefile:784: recipe for target 'byte-code-library' failed
+- make[1]: *** [byte-code-library] Error 2
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/aio.0.0.3/lib'
+- Makefile:2: recipe for target 'all' failed
+- make: *** [all] Error 2
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build aio 0.0.3
++- 
+- No changes have been performed
+
+=-=- aio.0.0.3 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext aio.0.0.3' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 aio' failed.
+[2016-12-23 19:42.51] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "aio" exited with status 4
