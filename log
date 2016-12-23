@@ -1,0 +1,39 @@
+=== opam depext -ivyj 2 pfff
+[2016-12-23 18:49.21] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install pfff 0.29
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [pfff.0.29: dl]
+[pfff.0.29] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [pfff: patch]
+Processing  1/2: [pfff: ./configure]
++ ./configure "--novisual" "--nocmt" "--nobytecode" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29)
+[ERROR] The compilation of pfff failed at "./configure --novisual --nocmt --nobytecode".
+
+#=== ERROR while compiling pfff.0.29 ==========================================#
+# command              ./configure --novisual --nocmt --nobytecode
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pfff.0.29
+# exit-code            127
+# env-file             /home/opam/.opam/log/pfff-1-d0f245.env
+# output-file          /home/opam/.opam/log/pfff-1-d0f245.out
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build pfff 0.29
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 pfff' failed.
+[2016-12-23 19:28.00] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "pfff" exited with status 4
