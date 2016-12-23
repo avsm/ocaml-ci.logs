@@ -1,0 +1,54 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install glical 0.0.7
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [glical.0.0.7: dl]
+[glical.0.0.7] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [glical: ./configure]
++ ./configure "-prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/glical.0.0.7)
+Processing  1/2: [glical: make build]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/glical.0.0.7)
+- ocamlc -c glical_kernel.mli
+- ocamlc -c glical_kernel.ml
+- File "glical_kernel.ml", line 780, characters 22-37:
+- Warning 52: the argument of this constructor should not be matched against a
+- constant pattern; the actual value of the argument could change
+- in the future.
+- ocamlc -c glical.mli
+- ocamlc -c glical.ml
+- ocamlc -a glical_kernel.cmo glical.cmo -o glical.cma
+- ocamlopt -c glical_kernel.ml
+- File "glical_kernel.ml", line 780, characters 22-37:
+- Warning 52: the argument of this constructor should not be matched against a
+- constant pattern; the actual value of the argument could change
+- in the future.
+- ocamlopt -c glical.ml
+- ocamlopt -a glical_kernel.cmx glical.cmx -o glical.cmxa
+-> compiled  glical.0.0.7
+Processing  2/2: [glical: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/glical.0.0.7)
+- mkdir -p "/home/opam/.opam/ocaml-base-compiler.4.03.0"/lib/glical/
+- ocamlfind install -destdir "/home/opam/.opam/ocaml-base-compiler.4.03.0"/lib glical glical.cma glical.cmxa glical.a glical.mli glical.cmi glical.cmo glical.cmx glical_kernel.cmi glical_kernel.mli glical_kernel.cmo glical_kernel.cmx META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/glical/glical_kernel.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/glical/glical_kernel.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/glical/glical_kernel.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/glical/glical_kernel.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/glical/glical.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/glical/glical.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/glical/glical.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/glical/glical.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/glical/glical.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/glical/glical.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/glical/glical.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/glical/META
+-> installed glical.0.0.7
+Done.
+# Run eval `opam env` to update the current shell environment
