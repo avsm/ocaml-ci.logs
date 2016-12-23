@@ -1,0 +1,51 @@
+=== opam depext -ivyj 2 pareto
+[2016-12-23 18:49.19] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-gsl 1                                          [required by gsl]
+  - install gsl      1.19.1                                     [required by pareto]
+  - install pareto   0.3   
+===== 3 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/3: [gsl.1.19.1: dl]
+Processing  3/3: [gsl.1.19.1: dl] [pareto.0.3: dl]
+[pareto.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3: [gsl.1.19.1: dl]
+[gsl.1.19.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/6: [conf-gsl: pkg-config gsl]
++ pkg-config "gsl" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-gsl.1)
+[ERROR] The compilation of conf-gsl failed at "pkg-config gsl".
+
+#=== ERROR while compiling conf-gsl.1 =========================================#
+# command              pkg-config gsl
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-gsl.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-gsl-1-a00279.env
+# output-file          /home/opam/.opam/log/conf-gsl-1-a00279.out
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install gsl    1.19.1
+| - install pareto 0.3   
++- 
++- The following actions failed
+| - build conf-gsl 1
++- 
+- No changes have been performed
+
+=-=- conf-gsl.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-gsl.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 pareto' failed.
+[2016-12-23 19:27.19] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "pareto" exited with status 4
