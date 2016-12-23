@@ -1,0 +1,84 @@
+=== opam depext -ivyj 2 flowtype
+[2016-12-23 21:14.18] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes base                                     [required by flowtype]
+  - install flowtype   0.36.0
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [flowtype.0.36.0: dl]
+[flowtype.0.36.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed base-bytes.base
+Processing  3/4: [flowtype: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/flowtype.0.36.0)
+[ERROR] The compilation of flowtype failed at "make".
+
+#=== ERROR while compiling flowtype.0.36.0 ====================================#
+# command              make
+# path                 /home/opam/.opam/default/.opam-switch/build/flowtype.0.36.0
+# exit-code            2
+# env-file             /home/opam/.opam/log/flowtype-1-ad8886.env
+# output-file          /home/opam/.opam/log/flowtype-1-ad8886.out
+### output ###
+# [...]
+# mkdir -p _build/src/third-party/lz4/
+# cp src/third-party/lz4/lz4frame_static.h _build/src/third-party/lz4/lz4frame_static.h
+# mkdir -p _build/src/third-party/lz4/
+# cp src/third-party/lz4/lz4hc.h _build/src/third-party/lz4/lz4hc.h
+# mkdir -p _build/src/third-party/lz4/
+# cp src/third-party/lz4/lz4.h _build/src/third-party/lz4/lz4.h
+# cd _build/hack/third-party/inotify/ && ocamlopt -ccopt -I -ccopt /home/opam/.opam/default/.opam-switch/build/flowtype.0.36.0/_build/hack/third-party/inotify -ccopt -I -ccopt /home/opam/.opam/default/.opam-switch/build/flowtype.0.36.0/_build/src/third-party/lz4  -ccopt -DNO_SQLITE3 -c inotify_stubs.c
+# In file included from inotify_stubs.c:41:0:
+# inotify_compat.h:9:24: fatal error: asm/unistd.h: No such file or directory
+# compilation terminated.
+# Makefile:186: recipe for target '_build/hack/third-party/inotify/inotify_stubs.o' failed
+# make: *** [_build/hack/third-party/inotify/inotify_stubs.o] Error 2
+
+- sh: 2: unknown operand
+- sh: 2: unknown operand
+- mkdir -p bin
+- tar czf bin/flowlib.tar.gz -C lib .
+- mkdir -p _build/hack/third-party/inotify/
+- cp hack/third-party/inotify/inotify_stubs.c _build/hack/third-party/inotify/inotify_stubs.c
+- mkdir -p _build/hack/third-party/inotify/
+- cp hack/third-party/inotify/inotify_compat.h _build/hack/third-party/inotify/inotify_compat.h
+- mkdir -p _build/src/third-party/lz4/
+- cp src/third-party/lz4/xxhash.h _build/src/third-party/lz4/xxhash.h
+- mkdir -p _build/src/third-party/lz4/
+- cp src/third-party/lz4/lz4frame.h _build/src/third-party/lz4/lz4frame.h
+- mkdir -p _build/src/third-party/lz4/
+- cp src/third-party/lz4/lz4frame_static.h _build/src/third-party/lz4/lz4frame_static.h
+- mkdir -p _build/src/third-party/lz4/
+- cp src/third-party/lz4/lz4hc.h _build/src/third-party/lz4/lz4hc.h
+- mkdir -p _build/src/third-party/lz4/
+- cp src/third-party/lz4/lz4.h _build/src/third-party/lz4/lz4.h
+- cd _build/hack/third-party/inotify/ && ocamlopt -ccopt -I -ccopt /home/opam/.opam/default/.opam-switch/build/flowtype.0.36.0/_build/hack/third-party/inotify -ccopt -I -ccopt /home/opam/.opam/default/.opam-switch/build/flowtype.0.36.0/_build/src/third-party/lz4  -ccopt -DNO_SQLITE3 -c inotify_stubs.c
+- In file included from inotify_stubs.c:41:0:
+- inotify_compat.h:9:24: fatal error: asm/unistd.h: No such file or directory
+- compilation terminated.
+- Makefile:186: recipe for target '_build/hack/third-party/inotify/inotify_stubs.o' failed
+- make: *** [_build/hack/third-party/inotify/inotify_stubs.o] Error 2
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build flowtype 0.36.0
++- 
++- The following changes have been performed
+| - install base-bytes base
++- 
+
+=-=- flowtype.0.36.0 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext flowtype.0.36.0' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/default/.opam-switch/backup/state-20161223212114.export"
+'opam install --verbose --yes --jobs=2 flowtype' failed.
+[2016-12-23 21:21.23] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "flowtype" exited with status 4
