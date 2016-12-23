@@ -1,0 +1,40 @@
+=== opam depext -ivyj 2 graphics
+[2016-12-23 21:14.21] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install graphics 1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [graphics: ocamlc graphics.cma]
++ ocamlc "-custom" "graphics.cma" "-o" "test" (CWD=/home/opam/.opam/default/.opam-switch/build/graphics.1.0)
+- File "_none_", line 1:
+- Error: Cannot find file graphics.cma
+[ERROR] The compilation of graphics failed at "ocamlc -custom graphics.cma -o test".
+
+#=== ERROR while compiling graphics.1.0 =======================================#
+# command              ocamlc -custom graphics.cma -o test
+# path                 /home/opam/.opam/default/.opam-switch/build/graphics.1.0
+# exit-code            2
+# env-file             /home/opam/.opam/log/graphics-1-7afd23.env
+# output-file          /home/opam/.opam/log/graphics-1-7afd23.out
+### output ###
+# File "_none_", line 1:
+# Error: Cannot find file graphics.cma
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build graphics 1.0
++- 
+- No changes have been performed
+
+=-=- graphics.1.0 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package checks whether the Graphics library was compiled.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 graphics' failed.
+[2016-12-23 21:23.06] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "graphics" exited with status 4
