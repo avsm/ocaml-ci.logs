@@ -1,0 +1,527 @@
+=== opam depext -ivyj 2 apron
+[2016-12-23 18:49.53] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - gmp-dev
+#  - m4
+m4
+# The following new OS packages need to be installed: gmp-dev
+The following command needs to be run through "sudo":
+    apk add gmp-dev
+(1/2) Installing libgmpxx (6.1.0-r0)
+(2/2) Installing gmp-dev (6.1.0-r0)
+OK: 424 MiB in 84 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install camlidl   1.05                                      [required by apron]
+  - install conf-gmp  1                                         [required by mlgmpidl]
+  - install conf-mpfr 1                                         [required by mlgmpidl]
+  - install mlgmpidl  1.2.4                                     [required by apron]
+  - install apron     20160125
+===== 5 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/5: [apron.20160125: dl]
+Processing  2/5: [apron.20160125: dl] [camlidl.1.05: dl]
+Processing  3/5: [apron.20160125: dl] [camlidl.1.05: dl]
+Processing  4/5: [apron.20160125: dl] [camlidl.1.05: dl]
+Processing  5/5: [apron.20160125: dl] [camlidl.1.05: dl] [mlgmpidl.1.2.4: dl]
+[camlidl.1.05] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/5: [apron.20160125: dl] [mlgmpidl.1.2.4: dl]
+[apron.20160125] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/5: [mlgmpidl.1.2.4: dl]
+[mlgmpidl.1.2.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/5:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/10: [camlidl: patch]
+Processing  2/10: [camlidl: patch] [conf-gmp: sh]
+Processing  2/10: [camlidl: mv] [conf-gmp: sh]
++ mv "config/Makefile.unix" "config/Makefile" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05)
+Processing  2/10: [camlidl: make all] [conf-gmp: sh]
++ sh "-exc" "cc -c $CFLAGS -I/usr/local/include test.c" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-gmp.1)
+- + cc -c -I/usr/local/include test.c
+- test.c: In function 'test':
+- test.c:7:2: warning: implicit declaration of function '__gmp_init' [-Wimplicit-function-declaration]
+-   __gmp_init();
+-   ^
+- + cc -c -I/usr/local/include test.c
+- test.c: In function 'test':
+- test.c:7:2: warning: implicit declaration of function '__gmp_init' [-Wimplicit-function-declaration]
+-   __gmp_init();
+-   ^
+-> compiled  conf-gmp.1
+Processing  2/10: [camlidl: make all]
+-> installed conf-gmp.1
+Processing  3/10: [camlidl: make all]
+Processing  4/10: [camlidl: make all] [conf-mpfr: cc test.c]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05)
+- cd compiler; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/compiler'
+- rm -f config.ml
+- sed -e 's|%%CPP%%|cpp|' \
+-           config.mlp > config.ml
+- chmod -w config.ml
+- ocamlc -g -warn-error -31 -c config.mli
+- ocamlc -g -warn-error -31 -c config.ml
+- ocamlc -g -warn-error -31 -c utils.mli
+- ocamlc -g -warn-error -31 -c utils.ml
+- File "utils.ml", line 51, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlc -g -warn-error -31 -c clflags.ml
+- ocamlc -g -warn-error -31 -c idltypes.mli
+- ocamlc -g -warn-error -31 -c prefix.mli
+- ocamlc -g -warn-error -31 -c prefix.ml
+- ocamlc -g -warn-error -31 -c lexpr.mli
+- ocamlc -g -warn-error -31 -c lexpr.ml
+- File "lexpr.ml", line 268, characters 10-16:
+- Warning 26: unused variable trail'.
+- ocamlc -g -warn-error -31 -c cvttyp.mli
+- ocamlc -g -warn-error -31 -c cvttyp.ml
+- File "cvttyp.ml", line 126, characters 49-66:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "cvttyp.ml", line 127, characters 20-39:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "cvttyp.ml", line 132, characters 49-66:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "cvttyp.ml", line 135, characters 25-44:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c variables.mli
+- ocamlc -g -warn-error -31 -c variables.ml
+- ocamlc -g -warn-error -31 -c array.mli
+- ocamlc -g -warn-error -31 -c array.ml
+- ocamlc -g -warn-error -31 -c struct.mli
+- ocamlc -g -warn-error -31 -c struct.ml
+- ocamlc -g -warn-error -31 -c enum.mli
+- ocamlc -g -warn-error -31 -c enum.ml
+- ocamlc -g -warn-error -31 -c union.mli
+- ocamlc -g -warn-error -31 -c union.ml
+- ocamlc -g -warn-error -31 -c cvtval.mli
+- ocamlc -g -warn-error -31 -c cvtval.ml
+- ocamlc -g -warn-error -31 -c structdecl.mli
+- ocamlc -g -warn-error -31 -c structdecl.ml
+- File "structdecl.ml", line 30, characters 27-46:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "structdecl.ml", line 39, characters 19-38:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c enumdecl.mli
+- ocamlc -g -warn-error -31 -c enumdecl.ml
+- File "enumdecl.ml", line 30, characters 28-47:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "enumdecl.ml", line 32, characters 37-54:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c uniondecl.mli
+- ocamlc -g -warn-error -31 -c uniondecl.ml
+- File "uniondecl.ml", line 30, characters 28-47:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "uniondecl.ml", line 37, characters 24-41:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c typedef.mli
+- ocamlc -g -warn-error -31 -c typedef.ml
+- File "typedef.ml", line 48, characters 30-49:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "typedef.ml", line 50, characters 25-44:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "typedef.ml", line 53, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c funct.mli
+- ocamlc -g -warn-error -31 -c funct.ml
+- File "funct.ml", line 104, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c constdecl.mli
+- ocamlc -g -warn-error -31 -c constdecl.ml
+- File "constdecl.ml", line 34, characters 26-45:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "constdecl.ml", line 54, characters 13-32:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "constdecl.ml", line 36, characters 4-24:
+- Warning 26: unused variable ty.
+- ocamlc -g -warn-error -31 -c intf.mli
+- ocamlc -g -warn-error -31 -c intf.ml
+- File "intf.ml", line 46, characters 21-40:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 51, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 52, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 62, characters 18-37:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 162, characters 17-36:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 163, characters 18-37:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 199, characters 21-40:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 260, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 312, characters 12-16:
+- Warning 26: unused variable outs.
+- File "intf.ml", line 312, characters 7-10:
+- Warning 26: unused variable ins.
+- ocamlc -g -warn-error -31 -c file.mli
+- ocamlc -g -warn-error -31 -c file.ml
+- File "file.ml", line 216, characters 31-47:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlc -g -warn-error -31 -c predef.mli
+- ocamlc -g -warn-error -31 -c predef.ml
+- ocamllex linenum.mll
+- 16 states, 331 transitions, table size 1420 bytes
+- ocamlc -g -warn-error -31 -c linenum.mli
+- ocamlc -g -warn-error -31 -c linenum.ml
+- ocamlc -g -warn-error -31 -c parse_aux.mli
+- ocamlc -g -warn-error -31 -c parse_aux.ml
+- File "parse_aux.ml", line 167, characters 23-54:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 169, characters 42-74:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 171, characters 22-47:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 230, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "parse_aux.ml", line 459, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlyacc -v parser_midl.mly
+- 12 shift/reduce conflicts.
+- ocamlc -g -warn-error -31 -c parser_midl.mli
+- ocamlc -g -warn-error -31 -c parser_midl.ml
+- ocamllex lexer_midl.mll
+- 129 states, 1747 transitions, table size 7762 bytes
+- ocamlc -g -warn-error -31 -c lexer_midl.mli
+- ocamlc -g -warn-error -31 -c lexer_midl.ml
+- ocamlc -g -warn-error -31 -c parse.mli
+- ocamlc -g -warn-error -31 -c parse.ml
+- ocamlc -g -warn-error -31 -c fixlabels.mli
+- ocamlc -g -warn-error -31 -c fixlabels.ml
+- ocamlc -g -warn-error -31 -c normalize.mli
+- ocamlc -g -warn-error -31 -c normalize.ml
+- ocamlc -g -warn-error -31 -c main.ml
+- ocamlc -g -warn-error -31 -o camlidl config.cmo utils.cmo clflags.cmo prefix.cmo lexpr.cmo cvttyp.cmo variables.cmo array.cmo struct.cmo enum.cmo union.cmo cvtval.cmo structdecl.cmo enumdecl.cmo uniondecl.cmo typedef.cmo funct.cmo constdecl.cmo intf.cmo file.cmo predef.cmo linenum.cmo parse_aux.cmo parser_midl.cmo lexer_midl.cmo parse.cmo fixlabels.cmo normalize.cmo main.cmo
+- File "array.cmo", line 1:
+- Warning 31: files array.cmo and /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/stdlib.cma(Array) both define a module named Array
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/compiler'
+- cd runtime; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/runtime'
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" idlalloc.c
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" comintf.c
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" comerror.c
+- comerror.c: In function 'camlidl_error':
+- comerror.c:52:8: warning: unused variable 'msg' [-Wunused-variable]
+-    char msg[1024];
+-         ^
+- In file included from /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/caml/mlvalues.h:20:0,
+-                  from comerror.c:20:
+- comerror.c: In function 'camlidl_uncaught_exception':
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/caml/compatibility.h:255:31: warning: implicit declaration of function 'caml_format_exception' [-Wimplicit-function-declaration]
+-  #define format_caml_exception caml_format_exception /*SP*/
+-                                ^
+- comerror.c:171:16: note: in expansion of macro 'format_caml_exception'
+-    char * msg = format_caml_exception(exn_bucket);
+-                 ^
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/caml/compatibility.h:255:31: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+-  #define format_caml_exception caml_format_exception /*SP*/
+-                                ^
+- comerror.c:171:16: note: in expansion of macro 'format_caml_exception'
+-    char * msg = format_caml_exception(exn_bucket);
+-                 ^
+- rm -f dllcamlidl.so
+- ocamlmklib -o camlidl  idlalloc.o comintf.o comerror.o 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/runtime'
+- cd lib; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/lib'
+- ocamlc -g -warn-error -31 -c com.mli
+- ocamlc -g -warn-error -31 -c com.ml
+- ocamlc -g -warn-error -31 -a -o com.cma com.cmo
+- ocamlopt -c com.ml
+- ocamlopt -a -o com.cmxa com.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/lib'
+- cd tools; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/tools'
+- make[1]: Nothing to be done for 'all'.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/tools'
+- cd compiler; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/compiler'
+- rm -f config.ml
+- sed -e 's|%%CPP%%|cpp|' \
+-           config.mlp > config.ml
+- chmod -w config.ml
+- ocamlc -g -warn-error -31 -c config.mli
+- ocamlc -g -warn-error -31 -c config.ml
+- ocamlc -g -warn-error -31 -c utils.mli
+- ocamlc -g -warn-error -31 -c utils.ml
+- File "utils.ml", line 51, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlc -g -warn-error -31 -c clflags.ml
+- ocamlc -g -warn-error -31 -c idltypes.mli
+- ocamlc -g -warn-error -31 -c prefix.mli
+- ocamlc -g -warn-error -31 -c prefix.ml
+- ocamlc -g -warn-error -31 -c lexpr.mli
+- ocamlc -g -warn-error -31 -c lexpr.ml
+- File "lexpr.ml", line 268, characters 10-16:
+- Warning 26: unused variable trail'.
+- ocamlc -g -warn-error -31 -c cvttyp.mli
+- ocamlc -g -warn-error -31 -c cvttyp.ml
+- File "cvttyp.ml", line 126, characters 49-66:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "cvttyp.ml", line 127, characters 20-39:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "cvttyp.ml", line 132, characters 49-66:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "cvttyp.ml", line 135, characters 25-44:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c variables.mli
+- ocamlc -g -warn-error -31 -c variables.ml
+- ocamlc -g -warn-error -31 -c array.mli
+- ocamlc -g -warn-error -31 -c array.ml
+- ocamlc -g -warn-error -31 -c struct.mli
+- ocamlc -g -warn-error -31 -c struct.ml
+- ocamlc -g -warn-error -31 -c enum.mli
+- ocamlc -g -warn-error -31 -c enum.ml
+- ocamlc -g -warn-error -31 -c union.mli
+- ocamlc -g -warn-error -31 -c union.ml
+- ocamlc -g -warn-error -31 -c cvtval.mli
+- ocamlc -g -warn-error -31 -c cvtval.ml
+- ocamlc -g -warn-error -31 -c structdecl.mli
+- ocamlc -g -warn-error -31 -c structdecl.ml
+- File "structdecl.ml", line 30, characters 27-46:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "structdecl.ml", line 39, characters 19-38:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c enumdecl.mli
+- ocamlc -g -warn-error -31 -c enumdecl.ml
+- File "enumdecl.ml", line 30, characters 28-47:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "enumdecl.ml", line 32, characters 37-54:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c uniondecl.mli
+- ocamlc -g -warn-error -31 -c uniondecl.ml
+- File "uniondecl.ml", line 30, characters 28-47:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "uniondecl.ml", line 37, characters 24-41:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c typedef.mli
+- ocamlc -g -warn-error -31 -c typedef.ml
+- File "typedef.ml", line 48, characters 30-49:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "typedef.ml", line 50, characters 25-44:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "typedef.ml", line 53, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c funct.mli
+- ocamlc -g -warn-error -31 -c funct.ml
+- File "funct.ml", line 104, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c constdecl.mli
+- ocamlc -g -warn-error -31 -c constdecl.ml
+- File "constdecl.ml", line 34, characters 26-45:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "constdecl.ml", line 54, characters 13-32:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "constdecl.ml", line 36, characters 4-24:
+- Warning 26: unused variable ty.
+- ocamlc -g -warn-error -31 -c intf.mli
+- ocamlc -g -warn-error -31 -c intf.ml
+- File "intf.ml", line 46, characters 21-40:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 51, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 52, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 62, characters 18-37:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 162, characters 17-36:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 163, characters 18-37:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 199, characters 21-40:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 260, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 312, characters 12-16:
+- Warning 26: unused variable outs.
+- File "intf.ml", line 312, characters 7-10:
+- Warning 26: unused variable ins.
+- ocamlc -g -warn-error -31 -c file.mli
+- ocamlc -g -warn-error -31 -c file.ml
+- File "file.ml", line 216, characters 31-47:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlc -g -warn-error -31 -c predef.mli
+- ocamlc -g -warn-error -31 -c predef.ml
+- ocamllex linenum.mll
+- 16 states, 331 transitions, table size 1420 bytes
+- ocamlc -g -warn-error -31 -c linenum.mli
+- ocamlc -g -warn-error -31 -c linenum.ml
+- ocamlc -g -warn-error -31 -c parse_aux.mli
+- ocamlc -g -warn-error -31 -c parse_aux.ml
+- File "parse_aux.ml", line 167, characters 23-54:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 169, characters 42-74:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 171, characters 22-47:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 230, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "parse_aux.ml", line 459, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlyacc -v parser_midl.mly
+- 12 shift/reduce conflicts.
+- ocamlc -g -warn-error -31 -c parser_midl.mli
+- ocamlc -g -warn-error -31 -c parser_midl.ml
+- ocamllex lexer_midl.mll
+- 129 states, 1747 transitions, table size 7762 bytes
+- ocamlc -g -warn-error -31 -c lexer_midl.mli
+- ocamlc -g -warn-error -31 -c lexer_midl.ml
+- ocamlc -g -warn-error -31 -c parse.mli
+- ocamlc -g -warn-error -31 -c parse.ml
+- ocamlc -g -warn-error -31 -c fixlabels.mli
+- ocamlc -g -warn-error -31 -c fixlabels.ml
+- ocamlc -g -warn-error -31 -c normalize.mli
+- ocamlc -g -warn-error -31 -c normalize.ml
+- ocamlc -g -warn-error -31 -c main.ml
+- ocamlc -g -warn-error -31 -o camlidl config.cmo utils.cmo clflags.cmo prefix.cmo lexpr.cmo cvttyp.cmo variables.cmo array.cmo struct.cmo enum.cmo union.cmo cvtval.cmo structdecl.cmo enumdecl.cmo uniondecl.cmo typedef.cmo funct.cmo constdecl.cmo intf.cmo file.cmo predef.cmo linenum.cmo parse_aux.cmo parser_midl.cmo lexer_midl.cmo parse.cmo fixlabels.cmo normalize.cmo main.cmo
+- File "array.cmo", line 1:
+- Warning 31: files array.cmo and /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/stdlib.cma(Array) both define a module named Array
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/compiler'
+- cd runtime; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/runtime'
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" idlalloc.c
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" comintf.c
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" comerror.c
+- comerror.c: In function 'camlidl_error':
+- comerror.c:52:8: warning: unused variable 'msg' [-Wunused-variable]
+-    char msg[1024];
+-         ^
+- In file included from /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/caml/mlvalues.h:20:0,
+-                  from comerror.c:20:
+- comerror.c: In function 'camlidl_uncaught_exception':
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/caml/compatibility.h:255:31: warning: implicit declaration of function 'caml_format_exception' [-Wimplicit-function-declaration]
+-  #define format_caml_exception caml_format_exception /*SP*/
+-                                ^
+- comerror.c:171:16: note: in expansion of macro 'format_caml_exception'
+-    char * msg = format_caml_exception(exn_bucket);
+-                 ^
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/caml/compatibility.h:255:31: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+-  #define format_caml_exception caml_format_exception /*SP*/
+-                                ^
+- comerror.c:171:16: note: in expansion of macro 'format_caml_exception'
+-    char * msg = format_caml_exception(exn_bucket);
+-                 ^
+- rm -f dllcamlidl.so
+- ocamlmklib -o camlidl  idlalloc.o comintf.o comerror.o 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/runtime'
+- cd lib; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/lib'
+- ocamlc -g -warn-error -31 -c com.mli
+- ocamlc -g -warn-error -31 -c com.ml
+- ocamlc -g -warn-error -31 -a -o com.cma com.cmo
+- ocamlopt -c com.ml
+- ocamlopt -a -o com.cmxa com.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/lib'
+- cd tools; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/tools'
+- make[1]: Nothing to be done for 'all'.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlidl.1.05/tools'
+-> compiled  camlidl.1.05
+Processing  4/10: [conf-mpfr: cc test.c]
+-> installed camlidl.1.05
+Processing  5/10: [conf-mpfr: cc test.c]
++ cc "test.c" "-I/usr/local/include" "-L/usr/local/lib" "-lgmp" "-lmpfr" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-mpfr.1)
+- test.c:2:18: fatal error: mpfr.h: No such file or directory
+- compilation terminated.
+[ERROR] The compilation of conf-mpfr failed at "cc test.c -I/usr/local/include -L/usr/local/lib -lgmp -lmpfr".
+
+#=== ERROR while compiling conf-mpfr.1 ========================================#
+# command              cc test.c -I/usr/local/include -L/usr/local/lib -lgmp -lmpfr
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-mpfr.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-mpfr-1-f0f09f.env
+# output-file          /home/opam/.opam/log/conf-mpfr-1-f0f09f.out
+### output ###
+# test.c:2:18: fatal error: mpfr.h: No such file or directory
+# compilation terminated.
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install apron    20160125
+| - install mlgmpidl 1.2.4   
++- 
++- The following actions failed
+| - build conf-mpfr 1
++- 
++- The following changes have been performed
+| - install camlidl  1.05
+| - install conf-gmp 1   
++- 
+
+=-=- conf-mpfr.1 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-mpfr.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/backup/state-20161223194316.export"
+'opam install --verbose --yes --jobs=2 apron' failed.
+[2016-12-23 19:43.25] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "apron" exited with status 4
