@@ -1,0 +1,28 @@
+=== opam depext -ivyj 2 comparelib
+[2016-12-23 01:22.52] Starting...
+[2016-12-23 01:22.52] Waiting for free pool slot to run
+[2016-12-23 01:42.06] Pool slot obtained, starting run
+[2016-12-23 01:42.06] docker run sha256:c8ce52515be336e42eebc53be44b8eb7739eeb604be90fdc22b1f2b5b3a1e735 opam depext -ivyj 2 comparelib
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following dependencies couldn't be met:
+  - comparelib -> ocaml < 4.03 -> ocaml-variants < 4.02.4~
+    conflict with the base packages of this switch
+  - comparelib -> ocaml < 4.03 -> ocaml-system < 4.03.0
+    unmet availability conditions, e.g. sys-ocaml-version = "4.02.3"
+  - comparelib -> ocaml < 4.03 -> ocaml-base-compiler < 4.03.0
+    conflict with the base packages of this switch
+  - comparelib -> type_conv < 112.02.00 -> ocaml < 4.03.0 -> ocaml-base-compiler < 4.03.0
+    conflict with the base packages of this switch
+  - comparelib -> type_conv < 112.02.00 -> ocaml < 4.03.0 -> ocaml-system < 4.03.0
+    unmet availability conditions, e.g. sys-ocaml-version = "4.02.3"
+  - comparelib -> type_conv < 112.02.00 -> ocaml < 4.03.0 -> ocaml-variants < 4.02.4~
+    conflict with the base packages of this switch
+
+No solution found, exiting
+'opam install --verbose --yes --jobs=2 comparelib' failed.
+[2016-12-23 01:42.19] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:c8ce52515be336e42eebc53be44b8eb7739eeb604be90fdc22b1f2b5b3a1e735" "opam" "depext" "-ivyj" "2" "comparelib" exited with status 3
