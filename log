@@ -1,0 +1,30 @@
+=== opam depext -ivyj 2 conf-gmp
+[2016-12-23 21:14.05] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - gmp-dev
+The following command needs to be run through "sudo":
+    apk add gmp-dev
+(1/2) Installing libgmpxx (6.1.0-r0)
+(2/2) Installing gmp-dev (6.1.0-r0)
+OK: 424 MiB in 84 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-gmp 1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-gmp: sh]
++ sh "-exc" "cc -c $CFLAGS -I/usr/local/include test.c" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-gmp.1)
+- + cc -c -I/usr/local/include test.c
+- test.c: In function 'test':
+- test.c:7:2: warning: implicit declaration of function '__gmp_init' [-Wimplicit-function-declaration]
+-   __gmp_init();
+-   ^
+-> compiled  conf-gmp.1
+-> installed conf-gmp.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 21:15.55] Success
