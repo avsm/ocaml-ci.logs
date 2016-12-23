@@ -1,0 +1,48 @@
+=== opam depext -ivyj 2 ppx_overload
+[2016-12-23 00:09.44] Starting...
+[2016-12-23 00:09.44] Waiting for free pool slot to run
+[2016-12-23 01:05.17] Pool slot obtained, starting run
+[2016-12-23 01:05.17] docker run sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b opam depext -ivyj 2 ppx_overload
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_overload 1.0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ppx_overload.1.0.1: dl]
+[ppx_overload.1.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ppx_overload: make]
++ make "BINDIR=/home/opam/.opam/default/bin" (CWD=/home/opam/.opam/default/.opam-switch/build/ppx_overload.1.0.1)
+- echo make clean/install/uninstall
+- make clean/install/uninstall
+-> compiled  ppx_overload.1.0.1
+Processing  2/2: [ppx_overload: make install]
++ make "install" "BINDIR=/home/opam/.opam/default/bin" (CWD=/home/opam/.opam/default/.opam-switch/build/ppx_overload.1.0.1)
+- (cd ppx; make install)
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/ppx_overload.1.0.1/ppx'
+- cp ../ocaml/tools/untypeast.ml untypeast.ml
+- cp ../ocaml/tools/untypeast.mli untypeast.mli
+- ocamlc -bin-annot -w A-4-9 -warn-error A-4-9-10-27-32-33-34-39-45  -I +compiler-libs -I +unix -c untypeast.mli
+- ocamlc -bin-annot -w A-4-9 -warn-error A-4-9-10-27-32-33-34-39-45  -I +compiler-libs -I +unix -c mod.ml
+- ocamlc -bin-annot -w A-4-9 -warn-error A-4-9-10-27-32-33-34-39-45  -I +compiler-libs -I +unix -c untypeast.ml
+- ocamlc -bin-annot -w A-4-9 -warn-error A-4-9-10-27-32-33-34-39-45  -I +compiler-libs -I +unix -c compile.ml
+- ocamlc -bin-annot -w A-4-9 -warn-error A-4-9-10-27-32-33-34-39-45  -I +compiler-libs -I +unix -c ppx.ml
+- ocamlc -o ppx_overload -I +compiler-libs ocamlcommon.cma ocamlbytecomp.cma untypeast.cmo mod.cmo compile.cmo ppx.cmo
+- File "compile.cmo", line 1:
+- Warning 31: files compile.cmo and /usr/lib/ocaml/compiler-libs/ocamlbytecomp.cma(Compile) both define a module named Compile
+- ocamlfind remove ppx_overload
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/default/lib/ppx_overload
+- ocamlfind install ppx_overload META ppx_overload
+- Installed /home/opam/.opam/default/lib/ppx_overload/ppx_overload
+- Installed /home/opam/.opam/default/lib/ppx_overload/META
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/ppx_overload.1.0.1/ppx'
+-> installed ppx_overload.1.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 01:05.31] Success
