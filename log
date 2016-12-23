@@ -1,0 +1,328 @@
+=== opam depext -ivyj 2 slap
+[2016-12-23 21:15.10] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes base                                     [required by slap]
+  - install lacaml     8.0.6                                    [required by slap]
+  - install cppo       1.4.1                                    [required by slap]
+  - install slap       4.1.0
+===== 4 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/4: [cppo.1.4.1: dl]
+Processing  3/4: [cppo.1.4.1: dl] [lacaml.8.0.6: dl]
+Processing  4/4: [cppo.1.4.1: dl] [lacaml.8.0.6: dl] [slap.4.1.0: dl]
+[lacaml.8.0.6] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4: [cppo.1.4.1: dl] [slap.4.1.0: dl]
+[cppo.1.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4: [slap.4.1.0: dl]
+[slap.4.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed base-bytes.base
+Processing  3/8: [cppo: make opt]
+Processing  4/8: [cppo: make opt] [lacaml: ocaml setup.ml]
++ make "opt" (CWD=/home/opam/.opam/default/.opam-switch/build/cppo.1.4.1)
+- echo 'let cppo_version = "1.4.1"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlfind ocamlopt -o cppo -dtypes -linkpkg -package "unix str bytes" cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+- echo 'let cppo_version = "1.4.1"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlfind ocamlopt -o cppo -dtypes -linkpkg -package "unix str bytes" cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+Processing  4/8: [cppo: make ocamlbuild] [lacaml: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/lacaml.8.0.6)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ lacaml
+- Package version: ..................................... 8.0.6
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- conf_ccopt: .......................................... 
+- conf_cclib: .......................................... 
+- Strict compile-time checks: .......................... true
+- Build examples: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- ocamldoc: ............................................ /usr/bin/ocamldoc
+- pkg_bigarray: ........................................ /usr/lib/ocaml
+- pkg_bytes: ........................................... /home/opam/.opam/default/lib/bytes
+- 
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ lacaml
+- Package version: ..................................... 8.0.6
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- conf_ccopt: .......................................... 
+- conf_cclib: .......................................... 
+- Strict compile-time checks: .......................... true
+- Build examples: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- ocamldoc: ............................................ /usr/bin/ocamldoc
+- pkg_bigarray: ........................................ /usr/lib/ocaml
+- pkg_bytes: ........................................... /home/opam/.opam/default/lib/bytes
+- 
++ make "ocamlbuild" (CWD=/home/opam/.opam/default/.opam-switch/build/cppo.1.4.1)
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+-> compiled  cppo.1.4.1
+Processing  4/8: [lacaml: ocaml setup.ml]
+Processing  5/8: [lacaml: ocaml setup.ml] [cppo: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/default/.opam-switch/build/cppo.1.4.1)
+- ocamlfind install -patch-version 1.4.1 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/META
+- ocamlfind install -patch-version 1.4.1 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/default/lib/cppo_ocamlbuild/META
+-> installed cppo.1.4.1
+Processing  5/8: [lacaml: ocaml setup.ml]
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/lacaml.8.0.6)
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/impl_c.c
+- mv impl_c.o lib/impl_c.o
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/utils_c.c
+- mv utils_c.o lib/utils_c.o
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/vec2_S_c.o' -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/vec_SD_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/vec2_D_c.o' -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/vec_SD_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/vec2_C_c.o' -ccopt -DLACAML_COMPLEX -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/vec_CZ_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/vec2_Z_c.o' -ccopt -DLACAML_COMPLEX -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/vec_CZ_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/vec4_S_c.o' -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/vec_SDCZ_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/vec4_D_c.o' -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/vec_SDCZ_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/vec4_C_c.o' -ccopt -DLACAML_COMPLEX -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/vec_SDCZ_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/vec4_Z_c.o' -ccopt -DLACAML_COMPLEX -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/vec_SDCZ_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/mat2_S_c.o' -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/mat_SD_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/mat2_D_c.o' -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/mat_SD_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/mat2_C_c.o' -ccopt -DLACAML_COMPLEX -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/mat_CZ_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/mat2_Z_c.o' -ccopt -DLACAML_COMPLEX -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/mat_CZ_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/mat4_S_c.o' -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/mat_SDCZ_c.c
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/mat4_S_c.o' -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/mat_SDCZ_c.c
+- lib/mat_SDCZ_c.c: In function 'lacaml_Sswap_mat_stub':
+- lib/mat_SDCZ_c.c:186:14: warning: 'EXTREME_LEN' may be used uninitialized in this function [-Wmaybe-uninitialized]
+-            if (LEN != EXTREME_LEN) LEN += LEN_DIFF;
+-               ^
+- lib/mat_SDCZ_c.c:186:39: warning: 'LEN_DIFF' may be used uninitialized in this function [-Wmaybe-uninitialized]
+-            if (LEN != EXTREME_LEN) LEN += LEN_DIFF;
+-                                        ^
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/mat4_D_c.o' -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/mat_SDCZ_c.c
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/mat4_D_c.o' -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/mat_SDCZ_c.c
+- lib/mat_SDCZ_c.c: In function 'lacaml_Dswap_mat_stub':
+- lib/mat_SDCZ_c.c:186:14: warning: 'EXTREME_LEN' may be used uninitialized in this function [-Wmaybe-uninitialized]
+-            if (LEN != EXTREME_LEN) LEN += LEN_DIFF;
+-               ^
+- lib/mat_SDCZ_c.c:186:39: warning: 'LEN_DIFF' may be used uninitialized in this function [-Wmaybe-uninitialized]
+-            if (LEN != EXTREME_LEN) LEN += LEN_DIFF;
+-                                        ^
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/mat4_C_c.o' -ccopt -DLACAML_COMPLEX -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/mat_SDCZ_c.c
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/mat4_C_c.o' -ccopt -DLACAML_COMPLEX -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/mat_SDCZ_c.c
+- lib/mat_SDCZ_c.c: In function 'lacaml_Cswap_mat_stub':
+- lib/mat_SDCZ_c.c:186:14: warning: 'EXTREME_LEN' may be used uninitialized in this function [-Wmaybe-uninitialized]
+-            if (LEN != EXTREME_LEN) LEN += LEN_DIFF;
+-               ^
+- lib/mat_SDCZ_c.c:186:39: warning: 'LEN_DIFF' may be used uninitialized in this function [-Wmaybe-uninitialized]
+-            if (LEN != EXTREME_LEN) LEN += LEN_DIFF;
+-                                        ^
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/mat4_Z_c.o' -ccopt -DLACAML_COMPLEX -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/mat_SDCZ_c.c
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/mat4_Z_c.o' -ccopt -DLACAML_COMPLEX -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/mat_SDCZ_c.c
+- lib/mat_SDCZ_c.c: In function 'lacaml_Zswap_mat_stub':
+- lib/mat_SDCZ_c.c:186:14: warning: 'EXTREME_LEN' may be used uninitialized in this function [-Wmaybe-uninitialized]
+-            if (LEN != EXTREME_LEN) LEN += LEN_DIFF;
+-               ^
+- lib/mat_SDCZ_c.c:186:39: warning: 'LEN_DIFF' may be used uninitialized in this function [-Wmaybe-uninitialized]
+-            if (LEN != EXTREME_LEN) LEN += LEN_DIFF;
+-                                        ^
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/impl2_S_c.o' -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/impl_SD_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/impl2_D_c.o' -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/impl_SD_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/impl2_C_c.o' -ccopt -DLACAML_COMPLEX -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/impl_CZ_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/impl2_Z_c.o' -ccopt -DLACAML_COMPLEX -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/impl_CZ_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/impl4_S_c.o' -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/impl_SDCZ_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/impl4_D_c.o' -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/impl_SDCZ_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/impl4_C_c.o' -ccopt -DLACAML_COMPLEX -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/impl_SDCZ_c.c
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/impl4_Z_c.o' -ccopt -DLACAML_COMPLEX -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/impl_SDCZ_c.c
+[ERROR] The compilation of lacaml failed at "ocaml setup.ml -build".
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/exp10.c
+- mv exp10.o lib/exp10.o
+- /home/opam/.opam/default/bin/ocamlfind ocamlmklib -o lib/lacaml_stubs -lblas -llapack lib/impl_c.o lib/utils_c.o lib/vec2_S_c.o lib/vec2_D_c.o lib/vec2_C_c.o lib/vec2_Z_c.o lib/vec4_S_c.o lib/vec4_D_c.o lib/vec4_C_c.o lib/vec4_Z_c.o lib/mat2_S_c.o lib/mat2_D_c.o lib/mat2_C_c.o lib/mat2_Z_c.o lib/mat4_S_c.o lib/mat4_D_c.o lib/mat4_C_c.o lib/mat4_Z_c.o lib/impl2_S_c.o lib/impl2_D_c.o lib/impl2_C_c.o lib/impl2_Z_c.o lib/impl4_S_c.o lib/impl4_D_c.o lib/impl4_C_c.o lib/impl4_Z_c.o lib/exp10.o
+- + /home/opam/.opam/default/bin/ocamlfind ocamlmklib -o lib/lacaml_stubs -lblas -llapack lib/impl_c.o lib/utils_c.o lib/vec2_S_c.o lib/vec2_D_c.o lib/vec2_C_c.o lib/vec2_Z_c.o lib/vec4_S_c.o lib/vec4_D_c.o lib/vec4_C_c.o lib/vec4_Z_c.o lib/mat2_S_c.o lib/mat2_D_c.o lib/mat2_C_c.o lib/mat2_Z_c.o lib/mat4_S_c.o lib/mat4_D_c.o lib/mat4_C_c.o lib/mat4_Z_c.o lib/impl2_S_c.o lib/impl2_D_c.o lib/impl2_C_c.o lib/impl2_Z_c.o lib/impl4_S_c.o lib/impl4_D_c.o lib/impl4_C_c.o lib/impl4_Z_c.o lib/exp10.o
+- /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/../../../../x86_64-alpine-linux-musl/bin/ld: cannot find -lblas
+- /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/../../../../x86_64-alpine-linux-musl/bin/ld: cannot find -llapack
+- collect2: error: ld returned 1 exit status
+- Command exited with code 2.
+- E: Failure("Command ''/usr/bin/ocamlbuild' lib/liblacaml_stubs.a lib/dlllacaml_stubs.so lib/lacaml.cma lib/lacaml.cmxa lib/lacaml.a lib/lacaml.cmxs lib/lacaml_top.cma lib/lacaml_top.cmxa lib/lacaml_top.a lib/lacaml_top.cmxs examples/blas/blas.native examples/eig/eig.native examples/eig/sbev.native examples/eig/sbgv.native examples/lin_eq/lin_eq.native examples/lin_eq/gbsv.native examples/lin_eq_comp/lin_eq_comp.native examples/lin_reg/lin_reg.native examples/qr/qr.native examples/svd/svd.native examples/nag/nag_gbsv.native examples/nag/nag_gesv.native examples/nag/nag_gtsv.native examples/nag/nag_pbsv.native examples/nag/nag_posv.native examples/nag/nag_ppsv.native examples/nag/nag_ptsv.native examples/nag/nag_spsv.native examples/nag/nag_sysv.native examples/schur/schur_real.native examples/schur/schur_complex.native examples/shuffle/shuffle.native -tag debug' terminated with error code 10")
+
+#=== ERROR while compiling lacaml.8.0.6 =======================================#
+# command              ocaml setup.ml -build
+# path                 /home/opam/.opam/default/.opam-switch/build/lacaml.8.0.6
+# exit-code            1
+# env-file             /home/opam/.opam/log/lacaml-1-2c871f.env
+# output-file          /home/opam/.opam/log/lacaml-1-2c871f.out
+### output ###
+# [...]
+# /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/impl4_D_c.o' -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/impl_SDCZ_c.c
+# /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/impl4_C_c.o' -ccopt -DLACAML_COMPLEX -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/impl_SDCZ_c.c
+# /home/opam/.opam/default/bin/ocamlfind ocamlc -ccopt '-o lib/impl4_Z_c.o' -ccopt -DLACAML_COMPLEX -ccopt -DLACAML_DOUBLE -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/impl_SDCZ_c.c
+# /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -g -ccopt '-std=gnu99' -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -c lib/exp10.c
+# mv exp10.o lib/exp10.o
+# /home/opam/.opam/default/bin/ocamlfind ocamlmklib -o lib/lacaml_stubs -lblas -llapack lib/impl_c.o lib/utils_c.o lib/vec2_S_c.o lib/vec2_D_c.o lib/vec2_C_c.o lib/vec2_Z_c.o lib/vec4_S_c.o lib/vec4_D_c.o lib/vec4_C_c.o lib/vec4_Z_c.o lib/mat2_S_c.o lib/mat2_D_c.o lib/mat2_C_c.o lib/mat2_Z_c.o lib/mat4_S_c.o lib/mat4_D_c.o lib/mat4_C_c.o lib/mat4_Z_c.o lib/impl2_S_c.o lib/impl2_D_c.o lib/impl2_[...]
+# + /home/opam/.opam/default/bin/ocamlfind ocamlmklib -o lib/lacaml_stubs -lblas -llapack lib/impl_c.o lib/utils_c.o lib/vec2_S_c.o lib/vec2_D_c.o lib/vec2_C_c.o lib/vec2_Z_c.o lib/vec4_S_c.o lib/vec4_D_c.o lib/vec4_C_c.o lib/vec4_Z_c.o lib/mat2_S_c.o lib/mat2_D_c.o lib/mat2_C_c.o lib/mat2_Z_c.o lib/mat4_S_c.o lib/mat4_D_c.o lib/mat4_C_c.o lib/mat4_Z_c.o lib/impl2_S_c.o lib/impl2_D_c.o lib/impl[...]
+# /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/../../../../x86_64-alpine-linux-musl/bin/ld: cannot find -lblas
+# /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/../../../../x86_64-alpine-linux-musl/bin/ld: cannot find -llapack
+# collect2: error: ld returned 1 exit status
+# Command exited with code 2.
+# E: Failure("Command ''/usr/bin/ocamlbuild' lib/liblacaml_stubs.a lib/dlllacaml_stubs.so lib/lacaml.cma lib/lacaml.cmxa lib/lacaml.a lib/lacaml.cmxs lib/lacaml_top.cma lib/lacaml_top.cmxa lib/lacaml_top.a lib/lacaml_top.cmxs examples/blas/blas.native examples/eig/eig.native examples/eig/sbev.native examples/eig/sbgv.native examples/lin_eq/lin_eq.native examples/lin_eq/gbsv.native examples/lin_[...]
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install slap 4.1.0
++- 
++- The following actions failed
+| - build lacaml 8.0.6
++- 
++- The following changes have been performed
+| - install base-bytes base 
+| - install cppo       1.4.1
++- 
+
+=-=- lacaml.8.0.6 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext lacaml.8.0.6' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/default/.opam-switch/backup/state-20161223214832.export"
+'opam install --verbose --yes --jobs=2 slap' failed.
+[2016-12-23 21:48.56] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "slap" exited with status 4
