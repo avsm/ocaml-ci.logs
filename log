@@ -1,0 +1,2155 @@
+=== opam depext -ivyj 2 jingoo
+[2016-12-23 18:50.36] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - pcre-dev
+#  - pkgconfig
+m4
+pkgconfig
+# The following new OS packages need to be installed: pcre-dev
+The following command needs to be run through "sudo":
+    apk add pcre-dev
+(1/4) Installing libpcre16 (8.38-r1)
+(2/4) Installing libpcre32 (8.38-r1)
+(3/4) Installing libpcrecpp (8.38-r1)
+(4/4) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 424 MiB in 86 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by conf-libpcre]
+  - install ounit           2.0.0                               [required by jingoo]
+  - install uutf            0.9.1                               [required by jingoo]
+  - install conf-libpcre    1                                   [required by pcre]
+  - install pcre            6.2.5                               [required by jingoo]
+  - install jingoo          1.2.14
+===== 6 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  3/6: [jingoo.1.2.14: dl]
+Processing  4/6: [jingoo.1.2.14: dl] [ounit.2.0.0: dl]
+Processing  5/6: [jingoo.1.2.14: dl] [ounit.2.0.0: dl] [pcre.6.2.5: dl]
+[jingoo.1.2.14] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/6: [ounit.2.0.0: dl] [pcre.6.2.5: dl]
+[ounit.2.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/6: [pcre.6.2.5: dl]
+Processing  6/6: [pcre.6.2.5: dl] [uutf.0.9.1: dl]
+[pcre.6.2.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6: [uutf.0.9.1: dl]
+[uutf.0.9.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/6:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/12: [conf-pkg-config: pkg-config]
+Processing  2/12: [conf-pkg-config: pkg-config] [ounit: make build]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-pkg-config.1.0)
+- usage: pkgconf [OPTIONS] [LIBRARIES]
+- 
+- basic options:
+- 
+-   --help                            this message
+-   --about                           print pkgconf version and license to stdout
+-   --version                         print supported pkg-config version to stdout
+-   --atleast-pkgconfig-version       check whether or not pkgconf is compatible
+-                                     with a specified pkg-config version
+-   --errors-to-stdout                print all errors on stdout instead of stderr
+-   --silence-errors                  explicitly be silent about errors
+-   --list-all                        list all known packages
+-   --list-package-names              list all known package names
+-   --simulate                        simulate walking the calculated dependency graph
+-   --no-cache                        do not cache already seen packages when
+-                                     walking the dependency graph
+- 
+- checking specific pkg-config database entries:
+- 
+-   --atleast-version                 require a specific version of a module
+-   --exact-version                   require an exact version of a module
+-   --max-version                     require a maximum version of a module
+-   --exists                          check whether or not a module exists
+-   --uninstalled                     check whether or not an uninstalled module will be used
+-   --no-uninstalled                  never use uninstalled modules when satisfying dependencies
+-   --maximum-traverse-depth          maximum allowed depth for dependency graph
+-   --static                          be more aggressive when computing dependency graph
+-                                     (for static linking)
+-   --env-only                        look only for package entries in PKG_CONFIG_PATH
+-   --ignore-conflicts                ignore 'conflicts' rules in modules
+-   --validate                        validate specific .pc files for correctness
+- 
+- querying specific pkg-config database fields:
+- 
+-   --define-variable=varname=value   define variable 'varname' as 'value'
+-   --variable=varname                print specified variable entry to stdout
+-   --cflags                          print required CFLAGS to stdout
+-   --cflags-only-I                   print required include-dir CFLAGS to stdout
+-   --cflags-only-other               print required non-include-dir CFLAGS to stdout
+-   --libs                            print required linker flags to stdout
+-   --libs-only-L                     print required LDPATH linker flags to stdout
+-   --libs-only-l                     print required LIBNAME linker flags to stdout
+-   --libs-only-other                 print required other linker flags to stdout
+-   --print-requires                  print required dependency frameworks to stdout
+-   --print-requires-private          print required dependency frameworks for static
+-                                     linking to stdout
+-   --print-variables                 print all known variables in module to stdout
+-   --digraph                         print entire dependency graph in graphviz 'dot' format
+-   --keep-system-cflags              keep -I/usr/include entries in cflags output
+-   --keep-system-libs                keep -L/usr/lib entries in libs output
+- 
+- report bugs to <http://github.com/pkgconf/pkgconf/issues>.
+- usage: pkgconf [OPTIONS] [LIBRARIES]
+- 
+- basic options:
+- 
+-   --help                            this message
+-   --about                           print pkgconf version and license to stdout
+-   --version                         print supported pkg-config version to stdout
+-   --atleast-pkgconfig-version       check whether or not pkgconf is compatible
+-                                     with a specified pkg-config version
+-   --errors-to-stdout                print all errors on stdout instead of stderr
+-   --silence-errors                  explicitly be silent about errors
+-   --list-all                        list all known packages
+-   --list-package-names              list all known package names
+-   --simulate                        simulate walking the calculated dependency graph
+-   --no-cache                        do not cache already seen packages when
+-                                     walking the dependency graph
+- 
+- checking specific pkg-config database entries:
+- 
+-   --atleast-version                 require a specific version of a module
+-   --exact-version                   require an exact version of a module
+-   --max-version                     require a maximum version of a module
+-   --exists                          check whether or not a module exists
+-   --uninstalled                     check whether or not an uninstalled module will be used
+-   --no-uninstalled                  never use uninstalled modules when satisfying dependencies
+-   --maximum-traverse-depth          maximum allowed depth for dependency graph
+-   --static                          be more aggressive when computing dependency graph
+-                                     (for static linking)
+-   --env-only                        look only for package entries in PKG_CONFIG_PATH
+-   --ignore-conflicts                ignore 'conflicts' rules in modules
+-   --validate                        validate specific .pc files for correctness
+- 
+- querying specific pkg-config database fields:
+- 
+-   --define-variable=varname=value   define variable 'varname' as 'value'
+-   --variable=varname                print specified variable entry to stdout
+-   --cflags                          print required CFLAGS to stdout
+-   --cflags-only-I                   print required include-dir CFLAGS to stdout
+-   --cflags-only-other               print required non-include-dir CFLAGS to stdout
+-   --libs                            print required linker flags to stdout
+-   --libs-only-L                     print required LDPATH linker flags to stdout
+-   --libs-only-l                     print required LIBNAME linker flags to stdout
+-   --libs-only-other                 print required other linker flags to stdout
+-   --print-requires                  print required dependency frameworks to stdout
+-   --print-requires-private          print required dependency frameworks for static
+-                                     linking to stdout
+-   --print-variables                 print all known variables in module to stdout
+-   --digraph                         print entire dependency graph in graphviz 'dot' format
+-   --keep-system-cflags              keep -I/usr/include entries in cflags output
+-   --keep-system-libs                keep -L/usr/lib entries in libs output
+- 
+- report bugs to <http://github.com/pkgconf/pkgconf/issues>.
+-> compiled  conf-pkg-config.1.0
+Processing  2/12: [ounit: make build]
+Processing  3/12: [ounit: make build] [uutf: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.04.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/uutf.0.9.1)
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 57, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 87, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/PropList.ml", line 99, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 94, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 99, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISLibrary.ml", line 402, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 217, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 218, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 219, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 220, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ uutf
+- Package version: ..................................... 0.9.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 57, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 87, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/PropList.ml", line 99, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 94, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 99, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISLibrary.ml", line 402, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 217, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 218, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 219, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 220, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ uutf
+- Package version: ..................................... 0.9.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.04.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/uutf.0.9.1)
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 57, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 87, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/PropList.ml", line 99, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 94, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 99, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISLibrary.ml", line 402, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 217, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 218, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 219, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 220, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -modules src/uutf.mli > src/uutf.mli.depends
+- ocamlfind ocamlc -c -g -I src -o src/uutf.cmi src/uutf.mli
+- ocamlfind ocamldep -modules src/uutf.ml > src/uutf.ml.depends
+- ocamlfind ocamlc -c -g -I src -o src/uutf.cmo src/uutf.ml
+- + ocamlfind ocamlc -c -g -I src -o src/uutf.cmo src/uutf.ml
+- File "src/uutf.ml", line 22, characters 31-48:
+- Warning 3: deprecated: String.unsafe_set
+- File "src/uutf.ml", line 43, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/uutf.ml", line 66, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 481, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 485, characters 25-38:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 663, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 666, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -a src/uutf.cmo -o src/uutf.cma
+- ocamlfind ocamlopt -c -g -I src -o src/uutf.cmx src/uutf.ml
+- + ocamlfind ocamlopt -c -g -I src -o src/uutf.cmx src/uutf.ml
+- File "src/uutf.ml", line 22, characters 31-48:
+- Warning 3: deprecated: String.unsafe_set
+- File "src/uutf.ml", line 43, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/uutf.ml", line 66, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 481, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 485, characters 25-38:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 663, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 666, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -a src/uutf.cmx -o src/uutf.cmxa
+- ocamlfind ocamlopt -shared src/uutf.cmx -o src/uutf.cmxs
+- ocamlfind ocamldep -package unix -modules test/utftrip.ml > test/utftrip.ml.depends
+- ocamlfind ocamlc -c -g -I src -package unix -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- + ocamlfind ocamlc -c -g -I src -package unix -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- File "test/utftrip.ml", line 36, characters 50-63:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 37, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 90, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 124, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 149, characters 44-57:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 199, characters 54-67:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 201, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 213, characters 32-45:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 255, characters 24-40:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -g -I src -package unix -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- + ocamlfind ocamlopt -c -g -I src -package unix -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- File "test/utftrip.ml", line 36, characters 50-63:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 37, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 90, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 124, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 149, characters 44-57:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 199, characters 54-67:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 201, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 213, characters 32-45:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 255, characters 24-40:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -g -linkpkg -package unix src/uutf.cmxa test/utftrip.cmx -o test/utftrip.native
+- ocamlfind ocamldep -package unix -modules test/test.ml > test/test.ml.depends
+- ocamlfind ocamlc -c -g -I src -package unix -I test -I src -o test/test.cmo test/test.ml
+- + ocamlfind ocamlc -c -g -I src -package unix -I test -I src -o test/test.cmo test/test.ml
+- File "test/test.ml", line 70, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/test.ml", line 233, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/test.ml", line 237, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "test/test.ml", line 244, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 246, characters 8-25:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 248, characters 10-27:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 250, characters 12-29:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 291, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 294, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 296, characters 8-25:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 299, characters 10-27:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 300, characters 10-27:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 302, characters 12-29:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 305, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 306, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 307, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 309, characters 16-33:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlfind ocamlopt -c -g -I src -package unix -I test -I src -o test/test.cmx test/test.ml
+- + ocamlfind ocamlopt -c -g -I src -package unix -I test -I src -o test/test.cmx test/test.ml
+- File "test/test.ml", line 70, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/test.ml", line 233, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/test.ml", line 237, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "test/test.ml", line 244, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 246, characters 8-25:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 248, characters 10-27:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 250, characters 12-29:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 291, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 294, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 296, characters 8-25:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 299, characters 10-27:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 300, characters 10-27:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 302, characters 12-29:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 305, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 306, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 307, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 309, characters 16-33:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlfind ocamlopt -g -linkpkg src/uutf.cmxa test/test.cmx -o test/test.native
+- ocamlfind ocamldep -package unix -modules test/examples.ml > test/examples.ml.depends
+- ocamlfind ocamlc -c -g -I src -package unix -I test -I src -o test/examples.cmo test/examples.ml
+- + ocamlfind ocamlc -c -g -I src -package unix -I test -I src -o test/examples.cmo test/examples.ml
+- File "test/examples.ml", line 33, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/examples.ml", line 81, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/examples.ml", line 82, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -c -g -I src -package unix -I test -I src -o test/examples.cmx test/examples.ml
+- + ocamlfind ocamlopt -c -g -I src -package unix -I test -I src -o test/examples.cmx test/examples.ml
+- File "test/examples.ml", line 33, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/examples.ml", line 81, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/examples.ml", line 82, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -g -linkpkg -package unix src/uutf.cmxa test/examples.cmx -o test/examples.native
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 57, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 87, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/PropList.ml", line 99, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 94, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 99, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISLibrary.ml", line 402, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 217, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 218, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 219, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 220, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -modules src/uutf.mli > src/uutf.mli.depends
+- ocamlfind ocamlc -c -g -I src -o src/uutf.cmi src/uutf.mli
+- ocamlfind ocamldep -modules src/uutf.ml > src/uutf.ml.depends
+- ocamlfind ocamlc -c -g -I src -o src/uutf.cmo src/uutf.ml
+- + ocamlfind ocamlc -c -g -I src -o src/uutf.cmo src/uutf.ml
+- File "src/uutf.ml", line 22, characters 31-48:
+- Warning 3: deprecated: String.unsafe_set
+- File "src/uutf.ml", line 43, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/uutf.ml", line 66, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 481, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 485, characters 25-38:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 663, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 666, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -a src/uutf.cmo -o src/uutf.cma
+- ocamlfind ocamlopt -c -g -I src -o src/uutf.cmx src/uutf.ml
+- + ocamlfind ocamlopt -c -g -I src -o src/uutf.cmx src/uutf.ml
+- File "src/uutf.ml", line 22, characters 31-48:
+- Warning 3: deprecated: String.unsafe_set
+- File "src/uutf.ml", line 43, characters 33-49:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "src/uutf.ml", line 66, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 481, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 485, characters 25-38:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 663, characters 18-31:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/uutf.ml", line 666, characters 8-21:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -a src/uutf.cmx -o src/uutf.cmxa
+- ocamlfind ocamlopt -shared src/uutf.cmx -o src/uutf.cmxs
+- ocamlfind ocamldep -package unix -modules test/utftrip.ml > test/utftrip.ml.depends
+- ocamlfind ocamlc -c -g -I src -package unix -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- + ocamlfind ocamlc -c -g -I src -package unix -I test -I src -o test/utftrip.cmo test/utftrip.ml
+- File "test/utftrip.ml", line 36, characters 50-63:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 37, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 90, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 124, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 149, characters 44-57:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 199, characters 54-67:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 201, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 213, characters 32-45:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 255, characters 24-40:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -g -I src -package unix -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- + ocamlfind ocamlopt -c -g -I src -package unix -I test -I src -o test/utftrip.cmx test/utftrip.ml
+- File "test/utftrip.ml", line 36, characters 50-63:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 37, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 90, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 124, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 149, characters 44-57:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 199, characters 54-67:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 201, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 213, characters 32-45:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/utftrip.ml", line 255, characters 24-40:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -g -linkpkg -package unix src/uutf.cmxa test/utftrip.cmx -o test/utftrip.native
+- ocamlfind ocamldep -package unix -modules test/test.ml > test/test.ml.depends
+- ocamlfind ocamlc -c -g -I src -package unix -I test -I src -o test/test.cmo test/test.ml
+- + ocamlfind ocamlc -c -g -I src -package unix -I test -I src -o test/test.cmo test/test.ml
+- File "test/test.ml", line 70, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/test.ml", line 233, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/test.ml", line 237, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "test/test.ml", line 244, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 246, characters 8-25:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 248, characters 10-27:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 250, characters 12-29:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 291, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 294, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 296, characters 8-25:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 299, characters 10-27:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 300, characters 10-27:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 302, characters 12-29:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 305, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 306, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 307, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 309, characters 16-33:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlfind ocamlopt -c -g -I src -package unix -I test -I src -o test/test.cmx test/test.ml
+- + ocamlfind ocamlopt -c -g -I src -package unix -I test -I src -o test/test.cmx test/test.ml
+- File "test/test.ml", line 70, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/test.ml", line 233, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/test.ml", line 237, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "test/test.ml", line 244, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 246, characters 8-25:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 248, characters 10-27:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 250, characters 12-29:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 291, characters 4-21:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 294, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 296, characters 8-25:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 299, characters 10-27:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 300, characters 10-27:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 302, characters 12-29:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 305, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 306, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 307, characters 14-31:
+- Warning 3: deprecated: String.unsafe_set
+- File "test/test.ml", line 309, characters 16-33:
+- Warning 3: deprecated: String.unsafe_set
+- ocamlfind ocamlopt -g -linkpkg src/uutf.cmxa test/test.cmx -o test/test.native
+- ocamlfind ocamldep -package unix -modules test/examples.ml > test/examples.ml.depends
+- ocamlfind ocamlc -c -g -I src -package unix -I test -I src -o test/examples.cmo test/examples.ml
+- + ocamlfind ocamlc -c -g -I src -package unix -I test -I src -o test/examples.cmo test/examples.ml
+- File "test/examples.ml", line 33, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/examples.ml", line 81, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/examples.ml", line 82, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -c -g -I src -package unix -I test -I src -o test/examples.cmx test/examples.ml
+- + ocamlfind ocamlopt -c -g -I src -package unix -I test -I src -o test/examples.cmx test/examples.ml
+- File "test/examples.ml", line 33, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/examples.ml", line 81, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "test/examples.ml", line 82, characters 11-24:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -g -linkpkg -package unix src/uutf.cmxa test/examples.cmx -o test/examples.native
+-> compiled  uutf.0.9.1
+Processing  3/12: [ounit: make build]
+-> installed conf-pkg-config.1.0
+Processing  4/12: [ounit: make build]
+Processing  5/12: [conf-libpcre: pkg-config libpcre] [ounit: make build]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ounit.2.0.0)
+- ocaml setup.ml -configure 
+- File "/home/gildor/programmation/oasis/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 46, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 46, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 54, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 54, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 57, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 87, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/PropList.ml", line 99, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUnixPath.ml", line 94, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUnixPath.ml", line 99, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISFindlib.ml", line 256, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 220, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 221, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 222, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 223, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 288, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 289, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 290, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 291, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ounit
+- Package version: ..................................... 2.0.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_threads: ......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+- ocaml setup.ml -build 
+- File "/home/gildor/programmation/oasis/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 46, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 46, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 54, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 54, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 57, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 87, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/PropList.ml", line 99, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUnixPath.ml", line 94, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUnixPath.ml", line 99, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISFindlib.ml", line 256, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 220, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 221, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 222, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 223, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 288, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 289, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 290, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 291, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- W: Cannot find source file matching module 'OUnitLoggerHTMLData' in library oUnitAdvanced
+- W: Cannot find source file matching module 'OUnitLoggerHTMLData' in library oUnitAdvanced
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitUtils.ml > src/oUnitUtils.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitPropList.ml > src/oUnitPropList.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitPlugin.ml > src/oUnitPlugin.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitConf.ml > src/oUnitConf.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitPropList.cmo src/oUnitPropList.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitUtils.cmo src/oUnitUtils.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitConf.cmo src/oUnitConf.ml
+- + ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitConf.cmo src/oUnitConf.ml
+- File "src/oUnitConf.ml", line 77, characters 16-35:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/oUnitConf.ml", line 331, characters 31-47:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitChooser.ml > src/oUnitChooser.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitCache.ml > src/oUnitCache.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitTest.ml > src/oUnitTest.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitLogger.ml > src/oUnitLogger.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitShared.ml > src/oUnitShared.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLogger.cmo src/oUnitLogger.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitShared.cmo src/oUnitShared.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitTest.cmo src/oUnitTest.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitPlugin.cmo src/oUnitPlugin.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitResultSummary.ml > src/oUnitResultSummary.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitCache.cmo src/oUnitCache.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitResultSummary.cmo src/oUnitResultSummary.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitLoggerStd.ml > src/oUnitLoggerStd.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitLoggerHTML.ml > src/oUnitLoggerHTML.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitLoggerHTMLData.ml > src/oUnitLoggerHTMLData.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerHTMLData.cmo src/oUnitLoggerHTMLData.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitLoggerJUnit.ml > src/oUnitLoggerJUnit.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerHTML.cmo src/oUnitLoggerHTML.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerStd.cmo src/oUnitLoggerStd.ml
+- + ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerStd.cmo src/oUnitLoggerStd.ml
+- File "src/oUnitLoggerStd.ml", line 161, characters 21-22:
+- Warning 28: wildcard pattern given as argument to a constant constructor
+- File "src/oUnitLoggerStd.ml", line 161, characters 30-31:
+- Warning 28: wildcard pattern given as argument to a constant constructor
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitAssert.ml > src/oUnitAssert.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitBracket.ml > src/oUnitBracket.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitBracket.cmo src/oUnitBracket.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitState.ml > src/oUnitState.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitChooser.cmo src/oUnitChooser.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitRunner.ml > src/oUnitRunner.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitCheckEnv.ml > src/oUnitCheckEnv.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitAssert.cmo src/oUnitAssert.ml
+- + ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitAssert.cmo src/oUnitAssert.ml
+- File "src/oUnitAssert.ml", line 243, characters 20-33:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitDiff.mli > src/oUnitDiff.mli.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitDiff.cmi src/oUnitDiff.mli
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitState.cmo src/oUnitState.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitCheckEnv.cmo src/oUnitCheckEnv.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitRunnerProcesses.ml > src/oUnitRunnerProcesses.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunner.cmo src/oUnitRunner.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitCore.ml > src/oUnitCore.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerJUnit.cmo src/oUnitLoggerJUnit.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunnerProcesses.cmo src/oUnitRunnerProcesses.ml
+- + ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunnerProcesses.cmo src/oUnitRunnerProcesses.ml
+- File "src/oUnitRunnerProcesses.ml", line 80, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/oUnitRunnerProcesses.ml", line 90, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitTestData.ml > src/oUnitTestData.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitDiff.ml > src/oUnitDiff.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitCore.cmo src/oUnitCore.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitTestData.cmo src/oUnitTestData.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitDiff.cmo src/oUnitDiff.ml
+- ocamlfind ocamlc -a src/oUnitUtils.cmo src/oUnitPropList.cmo src/oUnitConf.cmo src/oUnitPlugin.cmo src/oUnitLogger.cmo src/oUnitShared.cmo src/oUnitTest.cmo src/oUnitCache.cmo src/oUnitResultSummary.cmo src/oUnitChooser.cmo src/oUnitLoggerStd.cmo src/oUnitLoggerHTMLData.cmo src/oUnitLoggerHTML.cmo src/oUnitLoggerJUnit.cmo src/oUnitBracket.cmo src/oUnitAssert.cmo src/oUnitState.cmo src/oUnitDiff.cmo src/oUnitCheckEnv.cmo src/oUnitRunner.cmo src/oUnitRunnerProcesses.cmo src/oUnitCore.cmo src/oUnitTestData.cmo -o src/oUnitAdvanced.cma
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitPropList.cmx src/oUnitPropList.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitUtils.cmx src/oUnitUtils.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitConf.cmx src/oUnitConf.ml
+- + ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitConf.cmx src/oUnitConf.ml
+- File "src/oUnitConf.ml", line 77, characters 16-35:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/oUnitConf.ml", line 331, characters 31-47:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLogger.cmx src/oUnitLogger.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitShared.cmx src/oUnitShared.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitTest.cmx src/oUnitTest.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitPlugin.cmx src/oUnitPlugin.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitCache.cmx src/oUnitCache.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitResultSummary.cmx src/oUnitResultSummary.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerHTMLData.cmx src/oUnitLoggerHTMLData.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerHTML.cmx src/oUnitLoggerHTML.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerStd.cmx src/oUnitLoggerStd.ml
+- + ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerStd.cmx src/oUnitLoggerStd.ml
+- File "src/oUnitLoggerStd.ml", line 161, characters 21-22:
+- Warning 28: wildcard pattern given as argument to a constant constructor
+- File "src/oUnitLoggerStd.ml", line 161, characters 30-31:
+- Warning 28: wildcard pattern given as argument to a constant constructor
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitBracket.cmx src/oUnitBracket.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitChooser.cmx src/oUnitChooser.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitAssert.cmx src/oUnitAssert.ml
+- + ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitAssert.cmx src/oUnitAssert.ml
+- File "src/oUnitAssert.ml", line 243, characters 20-33:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitDiff.cmx src/oUnitDiff.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitState.cmx src/oUnitState.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitCheckEnv.cmx src/oUnitCheckEnv.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunner.cmx src/oUnitRunner.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerJUnit.cmx src/oUnitLoggerJUnit.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunnerProcesses.cmx src/oUnitRunnerProcesses.ml
+- + ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunnerProcesses.cmx src/oUnitRunnerProcesses.ml
+- File "src/oUnitRunnerProcesses.ml", line 80, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/oUnitRunnerProcesses.ml", line 90, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitCore.cmx src/oUnitCore.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitTestData.cmx src/oUnitTestData.ml
+- ocamlfind ocamlopt -a src/oUnitUtils.cmx src/oUnitPropList.cmx src/oUnitConf.cmx src/oUnitPlugin.cmx src/oUnitLogger.cmx src/oUnitShared.cmx src/oUnitTest.cmx src/oUnitCache.cmx src/oUnitResultSummary.cmx src/oUnitChooser.cmx src/oUnitLoggerStd.cmx src/oUnitLoggerHTMLData.cmx src/oUnitLoggerHTML.cmx src/oUnitLoggerJUnit.cmx src/oUnitBracket.cmx src/oUnitAssert.cmx src/oUnitState.cmx src/oUnitDiff.cmx src/oUnitCheckEnv.cmx src/oUnitRunner.cmx src/oUnitRunnerProcesses.cmx src/oUnitCore.cmx src/oUnitTestData.cmx -o src/oUnitAdvanced.cmxa
+- ocamlfind ocamlopt -shared -linkall src/oUnitAdvanced.cmxa -o src/oUnitAdvanced.cmxs
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnit.mli > src/oUnit.mli.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnit2.mli > src/oUnit2.mli.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnit2.cmi src/oUnit2.mli
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnit.cmi src/oUnit.mli
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnit.ml > src/oUnit.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnit2.ml > src/oUnit2.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnit.cmo src/oUnit.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnit2.cmo src/oUnit2.ml
+- ocamlfind ocamlc -a src/oUnit2.cmo src/oUnit.cmo -o src/oUnit.cma
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnit2.cmx src/oUnit2.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnit.cmx src/oUnit.ml
+- ocamlfind ocamlopt -a src/oUnit2.cmx src/oUnit.cmx -o src/oUnit.cmxa
+- ocamlfind ocamlopt -shared src/oUnit.cmx -o src/oUnit.cmxs
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitThreads.ml > src/oUnitThreads.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitRunnerThreads.ml > src/oUnitRunnerThreads.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunnerThreads.cmo src/oUnitRunnerThreads.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitThreads.cmo src/oUnitThreads.ml
+- ocamlfind ocamlc -a src/oUnitRunnerThreads.cmo src/oUnitThreads.cmo -o src/oUnitThreads.cma
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunnerThreads.cmx src/oUnitRunnerThreads.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitThreads.cmx src/oUnitThreads.ml
+- ocamlfind ocamlopt -a src/oUnitRunnerThreads.cmx src/oUnitThreads.cmx -o src/oUnitThreads.cmxa
+- ocamlfind ocamlopt -shared src/oUnitThreads.cmx -o src/oUnitThreads.cmxs
+- ocaml setup.ml -configure 
+- File "/home/gildor/programmation/oasis/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 46, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 46, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 54, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 54, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 57, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 87, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/PropList.ml", line 99, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUnixPath.ml", line 94, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUnixPath.ml", line 99, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISFindlib.ml", line 256, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 220, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 221, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 222, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 223, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 288, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 289, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 290, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 291, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlbuild
+- Package name: ........................................ ounit
+- Package version: ..................................... 2.0.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.04.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- pkg_threads: ......................................... /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldoc
+- 
+- ocaml setup.ml -build 
+- File "/home/gildor/programmation/oasis/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 46, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 46, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 54, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 54, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 57, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 87, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/PropList.ml", line 99, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUnixPath.ml", line 94, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUnixPath.ml", line 99, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISFindlib.ml", line 256, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 220, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 221, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 222, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 223, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 288, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 289, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 290, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 291, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- W: Cannot find source file matching module 'OUnitLoggerHTMLData' in library oUnitAdvanced
+- W: Cannot find source file matching module 'OUnitLoggerHTMLData' in library oUnitAdvanced
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitUtils.ml > src/oUnitUtils.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitPropList.ml > src/oUnitPropList.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitPlugin.ml > src/oUnitPlugin.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitConf.ml > src/oUnitConf.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitPropList.cmo src/oUnitPropList.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitUtils.cmo src/oUnitUtils.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitConf.cmo src/oUnitConf.ml
+- + ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitConf.cmo src/oUnitConf.ml
+- File "src/oUnitConf.ml", line 77, characters 16-35:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/oUnitConf.ml", line 331, characters 31-47:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitChooser.ml > src/oUnitChooser.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitCache.ml > src/oUnitCache.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitTest.ml > src/oUnitTest.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitLogger.ml > src/oUnitLogger.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitShared.ml > src/oUnitShared.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLogger.cmo src/oUnitLogger.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitShared.cmo src/oUnitShared.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitTest.cmo src/oUnitTest.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitPlugin.cmo src/oUnitPlugin.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitResultSummary.ml > src/oUnitResultSummary.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitCache.cmo src/oUnitCache.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitResultSummary.cmo src/oUnitResultSummary.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitLoggerStd.ml > src/oUnitLoggerStd.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitLoggerHTML.ml > src/oUnitLoggerHTML.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitLoggerHTMLData.ml > src/oUnitLoggerHTMLData.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerHTMLData.cmo src/oUnitLoggerHTMLData.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitLoggerJUnit.ml > src/oUnitLoggerJUnit.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerHTML.cmo src/oUnitLoggerHTML.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerStd.cmo src/oUnitLoggerStd.ml
+- + ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerStd.cmo src/oUnitLoggerStd.ml
+- File "src/oUnitLoggerStd.ml", line 161, characters 21-22:
+- Warning 28: wildcard pattern given as argument to a constant constructor
+- File "src/oUnitLoggerStd.ml", line 161, characters 30-31:
+- Warning 28: wildcard pattern given as argument to a constant constructor
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitAssert.ml > src/oUnitAssert.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitBracket.ml > src/oUnitBracket.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitBracket.cmo src/oUnitBracket.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitState.ml > src/oUnitState.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitChooser.cmo src/oUnitChooser.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitRunner.ml > src/oUnitRunner.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitCheckEnv.ml > src/oUnitCheckEnv.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitAssert.cmo src/oUnitAssert.ml
+- + ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitAssert.cmo src/oUnitAssert.ml
+- File "src/oUnitAssert.ml", line 243, characters 20-33:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitDiff.mli > src/oUnitDiff.mli.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitDiff.cmi src/oUnitDiff.mli
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitState.cmo src/oUnitState.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitCheckEnv.cmo src/oUnitCheckEnv.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitRunnerProcesses.ml > src/oUnitRunnerProcesses.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunner.cmo src/oUnitRunner.ml
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitCore.ml > src/oUnitCore.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerJUnit.cmo src/oUnitLoggerJUnit.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunnerProcesses.cmo src/oUnitRunnerProcesses.ml
+- + ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunnerProcesses.cmo src/oUnitRunnerProcesses.ml
+- File "src/oUnitRunnerProcesses.ml", line 80, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/oUnitRunnerProcesses.ml", line 90, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitTestData.ml > src/oUnitTestData.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitDiff.ml > src/oUnitDiff.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitCore.cmo src/oUnitCore.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitTestData.cmo src/oUnitTestData.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitDiff.cmo src/oUnitDiff.ml
+- ocamlfind ocamlc -a src/oUnitUtils.cmo src/oUnitPropList.cmo src/oUnitConf.cmo src/oUnitPlugin.cmo src/oUnitLogger.cmo src/oUnitShared.cmo src/oUnitTest.cmo src/oUnitCache.cmo src/oUnitResultSummary.cmo src/oUnitChooser.cmo src/oUnitLoggerStd.cmo src/oUnitLoggerHTMLData.cmo src/oUnitLoggerHTML.cmo src/oUnitLoggerJUnit.cmo src/oUnitBracket.cmo src/oUnitAssert.cmo src/oUnitState.cmo src/oUnitDiff.cmo src/oUnitCheckEnv.cmo src/oUnitRunner.cmo src/oUnitRunnerProcesses.cmo src/oUnitCore.cmo src/oUnitTestData.cmo -o src/oUnitAdvanced.cma
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitPropList.cmx src/oUnitPropList.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitUtils.cmx src/oUnitUtils.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitConf.cmx src/oUnitConf.ml
+- + ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitConf.cmx src/oUnitConf.ml
+- File "src/oUnitConf.ml", line 77, characters 16-35:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "src/oUnitConf.ml", line 331, characters 31-47:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLogger.cmx src/oUnitLogger.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitShared.cmx src/oUnitShared.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitTest.cmx src/oUnitTest.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitPlugin.cmx src/oUnitPlugin.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitCache.cmx src/oUnitCache.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitResultSummary.cmx src/oUnitResultSummary.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerHTMLData.cmx src/oUnitLoggerHTMLData.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerHTML.cmx src/oUnitLoggerHTML.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerStd.cmx src/oUnitLoggerStd.ml
+- + ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerStd.cmx src/oUnitLoggerStd.ml
+- File "src/oUnitLoggerStd.ml", line 161, characters 21-22:
+- Warning 28: wildcard pattern given as argument to a constant constructor
+- File "src/oUnitLoggerStd.ml", line 161, characters 30-31:
+- Warning 28: wildcard pattern given as argument to a constant constructor
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitBracket.cmx src/oUnitBracket.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitChooser.cmx src/oUnitChooser.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitAssert.cmx src/oUnitAssert.ml
+- + ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitAssert.cmx src/oUnitAssert.ml
+- File "src/oUnitAssert.ml", line 243, characters 20-33:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitDiff.cmx src/oUnitDiff.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitState.cmx src/oUnitState.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitCheckEnv.cmx src/oUnitCheckEnv.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunner.cmx src/oUnitRunner.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitLoggerJUnit.cmx src/oUnitLoggerJUnit.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunnerProcesses.cmx src/oUnitRunnerProcesses.ml
+- + ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunnerProcesses.cmx src/oUnitRunnerProcesses.ml
+- File "src/oUnitRunnerProcesses.ml", line 80, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "src/oUnitRunnerProcesses.ml", line 90, characters 42-55:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitCore.cmx src/oUnitCore.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitTestData.cmx src/oUnitTestData.ml
+- ocamlfind ocamlopt -a src/oUnitUtils.cmx src/oUnitPropList.cmx src/oUnitConf.cmx src/oUnitPlugin.cmx src/oUnitLogger.cmx src/oUnitShared.cmx src/oUnitTest.cmx src/oUnitCache.cmx src/oUnitResultSummary.cmx src/oUnitChooser.cmx src/oUnitLoggerStd.cmx src/oUnitLoggerHTMLData.cmx src/oUnitLoggerHTML.cmx src/oUnitLoggerJUnit.cmx src/oUnitBracket.cmx src/oUnitAssert.cmx src/oUnitState.cmx src/oUnitDiff.cmx src/oUnitCheckEnv.cmx src/oUnitRunner.cmx src/oUnitRunnerProcesses.cmx src/oUnitCore.cmx src/oUnitTestData.cmx -o src/oUnitAdvanced.cmxa
+- ocamlfind ocamlopt -shared -linkall src/oUnitAdvanced.cmxa -o src/oUnitAdvanced.cmxs
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnit.mli > src/oUnit.mli.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnit2.mli > src/oUnit2.mli.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnit2.cmi src/oUnit2.mli
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnit.cmi src/oUnit.mli
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnit.ml > src/oUnit.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnit2.ml > src/oUnit2.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnit.cmo src/oUnit.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnit2.cmo src/oUnit2.ml
+- ocamlfind ocamlc -a src/oUnit2.cmo src/oUnit.cmo -o src/oUnit.cma
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnit2.cmx src/oUnit2.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnit.cmx src/oUnit.ml
+- ocamlfind ocamlopt -a src/oUnit2.cmx src/oUnit.cmx -o src/oUnit.cmxa
+- ocamlfind ocamlopt -shared src/oUnit.cmx -o src/oUnit.cmxs
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitThreads.ml > src/oUnitThreads.ml.depends
+- ocamlfind ocamldep -package threads -package unix -modules src/oUnitRunnerThreads.ml > src/oUnitRunnerThreads.ml.depends
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunnerThreads.cmo src/oUnitRunnerThreads.ml
+- ocamlfind ocamlc -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitThreads.cmo src/oUnitThreads.ml
+- ocamlfind ocamlc -a src/oUnitRunnerThreads.cmo src/oUnitThreads.cmo -o src/oUnitThreads.cma
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitRunnerThreads.cmx src/oUnitRunnerThreads.ml
+- ocamlfind ocamlopt -c -g -I src -I src -package threads -package unix -thread -I src -o src/oUnitThreads.cmx src/oUnitThreads.ml
+- ocamlfind ocamlopt -a src/oUnitRunnerThreads.cmx src/oUnitThreads.cmx -o src/oUnitThreads.cmxa
+- ocamlfind ocamlopt -shared src/oUnitThreads.cmx -o src/oUnitThreads.cmxs
+-> compiled  ounit.2.0.0
+Processing  5/12: [conf-libpcre: pkg-config libpcre]
+Processing  6/12: [conf-libpcre: pkg-config libpcre] [ounit: make install]
++ pkg-config "libpcre" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-libpcre.1)
+-> compiled  conf-libpcre.1
+Processing  6/12: [ounit: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ounit.2.0.0)
+- ocaml setup.ml -install 
+- File "/home/gildor/programmation/oasis/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 46, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 46, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 54, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 54, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 57, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUtils.ml", line 87, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/PropList.ml", line 99, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUnixPath.ml", line 94, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISUnixPath.ml", line 99, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/oasis/OASISFindlib.ml", line 256, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 220, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 221, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 222, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 223, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 288, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 289, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 290, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/home/gildor/programmation/oasis/src/plugins/internal/InternalInstallPlugin.ml", line 291, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- W: Cannot find source header for module OUnitLoggerHTMLData in library oUnitAdvanced
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnit.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnit2.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnit.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnit.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnit.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnit.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnit.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnit2.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnit.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnit2.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitThreads.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitThreads.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitThreads.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitThreads.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitThreads.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitThreads.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitThreads.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitRunnerThreads.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitUtils.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitPropList.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitPlugin.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitChooser.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitResultSummary.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLoggerStd.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLoggerHTML.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLoggerJUnit.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitAssert.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitBracket.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitTest.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitState.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitRunner.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitRunnerProcesses.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitCore.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLogger.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitConf.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitShared.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitCache.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitTestData.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitCheckEnv.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitDiff.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitAdvanced.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitAdvanced.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitAdvanced.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitAdvanced.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitUtils.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitPropList.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitPlugin.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitChooser.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitResultSummary.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLoggerStd.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLoggerHTML.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLoggerHTMLData.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLoggerJUnit.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitAssert.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitBracket.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitTest.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitState.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitRunner.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitRunnerProcesses.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitCore.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLogger.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitConf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitShared.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitCache.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitTestData.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitCheckEnv.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitDiff.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitUtils.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitPropList.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitPlugin.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitChooser.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitResultSummary.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLoggerStd.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLoggerHTML.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLoggerHTMLData.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLoggerJUnit.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitAssert.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitBracket.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitTest.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitState.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitRunner.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitRunnerProcesses.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitCore.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitLogger.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitConf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitShared.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitCache.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitTestData.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitCheckEnv.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/oUnitDiff.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/oUnit/META
+-> installed ounit.2.0.0
+-> installed conf-libpcre.1
+Processing  8/12: [pcre: make]
+Processing  9/12: [pcre: make] [uutf: ocaml setup.ml]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+- ocamldep pcre.mli > ._bcdi/pcre.di
+- ocamldep pcre.ml > ._d/pcre.d
+- ocamlc -c -cc "cc" -ccopt "-fPIC -O2  \
+- 			-DPIC   \
+- 			    -o pcre_stubs.o " pcre_stubs.c
+- ar rcs libpcre_stubs.a  pcre_stubs.o
+- ocamlc -c pcre.mli
+- File "pcre.mli", line 192, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlc -c pcre.ml
+- File "pcre.ml", line 162, characters 0-76:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 164, characters 0-84:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 167, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 170, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 173, characters 0-111:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 176, characters 0-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 213, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 231, characters 0-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 238, characters 0-120:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 863, characters 0-63:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlmklib         \
+- 			-o pcre_stubs  pcre_stubs.o   \
+- 			-lpcre
+- ocamlc -a -cclib -lpcre_stubs    -dllib dllpcre_stubs.so -custom     -cclib "-lpcre"        -o pcre.cma pcre.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+- ocamldep -native pcre.mli > ._ncdi/pcre.di
+- make[2]: 'libpcre_stubs.a' is up to date.
+- ocamlopt -c pcre.ml
+- File "pcre.ml", line 162, characters 0-76:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 164, characters 0-84:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 167, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 170, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 173, characters 0-111:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 176, characters 0-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 213, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 231, characters 0-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 238, characters 0-120:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 863, characters 0-63:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlopt -a -cclib -lpcre_stubs         -cclib "-lpcre"       -o pcre.cmxa pcre.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+- ocamldep pcre.mli > ._bcdi/pcre.di
+- ocamldep pcre.ml > ._d/pcre.d
+- ocamlc -c -cc "cc" -ccopt "-fPIC -O2  \
+- 			-DPIC   \
+- 			    -o pcre_stubs.o " pcre_stubs.c
+- ar rcs libpcre_stubs.a  pcre_stubs.o
+- ocamlc -c pcre.mli
+- File "pcre.mli", line 192, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlc -c pcre.ml
+- File "pcre.ml", line 162, characters 0-76:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 164, characters 0-84:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 167, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 170, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 173, characters 0-111:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 176, characters 0-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 213, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 231, characters 0-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 238, characters 0-120:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 863, characters 0-63:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlmklib         \
+- 			-o pcre_stubs  pcre_stubs.o   \
+- 			-lpcre
+- ocamlc -a -cclib -lpcre_stubs    -dllib dllpcre_stubs.so -custom     -cclib "-lpcre"        -o pcre.cma pcre.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+- ocamldep -native pcre.mli > ._ncdi/pcre.di
+- make[2]: 'libpcre_stubs.a' is up to date.
+- ocamlopt -c pcre.ml
+- File "pcre.ml", line 162, characters 0-76:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 164, characters 0-84:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 167, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 170, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 173, characters 0-111:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 176, characters 0-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 213, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 231, characters 0-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 238, characters 0-120:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 863, characters 0-63:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlopt -a -cclib -lpcre_stubs         -cclib "-lpcre"       -o pcre.cmxa pcre.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+-> compiled  pcre.6.2.5
+Processing  9/12: [uutf: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/uutf.0.9.1)
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISString.ml", line 118, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 46, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 54, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 57, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUtils.ml", line 87, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/PropList.ml", line 99, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 94, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISUnixPath.ml", line 99, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/oasis/OASISLibrary.ml", line 402, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 217, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 218, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 219, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "/Users/dbuenzli/.odb/install-oasis/oasis-0.3.0/src/plugins/internal/InternalInstallPlugin.ml", line 220, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/uutf/uutf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/uutf/uutf.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/uutf/uutf.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/uutf/uutf.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/uutf/uutf.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/uutf/uutf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/uutf/uutf.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/uutf/META
+-> installed uutf.0.9.1
+Processing 10/12: [pcre: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  pcre META pcre.mli pcre.cmi pcre.cma pcre.cmxa pcre.a libpcre_stubs.a dllpcre_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pcre/libpcre_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pcre/pcre.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pcre/pcre.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pcre/pcre.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pcre/pcre.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pcre/pcre.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pcre/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllpcre_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllpcre_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pcre.6.2.5/lib'
+-> installed pcre.6.2.5
+Processing 11/12: [jingoo: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/jingoo.1.2.14)
+- make -C src
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/jingoo.1.2.14/src'
+- ocamlyacc jg_parser.mly
+- 1 rule never reduced
+- 228 shift/reduce conflicts, 121 reduce/reduce conflicts.
+- ocamllex jg_lexer.mll
+- 222 states, 11207 transitions, table size 46160 bytes
+- ocamlfind ocamlc -g -package unix,dynlink,pcre,uutf -c jg_types.mli jg_types.ml jg_utils.ml jg_stub.mli jg_stub.ml jg_parser.mli jg_parser.ml jg_lexer.ml jg_runtime.ml jg_interp.ml jg_template.mli jg_template.ml 
+- File "jg_utils.ml", line 113, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "jg_runtime.ml", line 523, characters 24-40:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "jg_runtime.ml", line 528, characters 24-40:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "jg_runtime.ml", line 593, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "jg_runtime.ml", line 630, characters 24-41:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "jg_runtime.ml", line 782, characters 5-22:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind ocamlc -g -package unix,dynlink,pcre,uutf -o jingoo.cma -a  jg_types.cmo  jg_utils.cmo  jg_stub.cmo  jg_parser.cmo  jg_lexer.cmo  jg_runtime.cmo  jg_interp.cmo  jg_template.cmo
+- ocamlfind ocamlc -g -thread -c jingoo_mt.ml
+- ocamlfind ocamlopt -g -package unix,dynlink,pcre,uutf -c jg_types.mli jg_types.ml jg_utils.ml jg_stub.mli jg_stub.ml jg_parser.mli jg_parser.ml jg_lexer.ml jg_runtime.ml jg_interp.ml jg_template.mli jg_template.ml 
+- File "jg_utils.ml", line 113, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Pcre, and its interface was not compiled with -opaque
+- File "jg_runtime.ml", line 523, characters 24-40:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- File "jg_runtime.ml", line 528, characters 24-40:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "jg_runtime.ml", line 593, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "jg_runtime.ml", line 630, characters 24-41:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "jg_runtime.ml", line 782, characters 5-22:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Pcre, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -g -package unix,dynlink,pcre,uutf -o jingoo.cmxa -a  jg_types.cmx  jg_utils.cmx  jg_stub.cmx  jg_parser.cmx  jg_lexer.cmx  jg_runtime.cmx  jg_interp.cmx  jg_template.cmx
+- ocamlfind ocamlopt -g -thread -c jingoo_mt.ml
+- ocamlfind ocamlopt -g -o compiler -linkpkg -package unix,dynlink,pcre,uutf jingoo.cmxa jg_cmdline.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Pcre, and its interface was not compiled with -opaque
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/jingoo.1.2.14/src'
+-> compiled  jingoo.1.2.14
+Processing 12/12: [jingoo: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/jingoo.1.2.14)
+- make -C src install
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/jingoo.1.2.14/src'
+- ocamlfind ocamlopt -g -o compiler -linkpkg -package unix,dynlink,pcre,uutf jingoo.cmxa jg_cmdline.ml
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Pcre, and its interface was not compiled with -opaque
+- ocamlfind install jingoo *.a *.cma *.cmi *.cmx jingoo_mt.cmo jingoo_mt.o jg_types.mli jg_template.mli jg_stub.mli META -optional *.cmxa jingoo_mt.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jingoo_mt.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jingoo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_stub.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_template.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_types.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jingoo_mt.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jingoo_mt.cmo
+- ocamlfind: [WARNING] Overwriting file /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jingoo_mt.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jingoo_mt.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_utils.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_types.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_template.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_stub.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_runtime.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_parser.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_lexer.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_interp.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_cmdline.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jingoo_mt.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_utils.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_types.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_template.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_stub.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_runtime.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_parser.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_lexer.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_interp.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jg_cmdline.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jingoo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/jingoo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/jingoo/META
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/jingoo.1.2.14/src'
+-> installed jingoo.1.2.14
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 20:15.00] Success
