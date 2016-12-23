@@ -1,0 +1,57 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install namespaces 0.5.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [namespaces.0.5.1: dl]
+[namespaces.0.5.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [namespaces: make build]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/namespaces.0.5.1)
+- ocamlbuild -use-ocamlfind -cflags -bin-annot src/namespaces.cma src/namespaces.cmxa
+- ocamlfind ocamldep -package ocamlbuild -modules src/namespaces.mli > src/namespaces.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package ocamlbuild -I src -o src/namespaces.cmi src/namespaces.mli
+- ocamlfind ocamldep -package ocamlbuild -modules src/namespaces.ml > src/namespaces.ml.depends
+- ocamlfind ocamldep -package ocamlbuild -modules src/generators.mli > src/generators.mli.depends
+- ocamlfind ocamldep -package ocamlbuild -modules src/modules.mli > src/modules.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package ocamlbuild -I src -o src/generators.cmi src/generators.mli
+- ocamlfind ocamldep -package ocamlbuild -modules src/rules.mli > src/rules.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package ocamlbuild -I src -o src/modules.cmi src/modules.mli
+- ocamlfind ocamlc -c -bin-annot -safe-string -package ocamlbuild -I src -o src/rules.cmi src/rules.mli
+- ocamlfind ocamlc -c -bin-annot -safe-string -package ocamlbuild -I src -o src/namespaces.cmo src/namespaces.ml
+- ocamlfind ocamldep -package ocamlbuild -modules src/generators.ml > src/generators.ml.depends
+- ocamlfind ocamldep -package ocamlbuild -modules src/modules.ml > src/modules.ml.depends
+- ocamlfind ocamldep -package ocamlbuild -modules src/rules.ml > src/rules.ml.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package ocamlbuild -I src -o src/generators.cmo src/generators.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -package ocamlbuild -I src -o src/modules.cmo src/modules.ml
+- ocamlfind ocamlc -c -bin-annot -safe-string -package ocamlbuild -I src -o src/rules.cmo src/rules.ml
+- ocamlfind ocamlc -a src/generators.cmo src/modules.cmo src/rules.cmo src/namespaces.cmo -o src/namespaces.cma
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package ocamlbuild -I src -o src/generators.cmx src/generators.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package ocamlbuild -I src -o src/modules.cmx src/modules.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package ocamlbuild -I src -o src/rules.cmx src/rules.ml
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package ocamlbuild -I src -o src/namespaces.cmx src/namespaces.ml
+- ocamlfind ocamlopt -a src/generators.cmx src/modules.cmx src/rules.cmx src/namespaces.cmx -o src/namespaces.cmxa
+-> compiled  namespaces.0.5.1
+Processing  2/2: [namespaces: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/namespaces.0.5.1)
+- ocamlfind remove namespaces
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/namespaces
+- ocamlbuild -use-ocamlfind -cflags -bin-annot src/namespaces.cma src/namespaces.cmxa
+- ocamlfind install namespaces src/META _build/src/namespaces.cma _build/src/namespaces.cmxa _build/src/namespaces.cmi src/namespaces.mli _build/src/namespaces.cmt _build/src/namespaces.cmti _build/src/namespaces.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/namespaces/namespaces.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/namespaces/namespaces.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/namespaces/namespaces.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/namespaces/namespaces.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/namespaces/namespaces.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/namespaces/namespaces.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/namespaces/namespaces.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/namespaces/META
+-> installed namespaces.0.5.1
+Done.
+# Run eval `opam env` to update the current shell environment
