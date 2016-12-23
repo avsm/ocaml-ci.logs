@@ -1,0 +1,46 @@
+=== opam depext -ivyj 2 gsl
+[2016-12-23 21:14.21] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-gsl 1                                          [required by gsl]
+  - install gsl      1.19.1
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [gsl.1.19.1: dl]
+[gsl.1.19.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-gsl: pkg-config gsl]
++ pkg-config "gsl" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-gsl.1)
+[ERROR] The compilation of conf-gsl failed at "pkg-config gsl".
+
+
+#=== ERROR while compiling conf-gsl.1 =========================================#
+# command              pkg-config gsl
+# path                 /home/opam/.opam/default/.opam-switch/build/conf-gsl.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-gsl-1-c61e7b.env
+# output-file          /home/opam/.opam/log/conf-gsl-1-c61e7b.out
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install gsl 1.19.1
++- 
++- The following actions failed
+| - build conf-gsl 1
++- 
+- No changes have been performed
+
+=-=- conf-gsl.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-gsl.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 gsl' failed.
+[2016-12-23 21:23.35] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "gsl" exited with status 4
