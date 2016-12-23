@@ -1,0 +1,137 @@
+=== opam depext -ivyj 2 mindstorm
+[2016-12-23 21:14.34] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install mindstorm 0.5.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [mindstorm.0.5.3: dl]
+[mindstorm.0.5.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [mindstorm: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/mindstorm.0.5.3)
+- File "setup.ml", line 245, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2507, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ mindstorm
+- Package version: ..................................... 0.5.3
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- usb_include: ......................................... 
+- Whether libusb development files are installed: ...... false
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_unix: ............................................ /usr/lib/ocaml
+- ocamldoc: ............................................ /usr/bin/ocamldoc
+- pkg_threads: ......................................... /usr/lib/ocaml
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/mindstorm.0.5.3)
+- File "setup.ml", line 245, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2507, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -DARCH64 -c src/mindstorm_stubs.c
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -DARCH64 -c src/mindstorm_stubs.c
+- In file included from src/mindstorm_stubs.c:19:0:
+- src/mindstorm_unix.c:22:33: fatal error: bluetooth/bluetooth.h: No such file or directory
+- compilation terminated.
+- Command exited with code 2.
+- E: Failure("Command ''/usr/bin/ocamlbuild' src/libmindstorm_stubs.a src/dllmindstorm_stubs.so src/mindstorm.cma src/mindstorm.cmxa src/mindstorm.a src/mindstorm.cmxs examples/roam.native examples/run_push.native examples/test_speed.native examples/test_threads.native examples/wander.native -tag debug' terminated with error code 10")
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build mindstorm 0.5.3
++- 
+- No changes have been performed
+[ERROR] The compilation of mindstorm failed at "ocaml setup.ml -build".
+
+#=== ERROR while compiling mindstorm.0.5.3 ====================================#
+# command              ocaml setup.ml -build
+# path                 /home/opam/.opam/default/.opam-switch/build/mindstorm.0.5.3
+# exit-code            1
+# env-file             /home/opam/.opam/log/mindstorm-1-ad8886.env
+# output-file          /home/opam/.opam/log/mindstorm-1-ad8886.out
+### output ###
+# [...]
+# Use Bytes.set instead.
+# File "setup.ml", line 2507, characters 6-24:
+# Warning 3: deprecated: Lazy.lazy_from_fun
+# Use Lazy.from_fun instead.
+# /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+# /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -DARCH64 -c src/mindstorm_stubs.c
+# + /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -DARCH64 -c src/mindstorm_stubs.c
+# In file included from src/mindstorm_stubs.c:19:0:
+# src/mindstorm_unix.c:22:33: fatal error: bluetooth/bluetooth.h: No such file or directory
+# compilation terminated.
+# Command exited with code 2.
+# E: Failure("Command ''/usr/bin/ocamlbuild' src/libmindstorm_stubs.a src/dllmindstorm_stubs.so src/mindstorm.cma src/mindstorm.cmxa src/mindstorm.a src/mindstorm.cmxs examples/roam.native examples/run_push.native examples/test_speed.native examples/test_threads.native examples/wander.native -tag debug' terminated with error code 10")
+
+
+=-=- mindstorm.0.5.3 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext mindstorm.0.5.3' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 mindstorm' failed.
+[2016-12-23 21:31.54] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "mindstorm" exited with status 4
