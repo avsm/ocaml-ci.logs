@@ -1,0 +1,35 @@
+=== opam depext -ivyj 2 conf-gtksourceview
+[2016-12-23 17:51.25] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-gtksourceview 2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-gtksourceview: pkg-config gtksourceview-2.0]
++ pkg-config "gtksourceview-2.0" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-gtksourceview.2)
+[ERROR] The compilation of conf-gtksourceview failed at "pkg-config gtksourceview-2.0".
+
+#=== ERROR while compiling conf-gtksourceview.2 ===============================#
+# command              pkg-config gtksourceview-2.0
+# path                 /home/opam/.opam/default/.opam-switch/build/conf-gtksourceview.2
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-gtksourceview-1-7afd23.env
+# output-file          /home/opam/.opam/log/conf-gtksourceview-1-7afd23.out
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-gtksourceview 2
++- 
+- No changes have been performed
+
+=-=- conf-gtksourceview.2 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package requires gtksourceview 2.0 development packages installed on your system
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-gtksourceview' failed.
+[2016-12-23 18:06.36] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:cfbeef9d775638d0b94a878f95261d5f7c85e15274df23042f44dfae382a7975" "opam" "depext" "-ivyj" "2" "conf-gtksourceview" exited with status 4
