@@ -1,0 +1,141 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install dockerfile 1.1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [dockerfile.1.1.0: dl]
+[dockerfile.1.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [dockerfile: ./configure]
++ ./configure "--prefix=/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/dockerfile.1.1.0)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ dockerfile
+- Package version: ..................................... 1.1.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_cmdliner: ........................................ /home/opam/.opam/default/lib/cmdliner
+- ocamldoc: ............................................ /usr/bin/ocamldoc
+- 
+Processing  1/2: [dockerfile: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/dockerfile.1.1.0)
+- ocaml setup.ml -build 
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package cmdliner -modules lib/dockerfile.mli > lib/dockerfile.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -short-paths -principal -I lib -I lib -package cmdliner -I lib -o lib/dockerfile.cmi lib/dockerfile.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package cmdliner -modules lib/dockerfile.ml > lib/dockerfile.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -short-paths -principal -I lib -I lib -package cmdliner -I lib -o lib/dockerfile.cmo lib/dockerfile.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a lib/dockerfile.cmo -o lib/dockerfile.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -short-paths -principal -I lib -I lib -package cmdliner -I lib -o lib/dockerfile.cmx lib/dockerfile.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a lib/dockerfile.cmx -o lib/dockerfile.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared lib/dockerfile.cmxa lib/dockerfile.cmx -o lib/dockerfile.cmxs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package cmdliner -modules lib/dockerfile_opam.mli > lib/dockerfile_opam.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -short-paths -principal -I lib -I lib -package cmdliner -I lib -o lib/dockerfile_opam.cmi lib/dockerfile_opam.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package cmdliner -modules lib/dockerfile_opam.ml > lib/dockerfile_opam.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -short-paths -principal -I lib -I lib -package cmdliner -I lib -o lib/dockerfile_opam.cmo lib/dockerfile_opam.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a lib/dockerfile_opam.cmo -o lib/opam.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -short-paths -principal -I lib -I lib -package cmdliner -I lib -o lib/dockerfile_opam.cmx lib/dockerfile_opam.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a lib/dockerfile_opam.cmx -o lib/opam.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared lib/opam.cmxa lib/dockerfile_opam.cmx -o lib/opam.cmxs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package cmdliner -modules lib/dockerfile_opam_cmdliner.mli > lib/dockerfile_opam_cmdliner.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -short-paths -principal -I lib -I lib -package cmdliner -I lib -o lib/dockerfile_opam_cmdliner.cmi lib/dockerfile_opam_cmdliner.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package cmdliner -modules lib/dockerfile_opam_cmdliner.ml > lib/dockerfile_opam_cmdliner.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -short-paths -principal -I lib -I lib -package cmdliner -I lib -o lib/dockerfile_opam_cmdliner.cmo lib/dockerfile_opam_cmdliner.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a lib/dockerfile_opam_cmdliner.cmo -o lib/opam-cmdliner.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -short-paths -principal -I lib -I lib -package cmdliner -I lib -o lib/dockerfile_opam_cmdliner.cmx lib/dockerfile_opam_cmdliner.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a lib/dockerfile_opam_cmdliner.cmx -o lib/opam-cmdliner.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared lib/opam-cmdliner.cmxa lib/dockerfile_opam_cmdliner.cmx -o lib/opam-cmdliner.cmxs
+-> compiled  dockerfile.1.1.0
+Processing  2/2: [dockerfile: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/dockerfile.1.1.0)
+- ocaml setup.ml -install 
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile.mli
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile.cma
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile.cmxa
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile.a
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile.cmxs
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile.cmi
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile.cmti
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile.cmt
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile.annot
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile.cmx
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile_opam_cmdliner.mli
+- Installed /home/opam/.opam/default/lib/dockerfile/opam-cmdliner.cma
+- Installed /home/opam/.opam/default/lib/dockerfile/opam-cmdliner.cmxa
+- Installed /home/opam/.opam/default/lib/dockerfile/opam-cmdliner.a
+- Installed /home/opam/.opam/default/lib/dockerfile/opam-cmdliner.cmxs
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile_opam_cmdliner.cmi
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile_opam_cmdliner.cmti
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile_opam_cmdliner.cmt
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile_opam_cmdliner.annot
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile_opam_cmdliner.cmx
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile_opam.mli
+- Installed /home/opam/.opam/default/lib/dockerfile/opam.cma
+- Installed /home/opam/.opam/default/lib/dockerfile/opam.cmxa
+- Installed /home/opam/.opam/default/lib/dockerfile/opam.a
+- Installed /home/opam/.opam/default/lib/dockerfile/opam.cmxs
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile_opam.cmi
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile_opam.cmti
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile_opam.cmt
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile_opam.annot
+- Installed /home/opam/.opam/default/lib/dockerfile/dockerfile_opam.cmx
+- Installed /home/opam/.opam/default/lib/dockerfile/META
+-> installed dockerfile.1.1.0
+Done.
+# Run eval `opam env` to update the current shell environment
