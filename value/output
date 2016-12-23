@@ -1,0 +1,111 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocaml9p 0.4                                         [required by acme]
+  - install acme    0.1
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [acme.0.1: dl]
+Processing  2/2: [acme.0.1: dl] [ocaml9p.0.4: dl]
+[acme.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [ocaml9p.0.4: dl]
+[ocaml9p.0.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [ocaml9p: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocaml9p.0.4)
+- ocamlfind ocamlc -c -I lib -package "unix str" lib/fcall.mli
+- ocamlfind ocamlc -c -I lib -package "unix str" lib/o9pc.mli
+- ocamlfind ocamlc -c -I lib -package "unix str" lib/fcall.ml
+- File "lib/fcall.ml", line 97, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/fcall.ml", line 99, characters 8-57:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/fcall.ml", line 108, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/fcall.ml", line 111, characters 8-50:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/fcall.ml", line 117, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/fcall.ml", line 120, characters 8-50:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlc -c -I lib -package "unix str" lib/o9pc.ml
+- File "lib/o9pc.ml", line 99, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -a -o o9p.cma -package "unix str" lib/fcall.cmo lib/o9pc.cmo
+- ocamlfind ocamlopt -c -I lib -package "unix str" lib/fcall.ml
+- File "lib/fcall.ml", line 97, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/fcall.ml", line 99, characters 8-57:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/fcall.ml", line 108, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/fcall.ml", line 111, characters 8-50:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/fcall.ml", line 117, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/fcall.ml", line 120, characters 8-50:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -c -I lib -package "unix str" lib/o9pc.ml
+- File "lib/o9pc.ml", line 99, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -a -o o9p.cmxa -package "unix str" lib/fcall.cmx lib/o9pc.cmx
+-> compiled  ocaml9p.0.4
+Processing  2/4: [ocaml9p: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocaml9p.0.4)
+- ocamlfind install o9p o9p.cma lib/fcall.cmi lib/o9pc.cmi o9p.a o9p.cmxa META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/o9p/o9p.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/o9p/o9p.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/o9p/o9pc.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/o9p/fcall.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/o9p/o9p.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/o9p/META
+-> installed ocaml9p.0.4
+Processing  3/4: [acme: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/acme.0.1)
+- ocamlfind ocamlc -c  -package "o9p" Acme.mli
+- ocamlfind ocamlc -c  -package "o9p" Acme.ml
+- File "Acme.ml", line 132, characters 15-17:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- ocamlfind ocamlc -a -o Acme.cma -package "o9p" Acme.cmo
+- ocamlfind ocamlopt -c  -package "o9p" Acme.ml
+- File "Acme.ml", line 132, characters 15-17:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module O9pc, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -o Acme.cmxa -package "o9p" Acme.cmx
+-> compiled  acme.0.1
+Processing  4/4: [acme: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/acme.0.1)
+- ocamlfind install acme Acme.cma Acme.cmi Acme.a Acme.cmxa META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/acme/Acme.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/acme/Acme.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/acme/Acme.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/acme/Acme.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/acme/META
+-> installed acme.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
