@@ -1,0 +1,23 @@
+=== opam depext -ivyj 2 minima-theme
+[2016-12-23 00:09.13] Starting...
+[2016-12-23 00:09.13] Waiting for free pool slot to run
+[2016-12-23 00:48.54] Pool slot obtained, starting run
+[2016-12-23 00:48.54] docker run sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b opam depext -ivyj 2 minima-theme
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - camlp4-extra
+#  - debianutils
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following dependencies couldn't be met:
+  - minima-theme -> ocaml >= 4.03.0 -> ocaml-variants < 4.05.1~
+    conflict with the base packages of this switch
+  - minima-theme -> ocaml >= 4.03.0 -> ocaml-system >= 4.03.0
+    unmet availability conditions, e.g. sys-ocaml-version = "4.03.0"
+  - minima-theme -> ocaml >= 4.03.0 -> ocaml-base-compiler >= 4.03.0
+    conflict with the base packages of this switch
+
+No solution found, exiting
+'opam install --verbose --yes --jobs=2 minima-theme' failed.
+[2016-12-23 00:49.09] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b" "opam" "depext" "-ivyj" "2" "minima-theme" exited with status 3
