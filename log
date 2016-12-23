@@ -1,0 +1,39 @@
+=== opam depext -ivyj 2 xstrp4
+[2016-12-23 18:49.48] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install xstrp4 1.8
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [xstrp4.1.8: dl]
+[xstrp4.1.8] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [xstrp4: patch]
+Processing  1/2: [xstrp4: ./configure]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xstrp4.1.8)
+[ERROR] The compilation of xstrp4 failed at "./configure".
+
+#=== ERROR while compiling xstrp4.1.8 =========================================#
+# command              ./configure
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/xstrp4.1.8
+# exit-code            127
+# env-file             /home/opam/.opam/log/xstrp4-1-a71bb4.env
+# output-file          /home/opam/.opam/log/xstrp4-1-a71bb4.out
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build xstrp4 1.8
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 xstrp4' failed.
+[2016-12-23 19:42.09] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "xstrp4" exited with status 4
