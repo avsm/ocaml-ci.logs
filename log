@@ -1,0 +1,140 @@
+=== opam depext -ivyj 2 labltk
+[2016-12-23 21:14.29] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - pkgconfig
+m4
+pkgconfig
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by conf-tcl, conf-tk]
+  - install conf-tk         1                                   [required by labltk]
+  - install conf-tcl        1                                   [required by labltk]
+  - install labltk          8.06.0
+===== 4 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  4/4: [labltk.8.06.0: dl]
+[labltk.8.06.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/8: [conf-pkg-config: pkg-config]
++ pkg-config "--help" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-pkg-config.1.0)
+- usage: pkgconf [OPTIONS] [LIBRARIES]
+- 
+- basic options:
+- 
+-   --help                            this message
+-   --about                           print pkgconf version and license to stdout
+-   --version                         print supported pkg-config version to stdout
+-   --atleast-pkgconfig-version       check whether or not pkgconf is compatible
+-                                     with a specified pkg-config version
+-   --errors-to-stdout                print all errors on stdout instead of stderr
+-   --silence-errors                  explicitly be silent about errors
+-   --list-all                        list all known packages
+-   --list-package-names              list all known package names
+-   --simulate                        simulate walking the calculated dependency graph
+-   --no-cache                        do not cache already seen packages when
+-                                     walking the dependency graph
+- 
+- checking specific pkg-config database entries:
+- 
+-   --atleast-version                 require a specific version of a module
+-   --exact-version                   require an exact version of a module
+-   --max-version                     require a maximum version of a module
+-   --exists                          check whether or not a module exists
+-   --uninstalled                     check whether or not an uninstalled module will be used
+-   --no-uninstalled                  never use uninstalled modules when satisfying dependencies
+-   --maximum-traverse-depth          maximum allowed depth for dependency graph
+-   --static                          be more aggressive when computing dependency graph
+-                                     (for static linking)
+-   --env-only                        look only for package entries in PKG_CONFIG_PATH
+-   --ignore-conflicts                ignore 'conflicts' rules in modules
+-   --validate                        validate specific .pc files for correctness
+- 
+- querying specific pkg-config database fields:
+- 
+-   --define-variable=varname=value   define variable 'varname' as 'value'
+-   --variable=varname                print specified variable entry to stdout
+-   --cflags                          print required CFLAGS to stdout
+-   --cflags-only-I                   print required include-dir CFLAGS to stdout
+-   --cflags-only-other               print required non-include-dir CFLAGS to stdout
+-   --libs                            print required linker flags to stdout
+-   --libs-only-L                     print required LDPATH linker flags to stdout
+-   --libs-only-l                     print required LIBNAME linker flags to stdout
+-   --libs-only-other                 print required other linker flags to stdout
+-   --print-requires                  print required dependency frameworks to stdout
+-   --print-requires-private          print required dependency frameworks for static
+-                                     linking to stdout
+-   --print-variables                 print all known variables in module to stdout
+-   --digraph                         print entire dependency graph in graphviz 'dot' format
+-   --keep-system-cflags              keep -I/usr/include entries in cflags output
+-   --keep-system-libs                keep -L/usr/lib entries in libs output
+- 
+- report bugs to <http://github.com/pkgconf/pkgconf/issues>.
+-> compiled  conf-pkg-config.1.0
+-> installed conf-pkg-config.1.0
+Processing  3/8: [conf-tcl: sh check.sh]
+Processing  4/8: [conf-tcl: sh check.sh] [conf-tk: sh check.sh]
++ sh "check.sh" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-tcl.1)
+- compiletest.c:2:17: fatal error: tcl.h: No such file or directory
+- compilation terminated.
+- compiletest.c:2:17: fatal error: tcl.h: No such file or directory
+- compilation terminated.
+[ERROR] The compilation of conf-tcl failed at "sh check.sh".
+Processing  4/8: [conf-tk: sh check.sh]
+Processing  5/8: [conf-tk: sh check.sh]
++ sh "check.sh" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-tk.1)
+- compiletest.c:2:16: fatal error: tk.h: No such file or directory
+- compilation terminated.
+[ERROR] The compilation of conf-tk failed at "sh check.sh".
+
+#=== ERROR while compiling conf-tk.1 ==========================================#
+# command              sh check.sh
+# path                 /home/opam/.opam/default/.opam-switch/build/conf-tk.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-tk-1-d0f245.env
+# output-file          /home/opam/.opam/log/conf-tk-1-d0f245.out
+### output ###
+# compiletest.c:2:16: fatal error: tk.h: No such file or directory
+# compilation terminated.
+
+
+#=== ERROR while compiling conf-tcl.1 =========================================#
+# command              sh check.sh
+# path                 /home/opam/.opam/default/.opam-switch/build/conf-tcl.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-tcl-1-d8a4ae.env
+# output-file          /home/opam/.opam/log/conf-tcl-1-d8a4ae.out
+### output ###
+# compiletest.c:2:17: fatal error: tcl.h: No such file or directory
+# compilation terminated.
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install labltk 8.06.0
++- 
++- The following actions failed
+| - build conf-tcl 1
+| - build conf-tk  1
++- 
++- The following changes have been performed
+| - install conf-pkg-config 1.0
++- 
+
+=-=- conf-tk.1 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-tk.1' may help you find the correct installation for your system.
+
+=-=- conf-tcl.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-tcl.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/default/.opam-switch/backup/state-20161223212846.export"
+'opam install --verbose --yes --jobs=2 labltk' failed.
+[2016-12-23 21:28.53] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "labltk" exited with status 4
