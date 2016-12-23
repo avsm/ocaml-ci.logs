@@ -1,0 +1,381 @@
+=== opam depext -ivyj 2 gsasl
+[2016-12-23 21:14.21] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - libffi-dev
+#  - m4
+#  - pkgconfig
+m4
+pkgconfig
+# The following new OS packages need to be installed: libffi-dev
+The following command needs to be run through "sudo":
+    apk add libffi-dev
+(1/2) Installing libffi (3.2.1-r2)
+(2/2) Installing libffi-dev (3.2.1-r2)
+OK: 422 MiB in 84 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ctypes-foreign 0.4.0                                [required by gsasl]
+  - install conf-libgsasl  1                                    [required by gsasl]
+  - install base-bytes     base                                 [required by ctypes]
+  - install ctypes         0.3.4                                [required by gsasl]
+  - install gsasl          0.10.0
+===== 5 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  3/5: [ctypes.0.3.4: dl]
+Processing  4/5: [ctypes.0.3.4: dl]
+Processing  5/5: [ctypes.0.3.4: dl] [gsasl.0.10.0: dl]
+[gsasl.0.10.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/5: [ctypes.0.3.4: dl]
+[ctypes.0.3.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/5:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/10: [conf-libgsasl: cc test.c]
+Processing  3/10: [conf-libgsasl: cc test.c]
+-> installed base-bytes.base
+Processing  4/10: [conf-libgsasl: cc test.c]
+Processing  5/10: [conf-libgsasl: cc test.c] [ctypes: patch]
++ cc "-c" "test.c" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-libgsasl.1)
+- test.c:1:19: fatal error: gsasl.h: No such file or directory
+- compilation terminated.
+- test.c:1:19: fatal error: gsasl.h: No such file or directory
+- compilation terminated.
+[ERROR] The compilation of conf-libgsasl failed at "cc -c test.c".
+Processing  5/10: [ctypes: patch]
+Processing  6/10: [ctypes: patch]
+-> installed ctypes-foreign.0.4.0
+Processing  7/10: [ctypes: patch]
+Processing  7/10: [ctypes: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4)
+- ocaml src/discover/discover.ml -ocamlc "ocamlfind ocamlc"
+- testing for brew: .............................. unavailable
+- testing for pkg-config: ........................ available
+- testing for libffi: ............................ available
+- testing for no_as_needed: ...................... available
+- ocamlfind opt -c -o _build/src/configure/make_primitive_details.cmx        -I _build/src/configure  src/configure/make_primitive_details.ml
+- cd _build/src/configure && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -ccopt -I/usr/lib/libffi-3.2.1/include -ccopt -I -ccopt /src -ccopt -I -ccopt /tests -o make_primitive_details_stubs.o  /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/configure/make_primitive_details_stubs.c
+- ocamlfind opt -I _build -linkpkg      -o _build/configure.native _build/src/configure/make_primitive_details.cmx _build/src/configure/make_primitive_details_stubs.o  
+- ocamlfind opt -c -o _build/src/libffi-abigen/libffi_abigen.cmx -package unix    -package unix   -I _build/src/libffi-abigen  src/libffi-abigen/libffi_abigen.ml
+- ocamlfind opt -I _build -linkpkg   -package unix   -o _build/libffi-abigen.native _build/src/libffi-abigen/libffi_abigen.cmx  
+- _build/configure.native > src/ctypes/ctypes_primitives.ml
+- _build/libffi-abigen.native > src/ctypes-foreign-base/libffi_abi.ml
+- /bin/sh: /tmp/ctypes_libffi_config2abfd2: Permission denied
+- /bin/sh: /tmp/ctypes_libffi_config0996de: Permission denied
+- /bin/sh: /tmp/ctypes_libffi_config97634b: Permission denied
+- /bin/sh: /tmp/ctypes_libffi_configc30798: Permission denied
+- /bin/sh: /tmp/ctypes_libffi_config966916: Permission denied
+- /bin/sh: /tmp/ctypes_libffi_configf3d13e: Permission denied
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/common.cmo -I _build/src/ctypes  src/ctypes/common.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/ctypes_path.cmi -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/ctypes_path.mli
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/ctypes_path.cmo -I _build/src/ctypes  src/ctypes/ctypes_path.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/unsigned.cmi -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/unsigned.mli
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/unsigned.cmo -I _build/src/ctypes  src/ctypes/unsigned.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/signed.cmi -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/signed.mli
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/signed.cmo -I _build/src/ctypes  src/ctypes/signed.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/primitives.cmi -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/primitives.mli
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/primitives.cmo -I _build/src/ctypes  src/ctypes/primitives.ml
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/ctypes_primitives.cmo -I _build/src/ctypes  src/ctypes/ctypes_primitives.ml
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/ctypes_raw.cmo -I _build/src/ctypes  src/ctypes/ctypes_raw.ml
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/memory_stubs.cmo -I _build/src/ctypes  src/ctypes/memory_stubs.ml
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/std_view_stubs.cmo -I _build/src/ctypes  src/ctypes/std_view_stubs.ml
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/value_printing_stubs.cmo -I _build/src/ctypes  src/ctypes/value_printing_stubs.ml
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/bigarray_stubs.cmo -I _build/src/ctypes  src/ctypes/bigarray_stubs.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/ctypes_bigarray.cmi -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/ctypes_bigarray.mli
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/ctypes_bigarray.cmo -I _build/src/ctypes  src/ctypes/ctypes_bigarray.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/static.cmi -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/static.mli
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/static.cmo -I _build/src/ctypes  src/ctypes/static.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/structs.cmi -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/structs.mli
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/structs.cmo -I _build/src/ctypes  src/ctypes/structs.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/structs_computed.cmi -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/structs_computed.mli
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/structs_computed.cmo -I _build/src/ctypes  src/ctypes/structs_computed.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/type_printing.cmi -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/type_printing.mli
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/type_printing.cmo -I _build/src/ctypes  src/ctypes/type_printing.ml
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/memory.cmo -I _build/src/ctypes  src/ctypes/memory.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/coerce.cmi -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/coerce.mli
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/coerce.cmo -I _build/src/ctypes  src/ctypes/coerce.ml
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/std_views.cmo -I _build/src/ctypes  src/ctypes/std_views.ml
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/value_printing.cmo -I _build/src/ctypes  src/ctypes/value_printing.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/ctypes.cmi -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/ctypes.mli
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/ctypes.cmo -I _build/src/ctypes  src/ctypes/ctypes.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes/posixTypes.cmi -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/posixTypes.mli
+- ocamlfind ocamlc -package str -package bigarray -package bytes     -c -o _build/src/ctypes/posixTypes.cmo -I _build/src/ctypes  src/ctypes/posixTypes.ml
+- ocamlfind ocamlc -a   -cclib -lctypes_stubs -dllib -lctypes_stubs -package str -package bigarray -package bytes  -o _build/ctypes.cma _build/src/ctypes/common.cmo _build/src/ctypes/ctypes_path.cmo _build/src/ctypes/unsigned.cmo _build/src/ctypes/signed.cmo _build/src/ctypes/primitives.cmo _build/src/ctypes/ctypes_primitives.cmo _build/src/ctypes/ctypes_raw.cmo _build/src/ctypes/memory_stubs.cmo _build/src/ctypes/std_view_stubs.cmo _build/src/ctypes/value_printing_stubs.cmo _build/src/ctypes/bigarray_stubs.cmo _build/src/ctypes/ctypes_bigarray.cmo _build/src/ctypes/static.cmo _build/src/ctypes/structs.cmo _build/src/ctypes/structs_computed.cmo _build/src/ctypes/type_printing.cmo _build/src/ctypes/memory.cmo _build/src/ctypes/coerce.cmo _build/src/ctypes/std_views.cmo _build/src/ctypes/value_printing.cmo _build/src/ctypes/ctypes.cmo _build/src/ctypes/posixTypes.cmo 
+- cd _build/src/ctypes && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -ccopt -I/usr/lib/libffi-3.2.1/include -ccopt -I -ccopt /src -ccopt -I -ccopt /tests -o unsigned_stubs.o  /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes/unsigned_stubs.c
+- cd _build/src/ctypes && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -ccopt -I/usr/lib/libffi-3.2.1/include -ccopt -I -ccopt /src -ccopt -I -ccopt /tests -o posix_types_stubs.o  /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes/posix_types_stubs.c
+- /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes/posix_types_stubs.c: In function '_underlying_type':
+- /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes/posix_types_stubs.c:59:1: warning: control reaches end of non-void function [-Wreturn-type]
+-  }
+-  ^
+- cd _build/src/ctypes && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -ccopt -I/usr/lib/libffi-3.2.1/include -ccopt -I -ccopt /src -ccopt -I -ccopt /tests -o raw_pointer_stubs.o  /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes/raw_pointer_stubs.c
+- cd _build/src/ctypes && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -ccopt -I/usr/lib/libffi-3.2.1/include -ccopt -I -ccopt /src -ccopt -I -ccopt /tests -o complex_stubs.o  /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes/complex_stubs.c
+- cd _build/src/ctypes && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -ccopt -I/usr/lib/libffi-3.2.1/include -ccopt -I -ccopt /src -ccopt -I -ccopt /tests -o type_info_stubs.o  /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes/type_info_stubs.c
+- /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes/type_info_stubs.c: In function 'ctypes_string_of_prim':
+- /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes/type_info_stubs.c:130:49: warning: format '%ld' expects argument of type 'long int', but argument 4 has type 'int64 {aka long long int}' [-Wformat=]
+-    case Int64_t: len = snprintf(buf, sizeof buf, "%" PRId64, Int64_val(v)); break;
+-                                                  ^
+- cd _build/src/ctypes && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -ccopt -I/usr/lib/libffi-3.2.1/include -ccopt -I -ccopt /src -ccopt -I -ccopt /tests -o ctypes_bigarray_stubs.o  /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes/ctypes_bigarray_stubs.c
+- cd _build/src/ctypes && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -ccopt -I/usr/lib/libffi-3.2.1/include -ccopt -I -ccopt /src -ccopt -I -ccopt /tests -o managed_buffer_stubs.o  /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes/managed_buffer_stubs.c
+- ocamlmklib -o _build/ctypes_stubs _build/src/ctypes/unsigned_stubs.o _build/src/ctypes/posix_types_stubs.o _build/src/ctypes/raw_pointer_stubs.o _build/src/ctypes/complex_stubs.o _build/src/ctypes/type_info_stubs.o _build/src/ctypes/ctypes_bigarray_stubs.o _build/src/ctypes/managed_buffer_stubs.o 
+- ocamlfind opt -c -o _build/src/ctypes/common.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/common.ml
+- ocamlfind opt -c -o _build/src/ctypes/ctypes_path.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/ctypes_path.ml
+- ocamlfind opt -c -o _build/src/ctypes/unsigned.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/unsigned.ml
+- ocamlfind opt -c -o _build/src/ctypes/signed.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/signed.ml
+- ocamlfind opt -c -o _build/src/ctypes/primitives.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/primitives.ml
+- ocamlfind opt -c -o _build/src/ctypes/ctypes_primitives.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/ctypes_primitives.ml
+- ocamlfind opt -c -o _build/src/ctypes/ctypes_raw.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/ctypes_raw.ml
+- ocamlfind opt -c -o _build/src/ctypes/memory_stubs.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/memory_stubs.ml
+- ocamlfind opt -c -o _build/src/ctypes/std_view_stubs.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/std_view_stubs.ml
+- ocamlfind opt -c -o _build/src/ctypes/value_printing_stubs.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/value_printing_stubs.ml
+- ocamlfind opt -c -o _build/src/ctypes/bigarray_stubs.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/bigarray_stubs.ml
+- ocamlfind opt -c -o _build/src/ctypes/ctypes_bigarray.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/ctypes_bigarray.ml
+- ocamlfind opt -c -o _build/src/ctypes/static.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/static.ml
+- ocamlfind opt -c -o _build/src/ctypes/structs.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/structs.ml
+- ocamlfind opt -c -o _build/src/ctypes/structs_computed.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/structs_computed.ml
+- ocamlfind opt -c -o _build/src/ctypes/type_printing.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/type_printing.ml
+- ocamlfind opt -c -o _build/src/ctypes/memory.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/memory.ml
+- ocamlfind opt -c -o _build/src/ctypes/coerce.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/coerce.ml
+- ocamlfind opt -c -o _build/src/ctypes/std_views.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/std_views.ml
+- ocamlfind opt -c -o _build/src/ctypes/value_printing.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/value_printing.ml
+- ocamlfind opt -c -o _build/src/ctypes/ctypes.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/ctypes.ml
+- ocamlfind opt -c -o _build/src/ctypes/posixTypes.cmx -package str -package bigarray -package bytes    -package str -package bigarray -package bytes   -I _build/src/ctypes  src/ctypes/posixTypes.ml
+- ocamlfind opt -a -linkall   -package str -package bigarray -package bytes  -cclib -lctypes_stubs -o _build/ctypes.cmxa _build/src/ctypes/common.cmx _build/src/ctypes/ctypes_path.cmx _build/src/ctypes/unsigned.cmx _build/src/ctypes/signed.cmx _build/src/ctypes/primitives.cmx _build/src/ctypes/ctypes_primitives.cmx _build/src/ctypes/ctypes_raw.cmx _build/src/ctypes/memory_stubs.cmx _build/src/ctypes/std_view_stubs.cmx _build/src/ctypes/value_printing_stubs.cmx _build/src/ctypes/bigarray_stubs.cmx _build/src/ctypes/ctypes_bigarray.cmx _build/src/ctypes/static.cmx _build/src/ctypes/structs.cmx _build/src/ctypes/structs_computed.cmx _build/src/ctypes/type_printing.cmx _build/src/ctypes/memory.cmx _build/src/ctypes/coerce.cmx _build/src/ctypes/std_views.cmx _build/src/ctypes/value_printing.cmx _build/src/ctypes/ctypes.cmx _build/src/ctypes/posixTypes.cmx 
+- ocamlfind opt -shared -linkall   -package str -package bigarray -package bytes  -o _build/ctypes.cmxs _build/src/ctypes/common.cmx _build/src/ctypes/ctypes_path.cmx _build/src/ctypes/unsigned.cmx _build/src/ctypes/signed.cmx _build/src/ctypes/primitives.cmx _build/src/ctypes/ctypes_primitives.cmx _build/src/ctypes/ctypes_raw.cmx _build/src/ctypes/memory_stubs.cmx _build/src/ctypes/std_view_stubs.cmx _build/src/ctypes/value_printing_stubs.cmx _build/src/ctypes/bigarray_stubs.cmx _build/src/ctypes/ctypes_bigarray.cmx _build/src/ctypes/static.cmx _build/src/ctypes/structs.cmx _build/src/ctypes/structs_computed.cmx _build/src/ctypes/type_printing.cmx _build/src/ctypes/memory.cmx _build/src/ctypes/coerce.cmx _build/src/ctypes/std_views.cmx _build/src/ctypes/value_printing.cmx _build/src/ctypes/ctypes.cmx _build/src/ctypes/posixTypes.cmx _build/src/ctypes/unsigned_stubs.o _build/src/ctypes/posix_types_stubs.o _build/src/ctypes/raw_pointer_stubs.o _build/src/ctypes/complex_stubs.o _build/src/ctypes/type_info_stubs.o _build/src/ctypes/ctypes_bigarray_stubs.o _build/src/ctypes/managed_buffer_stubs.o 
+- ocamlfind ocamlc -c -o _build/src/cstubs/cstubs_analysis.cmi -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_analysis.mli
+- ocamlfind ocamlc -package str -package bytes     -c -o _build/src/cstubs/cstubs_analysis.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_analysis.ml
+- ocamlfind ocamlc -c -o _build/src/cstubs/cstubs_errors.cmi -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_errors.mli
+- ocamlfind ocamlc -package str -package bytes     -c -o _build/src/cstubs/cstubs_errors.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_errors.ml
+- ocamlfind ocamlc -c -o _build/src/cstubs/cstubs_generate_c.cmi -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_c.mli
+- ocamlfind ocamlc -package str -package bytes     -c -o _build/src/cstubs/cstubs_generate_c.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_c.ml
+- ocamlfind ocamlc -c -o _build/src/cstubs/cstubs_internals.cmi -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_internals.mli
+- ocamlfind ocamlc -package str -package bytes     -c -o _build/src/cstubs/cstubs_internals.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_internals.ml
+- ocamlfind ocamlc -c -o _build/src/cstubs/cstubs_public_name.cmi -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_public_name.mli
+- ocamlfind ocamlc -package str -package bytes     -c -o _build/src/cstubs/cstubs_public_name.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_public_name.ml
+- ocamlfind ocamlc -c -o _build/src/cstubs/cstubs_generate_ml.cmi -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_ml.mli
+- ocamlfind ocamlc -package str -package bytes     -c -o _build/src/cstubs/cstubs_generate_ml.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_ml.ml
+- ocamlfind ocamlc -c -o _build/src/cstubs/cstubs.cmi -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs.mli
+- ocamlfind ocamlc -package str -package bytes     -c -o _build/src/cstubs/cstubs.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs.ml
+- ocamlfind ocamlc -c -o _build/src/cstubs/cstubs_inverted.cmi -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_inverted.mli
+- ocamlfind ocamlc -package str -package bytes     -c -o _build/src/cstubs/cstubs_inverted.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_inverted.ml
+- ocamlfind ocamlc -a    -package str -package bytes  -o _build/cstubs.cma _build/src/cstubs/cstubs_analysis.cmo _build/src/cstubs/cstubs_errors.cmo _build/src/cstubs/cstubs_generate_c.cmo _build/src/cstubs/cstubs_internals.cmo _build/src/cstubs/cstubs_public_name.cmo _build/src/cstubs/cstubs_generate_ml.cmo _build/src/cstubs/cstubs.cmo _build/src/cstubs/cstubs_inverted.cmo 
+- ocamlfind opt -c -o _build/src/cstubs/cstubs_analysis.cmx -package str -package bytes    -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_analysis.ml
+- ocamlfind opt -c -o _build/src/cstubs/cstubs_errors.cmx -package str -package bytes    -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_errors.ml
+- ocamlfind opt -c -o _build/src/cstubs/cstubs_generate_c.cmx -package str -package bytes    -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_c.ml
+- ocamlfind opt -c -o _build/src/cstubs/cstubs_internals.cmx -package str -package bytes    -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_internals.ml
+- ocamlfind opt -c -o _build/src/cstubs/cstubs_public_name.cmx -package str -package bytes    -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_public_name.ml
+- ocamlfind opt -c -o _build/src/cstubs/cstubs_generate_ml.cmx -package str -package bytes    -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_ml.ml
+- ocamlfind opt -c -o _build/src/cstubs/cstubs.cmx -package str -package bytes    -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs.ml
+- ocamlfind opt -c -o _build/src/cstubs/cstubs_inverted.cmx -package str -package bytes    -package str -package bytes   -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_inverted.ml
+- ocamlfind opt -a -linkall   -package str -package bytes   -o _build/cstubs.cmxa _build/src/cstubs/cstubs_analysis.cmx _build/src/cstubs/cstubs_errors.cmx _build/src/cstubs/cstubs_generate_c.cmx _build/src/cstubs/cstubs_internals.cmx _build/src/cstubs/cstubs_public_name.cmx _build/src/cstubs/cstubs_generate_ml.cmx _build/src/cstubs/cstubs.cmx _build/src/cstubs/cstubs_inverted.cmx 
+- ocamlfind opt -shared -linkall   -package str -package bytes  -o _build/cstubs.cmxs _build/src/cstubs/cstubs_analysis.cmx _build/src/cstubs/cstubs_errors.cmx _build/src/cstubs/cstubs_generate_c.cmx _build/src/cstubs/cstubs_internals.cmx _build/src/cstubs/cstubs_public_name.cmx _build/src/cstubs/cstubs_generate_ml.cmx _build/src/cstubs/cstubs.cmx _build/src/cstubs/cstubs_inverted.cmx  
+- ocamlfind ocamlc -c -o _build/src/ctypes-foreign-base/closure_properties.cmi    -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/closure_properties.mli
+- ocamlfind ocamlc     -ccopt -I/usr/lib/libffi-3.2.1/include -c -o _build/src/ctypes-foreign-base/closure_properties.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/closure_properties.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes-foreign-base/dl.cmi    -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/dl.mli
+- ocamlfind ocamlc     -ccopt -I/usr/lib/libffi-3.2.1/include -c -o _build/src/ctypes-foreign-base/dl.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/dl.ml
+- ocamlfind ocamlc     -ccopt -I/usr/lib/libffi-3.2.1/include -c -o _build/src/ctypes-foreign-base/ffi_stubs.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ffi_stubs.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes-foreign-base/libffi_abi.cmi    -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/libffi_abi.mli
+- ocamlfind ocamlc     -ccopt -I/usr/lib/libffi-3.2.1/include -c -o _build/src/ctypes-foreign-base/libffi_abi.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/libffi_abi.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes-foreign-base/weakRef.cmi    -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/weakRef.mli
+- ocamlfind ocamlc     -ccopt -I/usr/lib/libffi-3.2.1/include -c -o _build/src/ctypes-foreign-base/weakRef.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/weakRef.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes-foreign-base/ffi.cmi    -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ffi.mli
+- ocamlfind ocamlc     -ccopt -I/usr/lib/libffi-3.2.1/include -c -o _build/src/ctypes-foreign-base/ffi.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ffi.ml
+- ocamlfind ocamlc     -ccopt -I/usr/lib/libffi-3.2.1/include -c -o _build/src/ctypes-foreign-base/foreign_basis.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/foreign_basis.ml
+- ocamlfind ocamlc -a   -cclib -lctypes-foreign-base_stubs -dllib -lctypes-foreign-base_stubs   -o _build/ctypes-foreign-base.cma _build/src/ctypes-foreign-base/closure_properties.cmo _build/src/ctypes-foreign-base/dl.cmo _build/src/ctypes-foreign-base/ffi_stubs.cmo _build/src/ctypes-foreign-base/libffi_abi.cmo _build/src/ctypes-foreign-base/weakRef.cmo _build/src/ctypes-foreign-base/ffi.cmo _build/src/ctypes-foreign-base/foreign_basis.cmo -cclib -Wl,--no-as-needed -cclib -L/usr/lib/../lib -cclib -lffi
+- cd _build/src/ctypes-foreign-base && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -ccopt -I/usr/lib/libffi-3.2.1/include -ccopt -I -ccopt /src -ccopt -I -ccopt /tests -o ffi_type_stubs.o  /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes-foreign-base/ffi_type_stubs.c
+- cd _build/src/ctypes-foreign-base && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -ccopt -I/usr/lib/libffi-3.2.1/include -ccopt -I -ccopt /src -ccopt -I -ccopt /tests -o ffi_call_stubs.o  /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes-foreign-base/ffi_call_stubs.c
+- cd _build/src/ctypes-foreign-base && ocamlfind ocamlc -c -ccopt -fPIC -ccopt -Wall -ccopt -O3 -ccopt -I/usr/lib/libffi-3.2.1/include -ccopt -I -ccopt /src -ccopt -I -ccopt /tests -o dl_stubs.o  /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes-foreign-base/dl_stubs.c
+- /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes-foreign-base/dl_stubs.c: In function 'ctypes_resolve_dl_flag':
+- /home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4/src/ctypes-foreign-base/dl_stubs.c:48:7: warning: 'rv' may be used uninitialized in this function [-Wmaybe-uninitialized]
+-    int rv;
+-        ^
+- ocamlmklib -o _build/ctypes-foreign-base_stubs _build/src/ctypes-foreign-base/ffi_type_stubs.o _build/src/ctypes-foreign-base/ffi_call_stubs.o _build/src/ctypes-foreign-base/dl_stubs.o -Wl,--no-as-needed -L/usr/lib/../lib -lffi
+- Unknown option -Wl,--no-as-needed
+- ocamlfind opt -c -o _build/src/ctypes-foreign-base/closure_properties.cmx       -ccopt -I/usr/lib/libffi-3.2.1/include -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/closure_properties.ml
+- ocamlfind opt -c -o _build/src/ctypes-foreign-base/dl.cmx       -ccopt -I/usr/lib/libffi-3.2.1/include -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/dl.ml
+- ocamlfind opt -c -o _build/src/ctypes-foreign-base/ffi_stubs.cmx       -ccopt -I/usr/lib/libffi-3.2.1/include -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ffi_stubs.ml
+- ocamlfind opt -c -o _build/src/ctypes-foreign-base/libffi_abi.cmx       -ccopt -I/usr/lib/libffi-3.2.1/include -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/libffi_abi.ml
+- ocamlfind opt -c -o _build/src/ctypes-foreign-base/weakRef.cmx       -ccopt -I/usr/lib/libffi-3.2.1/include -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/weakRef.ml
+- ocamlfind opt -c -o _build/src/ctypes-foreign-base/ffi.cmx       -ccopt -I/usr/lib/libffi-3.2.1/include -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ffi.ml
+- ocamlfind opt -c -o _build/src/ctypes-foreign-base/foreign_basis.cmx       -ccopt -I/usr/lib/libffi-3.2.1/include -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/foreign_basis.ml
+- ocamlfind opt -a -linkall     -cclib -lctypes-foreign-base_stubs -o _build/ctypes-foreign-base.cmxa _build/src/ctypes-foreign-base/closure_properties.cmx _build/src/ctypes-foreign-base/dl.cmx _build/src/ctypes-foreign-base/ffi_stubs.cmx _build/src/ctypes-foreign-base/libffi_abi.cmx _build/src/ctypes-foreign-base/weakRef.cmx _build/src/ctypes-foreign-base/ffi.cmx _build/src/ctypes-foreign-base/foreign_basis.cmx -cclib -Wl,--no-as-needed -cclib -L/usr/lib/../lib -cclib -lffi
+- ocamlfind opt -shared -linkall     -o _build/ctypes-foreign-base.cmxs _build/src/ctypes-foreign-base/closure_properties.cmx _build/src/ctypes-foreign-base/dl.cmx _build/src/ctypes-foreign-base/ffi_stubs.cmx _build/src/ctypes-foreign-base/libffi_abi.cmx _build/src/ctypes-foreign-base/weakRef.cmx _build/src/ctypes-foreign-base/ffi.cmx _build/src/ctypes-foreign-base/foreign_basis.cmx _build/src/ctypes-foreign-base/ffi_type_stubs.o _build/src/ctypes-foreign-base/ffi_call_stubs.o _build/src/ctypes-foreign-base/dl_stubs.o -cclib -Wl,--no-as-needed -cclib -L/usr/lib/../lib -cclib -lffi
+- ocamlfind ocamlc -c -o _build/src/ctypes-foreign-threaded/foreign.cmi  -thread -package threads  -I _build/src/ctypes-foreign-threaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-threaded/foreign.mli
+- ocamlfind ocamlc  -thread -package threads  -thread -ccopt -I/usr/lib/libffi-3.2.1/include -c -o _build/src/ctypes-foreign-threaded/foreign.cmo -I _build/src/ctypes-foreign-threaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-threaded/foreign.ml
+- ocamlfind ocamlc -a  -thread   -thread -package threads -o _build/ctypes-foreign-threaded.cma _build/src/ctypes-foreign-threaded/foreign.cmo -cclib -Wl,--no-as-needed -cclib -L/usr/lib/../lib -cclib -lffi
+- ocamlfind opt -c -o _build/src/ctypes-foreign-threaded/foreign.cmx  -thread -package threads  -thread  -thread -package threads -ccopt -I/usr/lib/libffi-3.2.1/include -I _build/src/ctypes-foreign-threaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-threaded/foreign.ml
+- ocamlfind opt -a -linkall  -thread  -thread -package threads  -o _build/ctypes-foreign-threaded.cmxa _build/src/ctypes-foreign-threaded/foreign.cmx -cclib -Wl,--no-as-needed -cclib -L/usr/lib/../lib -cclib -lffi
+- ocamlfind opt -shared -linkall  -thread  -thread -package threads -o _build/ctypes-foreign-threaded.cmxs _build/src/ctypes-foreign-threaded/foreign.cmx  -cclib -Wl,--no-as-needed -cclib -L/usr/lib/../lib -cclib -lffi
+- ocamlfind ocamlc     -ccopt -I/usr/lib/libffi-3.2.1/include -c -o _build/src/ctypes-foreign-unthreaded/gc_mutex.cmo -I _build/src/ctypes-foreign-unthreaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-unthreaded/gc_mutex.ml
+- ocamlfind ocamlc -c -o _build/src/ctypes-foreign-unthreaded/foreign.cmi    -I _build/src/ctypes-foreign-unthreaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-unthreaded/foreign.mli
+- ocamlfind ocamlc     -ccopt -I/usr/lib/libffi-3.2.1/include -c -o _build/src/ctypes-foreign-unthreaded/foreign.cmo -I _build/src/ctypes-foreign-unthreaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-unthreaded/foreign.ml
+- ocamlfind ocamlc -a      -o _build/ctypes-foreign-unthreaded.cma _build/src/ctypes-foreign-unthreaded/gc_mutex.cmo _build/src/ctypes-foreign-unthreaded/foreign.cmo -cclib -Wl,--no-as-needed -cclib -L/usr/lib/../lib -cclib -lffi
+- ocamlfind opt -c -o _build/src/ctypes-foreign-unthreaded/gc_mutex.cmx       -ccopt -I/usr/lib/libffi-3.2.1/include -I _build/src/ctypes-foreign-unthreaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-unthreaded/gc_mutex.ml
+- ocamlfind opt -c -o _build/src/ctypes-foreign-unthreaded/foreign.cmx       -ccopt -I/usr/lib/libffi-3.2.1/include -I _build/src/ctypes-foreign-unthreaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-unthreaded/foreign.ml
+- ocamlfind opt -a -linkall      -o _build/ctypes-foreign-unthreaded.cmxa _build/src/ctypes-foreign-unthreaded/gc_mutex.cmx _build/src/ctypes-foreign-unthreaded/foreign.cmx -cclib -Wl,--no-as-needed -cclib -L/usr/lib/../lib -cclib -lffi
+- ocamlfind opt -shared -linkall     -o _build/ctypes-foreign-unthreaded.cmxs _build/src/ctypes-foreign-unthreaded/gc_mutex.cmx _build/src/ctypes-foreign-unthreaded/foreign.cmx  -cclib -Wl,--no-as-needed -cclib -L/usr/lib/../lib -cclib -lffi
+- ocamlfind ocamlc -c -o _build/src/ctypes-top/ctypes_printers.cmi -package compiler-libs   -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/ctypes_printers.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -package compiler-libs     -c -o _build/src/ctypes-top/ctypes_printers.cmo -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/ctypes_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -package compiler-libs     -c -o _build/src/ctypes-top/install_printers.cmo -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/install_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a    -package compiler-libs  -o _build/ctypes-top.cma _build/src/ctypes-top/ctypes_printers.cmo _build/src/ctypes-top/install_printers.cmo 
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- ocamlfind opt -c -o _build/src/ctypes-top/ctypes_printers.cmx -package compiler-libs    -package compiler-libs   -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/ctypes_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- ocamlfind opt -c -o _build/src/ctypes-top/install_printers.cmx -package compiler-libs    -package compiler-libs   -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/install_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- ocamlfind opt -a -linkall   -package compiler-libs   -o _build/ctypes-top.cmxa _build/src/ctypes-top/ctypes_printers.cmx _build/src/ctypes-top/install_printers.cmx 
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- ocamlfind opt -shared -linkall   -package compiler-libs  -o _build/ctypes-top.cmxs _build/src/ctypes-top/ctypes_printers.cmx _build/src/ctypes-top/install_printers.cmx  
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+-> compiled  ctypes.0.3.4
+Processing  8/10: [ctypes: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/ctypes.0.3.4)
+- ocamlfind install ctypes META
+- Installed /home/opam/.opam/default/lib/ctypes/META
+- ocamlfind install -add ctypes  _build/ctypes.cma _build/dllctypes_stubs.so _build/ctypes.cmxa _build/ctypes.cmxs _build/libctypes_stubs.a _build/ctypes.a src/ctypes/static.mli src/ctypes/primitives.mli src/ctypes/unsigned.mli src/ctypes/signed.mli src/ctypes/structs.mli src/ctypes/ctypes.mli src/ctypes/posixTypes.mli _build/src/ctypes/static.cmi _build/src/ctypes/primitives.cmi _build/src/ctypes/unsigned.cmi _build/src/ctypes/signed.cmi _build/src/ctypes/structs.cmi _build/src/ctypes/ctypes.cmi _build/src/ctypes/posixTypes.cmi src/ctypes/unsigned_stubs.h src/ctypes/raw_pointer.h src/ctypes/managed_buffer_stubs.h src/ctypes/cstubs_internals.h src/ctypes/primitives.h src/ctypes/complex_stubs.h src/ctypes/type_info_stubs.h _build/src/ctypes/common.cmx _build/src/ctypes/ctypes_path.cmx _build/src/ctypes/unsigned.cmx _build/src/ctypes/signed.cmx _build/src/ctypes/primitives.cmx _build/src/ctypes/ctypes_primitives.cmx _build/src/ctypes/ctypes_raw.cmx _build/src/ctypes/memory_stubs.cmx _build/src/ctypes/std_view_stubs.cmx _build/src/ctypes/value_printing_stubs.cmx _build/src/ctypes/bigarray_stubs.cmx _build/src/ctypes/ctypes_bigarray.cmx _build/src/ctypes/static.cmx _build/src/ctypes/structs.cmx _build/src/ctypes/structs_computed.cmx _build/src/ctypes/type_printing.cmx _build/src/ctypes/memory.cmx _build/src/ctypes/coerce.cmx _build/src/ctypes/std_views.cmx _build/src/ctypes/value_printing.cmx _build/src/ctypes/ctypes.cmx _build/src/ctypes/posixTypes.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/posixTypes.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/value_printing.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/std_views.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/coerce.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/memory.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/type_printing.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/structs_computed.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/structs.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/static.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes_bigarray.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/bigarray_stubs.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/value_printing_stubs.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/std_view_stubs.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/memory_stubs.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes_raw.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes_primitives.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/primitives.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/signed.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/unsigned.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes_path.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/common.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/type_info_stubs.h
+- Installed /home/opam/.opam/default/lib/ctypes/complex_stubs.h
+- Installed /home/opam/.opam/default/lib/ctypes/primitives.h
+- Installed /home/opam/.opam/default/lib/ctypes/cstubs_internals.h
+- Installed /home/opam/.opam/default/lib/ctypes/managed_buffer_stubs.h
+- Installed /home/opam/.opam/default/lib/ctypes/raw_pointer.h
+- Installed /home/opam/.opam/default/lib/ctypes/unsigned_stubs.h
+- Installed /home/opam/.opam/default/lib/ctypes/posixTypes.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/structs.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/signed.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/unsigned.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/primitives.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/static.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/posixTypes.mli
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes.mli
+- Installed /home/opam/.opam/default/lib/ctypes/structs.mli
+- Installed /home/opam/.opam/default/lib/ctypes/signed.mli
+- Installed /home/opam/.opam/default/lib/ctypes/unsigned.mli
+- Installed /home/opam/.opam/default/lib/ctypes/primitives.mli
+- Installed /home/opam/.opam/default/lib/ctypes/static.mli
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes.a
+- Installed /home/opam/.opam/default/lib/ctypes/libctypes_stubs.a
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes.cmxs
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes.cmxa
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes.cma
+- Installed /home/opam/.opam/default/lib/stublibs/dllctypes_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllctypes_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+- ocamlfind install -add ctypes  _build/cstubs.cma  _build/cstubs.cmxa _build/cstubs.cmxs  _build/cstubs.a src/cstubs/cstubs_internals.mli src/cstubs/cstubs.mli src/cstubs/cstubs_inverted.mli _build/src/cstubs/cstubs_internals.cmi _build/src/cstubs/cstubs.cmi _build/src/cstubs/cstubs_inverted.cmi  
+- Installed /home/opam/.opam/default/lib/ctypes/cstubs_inverted.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/cstubs.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/cstubs_internals.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/cstubs_inverted.mli
+- Installed /home/opam/.opam/default/lib/ctypes/cstubs.mli
+- Installed /home/opam/.opam/default/lib/ctypes/cstubs_internals.mli
+- Installed /home/opam/.opam/default/lib/ctypes/cstubs.a
+- Installed /home/opam/.opam/default/lib/ctypes/cstubs.cmxs
+- Installed /home/opam/.opam/default/lib/ctypes/cstubs.cmxa
+- Installed /home/opam/.opam/default/lib/ctypes/cstubs.cma
+- ocamlfind install -add ctypes  _build/ctypes-foreign-base.cma _build/dllctypes-foreign-base_stubs.so _build/ctypes-foreign-base.cmxa _build/ctypes-foreign-base.cmxs _build/libctypes-foreign-base_stubs.a _build/ctypes-foreign-base.a src/ctypes-foreign-base/dl.mli src/ctypes-foreign-base/libffi_abi.mli _build/src/ctypes-foreign-base/dl.cmi _build/src/ctypes-foreign-base/libffi_abi.cmi  _build/src/ctypes-foreign-base/closure_properties.cmx _build/src/ctypes-foreign-base/dl.cmx _build/src/ctypes-foreign-base/ffi_stubs.cmx _build/src/ctypes-foreign-base/libffi_abi.cmx _build/src/ctypes-foreign-base/weakRef.cmx _build/src/ctypes-foreign-base/ffi.cmx _build/src/ctypes-foreign-base/foreign_basis.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/foreign_basis.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/ffi.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/weakRef.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/libffi_abi.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/ffi_stubs.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/dl.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/closure_properties.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/libffi_abi.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/dl.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/libffi_abi.mli
+- Installed /home/opam/.opam/default/lib/ctypes/dl.mli
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-foreign-base.a
+- Installed /home/opam/.opam/default/lib/ctypes/libctypes-foreign-base_stubs.a
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-foreign-base.cmxs
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-foreign-base.cmxa
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-foreign-base.cma
+- Installed /home/opam/.opam/default/lib/stublibs/dllctypes-foreign-base_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllctypes-foreign-base_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+- ocamlfind install -add ctypes  _build/ctypes-foreign-threaded.cma  _build/ctypes-foreign-threaded.cmxa _build/ctypes-foreign-threaded.cmxs  _build/ctypes-foreign-threaded.a src/ctypes-foreign-threaded/foreign.mli _build/src/ctypes-foreign-threaded/foreign.cmi  
+- Installed /home/opam/.opam/default/lib/ctypes/foreign.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/foreign.mli
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-foreign-threaded.a
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-foreign-threaded.cmxs
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-foreign-threaded.cmxa
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-foreign-threaded.cma
+- ocamlfind install -add ctypes  _build/ctypes-foreign-unthreaded.cma  _build/ctypes-foreign-unthreaded.cmxa _build/ctypes-foreign-unthreaded.cmxs  _build/ctypes-foreign-unthreaded.a src/ctypes-foreign-unthreaded/foreign.mli _build/src/ctypes-foreign-unthreaded/foreign.cmi  
+- ocamlfind: [WARNING] Overwriting file /home/opam/.opam/default/lib/ctypes/foreign.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/foreign.cmi
+- ocamlfind: [WARNING] Overwriting file /home/opam/.opam/default/lib/ctypes/foreign.mli
+- Installed /home/opam/.opam/default/lib/ctypes/foreign.mli
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-foreign-unthreaded.a
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-foreign-unthreaded.cmxs
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-foreign-unthreaded.cmxa
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-foreign-unthreaded.cma
+- ocamlfind install -add ctypes  _build/ctypes-top.cma  _build/ctypes-top.cmxa _build/ctypes-top.cmxs  _build/ctypes-top.a src/ctypes-top/ctypes_printers.mli _build/src/ctypes-top/ctypes_printers.cmi  _build/src/ctypes-top/ctypes_printers.cmx _build/src/ctypes-top/install_printers.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/install_printers.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes_printers.cmx
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes_printers.cmi
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes_printers.mli
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-top.a
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-top.cmxs
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-top.cmxa
+- Installed /home/opam/.opam/default/lib/ctypes/ctypes-top.cma
+-> installed ctypes.0.3.4
+
+#=== ERROR while compiling conf-libgsasl.1 ====================================#
+# command              cc -c test.c
+# path                 /home/opam/.opam/default/.opam-switch/build/conf-libgsasl.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-libgsasl-1-d0f245.env
+# output-file          /home/opam/.opam/log/conf-libgsasl-1-d0f245.out
+### output ###
+# test.c:1:19: fatal error: gsasl.h: No such file or directory
+# compilation terminated.
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install gsasl 0.10.0
++- 
++- The following actions failed
+| - build conf-libgsasl 1
++- 
++- The following changes have been performed
+| - install base-bytes     base 
+| - install ctypes         0.3.4
+| - install ctypes-foreign 0.4.0
++- 
+
+=-=- conf-libgsasl.1 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-libgsasl.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/default/.opam-switch/backup/state-20161223212316.export"
+'opam install --verbose --yes --jobs=2 gsasl' failed.
+[2016-12-23 21:23.29] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "gsasl" exited with status 4
