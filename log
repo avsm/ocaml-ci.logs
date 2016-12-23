@@ -1,0 +1,33 @@
+=== opam depext -ivyj 2 delimcc
+[2016-12-23 18:50.20] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install delimcc 0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [delimcc.0: dl]
+[delimcc.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [delimcc: patch]
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+#=== ERROR while compiling delimcc.0 ==========================================#
+These patches didn't apply at /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/delimcc.0:
+  - ocaml.4.04.patch: "patch -p1 -i /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/delimcc.0/ocaml.4.04.patch" exited with code 1
+
++- The following actions failed
+| - build delimcc 0
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 delimcc' failed.
+[2016-12-23 20:05.46] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "delimcc" exited with status 4
