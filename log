@@ -1,0 +1,35 @@
+=== opam depext -ivyj 2 conf-libcurl
+[2016-12-23 21:14.06] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-libcurl 1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-libcurl: pkg-config libcurl]
++ pkg-config "libcurl" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-libcurl.1)
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-libcurl 1
++- 
+- No changes have been performed
+[ERROR] The compilation of conf-libcurl failed at "pkg-config libcurl".
+
+#=== ERROR while compiling conf-libcurl.1 =====================================#
+# command              pkg-config libcurl
+# path                 /home/opam/.opam/default/.opam-switch/build/conf-libcurl.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-libcurl-1-7afd23.env
+# output-file          /home/opam/.opam/log/conf-libcurl-1-7afd23.out
+
+
+=-=- conf-libcurl.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-libcurl.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-libcurl' failed.
+[2016-12-23 21:16.11] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "conf-libcurl" exited with status 4
