@@ -1,0 +1,64 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocamlbuild-pkg 0.2.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ocamlbuild-pkg.0.2.1: dl]
+[ocamlbuild-pkg.0.2.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocamlbuild-pkg: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlbuild-pkg.0.2.1)
+- cat src/ocamlbuild_pkg.ml bootstrap.ml > myocamlbuild.ml
+- ocamlbuild -use-ocamlfind ocamlbuild-pkg
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package ocamlbuild -modules src/ocamlbuild_pkg.ml > src/ocamlbuild_pkg.ml.depends
+- ocamlfind ocamldep -package ocamlbuild -modules src/ocamlbuild_pkg.mli > src/ocamlbuild_pkg.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -keep-locs -package ocamlbuild -w A-48-44-33-4 -I src -o src/ocamlbuild_pkg.cmi src/ocamlbuild_pkg.mli
+- ocamlfind ocamlopt -c -bin-annot -safe-string -keep-locs -package ocamlbuild -w A-48-44-33-4 -I src -o src/ocamlbuild_pkg.cmx src/ocamlbuild_pkg.ml
+- + ocamlfind ocamlopt -c -bin-annot -safe-string -keep-locs -package ocamlbuild -w A-48-44-33-4 -I src -o src/ocamlbuild_pkg.cmx src/ocamlbuild_pkg.ml
+- File "src/ocamlbuild_pkg.ml", line 324, characters 29-46:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/ocamlbuild_pkg.ml", line 386, characters 19-62:
+- Warning 9: the following labels are not bound in this record pattern:
+- name, dir, modules, private_modules, subpackages, files
+- Either bind these labels explicitly or add '; _' to the pattern.
+- File "src/ocamlbuild_pkg.ml", line 81, characters 4-17:
+- Warning 32: unused value map_partition.
+- File "src/ocamlbuild_pkg.ml", line 92, characters 4-21:
+- Warning 32: unused value assoc_and_destroy.
+- File "src/ocamlbuild_pkg.ml", line 106, characters 4-13:
+- Warning 32: unused value split_map.
+- ocamlfind ocamlopt -shared -package ocamlbuild src/ocamlbuild_pkg.cmx -o src/ocamlbuild-pkg.cmxs
+- ocamlfind ocamlopt -a -package ocamlbuild src/ocamlbuild_pkg.cmx -o src/ocamlbuild-pkg.cmxa
+- ocamlfind ocamlc -c -bin-annot -safe-string -keep-locs -package ocamlbuild -w A-48-44-33-4 -I src -o src/ocamlbuild_pkg.cmo src/ocamlbuild_pkg.ml
+- + ocamlfind ocamlc -c -bin-annot -safe-string -keep-locs -package ocamlbuild -w A-48-44-33-4 -I src -o src/ocamlbuild_pkg.cmo src/ocamlbuild_pkg.ml
+- File "src/ocamlbuild_pkg.ml", line 324, characters 29-46:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.capitalize
+- Use String.capitalize_ascii instead.
+- File "src/ocamlbuild_pkg.ml", line 386, characters 19-62:
+- Warning 9: the following labels are not bound in this record pattern:
+- name, dir, modules, private_modules, subpackages, files
+- Either bind these labels explicitly or add '; _' to the pattern.
+- File "src/ocamlbuild_pkg.ml", line 81, characters 4-17:
+- Warning 32: unused value map_partition.
+- File "src/ocamlbuild_pkg.ml", line 92, characters 4-21:
+- Warning 32: unused value assoc_and_destroy.
+- File "src/ocamlbuild_pkg.ml", line 106, characters 4-13:
+- Warning 32: unused value split_map.
+- ocamlfind ocamlc -a -package ocamlbuild src/ocamlbuild_pkg.cmo -o src/ocamlbuild-pkg.cma
+- ln -sf _build/ocamlbuild-pkg.install /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlbuild-pkg.0.2.1
+- + ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "myocamlbuild.ml", line 324, characters 29-46:
+- Warning 3: deprecated: Ocamlbuild_plugin.String.capitalize
+- Use String.capitalize_ascii instead.
+-> compiled  ocamlbuild-pkg.0.2.1
+-> installed ocamlbuild-pkg.0.2.1
+Done.
+# Run eval `opam env` to update the current shell environment
