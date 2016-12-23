@@ -1,0 +1,70 @@
+=== opam depext -ivyj 2 ascii85
+[2016-12-23 20:56.51] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ascii85 0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ascii85.0.3: dl]
+[ascii85.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ascii85: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/ascii85.0.3)
+[ERROR] The compilation of ascii85 failed at "make".
+- ocamlbuild  -use-ocamlfind main.native
+- ocamlfind ocamldep -modules main.ml > main.ml.depends
+- ocamlfind ocamldep -modules ascii85.mli > ascii85.mli.depends
+- ocamlfind ocamlc -c -o ascii85.cmi ascii85.mli
+- ocamlfind ocamlc -c -o main.cmo main.ml
+- ocamlfind ocamldep -modules ascii85.ml > ascii85.ml.depends
+- ocamlfind ocamlopt -c -o ascii85.cmx ascii85.ml
+- ocamlfind ocamlopt -c -o main.cmx main.ml
+- ocamlfind ocamlopt -linkpkg ascii85.cmx main.cmx -o main.native
+- ocamlbuild  -use-ocamlfind  META ascii85.cma ascii85.cmxa ascii85.cmxs ascii85.a ascii85.mli ascii85.cmi
+- ocamlfind ocamlc -c -o ascii85.cmo ascii85.ml
+- ocamlfind ocamlc -a ascii85.cmo -o ascii85.cma
+- ocamlfind ocamlopt -a ascii85.cmx -o ascii85.cmxa
+- ocamlfind ocamlopt -shared ascii85.cmx -o ascii85.cmxs
+- pod2man -s 1 -r "Alpha" -c "opam.ocaml.org" ascii85enc.pod > ascii85enc.1
+- /bin/sh: pod2man: not found
+- Makefile:56: recipe for target 'ascii85enc.1' failed
+- make: *** [ascii85enc.1] Error 127
+
+#=== ERROR while compiling ascii85.0.3 ========================================#
+# command              make
+# path                 /home/opam/.opam/default/.opam-switch/build/ascii85.0.3
+# exit-code            2
+# env-file             /home/opam/.opam/log/ascii85-1-d2d111.env
+# output-file          /home/opam/.opam/log/ascii85-1-d2d111.out
+### output ###
+# [...]
+# ocamlfind ocamlopt -c -o ascii85.cmx ascii85.ml
+# ocamlfind ocamlopt -c -o main.cmx main.ml
+# ocamlfind ocamlopt -linkpkg ascii85.cmx main.cmx -o main.native
+# ocamlbuild  -use-ocamlfind  META ascii85.cma ascii85.cmxa ascii85.cmxs ascii85.a ascii85.mli ascii85.cmi
+# ocamlfind ocamlc -c -o ascii85.cmo ascii85.ml
+# ocamlfind ocamlc -a ascii85.cmo -o ascii85.cma
+# ocamlfind ocamlopt -a ascii85.cmx -o ascii85.cmxa
+# ocamlfind ocamlopt -shared ascii85.cmx -o ascii85.cmxs
+# pod2man -s 1 -r "Alpha" -c "opam.ocaml.org" ascii85enc.pod > ascii85enc.1
+# /bin/sh: pod2man: not found
+# Makefile:56: recipe for target 'ascii85enc.1' failed
+# make: *** [ascii85enc.1] Error 127
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build ascii85 0.3
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 ascii85' failed.
+[2016-12-23 20:57.28] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "ascii85" exited with status 4
