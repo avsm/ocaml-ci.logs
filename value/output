@@ -1,0 +1,86 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install headache 1.03
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [headache.1.03: dl]
+[headache.1.03] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [headache: mkdir]
++ mkdir "-p" "/home/opam/.opam/ocaml-base-compiler.4.03.0/bin" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/headache.1.03)
+Processing  1/2: [headache: ./configure]
++ ./configure "--bindir" "/home/opam/.opam/ocaml-base-compiler.4.03.0/bin" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/headache.1.03)
+- 
+- *** Objective Caml
+- checking for ocamlc... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc
+- checking ocamlc version... 4.03.0
+- checking Objective Caml library path... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt
+- checking ocamlopt version... 4.03.0
+- checking for ocamlyacc... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlyacc
+- checking for ocamllex... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex
+- checking for ocamldep... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldep
+- 
+- *** Installation directories
+- checking binaries installation path:... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- 
+- configure: creating ./config.status
+- config.status: creating Makefile
+- 
+- ------------------------------------------------------------
+- Everything seems to be ok.
+- You can now start compilation by 'make'.
+- ------------------------------------------------------------
+Processing  1/2: [headache: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/headache.1.03)
+- make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/headache.1.03'
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc  -c info.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc  -c model.ml
+- File "model.ml", line 65, characters 12-27:
+- Warning 52: the argument of this constructor should not be matched against a
+- constant pattern; the actual value of the argument could change
+- in the future.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc  -c config.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlyacc -v config_parse.mly
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc  -c config_parse.mli
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc  -c config_parse.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamllex config_lex.mll
+- 24 states, 529 transitions, table size 2260 bytes
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc  -c config_lex.ml
+- File "config_lex.mll", line 58, characters 28-41:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "config_lex.mll", line 68, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "config_lex.mll", line 72, characters 2-19:
+- Warning 3: deprecated: String.unsafe_set
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc  -c mkconfig.ml
+- ocamlc -o mkconfig unix.cma str.cma model.cmo config.cmo config_parse.cmo config_lex.cmo mkconfig.cmo
+- ./mkconfig
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc  -c config_builtin.ml
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc  -c main.ml
+- File "main.ml", line 137, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlc -o headache unix.cma str.cma info.cmo model.cmo config.cmo config_parse.cmo config_lex.cmo config_builtin.cmo main.cmo
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/headache.1.03'
+- 
+- ------------------------------------------------------------
+- Compilation seems to succeed
+- You can install the software. As a superuser, do
+- 'make install'
+- ------------------------------------------------------------
+-> compiled  headache.1.03
+Processing  2/2: [headache: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/headache.1.03)
+- cp -f headache /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+-> installed headache.1.03
+Done.
+# Run eval `opam env` to update the current shell environment
