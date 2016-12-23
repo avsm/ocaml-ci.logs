@@ -1,0 +1,140 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install result     1.2                                      [required by posix-math]
+  - install posix-math 0.3.1-0
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [posix-math.0.3.1-0: dl]
+Processing  2/2: [posix-math.0.3.1-0: dl] [result.1.2: dl]
+[posix-math.0.3.1-0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [result.1.2: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [result: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+-> installed result.1.2
+Processing  3/4: [posix-math: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/posix-math.0.3.1-0)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ posix-math
+- Package version: ..................................... 0.3.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_result: .......................................... /home/opam/.opam/default/lib/result
+- ocamldoc: ............................................ /usr/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/posix-math.0.3.1-0)
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -O2 -ccopt -Wall -ccopt -Wextra -ccopt -Wno-unused-parameter -c src/math.c
+- mv math.o src/math.o
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -O2 -ccopt -Wall -ccopt -Wextra -ccopt -Wno-unused-parameter -c src/fenv.c
+- mv fenv.o src/fenv.o
+- /home/opam/.opam/default/bin/ocamlfind ocamlmklib -o src/posix-math_stubs -lm src/math.o src/fenv.o
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package result -modules src/posix_math.mli > src/posix_math.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -ccopt -O2 -ccopt -Wall -ccopt -Wextra -ccopt -Wno-unused-parameter -package result -I src -o src/posix_math.cmi src/posix_math.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package result -modules src/posix_math.ml > src/posix_math.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -ccopt -O2 -ccopt -Wall -ccopt -Wextra -ccopt -Wno-unused-parameter -package result -I src -o src/posix_math.cmo src/posix_math.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a -dllib -lposix-math_stubs -cclib -lposix-math_stubs -cclib -lm src/posix_math.cmo -o src/posix-math.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -ccopt -O2 -ccopt -Wall -ccopt -Wextra -ccopt -Wno-unused-parameter -package result -I src -o src/posix_math.cmx src/posix_math.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a -cclib -lposix-math_stubs -cclib -lm src/posix_math.cmx -o src/posix-math.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared -I src/ src/posix-math.cmxa src/posix_math.cmx -o src/posix-math.cmxs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package result -modules test/test.ml > test/test.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package result -I test -I src -o test/test.cmo test/test.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -package result -I test -I src -o test/test.cmo test/test.ml
+- File "test/test.ml", line 14, characters 2-38:
+- Warning 10: this expression should have type unit.
+- File "test/test.ml", line 15, characters 2-31:
+- Warning 10: this expression should have type unit.
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package result -I test -I src -o test/test.cmx test/test.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -package result -I test -I src -o test/test.cmx test/test.ml
+- File "test/test.ml", line 14, characters 2-38:
+- Warning 10: this expression should have type unit.
+- File "test/test.ml", line 15, characters 2-31:
+- Warning 10: this expression should have type unit.
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -g -I src/ -linkpkg -package result src/posix-math.cmxa test/test.cmx -o test/test.native
+-> compiled  posix-math.0.3.1-0
+Processing  4/4: [posix-math: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/default/.opam-switch/build/posix-math.0.3.1-0)
+- Installed /home/opam/.opam/default/lib/posix-math/posix_math.mli
+- Installed /home/opam/.opam/default/lib/posix-math/libposix-math_stubs.a
+- Installed /home/opam/.opam/default/lib/posix-math/posix-math.cma
+- Installed /home/opam/.opam/default/lib/posix-math/posix-math.cmxa
+- Installed /home/opam/.opam/default/lib/posix-math/posix-math.a
+- Installed /home/opam/.opam/default/lib/posix-math/posix-math.cmxs
+- Installed /home/opam/.opam/default/lib/posix-math/posix_math.cmi
+- Installed /home/opam/.opam/default/lib/posix-math/posix_math.cmti
+- Installed /home/opam/.opam/default/lib/posix-math/posix_math.cmt
+- Installed /home/opam/.opam/default/lib/posix-math/posix_math.annot
+- Installed /home/opam/.opam/default/lib/posix-math/posix_math.cmx
+- Installed /home/opam/.opam/default/lib/posix-math/META
+- Installed /home/opam/.opam/default/lib/stublibs/dllposix-math_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllposix-math_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+-> installed posix-math.0.3.1-0
+Done.
+# Run eval `opam env` to update the current shell environment
