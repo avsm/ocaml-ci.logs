@@ -1,0 +1,35 @@
+=== opam depext -ivyj 2 tophide
+[2016-12-23 01:24.14] Starting...
+[2016-12-23 01:24.14] Waiting for free pool slot to run
+[2016-12-23 02:25.49] Pool slot obtained, starting run
+[2016-12-23 02:25.49] docker run sha256:c8ce52515be336e42eebc53be44b8eb7739eeb604be90fdc22b1f2b5b3a1e735 opam depext -ivyj 2 tophide
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install tophide 1.0.4
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [tophide.1.0.4: dl]
+[tophide.1.0.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [tophide: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/tophide.1.0.4)
+- cat META.in > META
+- echo 'version = "1.0.4"' >> META
+- ocamlc -I +compiler-libs -c tophide.ml
+-> compiled  tophide.1.0.4
+Processing  2/2: [tophide: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/tophide.1.0.4)
+- ocamlfind install tophide META tophide.cmi tophide.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/tophide/tophide.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/tophide/tophide.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/tophide/META
+-> installed tophide.1.0.4
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 02:26.04] Success
