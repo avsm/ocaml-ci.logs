@@ -1,0 +1,127 @@
+=== opam depext -ivyj 2 hdf5
+[2016-12-23 21:14.22] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install hdf5 0.1.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [hdf5.0.1.1: dl]
+[hdf5.0.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [hdf5: ./configure]
++ ./configure "--prefix=/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/hdf5.0.1.1)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ HDF5
+- Package version: ..................................... 0.1.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Build examples: ...................................... false
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_compiler_libs_common: ............................ /usr/lib/ocaml/compiler-libs
+- 
+Processing  1/2: [hdf5: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/hdf5.0.1.1)
+- ocaml setup.ml -build 
+- W: Cannot find source file matching module 'hdf5_caml' in library hdf5_caml
+- W: Cannot find source file matching module 'hdf5_raw' in library hdf5_raw
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -I/usr/include/hdf5/serial -c lib/raw/h5a_stubs.c
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -I/usr/include/hdf5/serial -c lib/raw/h5a_stubs.c
+- lib/raw/h5a_stubs.c:9:18: fatal error: hdf5.h: No such file or directory
+- compilation terminated.
+- Command exited with code 2.
+- E: Failure("Command ''/usr/bin/ocamlbuild' lib/raw/libhdf5_raw_stubs.a lib/raw/dllhdf5_raw_stubs.so lib/raw/hdf5_raw.cma lib/raw/hdf5_raw.cmxa lib/raw/hdf5_raw.a lib/raw/hdf5_raw.cmxs lib/ppx/ppx_h5struct.native lib/caml/hdf5_caml.cma lib/caml/hdf5_caml.cmxa lib/caml/hdf5_caml.a lib/caml/hdf5_caml.cmxs -tag debug' terminated with error code 10")
+- Makefile:7: recipe for target 'build' failed
+- make: *** [build] Error 1
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build hdf5 0.1.1
++- 
+- No changes have been performed
+
+=-=- hdf5.0.1.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext hdf5.0.1.1' may help you find the correct installation for your system.
+[ERROR] The compilation of hdf5 failed at "make".
+
+#=== ERROR while compiling hdf5.0.1.1 =========================================#
+# command              make
+# path                 /home/opam/.opam/default/.opam-switch/build/hdf5.0.1.1
+# exit-code            2
+# env-file             /home/opam/.opam/log/hdf5-1-ad8886.env
+# output-file          /home/opam/.opam/log/hdf5-1-ad8886.out
+### output ###
+# [...]
+# ocaml setup.ml -build 
+# W: Cannot find source file matching module 'hdf5_caml' in library hdf5_caml
+# W: Cannot find source file matching module 'hdf5_raw' in library hdf5_raw
+# /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+# /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -I/usr/include/hdf5/serial -c lib/raw/h5a_stubs.c
+# + /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -I/usr/include/hdf5/serial -c lib/raw/h5a_stubs.c
+# lib/raw/h5a_stubs.c:9:18: fatal error: hdf5.h: No such file or directory
+# compilation terminated.
+# Command exited with code 2.
+# E: Failure("Command ''/usr/bin/ocamlbuild' lib/raw/libhdf5_raw_stubs.a lib/raw/dllhdf5_raw_stubs.so lib/raw/hdf5_raw.cma lib/raw/hdf5_raw.cmxa lib/raw/hdf5_raw.a lib/raw/hdf5_raw.cmxs lib/ppx/ppx_h5struct.native lib/caml/hdf5_caml.cma lib/caml/hdf5_caml.cmxa lib/caml/hdf5_caml.a lib/caml/hdf5_caml.cmxs -tag debug' terminated with error code 10")
+# Makefile:7: recipe for target 'build' failed
+# make: *** [build] Error 1
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 hdf5' failed.
+[2016-12-23 21:24.09] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "hdf5" exited with status 4
