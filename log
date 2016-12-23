@@ -1,0 +1,15 @@
+=== opam depext -ivyj 2 broken
+[2016-12-23 20:57.01] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - bmake
+#  - m4
+m4
+# The following new OS packages need to be installed: bmake
+The following command needs to be run through "sudo":
+    apk add bmake
+ERROR: unsatisfiable constraints:
+  bmake (missing):
+    required by: world[bmake]
+OS package installation failed
+[2016-12-23 21:08.57] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "broken" exited with status 1
