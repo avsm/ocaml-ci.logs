@@ -1,0 +1,58 @@
+=== opam depext -ivyj 2 tuareg
+[2016-12-23 18:49.41] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install tuareg 2.0.10
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [tuareg.2.0.10: dl]
+[tuareg.2.0.10] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [tuareg: patch]
+Processing  1/2: [tuareg: make tuareg-site-file.el]
++ make "tuareg-site-file.el" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/tuareg.2.0.10)
+- (echo ";;; tuareg-site-file.el --- Automatically extracted autoloads.";\
+-  echo ";;; Code:";\
+-  echo "(add-to-list 'load-path";\
+-  echo "             (or (file-name-directory load-file-name) (car load-path)))";\
+-  echo "") >tuareg-site-file.el
+- emacs --batch --eval '(setq generated-autoload-file "'`pwd`'/tuareg-site-file.el")' -f batch-update-autoloads "."
+- /bin/sh: emacs: not found
+- Makefile:82: recipe for target 'tuareg-site-file.el' failed
+- make: *** [tuareg-site-file.el] Error 127
+[ERROR] The compilation of tuareg failed at "make tuareg-site-file.el".
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build tuareg 2.0.10
++- 
+
+#=== ERROR while compiling tuareg.2.0.10 ======================================#
+# command              make tuareg-site-file.el
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/tuareg.2.0.10
+# exit-code            2
+# env-file             /home/opam/.opam/log/tuareg-1-a71bb4.env
+# output-file          /home/opam/.opam/log/tuareg-1-a71bb4.out
+### output ###
+# (echo ";;; tuareg-site-file.el --- Automatically extracted autoloads.";\
+#  echo ";;; Code:";\
+#  echo "(add-to-list 'load-path";\
+#  echo "             (or (file-name-directory load-file-name) (car load-path)))";\
+#  echo "") >tuareg-site-file.el
+# emacs --batch --eval '(setq generated-autoload-file "'`pwd`'/tuareg-site-file.el")' -f batch-update-autoloads "."
+# /bin/sh: emacs: not found
+# Makefile:82: recipe for target 'tuareg-site-file.el' failed
+# make: *** [tuareg-site-file.el] Error 127
+
+- No changes have been performed
+
+=-=- tuareg.2.0.10 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext tuareg.2.0.10' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 tuareg' failed.
+[2016-12-23 19:38.36] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "tuareg" exited with status 4
