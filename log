@@ -1,0 +1,18 @@
+=== opam depext -ivyj 2 lemonade-sqlite
+[2016-12-23 21:14.30] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - bmake
+#  - m4
+#  - pkgconfig
+#  - sqlite-dev
+m4
+pkgconfig
+# The following new OS packages need to be installed: bmake sqlite-dev
+The following command needs to be run through "sudo":
+    apk add bmake sqlite-dev
+ERROR: unsatisfiable constraints:
+  bmake (missing):
+    required by: world[bmake]
+OS package installation failed
+[2016-12-23 21:29.27] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "lemonade-sqlite" exited with status 1
