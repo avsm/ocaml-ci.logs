@@ -1,0 +1,128 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - pcre-dev
+#  - pkgconfig
+m4
+pkgconfig
+# The following new OS packages need to be installed: pcre-dev
+The following command needs to be run through "sudo":
+    apk add pcre-dev
+(1/4) Installing libpcre16 (8.38-r1)
+(2/4) Installing libpcre32 (8.38-r1)
+(3/4) Installing libpcrecpp (8.38-r1)
+(4/4) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 424 MiB in 86 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install hamt 1.0.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [hamt.1.0.0: dl]
+[hamt.1.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [hamt: make configure]
++ make "configure" (CWD=/home/opam/.opam/default/.opam-switch/build/hamt.1.0.0)
+- ocaml setup.ml -configure
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ hamt
+- Package version: ..................................... 1.0.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: .........................
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- 
+Processing  1/2: [hamt: make build]
++ make "build" (CWD=/home/opam/.opam/default/.opam-switch/build/hamt.1.0.0)
+- ocaml setup.ml -build
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 20, characters 31-40:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 22, characters 23-32:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 28, characters 33-47:
+- Warning: the tag "pkg_core_bench" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 31, characters 23-37:
+- Warning: the tag "pkg_core_bench" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules lib/hamt.mli > lib/hamt.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I lib -o lib/hamt.cmi lib/hamt.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules lib/hamt.ml > lib/hamt.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules lib/bitUtils.ml > lib/bitUtils.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I lib -o lib/bitUtils.cmo lib/bitUtils.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I lib -o lib/hamt.cmo lib/hamt.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a lib/bitUtils.cmo lib/hamt.cmo -o lib/hamt.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I lib -o lib/bitUtils.cmx lib/bitUtils.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I lib -o lib/hamt.cmx lib/hamt.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a lib/bitUtils.cmx lib/hamt.cmx -o lib/hamt.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared lib/hamt.cmxa lib/bitUtils.cmx lib/hamt.cmx -o lib/hamt.cmxs
+-> compiled  hamt.1.0.0
+Processing  2/2: [hamt: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/hamt.1.0.0)
+- ocaml setup.ml -install
+- Installed /home/opam/.opam/default/lib/hamt/hamt.mli
+- Installed /home/opam/.opam/default/lib/hamt/hamt.cma
+- Installed /home/opam/.opam/default/lib/hamt/hamt.cmxa
+- Installed /home/opam/.opam/default/lib/hamt/hamt.a
+- Installed /home/opam/.opam/default/lib/hamt/hamt.cmxs
+- Installed /home/opam/.opam/default/lib/hamt/hamt.cmi
+- Installed /home/opam/.opam/default/lib/hamt/hamt.cmti
+- Installed /home/opam/.opam/default/lib/hamt/hamt.cmt
+- Installed /home/opam/.opam/default/lib/hamt/hamt.annot
+- Installed /home/opam/.opam/default/lib/hamt/bitUtils.cmx
+- Installed /home/opam/.opam/default/lib/hamt/hamt.cmx
+- Installed /home/opam/.opam/default/lib/hamt/META
+-> installed hamt.1.0.0
+Done.
+# Run eval `opam env` to update the current shell environment
