@@ -1,0 +1,124 @@
+=== opam depext -ivyj 2 integration1d
+[2016-12-23 21:14.25] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install integration1d 0.4.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [integration1d.0.4.1: dl]
+[integration1d.0.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [integration1d: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/integration1d.0.4.1)
+- File "setup.ml", line 217, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1797, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ integration1d
+- Package version: ..................................... 0.4.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Whether the gls findlib package is installed.: ....... false
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_camlp4_macro: .................................... /usr/lib/ocaml/camlp4
+- ocamldoc: ............................................ /usr/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/integration1d.0.4.1)
+- File "setup.ml", line 217, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1797, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package camlp4.macro -modules src/integration1D.mli > src/integration1D.mli.depends
+- ocamlfind ocamlc -c -g -package camlp4.macro -I src -o src/integration1D.cmi src/integration1D.mli
+- ocamlfind ocamldep -package camlp4.macro -syntax camlp4o -modules src/integration1D.ml > src/integration1D.ml.depends
+- ocamlfind ocamlc -c -g -package camlp4.macro -syntax camlp4o -I src -o src/integration1D.cmo src/integration1D.ml
+- ocamlfind ocamlc -a src/integration1D.cmo -o src/integration1d.cma
+- ocamlfind ocamlopt -c -g -package camlp4.macro -syntax camlp4o -I src -o src/integration1D.cmx src/integration1D.ml
+- ocamlfind ocamlopt -a src/integration1D.cmx -o src/integration1d.cmxa
+- ocamlfind ocamlopt -shared -linkall src/integration1d.cmxa -o src/integration1d.cmxs
+- ocamlfind ocamldep -package camlp4.macro -modules examples/tests.ml > examples/tests.ml.depends
+- ocamlfind ocamlc -c -g -I src -package camlp4.macro -I examples -I src -o examples/tests.cmo examples/tests.ml
+- ocamlfind ocamlc -g -linkpkg -package camlp4.macro src/integration1d.cma examples/tests.cmo -o examples/tests.byte
+-> compiled  integration1d.0.4.1
+Processing  2/2: [integration1d: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/default/.opam-switch/build/integration1d.0.4.1)
+- File "setup.ml", line 217, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1797, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- Installed /home/opam/.opam/default/lib/integration1d/integration1D.mli
+- Installed /home/opam/.opam/default/lib/integration1d/integration1d.cma
+- Installed /home/opam/.opam/default/lib/integration1d/integration1d.cmxa
+- Installed /home/opam/.opam/default/lib/integration1d/integration1d.a
+- Installed /home/opam/.opam/default/lib/integration1d/integration1d.cmxs
+- Installed /home/opam/.opam/default/lib/integration1d/integration1D.cmi
+- Installed /home/opam/.opam/default/lib/integration1d/integration1D.cmx
+- Installed /home/opam/.opam/default/lib/integration1d/META
+-> installed integration1d.0.4.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 21:26.01] Success
