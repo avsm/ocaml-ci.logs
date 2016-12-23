@@ -1,0 +1,659 @@
+=== opam depext -ivyj 2 mirari
+[2016-12-23 00:09.17] Starting...
+[2016-12-23 00:09.17] Waiting for free pool slot to run
+[2016-12-23 00:51.53] Pool slot obtained, starting run
+[2016-12-23 00:51.53] docker run sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b opam depext -ivyj 2 mirari
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - camlp4-extra
+#  - debianutils
+#  - m4
+#  - ncurses-dev
+#  - pkg-config
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ipaddr       2.4.0                                  [required by mirari]
+  - install fd-send-recv 1.0.1                                  [required by mirari]
+  - install tuntap       0.7.0                                  [required by mirari]
+  - install mirari       0.9.7
+===== 4 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [fd-send-recv.1.0.1: dl]
+Processing  2/4: [fd-send-recv.1.0.1: dl] [ipaddr.2.4.0: dl]
+Processing  3/4: [fd-send-recv.1.0.1: dl] [ipaddr.2.4.0: dl] [mirari.0.9.7: dl]
+[mirari.0.9.7] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/4: [fd-send-recv.1.0.1: dl] [ipaddr.2.4.0: dl]
+[ipaddr.2.4.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/4: [fd-send-recv.1.0.1: dl]
+[fd-send-recv.1.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/4:
+Processing  4/4: [tuntap.0.7.0: dl]
+[tuntap.0.7.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/8: [fd-send-recv: make]
+Processing  2/8: [fd-send-recv: make] [ipaddr: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/ipaddr.2.4.0)
+- File "setup.ml", line 234, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2393, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ ipaddr
+- Package version: ..................................... 2.4.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- build the unix library: .............................. true
+- build the toplevel printers: ......................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_unix: ............................................ /usr/lib/ocaml
+- 
+- File "setup.ml", line 234, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2393, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ ipaddr
+- Package version: ..................................... 2.4.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- build the unix library: .............................. true
+- build the toplevel printers: ......................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_unix: ............................................ /usr/lib/ocaml
+- 
+Processing  2/8: [fd-send-recv: make] [ipaddr: make build]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/fd-send-recv.1.0.1)
+- File "setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ..................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: ........................................ /usr/bin/ocamlc.opt
+- ocamlopt: ...................................... /usr/bin/ocamlopt.opt
+- ocamlbuild: .................................... /usr/bin/ocamlbuild
+- Package name: .................................. fd-send-recv
+- Package version: ............................... 1.0.1
+- os_type: ....................................... Unix
+- system: ........................................ linux
+- architecture: .................................. amd64
+- ccomp_type: .................................... cc
+- ocaml_version: ................................. 4.02.3
+- standard_library_default: ...................... /usr/lib/ocaml
+- standard_library: .............................. /usr/lib/ocaml
+- standard_runtime: .............................. /usr/bin/ocamlrun
+- bytecomp_c_compiler: ........................... gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ............................. gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ......................................... default
+- ext_obj: ....................................... .o
+- ext_asm: ....................................... .s
+- ext_lib: ....................................... .a
+- ext_dll: ....................................... .so
+- default_executable_name: ....................... a.out
+- systhread_supported: ........................... true
+- Install architecture-independent files dir: .... /usr/local
+- Install architecture-dependent files in dir: ... $prefix
+- User executables: .............................. $exec_prefix/bin
+- System admin executables: ...................... $exec_prefix/sbin
+- Program executables: ........................... $exec_prefix/libexec
+- Read-only single-machine data: ................. $prefix/etc
+- Modifiable architecture-independent data: ...... $prefix/com
+- Modifiable single-machine data: ................ $prefix/var
+- Object code libraries: ......................... $exec_prefix/lib
+- Read-only arch-independent data root: .......... $prefix/share
+- Read-only architecture-independent data: ....... $datarootdir
+- Info documentation: ............................ $datarootdir/info
+- Locale-dependent data: ......................... $datarootdir/locale
+- Man documentation: ............................. $datarootdir/man
+- Documentation root: ............................ $datarootdir/doc/$pkg_name
+- HTML documentation: ............................ $docdir
+- DVI documentation: ............................. $docdir
+- PDF documentation: ............................. $docdir
+- PS documentation: .............................. $docdir
+- findlib_version: ............................... 1.7.1
+- is_native: ..................................... true
+- suffix_program: ................................ 
+- Remove a file.: ................................ rm -f
+- Remove a directory.: ........................... rm -rf
+- Turn ocaml debug flag on: ...................... true
+- Turn ocaml profile flag on: .................... false
+- Compiler support generation of .cmxs.: ......... true
+- OCamlbuild additional flags: ................... 
+- pkg_unix: ...................................... /usr/lib/ocaml
+- 
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamlc -g -c lib/fd_send_recv_stubs.c
+- mv fd_send_recv_stubs.o lib/fd_send_recv_stubs.o
+- /usr/bin/ocamlmklib -o lib/fd_send_recv_stubs lib/fd_send_recv_stubs.o
+- ocamlfind ocamldep -package unix -modules lib/fd_send_recv.mli > lib/fd_send_recv.mli.depends
+- ocamlfind ocamlc -c -g -package unix -I lib -o lib/fd_send_recv.cmi lib/fd_send_recv.mli
+- ocamlfind ocamldep -package unix -modules lib/fd_send_recv.ml > lib/fd_send_recv.ml.depends
+- ocamlfind ocamlc -c -g -package unix -I lib -o lib/fd_send_recv.cmo lib/fd_send_recv.ml
+- ocamlfind ocamlc -a -dllib -lfd_send_recv_stubs -cclib -lfd_send_recv_stubs lib/fd_send_recv.cmo -o lib/fd_send_recv.cma
+- ocamlfind ocamlopt -c -g -package unix -I lib -o lib/fd_send_recv.cmx lib/fd_send_recv.ml
+- ocamlfind ocamlopt -a -cclib -lfd_send_recv_stubs lib/fd_send_recv.cmx -o lib/fd_send_recv.cmxa
+- ocamlfind ocamlopt -shared -I lib lib/fd_send_recv.cmx -o lib/fd_send_recv.cmxs
+- # No parallelism done
+- File "setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ..................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: ........................................ /usr/bin/ocamlc.opt
+- ocamlopt: ...................................... /usr/bin/ocamlopt.opt
+- ocamlbuild: .................................... /usr/bin/ocamlbuild
+- Package name: .................................. fd-send-recv
+- Package version: ............................... 1.0.1
+- os_type: ....................................... Unix
+- system: ........................................ linux
+- architecture: .................................. amd64
+- ccomp_type: .................................... cc
+- ocaml_version: ................................. 4.02.3
+- standard_library_default: ...................... /usr/lib/ocaml
+- standard_library: .............................. /usr/lib/ocaml
+- standard_runtime: .............................. /usr/bin/ocamlrun
+- bytecomp_c_compiler: ........................... gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ............................. gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ......................................... default
+- ext_obj: ....................................... .o
+- ext_asm: ....................................... .s
+- ext_lib: ....................................... .a
+- ext_dll: ....................................... .so
+- default_executable_name: ....................... a.out
+- systhread_supported: ........................... true
+- Install architecture-independent files dir: .... /usr/local
+- Install architecture-dependent files in dir: ... $prefix
+- User executables: .............................. $exec_prefix/bin
+- System admin executables: ...................... $exec_prefix/sbin
+- Program executables: ........................... $exec_prefix/libexec
+- Read-only single-machine data: ................. $prefix/etc
+- Modifiable architecture-independent data: ...... $prefix/com
+- Modifiable single-machine data: ................ $prefix/var
+- Object code libraries: ......................... $exec_prefix/lib
+- Read-only arch-independent data root: .......... $prefix/share
+- Read-only architecture-independent data: ....... $datarootdir
+- Info documentation: ............................ $datarootdir/info
+- Locale-dependent data: ......................... $datarootdir/locale
+- Man documentation: ............................. $datarootdir/man
+- Documentation root: ............................ $datarootdir/doc/$pkg_name
+- HTML documentation: ............................ $docdir
+- DVI documentation: ............................. $docdir
+- PDF documentation: ............................. $docdir
+- PS documentation: .............................. $docdir
+- findlib_version: ............................... 1.7.1
+- is_native: ..................................... true
+- suffix_program: ................................ 
+- Remove a file.: ................................ rm -f
+- Remove a directory.: ........................... rm -rf
+- Turn ocaml debug flag on: ...................... true
+- Turn ocaml profile flag on: .................... false
+- Compiler support generation of .cmxs.: ......... true
+- OCamlbuild additional flags: ................... 
+- pkg_unix: ...................................... /usr/lib/ocaml
+- 
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamlc -g -c lib/fd_send_recv_stubs.c
+- mv fd_send_recv_stubs.o lib/fd_send_recv_stubs.o
+- /usr/bin/ocamlmklib -o lib/fd_send_recv_stubs lib/fd_send_recv_stubs.o
+- ocamlfind ocamldep -package unix -modules lib/fd_send_recv.mli > lib/fd_send_recv.mli.depends
+- ocamlfind ocamlc -c -g -package unix -I lib -o lib/fd_send_recv.cmi lib/fd_send_recv.mli
+- ocamlfind ocamldep -package unix -modules lib/fd_send_recv.ml > lib/fd_send_recv.ml.depends
+- ocamlfind ocamlc -c -g -package unix -I lib -o lib/fd_send_recv.cmo lib/fd_send_recv.ml
+- ocamlfind ocamlc -a -dllib -lfd_send_recv_stubs -cclib -lfd_send_recv_stubs lib/fd_send_recv.cmo -o lib/fd_send_recv.cma
+- ocamlfind ocamlopt -c -g -package unix -I lib -o lib/fd_send_recv.cmx lib/fd_send_recv.ml
+- ocamlfind ocamlopt -a -cclib -lfd_send_recv_stubs lib/fd_send_recv.cmx -o lib/fd_send_recv.cmxa
+- ocamlfind ocamlopt -shared -I lib lib/fd_send_recv.cmx -o lib/fd_send_recv.cmxs
+- # No parallelism done
+-> compiled  fd-send-recv.1.0.1
+Processing  2/8: [ipaddr: make build]
+Processing  3/8: [ipaddr: make build] [fd-send-recv: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/fd-send-recv.1.0.1)
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.mli
+- Installed /home/opam/.opam/default/lib/fd-send-recv/libfd_send_recv_stubs.a
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.cma
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.cmxa
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.a
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.cmxs
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.cmi
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.cmx
+- Installed /home/opam/.opam/default/lib/fd-send-recv/META
+- Installed /home/opam/.opam/default/lib/stublibs/dllfd_send_recv_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllfd_send_recv_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.mli
+- Installed /home/opam/.opam/default/lib/fd-send-recv/libfd_send_recv_stubs.a
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.cma
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.cmxa
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.a
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.cmxs
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.cmi
+- Installed /home/opam/.opam/default/lib/fd-send-recv/fd_send_recv.cmx
+- Installed /home/opam/.opam/default/lib/fd-send-recv/META
+- Installed /home/opam/.opam/default/lib/stublibs/dllfd_send_recv_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dllfd_send_recv_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+-> installed fd-send-recv.1.0.1
+Processing  3/8: [ipaddr: make build]
++ make "build" (CWD=/home/opam/.opam/default/.opam-switch/build/ipaddr.2.4.0)
+- ocaml setup.ml -build 
+- File "setup.ml", line 234, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2393, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package unix -modules lib/ipaddr.mli > lib/ipaddr.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -principal -I lib -w @f@p@u@s@40 -package unix -I lib -o lib/ipaddr.cmi lib/ipaddr.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package unix -modules lib/ipaddr.ml > lib/ipaddr.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package unix -modules lib/macaddr.mli > lib/macaddr.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -principal -I lib -w @f@p@u@s@40 -package unix -I lib -o lib/macaddr.cmi lib/macaddr.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package unix -modules lib/macaddr.ml > lib/macaddr.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -principal -I lib -w @f@p@u@s@40 -package unix -I lib -o lib/ipaddr.cmo lib/ipaddr.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -principal -I lib -w @f@p@u@s@40 -package unix -I lib -o lib/ipaddr.cmo lib/ipaddr.ml
+- File "lib/ipaddr.ml", line 158, characters 4-42:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/ipaddr.ml", line 159, characters 4-42:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/ipaddr.ml", line 160, characters 4-42:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/ipaddr.ml", line 161, characters 4-42:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/ipaddr.ml", line 164, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/ipaddr.ml", line 452, characters 14-26:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/ipaddr.ml", line 562, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -principal -I lib -w @f@p@u@s@40 -package unix -I lib -o lib/macaddr.cmo lib/macaddr.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -principal -I lib -w @f@p@u@s@40 -package unix -I lib -o lib/macaddr.cmo lib/macaddr.ml
+- File "lib/macaddr.ml", line 69, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/macaddr.ml", line 72, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/macaddr.ml", line 81, characters 8-49:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/macaddr.ml", line 86, characters 6-46:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/macaddr.ml", line 113, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/macaddr.ml", line 115, characters 2-56:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/macaddr.ml", line 116, characters 20-50:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a -w @f@p@u@s@40 lib/ipaddr.cmo lib/macaddr.cmo -o lib/ipaddr.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -principal -I lib -w @f@p@u@s@40 -package unix -I lib -o lib/ipaddr.cmx lib/ipaddr.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -principal -I lib -w @f@p@u@s@40 -package unix -I lib -o lib/ipaddr.cmx lib/ipaddr.ml
+- File "lib/ipaddr.ml", line 158, characters 4-42:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/ipaddr.ml", line 159, characters 4-42:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/ipaddr.ml", line 160, characters 4-42:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/ipaddr.ml", line 161, characters 4-42:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/ipaddr.ml", line 164, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/ipaddr.ml", line 452, characters 14-26:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lib/ipaddr.ml", line 562, characters 13-26:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -principal -I lib -w @f@p@u@s@40 -package unix -I lib -o lib/macaddr.cmx lib/macaddr.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -principal -I lib -w @f@p@u@s@40 -package unix -I lib -o lib/macaddr.cmx lib/macaddr.ml
+- File "lib/macaddr.ml", line 69, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/macaddr.ml", line 72, characters 4-51:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/macaddr.ml", line 81, characters 8-49:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/macaddr.ml", line 86, characters 6-46:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/macaddr.ml", line 113, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/macaddr.ml", line 115, characters 2-56:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/macaddr.ml", line 116, characters 20-50:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a -w @f@p@u@s@40 lib/ipaddr.cmx lib/macaddr.cmx -o lib/ipaddr.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared lib/ipaddr.cmx -o lib/ipaddr.cmxs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package unix -modules lib/ipaddr_unix.mli > lib/ipaddr_unix.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -principal -I lib -w @f@p@u@s@40 -package unix -I lib -o lib/ipaddr_unix.cmi lib/ipaddr_unix.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package unix -modules lib/ipaddr_unix.ml > lib/ipaddr_unix.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -principal -I lib -w @f@p@u@s@40 -package unix -I lib -o lib/ipaddr_unix.cmo lib/ipaddr_unix.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a lib/ipaddr_unix.cmo -o lib/ipaddr_unix.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -principal -I lib -w @f@p@u@s@40 -package unix -I lib -o lib/ipaddr_unix.cmx lib/ipaddr_unix.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a lib/ipaddr_unix.cmx -o lib/ipaddr_unix.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared lib/ipaddr_unix.cmx -o lib/ipaddr_unix.cmxs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules top/ipaddr_top.ml > top/ipaddr_top.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -principal -I +compiler-libs -I top -o top/ipaddr_top.cmo top/ipaddr_top.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -principal -I +compiler-libs -I top -o top/ipaddr_top.cmo top/ipaddr_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a top/ipaddr_top.cmo -o top/ipaddr_top.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -principal -I +compiler-libs -I top -o top/ipaddr_top.cmx top/ipaddr_top.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -principal -I +compiler-libs -I top -o top/ipaddr_top.cmx top/ipaddr_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a top/ipaddr_top.cmx -o top/ipaddr_top.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared top/ipaddr_top.cmx -o top/ipaddr_top.cmxs
+-> compiled  ipaddr.2.4.0
+Processing  4/8: [ipaddr: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/ipaddr.2.4.0)
+- ocaml setup.ml -install 
+- File "setup.ml", line 234, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2393, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr.mli
+- Installed /home/opam/.opam/default/lib/ipaddr/macaddr.mli
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr.cma
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr.cmxa
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr.a
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr.cmxs
+- Installed /home/opam/.opam/default/lib/ipaddr/macaddr.cmi
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr.cmi
+- Installed /home/opam/.opam/default/lib/ipaddr/macaddr.cmx
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr.cmx
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_unix.mli
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_unix.cma
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_unix.cmxa
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_unix.a
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_unix.cmxs
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_unix.cmi
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_unix.cmx
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_top.ml
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_top.cma
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_top.cmxa
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_top.a
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_top.cmxs
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_top.cmi
+- Installed /home/opam/.opam/default/lib/ipaddr/ipaddr_top.cmx
+- Installed /home/opam/.opam/default/lib/ipaddr/META
+-> installed ipaddr.2.4.0
+Processing  5/8: [tuntap: make]
++ make "PREFIX=/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/tuntap.0.7.0)
+- ocaml setup.ml -configure 
+- File "setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ tuntap
+- Package version: ..................................... 0.7.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_ipaddr: .......................................... /home/opam/.opam/default/lib/ipaddr
+- ocamldoc: ............................................ /usr/bin/ocamldoc
+- 
+- ocaml setup.ml -build 
+- File "setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 31, characters 27-39:
+- Warning: the tag "pkg_lwt.unix" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 35, characters 29-41:
+- Warning: the tag "pkg_lwt.unix" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 39, characters 29-41:
+- Warning: the tag "pkg_lwt.unix" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 40, characters 17-29:
+- Warning: the tag "pkg_lwt.unix" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 47, characters 29-38:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 50, characters 17-26:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- ocamlfind ocamlc -g -ccopt -O3 -c lib/tuntap_stubs.c
+- mv tuntap_stubs.o lib/tuntap_stubs.o
+- /usr/bin/ocamlmklib -o lib/tuntap_stubs lib/tuntap_stubs.o
+- ocamlfind ocamldep -package ipaddr -modules lib/tuntap.mli > lib/tuntap.mli.depends
+- ocamlfind ocamlc -c -g -ccopt -O3 -package ipaddr -I lib -o lib/tuntap.cmi lib/tuntap.mli
+- ocamlfind ocamldep -package ipaddr -modules lib/tuntap.ml > lib/tuntap.ml.depends
+- ocamlfind ocamlc -c -g -ccopt -O3 -package ipaddr -I lib -o lib/tuntap.cmo lib/tuntap.ml
+- ocamlfind ocamlc -a -dllib -ltuntap_stubs -cclib -ltuntap_stubs lib/tuntap.cmo -o lib/tuntap.cma
+- ocamlfind ocamlopt -c -g -ccopt -O3 -package ipaddr -I lib -o lib/tuntap.cmx lib/tuntap.ml
+- ocamlfind ocamlopt -a -cclib -ltuntap_stubs lib/tuntap.cmx -o lib/tuntap.cmxa
+- ocamlfind ocamlopt -shared -I lib lib/tuntap.cmx -o lib/tuntap.cmxs
+-> compiled  tuntap.0.7.0
+Processing  6/8: [tuntap: make install]
++ make "PREFIX=/home/opam/.opam/default" "install" (CWD=/home/opam/.opam/default/.opam-switch/build/tuntap.0.7.0)
+- ocaml setup.ml -install 
+- File "setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- Installed /home/opam/.opam/default/lib/tuntap/tuntap.mli
+- Installed /home/opam/.opam/default/lib/tuntap/libtuntap_stubs.a
+- Installed /home/opam/.opam/default/lib/tuntap/tuntap.cma
+- Installed /home/opam/.opam/default/lib/tuntap/tuntap.cmxa
+- Installed /home/opam/.opam/default/lib/tuntap/tuntap.a
+- Installed /home/opam/.opam/default/lib/tuntap/tuntap.cmxs
+- Installed /home/opam/.opam/default/lib/tuntap/tuntap.cmi
+- Installed /home/opam/.opam/default/lib/tuntap/tuntap.cmx
+- Installed /home/opam/.opam/default/lib/tuntap/META
+- Installed /home/opam/.opam/default/lib/stublibs/dlltuntap_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dlltuntap_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+-> installed tuntap.0.7.0
+Processing  7/8: [mirari: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/mirari.0.9.7)
+- rm -rf _build
+- mkdir -p _build/lib
+- echo let project_version=\"0.9.6\" > lib/path_generated.ml
+- ocamlbuild -use-ocamlfind -pkg cmdliner -pkg unix -pkg tuntap -pkg fd-send-recv lib/main.native
+- ocamlfind ocamldep -package fd-send-recv -package tuntap -package unix -package cmdliner -modules lib/main.ml > lib/main.ml.depends
+- ocamlfind ocamldep -package fd-send-recv -package tuntap -package unix -package cmdliner -modules lib/mirari.mli > lib/mirari.mli.depends
+- ocamlfind ocamldep -package fd-send-recv -package tuntap -package unix -package cmdliner -modules lib/path_generated.ml > lib/path_generated.ml.depends
+- ocamlfind ocamlc -c -package fd-send-recv -package tuntap -package unix -package cmdliner -I lib -o lib/mirari.cmi lib/mirari.mli
+- ocamlfind ocamlc -c -package fd-send-recv -package tuntap -package unix -package cmdliner -I lib -o lib/path_generated.cmo lib/path_generated.ml
+- ocamlfind ocamlc -c -package fd-send-recv -package tuntap -package unix -package cmdliner -I lib -o lib/main.cmo lib/main.ml
+- ocamlfind ocamldep -package fd-send-recv -package tuntap -package unix -package cmdliner -modules lib/mirari.ml > lib/mirari.ml.depends
+- ocamlfind ocamldep -package fd-send-recv -package tuntap -package unix -package cmdliner -modules lib/util.ml > lib/util.ml.depends
+- ocamlfind ocamlc -c -package fd-send-recv -package tuntap -package unix -package cmdliner -I lib -o lib/util.cmo lib/util.ml
+- ocamlfind ocamlopt -c -package fd-send-recv -package tuntap -package unix -package cmdliner -I lib -o lib/util.cmx lib/util.ml
+- ocamlfind ocamlopt -c -package fd-send-recv -package tuntap -package unix -package cmdliner -I lib -o lib/mirari.cmx lib/mirari.ml
+- ocamlfind ocamlopt -c -package fd-send-recv -package tuntap -package unix -package cmdliner -I lib -o lib/path_generated.cmx lib/path_generated.ml
+- ocamlfind ocamlopt -c -package fd-send-recv -package tuntap -package unix -package cmdliner -I lib -o lib/main.cmx lib/main.ml
+- ocamlfind ocamlopt -linkpkg -package fd-send-recv -package tuntap -package unix -package cmdliner lib/util.cmx lib/mirari.cmx lib/path_generated.cmx lib/main.cmx -o lib/main.native
+-> compiled  mirari.0.9.7
+-> installed mirari.0.9.7
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 00:52.16] Success
