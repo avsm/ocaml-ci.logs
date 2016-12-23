@@ -1,0 +1,35 @@
+=== opam depext -ivyj 2 conf-python-2-7
+[2016-12-23 21:14.07] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-python-2-7 1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [conf-python-2-7: python2.7 print 'python2.7 is installed']
++ python2.7 "-c" "print 'python2.7 is installed'" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-python-2-7.1.0)
+[ERROR] The installation of conf-python-2-7 failed at "python2.7 -c print 'python2.7 is installed'".
+
+#=== ERROR while installing conf-python-2-7.1.0 ===============================#
+# command              python2.7 -c print 'python2.7 is installed'
+# path                 /home/opam/.opam/default/.opam-switch/build/conf-python-2-7.1.0
+# exit-code            127
+# env-file             /home/opam/.opam/log/conf-python-2-7-1-7afd23.env
+# output-file          /home/opam/.opam/log/conf-python-2-7-1-7afd23.out
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - install conf-python-2-7 1.0
++- 
+- No changes have been performed
+
+=-=- conf-python-2-7.1.0 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-python-2-7.1.0' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-python-2-7' failed.
+[2016-12-23 21:16.36] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "conf-python-2-7" exited with status 4
