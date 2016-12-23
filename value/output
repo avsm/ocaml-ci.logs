@@ -1,0 +1,127 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ppx_bigarray 0.0.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ppx_bigarray.0.0.0: dl]
+[ppx_bigarray.0.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ppx_bigarray: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/ppx_bigarray.0.0.0)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ ppx_bigarray
+- Package version: ..................................... 0.0.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_compiler_libs_common: ............................ /usr/lib/ocaml/compiler-libs
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/ppx_bigarray.0.0.0)
+- ocamlfind ocamlopt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package compiler-libs.common -modules src/ppx_bigarray.ml > src/ppx_bigarray.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray.cmo src/ppx_bigarray.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray.cmo src/ppx_bigarray.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a src/ppx_bigarray.cmo -o src/ppx_bigarray.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray.cmx src/ppx_bigarray.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray.cmx src/ppx_bigarray.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a src/ppx_bigarray.cmx -o src/ppx_bigarray.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared src/ppx_bigarray.cmxa src/ppx_bigarray.cmx -o src/ppx_bigarray.cmxs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package compiler-libs.common -modules src/ppx_bigarray_ex.ml > src/ppx_bigarray_ex.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package compiler-libs.common -modules src/error.ml > src/error.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package compiler-libs.common -modules src/nestedMatrix.mli > src/nestedMatrix.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/error.cmo src/error.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/error.cmo src/error.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/nestedMatrix.cmi src/nestedMatrix.mli
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/nestedMatrix.cmi src/nestedMatrix.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray_ex.cmo src/ppx_bigarray_ex.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray_ex.cmo src/ppx_bigarray_ex.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package compiler-libs.common -modules src/nestedMatrix.ml > src/nestedMatrix.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/error.cmx src/error.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/error.cmx src/error.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/nestedMatrix.cmx src/nestedMatrix.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/nestedMatrix.cmx src/nestedMatrix.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray_ex.cmx src/ppx_bigarray_ex.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -strict-sequence -w A-4-33-41-42-43-34-44 -package compiler-libs.common -I src -o src/ppx_bigarray_ex.cmx src/ppx_bigarray_ex.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -linkpkg -g -linkpkg -package compiler-libs.common src/error.cmx src/nestedMatrix.cmx src/ppx_bigarray_ex.cmx -o src/ppx_bigarray_ex.native
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -linkpkg -g -linkpkg -package compiler-libs.common src/error.cmx src/nestedMatrix.cmx src/ppx_bigarray_ex.cmx -o src/ppx_bigarray_ex.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml, /usr/lib/ocaml/compiler-libs
+-> compiled  ppx_bigarray.0.0.0
+Processing  2/2: [ppx_bigarray: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/default/.opam-switch/build/ppx_bigarray.0.0.0)
+- Installed /home/opam/.opam/default/lib/ppx_bigarray/ppx_bigarray.ml
+- Installed /home/opam/.opam/default/lib/ppx_bigarray/ppx_bigarray.cma
+- Installed /home/opam/.opam/default/lib/ppx_bigarray/ppx_bigarray.cmxa
+- Installed /home/opam/.opam/default/lib/ppx_bigarray/ppx_bigarray.a
+- Installed /home/opam/.opam/default/lib/ppx_bigarray/ppx_bigarray.cmxs
+- Installed /home/opam/.opam/default/lib/ppx_bigarray/ppx_bigarray.cmi
+- Installed /home/opam/.opam/default/lib/ppx_bigarray/ppx_bigarray.cmt
+- Installed /home/opam/.opam/default/lib/ppx_bigarray/ppx_bigarray.annot
+- Installed /home/opam/.opam/default/lib/ppx_bigarray/ppx_bigarray.cmx
+- Installed /home/opam/.opam/default/lib/ppx_bigarray/META
+-> installed ppx_bigarray.0.0.0
+Done.
+# Run eval `opam env` to update the current shell environment
