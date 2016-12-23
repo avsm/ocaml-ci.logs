@@ -1,0 +1,42 @@
+=== opam depext -ivyj 2 conf-lapack
+[2016-12-23 18:50.08] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-lapack 1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-lapack: sh cc $CFLAGS test.c -llapack]
++ sh "-exc" "cc $CFLAGS test.c -llapack" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-lapack.1)
+- + cc test.c -llapack
+- /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/../../../../x86_64-alpine-linux-musl/bin/ld: cannot find -llapack
+- collect2: error: ld returned 1 exit status
+[ERROR] The compilation of conf-lapack failed at "sh -exc cc $CFLAGS test.c -llapack".
+
+#=== ERROR while compiling conf-lapack.1 ======================================#
+# command              sh -exc cc $CFLAGS test.c -llapack
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-lapack.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-lapack-1-ffb3fd.env
+# output-file          /home/opam/.opam/log/conf-lapack-1-ffb3fd.out
+### output ###
+# + cc test.c -llapack
+# /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/../../../../x86_64-alpine-linux-musl/bin/ld: cannot find -llapack
+# collect2: error: ld returned 1 exit status
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-lapack 1
++- 
+- No changes have been performed
+
+=-=- conf-lapack.1 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-lapack.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-lapack' failed.
+[2016-12-23 20:01.01] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "conf-lapack" exited with status 4
