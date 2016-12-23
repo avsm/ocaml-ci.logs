@@ -1,0 +1,67 @@
+=== opam depext -ivyj 2 conf-ida
+[2016-12-23 21:14.06] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-ida 0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-ida: sh find-ida.sh]
++ sh "-x" "find-ida.sh" "linux" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-ida.0.1)
+- + IFS=
+- 
+- + HEADLESS=false
+- + find
+- + [ -z ]
+- + find_command idaq64
+- + which idaq64
+- + command=
+- + [  ]
+- + [ ]
+- + locate_linux
+- + locate -w -r idaq64$
+- find-ida.sh: line 1: locate: not found
+- + sort -n -r
+- + results=
+- + [ -z ]
+- + HEADLESS=true
+- + [ -z ]
+- + echo failed to locate IDA Pro
+- failed to locate IDA Pro
+- + exit 1
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-ida 0.1
++- 
+[ERROR] The compilation of conf-ida failed at "sh -x find-ida.sh linux".
+
+#=== ERROR while compiling conf-ida.0.1 =======================================#
+# command              sh -x find-ida.sh linux
+# path                 /home/opam/.opam/default/.opam-switch/build/conf-ida.0.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-ida-1-58c514.env
+# output-file          /home/opam/.opam/log/conf-ida-1-58c514.out
+### output ###
+# [...]
+# + [ ]
+# + locate_linux
+# + locate -w -r idaq64$
+# find-ida.sh: line 1: locate: not found
+# + sort -n -r
+# + results=
+# + [ -z ]
+# + HEADLESS=true
+# + [ -z ]
+# + echo failed to locate IDA Pro
+# failed to locate IDA Pro
+# + exit 1
+
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-ida' failed.
+[2016-12-23 21:16.06] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "conf-ida" exited with status 4
