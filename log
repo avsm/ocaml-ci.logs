@@ -1,0 +1,131 @@
+=== opam depext -ivyj 2 pcap-format
+[2016-12-23 18:49.20] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - ncurses-dev
+#  - pkgconfig
+m4
+ncurses-dev
+pkgconfig
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install cstruct     0.5.3                                   [required by pcap-format]
+  - install pcap-format 0.3.2
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [cstruct.0.5.3: dl]
+Processing  2/2: [cstruct.0.5.3: dl] [pcap-format.0.3.2: dl]
+[pcap-format.0.3.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [cstruct.0.5.3: dl]
+[cstruct.0.5.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [cstruct: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/cstruct.0.5.3)
+- ocaml setup.ml -configure
+- File "./setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 246, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 246, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 257, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 287, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 384, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1263, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1268, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 1908, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 5074, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5075, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5076, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5077, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5142, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5143, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 5144, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 5145, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind: Package `camlp4.lib' not found
+- W: Field 'pkg_camlp4_lib' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.lib > '/tmp/oasis-172cc6.txt'' terminated with error code 2
+- ocamlfind: Package `camlp4.quotations.r' not found
+- W: Field 'pkg_camlp4_quotations_r' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.r > '/tmp/oasis-1c53ae.txt'' terminated with error code 2
+- E: Cannot find findlib package camlp4.lib
+- E: Cannot find findlib package camlp4.quotations.r
+- E: Failure("2 configuration errors")
+- Makefile:10: recipe for target 'setup.data' failed
+- make: *** [setup.data] Error 1
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install pcap-format 0.3.2
++- 
+[ERROR] The compilation of cstruct failed at "make".
+
+#=== ERROR while compiling cstruct.0.5.3 ======================================#
+# command              make
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/cstruct.0.5.3
+# exit-code            2
+# env-file             /home/opam/.opam/log/cstruct-1-d0f245.env
+# output-file          /home/opam/.opam/log/cstruct-1-d0f245.out
+### output ###
+# [...]
+# File "setup.ml", line 5145, characters 31-48:
+# Warning 3: deprecated: String.capitalize
+# Use String.capitalize_ascii instead.
+# ocamlfind: Package `camlp4.lib' not found
+# W: Field 'pkg_camlp4_lib' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.lib > '/tmp/oasis-172cc6.txt'' terminated with error code 2
+# ocamlfind: Package `camlp4.quotations.r' not found
+# W: Field 'pkg_camlp4_quotations_r' is not set: Command ''/home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind' query -format %d camlp4.quotations.r > '/tmp/oasis-1c53ae.txt'' terminated with error code 2
+# E: Cannot find findlib package camlp4.lib
+# E: Cannot find findlib package camlp4.quotations.r
+# E: Failure("2 configuration errors")
+# Makefile:10: recipe for target 'setup.data' failed
+# make: *** [setup.data] Error 1
+
++- The following actions failed
+| - build cstruct 0.5.3
++- 
+- No changes have been performed
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 pcap-format' failed.
+[2016-12-23 19:27.39] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "pcap-format" exited with status 4
