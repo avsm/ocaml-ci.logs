@@ -1,0 +1,54 @@
+=== opam depext -ivyj 2 dht
+[2016-12-23 21:14.13] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - gmp-dev
+#  - m4
+#  - ncurses-dev
+#  - perl
+#  - pkgconfig
+m4
+ncurses-dev
+pkgconfig
+# The following new OS packages need to be installed: gmp-dev perl
+The following command needs to be run through "sudo":
+    apk add gmp-dev perl
+(1/3) Installing libgmpxx (6.1.0-r0)
+(2/3) Installing gmp-dev (6.1.0-r0)
+(3/3) Installing perl (5.22.2-r0)
+Executing busybox-1.24.2-r12.trigger
+OK: 467 MiB in 85 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes base                                     [required by dht]
+  - install dht        0.2.0
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [dht.0.2.0: dl]
+[dht.0.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed base-bytes.base
+Processing  3/4: [dht: make lib]
++ make "lib" (CWD=/home/opam/.opam/default/.opam-switch/build/dht.0.2.0)
+- cc -Wall -std=c99 -I dht/ -I `ocamlfind printconf stdlib` -I lib/ -o lib/dhtstubs.o -c lib/dhtstubs.c
+- lib/dhtstubs.c: In function 'caml_dht_ping_node':
+- lib/dhtstubs.c:137:7: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+-    int res;
+-        ^
+- lib/dhtstubs.c: In function 'caml_dht_get_nodes':
+- lib/dhtstubs.c:219:7: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+-    int res, n, n6;
+-        ^
+- cc -Wall -std=c99   -c -o dht/dht.o dht/dht.c
+- ocamlfind ocamlc -safe-string -g -bin-annot -I lib/ -o lib/dht.cmo -c lib/dht.mli lib/dht.ml
+- ocamlfind ocamlopt -safe-string -g -bin-annot -I lib/ -o lib/dht.cmx -c lib/dht.mli lib/dht.ml
+- ocamlmklib -custom -o lib/dht lib/dhtstubs.o dht/dht.o lib/dht.cmo lib/dht.cmx
+-> compiled  dht.0.2.0
+-> installed dht.0.2.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 21:19.06] Success
