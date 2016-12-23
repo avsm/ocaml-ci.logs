@@ -1,0 +1,120 @@
+=== opam depext -ivyj 2 hex
+[2016-12-23 21:14.23] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install hex 0.1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [hex.0.1.0: dl]
+[hex.0.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [hex: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/hex.0.1.0)
+- ocaml setup.ml -configure 
+- File "setup.ml", line 247, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2502, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ hex
+- Package version: ..................................... 0.1.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- 
+- ocaml setup.ml -build 
+- File "setup.ml", line 247, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2502, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules lib/hex.mli > lib/hex.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -I lib -o lib/hex.cmi lib/hex.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules lib/hex.ml > lib/hex.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -I lib -o lib/hex.cmo lib/hex.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a lib/hex.cmo -o lib/hex.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -I lib -o lib/hex.cmx lib/hex.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a lib/hex.cmx -o lib/hex.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared lib/hex.cmxa lib/hex.cmx -o lib/hex.cmxs
+-> compiled  hex.0.1.0
+Processing  2/2: [hex: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/hex.0.1.0)
+- ocaml setup.ml -install 
+- File "setup.ml", line 247, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2502, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- Installed /home/opam/.opam/default/lib/hex/hex.mli
+- Installed /home/opam/.opam/default/lib/hex/hex.cma
+- Installed /home/opam/.opam/default/lib/hex/hex.cmxa
+- Installed /home/opam/.opam/default/lib/hex/hex.a
+- Installed /home/opam/.opam/default/lib/hex/hex.cmxs
+- Installed /home/opam/.opam/default/lib/hex/hex.cmi
+- Installed /home/opam/.opam/default/lib/hex/hex.cmx
+- Installed /home/opam/.opam/default/lib/hex/META
+-> installed hex.0.1.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 21:24.27] Success
