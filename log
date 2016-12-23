@@ -1,0 +1,164 @@
+=== opam depext -ivyj 2 ocamlrss
+[2016-12-23 18:50.55] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install xmlm     1.2.0                                      [required by ocamlrss]
+  - install ocamlrss 2.0  
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocamlrss.2.0: dl]
+Processing  2/2: [ocamlrss.2.0: dl] [xmlm.1.2.0: dl]
+[ocamlrss.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [xmlm.1.2.0: dl]
+[xmlm.1.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [xmlm: ./pkg/pkg-git]
++ ./pkg/pkg-git  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0)
+Processing  1/4: [xmlm: ./pkg/build true]
++ ./pkg/build "true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0)
+- ocamlfind ocamldep -modules src/xmlm.mli > src/xmlm.mli.depends
+- ocamlfind ocamlc -c -I src -I test -o src/xmlm.cmi src/xmlm.mli
+- ocamlfind ocamldep -modules src/xmlm.ml > src/xmlm.ml.depends
+- ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I src -I test -o src/xmlm.cmx src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I src -I test -o src/xmlm.cmo src/xmlm.ml
+- File "src/xmlm.ml", line 1128, characters 18-34:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -a src/xmlm.cmo -o src/xmlm.cma
+- ocamlfind ocamlopt -a src/xmlm.cmx -o src/xmlm.cmxa
+- ocamlfind ocamlopt -shared src/xmlm.cmx -o src/xmlm.cmxs
+- ocamlfind ocamldep -modules test/xmltrip.ml > test/xmltrip.ml.depends
+- ocamlfind ocamldep -modules test/xhtml.ml > test/xhtml.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xhtml.cmo test/xhtml.ml
+- ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -I test -I src -o test/xmltrip.cmo test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xhtml.cmx test/xhtml.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -I test -I src -o test/xmltrip.cmx test/xmltrip.ml
+- File "test/xmltrip.ml", line 179, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -linkpkg src/xmlm.cmx test/xhtml.cmx test/xmltrip.cmx -o test/xmltrip.native
+-> compiled  xmlm.1.2.0
+[WARNING] Errors in /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0/xmlm.install, some fields have been ignored:
+            - At /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/xmlm.1.2.0/xmlm.install:1:0:
+              Invalid field opam-version
+
+-> installed xmlm.1.2.0
+Processing  3/4: [ocamlrss: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocamlrss.2.0)
+- ocamlfind ocamlc -package xmlm,unix -annot -c rss_date.mli
+- ocamlfind ocamlc -package xmlm,unix -annot -c rss_types.ml
+- ocamlfind ocamlc -package xmlm,unix -annot -c rss_io.ml
+- File "rss_io.ml", line 82, characters 35-51:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 90, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 91, characters 39-55:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 96, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 99, characters 22-38:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 136, characters 9-25:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 240, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 309, characters 12-28:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 327, characters 22-38:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlc -package xmlm,unix -annot -c rss.mli
+- ocamlfind ocamlc -package xmlm,unix -annot -c rss_date.ml
+- File "rss_date.ml", line 119, characters 27-41:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "rss_date.ml", line 159, characters 27-41:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "rss_date.ml", line 220, characters 10-280:
+- Warning 8: this pattern-matching is not exhaustive.
+- All clauses in this pattern-matching are guarded.
+- ocamlfind ocamlc -package xmlm,unix -annot -c rss.ml
+- ocamlfind ocamlc -package xmlm,unix -annot -o rss.cma -a rss_date.cmo rss_types.cmo rss_io.cmo rss.cmo
+- ocamlfind ocamlopt -package xmlm,unix  -c rss_date.ml
+- File "rss_date.ml", line 119, characters 27-41:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "rss_date.ml", line 159, characters 27-41:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "rss_date.ml", line 220, characters 10-280:
+- Warning 8: this pattern-matching is not exhaustive.
+- All clauses in this pattern-matching are guarded.
+- ocamlfind ocamlopt -package xmlm,unix  -c rss_types.ml
+- ocamlfind ocamlopt -package xmlm,unix  -c rss_io.ml
+- File "rss_io.ml", line 82, characters 35-51:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 90, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 91, characters 39-55:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 96, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 99, characters 22-38:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 136, characters 9-25:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 240, characters 33-49:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 309, characters 12-28:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "rss_io.ml", line 327, characters 22-38:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlfind ocamlopt -package xmlm,unix  -c rss.ml
+- ocamlfind ocamlopt -package xmlm,unix  -o rss.cmxa -a rss_date.cmx rss_types.cmx rss_io.cmx rss.cmx
+-> compiled  ocamlrss.2.0
+Processing  4/4: [ocamlrss: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocamlrss.2.0)
+- ocamlfind ocamlc -package xmlm,unix -annot -o rss.cma -a rss_date.cmo rss_types.cmo rss_io.cmo rss.cmo
+- ocamlfind install rss META LICENSE rss.cmi rss.cma rss.cmxa rss.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rss/rss.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rss/rss.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rss/rss.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rss/rss.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rss/LICENSE
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/rss/META
+-> installed ocamlrss.2.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 20:24.00] Success
