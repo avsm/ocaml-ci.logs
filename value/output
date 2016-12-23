@@ -1,0 +1,79 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocaml9p 0.4
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ocaml9p.0.4: dl]
+[ocaml9p.0.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocaml9p: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocaml9p.0.4)
+- ocamlfind ocamlc -c -I lib -package "unix str" lib/fcall.mli
+- ocamlfind ocamlc -c -I lib -package "unix str" lib/o9pc.mli
+- ocamlfind ocamlc -c -I lib -package "unix str" lib/fcall.ml
+- File "lib/fcall.ml", line 97, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/fcall.ml", line 99, characters 8-57:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/fcall.ml", line 108, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/fcall.ml", line 111, characters 8-50:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/fcall.ml", line 117, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/fcall.ml", line 120, characters 8-50:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlc -c -I lib -package "unix str" lib/o9pc.ml
+- File "lib/o9pc.ml", line 99, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlc -a -o o9p.cma -package "unix str" lib/fcall.cmo lib/o9pc.cmo
+- ocamlfind ocamlopt -c -I lib -package "unix str" lib/fcall.ml
+- File "lib/fcall.ml", line 97, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/fcall.ml", line 99, characters 8-57:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/fcall.ml", line 108, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/fcall.ml", line 111, characters 8-50:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lib/fcall.ml", line 117, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/fcall.ml", line 120, characters 8-50:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -c -I lib -package "unix str" lib/o9pc.ml
+- File "lib/o9pc.ml", line 99, characters 19-32:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -a -o o9p.cmxa -package "unix str" lib/fcall.cmx lib/o9pc.cmx
+-> compiled  ocaml9p.0.4
+Processing  2/2: [ocaml9p: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocaml9p.0.4)
+- ocamlfind install o9p o9p.cma lib/fcall.cmi lib/o9pc.cmi o9p.a o9p.cmxa META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/o9p/o9p.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/o9p/o9p.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/o9p/o9pc.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/o9p/fcall.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/o9p/o9p.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/o9p/META
+-> installed ocaml9p.0.4
+Done.
+# Run eval `opam env` to update the current shell environment
