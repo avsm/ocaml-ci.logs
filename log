@@ -1,0 +1,38 @@
+=== opam depext -ivyj 2 conf-lldb
+[2016-12-23 18:50.09] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-lldb 3.5
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-lldb: ls]
++ ls "/usr/lib/llvm-3.5/include/lldb/API/SBDebugger.h" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-lldb.3.5)
+- ls: /usr/lib/llvm-3.5/include/lldb/API/SBDebugger.h: No such file or directory
+[ERROR] The compilation of conf-lldb failed at "ls /usr/lib/llvm-3.5/include/lldb/API/SBDebugger.h".
+
+#=== ERROR while compiling conf-lldb.3.5 ======================================#
+# command              ls /usr/lib/llvm-3.5/include/lldb/API/SBDebugger.h
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-lldb.3.5
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-lldb-1-7afd23.env
+# output-file          /home/opam/.opam/log/conf-lldb-1-7afd23.out
+### output ###
+# ls: /usr/lib/llvm-3.5/include/lldb/API/SBDebugger.h: No such file or directory
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-lldb 3.5
++- 
+- No changes have been performed
+
+=-=- conf-lldb.3.5 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package requires LLDB 3.5 development packages installed on your system
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-lldb' failed.
+[2016-12-23 20:01.15] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "conf-lldb" exited with status 4
