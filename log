@@ -1,0 +1,122 @@
+=== opam depext -ivyj 2 benchmark
+[2016-12-23 20:56.59] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - pcre-dev
+#  - pkgconfig
+m4
+pkgconfig
+# The following new OS packages need to be installed: pcre-dev
+The following command needs to be run through "sudo":
+    apk add pcre-dev
+(1/4) Installing libpcre16 (8.38-r1)
+(2/4) Installing libpcre32 (8.38-r1)
+(3/4) Installing libpcrecpp (8.38-r1)
+(4/4) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 424 MiB in 86 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install benchmark 1.4
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [benchmark.1.4: dl]
+[benchmark.1.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [benchmark: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/benchmark.1.4)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ benchmark
+- Package version: ..................................... 1.4
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Whether to compile the examples.: .................... false
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_unix: ............................................ /usr/lib/ocaml
+- ocamldoc: ............................................ /usr/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/benchmark.1.4)
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 45, characters 34-42:
+- Warning: the tag "pkg_pcre" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 49, characters 23-31:
+- Warning: the tag "pkg_pcre" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package unix -modules benchmark.mli > benchmark.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -package unix -o benchmark.cmi benchmark.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package unix -modules benchmark.ml > benchmark.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -safe-string -strict-formats -package unix -o benchmark.cmo benchmark.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a benchmark.cmo -o benchmark.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -safe-string -strict-formats -package unix -o benchmark.cmx benchmark.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a benchmark.cmx -o benchmark.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared benchmark.cmxa benchmark.cmx -o benchmark.cmxs
+-> compiled  benchmark.1.4
+Processing  2/2: [benchmark: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/default/.opam-switch/build/benchmark.1.4)
+- Installed /home/opam/.opam/default/lib/benchmark/benchmark.mli
+- Installed /home/opam/.opam/default/lib/benchmark/benchmark.cma
+- Installed /home/opam/.opam/default/lib/benchmark/benchmark.cmxa
+- Installed /home/opam/.opam/default/lib/benchmark/benchmark.a
+- Installed /home/opam/.opam/default/lib/benchmark/benchmark.cmxs
+- Installed /home/opam/.opam/default/lib/benchmark/benchmark.cmi
+- Installed /home/opam/.opam/default/lib/benchmark/benchmark.cmti
+- Installed /home/opam/.opam/default/lib/benchmark/benchmark.cmt
+- Installed /home/opam/.opam/default/lib/benchmark/benchmark.annot
+- Installed /home/opam/.opam/default/lib/benchmark/benchmark.cmx
+- Installed /home/opam/.opam/default/lib/benchmark/META
+-> installed benchmark.1.4
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 21:07.25] Success
