@@ -1,0 +1,39 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - linux-headers
+#  - m4
+#  - ncurses-dev
+#  - pkgconfig
+m4
+ncurses-dev
+pkgconfig
+# The following new OS packages need to be installed: linux-headers
+The following command needs to be run through "sudo":
+    apk add linux-headers
+(1/1) Installing linux-headers (4.4.6-r1)
+OK: 428 MiB in 83 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install mirage-fs 0.3.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [mirage-fs.0.3.0: dl]
+[mirage-fs.0.3.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [mirage-fs: make all]
++ make "all" (CWD=/home/opam/.opam/default/.opam-switch/build/mirage-fs.0.3.0)
+- cd crunch && ocamlbuild  crunch.native
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /usr/bin/ocamldep.opt -modules crunch.ml > crunch.ml.depends
+- /usr/bin/ocamlc.opt -c -o crunch.cmo crunch.ml
+- /usr/bin/ocamlopt.opt -c -o crunch.cmx crunch.ml
+- /usr/bin/ocamlc.opt -c custom_unix_stubs.c
+- /usr/bin/ocamlmklib -o crunch custom_unix_stubs.o
+- /usr/bin/ocamlopt.opt unix.cmxa crunch.cmx libcrunch.a -o crunch.native
+-> compiled  mirage-fs.0.3.0
+-> installed mirage-fs.0.3.0
+Done.
+# Run eval `opam env` to update the current shell environment
