@@ -1,0 +1,56 @@
+=== opam depext -ivyj 2 radare2
+[2016-12-23 00:09.48] Starting...
+[2016-12-23 00:09.49] Waiting for free pool slot to run
+[2016-12-23 01:07.13] Pool slot obtained, starting run
+[2016-12-23 01:07.13] docker run sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b opam depext -ivyj 2 radare2
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - camlp4-extra
+#  - debianutils
+#  - m4
+#  - radare2
+# The following new OS packages need to be installed: radare2
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy radare2
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libradare2-common.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libradare2-common_0.9.6-3.1ubuntu1_all.deb ...
+Unpacking libradare2-common (0.9.6-3.1ubuntu1) ...
+Selecting previously unselected package libradare2-0.9.6:amd64.
+Preparing to unpack .../libradare2-0.9.6_0.9.6-3.1ubuntu1_amd64.deb ...
+Unpacking libradare2-0.9.6:amd64 (0.9.6-3.1ubuntu1) ...
+Selecting previously unselected package libmagic-dev:amd64.
+Preparing to unpack .../libmagic-dev_1%3a5.25-2ubuntu1_amd64.deb ...
+Unpacking libmagic-dev:amd64 (1:5.25-2ubuntu1) ...
+Selecting previously unselected package libradare2-dev.
+Preparing to unpack .../libradare2-dev_0.9.6-3.1ubuntu1_amd64.deb ...
+Unpacking libradare2-dev (0.9.6-3.1ubuntu1) ...
+Selecting previously unselected package radare2.
+Preparing to unpack .../radare2_0.9.6-3.1ubuntu1_amd64.deb ...
+Unpacking radare2 (0.9.6-3.1ubuntu1) ...
+Setting up libradare2-common (0.9.6-3.1ubuntu1) ...
+Setting up libradare2-0.9.6:amd64 (0.9.6-3.1ubuntu1) ...
+Setting up libmagic-dev:amd64 (1:5.25-2ubuntu1) ...
+Setting up libradare2-dev (0.9.6-3.1ubuntu1) ...
+Setting up radare2 (0.9.6-3.1ubuntu1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following dependencies couldn't be met:
+  - radare2 -> ocaml >= 4.03.0 -> ocaml-variants < 4.05.1~
+    conflict with the base packages of this switch
+  - radare2 -> ocaml >= 4.03.0 -> ocaml-system >= 4.03.0
+    unmet availability conditions, e.g. sys-ocaml-version = "4.03.0"
+  - radare2 -> ocaml >= 4.03.0 -> ocaml-base-compiler >= 4.03.0
+    conflict with the base packages of this switch
+
+No solution found, exiting
+'opam install --verbose --yes --jobs=2 radare2' failed.
+[2016-12-23 01:07.29] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b" "opam" "depext" "-ivyj" "2" "radare2" exited with status 3
