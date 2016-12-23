@@ -1,0 +1,131 @@
+=== opam depext -ivyj 2 geoip
+[2016-12-23 21:14.20] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install geoip 0.0.2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [geoip.0.0.2: dl]
+[geoip.0.0.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [geoip: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/geoip.0.0.2)
+- File "setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ..................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: ........................................ /usr/bin/ocamlc.opt
+- ocamlopt: ...................................... /usr/bin/ocamlopt.opt
+- ocamlbuild: .................................... /usr/bin/ocamlbuild
+- Package name: .................................. geoip
+- Package version: ............................... 0.0.2
+- os_type: ....................................... Unix
+- system: ........................................ linux
+- architecture: .................................. amd64
+- ccomp_type: .................................... cc
+- ocaml_version: ................................. 4.02.3
+- standard_library_default: ...................... /usr/lib/ocaml
+- standard_library: .............................. /usr/lib/ocaml
+- standard_runtime: .............................. /usr/bin/ocamlrun
+- bytecomp_c_compiler: ........................... gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ............................. gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ......................................... default
+- ext_obj: ....................................... .o
+- ext_asm: ....................................... .s
+- ext_lib: ....................................... .a
+- ext_dll: ....................................... .so
+- default_executable_name: ....................... a.out
+- systhread_supported: ........................... true
+- Install architecture-independent files dir: .... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ... $prefix
+- User executables: .............................. $exec_prefix/bin
+- System admin executables: ...................... $exec_prefix/sbin
+- Program executables: ........................... $exec_prefix/libexec
+- Read-only single-machine data: ................. $prefix/etc
+- Modifiable architecture-independent data: ...... $prefix/com
+- Modifiable single-machine data: ................ $prefix/var
+- Object code libraries: ......................... $exec_prefix/lib
+- Read-only arch-independent data root: .......... $prefix/share
+- Read-only architecture-independent data: ....... $datarootdir
+- Info documentation: ............................ $datarootdir/info
+- Locale-dependent data: ......................... $datarootdir/locale
+- Man documentation: ............................. $datarootdir/man
+- Documentation root: ............................ $datarootdir/doc/$pkg_name
+- HTML documentation: ............................ $docdir
+- DVI documentation: ............................. $docdir
+- PDF documentation: ............................. $docdir
+- PS documentation: .............................. $docdir
+- findlib_version: ............................... 1.7.1
+- is_native: ..................................... true
+- suffix_program: ................................ 
+- Remove a file.: ................................ rm -f
+- Remove a directory.: ........................... rm -rf
+- Turn ocaml debug flag on: ...................... true
+- Turn ocaml profile flag on: .................... false
+- Compiler support generation of .cmxs.: ......... true
+- OCamlbuild additional flags: ................... 
+- pkg_unix: ...................................... /usr/lib/ocaml
+- ocamldoc: ...................................... /usr/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/geoip.0.0.2)
+- File "setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamlc -g -c src/geoip_stubs.c
+- + ocamlfind ocamlc -g -c src/geoip_stubs.c
+- src/geoip_stubs.c:63:19: fatal error: GeoIP.h: No such file or directory
+- compilation terminated.
+- Command exited with code 2.
+- E: Failure("Command ''/usr/bin/ocamlbuild' src/libgeoip_stubs.a src/dllgeoip_stubs.so src/geoip.cma src/geoip.cmxa src/geoip.a src/geoip.cmxs test.native -tag debug' terminated with error code 10")
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build geoip 0.0.2
++- 
+[ERROR] The compilation of geoip failed at "ocaml setup.ml -build".
+
+#=== ERROR while compiling geoip.0.0.2 ========================================#
+# command              ocaml setup.ml -build
+# path                 /home/opam/.opam/default/.opam-switch/build/geoip.0.0.2
+# exit-code            1
+# env-file             /home/opam/.opam/log/geoip-1-ad8886.env
+# output-file          /home/opam/.opam/log/geoip-1-ad8886.out
+### output ###
+# [...]
+# Warning 3: deprecated: String.set
+# Use Bytes.set instead.
+# File "setup.ml", line 1793, characters 6-24:
+# Warning 3: deprecated: Lazy.lazy_from_fun
+# Use Lazy.from_fun instead.
+# /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+# ocamlfind ocamlc -g -c src/geoip_stubs.c
+# + ocamlfind ocamlc -g -c src/geoip_stubs.c
+# src/geoip_stubs.c:63:19: fatal error: GeoIP.h: No such file or directory
+# compilation terminated.
+# Command exited with code 2.
+# E: Failure("Command ''/usr/bin/ocamlbuild' src/libgeoip_stubs.a src/dllgeoip_stubs.so src/geoip.cma src/geoip.cmxa src/geoip.a src/geoip.cmxs test.native -tag debug' terminated with error code 10")
+
+- No changes have been performed
+
+=-=- geoip.0.0.2 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext geoip.0.0.2' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 geoip' failed.
+[2016-12-23 21:22.24] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "geoip" exited with status 4
