@@ -1,0 +1,46 @@
+=== opam depext -ivyj 2 ocurl
+[2016-12-23 18:50.59] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-libcurl 1                                      [required by ocurl]
+  - install ocurl        0.7.9
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [ocurl.0.7.9: dl]
+[ocurl.0.7.9] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-libcurl: pkg-config libcurl]
++ pkg-config "libcurl" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-libcurl.1)
+[ERROR] The compilation of conf-libcurl failed at "pkg-config libcurl".
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install ocurl 0.7.9
++- 
++- The following actions failed
+| - build conf-libcurl 1
++- 
+- No changes have been performed
+
+=-=- conf-libcurl.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-libcurl.1' may help you find the correct installation for your system.
+
+#=== ERROR while compiling conf-libcurl.1 =====================================#
+# command              pkg-config libcurl
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-libcurl.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-libcurl-1-c61e7b.env
+# output-file          /home/opam/.opam/log/conf-libcurl-1-c61e7b.out
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 ocurl' failed.
+[2016-12-23 20:25.03] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "ocurl" exited with status 4
