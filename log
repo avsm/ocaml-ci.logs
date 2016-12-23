@@ -1,0 +1,87 @@
+=== opam depext -ivyj 2 caml-mode
+[2016-12-23 20:57.01] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-emacs 1                                        [required by caml-mode]
+  - install caml-mode  4.02
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [caml-mode.4.02: dl]
+Processing  2/2: [caml-mode.4.02: dl]
+[caml-mode.4.02] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed conf-emacs.1
+Processing  4/4: [caml-mode: make install]
++ make "install" "EMACSDIR=/home/opam/.opam/default/share/emacs/site-lisp" (CWD=/home/opam/.opam/default/.opam-switch/build/caml-mode.4.02)
+- grep: opam/opam: No such file or directory
+- grep: opam/opam: No such file or directory
+- grep: opam/opam: No such file or directory
+- grep: opam/opam: No such file or directory
+- grep: opam/opam: No such file or directory
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/caml-mode.4.02'
+- grep: opam/opam: No such file or directory
+- grep: opam/opam: No such file or directory
+- grep: opam/opam: No such file or directory
+- grep: opam/opam: No such file or directory
+- grep: opam/opam: No such file or directory
+- Installing in /home/opam/.opam/default/share/emacs/site-lisp...
+- if test -d /home/opam/.opam/default/share/emacs/site-lisp; then : ; else mkdir -p /home/opam/.opam/default/share/emacs/site-lisp; fi
+- cp caml-font.el caml-hilit.el caml.el camldebug.el inf-caml.el caml-compat.el caml-help.el caml-types.el caml-xemacs.el caml-emacs.el /home/opam/.opam/default/share/emacs/site-lisp
+- if [ -z "" ]; then \
+-   cd /home/opam/.opam/default/share/emacs/site-lisp; emacs --batch --eval '(progn (setq load-path (cons "." load-path)) (byte-compile-file "caml-xemacs.el") (byte-compile-file "caml-emacs.el") (byte-compile-file "caml.el") (byte-compile-file "inf-caml.el") (byte-compile-file "caml-help.el") (byte-compile-file "caml-types.el") (byte-compile-file "caml-font.el") (byte-compile-file "camldebug.el"))'; \
+- fi
+- /bin/sh: emacs: not found
+- Makefile:75: recipe for target 'simple-install' failed
+- make[1]: *** [simple-install] Error 127
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/caml-mode.4.02'
+- Makefile:54: recipe for target 'install' failed
+- make: *** [install] Error 2
+[ERROR] The installation of caml-mode failed at "make install EMACSDIR=/home/opam/.opam/default/share/emacs/site-lisp".
+Processing  4/4: [caml-mode: make uninstall]
++ make "uninstall" "EMACSDIR=/home/opam/.opam/default/share/emacs/site-lisp"
+- make: *** No rule to make target 'uninstall'.  Stop.
+Processing  4/4: [caml-mode: make uninstall-ocamltags]
++ make "uninstall-ocamltags" "BINDIR=/home/opam/.opam/default/bin"
+- make: *** No rule to make target 'uninstall-ocamltags'.  Stop.
+
+#=== ERROR while installing caml-mode.4.02 ====================================#
+# command              make install EMACSDIR=/home/opam/.opam/default/share/emacs/site-lisp
+# path                 /home/opam/.opam/default/.opam-switch/build/caml-mode.4.02
+# exit-code            2
+# env-file             /home/opam/.opam/log/caml-mode-1-d2d111.env
+# output-file          /home/opam/.opam/log/caml-mode-1-d2d111.out
+### output ###
+# [...]
+# Installing in /home/opam/.opam/default/share/emacs/site-lisp...
+# if test -d /home/opam/.opam/default/share/emacs/site-lisp; then : ; else mkdir -p /home/opam/.opam/default/share/emacs/site-lisp; fi
+# cp caml-font.el caml-hilit.el caml.el camldebug.el inf-caml.el caml-compat.el caml-help.el caml-types.el caml-xemacs.el caml-emacs.el /home/opam/.opam/default/share/emacs/site-lisp
+# if [ -z "" ]; then \
+#   cd /home/opam/.opam/default/share/emacs/site-lisp; emacs --batch --eval '(progn (setq load-path (cons "." load-path)) (byte-compile-file "caml-xemacs.el") (byte-compile-file "caml-emacs.el") (byte-compile-file "caml.el") (byte-compile-file "inf-caml.el") (byte-compile-file "caml-help.el") (byte-compile-file "caml-types.el") (byte-compile-file "caml-font.el") (byte-compile-file "camldebug.el[...]
+# fi
+# /bin/sh: emacs: not found
+# Makefile:75: recipe for target 'simple-install' failed
+# make[1]: *** [simple-install] Error 127
+# make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/caml-mode.4.02'
+# Makefile:54: recipe for target 'install' failed
+# make: *** [install] Error 2
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - install caml-mode 4.02
++- 
++- The following changes have been performed
+| - install conf-emacs 1
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/default/.opam-switch/backup/state-20161223210932.export"
+'opam install --verbose --yes --jobs=2 caml-mode' failed.
+[2016-12-23 21:09.39] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "caml-mode" exited with status 4
