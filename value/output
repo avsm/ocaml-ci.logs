@@ -1,0 +1,121 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install base-bytes base                                     [required by stringext]
+  - install stringext  1.4.3
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [stringext.1.4.3: dl]
+[stringext.1.4.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-> installed base-bytes.base
+Processing  3/4: [stringext: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" (CWD=/home/opam/.opam/default/.opam-switch/build/stringext.1.4.3)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ Stringext
+- Package version: ..................................... 1.4.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_bytes: ........................................... /home/opam/.opam/default/lib/bytes
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/stringext.1.4.3)
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 22, characters 41-50:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 26, characters 48-57:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 27, characters 48-58:
+- Warning: the tag "pkg_qcheck" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 30, characters 23-32:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 31, characters 23-33:
+- Warning: the tag "pkg_qcheck" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package bytes -modules lib/stringext.mli > lib/stringext.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package bytes -I lib -o lib/stringext.cmi lib/stringext.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package bytes -modules lib/stringext.ml > lib/stringext.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package bytes -I lib -o lib/stringext.cmo lib/stringext.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -package bytes -I lib -o lib/stringext.cmo lib/stringext.ml
+- File "lib/stringext.ml", line 245, characters 4-22:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a lib/stringext.cmo -o lib/stringext.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package bytes -I lib -o lib/stringext.cmx lib/stringext.ml
+- + /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -package bytes -I lib -o lib/stringext.cmx lib/stringext.ml
+- File "lib/stringext.ml", line 245, characters 4-22:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a lib/stringext.cmx -o lib/stringext.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared lib/stringext.cmxa lib/stringext.cmx -o lib/stringext.cmxs
+-> compiled  stringext.1.4.3
+Processing  4/4: [stringext: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/default/.opam-switch/build/stringext.1.4.3)
+- Installed /home/opam/.opam/default/lib/stringext/stringext.mli
+- Installed /home/opam/.opam/default/lib/stringext/stringext.cma
+- Installed /home/opam/.opam/default/lib/stringext/stringext.cmxa
+- Installed /home/opam/.opam/default/lib/stringext/stringext.a
+- Installed /home/opam/.opam/default/lib/stringext/stringext.cmxs
+- Installed /home/opam/.opam/default/lib/stringext/stringext.cmi
+- Installed /home/opam/.opam/default/lib/stringext/stringext.cmti
+- Installed /home/opam/.opam/default/lib/stringext/stringext.cmt
+- Installed /home/opam/.opam/default/lib/stringext/stringext.annot
+- Installed /home/opam/.opam/default/lib/stringext/stringext.cmx
+- Installed /home/opam/.opam/default/lib/stringext/META
+-> installed stringext.1.4.3
+Done.
+# Run eval `opam env` to update the current shell environment
