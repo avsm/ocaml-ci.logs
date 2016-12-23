@@ -1,0 +1,235 @@
+=== opam depext -ivyj 2 faillib
+[2016-12-23 21:14.17] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install herelib 112.35.00                                   [required by faillib]
+  - install faillib 111.17.00
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [faillib.111.17.00: dl]
+Processing  2/2: [faillib.111.17.00: dl] [herelib.112.35.00: dl]
+[faillib.111.17.00] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [herelib.112.35.00: dl]
+[herelib.112.35.00] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [herelib: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/herelib.112.35.00)
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- rm -f setup.cmx setup.cmi setup.o setup.obj setup.cmo
+- ./setup.exe -configure 
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ herelib
+- Package version: ..................................... 112.35.00
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- camlp4o: ............................................. /usr/bin/camlp4o
+- pkg_camlp4_lib: ...................................... /usr/lib/ocaml/camlp4
+- pkg_camlp4_quotations: ............................... /usr/lib/ocaml/camlp4
+- pkg_camlp4_extend: ................................... /usr/lib/ocaml/camlp4
+- 
+- ./setup.exe -build 
+- ocamlfind ocamlopt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules lib/herelib_dummy.ml > lib/herelib_dummy.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I lib -o lib/herelib_dummy.cmo lib/herelib_dummy.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a lib/herelib_dummy.cmo -o lib/herelib.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I lib -o lib/herelib_dummy.cmx lib/herelib_dummy.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a lib/herelib_dummy.cmx -o lib/herelib.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared lib/herelib.cmxa lib/herelib_dummy.cmx -o lib/herelib.cmxs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.lib -package camlp4.extend -modules src/pa_here.mli > src/pa_here.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.lib -package camlp4.extend -I src -o src/pa_here.cmi src/pa_here.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.lib -package camlp4.extend -modules src/pa_here.ml > src/pa_here.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.lib -package camlp4.extend -I src -o src/pa_here.cmo src/pa_here.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a src/pa_here.cmo -o src/pa_herelib.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -syntax camlp4o -syntax camlp4o -package camlp4.quotations -package camlp4.lib -package camlp4.extend -I src -o src/pa_here.cmx src/pa_here.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a src/pa_here.cmx -o src/pa_herelib.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared src/pa_herelib.cmxa src/pa_here.cmx -o src/pa_herelib.cmxs
+-> compiled  herelib.112.35.00
+Processing  2/4: [herelib: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/herelib.112.35.00)
+- ./setup.exe -install 
+- Installed /home/opam/.opam/default/lib/herelib/herelib_dummy.ml
+- Installed /home/opam/.opam/default/lib/herelib/herelib.cma
+- Installed /home/opam/.opam/default/lib/herelib/herelib.cmxa
+- Installed /home/opam/.opam/default/lib/herelib/herelib.a
+- Installed /home/opam/.opam/default/lib/herelib/herelib.cmxs
+- Installed /home/opam/.opam/default/lib/herelib/herelib_dummy.cmi
+- Installed /home/opam/.opam/default/lib/herelib/herelib_dummy.cmt
+- Installed /home/opam/.opam/default/lib/herelib/herelib_dummy.annot
+- Installed /home/opam/.opam/default/lib/herelib/herelib_dummy.cmx
+- Installed /home/opam/.opam/default/lib/herelib/pa_here.mli
+- Installed /home/opam/.opam/default/lib/herelib/pa_herelib.cma
+- Installed /home/opam/.opam/default/lib/herelib/pa_herelib.cmxa
+- Installed /home/opam/.opam/default/lib/herelib/pa_herelib.a
+- Installed /home/opam/.opam/default/lib/herelib/pa_herelib.cmxs
+- Installed /home/opam/.opam/default/lib/herelib/pa_here.cmi
+- Installed /home/opam/.opam/default/lib/herelib/pa_here.cmti
+- Installed /home/opam/.opam/default/lib/herelib/pa_here.cmt
+- Installed /home/opam/.opam/default/lib/herelib/pa_here.annot
+- Installed /home/opam/.opam/default/lib/herelib/pa_here.cmx
+- Installed /home/opam/.opam/default/lib/herelib/META
+-> installed herelib.112.35.00
+Processing  3/4: [faillib: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/faillib.111.17.00)
+- ocamlopt.opt -o setup.exe setup.ml || ocamlopt -o setup.exe setup.ml || ocamlc -o setup.exe setup.ml
+- File "setup.ml", line 245, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2500, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- rm -f setup.cmx setup.cmi setup.o setup.obj setup.cmo
+- ./setup.exe -configure 
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ faillib
+- Package version: ..................................... 111.17.00
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- camlp4o: ............................................. /usr/bin/camlp4o
+- pkg_camlp4_lib: ...................................... /usr/lib/ocaml/camlp4
+- pkg_camlp4_quotations: ............................... /usr/lib/ocaml/camlp4
+- pkg_camlp4_extend: ................................... /usr/lib/ocaml/camlp4
+- pkg_herelib_syntax: .................................. /home/opam/.opam/default/lib/herelib
+- 
+- ./setup.exe -build 
+- ocamlfind ocamlopt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -syntax camlp4o -package herelib.syntax -package camlp4.quotations -package camlp4.lib -package camlp4.extend -modules lib/dummy.ml > lib/dummy.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -syntax camlp4o -package herelib.syntax -package camlp4.quotations -package camlp4.lib -package camlp4.extend -I lib -o lib/dummy.cmo lib/dummy.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a lib/dummy.cmo -o lib/faillib.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -syntax camlp4o -package herelib.syntax -package camlp4.quotations -package camlp4.lib -package camlp4.extend -I lib -o lib/dummy.cmx lib/dummy.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a lib/dummy.cmx -o lib/faillib.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared lib/faillib.cmxa lib/dummy.cmx -o lib/faillib.cmxs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -syntax camlp4o -package herelib.syntax -package camlp4.quotations -package camlp4.lib -package camlp4.extend -modules lib/pa_fail.ml > lib/pa_fail.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -syntax camlp4o -package herelib.syntax -package camlp4.quotations -package camlp4.lib -package camlp4.extend -I lib -o lib/pa_fail.cmo lib/pa_fail.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a lib/pa_fail.cmo -o lib/faillib_syntax.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -syntax camlp4o -package herelib.syntax -package camlp4.quotations -package camlp4.lib -package camlp4.extend -I lib -o lib/pa_fail.cmx lib/pa_fail.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a lib/pa_fail.cmx -o lib/faillib_syntax.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared lib/faillib_syntax.cmxa lib/pa_fail.cmx -o lib/faillib_syntax.cmxs
+-> compiled  faillib.111.17.00
+Processing  4/4: [faillib: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/faillib.111.17.00)
+- ./setup.exe -install 
+- Installed /home/opam/.opam/default/lib/faillib/faillib.cma
+- Installed /home/opam/.opam/default/lib/faillib/faillib.cmxa
+- Installed /home/opam/.opam/default/lib/faillib/faillib.a
+- Installed /home/opam/.opam/default/lib/faillib/faillib.cmxs
+- Installed /home/opam/.opam/default/lib/faillib/dummy.cmx
+- Installed /home/opam/.opam/default/lib/faillib/pa_fail.ml
+- Installed /home/opam/.opam/default/lib/faillib/faillib_syntax.cma
+- Installed /home/opam/.opam/default/lib/faillib/faillib_syntax.cmxa
+- Installed /home/opam/.opam/default/lib/faillib/faillib_syntax.a
+- Installed /home/opam/.opam/default/lib/faillib/faillib_syntax.cmxs
+- Installed /home/opam/.opam/default/lib/faillib/pa_fail.cmi
+- Installed /home/opam/.opam/default/lib/faillib/pa_fail.cmx
+- Installed /home/opam/.opam/default/lib/faillib/META
+-> installed faillib.111.17.00
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 21:20.56] Success
