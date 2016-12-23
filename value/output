@@ -1,0 +1,206 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - autoconf
+#  - debianutils
+#  - m4
+# The following new OS packages need to be installed: autoconf
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy autoconf
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package autoconf.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../autoconf_2.69-9_all.deb ...
+Unpacking autoconf (2.69-9) ...
+Selecting previously unselected package autotools-dev.
+Preparing to unpack .../autotools-dev_20150820.1_all.deb ...
+Unpacking autotools-dev (20150820.1) ...
+Selecting previously unselected package automake.
+Preparing to unpack .../automake_1%3a1.15-4ubuntu1_all.deb ...
+Unpacking automake (1:1.15-4ubuntu1) ...
+Setting up autoconf (2.69-9) ...
+Setting up autotools-dev (20150820.1) ...
+Setting up automake (1:1.15-4ubuntu1) ...
+update-alternatives: using /usr/bin/automake-1.15 to provide /usr/bin/automake (automake) in auto mode
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-autoconf 0.1                                   [required by parmap]
+  - install parmap        1.0-rc7.1
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [parmap.1.0-rc7.1: dl]
+[parmap.1.0-rc7.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-autoconf: which autoconf]
++ which "autoconf" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-autoconf.0.1)
+- /usr/bin/autoconf
+-> compiled  conf-autoconf.0.1
+-> installed conf-autoconf.0.1
+Processing  3/4: [parmap: aclocal m4]
++ aclocal "-I" "m4" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/parmap.1.0-rc7.1)
+Processing  3/4: [parmap: autoconf]
++ autoconf  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/parmap.1.0-rc7.1)
+Processing  3/4: [parmap: autoheader]
++ autoheader  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/parmap.1.0-rc7.1)
+Processing  3/4: [parmap: ./configure]
++ ./configure  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/parmap.1.0-rc7.1)
+- checking for ocamlc... ocamlc
+- OCaml version is 4.03.0
+- OCaml library path is /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for dynlink.cmxa... yes
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamlbuild... ocamlbuild
+- checking for ocamlfind... ocamlfind
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking how to run the C preprocessor... gcc -E
+- checking for grep that handles long lines and -e... /bin/grep
+- checking for egrep... /bin/grep -E
+- checking for ANSI C header files... yes
+- checking for sys/types.h... yes
+- checking for sys/stat.h... yes
+- checking for stdlib.h... yes
+- checking for string.h... yes
+- checking for memory.h... yes
+- checking for strings.h... yes
+- checking for inttypes.h... 
+- yes
+- checking for stdint.h... yes
+- checking for unistd.h... yes
+- checking sched.h usability... yes
+- checking sched.h presence... yes
+- checking for sched.h... yes
+- checking whether sched_setaffinity is declared... yes
+- checking mach/thread_policy.h usability... no
+- checking mach/thread_policy.h presence... no
+- checking for mach/thread_policy.h... no
+- checking whether thread_policy_set is declared... no
+- ocaml version 4.03.0. Use standard Makefile
+- configure: creating ./config.status
+- config.status: creating Makefile
+- config.status: creating config.h
+Processing  3/4: [parmap: make]
++ make "DESTDIR=/home/opam/.opam/ocaml-base-compiler.4.03.0" "OCAMLLIBDIR=lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/parmap.1.0-rc7.1)
+- ocamlbuild -j 10 -use-ocamlfind  parmap.cma  parmap.cmxa  parmap.cmxs parmap.a
+- ocamlfind ocamlc -ccopt -D_GNU_SOURCE -ccopt -fPIC -c bytearray_stubs.c
+- ocamlfind ocamlc -ccopt -D_GNU_SOURCE -ccopt -fPIC -c setcore_stubs.c
+- ocamlfind ocamlmklib -o parmap_stubs bytearray_stubs.o setcore_stubs.o
+- ocamlfind ocamldep -package unix -package bigarray -modules parmap.mli > parmap.mli.depends
+- ocamlfind ocamlc -c -annot -package unix -package bigarray -w Ae -o parmap.cmi parmap.mli
+- ocamlfind ocamldep -package unix -package bigarray -modules parmap.ml > parmap.ml.depends
+- ocamlfind ocamldep -package unix -package bigarray -modules bytearray.mli > bytearray.mli.depends
+- ocamlfind ocamldep -package unix -package bigarray -modules parmap_utils.mli > parmap_utils.mli.depends
+- ocamlfind ocamldep -package unix -package bigarray -modules setcore.ml > setcore.ml.depends
+- ocamlfind ocamlc -c -annot -package unix -package bigarray -w Ae -o bytearray.cmi bytearray.mli
+- ocamlfind ocamlc -c -annot -package unix -package bigarray -w Ae -o parmap_utils.cmi parmap_utils.mli
+- ocamlfind ocamlc -c -annot -package unix -package bigarray -w Ae -o setcore.cmo setcore.ml
+- ocamlfind ocamldep -package unix -package bigarray -modules bytearray.ml > bytearray.ml.depends
+- ocamlfind ocamldep -package unix -package bigarray -modules parmap_utils.ml > parmap_utils.ml.depends
+- ocamlfind ocamlc -c -annot -package unix -package bigarray -w Ae -o parmap.cmo parmap.ml
+- ocamlfind ocamlc -c -annot -package unix -package bigarray -w Ae -o bytearray.cmo bytearray.ml
+- ocamlfind ocamlc -c -annot -package unix -package bigarray -w Ae -o parmap_utils.cmo parmap_utils.ml
+- + ocamlfind ocamlc -c -annot -package unix -package bigarray -w Ae -o bytearray.cmo bytearray.ml
+- File "bytearray.ml", line 38, characters 0-118:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bytearray.ml", line 41, characters 0-116:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bytearray.ml", line 47, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bytearray.ml", line 69, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bytearray.ml", line 105, characters 0-132:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bytearray.ml", line 108, characters 0-130:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- + ocamlfind ocamlc -c -annot -package unix -package bigarray -w Ae -o parmap.cmo parmap.ml
+- File "parmap.ml", line 540, characters 12-24:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- ocamlfind ocamlc -a -dllib -lparmap_stubs bytearray.cmo parmap_utils.cmo setcore.cmo parmap.cmo -o parmap.cma
+- ocamlfind ocamlopt -c -annot -package unix -package bigarray -w Ae -o bytearray.cmx bytearray.ml
+- ocamlfind ocamlopt -c -annot -package unix -package bigarray -w Ae -o parmap_utils.cmx parmap_utils.ml
+- ocamlfind ocamlopt -c -annot -package unix -package bigarray -w Ae -o setcore.cmx setcore.ml
+- + ocamlfind ocamlopt -c -annot -package unix -package bigarray -w Ae -o bytearray.cmx bytearray.ml
+- File "bytearray.ml", line 38, characters 0-118:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bytearray.ml", line 41, characters 0-116:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bytearray.ml", line 47, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bytearray.ml", line 69, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "bytearray.ml", line 105, characters 0-132:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "bytearray.ml", line 108, characters 0-130:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlfind ocamlopt -c -annot -package unix -package bigarray -w Ae -o parmap.cmx parmap.ml
+- + ocamlfind ocamlopt -c -annot -package unix -package bigarray -w Ae -o parmap.cmx parmap.ml
+- File "parmap.ml", line 540, characters 12-24:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- ocamlfind ocamlopt -a -cclib -lparmap_stubs bytearray.cmx parmap_utils.cmx setcore.cmx parmap.cmx -o parmap.cmxa
+- ocamlfind ocamlopt -shared libparmap_stubs.a bytearray.cmx parmap_utils.cmx setcore.cmx parmap.cmx -o parmap.cmxs
+- # Parallel statistics: { count(total): 4(18), max: 3, min: 2, average(total): 2.750(1.389) }
+-> compiled  parmap.1.0-rc7.1
+Processing  4/4: [parmap: make install]
++ make "install" "DESTDIR=/home/opam/.opam/ocaml-base-compiler.4.03.0" "OCAMLLIBDIR=lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/parmap.1.0-rc7.1)
+- test -d /home/opam/.opam/ocaml-base-compiler.4.03.0/lib || mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/lib
+- test -d /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs || mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs
+- ocamlfind install -destdir /home/opam/.opam/ocaml-base-compiler.4.03.0/lib -patch-version 1.0-rc7 parmap META  _build/parmap.cma _build/bytearray.cmx _build/myocamlbuild.cmx _build/setcore.cmx _build/parmap_utils.cmx _build/parmap.cmx _build/parmap.cmxa _build/parmap.cmxs _build/bytearray.mli _build/parmap_utils.mli _build/parmap.mli _build/parmap.cmi _build/bytearray.cmi _build/parmap_utils.cmi _build/setcore.cmi _build/dllparmap_stubs.so _build/libparmap_stubs.a _build/parmap.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/parmap.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/libparmap_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/setcore.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/parmap_utils.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/bytearray.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/parmap.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/parmap.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/parmap_utils.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/bytearray.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/parmap.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/parmap.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/parmap.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/parmap_utils.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/setcore.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/myocamlbuild.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/bytearray.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/parmap.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/parmap/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllparmap_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllparmap_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+- (cd _build; ocamldoc -man -man-mini parmap.ml parmap.mli)
+- File "parmap.ml", line 540, characters 12-24:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- test -d /home/opam/.opam/ocaml-base-compiler.4.03.0/man/man3 || mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/man/man3
+- cp -p _build/Parmap.3o /home/opam/.opam/ocaml-base-compiler.4.03.0/man/man3
+-> installed parmap.1.0-rc7.1
+Done.
+# Run eval `opam env` to update the current shell environment
