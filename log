@@ -1,0 +1,87 @@
+=== opam depext -ivyj 2 vg
+[2016-12-23 21:15.22] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - ncurses-dev
+#  - pkgconfig
+m4
+ncurses-dev
+pkgconfig
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install gg 0.9.1                                            [required by vg]
+  - install vg 0.8.2
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [gg.0.9.1: dl]
+Processing  2/2: [gg.0.9.1: dl] [vg.0.8.2: dl]
+[gg.0.9.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [vg.0.8.2: dl]
+[vg.0.8.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [gg: ocaml]
++ ocaml "pkg/git.ml" (CWD=/home/opam/.opam/default/.opam-switch/build/gg.0.9.1)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/default/.opam-switch/build/gg.0.9.1)
+- ocamlfind ocamldep -package bigarray -modules src/gg.ml > src/gg.ml.depends
+- ocamlfind ocamldep -package bigarray -modules src/gg.mli > src/gg.mli.depends
+- ocamlfind ocamlc -c -annot -bin-annot -package bigarray -I src -I test -o src/gg.cmi src/gg.mli
+- ocamlfind ocamlopt -c -annot -bin-annot -package bigarray -I src -I test -o src/gg.cmx src/gg.ml
+- ocamlfind ocamlopt -a -package bigarray src/gg.cmx -o src/gg.cmxa
+- ocamlfind ocamlc -c -annot -bin-annot -package bigarray -I src -I test -o src/gg.cmo src/gg.ml
+- ocamlfind ocamlc -a -package bigarray src/gg.cmo -o src/gg.cma
+- ocamlfind ocamlopt -shared -package bigarray src/gg.cmx -o src/gg.cmxs
+- ocamlfind ocamldep -package bigarray -package compiler-libs.toplevel -modules src/gg_top.ml > src/gg_top.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -package bigarray -package compiler-libs.toplevel -I src -I test -o src/gg_top.cmo src/gg_top.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -package bigarray -package compiler-libs.toplevel -I src -I test -o src/gg_top.cmo src/gg_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml/compiler-libs, /usr/lib/ocaml
+- ocamlfind ocamlopt -c -annot -bin-annot -package bigarray -package compiler-libs.toplevel -I src -I test -o src/gg_top.cmx src/gg_top.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -package bigarray -package compiler-libs.toplevel -I src -I test -o src/gg_top.cmx src/gg_top.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml/compiler-libs, /usr/lib/ocaml
+- ocamlfind ocamlopt -a -package bigarray -package compiler-libs.toplevel src/gg_top.cmx -o src/gg_top.cmxa
+- + ocamlfind ocamlopt -a -package bigarray -package compiler-libs.toplevel src/gg_top.cmx -o src/gg_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml/compiler-libs, /usr/lib/ocaml
+- ocamlfind ocamlc -a -package bigarray -package compiler-libs.toplevel src/gg_top.cmo -o src/gg_top.cma
+- + ocamlfind ocamlc -a -package bigarray -package compiler-libs.toplevel src/gg_top.cmo -o src/gg_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml/compiler-libs, /usr/lib/ocaml
+- ocamlfind ocamlopt -shared -package bigarray -package compiler-libs.toplevel src/gg_top.cmx -o src/gg_top.cmxs
+- + ocamlfind ocamlopt -shared -package bigarray -package compiler-libs.toplevel src/gg_top.cmx -o src/gg_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /usr/lib/ocaml/compiler-libs, /usr/lib/ocaml
+-> compiled  gg.0.9.1
+-> installed gg.0.9.1
+Processing  3/4: [vg: ocaml]
++ ocaml "pkg/git.ml" (CWD=/home/opam/.opam/default/.opam-switch/build/vg.0.8.2)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+-> compiled  vg.0.8.2
+Processing  4/4: [vg: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" "uutf=false" "otfm=false" "cairo2=false" "jsoo=false" (CWD=/home/opam/.opam/default/.opam-switch/build/vg.0.8.2)
+- ocamlfind ocamldep -package gg -package bytes -modules src/vg.ml > src/vg.ml.depends
+- ocamlfind ocamldep -package gg -package bytes -modules src/vg.mli > src/vg.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package gg -package bytes -I src -I test -I db -o src/vg.cmi src/vg.mli
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package gg -package bytes -I src -I test -I db -o src/vg.cmx src/vg.ml
+- ocamlfind ocamlopt -a -package bytes src/vg.cmx -o src/vg.cmxa
+- ocamlfind ocamlc -c -bin-annot -safe-string -package gg -package bytes -I src -I test -I db -o src/vg.cmo src/vg.ml
+- ocamlfind ocamlc -a -package bytes src/vg.cmo -o src/vg.cma
+- ocamlfind ocamlopt -shared -package bytes src/vg.cmx -o src/vg.cmxs
+- ocamlfind ocamldep -package gg -package bytes -modules src/vgr_svg.ml > src/vgr_svg.ml.depends
+- ocamlfind ocamldep -package gg -package bytes -modules src/vgr_svg.mli > src/vgr_svg.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -package gg -package bytes -I src -I test -I db -o src/vgr_svg.cmi src/vgr_svg.mli
+- ocamlfind ocamlopt -c -bin-annot -safe-string -package gg -package bytes -I src -I test -I db -o src/vgr_svg.cmx src/vgr_svg.ml
+- ocamlfind ocamlopt -a -package bytes src/vgr_svg.cmx -o src/vgr_svg.cmxa
+- ocamlfind ocamlc -c -bin-annot -safe-string -package gg -package bytes -I src -I test -I db -o src/vgr_svg.cmo src/vgr_svg.ml
+- ocamlfind ocamlc -a -package bytes src/vgr_svg.cmo -o src/vgr_svg.cma
+- ocamlfind ocamlopt -shared -package bytes src/vgr_svg.cmx -o src/vgr_svg.cmxs
+- ln: ./test: File exists
+-> installed vg.0.8.2
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 21:55.19] Success
