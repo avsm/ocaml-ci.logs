@@ -1,0 +1,76 @@
+=== opam depext -ivyj 2 frenetic
+[2016-12-23 18:48.44] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - linux-headers
+#  - m4
+#  - ncurses-dev
+#  - openssl-dev
+#  - pcre-dev
+#  - pkgconfig
+#  - zlib-dev
+m4
+ncurses-dev
+pkgconfig
+# The following new OS packages need to be installed: linux-headers openssl-dev pcre-dev zlib-dev
+The following command needs to be run through "sudo":
+    apk add linux-headers openssl-dev pcre-dev zlib-dev
+(1/7) Installing linux-headers (4.4.6-r1)
+(2/7) Installing zlib-dev (1.2.8-r2)
+(3/7) Installing openssl-dev (1.0.2j-r0)
+(4/7) Installing libpcre16 (8.38-r1)
+(5/7) Installing libpcre32 (8.38-r1)
+(6/7) Installing libpcrecpp (8.38-r1)
+(7/7) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 437 MiB in 89 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ounit         2.0.0                                 [required by frenetic]
+  - install base-bytes    base                                  [required by lwt, ocplib-endian]
+  - install ppx_tools     5.0+4.03.0                            [required by lwt]
+  - install result        1.2                                   [required by lwt]
+  - install cppo          1.4.1                                 [required by ocplib-endian]
+  - install lwt           2.6.0                                 [required by frenetic]
+  - install ocplib-endian 1.0                                   [required by cstruct]
+  - install cstruct       0.7.1                                 [required by frenetic]
+  - install packet        0.1.1                                 [required by frenetic]
+  - install openflow      0.2.0                                 [required by frenetic]
+  - install frenetic      1.0       
+===== 11 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/11: [cppo.1.4.1: dl]
+Processing  3/11: [cppo.1.4.1: dl] [cstruct.0.7.1: dl]
+Processing  4/11: [cppo.1.4.1: dl] [cstruct.0.7.1: dl] [frenetic.1.0: http]
+[cppo.1.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/11: [cstruct.0.7.1: dl] [frenetic.1.0: http]
+[cstruct.0.7.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/11: [frenetic.1.0: http]
+Processing  5/11: [frenetic.1.0: http] [lwt.2.6.0: dl]
+Processing  6/11: [frenetic.1.0: http] [lwt.2.6.0: dl] [ocplib-endian.1.0: dl]
+[lwt.2.6.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/11: [frenetic.1.0: http] [ocplib-endian.1.0: dl]
+[ocplib-endian.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  6/11: [frenetic.1.0: http]
+Processing  7/11: [frenetic.1.0: http] [openflow.0.2.0: dl]
+Processing  8/11: [frenetic.1.0: http] [openflow.0.2.0: dl] [ounit.2.0.0: dl]
+[openflow.0.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/11: [frenetic.1.0: http] [ounit.2.0.0: dl]
+[ounit.2.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  8/11: [frenetic.1.0: http]
+Processing  9/11: [frenetic.1.0: http] [packet.0.1.1: dl]
+Processing 10/11: [frenetic.1.0: http] [packet.0.1.1: dl] [ppx_tools.5.0+4.03.0: dl]
+[packet.0.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing 10/11: [frenetic.1.0: http] [ppx_tools.5.0+4.03.0: dl]
+[ppx_tools.5.0+4.03.0] downloaded from file:///home/opam/opam-repository/cache
+Processing 10/11: [frenetic.1.0: http]
+Processing 11/11: [frenetic.1.0: http] [result.1.2: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing 11/11: [frenetic.1.0: http]
+[ERROR] The sources of the following couldn't be obtained, aborting:
+          - frenetic.1.0
+
+'opam install --verbose --yes --jobs=2 frenetic' failed.
+[2016-12-23 19:10.40] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "frenetic" exited with status 66
