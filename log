@@ -1,0 +1,155 @@
+=== opam depext -ivyj 2 udunits
+[2016-12-23 00:10.03] Starting...
+[2016-12-23 00:10.03] Waiting for free pool slot to run
+[2016-12-23 01:17.04] Pool slot obtained, starting run
+[2016-12-23 01:17.04] docker run sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b opam depext -ivyj 2 udunits
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libexpat1-dev
+#  - libudunits2-dev
+#  - m4
+# The following new OS packages need to be installed: libexpat1-dev libudunits2-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libexpat1-dev libudunits2-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libexpat1-dev:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libexpat1-dev_2.1.0-7ubuntu0.16.04.2_amd64.deb ...
+Unpacking libexpat1-dev:amd64 (2.1.0-7ubuntu0.16.04.2) ...
+Selecting previously unselected package libudunits2-0:amd64.
+Preparing to unpack .../libudunits2-0_2.2.20-1_amd64.deb ...
+Unpacking libudunits2-0:amd64 (2.2.20-1) ...
+Selecting previously unselected package libudunits2-dev.
+Preparing to unpack .../libudunits2-dev_2.2.20-1_amd64.deb ...
+Unpacking libudunits2-dev (2.2.20-1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libexpat1-dev:amd64 (2.1.0-7ubuntu0.16.04.2) ...
+Setting up libudunits2-0:amd64 (2.2.20-1) ...
+Setting up libudunits2-dev (2.2.20-1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install udunits 0.2.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [udunits.0.2.0: dl]
+[udunits.0.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [udunits: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/udunits.0.2.0)
+- File "setup.ml", line 247, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2412, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ udunits
+- Package version: ..................................... 0.2.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -O  -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_bigarray: ........................................ /usr/lib/ocaml
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/udunits.0.2.0)
+- File "setup.ml", line 247, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2412, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -O2 -c src/udunits_stubs.c
+- mv udunits_stubs.o src/udunits_stubs.o
+- /home/opam/.opam/default/bin/ocamlfind ocamlmklib -o src/udunits_stubs -ludunits2 -lexpat -lm src/udunits_stubs.o
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package bigarray -modules src/udunits.mli > src/udunits.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -ccopt -O2 -package bigarray -I src -o src/udunits.cmi src/udunits.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -package bigarray -modules src/udunits.ml > src/udunits.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -ccopt -O2 -package bigarray -I src -o src/udunits.cmo src/udunits.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a -dllib -ludunits_stubs -cclib -ludunits_stubs -cclib -ludunits2 -cclib -lexpat -cclib -lm src/udunits.cmo -o src/udunits.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -ccopt -O2 -package bigarray -I src -o src/udunits.cmx src/udunits.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a -cclib -ludunits_stubs -cclib -ludunits2 -cclib -lexpat -cclib -lm src/udunits.cmx -o src/udunits.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared -I src src/udunits.cmxa src/udunits.cmx -o src/udunits.cmxs
+-> compiled  udunits.0.2.0
+Processing  2/2: [udunits: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/default/.opam-switch/build/udunits.0.2.0)
+- File "setup.ml", line 247, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "setup.ml", line 2412, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- Installed /home/opam/.opam/default/lib/udunits/udunits.mli
+- Installed /home/opam/.opam/default/lib/udunits/libudunits_stubs.a
+- Installed /home/opam/.opam/default/lib/udunits/udunits.cma
+- Installed /home/opam/.opam/default/lib/udunits/udunits.cmxa
+- Installed /home/opam/.opam/default/lib/udunits/udunits.a
+- Installed /home/opam/.opam/default/lib/udunits/udunits.cmxs
+- Installed /home/opam/.opam/default/lib/udunits/udunits.cmi
+- Installed /home/opam/.opam/default/lib/udunits/udunits.cmx
+- Installed /home/opam/.opam/default/lib/udunits/META
+- Installed /home/opam/.opam/default/lib/stublibs/dlludunits_stubs.so
+- Installed /home/opam/.opam/default/lib/stublibs/dlludunits_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/default/lib/stublibs is not mentioned in ld.conf
+-> installed udunits.0.2.0
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 01:17.22] Success
