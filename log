@@ -1,0 +1,63 @@
+=== opam depext -ivyj 2 conf-mpfr
+[2016-12-23 18:50.10] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - gmp-dev
+The following command needs to be run through "sudo":
+    apk add gmp-dev
+(1/2) Installing libgmpxx (6.1.0-r0)
+(2/2) Installing gmp-dev (6.1.0-r0)
+OK: 424 MiB in 84 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-gmp  1                                         [required by conf-mpfr]
+  - install conf-mpfr 1
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-gmp: sh]
++ sh "-exc" "cc -c $CFLAGS -I/usr/local/include test.c" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-gmp.1)
+- + cc -c -I/usr/local/include test.c
+- test.c: In function 'test':
+- test.c:7:2: warning: implicit declaration of function '__gmp_init' [-Wimplicit-function-declaration]
+-   __gmp_init();
+-   ^
+-> compiled  conf-gmp.1
+-> installed conf-gmp.1
+Processing  3/4: [conf-mpfr: cc test.c]
++ cc "test.c" "-I/usr/local/include" "-L/usr/local/lib" "-lgmp" "-lmpfr" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-mpfr.1)
+- test.c:2:18: fatal error: mpfr.h: No such file or directory
+- compilation terminated.
+[ERROR] The compilation of conf-mpfr failed at "cc test.c -I/usr/local/include -L/usr/local/lib -lgmp -lmpfr".
+
+#=== ERROR while compiling conf-mpfr.1 ========================================#
+# command              cc test.c -I/usr/local/include -L/usr/local/lib -lgmp -lmpfr
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-mpfr.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-mpfr-1-1872ec.env
+# output-file          /home/opam/.opam/log/conf-mpfr-1-1872ec.out
+### output ###
+# test.c:2:18: fatal error: mpfr.h: No such file or directory
+# compilation terminated.
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-mpfr 1
++- 
++- The following changes have been performed
+| - install conf-gmp 1
++- 
+
+=-=- conf-mpfr.1 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-mpfr.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/backup/state-20161223200113.export"
+'opam install --verbose --yes --jobs=2 conf-mpfr' failed.
+[2016-12-23 20:01.22] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "conf-mpfr" exited with status 4
