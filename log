@@ -1,0 +1,32 @@
+=== opam depext -ivyj 2 aez
+[2016-12-23 20:55.43] Starting...
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install aez 0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [aez.0.3: dl]
+[aez.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [aez: patch]
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build aez 0.3
++- 
+- No changes have been performed
+
+#=== ERROR while compiling aez.0.3 ============================================#
+These patches didn't apply at /home/opam/.opam/default/.opam-switch/build/aez.0.3:
+  - add-meta.patch: "patch -p1 -i /home/opam/.opam/default/.opam-switch/build/aez.0.3/add-meta.patch" exited with code 1
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 aez' failed.
+[2016-12-23 20:55.56] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:2474216ca4fb891bcb297ca3717e41f46800cc5cf7ae14689771960464faf201" "opam" "depext" "-ivyj" "2" "aez" exited with status 4
