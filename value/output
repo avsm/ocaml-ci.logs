@@ -1,0 +1,114 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - pcre-dev
+#  - pkgconfig
+m4
+pkgconfig
+# The following new OS packages need to be installed: pcre-dev
+The following command needs to be run through "sudo":
+    apk add pcre-dev
+(1/4) Installing libpcre16 (8.38-r1)
+(2/4) Installing libpcre32 (8.38-r1)
+(3/4) Installing libpcrecpp (8.38-r1)
+(4/4) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 424 MiB in 86 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install root1d 0.4
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [root1d.0.4: dl]
+[root1d.0.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [root1d: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/root1d.0.4)
+- 
+- Configuration: 
+- ocamlfind: ............................................. /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: ................................................ /usr/bin/ocamlc.opt
+- ocamlopt: .............................................. /usr/bin/ocamlopt.opt
+- ocamlbuild: ............................................ /usr/bin/ocamlbuild
+- Package name: .......................................... root1d
+- Package version: ....................................... 0.4
+- os_type: ............................................... Unix
+- system: ................................................ linux
+- architecture: .......................................... amd64
+- ccomp_type: ............................................ cc
+- ocaml_version: ......................................... 4.02.3
+- standard_library_default: .............................. /usr/lib/ocaml
+- standard_library: ...................................... /usr/lib/ocaml
+- standard_runtime: ...................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................... gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ..................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ................................................. default
+- ext_obj: ............................................... .o
+- ext_asm: ............................................... .s
+- ext_lib: ............................................... .a
+- ext_dll: ............................................... .so
+- default_executable_name: ............................... a.out
+- systhread_supported: ................................... true
+- Install architecture-independent files dir: ............ /home/opam/.opam/default
+- Install architecture-dependent files in dir: ........... $prefix
+- User executables: ...................................... $exec_prefix/bin
+- System admin executables: .............................. $exec_prefix/sbin
+- Program executables: ................................... $exec_prefix/libexec
+- Read-only single-machine data: ......................... $prefix/etc
+- Modifiable architecture-independent data: .............. $prefix/com
+- Modifiable single-machine data: ........................ $prefix/var
+- Object code libraries: ................................. $exec_prefix/lib
+- Read-only arch-independent data root: .................. $prefix/share
+- Read-only architecture-independent data: ............... $datarootdir
+- Info documentation: .................................... $datarootdir/info
+- Locale-dependent data: ................................. $datarootdir/locale
+- Man documentation: ..................................... $datarootdir/man
+- Documentation root: .................................... $datarootdir/doc/$pkg_name
+- HTML documentation: .................................... $docdir
+- DVI documentation: ..................................... $docdir
+- PDF documentation: ..................................... $docdir
+- PS documentation: ...................................... $docdir
+- findlib_version: ....................................... 1.7.1
+- is_native: ............................................. true
+- suffix_program: ........................................ 
+- Remove a file.: ........................................ rm -f
+- Remove a directory.: ................................... rm -rf
+- Turn ocaml debug flag on: .............................. true
+- Turn ocaml profile flag on: ............................ false
+- Compiler support generation of .cmxs.: ................. true
+- OCamlbuild additional flags: ........................... 
+- Whether the Benchmark findlib package is installed.: ... false
+- Create documentations: ................................. true
+- Compile tests executable and library and run them: ..... false
+- ocamldoc: .............................................. /usr/bin/ocamldoc
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/root1d.0.4)
+- ocamlfind ocamlopt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules src/Root1D.mli > src/Root1D.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -o src/Root1D.cmi src/Root1D.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules src/Root1D.ml > src/Root1D.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -o src/Root1D.cmo src/Root1D.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a src/Root1D.cmo -o src/root1d.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -o src/Root1D.cmx src/Root1D.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a src/Root1D.cmx -o src/root1d.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared src/root1d.cmxa src/Root1D.cmx -o src/root1d.cmxs
+-> compiled  root1d.0.4
+Processing  2/2: [root1d: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/default/.opam-switch/build/root1d.0.4)
+- Installed /home/opam/.opam/default/lib/root1d/Root1D.mli
+- Installed /home/opam/.opam/default/lib/root1d/root1d.cma
+- Installed /home/opam/.opam/default/lib/root1d/root1d.cmxa
+- Installed /home/opam/.opam/default/lib/root1d/root1d.a
+- Installed /home/opam/.opam/default/lib/root1d/root1d.cmxs
+- Installed /home/opam/.opam/default/lib/root1d/Root1D.cmi
+- Installed /home/opam/.opam/default/lib/root1d/Root1D.cmti
+- Installed /home/opam/.opam/default/lib/root1d/Root1D.cmt
+- Installed /home/opam/.opam/default/lib/root1d/Root1D.annot
+- Installed /home/opam/.opam/default/lib/root1d/Root1D.cmx
+- Installed /home/opam/.opam/default/lib/root1d/META
+-> installed root1d.0.4
+Done.
+# Run eval `opam env` to update the current shell environment
