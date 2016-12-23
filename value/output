@@ -1,0 +1,55 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install bencode 0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [bencode.0.1: dl]
+[bencode.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [bencode: make all]
++ make "all" (CWD=/home/opam/.opam/default/.opam-switch/build/bencode.0.1)
+- ocamlbuild -use-ocamlfind bencode.cma bencode.cmxa bencode.cmi bencode.a bencode.docdir/index.html
+- ocamlfind ocamldep -modules lib/bencode.mli > lib/bencode.mli.depends
+- ocamlfind ocamlc -c -g -I lib -o lib/bencode.cmi lib/bencode.mli
+- ocamlfind ocamldep -modules lib/bencode.ml > lib/bencode.ml.depends
+- /usr/bin/ocamlyacc lib/bencode_parse.mly
+- ocamlfind ocamldep -modules lib/bencode_parse.mli > lib/bencode_parse.mli.depends
+- ocamlfind ocamldep -modules lib/bencode_types.ml > lib/bencode_types.ml.depends
+- ocamlfind ocamlc -c -g -I lib -o lib/bencode_types.cmo lib/bencode_types.ml
+- /usr/bin/ocamllex.opt -q lib/lex.mll
+- ocamlfind ocamldep -modules lib/lex.ml > lib/lex.ml.depends
+- ocamlfind ocamlc -c -g -I lib -o lib/bencode_parse.cmi lib/bencode_parse.mli
+- ocamlfind ocamlc -c -g -I lib -o lib/lex.cmo lib/lex.ml
+- ocamlfind ocamlc -c -g -I lib -o lib/bencode.cmo lib/bencode.ml
+- ocamlfind ocamldep -modules lib/bencode_parse.ml > lib/bencode_parse.ml.depends
+- ocamlfind ocamlc -c -g -I lib -o lib/bencode_parse.cmo lib/bencode_parse.ml
+- ocamlfind ocamlc -a lib/bencode_types.cmo lib/bencode_parse.cmo lib/lex.cmo lib/bencode.cmo -o lib/bencode.cma
+- ocamlfind ocamlopt -c -g -I lib -o lib/bencode_types.cmx lib/bencode_types.ml
+- ocamlfind ocamlopt -c -g -I lib -o lib/bencode_parse.cmx lib/bencode_parse.ml
+- ocamlfind ocamlopt -c -g -I lib -o lib/lex.cmx lib/lex.ml
+- ocamlfind ocamlopt -c -g -I lib -o lib/bencode.cmx lib/bencode.ml
+- ocamlfind ocamlopt -a lib/bencode_types.cmx lib/bencode_parse.cmx lib/lex.cmx lib/bencode.cmx -o lib/bencode.cmxa
+- ocamlfind ocamldoc -dump lib/bencode.odoc -I lib lib/bencode.mli
+- rm -rf bencode.docdir
+- mkdir -p bencode.docdir
+- ocamlfind ocamldoc -load lib/bencode.odoc -html -d bencode.docdir
+-> compiled  bencode.0.1
+Processing  2/2: [bencode: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/bencode.0.1)
+- ocamlbuild -use-ocamlfind bencode.cma bencode.cmxa bencode.cmi bencode.a bencode.docdir/index.html
+- ocamlfind install bencode META _build/lib/bencode.cma _build/lib/bencode.cmxa _build/lib/bencode.cmi _build/lib/bencode.a 
+- Installed /home/opam/.opam/default/lib/bencode/bencode.a
+- Installed /home/opam/.opam/default/lib/bencode/bencode.cmi
+- Installed /home/opam/.opam/default/lib/bencode/bencode.cmxa
+- Installed /home/opam/.opam/default/lib/bencode/bencode.cma
+- Installed /home/opam/.opam/default/lib/bencode/META
+-> installed bencode.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
