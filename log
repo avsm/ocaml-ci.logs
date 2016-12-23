@@ -1,0 +1,39 @@
+=== opam depext -ivyj 2 conf-wxwidgets
+[2016-12-23 00:08.43] Starting...
+[2016-12-23 00:08.43] Waiting for free pool slot to run
+[2016-12-23 00:30.25] Pool slot obtained, starting run
+[2016-12-23 00:30.25] docker run sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b opam depext -ivyj 2 conf-wxwidgets
+# Detecting depexts using flags: x86_64 linux ubuntu
+# No extra OS packages requirements found.
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-wxwidgets 3.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-wxwidgets: wx-config]
++ wx-config "--libs" (CWD=/home/opam/.opam/default/.opam-switch/build/conf-wxwidgets.3.0)
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-wxwidgets 3.0
++- 
+- No changes have been performed
+
+=-=- conf-wxwidgets.3.0 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package requires wxWidgets 3.0 development packages installed on your system
+[ERROR] The compilation of conf-wxwidgets failed at "wx-config --libs".
+
+#=== ERROR while compiling conf-wxwidgets.3.0 =================================#
+# command              wx-config --libs
+# path                 /home/opam/.opam/default/.opam-switch/build/conf-wxwidgets.3.0
+# exit-code            127
+# env-file             /home/opam/.opam/log/conf-wxwidgets-1-7afd23.env
+# output-file          /home/opam/.opam/log/conf-wxwidgets-1-7afd23.out
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-wxwidgets' failed.
+[2016-12-23 00:30.38] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:f22695da41b2f6bed5d7d78276d744cd33a425f6972295751494da8781d6874b" "opam" "depext" "-ivyj" "2" "conf-wxwidgets" exited with status 4
