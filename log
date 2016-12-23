@@ -1,0 +1,238 @@
+=== opam depext -ivyj 2 grib
+[2016-12-23 21:14.21] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - pcre-dev
+#  - pkgconfig
+m4
+pkgconfig
+# The following new OS packages need to be installed: pcre-dev
+The following command needs to be run through "sudo":
+    apk add pcre-dev
+(1/4) Installing libpcre16 (8.38-r1)
+(2/4) Installing libpcre32 (8.38-r1)
+(3/4) Installing libpcrecpp (8.38-r1)
+(4/4) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 424 MiB in 86 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install bear 0.0.1                                          [required by grib]
+  - install grib 0.11.0
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [bear.0.0.1: dl]
+Processing  2/2: [bear.0.0.1: dl] [grib.0.11.0: dl]
+[grib.0.11.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [bear.0.0.1: dl]
+[bear.0.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [bear: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/bear.0.0.1)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ bear
+- Package version: ..................................... 0.0.1
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/bear.0.0.1)
+- ocamlfind ocamlopt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules src/bear.ml > src/bear.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules src/bear_option.ml > src/bear_option.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules src/bear_pervasives.ml > src/bear_pervasives.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -o src/bear_option.cmo src/bear_option.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -o src/bear_pervasives.cmo src/bear_pervasives.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -o src/bear.cmo src/bear.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a src/bear_option.cmo src/bear_pervasives.cmo src/bear.cmo -o src/bear.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -o src/bear_option.cmx src/bear_option.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -o src/bear_pervasives.cmx src/bear_pervasives.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -o src/bear.cmx src/bear.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a src/bear_option.cmx src/bear_pervasives.cmx src/bear.cmx -o src/bear.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared src/bear.cmxa src/bear_option.cmx src/bear_pervasives.cmx src/bear.cmx -o src/bear.cmxs
+-> compiled  bear.0.0.1
+Processing  2/4: [bear: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/default/.opam-switch/build/bear.0.0.1)
+- Installed /home/opam/.opam/default/lib/bear/bear.ml
+- Installed /home/opam/.opam/default/lib/bear/bear_option.ml
+- Installed /home/opam/.opam/default/lib/bear/bear_pervasives.ml
+- Installed /home/opam/.opam/default/lib/bear/bear.cma
+- Installed /home/opam/.opam/default/lib/bear/bear.cmxa
+- Installed /home/opam/.opam/default/lib/bear/bear.a
+- Installed /home/opam/.opam/default/lib/bear/bear.cmxs
+- Installed /home/opam/.opam/default/lib/bear/bear_pervasives.cmi
+- Installed /home/opam/.opam/default/lib/bear/bear_pervasives.cmt
+- Installed /home/opam/.opam/default/lib/bear/bear_pervasives.annot
+- Installed /home/opam/.opam/default/lib/bear/bear_option.cmi
+- Installed /home/opam/.opam/default/lib/bear/bear_option.cmt
+- Installed /home/opam/.opam/default/lib/bear/bear_option.annot
+- Installed /home/opam/.opam/default/lib/bear/bear.cmi
+- Installed /home/opam/.opam/default/lib/bear/bear.cmt
+- Installed /home/opam/.opam/default/lib/bear/bear.annot
+- Installed /home/opam/.opam/default/lib/bear/bear_pervasives.cmx
+- Installed /home/opam/.opam/default/lib/bear/bear_option.cmx
+- Installed /home/opam/.opam/default/lib/bear/bear.cmx
+- Installed /home/opam/.opam/default/lib/bear/META
+-> installed bear.0.0.1
+Processing  3/4: [grib: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/default" (CWD=/home/opam/.opam/default/.opam-switch/build/grib.0.11.0)
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .............................................. /usr/bin/ocamlc.opt
+- ocamlopt: ............................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /usr/bin/ocamlbuild
+- Package name: ........................................ ocaml-grib
+- Package version: ..................................... 0.11.0
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.02.3
+- standard_library_default: ............................ /usr/lib/ocaml
+- standard_library: .................................... /usr/lib/ocaml
+- standard_runtime: .................................... /usr/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/default
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- Link with a JPEG2000 library: ........................ true
+- Use jasper for JPEG2000 support: ..................... true
+- Use libjpeg for JPEG2000 support: .................... true
+- Use openjpeg for JPEG2000 support: ................... true
+- Link with libpng: .................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- pkg_bear: ............................................ /home/opam/.opam/default/lib/bear
+- pkg_bigarray: ........................................ /usr/lib/ocaml
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/default/.opam-switch/build/grib.0.11.0)
+- ocamlfind ocamlopt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -O2 -ccopt -g -ccopt -DUSE_JPEG2000 -ccopt -DUSE_PNG -c src/grib_stubs.c
+- + /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -O2 -ccopt -g -ccopt -DUSE_JPEG2000 -ccopt -DUSE_PNG -c src/grib_stubs.c
+- src/grib_stubs.c:18:22: fatal error: grib_api.h: No such file or directory
+- compilation terminated.
+- Command exited with code 2.
+- E: Failure("Command ''/usr/bin/ocamlbuild' src/libgrib_stubs.a src/dllgrib_stubs.so src/grib.cma src/grib.cmxa src/grib.a src/grib.cmxs -use-ocamlfind -tag debug' terminated with error code 10")
+[ERROR] The compilation of grib failed at "ocaml setup.ml -build".
+
+#=== ERROR while compiling grib.0.11.0 ========================================#
+# command              ocaml setup.ml -build
+# path                 /home/opam/.opam/default/.opam-switch/build/grib.0.11.0
+# exit-code            1
+# env-file             /home/opam/.opam/log/grib-1-c743ac.env
+# output-file          /home/opam/.opam/log/grib-1-c743ac.out
+### output ###
+# ocamlfind ocamlopt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+# /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -O2 -ccopt -g -ccopt -DUSE_JPEG2000 -ccopt -DUSE_PNG -c src/grib_stubs.c
+# + /home/opam/.opam/default/bin/ocamlfind ocamlc -g -ccopt -O2 -ccopt -g -ccopt -DUSE_JPEG2000 -ccopt -DUSE_PNG -c src/grib_stubs.c
+# src/grib_stubs.c:18:22: fatal error: grib_api.h: No such file or directory
+# compilation terminated.
+# Command exited with code 2.
+# E: Failure("Command ''/usr/bin/ocamlbuild' src/libgrib_stubs.a src/dllgrib_stubs.so src/grib.cma src/grib.cmxa src/grib.a src/grib.cmxs -use-ocamlfind -tag debug' terminated with error code 10")
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build grib 0.11.0
++- 
++- The following changes have been performed
+| - install bear 0.0.1
++- 
+
+=-=- grib.0.11.0 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext grib.0.11.0' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/default/.opam-switch/backup/state-20161223212315.export"
+'opam install --verbose --yes --jobs=2 grib' failed.
+[2016-12-23 21:23.29] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "grib" exited with status 4
