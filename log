@@ -1,0 +1,41 @@
+=== opam depext -ivyj 2 conf-gmp-powm-sec
+[2016-12-23 18:50.08] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - gmp-dev
+The following command needs to be run through "sudo":
+    apk add gmp-dev
+(1/2) Installing libgmpxx (6.1.0-r0)
+(2/2) Installing gmp-dev (6.1.0-r0)
+OK: 424 MiB in 84 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-gmp          1                                 [required by conf-gmp-powm-sec]
+  - install conf-gmp-powm-sec 1
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-gmp: sh]
++ sh "-exc" "cc -c $CFLAGS -I/usr/local/include test.c" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-gmp.1)
+- + cc -c -I/usr/local/include test.c
+- test.c: In function 'test':
+- test.c:7:2: warning: implicit declaration of function '__gmp_init' [-Wimplicit-function-declaration]
+-   __gmp_init();
+-   ^
+-> compiled  conf-gmp.1
+-> installed conf-gmp.1
+Processing  3/4: [conf-gmp-powm-sec: sh]
++ sh "-exc" "cc -c $CFLAGS -I/usr/local/include test.c" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-gmp-powm-sec.1)
+- + cc -c -I/usr/local/include test.c
+- test.c: In function 'test':
+- test.c:10:2: warning: implicit declaration of function '__gmp_init' [-Wimplicit-function-declaration]
+-   __gmp_init();
+-   ^
+-> compiled  conf-gmp-powm-sec.1
+-> installed conf-gmp-powm-sec.1
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 20:00.51] Success
