@@ -1,0 +1,33 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocaml-arg 0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ocaml-arg.0.3: dl]
+[ocaml-arg.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocaml-arg: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/ocaml-arg.0.3)
+- ocamlbuild -I src arg.cma arg.cmxa
+- /usr/bin/ocamldep.opt -modules src/argExt.ml > src/argExt.ml.depends
+- /usr/bin/ocamldep.opt -modules src/formatExt.ml > src/formatExt.ml.depends
+- /usr/bin/ocamldep.opt -modules src/subCommand.ml > src/subCommand.ml.depends
+- /usr/bin/ocamlc.opt -c -I src -o src/formatExt.cmo src/formatExt.ml
+- /usr/bin/ocamlc.opt -c -I src -o src/subCommand.cmo src/subCommand.ml
+- /usr/bin/ocamlc.opt -c -I src -o src/argExt.cmo src/argExt.ml
+- /usr/bin/ocamlc.opt -a src/formatExt.cmo src/subCommand.cmo src/argExt.cmo -o src/arg.cma
+- /usr/bin/ocamlopt.opt -c -I src -o src/formatExt.cmx src/formatExt.ml
+- /usr/bin/ocamlopt.opt -c -I src -o src/subCommand.cmx src/subCommand.ml
+- /usr/bin/ocamlopt.opt -c -I src -o src/argExt.cmx src/argExt.ml
+- /usr/bin/ocamlopt.opt -a src/formatExt.cmx src/subCommand.cmx src/argExt.cmx -o src/arg.cmxa
+-> compiled  ocaml-arg.0.3
+-> installed ocaml-arg.0.3
+Done.
+# Run eval `opam env` to update the current shell environment
