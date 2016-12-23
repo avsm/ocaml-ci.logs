@@ -1,0 +1,174 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install cconv 0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [cconv.0.3: dl]
+[cconv.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [cconv: ./configure]
++ ./configure "--disable-yojson" "--disable-bencode" "--disable-sexp" "--disable-ppx" "--disable-tests" "--disable-docs" (CWD=/home/opam/.opam/default/.opam-switch/build/cconv.0.3)
+- 
+- Configuration: 
+- ocamlfind: ............................................................... /home/opam/.opam/default/bin/ocamlfind
+- ocamlc: .................................................................. /usr/bin/ocamlc.opt
+- ocamlopt: ................................................................ /usr/bin/ocamlopt.opt
+- ocamlbuild: .............................................................. /usr/bin/ocamlbuild
+- Package name: ............................................................ cconv
+- Package version: ......................................................... 0.3
+- os_type: ................................................................. Unix
+- system: .................................................................. linux
+- architecture: ............................................................ amd64
+- ccomp_type: .............................................................. cc
+- ocaml_version: ........................................................... 4.02.3
+- standard_library_default: ................................................ /usr/lib/ocaml
+- standard_library: ........................................................ /usr/lib/ocaml
+- standard_runtime: ........................................................ /usr/bin/ocamlrun
+- bytecomp_c_compiler: ..................................................... gcc -fPIC -Os -O -fno-defer-pop -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -O -fPIC
+- native_c_compiler: ....................................................... gcc -fPIC -Os -O -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ................................................................... default
+- ext_obj: ................................................................. .o
+- ext_asm: ................................................................. .s
+- ext_lib: ................................................................. .a
+- ext_dll: ................................................................. .so
+- default_executable_name: ................................................. a.out
+- systhread_supported: ..................................................... true
+- Install architecture-independent files dir: .............................. /usr/local
+- Install architecture-dependent files in dir: ............................. $prefix
+- User executables: ........................................................ $exec_prefix/bin
+- System admin executables: ................................................ $exec_prefix/sbin
+- Program executables: ..................................................... $exec_prefix/libexec
+- Read-only single-machine data: ........................................... $prefix/etc
+- Modifiable architecture-independent data: ................................ $prefix/com
+- Modifiable single-machine data: .......................................... $prefix/var
+- Object code libraries: ................................................... $exec_prefix/lib
+- Read-only arch-independent data root: .................................... $prefix/share
+- Read-only architecture-independent data: ................................. $datarootdir
+- Info documentation: ...................................................... $datarootdir/info
+- Locale-dependent data: ................................................... $datarootdir/locale
+- Man documentation: ....................................................... $datarootdir/man
+- Documentation root: ...................................................... $datarootdir/doc/$pkg_name
+- HTML documentation: ...................................................... $docdir
+- DVI documentation: ....................................................... $docdir
+- PDF documentation: ....................................................... $docdir
+- PS documentation: ........................................................ $docdir
+- findlib_version: ......................................................... 1.7.1
+- is_native: ............................................................... true
+- suffix_program: .......................................................... 
+- Remove a file.: .......................................................... rm -f
+- Remove a directory.: ..................................................... rm -rf
+- Turn ocaml debug flag on: ................................................ true
+- Turn ocaml profile flag on: .............................................. false
+- Compiler support generation of .cmxs.: ................................... true
+- OCamlbuild additional flags: ............................................. 
+- Build and install ppx_deriving_cconv, to derive encoders and decoders: ... false
+- Build and install the interface to Sexplib (requires Sexplib): ........... false
+- Build and install the interface to Yojson (requires Yojson): ............. false
+- Build and install the interface to Bencode (requires Bencode): ........... false
+- Build examples: .......................................................... true
+- Build benchmarks (require "benchmark"): .................................. false
+- Create documentations: ................................................... false
+- Compile tests executable and library and run them: ....................... false
+- 
+Processing  1/2: [cconv: make build]
++ make "build" (CWD=/home/opam/.opam/default/.opam-switch/build/cconv.0.3)
+- ocaml setup.ml -build 
+- /usr/bin/ocamlopt.opt unix.cmxa -I /usr/lib/ocaml/ocamlbuild /usr/lib/ocaml/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /usr/lib/ocaml/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_tags", line 21, characters 18-38:
+- Warning: the tag "pkg_ppx_deriving.api" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 22, characters 18-40:
+- Warning: the tag "pkg_ppx_tools.metaquot" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 25, characters 19-30:
+- Warning: the tag "pkg_sexplib" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 29, characters 21-31:
+- Warning: the tag "pkg_yojson" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 33, characters 22-33:
+- Warning: the tag "pkg_bencode" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 42, characters 26-39:
+- Warning: the tag "pkg_benchmark" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 43, characters 26-49:
+- Warning: the tag "pkg_ppx_deriving_yojson" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 44, characters 26-36:
+- Warning: the tag "pkg_yojson" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 47, characters 20-33:
+- Warning: the tag "pkg_benchmark" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 48, characters 20-43:
+- Warning: the tag "pkg_ppx_deriving_yojson" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 49, characters 20-30:
+- Warning: the tag "pkg_yojson" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 53, characters 30-41:
+- Warning: the tag "pkg_bencode" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 54, characters 30-39:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 55, characters 30-50:
+- Warning: the tag "pkg_ppx_deriving.std" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 56, characters 30-40:
+- Warning: the tag "pkg_yojson" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 57, characters 20-31:
+- Warning: the tag "pkg_bencode" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 58, characters 20-29:
+- Warning: the tag "pkg_oUnit" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 59, characters 20-40:
+- Warning: the tag "pkg_ppx_deriving.std" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 60, characters 20-30:
+- Warning: the tag "pkg_yojson" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 64, characters 64-81:
+- Warning: the tag "pkg_cconv.bencode" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 64, characters 46-62:
+- Warning: the tag "pkg_cconv.yojson" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- File "_tags", line 64, characters 35-44:
+- Warning: the tag "pkg_cconv" is not used in any flag or dependency declaration, so it will have no effect; it may be a typo. Otherwise you can use `mark_tag_used` in your myocamlbuild.ml to disable this warning.
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules src/cConv.mli > src/cConv.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -o src/cConv.cmi src/cConv.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules src/cConv.ml > src/cConv.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -o src/cConv.cmo src/cConv.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a src/cConv.cmo -o src/cconv.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -w A -w -4 -w -44 -I src -o src/cConv.cmx src/cConv.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a src/cConv.cmx -o src/cconv.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared src/cconv.cmxa src/cConv.cmx -o src/cconv.cmxs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules psexp/cConvPSexp.mli > psexp/cConvPSexp.mli.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -I psexp -I src -o psexp/cConvPSexp.cmi psexp/cConvPSexp.mli
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules psexp/cConvPSexp.ml > psexp/cConvPSexp.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -I psexp -I src -o psexp/cConvPSexp.cmo psexp/cConvPSexp.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -a psexp/cConvPSexp.cmo -o psexp/cconv_psexp.cma
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -c -g -annot -bin-annot -I src -I psexp -I src -o psexp/cConvPSexp.cmx psexp/cConvPSexp.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -a psexp/cConvPSexp.cmx -o psexp/cconv_psexp.cmxa
+- /home/opam/.opam/default/bin/ocamlfind ocamlopt -shared psexp/cconv_psexp.cmxa psexp/cConvPSexp.cmx -o psexp/cconv_psexp.cmxs
+- /home/opam/.opam/default/bin/ocamlfind ocamldep -modules example/all.ml > example/all.ml.depends
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -c -g -annot -bin-annot -I src -I example -I src -o example/all.cmo example/all.ml
+- /home/opam/.opam/default/bin/ocamlfind ocamlc -g -linkpkg src/cconv.cma example/all.cmo -o example/all.byte
+-> compiled  cconv.0.3
+Processing  2/2: [cconv: make install]
++ make "install" (CWD=/home/opam/.opam/default/.opam-switch/build/cconv.0.3)
+- ocaml setup.ml -install 
+- Installed /home/opam/.opam/default/lib/cconv/cConv.mli
+- Installed /home/opam/.opam/default/lib/cconv/cconv.cma
+- Installed /home/opam/.opam/default/lib/cconv/cconv.cmxa
+- Installed /home/opam/.opam/default/lib/cconv/cconv.a
+- Installed /home/opam/.opam/default/lib/cconv/cconv.cmxs
+- Installed /home/opam/.opam/default/lib/cconv/cConv.cmi
+- Installed /home/opam/.opam/default/lib/cconv/cConv.cmti
+- Installed /home/opam/.opam/default/lib/cconv/cConv.cmt
+- Installed /home/opam/.opam/default/lib/cconv/cConv.annot
+- Installed /home/opam/.opam/default/lib/cconv/cConv.cmx
+- Installed /home/opam/.opam/default/lib/cconv/cConvPSexp.mli
+- Installed /home/opam/.opam/default/lib/cconv/cconv_psexp.cma
+- Installed /home/opam/.opam/default/lib/cconv/cconv_psexp.cmxa
+- Installed /home/opam/.opam/default/lib/cconv/cconv_psexp.a
+- Installed /home/opam/.opam/default/lib/cconv/cconv_psexp.cmxs
+- Installed /home/opam/.opam/default/lib/cconv/cConvPSexp.cmi
+- Installed /home/opam/.opam/default/lib/cconv/cConvPSexp.cmti
+- Installed /home/opam/.opam/default/lib/cconv/cConvPSexp.cmt
+- Installed /home/opam/.opam/default/lib/cconv/cConvPSexp.annot
+- Installed /home/opam/.opam/default/lib/cconv/cConvPSexp.cmx
+- Installed /home/opam/.opam/default/lib/cconv/META
+-> installed cconv.0.3
+Done.
+# Run eval `opam env` to update the current shell environment
