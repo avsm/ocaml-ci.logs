@@ -1,0 +1,31 @@
+=== opam depext -ivyj 2 conf-llvm
+[2016-12-23 18:50.09] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-which 1                                        [required by conf-llvm]
+  - install conf-llvm  3.8
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-which: which which]
++ which "which" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-which.1)
+- /usr/bin/which
+-> compiled  conf-which.1
+-> installed conf-which.1
+Processing  3/4: [conf-llvm: sh configure]
++ sh "-x" "configure" "linux" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-llvm.3.8)
+- + config=llvm-config-3.8
+- + which llvm-config-3.8
+- + [ os-linux == os-darwin ]
+- + cat
+- + llvm-config-3.8 --version
+- configure: line 1: llvm-config-3.8: not found
+-> compiled  conf-llvm.3.8
+-> installed conf-llvm.3.8
+Done.
+# Run eval `opam env` to update the current shell environment
+[2016-12-23 20:01.18] Success
