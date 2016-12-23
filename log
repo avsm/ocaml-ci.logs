@@ -1,0 +1,36 @@
+=== opam depext -ivyj 2 imagemagick
+[2016-12-23 17:51.42] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install imagemagick 0.34-1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [imagemagick.0.34-1: dl]
+[imagemagick.0.34-1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [imagemagick: patch]
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build imagemagick 0.34-1
++- 
+- No changes have been performed
+
+=-=- imagemagick.0.34-1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext imagemagick.0.34-1' may help you find the correct installation for your system.
+
+#=== ERROR while compiling imagemagick.0.34-1 =================================#
+These patches didn't apply at /home/opam/.opam/default/.opam-switch/build/imagemagick.0.34-1:
+  - fix_build.patch: "patch -p1 -i /home/opam/.opam/default/.opam-switch/build/imagemagick.0.34-1/fix_build.patch" exited with code 1
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 imagemagick' failed.
+[2016-12-23 18:15.26] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:cfbeef9d775638d0b94a878f95261d5f7c85e15274df23042f44dfae382a7975" "opam" "depext" "-ivyj" "2" "imagemagick" exited with status 4
