@@ -1,0 +1,459 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libfuse-dev
+#  - m4
+# The following new OS packages need to be installed: libfuse-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libfuse-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libpcrecpp0v5:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libpcrecpp0v5_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcrecpp0v5:amd64 (2:8.38-3.1) ...
+Selecting previously unselected package libfuse2:amd64.
+Preparing to unpack .../libfuse2_2.9.4-1ubuntu3.1_amd64.deb ...
+Unpacking libfuse2:amd64 (2.9.4-1ubuntu3.1) ...
+Selecting previously unselected package libsepol1-dev:amd64.
+Preparing to unpack .../libsepol1-dev_2.4-2_amd64.deb ...
+Unpacking libsepol1-dev:amd64 (2.4-2) ...
+Selecting previously unselected package libpcre16-3:amd64.
+Preparing to unpack .../libpcre16-3_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcre16-3:amd64 (2:8.38-3.1) ...
+Selecting previously unselected package libpcre32-3:amd64.
+Preparing to unpack .../libpcre32-3_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcre32-3:amd64 (2:8.38-3.1) ...
+Selecting previously unselected package libpcre3-dev:amd64.
+Preparing to unpack .../libpcre3-dev_2%3a8.38-3.1_amd64.deb ...
+Unpacking libpcre3-dev:amd64 (2:8.38-3.1) ...
+Selecting previously unselected package libselinux1-dev:amd64.
+Preparing to unpack .../libselinux1-dev_2.4-3build2_amd64.deb ...
+Unpacking libselinux1-dev:amd64 (2.4-3build2) ...
+Selecting previously unselected package libfuse-dev.
+Preparing to unpack .../libfuse-dev_2.9.4-1ubuntu3.1_amd64.deb ...
+Unpacking libfuse-dev (2.9.4-1ubuntu3.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libpcrecpp0v5:amd64 (2:8.38-3.1) ...
+Setting up libfuse2:amd64 (2.9.4-1ubuntu3.1) ...
+Setting up libsepol1-dev:amd64 (2.4-2) ...
+Setting up libpcre16-3:amd64 (2:8.38-3.1) ...
+Setting up libpcre32-3:amd64 (2:8.38-3.1) ...
+Setting up libpcre3-dev:amd64 (2:8.38-3.1) ...
+Setting up libselinux1-dev:amd64 (2.4-3build2) ...
+Setting up libfuse-dev (2.9.4-1ubuntu3.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install camlidl   1.05                                      [required by ocamlfuse]
+  - install ocamlfuse 2.7.1-cvs4
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [camlidl.1.05: dl]
+Processing  2/2: [camlidl.1.05: dl] [ocamlfuse.2.7.1-cvs4: dl]
+[ocamlfuse.2.7.1-cvs4] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [camlidl.1.05: dl]
+[camlidl.1.05] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [camlidl: patch]
+Processing  1/4: [camlidl: mv]
++ mv "config/Makefile.unix" "config/Makefile" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05)
+Processing  1/4: [camlidl: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05)
+- cd compiler; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/compiler'
+- rm -f config.ml
+- sed -e 's|%%CPP%%|cpp|' \
+-           config.mlp > config.ml
+- chmod -w config.ml
+- ocamlc -g -warn-error -31 -c config.mli
+- ocamlc -g -warn-error -31 -c config.ml
+- ocamlc -g -warn-error -31 -c utils.mli
+- ocamlc -g -warn-error -31 -c utils.ml
+- File "utils.ml", line 51, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlc -g -warn-error -31 -c clflags.ml
+- ocamlc -g -warn-error -31 -c idltypes.mli
+- ocamlc -g -warn-error -31 -c prefix.mli
+- ocamlc -g -warn-error -31 -c prefix.ml
+- ocamlc -g -warn-error -31 -c lexpr.mli
+- ocamlc -g -warn-error -31 -c lexpr.ml
+- File "lexpr.ml", line 268, characters 10-16:
+- Warning 26: unused variable trail'.
+- ocamlc -g -warn-error -31 -c cvttyp.mli
+- ocamlc -g -warn-error -31 -c cvttyp.ml
+- File "cvttyp.ml", line 126, characters 49-66:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "cvttyp.ml", line 127, characters 20-39:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "cvttyp.ml", line 132, characters 49-66:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "cvttyp.ml", line 135, characters 25-44:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c variables.mli
+- ocamlc -g -warn-error -31 -c variables.ml
+- ocamlc -g -warn-error -31 -c array.mli
+- ocamlc -g -warn-error -31 -c array.ml
+- ocamlc -g -warn-error -31 -c struct.mli
+- ocamlc -g -warn-error -31 -c struct.ml
+- ocamlc -g -warn-error -31 -c enum.mli
+- ocamlc -g -warn-error -31 -c enum.ml
+- ocamlc -g -warn-error -31 -c union.mli
+- ocamlc -g -warn-error -31 -c union.ml
+- ocamlc -g -warn-error -31 -c cvtval.mli
+- ocamlc -g -warn-error -31 -c cvtval.ml
+- ocamlc -g -warn-error -31 -c structdecl.mli
+- ocamlc -g -warn-error -31 -c structdecl.ml
+- File "structdecl.ml", line 30, characters 27-46:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "structdecl.ml", line 39, characters 19-38:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c enumdecl.mli
+- ocamlc -g -warn-error -31 -c enumdecl.ml
+- File "enumdecl.ml", line 30, characters 28-47:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "enumdecl.ml", line 32, characters 37-54:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c uniondecl.mli
+- ocamlc -g -warn-error -31 -c uniondecl.ml
+- File "uniondecl.ml", line 30, characters 28-47:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "uniondecl.ml", line 37, characters 24-41:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c typedef.mli
+- ocamlc -g -warn-error -31 -c typedef.ml
+- File "typedef.ml", line 48, characters 30-49:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "typedef.ml", line 50, characters 25-44:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "typedef.ml", line 53, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c funct.mli
+- ocamlc -g -warn-error -31 -c funct.ml
+- File "funct.ml", line 104, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- ocamlc -g -warn-error -31 -c constdecl.mli
+- ocamlc -g -warn-error -31 -c constdecl.ml
+- File "constdecl.ml", line 34, characters 26-45:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "constdecl.ml", line 54, characters 13-32:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "constdecl.ml", line 36, characters 4-24:
+- Warning 26: unused variable ty.
+- ocamlc -g -warn-error -31 -c intf.mli
+- ocamlc -g -warn-error -31 -c intf.ml
+- File "intf.ml", line 46, characters 21-40:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 51, characters 15-34:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 52, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 62, characters 18-37:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 162, characters 17-36:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 163, characters 18-37:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 199, characters 21-40:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 260, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "intf.ml", line 312, characters 12-16:
+- Warning 26: unused variable outs.
+- File "intf.ml", line 312, characters 7-10:
+- Warning 26: unused variable ins.
+- ocamlc -g -warn-error -31 -c file.mli
+- ocamlc -g -warn-error -31 -c file.ml
+- File "file.ml", line 216, characters 31-47:
+- Warning 3: deprecated: String.uppercase
+- Use String.uppercase_ascii instead.
+- ocamlc -g -warn-error -31 -c predef.mli
+- ocamlc -g -warn-error -31 -c predef.ml
+- ocamllex linenum.mll
+- 16 states, 331 transitions, table size 1420 bytes
+- ocamlc -g -warn-error -31 -c linenum.mli
+- ocamlc -g -warn-error -31 -c linenum.ml
+- ocamlc -g -warn-error -31 -c parse_aux.mli
+- ocamlc -g -warn-error -31 -c parse_aux.ml
+- File "parse_aux.ml", line 167, characters 23-54:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 169, characters 42-74:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 171, characters 22-47:
+- Warning 23: all the fields are explicitly listed in this record:
+- the 'with' clause is useless.
+- File "parse_aux.ml", line 230, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "parse_aux.ml", line 459, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- ocamlyacc -v parser_midl.mly
+- 12 shift/reduce conflicts.
+- ocamlc -g -warn-error -31 -c parser_midl.mli
+- ocamlc -g -warn-error -31 -c parser_midl.ml
+- ocamllex lexer_midl.mll
+- 129 states, 1747 transitions, table size 7762 bytes
+- ocamlc -g -warn-error -31 -c lexer_midl.mli
+- ocamlc -g -warn-error -31 -c lexer_midl.ml
+- ocamlc -g -warn-error -31 -c parse.mli
+- ocamlc -g -warn-error -31 -c parse.ml
+- ocamlc -g -warn-error -31 -c fixlabels.mli
+- ocamlc -g -warn-error -31 -c fixlabels.ml
+- ocamlc -g -warn-error -31 -c normalize.mli
+- ocamlc -g -warn-error -31 -c normalize.ml
+- ocamlc -g -warn-error -31 -c main.ml
+- ocamlc -g -warn-error -31 -o camlidl config.cmo utils.cmo clflags.cmo prefix.cmo lexpr.cmo cvttyp.cmo variables.cmo array.cmo struct.cmo enum.cmo union.cmo cvtval.cmo structdecl.cmo enumdecl.cmo uniondecl.cmo typedef.cmo funct.cmo constdecl.cmo intf.cmo file.cmo predef.cmo linenum.cmo parse_aux.cmo parser_midl.cmo lexer_midl.cmo parse.cmo fixlabels.cmo normalize.cmo main.cmo
+- File "array.cmo", line 1:
+- Warning 31: files array.cmo and /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/stdlib.cma(Array) both define a module named Array
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/compiler'
+- cd runtime; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/runtime'
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" idlalloc.c
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" comintf.c
+- ocamlc -g -warn-error -31 -ccopt "-Wall -g" comerror.c
+- comerror.c: In function 'camlidl_error':
+- comerror.c:52:8: warning: unused variable 'msg' [-Wunused-variable]
+-    char msg[1024];
+-         ^
+- In file included from /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/mlvalues.h:20:0,
+-                  from comerror.c:20:
+- comerror.c: In function 'camlidl_uncaught_exception':
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/compatibility.h:255:31: warning: implicit declaration of function 'caml_format_exception' [-Wimplicit-function-declaration]
+-  #define format_caml_exception caml_format_exception /*SP*/
+-                                ^
+- comerror.c:171:16: note: in expansion of macro 'format_caml_exception'
+-    char * msg = format_caml_exception(exn_bucket);
+-                 ^
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/compatibility.h:255:31: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+-  #define format_caml_exception caml_format_exception /*SP*/
+-                                ^
+- comerror.c:171:16: note: in expansion of macro 'format_caml_exception'
+-    char * msg = format_caml_exception(exn_bucket);
+-                 ^
+- rm -f dllcamlidl.so
+- ocamlmklib -o camlidl  idlalloc.o comintf.o comerror.o 
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/runtime'
+- cd lib; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/lib'
+- ocamlc -g -warn-error -31 -c com.mli
+- ocamlc -g -warn-error -31 -c com.ml
+- ocamlc -g -warn-error -31 -a -o com.cma com.cmo
+- ocamlopt -c com.ml
+- ocamlopt -a -o com.cmxa com.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/lib'
+- cd tools; make all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/tools'
+- make[1]: Nothing to be done for 'all'.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/camlidl.1.05/tools'
+-> compiled  camlidl.1.05
+-> installed camlidl.1.05
+Processing  3/4: [ocamlfuse: ocaml setup.ml]
++ ocaml "setup.ml" "-configure" "--prefix" "/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4)
+- 
+- Configuration:
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ ocamlfuse
+- Package version: ..................................... 2.7.1-cvs4
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /home/opam/.opam/ocaml-base-compiler.4.03.0
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ......................................
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- make: ................................................ /usr/bin/make
+- pkg_unix: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- pkg_threads: ......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- pkg_bigarray: ........................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- pkg_camlidl: ......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl
+- 
++ ocaml "setup.ml" "-build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4)
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- camlidl -header  \
+- 			 Fuse_bindings.idl
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- making ._ncdi/Fuse_bindings.di from Fuse_bindings.mli
+- making ._d/Fuse_bindings.d from Fuse_bindings.ml
+- making ._d/Fuse.d from Fuse.ml
+- making ._d/Fuse_lib.d from Fuse_lib.ml
+- making ._d/Unix_util.d from Unix_util.ml
+- making ._d/Thread_pool.d from Thread_pool.ml
+- making ._d/Result.d from Result.ml
+- ocamlc -c -cc "cc" -ccopt "-fPIC -D_FILE_OFFSET_BITS=64 -I. -pthread \
+- 			-DPIC -DNATIVE_CODE   \
+- 			  -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl  -o Fuse_bindings_stubs.o " Fuse_bindings_stubs.c 
+- ocamlc -c -cc "cc" -ccopt "-fPIC -D_FILE_OFFSET_BITS=64 -I. -pthread \
+- 			-DPIC -DNATIVE_CODE   \
+- 			  -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl  -o Unix_util_stubs.o " Unix_util_stubs.c 
+- Unix_util_stubs.c: In function 'unix_util_read':
+- Unix_util_stubs.c:60:9: warning: implicit declaration of function 'read' [-Wimplicit-function-declaration]
+-    res = read(c_fd, c_data, c_dim); 
+-          ^
+- Unix_util_stubs.c: In function 'unix_util_write':
+- Unix_util_stubs.c:85:9: warning: implicit declaration of function 'write' [-Wimplicit-function-declaration]
+-    res = write(c_fd, c_data, c_dim);
+-          ^
+- Unix_util_stubs.c: In function 'unix_util_fchdir':
+- Unix_util_stubs.c:115:3: warning: implicit declaration of function 'fchdir' [-Wimplicit-function-declaration]
+-    fchdir(Int_val(fd));
+-    ^
+- ocamlc -c -cc "cc" -ccopt "-fPIC -D_FILE_OFFSET_BITS=64 -I. -pthread \
+- 			-DPIC -DNATIVE_CODE   \
+- 			  -I/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl  -o Fuse_util.o " Fuse_util.c 
+- In file included from Fuse_util.c:30:0:
+- Fuse_util.c: In function 'gm281_ops_init':
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml/caml/memory.h:257:28: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+-    type caml__temp_result = (result); \
+-                             ^
+- Fuse_util.c:614:3: note: in expansion of macro 'CAMLreturnT'
+-    CAMLreturnT(OPNAME##_RTYPE, res); \
+-    ^
+- Fuse_util.c:296:5: note: in expansion of macro 'CALLBACK'
+-      MACRO(init) \
+-      ^
+- Fuse_util.c:625:1: note: in expansion of macro 'FOR_ALL_OPS'
+-  FOR_ALL_OPS(CALLBACK)
+-  ^
+- ar rcs libFuse_stubs.a Fuse_bindings_stubs.o Unix_util_stubs.o Fuse_util.o
+- ocamlopt -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Result.ml
+- ocamlc -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Thread_pool.mli
+- ocamlopt -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Thread_pool.ml
+- ocamlopt -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Unix_util.ml
+- ocamlc -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Fuse_bindings.mli
+- ocamlopt -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Fuse_bindings.ml
+- ocamlopt -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Fuse_lib.ml
+- ocamlc -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Fuse.mli
+- ocamlopt -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Fuse.ml
+- ocamlopt -a -thread     -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -linkall        -cclib -lFuse_stubs -cclib -lfuse -cclib -lcamlidl \
+- 			 -o Fuse.cmxa Result.cmx Thread_pool.cmx Unix_util.cmx Fuse_bindings.cmx Fuse_lib.cmx Fuse.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- making ._bcdi/Fuse_bindings.di from Fuse_bindings.mli
+- make[1]: 'libFuse_stubs.a' is up to date.
+- ocamlc -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Result.ml
+- ocamlc -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Thread_pool.ml
+- ocamlc -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Unix_util.ml
+- ocamlc -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Fuse_bindings.ml
+- ocamlc -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Fuse_lib.ml
+- ocamlc -c -thread -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl Fuse.ml
+- ocamlmklib    -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl      \
+- 			-o Fuse_stubs Fuse_bindings_stubs.o Unix_util_stubs.o Fuse_util.o -lfuse \
+- 			
+- ocamlc -a -thread -dllib dllFuse_stubs.so -custom    -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/camlidl -linkall        bigarray.cma \
+- 			-cclib -lFuse_stubs -cclib -lfuse -cclib -lcamlidl -o Fuse.cma  Result.cmo Thread_pool.cmo Unix_util.cmo Fuse_bindings.cmo Fuse_lib.cmo Fuse.cmo
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- W: Cannot find an existing alternative files among: lib/Fuse.cmxs
+-> compiled  ocamlfuse.2.7.1-cvs4
+Processing  4/4: [ocamlfuse: ocaml setup.ml]
++ ocaml "setup.ml" "-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4)
+- make: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- make[1]: 'libFuse_stubs.a' is up to date.
+- ocamlopt -a -thread      -linkall        -cclib -lFuse_stubs -cclib -lfuse -cclib -lcamlidl \
+- 			 -o Fuse.cmxa Result.cmx Thread_pool.cmx Unix_util.cmx Fuse_bindings.cmx Fuse_lib.cmx Fuse.cmx
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- make[1]: 'libFuse_stubs.a' is up to date.
+- make[1]: 'Fuse.cma' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  Fuse META Fuse.a Fuse.cma Fuse.cmi Fuse.mli Fuse.cmxa Fuse_bindings.cmi Fuse_lib.cmi Unix_util.cmi dllFuse_stubs.so libFuse_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/Fuse/libFuse_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/Fuse/Unix_util.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/Fuse/Fuse_lib.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/Fuse/Fuse_bindings.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/Fuse/Fuse.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/Fuse/Fuse.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/Fuse/Fuse.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/Fuse/Fuse.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/Fuse/Fuse.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/Fuse/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllFuse_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllFuse_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+- make: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/ocamlfuse.2.7.1-cvs4/lib'
+-> installed ocamlfuse.2.7.1-cvs4
+Done.
+# Run eval `opam env` to update the current shell environment
