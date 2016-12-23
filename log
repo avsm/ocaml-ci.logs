@@ -1,0 +1,115 @@
+=== opam depext -ivyj 2 freetds
+[2016-12-23 21:14.18] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install freetds 0.5.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [freetds.0.5.1: dl]
+[freetds.0.5.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [freetds: ./configure]
++ ./configure "--prefix" "/home/opam/.opam/default" "--sbindir=/home/opam/.opam/default/lib/freetds/sbin" "--libexecdir=/home/opam/.opam/default/lib/freetds/libexec" "--sysconfdir=/home/opam/.opam/default/lib/freetds/etc" "--sharedstatedir=/home/opam/.opam/default/lib/freetds/com" "--localstatedir=/home/opam/.opam/default/lib/freetds/var" "--libdir=/home/opam/.opam/default/lib/freetds/lib" "--includedir=/home/opam/.opam/default/lib/freetds/include" "--datarootdir=/home/opam/.opam/default/lib/freetds/share" (CWD=/home/opam/.opam/default/.opam-switch/build/freetds.0.5.1)
+- configuring freetds 0.5.1
+- checking for ocamlc... ocamlc
+- OCaml version is 4.02.3
+- OCaml library path is /usr/lib/ocaml
+- checking for ocamlopt... ocamlopt
+- checking for ocamlc.opt... ocamlc.opt
+- checking for ocamlopt.opt... ocamlopt.opt
+- checking for ocaml... ocaml
+- checking for ocamldep... ocamldep
+- checking for ocamlmktop... ocamlmktop
+- checking for ocamlmklib... ocamlmklib
+- checking for ocamldoc... ocamldoc
+- checking for ocamlbuild... ocamlbuild
+- checking for ocamlfind... ocamlfind
+- checking for OCaml compiler word size... 64
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking for dbopen in -lsybdb... no
+- checking for ct_init in -lct... no
+- configure: creating ./config.status
+- config.status: creating Makefile.ocaml
+- config.status: creating src/META
+- config.status: creating Makefile
+- config.status: creating src/Makefile
+Processing  1/2: [freetds: make]
++ make  (CWD=/home/opam/.opam/default/.opam-switch/build/freetds.0.5.1)
+[ERROR] The compilation of freetds failed at "make".
+- make -C src byte
+- make[1]: Entering directory '/home/opam/.opam/default/.opam-switch/build/freetds.0.5.1/src'
+- ../Makefile.ocaml:52: .depend.ocaml: No such file or directory
+- Building .depend.ocaml ... 
+- ocamlc.opt  -dtypes -g   -c ct.mli
+- ocamlc.opt  -dtypes -g   -c ct.ml
+- ocamlc.opt  -dtypes -g   -c dblib.mli
+- ocamlc.opt  -dtypes -g   -c dblib.ml
+- File "dblib.ml", line 61, characters 10-14:
+- Warning 43: the label user is not optional.
+- File "dblib.ml", line 61, characters 16-24:
+- Warning 43: the label password is not optional.
+- File "dblib.ml", line 61, characters 26-33:
+- Warning 43: the label charset is not optional.
+- File "dblib.ml", line 61, characters 35-43:
+- Warning 43: the label language is not optional.
+- File "dblib.ml", line 61, characters 45-56:
+- Warning 43: the label application is not optional.
+- ocamlc.opt -pack -o freetds.cmo ct.cmo dblib.cmo
+- cc -Wall -fPIC -DOCAML_WORD_SIZE=64 -I'/usr/lib/ocaml'   -c -o ct_c.o ct_c.c
+- ct_c.c:20:22: fatal error: ctpublic.h: No such file or directory
+- compilation terminated.
+- <builtin>: recipe for target 'ct_c.o' failed
+- make[1]: *** [ct_c.o] Error 1
+- make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/freetds.0.5.1/src'
+- Makefile:22: recipe for target 'byte' failed
+- make: *** [byte] Error 2
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+#=== ERROR while compiling freetds.0.5.1 ======================================#
+# command              make
+# path                 /home/opam/.opam/default/.opam-switch/build/freetds.0.5.1
+# exit-code            2
+# env-file             /home/opam/.opam/log/freetds-1-ad8886.env
+# output-file          /home/opam/.opam/log/freetds-1-ad8886.out
+### output ###
+# [...]
+# Warning 43: the label language is not optional.
+# File "dblib.ml", line 61, characters 45-56:
+# Warning 43: the label application is not optional.
+# ocamlc.opt -pack -o freetds.cmo ct.cmo dblib.cmo
+# cc -Wall -fPIC -DOCAML_WORD_SIZE=64 -I'/usr/lib/ocaml'   -c -o ct_c.o ct_c.c
+# ct_c.c:20:22: fatal error: ctpublic.h: No such file or directory
+# compilation terminated.
+# <builtin>: recipe for target 'ct_c.o' failed
+# make[1]: *** [ct_c.o] Error 1
+# make[1]: Leaving directory '/home/opam/.opam/default/.opam-switch/build/freetds.0.5.1/src'
+# Makefile:22: recipe for target 'byte' failed
+# make: *** [byte] Error 2
+
++- The following actions failed
+| - build freetds 0.5.1
++- 
+- No changes have been performed
+
+=-=- freetds.0.5.1 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext freetds.0.5.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 freetds' failed.
+[2016-12-23 21:21.39] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "freetds" exited with status 4
