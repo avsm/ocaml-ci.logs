@@ -1,0 +1,58 @@
+=== opam depext -ivyj 2 parmap
+[2016-12-23 18:49.19] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - autoconf
+#  - m4
+m4
+# The following new OS packages need to be installed: autoconf
+The following command needs to be run through "sudo":
+    apk add autoconf
+(1/2) Installing perl (5.22.2-r0)
+(2/2) Installing autoconf (2.69-r0)
+Executing busybox-1.24.2-r12.trigger
+OK: 467 MiB in 84 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-autoconf 0.1                                   [required by parmap]
+  - install parmap        1.0-rc7.1
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [parmap.1.0-rc7.1: dl]
+[parmap.1.0-rc7.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-autoconf: which autoconf]
++ which "autoconf" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-autoconf.0.1)
+- /usr/bin/autoconf
+-> compiled  conf-autoconf.0.1
+-> installed conf-autoconf.0.1
+Processing  3/4: [parmap: aclocal m4]
++ aclocal "-I" "m4" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/parmap.1.0-rc7.1)
+[ERROR] The compilation of parmap failed at "aclocal -I m4".
+
+#=== ERROR while compiling parmap.1.0-rc7.1 ===================================#
+# command              aclocal -I m4
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/parmap.1.0-rc7.1
+# exit-code            127
+# env-file             /home/opam/.opam/log/parmap-1-ad8886.env
+# output-file          /home/opam/.opam/log/parmap-1-ad8886.out
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build parmap 1.0-rc7.1
++- 
++- The following changes have been performed
+| - install conf-autoconf 0.1
++- 
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/backup/state-20161223192714.export"
+'opam install --verbose --yes --jobs=2 parmap' failed.
+[2016-12-23 19:27.23] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:49d0e921f0125c5abd74fefd7059b741d3c33befae968eec0dfda5ffb8552bb4" "opam" "depext" "-ivyj" "2" "parmap" exited with status 4
