@@ -1,0 +1,51 @@
+=== opam depext -ivyj 2 dbm
+[2016-12-23 21:14.13] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install dbm 1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [dbm.1.0: dl]
+[dbm.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [dbm: patch]
+Processing  1/2: [dbm: mkdir]
++ mkdir "-p" "/home/opam/.opam/default/lib/dbm" (CWD=/home/opam/.opam/default/.opam-switch/build/dbm.1.0)
+Processing  1/2: [dbm: ./configure]
++ ./configure  (CWD=/home/opam/.opam/default/.opam-switch/build/dbm.1.0)
+- Configuring for OCaml version 4.02.3
+- 
+- NDBM not found, the "camldbm" library cannot be built.
+[ERROR] The compilation of dbm failed at "./configure".
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+#=== ERROR while compiling dbm.1.0 ============================================#
+# command              ./configure
+# path                 /home/opam/.opam/default/.opam-switch/build/dbm.1.0
+# exit-code            2
+# env-file             /home/opam/.opam/log/dbm-1-e4db2f.env
+# output-file          /home/opam/.opam/log/dbm-1-e4db2f.out
+### output ###
+# Configuring for OCaml version 4.02.3
+# 
+# NDBM not found, the "camldbm" library cannot be built.
+
++- The following actions failed
+| - build dbm 1.0
++- 
+- No changes have been performed
+
+=-=- dbm.1.0 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext dbm.1.0' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 dbm' failed.
+[2016-12-23 21:18.36] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "dbm" exited with status 4
