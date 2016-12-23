@@ -1,0 +1,35 @@
+=== opam depext -ivyj 2 conf-sdl-gfx
+[2016-12-23 18:50.11] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-sdl-gfx 1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-sdl-gfx: pkg-config SDL_gfx]
++ pkg-config "SDL_gfx" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-sdl-gfx.1)
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-sdl-gfx 1
++- 
+- No changes have been performed
+
+=-=- conf-sdl-gfx.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-sdl-gfx.1' may help you find the correct installation for your system.
+[ERROR] The compilation of conf-sdl-gfx failed at "pkg-config SDL_gfx".
+
+#=== ERROR while compiling conf-sdl-gfx.1 =====================================#
+# command              pkg-config SDL_gfx
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-sdl-gfx.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-sdl-gfx-1-7afd23.env
+# output-file          /home/opam/.opam/log/conf-sdl-gfx-1-7afd23.out
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-sdl-gfx' failed.
+[2016-12-23 20:01.32] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "conf-sdl-gfx" exited with status 4
