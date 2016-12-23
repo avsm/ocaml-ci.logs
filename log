@@ -1,0 +1,87 @@
+=== opam depext -ivyj 2 fury-puyo
+[2016-12-23 18:50.27] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-sdl-ttf   1                                    [required by fury-puyo]
+  - install conf-sdl-image 1                                    [required by fury-puyo]
+  - install conf-sdl-mixer 1                                    [required by fury-puyo]
+  - install ocamlsdl       0.9.1                                [required by fury-puyo]
+  - install fury-puyo      0.5  
+===== 5 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  4/5: [fury-puyo.0.5: dl]
+Processing  5/5: [fury-puyo.0.5: dl] [ocamlsdl.0.9.1: dl]
+[ocamlsdl.0.9.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/5: [fury-puyo.0.5: dl]
+[fury-puyo.0.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/5:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/10: [conf-sdl-image: pkg-config SDL_image]
+Processing  2/10: [conf-sdl-image: pkg-config SDL_image] [conf-sdl-mixer: pkg-config SDL_mixer]
++ pkg-config "SDL_image" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-sdl-image.1)
+[ERROR] The compilation of conf-sdl-image failed at "pkg-config SDL_image".
+Processing  2/10: [conf-sdl-mixer: pkg-config SDL_mixer]
+Processing  3/10: [conf-sdl-mixer: pkg-config SDL_mixer] [conf-sdl-ttf: pkg-config SDL_ttf]
++ pkg-config "SDL_mixer" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-sdl-mixer.1)
+Processing  3/10: [conf-sdl-ttf: pkg-config SDL_ttf]
+Processing  4/10: [conf-sdl-ttf: pkg-config SDL_ttf]
+Processing  5/10: [conf-sdl-ttf: pkg-config SDL_ttf]
++ pkg-config "SDL_ttf" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-sdl-ttf.1)
+[ERROR] The compilation of conf-sdl-mixer failed at "pkg-config SDL_mixer".
+[ERROR] The compilation of conf-sdl-ttf failed at "pkg-config SDL_ttf".
+
+#=== ERROR while compiling conf-sdl-ttf.1 =====================================#
+# command              pkg-config SDL_ttf
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-sdl-ttf.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-sdl-ttf-1-6cc03f.env
+# output-file          /home/opam/.opam/log/conf-sdl-ttf-1-6cc03f.out
+
+
+#=== ERROR while compiling conf-sdl-mixer.1 ===================================#
+# command              pkg-config SDL_mixer
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-sdl-mixer.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-sdl-mixer-1-d0f245.env
+# output-file          /home/opam/.opam/log/conf-sdl-mixer-1-d0f245.out
+
+
+#=== ERROR while compiling conf-sdl-image.1 ===================================#
+# command              pkg-config SDL_image
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-sdl-image.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-sdl-image-1-a00279.env
+# output-file          /home/opam/.opam/log/conf-sdl-image-1-a00279.out
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install fury-puyo 0.5  
+| - install ocamlsdl  0.9.1
++- 
++- The following actions failed
+| - build conf-sdl-image 1
+| - build conf-sdl-mixer 1
+| - build conf-sdl-ttf   1
++- 
+- No changes have been performed
+
+=-=- conf-sdl-ttf.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-sdl-ttf.1' may help you find the correct installation for your system.
+
+=-=- conf-sdl-mixer.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-sdl-mixer.1' may help you find the correct installation for your system.
+
+=-=- conf-sdl-image.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-sdl-image.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 fury-puyo' failed.
+[2016-12-23 20:09.20] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:8892eb0e54ccf625e1380811877eaba45f2205ea02538f26850ccfcc26cd98e6" "opam" "depext" "-ivyj" "2" "fury-puyo" exited with status 4
