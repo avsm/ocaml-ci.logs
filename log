@@ -1,0 +1,72 @@
+=== opam depext -ivyj 2 libvirt
+[2016-12-23 21:14.31] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install libvirt 0.6.1.4
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [libvirt.0.6.1.4: dl]
+[libvirt.0.6.1.4] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [libvirt: ./configure]
++ ./configure  (CWD=/home/opam/.opam/default/.opam-switch/build/libvirt.0.6.1.4)
+[ERROR] The compilation of libvirt failed at "./configure".
+- checking for gcc... gcc
+- checking whether the C compiler works... yes
+- checking for C compiler default output file name... a.out
+- checking for suffix of executables... 
+- checking whether we are cross compiling... no
+- checking for suffix of object files... o
+- checking whether we are using the GNU C compiler... yes
+- checking whether gcc accepts -g... yes
+- checking for gcc option to accept ISO C89... none needed
+- checking for a BSD-compatible install... /usr/bin/install -c
+- checking how to run the C preprocessor... gcc -E
+- checking for function prototypes... yes
+- checking whether gcc and cc understand -c and -o together... yes
+- checking build system type... x86_64-unknown-linux-gnu
+- checking host system type... x86_64-unknown-linux-gnu
+- checking for virConnectOpen in -lvirt... no
+- configure: error: You must install libvirt library
+
+#=== ERROR while compiling libvirt.0.6.1.4 ====================================#
+# command              ./configure
+# path                 /home/opam/.opam/default/.opam-switch/build/libvirt.0.6.1.4
+# exit-code            1
+# env-file             /home/opam/.opam/log/libvirt-1-d2d111.env
+# output-file          /home/opam/.opam/log/libvirt-1-d2d111.out
+### output ###
+# [...]
+# checking for suffix of object files... o
+# checking whether we are using the GNU C compiler... yes
+# checking whether gcc accepts -g... yes
+# checking for gcc option to accept ISO C89... none needed
+# checking for a BSD-compatible install... /usr/bin/install -c
+# checking how to run the C preprocessor... gcc -E
+# checking for function prototypes... yes
+# checking whether gcc and cc understand -c and -o together... yes
+# checking build system type... x86_64-unknown-linux-gnu
+# checking host system type... x86_64-unknown-linux-gnu
+# checking for virConnectOpen in -lvirt... no
+# configure: error: You must install libvirt library
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build libvirt 0.6.1.4
++- 
+- No changes have been performed
+
+=-=- libvirt.0.6.1.4 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext libvirt.0.6.1.4' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 libvirt' failed.
+[2016-12-23 21:29.54] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:9a13652d5412cc80af53c58c3a171f8e1510e5ad515cb4096140d80c6e823cd5" "opam" "depext" "-ivyj" "2" "libvirt" exited with status 4
