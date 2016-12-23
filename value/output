@@ -1,0 +1,124 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install res 3.2.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [res.3.2.0: dl]
+[res.3.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [res: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0/lib'
+- ocamldep res.mli > ._bcdi/res.di
+- ocamldep weak_intf.mli > ._bcdi/weak_intf.di
+- ocamldep nopres_intf.mli > ._bcdi/nopres_intf.di
+- ocamldep pres_intf.mli > ._bcdi/pres_intf.di
+- ocamldep strat.mli > ._bcdi/strat.di
+- ocamldep res.ml > ._d/res.d
+- ocamldep weak_impl.ml > ._d/weak_impl.d
+- ocamldep nopres_impl.ml > ._d/nopres_impl.d
+- ocamldep pres_impl.ml > ._d/pres_impl.d
+- ocamlc -c strat.mli
+- ocamlc -c pres_intf.mli
+- ocamlc -c pres_impl.ml
+- ocamlc -c nopres_intf.mli
+- ocamlc -c nopres_impl.ml
+- ocamlc -c weak_intf.mli
+- ocamlc -c weak_impl.ml
+- ocamlc -c res.mli
+- ocamlc -c res.ml
+- File "res.ml", line 65, characters 17-29:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "res.ml", line 112, characters 17-29:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "res.ml", line 128, characters 39-51:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "res.ml", line 131, characters 14-26:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "res.ml", line 211, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "res.ml", line 214, characters 19-36:
+- Warning 3: deprecated: String.unsafe_set
+- File "res.ml", line 223, characters 19-29:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlc -a                -o res.cma pres_impl.cmo nopres_impl.cmo weak_impl.cmo res.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0/lib'
+- ocamldep -native res.mli > ._ncdi/res.di
+- ocamldep -native weak_intf.mli > ._ncdi/weak_intf.di
+- ocamldep -native nopres_intf.mli > ._ncdi/nopres_intf.di
+- ocamldep -native pres_intf.mli > ._ncdi/pres_intf.di
+- ocamldep -native strat.mli > ._ncdi/strat.di
+- ocamlopt -c pres_impl.ml
+- ocamlopt -c nopres_impl.ml
+- ocamlopt -c weak_impl.ml
+- ocamlopt -c res.ml
+- File "res.ml", line 65, characters 17-29:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "res.ml", line 112, characters 17-29:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "res.ml", line 128, characters 39-51:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "res.ml", line 131, characters 14-26:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "res.ml", line 211, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "res.ml", line 214, characters 19-36:
+- Warning 3: deprecated: String.unsafe_set
+- File "res.ml", line 223, characters 19-29:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlopt -a                -o res.cmxa pres_impl.cmx nopres_impl.cmx weak_impl.cmx res.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0/lib'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0/lib'
+-> compiled  res.3.2.0
+Processing  2/2: [res: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0/lib'
+- ocamlc -a                -o res.cma pres_impl.cmo nopres_impl.cmo weak_impl.cmo res.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0/lib'
+- make[2]: 'res.cmxa' is up to date.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0/lib'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  res META res.mli strat.mli pres_intf.mli nopres_intf.mli strat.cmi pres_intf.cmi nopres_intf.cmi weak_intf.cmi res.cmi res.cma res.cmxa res.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/res/res.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/res/res.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/res/res.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/res/res.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/res/weak_intf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/res/nopres_intf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/res/pres_intf.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/res/strat.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/res/nopres_intf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/res/pres_intf.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/res/strat.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/res/res.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/res/META
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/res.3.2.0/lib'
+-> installed res.3.2.0
+Done.
+# Run eval `opam env` to update the current shell environment
