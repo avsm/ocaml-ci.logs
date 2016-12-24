@@ -1,0 +1,40 @@
+=== opam depext -ivyj 2 conf-ppl
+[2016-12-24 01:19.25] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-ppl 1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-ppl: sh cc test.c -lppl_c -lppl]
++ sh "-c" "cc test.c -lppl_c -lppl" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-ppl.1)
+- test.c:1:19: fatal error: ppl_c.h: No such file or directory
+- compilation terminated.
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-ppl 1
++- 
+- No changes have been performed
+
+=-=- conf-ppl.1 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-ppl.1' may help you find the correct installation for your system.
+[ERROR] The compilation of conf-ppl failed at "sh -c cc test.c -lppl_c -lppl".
+
+#=== ERROR while compiling conf-ppl.1 =========================================#
+# command              sh -c cc test.c -lppl_c -lppl
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-ppl.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-ppl-1-58c514.env
+# output-file          /home/opam/.opam/log/conf-ppl-1-58c514.out
+### output ###
+# test.c:1:19: fatal error: ppl_c.h: No such file or directory
+# compilation terminated.
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-ppl' failed.
+[2016-12-24 02:30.16] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:e1e6e7baf1b63f8ede9bc0d8f29be09cc90103563cdd629ff4e8e184f10fd8f9" "opam" "depext" "-ivyj" "2" "conf-ppl" exited with status 4
