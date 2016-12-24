@@ -1,0 +1,1186 @@
+=== opam depext -ivyj 2 coccinelle
+[2016-12-24 01:17.34] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - autoconf
+#  - m4
+#  - pcre-dev
+#  - pkgconfig
+m4
+pkgconfig
+# The following new OS packages need to be installed: autoconf pcre-dev
+The following command needs to be run through "sudo":
+    apk add autoconf pcre-dev
+(1/6) Installing perl (5.22.2-r0)
+(2/6) Installing autoconf (2.69-r0)
+(3/6) Installing libpcre16 (8.38-r1)
+(4/6) Installing libpcre32 (8.38-r1)
+(5/6) Installing libpcrecpp (8.38-r1)
+(6/6) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 470 MiB in 88 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-python-2-7-dev 1.0                             [required by coccinelle]
+  - install menhir              20120123                        [required by coccinelle]
+  - install conf-pkg-config     1.0                             [required by coccinelle]
+  - install conf-python-2-7     1.0                             [required by coccinelle]
+  - install conf-libpcre        1                               [required by pcre]
+  - install pcre                7.0.2                           [required by coccinelle]
+  - install coccinelle          1.0.0-rc21
+===== 7 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/7: [coccinelle.1.0.0-rc21: dl]
+Processing  2/7: [coccinelle.1.0.0-rc21: dl]
+Processing  3/7: [coccinelle.1.0.0-rc21: dl]
+Processing  4/7: [coccinelle.1.0.0-rc21: dl]
+Processing  5/7: [coccinelle.1.0.0-rc21: dl]
+Processing  6/7: [coccinelle.1.0.0-rc21: dl] [menhir.20120123: dl]
+Processing  7/7: [coccinelle.1.0.0-rc21: dl] [menhir.20120123: dl] [pcre.7.0.2: dl]
+[pcre.7.0.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/7: [coccinelle.1.0.0-rc21: dl] [menhir.20120123: dl]
+[menhir.20120123] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/7: [coccinelle.1.0.0-rc21: dl]
+[coccinelle.1.0.0-rc21] downloaded from file:///home/opam/opam-repository/cache
+Processing  7/7:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/14: [conf-pkg-config: pkg-config]
+Processing  2/14: [conf-pkg-config: pkg-config]
+Processing  3/14: [conf-pkg-config: pkg-config] [conf-python-2-7-dev: cc test.c]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-pkg-config.1.0)
+- usage: pkgconf [OPTIONS] [LIBRARIES]
+- 
+- basic options:
+- 
+-   --help                            this message
+-   --about                           print pkgconf version and license to stdout
+-   --version                         print supported pkg-config version to stdout
+-   --atleast-pkgconfig-version       check whether or not pkgconf is compatible
+-                                     with a specified pkg-config version
+-   --errors-to-stdout                print all errors on stdout instead of stderr
+-   --silence-errors                  explicitly be silent about errors
+-   --list-all                        list all known packages
+-   --list-package-names              list all known package names
+-   --simulate                        simulate walking the calculated dependency graph
+-   --no-cache                        do not cache already seen packages when
+-                                     walking the dependency graph
+- 
+- checking specific pkg-config database entries:
+- 
+-   --atleast-version                 require a specific version of a module
+-   --exact-version                   require an exact version of a module
+-   --max-version                     require a maximum version of a module
+-   --exists                          check whether or not a module exists
+-   --uninstalled                     check whether or not an uninstalled module will be used
+-   --no-uninstalled                  never use uninstalled modules when satisfying dependencies
+-   --maximum-traverse-depth          maximum allowed depth for dependency graph
+-   --static                          be more aggressive when computing dependency graph
+-                                     (for static linking)
+-   --env-only                        look only for package entries in PKG_CONFIG_PATH
+-   --ignore-conflicts                ignore 'conflicts' rules in modules
+-   --validate                        validate specific .pc files for correctness
+- 
+- querying specific pkg-config database fields:
+- 
+-   --define-variable=varname=value   define variable 'varname' as 'value'
+-   --variable=varname                print specified variable entry to stdout
+-   --cflags                          print required CFLAGS to stdout
+-   --cflags-only-I                   print required include-dir CFLAGS to stdout
+-   --cflags-only-other               print required non-include-dir CFLAGS to stdout
+-   --libs                            print required linker flags to stdout
+-   --libs-only-L                     print required LDPATH linker flags to stdout
+-   --libs-only-l                     print required LIBNAME linker flags to stdout
+-   --libs-only-other                 print required other linker flags to stdout
+-   --print-requires                  print required dependency frameworks to stdout
+-   --print-requires-private          print required dependency frameworks for static
+-                                     linking to stdout
+-   --print-variables                 print all known variables in module to stdout
+-   --digraph                         print entire dependency graph in graphviz 'dot' format
+-   --keep-system-cflags              keep -I/usr/include entries in cflags output
+-   --keep-system-libs                keep -L/usr/lib entries in libs output
+- 
+- report bugs to <http://github.com/pkgconf/pkgconf/issues>.
+- usage: pkgconf [OPTIONS] [LIBRARIES]
+- 
+- basic options:
+- 
+-   --help                            this message
+-   --about                           print pkgconf version and license to stdout
+-   --version                         print supported pkg-config version to stdout
+-   --atleast-pkgconfig-version       check whether or not pkgconf is compatible
+-                                     with a specified pkg-config version
+-   --errors-to-stdout                print all errors on stdout instead of stderr
+-   --silence-errors                  explicitly be silent about errors
+-   --list-all                        list all known packages
+-   --list-package-names              list all known package names
+-   --simulate                        simulate walking the calculated dependency graph
+-   --no-cache                        do not cache already seen packages when
+-                                     walking the dependency graph
+- 
+- checking specific pkg-config database entries:
+- 
+-   --atleast-version                 require a specific version of a module
+-   --exact-version                   require an exact version of a module
+-   --max-version                     require a maximum version of a module
+-   --exists                          check whether or not a module exists
+-   --uninstalled                     check whether or not an uninstalled module will be used
+-   --no-uninstalled                  never use uninstalled modules when satisfying dependencies
+-   --maximum-traverse-depth          maximum allowed depth for dependency graph
+-   --static                          be more aggressive when computing dependency graph
+-                                     (for static linking)
+-   --env-only                        look only for package entries in PKG_CONFIG_PATH
+-   --ignore-conflicts                ignore 'conflicts' rules in modules
+-   --validate                        validate specific .pc files for correctness
+- 
+- querying specific pkg-config database fields:
+- 
+-   --define-variable=varname=value   define variable 'varname' as 'value'
+-   --variable=varname                print specified variable entry to stdout
+-   --cflags                          print required CFLAGS to stdout
+-   --cflags-only-I                   print required include-dir CFLAGS to stdout
+-   --cflags-only-other               print required non-include-dir CFLAGS to stdout
+-   --libs                            print required linker flags to stdout
+-   --libs-only-L                     print required LDPATH linker flags to stdout
+-   --libs-only-l                     print required LIBNAME linker flags to stdout
+-   --libs-only-other                 print required other linker flags to stdout
+-   --print-requires                  print required dependency frameworks to stdout
+-   --print-requires-private          print required dependency frameworks for static
+-                                     linking to stdout
+-   --print-variables                 print all known variables in module to stdout
+-   --digraph                         print entire dependency graph in graphviz 'dot' format
+-   --keep-system-cflags              keep -I/usr/include entries in cflags output
+-   --keep-system-libs                keep -L/usr/lib entries in libs output
+- 
+- report bugs to <http://github.com/pkgconf/pkgconf/issues>.
+-> compiled  conf-pkg-config.1.0
+Processing  3/14: [conf-python-2-7-dev: cc test.c]
+Processing  4/14: [conf-python-2-7-dev: cc test.c]
+-> installed conf-pkg-config.1.0
+Processing  5/14: [conf-python-2-7-dev: cc test.c]
+Processing  6/14: [conf-libpcre: pkg-config libpcre] [conf-python-2-7-dev: cc test.c]
++ cc "test.c" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-python-2-7-dev.1.0)
+- test.c:1:30: fatal error: python2.7/Python.h: No such file or directory
+- compilation terminated.
+- test.c:1:30: fatal error: python2.7/Python.h: No such file or directory
+- compilation terminated.
+[ERROR] The compilation of conf-python-2-7-dev failed at "cc test.c".
+Processing  6/14: [conf-libpcre: pkg-config libpcre]
+Processing  7/14: [conf-libpcre: pkg-config libpcre] [conf-python-2-7: python2.7 print 'python2.7 is installed']
++ pkg-config "libpcre" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-libpcre.1)
+-> compiled  conf-libpcre.1
+Processing  7/14: [conf-python-2-7: python2.7 print 'python2.7 is installed']
++ python2.7 "-c" "print 'python2.7 is installed'" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-python-2-7.1.0)
+[ERROR] The installation of conf-python-2-7 failed at "python2.7 -c print 'python2.7 is installed'".
+-> installed conf-libpcre.1
+Processing  9/14: [pcre: make]
+Processing 10/14: [pcre: make]
+Processing 11/14: [pcre: make] [menhir: make install]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.7.0.2)
+- ocaml setup.ml -configure 
+- File "./setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 246, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 246, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 257, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 287, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 384, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1253, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1258, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 4920, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4921, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 4922, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4923, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ pcre-ocaml
+- Package version: ..................................... 7.0.2
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- with_pcre_config: .................................... pcre-config
+- Strict compile-time checks: .......................... true
+- Build examples: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- 
+- ocaml setup.ml -build 
+- File "./setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 246, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 246, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 257, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 287, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 384, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1253, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1258, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 4920, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4921, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 4922, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4923, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamlc -g -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt '' -c lib/pcre_stubs.c
+- mv pcre_stubs.o lib/pcre_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlmklib -o lib/pcre_stubs -lpcre lib/pcre_stubs.o
+- ocamlfind ocamldep -modules lib/pcre.mli > lib/pcre.mli.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmi lib/pcre.mli
+- + ocamlfind ocamlc -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmi lib/pcre.mli
+- File "lib/pcre.mli", line 60, characters 12-63:
+- Warning 50: ambiguous documentation comment
+- File "lib/pcre.mli", line 192, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlfind ocamldep -modules lib/pcre.ml > lib/pcre.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmo lib/pcre.ml
+- + ocamlfind ocamlc -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmo lib/pcre.ml
+- File "lib/pcre.ml", line 162, characters 0-76:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 164, characters 0-84:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 167, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 170, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 173, characters 0-111:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 176, characters 0-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 213, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 231, characters 0-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 238, characters 0-120:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 863, characters 0-63:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlfind ocamlc -a -dllib -lpcre_stubs -cclib -lpcre_stubs -cclib -lpcre -cclib -lpcre lib/pcre.cmo -o lib/pcre.cma
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmx lib/pcre.ml
+- + ocamlfind ocamlopt -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmx lib/pcre.ml
+- File "lib/pcre.ml", line 162, characters 0-76:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 164, characters 0-84:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 167, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 170, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 173, characters 0-111:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 176, characters 0-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 213, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 231, characters 0-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 238, characters 0-120:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 863, characters 0-63:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlfind ocamlopt -a -cclib -lpcre_stubs -cclib -lpcre -cclib -lpcre lib/pcre.cmx -o lib/pcre.cmxa
+- ocamlfind ocamlopt -shared -I lib -cclib -lpcre lib/pcre.cmx -o lib/pcre.cmxs
+- ocamlfind ocamldep -modules examples/cloc/cloc.ml > examples/cloc/cloc.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/cloc -I lib -o examples/cloc/cloc.cmo examples/cloc/cloc.ml
+- + ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/cloc -I lib -o examples/cloc/cloc.cmo examples/cloc/cloc.ml
+- File "examples/cloc/cloc.ml", line 5, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/cloc -I lib -o examples/cloc/cloc.cmx examples/cloc/cloc.ml
+- + ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/cloc -I lib -o examples/cloc/cloc.cmx examples/cloc/cloc.ml
+- File "examples/cloc/cloc.ml", line 5, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -g -I lib -linkpkg lib/pcre.cmxa examples/cloc/cloc.cmx -o examples/cloc/cloc.native
+- ocamlfind ocamldep -modules examples/count_hash/count_hash.ml > examples/count_hash/count_hash.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/count_hash -I lib -o examples/count_hash/count_hash.cmo examples/count_hash/count_hash.ml
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/count_hash -I lib -o examples/count_hash/count_hash.cmx examples/count_hash/count_hash.ml
+- ocamlfind ocamlopt -g -I lib -linkpkg lib/pcre.cmxa examples/count_hash/count_hash.cmx -o examples/count_hash/count_hash.native
+- ocamlfind ocamldep -modules examples/pcregrep/pcregrep.ml > examples/pcregrep/pcregrep.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/pcregrep -I lib -o examples/pcregrep/pcregrep.cmo examples/pcregrep/pcregrep.ml
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/pcregrep -I lib -o examples/pcregrep/pcregrep.cmx examples/pcregrep/pcregrep.ml
+- ocamlfind ocamlopt -g -I lib -linkpkg lib/pcre.cmxa examples/pcregrep/pcregrep.cmx -o examples/pcregrep/pcregrep.native
+- ocamlfind ocamldep -modules examples/subst/subst.ml > examples/subst/subst.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/subst -I lib -o examples/subst/subst.cmo examples/subst/subst.ml
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/subst -I lib -o examples/subst/subst.cmx examples/subst/subst.ml
+- ocamlfind ocamlopt -g -I lib -linkpkg lib/pcre.cmxa examples/subst/subst.cmx -o examples/subst/subst.native
+- ocaml setup.ml -configure 
+- File "./setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 246, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 246, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 257, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 287, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 384, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1253, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1258, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 4920, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4921, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 4922, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4923, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- 
+- Configuration: 
+- ocamlfind: ........................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlfind
+- ocamlc: .............................................. /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlc.opt
+- ocamlopt: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt
+- ocamlbuild: .......................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlbuild
+- Package name: ........................................ pcre-ocaml
+- Package version: ..................................... 7.0.2
+- os_type: ............................................. Unix
+- system: .............................................. linux
+- architecture: ........................................ amd64
+- ccomp_type: .......................................... cc
+- ocaml_version: ....................................... 4.03.0
+- standard_library_default: ............................ /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_library: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocaml
+- standard_runtime: .................................... /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlrun
+- bytecomp_c_compiler: ................................. gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT -fPIC
+- native_c_compiler: ................................... gcc -std=gnu99 -O2 -fno-strict-aliasing -fwrapv -Wall -D_FILE_OFFSET_BITS=64 -D_REENTRANT
+- model: ............................................... default
+- ext_obj: ............................................. .o
+- ext_asm: ............................................. .s
+- ext_lib: ............................................. .a
+- ext_dll: ............................................. .so
+- default_executable_name: ............................. a.out
+- systhread_supported: ................................. true
+- Install architecture-independent files dir: .......... /usr/local
+- Install architecture-dependent files in dir: ......... $prefix
+- User executables: .................................... $exec_prefix/bin
+- System admin executables: ............................ $exec_prefix/sbin
+- Program executables: ................................. $exec_prefix/libexec
+- Read-only single-machine data: ....................... $prefix/etc
+- Modifiable architecture-independent data: ............ $prefix/com
+- Modifiable single-machine data: ...................... $prefix/var
+- Object code libraries: ............................... $exec_prefix/lib
+- Read-only arch-independent data root: ................ $prefix/share
+- Read-only architecture-independent data: ............. $datarootdir
+- Info documentation: .................................. $datarootdir/info
+- Locale-dependent data: ............................... $datarootdir/locale
+- Man documentation: ................................... $datarootdir/man
+- Documentation root: .................................. $datarootdir/doc/$pkg_name
+- HTML documentation: .................................. $docdir
+- DVI documentation: ................................... $docdir
+- PDF documentation: ................................... $docdir
+- PS documentation: .................................... $docdir
+- findlib_version: ..................................... 1.7.1
+- is_native: ........................................... true
+- suffix_program: ...................................... 
+- Remove a file.: ...................................... rm -f
+- Remove a directory.: ................................. rm -rf
+- Turn ocaml debug flag on: ............................ true
+- Turn ocaml profile flag on: .......................... false
+- Compiler support generation of .cmxs.: ............... true
+- OCamlbuild additional flags: ......................... 
+- with_pcre_config: .................................... pcre-config
+- Strict compile-time checks: .......................... true
+- Build examples: ...................................... true
+- Create documentations: ............................... true
+- Compile tests executable and library and run them: ... false
+- ocamldoc: ............................................ /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamldoc
+- 
+- ocaml setup.ml -build 
+- File "./setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 246, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 246, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 257, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 287, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 384, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1253, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1258, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 4920, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4921, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 4922, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4923, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlopt.opt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuildlib.cmxa myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamlc -g -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -ccopt '' -c lib/pcre_stubs.c
+- mv pcre_stubs.o lib/pcre_stubs.o
+- /home/opam/.opam/ocaml-base-compiler.4.03.0/bin/ocamlmklib -o lib/pcre_stubs -lpcre lib/pcre_stubs.o
+- ocamlfind ocamldep -modules lib/pcre.mli > lib/pcre.mli.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmi lib/pcre.mli
+- + ocamlfind ocamlc -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmi lib/pcre.mli
+- File "lib/pcre.mli", line 60, characters 12-63:
+- Warning 50: ambiguous documentation comment
+- File "lib/pcre.mli", line 192, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlfind ocamldep -modules lib/pcre.ml > lib/pcre.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmo lib/pcre.ml
+- + ocamlfind ocamlc -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmo lib/pcre.ml
+- File "lib/pcre.ml", line 162, characters 0-76:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 164, characters 0-84:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 167, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 170, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 173, characters 0-111:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 176, characters 0-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 213, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 231, characters 0-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 238, characters 0-120:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 863, characters 0-63:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlfind ocamlc -a -dllib -lpcre_stubs -cclib -lpcre_stubs -cclib -lpcre -cclib -lpcre lib/pcre.cmo -o lib/pcre.cma
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmx lib/pcre.ml
+- + ocamlfind ocamlopt -c -g -annot -w A -w e -w r -ccopt -g -ccopt -O2 -ccopt -fPIC -ccopt -DPIC -ccopt -Wall -ccopt -pedantic -ccopt -Wextra -ccopt -Wunused -ccopt -Wno-long-long -strict-sequence -I lib -o lib/pcre.cmx lib/pcre.ml
+- File "lib/pcre.ml", line 162, characters 0-76:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 164, characters 0-84:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 167, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 170, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 173, characters 0-111:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 176, characters 0-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 213, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 231, characters 0-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 238, characters 0-120:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "lib/pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "lib/pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "lib/pcre.ml", line 863, characters 0-63:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "lib/pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlfind ocamlopt -a -cclib -lpcre_stubs -cclib -lpcre -cclib -lpcre lib/pcre.cmx -o lib/pcre.cmxa
+- ocamlfind ocamlopt -shared -I lib -cclib -lpcre lib/pcre.cmx -o lib/pcre.cmxs
+- ocamlfind ocamldep -modules examples/cloc/cloc.ml > examples/cloc/cloc.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/cloc -I lib -o examples/cloc/cloc.cmo examples/cloc/cloc.ml
+- + ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/cloc -I lib -o examples/cloc/cloc.cmo examples/cloc/cloc.ml
+- File "examples/cloc/cloc.ml", line 5, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/cloc -I lib -o examples/cloc/cloc.cmx examples/cloc/cloc.ml
+- + ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/cloc -I lib -o examples/cloc/cloc.cmx examples/cloc/cloc.ml
+- File "examples/cloc/cloc.ml", line 5, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt -g -I lib -linkpkg lib/pcre.cmxa examples/cloc/cloc.cmx -o examples/cloc/cloc.native
+- ocamlfind ocamldep -modules examples/count_hash/count_hash.ml > examples/count_hash/count_hash.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/count_hash -I lib -o examples/count_hash/count_hash.cmo examples/count_hash/count_hash.ml
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/count_hash -I lib -o examples/count_hash/count_hash.cmx examples/count_hash/count_hash.ml
+- ocamlfind ocamlopt -g -I lib -linkpkg lib/pcre.cmxa examples/count_hash/count_hash.cmx -o examples/count_hash/count_hash.native
+- ocamlfind ocamldep -modules examples/pcregrep/pcregrep.ml > examples/pcregrep/pcregrep.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/pcregrep -I lib -o examples/pcregrep/pcregrep.cmo examples/pcregrep/pcregrep.ml
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/pcregrep -I lib -o examples/pcregrep/pcregrep.cmx examples/pcregrep/pcregrep.ml
+- ocamlfind ocamlopt -g -I lib -linkpkg lib/pcre.cmxa examples/pcregrep/pcregrep.cmx -o examples/pcregrep/pcregrep.native
+- ocamlfind ocamldep -modules examples/subst/subst.ml > examples/subst/subst.ml.depends
+- ocamlfind ocamlc -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/subst -I lib -o examples/subst/subst.cmo examples/subst/subst.ml
+- ocamlfind ocamlopt -c -g -annot -w A -w e -w r -I lib -strict-sequence -I examples/subst -I lib -o examples/subst/subst.cmx examples/subst/subst.ml
+- ocamlfind ocamlopt -g -I lib -linkpkg lib/pcre.cmxa examples/subst/subst.cmx -o examples/subst/subst.native
+-> compiled  pcre.7.0.2
+Processing 11/14: [menhir: make install]
++ make "install" "PREFIX=/home/opam/.opam/ocaml-base-compiler.4.03.0" "docdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/doc/menhir" "libdir=/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhir" "mandir=/home/opam/.opam/ocaml-base-compiler.4.03.0/man/man1" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/menhir.20120123)
+- rm -f src/installation.ml
+- echo "let libdir = \"/home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhir\"" > src/installation.ml
+- if ocamlfind ocamlc -v >/dev/null 2>&1 ; then \
+-   echo "let ocamlfind = true" >> src/installation.ml ; \
+- else \
+-   echo "let ocamlfind = false" >> src/installation.ml ; \
+- fi
+- make  -C src -f Makefile
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/menhir.20120123/src'
+- ocamllex lexmli.mll
+- 80 states, 5444 transitions, table size 22256 bytes
+- 18240 additional bytes used for bindings
+- ocamllex lexer.mll
+- 295 states, 3079 transitions, table size 14086 bytes
+- 10473 additional bytes used for bindings
+- ocamlyacc -v -b parser parser.mly
+- ocamllex lineCount.mll
+- 5 states, 259 transitions, table size 1066 bytes
+- ocamllex lexdep.mll
+- 25 states, 402 transitions, table size 1758 bytes
+- 1221 additional bytes used for bindings
+- ocamlyacc -v -b sentenceParser sentenceParser.mly
+- ocamllex sentenceLexer.mll
+- 9 states, 674 transitions, table size 2750 bytes
+- for i in *.ml *.mli; do \
+-            ../demos/ocamldep.wrapper menhirLib.ml menhirLib.mli - ocamlfind ocamldep $i \
+-         >> .depend; \
+- done
+- Checking that Objective Caml is recent enough...
+- Version 4.03.0 is OK.
+- make -s PGEN="ocamlyacc -v" PARSER=parser menhir.opt
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/menhir.20120123/src'
+- File "packedIntArray.ml", line 91, characters 6-19:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "packedIntArray.ml", line 115, characters 6-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "packedIntArray.ml", line 137, characters 6-19:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "packedIntArray.ml", line 145, characters 1-46:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "tarjan.ml", line 84, characters 16-28:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "tarjan.ml", line 168, characters 29-30:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 389, characters 14-15:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 398, characters 27-28:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 407, characters 27-28:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 517, characters 22-23:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 747, characters 12-13:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 756, characters 25-26:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 765, characters 25-26:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 818, characters 12-13:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 824, characters 25-26:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 833, characters 25-26:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 859, characters 12-13:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 865, characters 25-26:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 871, characters 25-26:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 905, characters 14-15:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 909, characters 27-28:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 911, characters 27-28:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 1062, characters 14-15:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 1068, characters 27-28:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 1177, characters 14-15:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 1181, characters 27-28:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "patricia.ml", line 1188, characters 27-28:
+- Warning 3: deprecated: Pervasives.&
+- Use (&&) instead.
+- File "misc.ml", line 49, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "misc.ml", line 102, characters 10-22:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "misc.ml", line 226, characters 10-21:
+- Warning 3: deprecated: String.copy
+- File "misc.ml", line 233, characters 1-13:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "settings.ml", line 32, characters 5-22:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "lexer.mll", line 60, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lexer.mll", line 68, characters 18-29:
+- Warning 3: deprecated: String.copy
+- File "partialGrammar.ml", line 259, characters 10-21:
+- Warning 3: deprecated: String.copy
+- File "partialGrammar.ml", line 262, characters 6-18:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "parameterizedGrammar.ml", line 340, characters 26-38:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "preFront.ml", line 38, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "IO.ml", line 25, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "grammar.ml", line 704, characters 2-14:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "grammar.ml", line 707, characters 2-14:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "grammar.ml", line 894, characters 6-18:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "grammar.ml", line 897, characters 6-18:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "item.ml", line 163, characters 4-16:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lr0.ml", line 190, characters 1-13:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lr1.ml", line 218, characters 2-14:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lr1partial.ml", line 77, characters 4-16:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/menhir.20120123/src'
+- make -s PGEN="./menhir.opt -v -lg 1 -la 1 -lc 1 --comment --infer --error-recovery --stdlib . --strict" PARSER=fancy-parser menhir.opt
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/menhir.20120123/src'
+- Grammar has 31 nonterminal symbols, among which 1 start symbols.
+- Grammar has 26 terminal symbols.
+- Grammar has 83 productions.
+- Built an LR(0) automaton with 115 states.
+- The grammar is not SLR(1) -- 5 states have a conflict.
+- Built an LR(1) automaton with 129 states.
+- 5 shift/reduce conflicts were silently solved.
+- 38 out of 129 states are represented.
+- 25 out of 60 symbols keep track of their start position.
+- 20 out of 60 symbols keep track of their end position.
+- 56 out of 129 states have a default reduction.
+- 33 out of 84 productions exploit shiftreduce optimization.
+- 20 out of 129 states can peek at an error.
+- 13 out of 129 states can do error recovery.
+- The generated parser cannot raise Error.
+- 452 functions before inlining, 116 functions after inlining.
+- File "lexer.mll", line 60, characters 4-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "lexer.mll", line 68, characters 18-29:
+- Warning 3: deprecated: String.copy
+- File "preFront.ml", line 38, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "grammar.ml", line 704, characters 2-14:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "grammar.ml", line 707, characters 2-14:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "grammar.ml", line 894, characters 6-18:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "grammar.ml", line 897, characters 6-18:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "item.ml", line 163, characters 4-16:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lr0.ml", line 190, characters 1-13:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lr1.ml", line 218, characters 2-14:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- File "lr1partial.ml", line 77, characters 4-16:
+- Warning 3: deprecated: Array.create
+- Use Array.make instead.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/menhir.20120123/src'
+- Bootstrap successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/menhir.20120123/src'
+- make  -C src -f Makefile menhirLib.cmi menhirLib.cmo menhirLib.cmx menhirLib.o
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/menhir.20120123/src'
+- ocamlfind ocamlc -g -c infiniteArray.ml
+- ocamlfind ocamlc -g -c packedIntArray.ml
+- File "packedIntArray.ml", line 91, characters 6-19:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "packedIntArray.ml", line 115, characters 6-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "packedIntArray.ml", line 137, characters 6-19:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "packedIntArray.ml", line 145, characters 1-46:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlc -g -c rowDisplacement.ml
+- ocamlfind ocamlc -g -c engine.ml
+- ocamlfind ocamlc -g -c tableInterpreter.ml
+- ocamlfind ocamlc -g -c convert.ml
+- ocamlfind ocamlc -g -pack -o menhirLib.cmo infiniteArray.cmo packedIntArray.cmo rowDisplacement.cmo engineTypes.cmo engine.cmo tableFormat.cmo tableInterpreter.cmo convert.cmo
+- make[1]: 'menhirLib.cmo' is up to date.
+- make[1]: 'menhirLib.cmx' is up to date.
+- make[1]: 'menhirLib.o' is up to date.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/menhir.20120123/src'
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhir
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/doc/menhir
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/man/man1
+- install src/menhir /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- install -m 644 src/standard.mly /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhir
+- cp -r manual.pdf demos /home/opam/.opam/ocaml-base-compiler.4.03.0/doc/menhir
+- cp -r menhir.1 /home/opam/.opam/ocaml-base-compiler.4.03.0/man/man1
+- Installing MenhirLib via ocamlfind.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhirLib/menhirLib.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhirLib/menhirLib.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhirLib/menhirLib.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhirLib/menhirLib.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/menhirLib/META
+-> installed menhir.20120123
+Processing 12/14: [pcre: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.7.0.2)
+- ocaml setup.ml -install 
+- File "./setup.ml", line 213, characters 8-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "./setup.ml", line 246, characters 20-36:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 246, characters 42-58:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 14-30:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 254, characters 38-54:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 257, characters 25-41:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 287, characters 10-26:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 384, characters 13-29:
+- Warning 3: deprecated: String.lowercase
+- Use String.lowercase_ascii instead.
+- File "./setup.ml", line 1253, characters 16-33:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "./setup.ml", line 1258, characters 16-35:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "./setup.ml", line 1793, characters 6-24:
+- Warning 3: deprecated: Lazy.lazy_from_fun
+- Use Lazy.from_fun instead.
+- File "setup.ml", line 4920, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4921, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "setup.ml", line 4922, characters 31-50:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "setup.ml", line 4923, characters 31-48:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/libpcre_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllpcre_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllpcre_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+-> installed pcre.7.0.2
+
+#=== ERROR while installing conf-python-2-7.1.0 ===============================#
+# command              python2.7 -c print 'python2.7 is installed'
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-python-2-7.1.0
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-python-2-7-1-2c871f.env
+# output-file          /home/opam/.opam/log/conf-python-2-7-1-2c871f.out
+
+
+#=== ERROR while compiling conf-python-2-7-dev.1.0 ============================#
+# command              cc test.c
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-python-2-7-dev.1.0
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-python-2-7-dev-1-335865.env
+# output-file          /home/opam/.opam/log/conf-python-2-7-dev-1-335865.out
+### output ###
+# test.c:1:30: fatal error: python2.7/Python.h: No such file or directory
+# compilation terminated.
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions were aborted
+| - install coccinelle 1.0.0-rc21
++- 
++- The following actions failed
+| - build   conf-python-2-7-dev 1.0
+| - install conf-python-2-7     1.0
++- 
++- The following changes have been performed
+| - install conf-libpcre    1       
+| - install conf-pkg-config 1.0     
+| - install menhir          20120123
+| - install pcre            7.0.2   
++- 
+
+=-=- conf-python-2-7.1.0 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-python-2-7.1.0' may help you find the correct installation for your system.
+
+=-=- conf-python-2-7-dev.1.0 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-python-2-7-dev.1.0' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+
+The former state can be restored with:
+    opam switch import "/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/backup/state-20161224013217.export"
+'opam install --verbose --yes --jobs=2 coccinelle' failed.
+[2016-12-24 01:32.54] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:f2f4b741dceb99c0325e749650e77d6726517450d736ef827427d932d3fb29d1" "opam" "depext" "-ivyj" "2" "coccinelle" exited with status 4
