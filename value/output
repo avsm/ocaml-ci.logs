@@ -1,0 +1,62 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - binutils-multiarch
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy binutils-multiarch
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package binutils-multiarch.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../binutils-multiarch_2.26.1-1ubuntu1~16.04.3_amd64.deb ...
+Adding 'diversion of /usr/bin/nm to /usr/bin/nm.single by binutils-multiarch'
+Adding 'diversion of /usr/bin/objdump to /usr/bin/objdump.single by binutils-multiarch'
+Adding 'diversion of /usr/bin/objcopy to /usr/bin/objcopy.single by binutils-multiarch'
+Adding 'diversion of /usr/bin/strings to /usr/bin/strings.single by binutils-multiarch'
+Adding 'diversion of /usr/bin/strip to /usr/bin/strip.single by binutils-multiarch'
+Adding 'diversion of /usr/bin/size to /usr/bin/size.single by binutils-multiarch'
+Adding 'diversion of /usr/bin/ar to /usr/bin/ar.single by binutils-multiarch'
+Adding 'diversion of /usr/bin/ranlib to /usr/bin/ranlib.single by binutils-multiarch'
+Adding 'diversion of /usr/bin/addr2line to /usr/bin/addr2line.single by binutils-multiarch'
+Adding 'diversion of /usr/bin/gprof to /usr/bin/gprof.single by binutils-multiarch'
+Adding 'diversion of /usr/bin/readelf to /usr/bin/readelf.single by binutils-multiarch'
+Unpacking binutils-multiarch (2.26.1-1ubuntu1~16.04.3) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up binutils-multiarch (2.26.1-1ubuntu1~16.04.3) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-binutils 0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-binutils: sh configure.sh]
++ sh "-x" "configure.sh" "linux" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-binutils.0.1)
+- + TARGETS=
+- + FOUND=
+- + OBJDUMP=
+- + OBJDUMPS=
+- + [ is_linux = is_linux ]
+- + which objdump
+- + OBJDUMP=/usr/bin/objdump
+- + locate -r objdump$
+- configure.sh: 1: configure.sh: locate: not found
+- + OBJDUMPS=
+- + check_objdump
+- + [ -n /usr/bin/objdump ]
+- + FOUND=1
+- + collect_targets
+- + IFS=
+- 
+- + [ -z 1 ]
+- + cat
+-> compiled  conf-binutils.0.1
+-> installed conf-binutils.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
