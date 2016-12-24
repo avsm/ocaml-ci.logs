@@ -1,0 +1,42 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install pvem 0.0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [pvem.0.0.1: dl]
+[pvem.0.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [pvem: ocaml please.ml]
++ ocaml "please.ml" "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pvem.0.0.1)
+- Please-> Building
+- ! cp ../pvem.ml .
+- ! ocamlfind ocamlc  -c pvem.ml -o pvem.cmo
+- ! ocamlfind ocamlopt  -c pvem.ml  -annot -bin-annot -o pvem.cmx
+- ! ocamlc pvem.cmo -a -o pvem.cma
+- ! ocamlopt pvem.cmx -a -o pvem.cmxa
+- ! ocamlopt pvem.cmxa pvem.a -shared -o pvem.cmxs
+- Please-> Done.
+-> compiled  pvem.0.0.1
+Processing  2/2: [pvem: ocaml please.ml]
++ ocaml "please.ml" "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/pvem.0.0.1)
+- Please-> Installing
+- ! ocamlfind install pvem ../META pvem.cmx pvem.cmo pvem.cma pvem.cmi pvem.cmxa pvem.cmxs pvem.a pvem.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pvem/pvem.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pvem/pvem.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pvem/pvem.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pvem/pvem.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pvem/pvem.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pvem/pvem.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pvem/pvem.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pvem/pvem.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/pvem/META
+- Please-> Done.
+-> installed pvem.0.0.1
+Done.
+# Run eval `opam env` to update the current shell environment
