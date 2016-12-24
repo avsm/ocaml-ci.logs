@@ -1,0 +1,172 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+#  - zlib1g-dev
+# The following new OS packages need to be installed: zlib1g-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy zlib1g-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package zlib1g-dev:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../zlib1g-dev_1%3a1.2.8.dfsg-2ubuntu4_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4) ...
+Setting up zlib1g-dev:amd64 (1:1.2.8.dfsg-2ubuntu4) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install camlzip  1.06                                       [required by imagelib]
+  - install imagelib 20160413
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [camlzip.1.06: dl]
+Processing  2/2: [camlzip.1.06: dl] [imagelib.20160413: dl]
+[camlzip.1.06] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [imagelib.20160413: dl]
+[imagelib.20160413] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [camlzip: patch]
+Processing  1/4: [camlzip: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlzip.1.06)
+- ocamlc -g -safe-string -c -ccopt -g -ccopt -I/usr/include zlibstubs.c
+- ocamlmklib -oc camlzip zlibstubs.o \
+-             -L/usr/lib -lz
+- ocamlc -g -safe-string -c zlib.mli
+- ocamlc -g -safe-string -c zlib.ml
+- ocamlc -g -safe-string -c zip.mli
+- ocamlc -g -safe-string -c zip.ml
+- ocamlc -g -safe-string -c gzip.mli
+- ocamlc -g -safe-string -c gzip.ml
+- ocamlmklib -o zip -oc camlzip zlib.cmo zip.cmo gzip.cmo \
+-             -L/usr/lib -lz
+Processing  1/4: [camlzip: make allopt]
++ make "allopt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlzip.1.06)
+- ocamlopt -safe-string -c zlib.ml
+- ocamlopt -safe-string -c zip.ml
+- ocamlopt -safe-string -c gzip.ml
+- ocamlmklib -o zip -oc camlzip zlib.cmx zip.cmx gzip.cmx \
+-             -L/usr/lib -lz
+- ocamlopt -safe-string -shared -linkall -I ./ -o zip.cmxs zip.cmxa
+-> compiled  camlzip.1.06
+Processing  2/4: [camlzip: make install-findlib]
++ make "install-findlib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/camlzip.1.06)
+- ocamlfind install zip META *.mli *.a *.cmi *.cma zip.cmx gzip.cmx zlib.cmx zip.cmxa zip.cmxs dllcamlzip.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zlib.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/gzip.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zlib.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/gzip.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/libcamlzip.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zlib.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/zip.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/gzip.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/zip/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllcamlzip.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllcamlzip.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- echo 'directory="../zip"' >> META && ocamlfind install camlzip META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/camlzip/META
+-> installed camlzip.1.06
+Processing  3/4: [imagelib: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/imagelib.20160413)
+- ocamlbuild -cflags -w,-3 -use-ocamlfind imagelib.cma
+- ocamlfind ocamldep -package bigarray -package zip -modules imageUtil.ml > imageUtil.ml.depends
+- ocamlfind ocamldep -package bigarray -package zip -modules image.mli > image.mli.depends
+- ocamlfind ocamlc -c -w -3 -package bigarray -package zip -o image.cmi image.mli
+- ocamlfind ocamldep -package bigarray -package zip -modules image.ml > image.ml.depends
+- ocamlfind ocamldep -package bigarray -package zip -modules imageGIF.ml > imageGIF.ml.depends
+- ocamlfind ocamlc -c -w -3 -package bigarray -package zip -o imageUtil.cmo imageUtil.ml
+- ocamlfind ocamldep -package bigarray -package zip -modules imageJPG.ml > imageJPG.ml.depends
+- ocamlfind ocamldep -package bigarray -package zip -modules imagePNG.ml > imagePNG.ml.depends
+- ocamlfind ocamldep -package bigarray -package zip -modules imagePPM.ml > imagePPM.ml.depends
+- ocamlfind ocamldep -package bigarray -package zip -modules imageXCF.ml > imageXCF.ml.depends
+- ocamlfind ocamldep -package bigarray -package zip -modules imageLib.mli > imageLib.mli.depends
+- ocamlfind ocamlc -c -w -3 -package bigarray -package zip -o imageLib.cmi imageLib.mli
+- ocamlfind ocamldep -package bigarray -package zip -modules imageLib.ml > imageLib.ml.depends
+- ocamlfind ocamlc -c -w -3 -package bigarray -package zip -o imageGIF.cmo imageGIF.ml
+- ocamlfind ocamlc -c -w -3 -package bigarray -package zip -o imageJPG.cmo imageJPG.ml
+- ocamlfind ocamlc -c -w -3 -package bigarray -package zip -o imagePNG.cmo imagePNG.ml
+- ocamlfind ocamlc -c -w -3 -package bigarray -package zip -o imagePPM.cmo imagePPM.ml
+- ocamlfind ocamlc -c -w -3 -package bigarray -package zip -o imageXCF.cmo imageXCF.ml
+- ocamlfind ocamlc -c -w -3 -package bigarray -package zip -o image.cmo image.ml
+- ocamlfind ocamlc -c -w -3 -package bigarray -package zip -o imageLib.cmo imageLib.ml
+- ocamlfind ocamlc -a -package bigarray -package zip imageUtil.cmo image.cmo imageGIF.cmo imageJPG.cmo imagePNG.cmo imagePPM.cmo imageXCF.cmo imageLib.cmo -o imagelib.cma
+- ocamlbuild -cflags -w,-3 -use-ocamlfind imagelib.cmxa
+- ocamlfind ocamlopt -c -w -3 -package bigarray -package zip -o image.cmx image.ml
+- ocamlfind ocamlopt -c -w -3 -package bigarray -package zip -o imageUtil.cmx imageUtil.ml
+- ocamlfind ocamlopt -c -w -3 -package bigarray -package zip -o imageGIF.cmx imageGIF.ml
+- ocamlfind ocamlopt -c -w -3 -package bigarray -package zip -o imageJPG.cmx imageJPG.ml
+- ocamlfind ocamlopt -c -w -3 -package bigarray -package zip -o imagePNG.cmx imagePNG.ml
+- ocamlfind ocamlopt -c -w -3 -package bigarray -package zip -o imagePPM.cmx imagePPM.ml
+- ocamlfind ocamlopt -c -w -3 -package bigarray -package zip -o imageXCF.cmx imageXCF.ml
+- ocamlfind ocamlopt -c -w -3 -package bigarray -package zip -o imageLib.cmx imageLib.ml
+- ocamlfind ocamlopt -a -package bigarray -package zip imageUtil.cmx image.cmx imageGIF.cmx imageJPG.cmx imagePNG.cmx imagePPM.cmx imageXCF.cmx imageLib.cmx -o imagelib.cmxa
+-> compiled  imagelib.20160413
+Processing  4/4: [imagelib: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/imagelib.20160413)
+- ocamlbuild -cflags -w,-3 -use-ocamlfind imagelib.cma
+- ocamlbuild -cflags -w,-3 -use-ocamlfind imagelib.cmxa
+- ocamlfind: [WARNING] No such directory: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imagelib.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imagelib.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imagelib.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imagePNG.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageUtil.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/image.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageLib.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imagePPM.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageXCF.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageGIF.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageJPG.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imagePNG.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageUtil.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/image.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageLib.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imagePPM.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageXCF.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageGIF.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageJPG.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imagePNG.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageUtil.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/image.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageLib.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imagePPM.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageXCF.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageGIF.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageJPG.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imagePNG.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageUtil.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/image.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageLib.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imagePPM.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageXCF.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageGIF.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageJPG.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imagePNG.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageUtil.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/image.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageLib.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imagePPM.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageXCF.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageGIF.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/imageJPG.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/imagelib/META
+-> installed imagelib.20160413
+Done.
+
+=-=- imagelib.20160413 installed successfully -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> imagelib requires convert (imagemagick) to handle format other than png and ppm.
+# Run eval `opam env` to update the current shell environment
