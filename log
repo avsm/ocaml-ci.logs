@@ -1,0 +1,30 @@
+=== opam depext -ivyj 2 vchan
+[2016-12-24 01:20.43] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - linux-headers
+#  - m4
+#  - ncurses-dev
+#  - pcre-dev
+#  - pkgconfig
+m4
+ncurses-dev
+pkgconfig
+# The following new OS packages need to be installed: linux-headers pcre-dev
+The following command needs to be run through "sudo":
+    apk add linux-headers pcre-dev
+(1/5) Installing linux-headers (4.4.6-r1)
+(2/5) Installing libpcre16 (8.38-r1)
+(3/5) Installing libpcre32 (8.38-r1)
+(4/5) Installing libpcrecpp (8.38-r1)
+(5/5) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 430 MiB in 87 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The actions to process have cyclic dependencies:
+  - install io-page.1.0.0 -> install mirage-types.2.8.0 -> install io-page.1.0.0
+
+No solution found, exiting
+'opam install --verbose --yes --jobs=2 vchan' failed.
+[2016-12-24 03:11.09] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:e1e6e7baf1b63f8ede9bc0d8f29be09cc90103563cdd629ff4e8e184f10fd8f9" "opam" "depext" "-ivyj" "2" "vchan" exited with status 3
