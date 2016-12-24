@@ -1,0 +1,54 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install travis-senv 1.0.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [travis-senv.1.0.0: dl]
+[travis-senv.1.0.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [travis-senv: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/travis-senv.1.0.0)
+- ocamlbuild -use-ocamlfind -pkg cmdliner main.native
+- ocamlfind ocamldep -package cmdliner -modules main.ml > main.ml.depends
+- ocamlfind ocamldep -package cmdliner -modules base64.mli > base64.mli.depends
+- ocamlfind ocamlc -c -package cmdliner -o base64.cmi base64.mli
+- ocamlfind ocamlc -c -package cmdliner -o main.cmo main.ml
+- ocamlfind ocamldep -package cmdliner -modules base64.ml > base64.ml.depends
+- ocamlfind ocamlopt -c -package cmdliner -o base64.cmx base64.ml
+- + ocamlfind ocamlopt -c -package cmdliner -o base64.cmx base64.ml
+- File "base64.ml", line 39, characters 4-39:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "base64.ml", line 40, characters 42-77:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "base64.ml", line 41, characters 42-77:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "base64.ml", line 60, characters 4-35:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "base64.ml", line 61, characters 4-35:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "base64.ml", line 62, characters 4-35:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "base64.ml", line 63, characters 4-35:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "base64.ml", line 66, characters 4-44:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlfind ocamlopt -c -package cmdliner -o main.cmx main.ml
+- ocamlfind ocamlopt -linkpkg -package cmdliner base64.cmx main.cmx -o main.native
+-> compiled  travis-senv.1.0.0
+-> installed travis-senv.1.0.0
+Done.
+# Run eval `opam env` to update the current shell environment
