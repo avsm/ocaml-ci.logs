@@ -1,0 +1,35 @@
+=== opam depext -ivyj 2 conf-graphviz
+[2016-12-24 01:17.36] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# No extra OS packages requirements found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-graphviz 0.1
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [conf-graphviz: which dot]
++ which "dot" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-graphviz.0.1)
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build conf-graphviz 0.1
++- 
+- No changes have been performed
+[ERROR] The compilation of conf-graphviz failed at "which dot".
+
+#=== ERROR while compiling conf-graphviz.0.1 ==================================#
+# command              which dot
+# path                 /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-graphviz.0.1
+# exit-code            1
+# env-file             /home/opam/.opam/log/conf-graphviz-1-7afd23.env
+# output-file          /home/opam/.opam/log/conf-graphviz-1-7afd23.out
+
+
+=-=- conf-graphviz.0.1 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext conf-graphviz.0.1' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 conf-graphviz' failed.
+[2016-12-24 01:33.01] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:f2f4b741dceb99c0325e749650e77d6726517450d736ef827427d932d3fb29d1" "opam" "depext" "-ivyj" "2" "conf-graphviz" exited with status 4
