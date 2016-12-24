@@ -1,0 +1,259 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+#  - pcre-dev
+#  - pkgconfig
+m4
+pkgconfig
+# The following new OS packages need to be installed: pcre-dev
+The following command needs to be run through "sudo":
+    apk add pcre-dev
+(1/4) Installing libpcre16 (8.38-r1)
+(2/4) Installing libpcre32 (8.38-r1)
+(3/4) Installing libpcrecpp (8.38-r1)
+(4/4) Installing pcre-dev (8.38-r1)
+Executing busybox-1.24.2-r12.trigger
+OK: 424 MiB in 86 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by conf-libpcre]
+  - install conf-libpcre    1                                   [required by pcre]
+  - install pcre            6.2.5
+===== 3 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  3/3: [pcre.6.2.5: dl]
+[pcre.6.2.5] downloaded from file:///home/opam/opam-repository/cache
+Processing  3/3:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/6: [conf-pkg-config: pkg-config]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-pkg-config.1.0)
+- usage: pkgconf [OPTIONS] [LIBRARIES]
+- 
+- basic options:
+- 
+-   --help                            this message
+-   --about                           print pkgconf version and license to stdout
+-   --version                         print supported pkg-config version to stdout
+-   --atleast-pkgconfig-version       check whether or not pkgconf is compatible
+-                                     with a specified pkg-config version
+-   --errors-to-stdout                print all errors on stdout instead of stderr
+-   --silence-errors                  explicitly be silent about errors
+-   --list-all                        list all known packages
+-   --list-package-names              list all known package names
+-   --simulate                        simulate walking the calculated dependency graph
+-   --no-cache                        do not cache already seen packages when
+-                                     walking the dependency graph
+- 
+- checking specific pkg-config database entries:
+- 
+-   --atleast-version                 require a specific version of a module
+-   --exact-version                   require an exact version of a module
+-   --max-version                     require a maximum version of a module
+-   --exists                          check whether or not a module exists
+-   --uninstalled                     check whether or not an uninstalled module will be used
+-   --no-uninstalled                  never use uninstalled modules when satisfying dependencies
+-   --maximum-traverse-depth          maximum allowed depth for dependency graph
+-   --static                          be more aggressive when computing dependency graph
+-                                     (for static linking)
+-   --env-only                        look only for package entries in PKG_CONFIG_PATH
+-   --ignore-conflicts                ignore 'conflicts' rules in modules
+-   --validate                        validate specific .pc files for correctness
+- 
+- querying specific pkg-config database fields:
+- 
+-   --define-variable=varname=value   define variable 'varname' as 'value'
+-   --variable=varname                print specified variable entry to stdout
+-   --cflags                          print required CFLAGS to stdout
+-   --cflags-only-I                   print required include-dir CFLAGS to stdout
+-   --cflags-only-other               print required non-include-dir CFLAGS to stdout
+-   --libs                            print required linker flags to stdout
+-   --libs-only-L                     print required LDPATH linker flags to stdout
+-   --libs-only-l                     print required LIBNAME linker flags to stdout
+-   --libs-only-other                 print required other linker flags to stdout
+-   --print-requires                  print required dependency frameworks to stdout
+-   --print-requires-private          print required dependency frameworks for static
+-                                     linking to stdout
+-   --print-variables                 print all known variables in module to stdout
+-   --digraph                         print entire dependency graph in graphviz 'dot' format
+-   --keep-system-cflags              keep -I/usr/include entries in cflags output
+-   --keep-system-libs                keep -L/usr/lib entries in libs output
+- 
+- report bugs to <http://github.com/pkgconf/pkgconf/issues>.
+-> compiled  conf-pkg-config.1.0
+-> installed conf-pkg-config.1.0
+Processing  3/6: [conf-libpcre: pkg-config libpcre]
++ pkg-config "libpcre" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-libpcre.1)
+-> compiled  conf-libpcre.1
+-> installed conf-libpcre.1
+Processing  5/6: [pcre: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.6.2.5)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.6.2.5/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.6.2.5/lib'
+- ocamldep pcre.mli > ._bcdi/pcre.di
+- ocamldep pcre.ml > ._d/pcre.d
+- ocamlc -c -cc "cc" -ccopt "-fPIC -O2  \
+- 			-DPIC   \
+- 			    -o pcre_stubs.o " pcre_stubs.c
+- ar rcs libpcre_stubs.a  pcre_stubs.o
+- ocamlc -c pcre.mli
+- File "pcre.mli", line 192, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- ocamlc -c pcre.ml
+- File "pcre.ml", line 162, characters 0-76:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 164, characters 0-84:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 167, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 170, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 173, characters 0-111:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 176, characters 0-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 213, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 231, characters 0-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 238, characters 0-120:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 863, characters 0-63:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlmklib         \
+- 			-o pcre_stubs  pcre_stubs.o   \
+- 			-lpcre
+- ocamlc -a -cclib -lpcre_stubs    -dllib dllpcre_stubs.so -custom     -cclib "-lpcre"        -o pcre.cma pcre.cmo
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.6.2.5/lib'
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.6.2.5/lib'
+- ocamldep -native pcre.mli > ._ncdi/pcre.di
+- make[2]: 'libpcre_stubs.a' is up to date.
+- ocamlopt -c pcre.ml
+- File "pcre.ml", line 162, characters 0-76:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 164, characters 0-84:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 167, characters 0-87:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 170, characters 0-91:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 173, characters 0-111:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 176, characters 0-94:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 213, characters 0-77:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 231, characters 0-100:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 238, characters 0-120:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 273, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 279, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 285, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 286, characters 6-23:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 287, characters 11-28:
+- Warning 3: deprecated: String.unsafe_set
+- File "pcre.ml", line 573, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 622, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 669, characters 16-29:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 724, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 731, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 745, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 750, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 766, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcre.ml", line 771, characters 20-31:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 788, characters 24-35:
+- Warning 3: deprecated: String.copy
+- File "pcre.ml", line 863, characters 0-63:
+- Warning 3: deprecated: [@@noalloc] should be used instead of "noalloc"
+- File "pcre.ml", line 900, characters 30-41:
+- Warning 3: deprecated: String.copy
+- ocamlopt -a -cclib -lpcre_stubs         -cclib "-lpcre"       -o pcre.cmxa pcre.cmx
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.6.2.5/lib'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.6.2.5/lib'
+-> compiled  pcre.6.2.5
+Processing  6/6: [pcre: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.6.2.5)
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.6.2.5/lib'
+- 
+- Installing library with ocamlfind
+- ocamlfind install  pcre META pcre.mli pcre.cmi pcre.cma pcre.cmxa pcre.a libpcre_stubs.a dllpcre_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/libpcre_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/pcre.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pcre/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllpcre_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dllpcre_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+- 
+- Installation successful.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/pcre.6.2.5/lib'
+-> installed pcre.6.2.5
+Done.
+# Run eval `opam env` to update the current shell environment
