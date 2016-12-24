@@ -1,0 +1,1007 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libffi-dev
+#  - m4
+#  - pkg-config
+# The following new OS packages need to be installed: libffi-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libffi-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libffi-dev:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libffi-dev_3.2.1-4_amd64.deb ...
+Unpacking libffi-dev:amd64 (3.2.1-4) ...
+Setting up libffi-dev:amd64 (3.2.1-4) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config 1.0                                 [required by ctypes]
+  - install ctypes-foreign  0.4.0                               [required by argon2]
+  - install ppx_tools       5.0                                 [required by ppx_deriving]
+  - install base-bytes      base                                [required by ctypes]
+  - install result          1.2                                 [required by argon2]
+  - install ctypes          0.11.2                              [required by argon2]
+  - install cppo            1.4.1                               [required by ppx_deriving]
+  - install ppx_deriving    4.1                                 [required by argon2]
+  - install argon2          0.2   
+===== 9 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/9: [argon2.0.2: dl]
+Processing  2/9: [argon2.0.2: dl]
+Processing  3/9: [argon2.0.2: dl]
+Processing  4/9: [argon2.0.2: dl] [cppo.1.4.1: dl]
+Processing  5/9: [argon2.0.2: dl] [cppo.1.4.1: dl] [ctypes.0.11.2: dl]
+[argon2.0.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/9: [cppo.1.4.1: dl] [ctypes.0.11.2: dl]
+[cppo.1.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/9: [ctypes.0.11.2: dl]
+[ctypes.0.11.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  5/9:
+Processing  6/9:
+Processing  7/9: [ppx_deriving.4.1: dl]
+Processing  8/9: [ppx_deriving.4.1: dl] [ppx_tools.5.0: dl]
+Processing  9/9: [ppx_deriving.4.1: dl] [ppx_tools.5.0: dl] [result.1.2: dl]
+[ppx_deriving.4.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  9/9: [ppx_tools.5.0: dl] [result.1.2: dl]
+[ppx_tools.5.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  9/9: [result.1.2: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  9/9:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/18: [conf-pkg-config: pkg-config]
+Processing  3/18: [conf-pkg-config: pkg-config]
+Processing  4/18: [conf-pkg-config: pkg-config] [ppx_tools: make all]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/conf-pkg-config.1.0)
+- Usage:
+-   pkg-config [OPTION...]
+- 
+- Help Options:
+-   -h, --help                              Show help options
+- 
+- Application Options:
+-   --version                               output version of pkg-config
+-   --modversion                            output version for package
+-   --atleast-pkgconfig-version=VERSION     require given version of pkg-config
+-   --libs                                  output all linker flags
+-   --static                                output linker flags for static linking
+-   --short-errors                          print short errors
+-   --libs-only-l                           output -l flags
+-   --libs-only-other                       output other libs (e.g. -pthread)
+-   --libs-only-L                           output -L flags
+-   --cflags                                output all pre-processor and compiler flags
+-   --cflags-only-I                         output -I flags
+-   --cflags-only-other                     output cflags not covered by the cflags-only-I option
+-   --variable=NAME                         get the value of variable named NAME
+-   --define-variable=NAME=VALUE            set variable NAME to VALUE
+-   --exists                                return 0 if the module(s) exist
+-   --print-variables                       output list of variables defined by the module
+-   --uninstalled                           return 0 if the uninstalled version of one or more module(s) or their dependencies will be used
+-   --atleast-version=VERSION               return 0 if the module is at least version VERSION
+-   --exact-version=VERSION                 return 0 if the module is at exactly version VERSION
+-   --max-version=VERSION                   return 0 if the module is at no newer than version VERSION
+-   --list-all                              list all known packages
+-   --debug                                 show verbose debug information
+-   --print-errors                          show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)
+-   --silence-errors                        be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)
+-   --errors-to-stdout                      print errors from --print-errors to stdout not stderr
+-   --print-provides                        print which packages the package provides
+-   --print-requires                        print which packages the package requires
+-   --print-requires-private                print which packages the package requires for static linking
+-   --validate                              validate a package's .pc file
+-   --define-prefix                         try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --dont-define-prefix                    don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --prefix-variable=PREFIX                set the name of the variable that pkg-config automatically sets
+- 
+- Usage:
+-   pkg-config [OPTION...]
+- 
+- Help Options:
+-   -h, --help                              Show help options
+- 
+- Application Options:
+-   --version                               output version of pkg-config
+-   --modversion                            output version for package
+-   --atleast-pkgconfig-version=VERSION     require given version of pkg-config
+-   --libs                                  output all linker flags
+-   --static                                output linker flags for static linking
+-   --short-errors                          print short errors
+-   --libs-only-l                           output -l flags
+-   --libs-only-other                       output other libs (e.g. -pthread)
+-   --libs-only-L                           output -L flags
+-   --cflags                                output all pre-processor and compiler flags
+-   --cflags-only-I                         output -I flags
+-   --cflags-only-other                     output cflags not covered by the cflags-only-I option
+-   --variable=NAME                         get the value of variable named NAME
+-   --define-variable=NAME=VALUE            set variable NAME to VALUE
+-   --exists                                return 0 if the module(s) exist
+-   --print-variables                       output list of variables defined by the module
+-   --uninstalled                           return 0 if the uninstalled version of one or more module(s) or their dependencies will be used
+-   --atleast-version=VERSION               return 0 if the module is at least version VERSION
+-   --exact-version=VERSION                 return 0 if the module is at exactly version VERSION
+-   --max-version=VERSION                   return 0 if the module is at no newer than version VERSION
+-   --list-all                              list all known packages
+-   --debug                                 show verbose debug information
+-   --print-errors                          show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)
+-   --silence-errors                        be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)
+-   --errors-to-stdout                      print errors from --print-errors to stdout not stderr
+-   --print-provides                        print which packages the package provides
+-   --print-requires                        print which packages the package requires
+-   --print-requires-private                print which packages the package requires for static linking
+-   --validate                              validate a package's .pc file
+-   --define-prefix                         try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --dont-define-prefix                    don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file
+-   --prefix-variable=PREFIX                set the name of the variable that pkg-config automatically sets
+- 
+-> compiled  conf-pkg-config.1.0
+Processing  4/18: [ppx_tools: make all]
+Processing  5/18: [ppx_tools: make all] [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+Processing  5/18: [ppx_tools: make all]
+-> installed base-bytes.base
+Processing  6/18: [ppx_tools: make all]
+Processing  7/18: [cppo: make opt] [ppx_tools: make all]
++ make "all" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.mli
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlc -bin-annot -a -o ppx_tools.cma ast_convenience.cmo ast_mapper_class.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c genlifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o genlifter ocamlcommon.cma ppx_tools.cma genlifter.cmo
+- ./genlifter -I +compiler-libs Parsetree.expression > ast_lifter.ml || rm -rf ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_lifter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c dumpast.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o dumpast ocamlcommon.cma ocamlbytecomp.cma ast_lifter.cmo dumpast.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ppx_metaquot.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o ppx_metaquot ocamlcommon.cma ppx_tools.cma ast_lifter.cmo ppx_metaquot.cmo
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -c rewriter.ml
+- ocamlc -bin-annot -w +A-4-17-44-45 -I +compiler-libs -safe-string -o rewriter ocamlcommon.cma rewriter.cmo
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_convenience.ml
+- ocamlopt -w +A-4-17-44-45 -I +compiler-libs -safe-string -c ast_mapper_class.ml
+- ocamlopt -a -o ppx_tools.cmxa ast_convenience.cmx ast_mapper_class.cmx
+- ocamlopt -shared -o ppx_tools.cmxs -linkall ppx_tools.cmxa
+-> compiled  ppx_tools.5.0
+Processing  7/18: [cppo: make opt]
+-> installed conf-pkg-config.1.0
+Processing  8/18: [cppo: make opt]
+-> installed ctypes-foreign.0.4.0
+Processing  9/18: [cppo: make opt]
+Processing 10/18: [cppo: make opt] [ctypes: make libffi.config]
++ make "XEN=disable" "libffi.config" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2)
+- ./src/discover/determine_as_needed_flags.sh >> asneeded.config
+- ocamlfind  ocamlc -o discover -package str,bytes -linkpkg src/discover/commands.mli src/discover/commands.ml src/discover/discover.ml -I src/discover
+- ./discover -ocamlc "ocamlfind  ocamlc" > libffi.config || (rm libffi.config && false)
+- testing for brew: .............................. unavailable
+- testing for MacPorts: .......................... unavailable
+- testing for pkg-config: ........................ available
+- testing for libffi: ............................ available
+- make: 'libffi.config' is up to date.
+- ./src/discover/determine_as_needed_flags.sh >> asneeded.config
+- ocamlfind  ocamlc -o discover -package str,bytes -linkpkg src/discover/commands.mli src/discover/commands.ml src/discover/discover.ml -I src/discover
+- ./discover -ocamlc "ocamlfind  ocamlc" > libffi.config || (rm libffi.config && false)
+- testing for brew: .............................. unavailable
+- testing for MacPorts: .......................... unavailable
+- testing for pkg-config: ........................ available
+- testing for libffi: ............................ available
+- make: 'libffi.config' is up to date.
+Processing 10/18: [cppo: make opt] [ctypes: make ctypes-base]
++ make "opt" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.1)
+- echo 'let cppo_version = "1.4.1"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlfind ocamlopt -o cppo -dtypes -linkpkg -package "unix str bytes" cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+- echo 'let cppo_version = "1.4.1"' > cppo_version.ml
+- ocamlyacc cppo_parser.mly
+- ocamllex cppo_lexer.mll
+- 368 states, 13139 transitions, table size 54764 bytes
+- 3754 additional bytes used for bindings
+- ocamlfind ocamlopt -o cppo -dtypes -linkpkg -package "unix str bytes" cppo_version.ml cppo_types.ml cppo_parser.mli cppo_parser.ml cppo_lexer.ml cppo_command.ml cppo_eval.ml cppo_main.ml
+Processing 10/18: [cppo: make ocamlbuild] [ctypes: make ctypes-base]
++ make "ocamlbuild" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.1)
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+- cd ocamlbuild_plugin && ocamlbuild -use-ocamlfind ocamlbuild_cppo.cma ocamlbuild_cppo.cmxa ocamlbuild_cppo.a ocamlbuild_cppo.cmxs
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.mli > ocamlbuild_cppo.mli.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmi ocamlbuild_cppo.mli
+- ocamlfind ocamldep -package ocamlbuild -modules ocamlbuild_cppo.ml > ocamlbuild_cppo.ml.depends
+- ocamlfind ocamlc -c -package ocamlbuild -o ocamlbuild_cppo.cmo ocamlbuild_cppo.ml
+- ocamlfind ocamlc -a -package ocamlbuild ocamlbuild_cppo.cmo -o ocamlbuild_cppo.cma
+- ocamlfind ocamlopt -c -package ocamlbuild -o ocamlbuild_cppo.cmx ocamlbuild_cppo.ml
+- ocamlfind ocamlopt -a -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxa
+- ocamlfind ocamlopt -shared -package ocamlbuild ocamlbuild_cppo.cmx -o ocamlbuild_cppo.cmxs
+-> compiled  cppo.1.4.1
+Processing 10/18: [ctypes: make ctypes-base]
+Processing 11/18: [ctypes: make ctypes-base] [cppo: make install-lib]
++ make "install-lib" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/cppo.1.4.1)
+- ocamlfind install -patch-version 1.4.1 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/META
+- ocamlfind install -patch-version 1.4.1 "cppo_ocamlbuild" \
+- 	META ocamlbuild_plugin/_build/ocamlbuild_cppo.cmi ocamlbuild_plugin/_build/ocamlbuild_cppo.cma ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxa ocamlbuild_plugin/_build/ocamlbuild_cppo.a ocamlbuild_plugin/_build/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/ocamlbuild_cppo.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/cppo_ocamlbuild/META
+-> installed cppo.1.4.1
+Processing 11/18: [ctypes: make ctypes-base]
+Processing 12/18: [ctypes: make ctypes-base] [ppx_tools: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_tools.5.0)
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/META
+- ocamlfind install ppx_tools META genlifter dumpast ppx_metaquot rewriter ppx_tools.cma ppx_tools.cmxa ppx_tools.a ppx_tools.cmxs ast_convenience.mli ast_convenience.cmi ast_convenience.cmt ast_convenience.cmti ast_convenience.cmx ast_mapper_class.mli ast_mapper_class.cmi ast_mapper_class.cmt ast_mapper_class.cmti ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_mapper_class.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ast_convenience.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_tools.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/rewriter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/ppx_metaquot
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/dumpast
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/genlifter
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ppx_tools/META
+-> installed ppx_tools.5.0
+Processing 12/18: [ctypes: make ctypes-base]
+-> installed result.1.2
+Processing 13/18: [ctypes: make ctypes-base]
+Processing 14/18: [ctypes: make ctypes-base] [ppx_deriving: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ppx_deriving.4.1)
+- ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- cppo -V OCAML:4.04.0 -o src/ppx_deriving_main.ml src/ppx_deriving_main.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -modules src/ppx_deriving_main.ml > src/ppx_deriving_main.ml.depends
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving.mli > src/ppx_deriving.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmi src/ppx_deriving.mli
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmi src/ppx_deriving.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmo src/ppx_deriving_main.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmo src/ppx_deriving_main.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- cppo -V OCAML:4.04.0 -o src/ppx_deriving.ml src/ppx_deriving.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving.ml > src/ppx_deriving.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmx src/ppx_deriving.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmx src/ppx_deriving.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "src/ppx_deriving.cppo.ml", line 463, characters 17-34:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmx src/ppx_deriving_main.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmx src/ppx_deriving_main.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -linkpkg -g -linkall -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result src/ppx_deriving.cmx src/ppx_deriving_main.cmx -o src/ppx_deriving_main.native
+- + ocamlfind ocamlopt -linkpkg -g -linkall -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result src/ppx_deriving.cmx src/ppx_deriving_main.cmx -o src/ppx_deriving_main.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src/ppx_deriving.cmx -o src/ppx_deriving.cmxa
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmo src/ppx_deriving.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmo src/ppx_deriving.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "src/ppx_deriving.cppo.ml", line 463, characters 17-34:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind ocamlc -a src/ppx_deriving.cmo -o src/ppx_deriving.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving.cmx -o src/ppx_deriving.cmxs
+- ocamlfind ocamlopt -a src/ppx_deriving_main.cmx -o src/ppx_deriving_main.cmxa
+- ocamlfind ocamlc -a src/ppx_deriving_main.cmo -o src/ppx_deriving_main.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving_main.cmx -o src/ppx_deriving_main.cmxs
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving_runtime.ml > src/ppx_deriving_runtime.ml.depends
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving_runtime.mli > src/ppx_deriving_runtime.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmi src/ppx_deriving_runtime.mli
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmi src/ppx_deriving_runtime.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmx src/ppx_deriving_runtime.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmx src/ppx_deriving_runtime.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src/ppx_deriving_runtime.cmx -o src/ppx_deriving_runtime.cmxa
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmo src/ppx_deriving_runtime.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmo src/ppx_deriving_runtime.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a src/ppx_deriving_runtime.cmo -o src/ppx_deriving_runtime.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving_runtime.cmx -o src/ppx_deriving_runtime.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_create.ml src_plugins/ppx_deriving_create.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_create.ml > src_plugins/ppx_deriving_create.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmo src_plugins/ppx_deriving_create.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmo src_plugins/ppx_deriving_create.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmx src_plugins/ppx_deriving_create.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmx src_plugins/ppx_deriving_create.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_create.cmx -o src_plugins/ppx_deriving_create.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_create.cmo -o src_plugins/ppx_deriving_create.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_create.cmx -o src_plugins/ppx_deriving_create.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_enum.ml src_plugins/ppx_deriving_enum.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_enum.ml > src_plugins/ppx_deriving_enum.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmo src_plugins/ppx_deriving_enum.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmo src_plugins/ppx_deriving_enum.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmx src_plugins/ppx_deriving_enum.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmx src_plugins/ppx_deriving_enum.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_enum.cmx -o src_plugins/ppx_deriving_enum.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_enum.cmo -o src_plugins/ppx_deriving_enum.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_enum.cmx -o src_plugins/ppx_deriving_enum.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_eq.ml src_plugins/ppx_deriving_eq.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_eq.ml > src_plugins/ppx_deriving_eq.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmo src_plugins/ppx_deriving_eq.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmo src_plugins/ppx_deriving_eq.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmx src_plugins/ppx_deriving_eq.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmx src_plugins/ppx_deriving_eq.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_eq.cmx -o src_plugins/ppx_deriving_eq.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_eq.cmo -o src_plugins/ppx_deriving_eq.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_eq.cmx -o src_plugins/ppx_deriving_eq.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_fold.ml src_plugins/ppx_deriving_fold.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_fold.ml > src_plugins/ppx_deriving_fold.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmo src_plugins/ppx_deriving_fold.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmo src_plugins/ppx_deriving_fold.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmx src_plugins/ppx_deriving_fold.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmx src_plugins/ppx_deriving_fold.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_fold.cmx -o src_plugins/ppx_deriving_fold.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_fold.cmo -o src_plugins/ppx_deriving_fold.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_fold.cmx -o src_plugins/ppx_deriving_fold.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_iter.ml src_plugins/ppx_deriving_iter.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_iter.ml > src_plugins/ppx_deriving_iter.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmo src_plugins/ppx_deriving_iter.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmo src_plugins/ppx_deriving_iter.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmx src_plugins/ppx_deriving_iter.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmx src_plugins/ppx_deriving_iter.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_iter.cmx -o src_plugins/ppx_deriving_iter.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_iter.cmo -o src_plugins/ppx_deriving_iter.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_iter.cmx -o src_plugins/ppx_deriving_iter.cmxs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_create.cmx -o src_plugins/ppx_deriving_make.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_create.cmo -o src_plugins/ppx_deriving_make.cma
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_make.ml src_plugins/ppx_deriving_make.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_make.ml > src_plugins/ppx_deriving_make.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmo src_plugins/ppx_deriving_make.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmo src_plugins/ppx_deriving_make.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmx src_plugins/ppx_deriving_make.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmx src_plugins/ppx_deriving_make.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_make.cmx -o src_plugins/ppx_deriving_make.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_map.ml src_plugins/ppx_deriving_map.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_map.ml > src_plugins/ppx_deriving_map.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmo src_plugins/ppx_deriving_map.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmo src_plugins/ppx_deriving_map.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmx src_plugins/ppx_deriving_map.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmx src_plugins/ppx_deriving_map.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_map.cmx -o src_plugins/ppx_deriving_map.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_map.cmo -o src_plugins/ppx_deriving_map.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_map.cmx -o src_plugins/ppx_deriving_map.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_ord.ml src_plugins/ppx_deriving_ord.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_ord.ml > src_plugins/ppx_deriving_ord.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmo src_plugins/ppx_deriving_ord.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmo src_plugins/ppx_deriving_ord.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmx src_plugins/ppx_deriving_ord.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmx src_plugins/ppx_deriving_ord.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_ord.cmx -o src_plugins/ppx_deriving_ord.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_ord.cmo -o src_plugins/ppx_deriving_ord.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_ord.cmx -o src_plugins/ppx_deriving_ord.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_show.ml src_plugins/ppx_deriving_show.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_show.ml > src_plugins/ppx_deriving_show.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmo src_plugins/ppx_deriving_show.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmo src_plugins/ppx_deriving_show.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmx src_plugins/ppx_deriving_show.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmx src_plugins/ppx_deriving_show.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_show.cmx -o src_plugins/ppx_deriving_show.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_show.cmo -o src_plugins/ppx_deriving_show.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_show.cmx -o src_plugins/ppx_deriving_show.cmxs
+- + ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Ocamlbuild_cppo, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- cppo -V OCAML:4.04.0 -o src/ppx_deriving_main.ml src/ppx_deriving_main.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -modules src/ppx_deriving_main.ml > src/ppx_deriving_main.ml.depends
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving.mli > src/ppx_deriving.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmi src/ppx_deriving.mli
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmi src/ppx_deriving.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmo src/ppx_deriving_main.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmo src/ppx_deriving_main.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- cppo -V OCAML:4.04.0 -o src/ppx_deriving.ml src/ppx_deriving.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving.ml > src/ppx_deriving.ml.depends
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmx src/ppx_deriving.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmx src/ppx_deriving.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "src/ppx_deriving.cppo.ml", line 463, characters 17-34:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmx src/ppx_deriving_main.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_main.cmx src/ppx_deriving_main.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -linkpkg -g -linkall -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result src/ppx_deriving.cmx src/ppx_deriving_main.cmx -o src/ppx_deriving_main.native
+- + ocamlfind ocamlopt -linkpkg -g -linkall -package compiler-libs.common -package ppx_tools.metaquot -package findlib.dynload -predicates ppx_driver -package dynlink -package result src/ppx_deriving.cmx src/ppx_deriving_main.cmx -o src/ppx_deriving_main.native
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src/ppx_deriving.cmx -o src/ppx_deriving.cmxa
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmo src/ppx_deriving.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving.cmo src/ppx_deriving.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "src/ppx_deriving.cppo.ml", line 463, characters 17-34:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- ocamlfind ocamlc -a src/ppx_deriving.cmo -o src/ppx_deriving.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving.cmx -o src/ppx_deriving.cmxs
+- ocamlfind ocamlopt -a src/ppx_deriving_main.cmx -o src/ppx_deriving_main.cmxa
+- ocamlfind ocamlc -a src/ppx_deriving_main.cmo -o src/ppx_deriving_main.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving_main.cmx -o src/ppx_deriving_main.cmxs
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving_runtime.ml > src/ppx_deriving_runtime.ml.depends
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -modules src/ppx_deriving_runtime.mli > src/ppx_deriving_runtime.mli.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmi src/ppx_deriving_runtime.mli
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmi src/ppx_deriving_runtime.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmx src/ppx_deriving_runtime.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmx src/ppx_deriving_runtime.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src/ppx_deriving_runtime.cmx -o src/ppx_deriving_runtime.cmxa
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmo src/ppx_deriving_runtime.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -package dynlink -package result -w @5@8@10@11@12@14@23@24@26@29@40 -I src -o src/ppx_deriving_runtime.cmo src/ppx_deriving_runtime.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a src/ppx_deriving_runtime.cmo -o src/ppx_deriving_runtime.cma
+- ocamlfind ocamlopt -shared src/ppx_deriving_runtime.cmx -o src/ppx_deriving_runtime.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_create.ml src_plugins/ppx_deriving_create.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_create.ml > src_plugins/ppx_deriving_create.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmo src_plugins/ppx_deriving_create.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmo src_plugins/ppx_deriving_create.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmx src_plugins/ppx_deriving_create.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_create.cmx src_plugins/ppx_deriving_create.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_create.cmx -o src_plugins/ppx_deriving_create.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_create.cmo -o src_plugins/ppx_deriving_create.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_create.cmx -o src_plugins/ppx_deriving_create.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_enum.ml src_plugins/ppx_deriving_enum.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_enum.ml > src_plugins/ppx_deriving_enum.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmo src_plugins/ppx_deriving_enum.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmo src_plugins/ppx_deriving_enum.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmx src_plugins/ppx_deriving_enum.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_enum.cmx src_plugins/ppx_deriving_enum.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_enum.cmx -o src_plugins/ppx_deriving_enum.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_enum.cmo -o src_plugins/ppx_deriving_enum.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_enum.cmx -o src_plugins/ppx_deriving_enum.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_eq.ml src_plugins/ppx_deriving_eq.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_eq.ml > src_plugins/ppx_deriving_eq.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmo src_plugins/ppx_deriving_eq.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmo src_plugins/ppx_deriving_eq.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmx src_plugins/ppx_deriving_eq.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_eq.cmx src_plugins/ppx_deriving_eq.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_eq.cmx -o src_plugins/ppx_deriving_eq.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_eq.cmo -o src_plugins/ppx_deriving_eq.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_eq.cmx -o src_plugins/ppx_deriving_eq.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_fold.ml src_plugins/ppx_deriving_fold.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_fold.ml > src_plugins/ppx_deriving_fold.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmo src_plugins/ppx_deriving_fold.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmo src_plugins/ppx_deriving_fold.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmx src_plugins/ppx_deriving_fold.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_fold.cmx src_plugins/ppx_deriving_fold.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_fold.cmx -o src_plugins/ppx_deriving_fold.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_fold.cmo -o src_plugins/ppx_deriving_fold.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_fold.cmx -o src_plugins/ppx_deriving_fold.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_iter.ml src_plugins/ppx_deriving_iter.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_iter.ml > src_plugins/ppx_deriving_iter.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmo src_plugins/ppx_deriving_iter.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmo src_plugins/ppx_deriving_iter.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmx src_plugins/ppx_deriving_iter.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_iter.cmx src_plugins/ppx_deriving_iter.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_iter.cmx -o src_plugins/ppx_deriving_iter.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_iter.cmo -o src_plugins/ppx_deriving_iter.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_iter.cmx -o src_plugins/ppx_deriving_iter.cmxs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_create.cmx -o src_plugins/ppx_deriving_make.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_create.cmo -o src_plugins/ppx_deriving_make.cma
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_make.ml src_plugins/ppx_deriving_make.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_make.ml > src_plugins/ppx_deriving_make.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmo src_plugins/ppx_deriving_make.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmo src_plugins/ppx_deriving_make.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmx src_plugins/ppx_deriving_make.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_make.cmx src_plugins/ppx_deriving_make.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_make.cmx -o src_plugins/ppx_deriving_make.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_map.ml src_plugins/ppx_deriving_map.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_map.ml > src_plugins/ppx_deriving_map.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmo src_plugins/ppx_deriving_map.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmo src_plugins/ppx_deriving_map.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmx src_plugins/ppx_deriving_map.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_map.cmx src_plugins/ppx_deriving_map.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_map.cmx -o src_plugins/ppx_deriving_map.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_map.cmo -o src_plugins/ppx_deriving_map.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_map.cmx -o src_plugins/ppx_deriving_map.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_ord.ml src_plugins/ppx_deriving_ord.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_ord.ml > src_plugins/ppx_deriving_ord.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmo src_plugins/ppx_deriving_ord.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmo src_plugins/ppx_deriving_ord.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmx src_plugins/ppx_deriving_ord.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_ord.cmx src_plugins/ppx_deriving_ord.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_ord.cmx -o src_plugins/ppx_deriving_ord.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_ord.cmo -o src_plugins/ppx_deriving_ord.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_ord.cmx -o src_plugins/ppx_deriving_ord.cmxs
+- cppo -V OCAML:4.04.0 -o src_plugins/ppx_deriving_show.ml src_plugins/ppx_deriving_show.cppo.ml
+- ocamlfind ocamldep -package compiler-libs.common -package ppx_tools.metaquot -modules src_plugins/ppx_deriving_show.ml > src_plugins/ppx_deriving_show.ml.depends
+- ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmo src_plugins/ppx_deriving_show.ml
+- + ocamlfind ocamlc -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmo src_plugins/ppx_deriving_show.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmx src_plugins/ppx_deriving_show.ml
+- + ocamlfind ocamlopt -c -g -bin-annot -safe-string -package compiler-libs.common -package ppx_tools.metaquot -w @5@8@10@11@12@14@23@24@26@29@40 -I src_plugins -I src -o src_plugins/ppx_deriving_show.cmx src_plugins/ppx_deriving_show.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -a src_plugins/ppx_deriving_show.cmx -o src_plugins/ppx_deriving_show.cmxa
+- ocamlfind ocamlc -a src_plugins/ppx_deriving_show.cmo -o src_plugins/ppx_deriving_show.cma
+- ocamlfind ocamlopt -shared src_plugins/ppx_deriving_show.cmx -o src_plugins/ppx_deriving_show.cmxs
+- + ocamlfind ocamlopt -package unix -package ocamlbuild -linkpkg -package cppo_ocamlbuild myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Ocamlbuild_cppo, and its interface was not compiled with -opaque
+-> compiled  ppx_deriving.4.1
+Processing 14/18: [ctypes: make ctypes-base]
+-> installed ppx_deriving.4.1
+Processing 15/18: [ctypes: make ctypes-base]
++ make "XEN=disable" "ctypes-base" "ctypes-stubs" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2)
+- ocamlfind  ocamlc -o gen_c_primitives -package str,bytes -linkpkg src/configure/extract_from_c.ml src/configure/gen_c_primitives.ml -I src/configure
+- ./gen_c_primitives > src/ctypes/ctypes_primitives.ml 2> gen_c_primitives.log || (rm src/ctypes/ctypes_primitives.ml && cat gen_c_primitives.log || false)
+- ocamlfind  ocamlc -o gen_libffi_abi -package str,bytes -linkpkg src/configure/extract_from_c.ml src/configure/gen_libffi_abi.ml -I src/configure
+- ./gen_libffi_abi > src/ctypes-foreign-base/libffi_abi.ml 2> gen_c_primitives.log || (rm src/ctypes-foreign-base/libffi_abi.ml && cat gen_c_primitives.log || false)
+- cp src/ctypes-foreign-base/dl.ml.unix src/ctypes-foreign-base/dl.ml
+- cp src/ctypes-foreign-base/dl_stubs.c.unix src/ctypes-foreign-base/dl_stubs.c
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_path.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_path.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_path.cmo -I _build/src/ctypes  src/ctypes/ctypes_path.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/lDouble.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/lDouble.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/lDouble.cmo -I _build/src/ctypes  src/ctypes/lDouble.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/unsigned.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/unsigned.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/unsigned.cmo -I _build/src/ctypes  src/ctypes/unsigned.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/signed.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/signed.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/signed.cmo -I _build/src/ctypes  src/ctypes/signed.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_ptr.cmo -I _build/src/ctypes  src/ctypes/ctypes_ptr.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_bigarray_stubs.cmo -I _build/src/ctypes  src/ctypes/ctypes_bigarray_stubs.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/complexL.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/complexL.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/complexL.cmo -I _build/src/ctypes  src/ctypes/complexL.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_primitive_types.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_primitive_types.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_primitive_types.cmo -I _build/src/ctypes  src/ctypes/ctypes_primitive_types.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_primitives.cmo -I _build/src/ctypes  src/ctypes/ctypes_primitives.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_roots_stubs.cmo -I _build/src/ctypes  src/ctypes/ctypes_roots_stubs.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_value_printing_stubs.cmo -I _build/src/ctypes  src/ctypes/ctypes_value_printing_stubs.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_memory_stubs.cmo -I _build/src/ctypes  src/ctypes/ctypes_memory_stubs.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_bigarray.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_bigarray.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_bigarray.cmo -I _build/src/ctypes  src/ctypes/ctypes_bigarray.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_static.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_static.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_static.cmo -I _build/src/ctypes  src/ctypes/ctypes_static.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_std_view_stubs.cmo -I _build/src/ctypes  src/ctypes/ctypes_std_view_stubs.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_structs.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_structs.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_structs.cmo -I _build/src/ctypes  src/ctypes/ctypes_structs.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_structs_computed.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_structs_computed.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_structs_computed.cmo -I _build/src/ctypes  src/ctypes/ctypes_structs_computed.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_type_printing.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_type_printing.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_type_printing.cmo -I _build/src/ctypes  src/ctypes/ctypes_type_printing.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_memory.cmo -I _build/src/ctypes  src/ctypes/ctypes_memory.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_coerce.cmo -I _build/src/ctypes  src/ctypes/ctypes_coerce.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_std_views.cmo -I _build/src/ctypes  src/ctypes/ctypes_std_views.ml
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes_value_printing.cmo -I _build/src/ctypes  src/ctypes/ctypes_value_printing.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes_types.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes_types.mli
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/ctypes.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/ctypes.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/ctypes.cmo -I _build/src/ctypes  src/ctypes/ctypes.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes/posixTypes.cmi -package str -package bigarray -package bytes    -principal -short-paths -g -I _build/src/ctypes  src/ctypes/posixTypes.mli
+- ocamlfind  ocamlc -package str -package bigarray -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes/posixTypes.cmo -I _build/src/ctypes  src/ctypes/posixTypes.ml
+- ocamlfind  ocamlc -a -principal -short-paths -g  -cclib -lctypes_stubs -dllib -lctypes_stubs -package str -package bigarray -package bytes   -o _build/ctypes.cma _build/src/ctypes/ctypes_path.cmo _build/src/ctypes/lDouble.cmo _build/src/ctypes/unsigned.cmo _build/src/ctypes/signed.cmo _build/src/ctypes/ctypes_ptr.cmo _build/src/ctypes/ctypes_bigarray_stubs.cmo _build/src/ctypes/complexL.cmo _build/src/ctypes/ctypes_primitive_types.cmo _build/src/ctypes/ctypes_primitives.cmo _build/src/ctypes/ctypes_roots_stubs.cmo _build/src/ctypes/ctypes_value_printing_stubs.cmo _build/src/ctypes/ctypes_memory_stubs.cmo _build/src/ctypes/ctypes_bigarray.cmo _build/src/ctypes/ctypes_static.cmo _build/src/ctypes/ctypes_std_view_stubs.cmo _build/src/ctypes/ctypes_structs.cmo _build/src/ctypes/ctypes_structs_computed.cmo _build/src/ctypes/ctypes_type_printing.cmo _build/src/ctypes/ctypes_memory.cmo _build/src/ctypes/ctypes_coerce.cmo _build/src/ctypes/ctypes_std_views.cmo _build/src/ctypes/ctypes_value_printing.cmo _build/src/ctypes/ctypes.cmo _build/src/ctypes/posixTypes.cmo -cclib -Wl,--no-as-needed
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o complex_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/complex_stubs.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o ctypes_bigarrays.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/ctypes_bigarrays.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o ctypes_roots.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/ctypes_roots.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o ldouble_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/ldouble_stubs.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o managed_buffer_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/managed_buffer_stubs.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o posix_types_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/posix_types_stubs.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o raw_pointer_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/raw_pointer_stubs.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o type_info_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/type_info_stubs.c
+- cd _build/src/ctypes && ocamlfind  ocamlc -c -package str -package bigarray -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o unsigned_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes/unsigned_stubs.c
+- ocamlfind  ocamlmklib -o _build/ctypes_stubs _build/src/ctypes/complex_stubs.o _build/src/ctypes/ctypes_bigarrays.o _build/src/ctypes/ctypes_roots.o _build/src/ctypes/ldouble_stubs.o _build/src/ctypes/managed_buffer_stubs.o _build/src/ctypes/posix_types_stubs.o _build/src/ctypes/raw_pointer_stubs.o _build/src/ctypes/type_info_stubs.o _build/src/ctypes/unsigned_stubs.o 
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_path.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_path.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/lDouble.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/lDouble.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/unsigned.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/unsigned.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/signed.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/signed.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_ptr.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_ptr.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_bigarray_stubs.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_bigarray_stubs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/complexL.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/complexL.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_primitive_types.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_primitive_types.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_primitives.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_primitives.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_roots_stubs.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_roots_stubs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_value_printing_stubs.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_value_printing_stubs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_memory_stubs.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_memory_stubs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_bigarray.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_bigarray.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_static.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_static.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_std_view_stubs.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_std_view_stubs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_structs.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_structs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_structs_computed.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_structs_computed.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_type_printing.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_type_printing.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_memory.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_memory.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_coerce.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_coerce.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_std_views.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_std_views.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes_value_printing.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes_value_printing.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/ctypes.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/ctypes.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes/posixTypes.cmx -package str -package bigarray -package bytes   -principal -short-paths -g  -package str -package bigarray -package bytes    -I _build/src/ctypes  src/ctypes/posixTypes.ml
+- ocamlfind  opt -a -linkall -principal -short-paths -g  -package str -package bigarray -package bytes   -cclib -lctypes_stubs -o _build/ctypes.cmxa _build/src/ctypes/ctypes_path.cmx _build/src/ctypes/lDouble.cmx _build/src/ctypes/unsigned.cmx _build/src/ctypes/signed.cmx _build/src/ctypes/ctypes_ptr.cmx _build/src/ctypes/ctypes_bigarray_stubs.cmx _build/src/ctypes/complexL.cmx _build/src/ctypes/ctypes_primitive_types.cmx _build/src/ctypes/ctypes_primitives.cmx _build/src/ctypes/ctypes_roots_stubs.cmx _build/src/ctypes/ctypes_value_printing_stubs.cmx _build/src/ctypes/ctypes_memory_stubs.cmx _build/src/ctypes/ctypes_bigarray.cmx _build/src/ctypes/ctypes_static.cmx _build/src/ctypes/ctypes_std_view_stubs.cmx _build/src/ctypes/ctypes_structs.cmx _build/src/ctypes/ctypes_structs_computed.cmx _build/src/ctypes/ctypes_type_printing.cmx _build/src/ctypes/ctypes_memory.cmx _build/src/ctypes/ctypes_coerce.cmx _build/src/ctypes/ctypes_std_views.cmx _build/src/ctypes/ctypes_value_printing.cmx _build/src/ctypes/ctypes.cmx _build/src/ctypes/posixTypes.cmx -cclib -Wl,--no-as-needed
+- ocamlfind  opt -shared -linkall -principal -short-paths -g  -package str -package bigarray -package bytes   -o _build/ctypes.cmxs _build/src/ctypes/ctypes_path.cmx _build/src/ctypes/lDouble.cmx _build/src/ctypes/unsigned.cmx _build/src/ctypes/signed.cmx _build/src/ctypes/ctypes_ptr.cmx _build/src/ctypes/ctypes_bigarray_stubs.cmx _build/src/ctypes/complexL.cmx _build/src/ctypes/ctypes_primitive_types.cmx _build/src/ctypes/ctypes_primitives.cmx _build/src/ctypes/ctypes_roots_stubs.cmx _build/src/ctypes/ctypes_value_printing_stubs.cmx _build/src/ctypes/ctypes_memory_stubs.cmx _build/src/ctypes/ctypes_bigarray.cmx _build/src/ctypes/ctypes_static.cmx _build/src/ctypes/ctypes_std_view_stubs.cmx _build/src/ctypes/ctypes_structs.cmx _build/src/ctypes/ctypes_structs_computed.cmx _build/src/ctypes/ctypes_type_printing.cmx _build/src/ctypes/ctypes_memory.cmx _build/src/ctypes/ctypes_coerce.cmx _build/src/ctypes/ctypes_std_views.cmx _build/src/ctypes/ctypes_value_printing.cmx _build/src/ctypes/ctypes.cmx _build/src/ctypes/posixTypes.cmx _build/src/ctypes/complex_stubs.o _build/src/ctypes/ctypes_bigarrays.o _build/src/ctypes/ctypes_roots.o _build/src/ctypes/ldouble_stubs.o _build/src/ctypes/managed_buffer_stubs.o _build/src/ctypes/posix_types_stubs.o _build/src/ctypes/raw_pointer_stubs.o _build/src/ctypes/type_info_stubs.o _build/src/ctypes/unsigned_stubs.o -cclib -Wl,--no-as-needed
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes-top/ctypes_printers.cmi -package compiler-libs    -principal -short-paths -g -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/ctypes_printers.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  ocamlc -package compiler-libs   -principal -short-paths -g   -c -o _build/src/ctypes-top/ctypes_printers.cmo -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/ctypes_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  ocamlc -package compiler-libs   -principal -short-paths -g   -c -o _build/src/ctypes-top/install_ctypes_printers.cmo -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/install_ctypes_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  ocamlc -a -principal -short-paths -g   -package compiler-libs   -o _build/ctypes-top.cma _build/src/ctypes-top/ctypes_printers.cmo _build/src/ctypes-top/install_ctypes_printers.cmo -cclib -Wl,--no-as-needed
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-top/ctypes_printers.cmx -package compiler-libs   -principal -short-paths -g  -package compiler-libs    -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/ctypes_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-top/install_ctypes_printers.cmx -package compiler-libs   -principal -short-paths -g  -package compiler-libs    -I _build/src/ctypes-top  -I _build/src/ctypes src/ctypes-top/install_ctypes_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind  opt -a -linkall -principal -short-paths -g  -package compiler-libs    -o _build/ctypes-top.cmxa _build/src/ctypes-top/ctypes_printers.cmx _build/src/ctypes-top/install_ctypes_printers.cmx -cclib -Wl,--no-as-needed
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  opt -shared -linkall -principal -short-paths -g  -package compiler-libs   -o _build/ctypes-top.cmxs _build/src/ctypes-top/ctypes_printers.cmx _build/src/ctypes-top/install_ctypes_printers.cmx  -cclib -Wl,--no-as-needed
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_analysis.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_analysis.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_analysis.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_analysis.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_errors.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_errors.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_errors.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_errors.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_internals.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_internals.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_internals.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_internals.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_public_name.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_public_name.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_public_name.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_public_name.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_generate_ml.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_ml.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_generate_ml.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_ml.ml
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_c_language.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_c_language.ml
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_emit_c.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_emit_c.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_generate_c.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_c.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_generate_c.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_c.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_inverted.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_inverted.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_inverted.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_inverted.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs_structs.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_structs.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs_structs.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_structs.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/cstubs/cstubs.cmi -package str -package bytes    -principal -short-paths -g -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs.mli
+- ocamlfind  ocamlc -package str -package bytes   -principal -short-paths -g   -c -o _build/src/cstubs/cstubs.cmo -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs.ml
+- ocamlfind  ocamlc -a -principal -short-paths -g   -package str -package bytes   -o _build/cstubs.cma _build/src/cstubs/cstubs_analysis.cmo _build/src/cstubs/cstubs_errors.cmo _build/src/cstubs/cstubs_internals.cmo _build/src/cstubs/cstubs_public_name.cmo _build/src/cstubs/cstubs_generate_ml.cmo _build/src/cstubs/cstubs_c_language.cmo _build/src/cstubs/cstubs_emit_c.cmo _build/src/cstubs/cstubs_generate_c.cmo _build/src/cstubs/cstubs_inverted.cmo _build/src/cstubs/cstubs_structs.cmo _build/src/cstubs/cstubs.cmo -cclib -Wl,--no-as-needed
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_analysis.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_analysis.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_errors.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_errors.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_internals.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_internals.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_public_name.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_public_name.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_generate_ml.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_ml.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_c_language.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_c_language.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_emit_c.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_emit_c.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_generate_c.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_generate_c.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_inverted.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_inverted.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs_structs.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs_structs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/cstubs/cstubs.cmx -package str -package bytes   -principal -short-paths -g  -package str -package bytes    -I _build/src/cstubs  -I _build/src/ctypes src/cstubs/cstubs.ml
+- ocamlfind  opt -a -linkall -principal -short-paths -g  -package str -package bytes    -o _build/cstubs.cmxa _build/src/cstubs/cstubs_analysis.cmx _build/src/cstubs/cstubs_errors.cmx _build/src/cstubs/cstubs_internals.cmx _build/src/cstubs/cstubs_public_name.cmx _build/src/cstubs/cstubs_generate_ml.cmx _build/src/cstubs/cstubs_c_language.cmx _build/src/cstubs/cstubs_emit_c.cmx _build/src/cstubs/cstubs_generate_c.cmx _build/src/cstubs/cstubs_inverted.cmx _build/src/cstubs/cstubs_structs.cmx _build/src/cstubs/cstubs.cmx -cclib -Wl,--no-as-needed
+- ocamlfind  opt -shared -linkall -principal -short-paths -g  -package str -package bytes   -o _build/cstubs.cmxs _build/src/cstubs/cstubs_analysis.cmx _build/src/cstubs/cstubs_errors.cmx _build/src/cstubs/cstubs_internals.cmx _build/src/cstubs/cstubs_public_name.cmx _build/src/cstubs/cstubs_generate_ml.cmx _build/src/cstubs/cstubs_c_language.cmx _build/src/cstubs/cstubs_emit_c.cmx _build/src/cstubs/cstubs_generate_c.cmx _build/src/cstubs/cstubs_inverted.cmx _build/src/cstubs/cstubs_structs.cmx _build/src/cstubs/cstubs.cmx  -cclib -Wl,--no-as-needed
+Processing 15/18: [ctypes: make ctypes-foreign]
++ make "XEN=disable" "ctypes-foreign" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2)
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes-foreign-base/ctypes_closure_properties.cmi -package bytes    -principal -short-paths -g -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ctypes_closure_properties.mli
+- ocamlfind  ocamlc -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes-foreign-base/ctypes_closure_properties.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ctypes_closure_properties.ml
+- ocamlfind  ocamlc -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes-foreign-base/ctypes_ffi_stubs.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ctypes_ffi_stubs.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes-foreign-base/ctypes_weak_ref.cmi -package bytes    -principal -short-paths -g -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ctypes_weak_ref.mli
+- ocamlfind  ocamlc -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes-foreign-base/ctypes_weak_ref.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ctypes_weak_ref.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes-foreign-base/dl.cmi -package bytes    -principal -short-paths -g -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/dl.mli
+- ocamlfind  ocamlc -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes-foreign-base/dl.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/dl.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes-foreign-base/libffi_abi.cmi -package bytes    -principal -short-paths -g -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/libffi_abi.mli
+- ocamlfind  ocamlc -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes-foreign-base/libffi_abi.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/libffi_abi.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes-foreign-base/ctypes_ffi.cmi -package bytes    -principal -short-paths -g -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ctypes_ffi.mli
+- ocamlfind  ocamlc -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes-foreign-base/ctypes_ffi.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ctypes_ffi.ml
+- ocamlfind  ocamlc -package bytes   -principal -short-paths -g   -c -o _build/src/ctypes-foreign-base/ctypes_foreign_basis.cmo -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ctypes_foreign_basis.ml
+- ocamlfind  ocamlc -a -principal -short-paths -g  -cclib -lctypes-foreign-base_stubs -dllib -lctypes-foreign-base_stubs -package bytes   -o _build/ctypes-foreign-base.cma _build/src/ctypes-foreign-base/ctypes_closure_properties.cmo _build/src/ctypes-foreign-base/ctypes_ffi_stubs.cmo _build/src/ctypes-foreign-base/ctypes_weak_ref.cmo _build/src/ctypes-foreign-base/dl.cmo _build/src/ctypes-foreign-base/libffi_abi.cmo _build/src/ctypes-foreign-base/ctypes_ffi.cmo _build/src/ctypes-foreign-base/ctypes_foreign_basis.cmo -cclib -Wl,--no-as-needed -cclib -lffi
+- cd _build/src/ctypes-foreign-base && ocamlfind  ocamlc -c -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o dl_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes-foreign-base/dl_stubs.c
+- cd _build/src/ctypes-foreign-base && ocamlfind  ocamlc -c -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o ffi_call_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes-foreign-base/ffi_call_stubs.c
+- cd _build/src/ctypes-foreign-base && ocamlfind  ocamlc -c -package bytes   -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o ffi_type_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes-foreign-base/ffi_type_stubs.c
+- ocamlfind  ocamlmklib -o _build/ctypes-foreign-base_stubs _build/src/ctypes-foreign-base/dl_stubs.o _build/src/ctypes-foreign-base/ffi_call_stubs.o _build/src/ctypes-foreign-base/ffi_type_stubs.o -ldopt -lffi
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-foreign-base/ctypes_closure_properties.cmx -package bytes   -principal -short-paths -g  -package bytes    -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ctypes_closure_properties.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-foreign-base/ctypes_ffi_stubs.cmx -package bytes   -principal -short-paths -g  -package bytes    -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ctypes_ffi_stubs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-foreign-base/ctypes_weak_ref.cmx -package bytes   -principal -short-paths -g  -package bytes    -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ctypes_weak_ref.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-foreign-base/dl.cmx -package bytes   -principal -short-paths -g  -package bytes    -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/dl.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-foreign-base/libffi_abi.cmx -package bytes   -principal -short-paths -g  -package bytes    -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/libffi_abi.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-foreign-base/ctypes_ffi.cmx -package bytes   -principal -short-paths -g  -package bytes    -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ctypes_ffi.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-foreign-base/ctypes_foreign_basis.cmx -package bytes   -principal -short-paths -g  -package bytes    -I _build/src/ctypes-foreign-base  -I _build/src/ctypes src/ctypes-foreign-base/ctypes_foreign_basis.ml
+- ocamlfind  opt -a -linkall -principal -short-paths -g  -package bytes   -cclib -lctypes-foreign-base_stubs -o _build/ctypes-foreign-base.cmxa _build/src/ctypes-foreign-base/ctypes_closure_properties.cmx _build/src/ctypes-foreign-base/ctypes_ffi_stubs.cmx _build/src/ctypes-foreign-base/ctypes_weak_ref.cmx _build/src/ctypes-foreign-base/dl.cmx _build/src/ctypes-foreign-base/libffi_abi.cmx _build/src/ctypes-foreign-base/ctypes_ffi.cmx _build/src/ctypes-foreign-base/ctypes_foreign_basis.cmx -cclib -Wl,--no-as-needed -cclib -lffi
+- ocamlfind  opt -shared -linkall -principal -short-paths -g  -package bytes   -o _build/ctypes-foreign-base.cmxs _build/src/ctypes-foreign-base/ctypes_closure_properties.cmx _build/src/ctypes-foreign-base/ctypes_ffi_stubs.cmx _build/src/ctypes-foreign-base/ctypes_weak_ref.cmx _build/src/ctypes-foreign-base/dl.cmx _build/src/ctypes-foreign-base/libffi_abi.cmx _build/src/ctypes-foreign-base/ctypes_ffi.cmx _build/src/ctypes-foreign-base/ctypes_foreign_basis.cmx _build/src/ctypes-foreign-base/dl_stubs.o _build/src/ctypes-foreign-base/ffi_call_stubs.o _build/src/ctypes-foreign-base/ffi_type_stubs.o -cclib -Wl,--no-as-needed -cclib -lffi
+- ocamlfind  ocamlc  -thread -package threads  -principal -short-paths -g -thread  -c -o _build/src/ctypes-foreign-threaded/ctypes_foreign_threaded_stubs.cmo -I _build/src/ctypes-foreign-threaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-threaded/ctypes_foreign_threaded_stubs.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes-foreign-threaded/foreign.cmi  -thread -package threads  -opaque  -principal -short-paths -g -I _build/src/ctypes-foreign-threaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-threaded/foreign.mli
+- ocamlfind  ocamlc  -thread -package threads  -principal -short-paths -g -thread  -c -o _build/src/ctypes-foreign-threaded/foreign.cmo -I _build/src/ctypes-foreign-threaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-threaded/foreign.ml
+- ocamlfind  ocamlc -a -principal -short-paths -g -thread -cclib -lctypes-foreign-threaded_stubs -dllib -lctypes-foreign-threaded_stubs  -thread -package threads  -o _build/ctypes-foreign-threaded.cma _build/src/ctypes-foreign-threaded/ctypes_foreign_threaded_stubs.cmo _build/src/ctypes-foreign-threaded/foreign.cmo -cclib -Wl,--no-as-needed -cclib -lffi
+- cd _build/src/ctypes-foreign-threaded && ocamlfind  ocamlc -c  -thread -package threads  -ccopt -fPIC -ccopt -Wall -ccopt -g -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes -ccopt -I -ccopt /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/tests -o foreign_threaded_stubs.o -principal -short-paths -g /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2/src/ctypes-foreign-threaded/foreign_threaded_stubs.c
+- ocamlfind  ocamlmklib -o _build/ctypes-foreign-threaded_stubs _build/src/ctypes-foreign-threaded/foreign_threaded_stubs.o -ldopt -lffi
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-foreign-threaded/ctypes_foreign_threaded_stubs.cmx  -thread -package threads  -principal -short-paths -g -thread  -thread -package threads   -I _build/src/ctypes-foreign-threaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-threaded/ctypes_foreign_threaded_stubs.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-foreign-threaded/foreign.cmx  -thread -package threads  -principal -short-paths -g -thread  -thread -package threads   -I _build/src/ctypes-foreign-threaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-threaded/foreign.ml
+- ocamlfind  opt -a -linkall -principal -short-paths -g -thread  -thread -package threads  -cclib -lctypes-foreign-threaded_stubs -o _build/ctypes-foreign-threaded.cmxa _build/src/ctypes-foreign-threaded/ctypes_foreign_threaded_stubs.cmx _build/src/ctypes-foreign-threaded/foreign.cmx -cclib -Wl,--no-as-needed -cclib -lffi
+- ocamlfind  opt -shared -linkall -principal -short-paths -g -thread  -thread -package threads  -o _build/ctypes-foreign-threaded.cmxs _build/src/ctypes-foreign-threaded/ctypes_foreign_threaded_stubs.cmx _build/src/ctypes-foreign-threaded/foreign.cmx _build/src/ctypes-foreign-threaded/foreign_threaded_stubs.o -cclib -Wl,--no-as-needed -cclib -lffi
+- ocamlfind  ocamlc    -principal -short-paths -g   -c -o _build/src/ctypes-foreign-unthreaded/ctypes_gc_mutex.cmo -I _build/src/ctypes-foreign-unthreaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-unthreaded/ctypes_gc_mutex.ml
+- ocamlfind  ocamlopt -bin-annot -c -o _build/src/ctypes-foreign-unthreaded/foreign.cmi    -opaque  -principal -short-paths -g -I _build/src/ctypes-foreign-unthreaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-unthreaded/foreign.mli
+- ocamlfind  ocamlc    -principal -short-paths -g   -c -o _build/src/ctypes-foreign-unthreaded/foreign.cmo -I _build/src/ctypes-foreign-unthreaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-unthreaded/foreign.ml
+- ocamlfind  ocamlc -a -principal -short-paths -g      -o _build/ctypes-foreign-unthreaded.cma _build/src/ctypes-foreign-unthreaded/ctypes_gc_mutex.cmo _build/src/ctypes-foreign-unthreaded/foreign.cmo -cclib -Wl,--no-as-needed -cclib -lffi
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-foreign-unthreaded/ctypes_gc_mutex.cmx    -principal -short-paths -g      -I _build/src/ctypes-foreign-unthreaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-unthreaded/ctypes_gc_mutex.ml
+- ocamlfind  opt -bin-annot -c -o _build/src/ctypes-foreign-unthreaded/foreign.cmx    -principal -short-paths -g      -I _build/src/ctypes-foreign-unthreaded  -I _build/src/ctypes  -I _build/src/ctypes-foreign-base src/ctypes-foreign-unthreaded/foreign.ml
+- ocamlfind  opt -a -linkall -principal -short-paths -g      -o _build/ctypes-foreign-unthreaded.cmxa _build/src/ctypes-foreign-unthreaded/ctypes_gc_mutex.cmx _build/src/ctypes-foreign-unthreaded/foreign.cmx -cclib -Wl,--no-as-needed -cclib -lffi
+- ocamlfind  opt -shared -linkall -principal -short-paths -g     -o _build/ctypes-foreign-unthreaded.cmxs _build/src/ctypes-foreign-unthreaded/ctypes_gc_mutex.cmx _build/src/ctypes-foreign-unthreaded/foreign.cmx  -cclib -Wl,--no-as-needed -cclib -lffi
+-> compiled  ctypes.0.11.2
+Processing 16/18: [ctypes: make install]
++ make "install" "XEN=disable" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ctypes.0.11.2)
+- ocamlfind  install ctypes META CHANGES.md
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/CHANGES.md
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/META
+- ocamlfind  install -add ctypes -optional  _build/ctypes.cma _build/dllctypes_stubs.so  _build/ctypes.cmxa _build/ctypes.cmxs _build/libctypes_stubs.a  _build/ctypes.a src/ctypes/unsigned.mli src/ctypes/signed.mli src/ctypes/lDouble.mli src/ctypes/complexL.mli src/ctypes/ctypes.mli src/ctypes/posixTypes.mli src/ctypes/ctypes_types.mli _build/src/ctypes/unsigned.cmi _build/src/ctypes/signed.cmi _build/src/ctypes/lDouble.cmi _build/src/ctypes/complexL.cmi _build/src/ctypes/ctypes.cmi _build/src/ctypes/posixTypes.cmi _build/src/ctypes/ctypes_types.cmi _build/src/ctypes/ctypes_static.cmi _build/src/ctypes/ctypes_primitive_types.cmi _build/src/ctypes/ctypes_structs.cmi _build/src/ctypes/unsigned.cmt _build/src/ctypes/signed.cmt _build/src/ctypes/lDouble.cmt _build/src/ctypes/complexL.cmt _build/src/ctypes/ctypes.cmt _build/src/ctypes/posixTypes.cmt _build/src/ctypes/ctypes_types.cmt _build/src/ctypes/unsigned.cmti _build/src/ctypes/signed.cmti _build/src/ctypes/lDouble.cmti _build/src/ctypes/complexL.cmti _build/src/ctypes/ctypes.cmti _build/src/ctypes/posixTypes.cmti _build/src/ctypes/ctypes_types.cmti src/ctypes/ctypes_cstubs_internals.h src/ctypes/cstubs_internals.h src/ctypes/ctypes_managed_buffer_stubs.h src/ctypes/ctypes_ldouble_stubs.h src/ctypes/ctypes_type_info_stubs.h src/ctypes/ctypes_complex_stubs.h src/ctypes/ctypes_primitives.h src/ctypes/ctypes_raw_pointer.h src/ctypes/ctypes_unsigned_stubs.h _build/src/ctypes/ctypes_path.cmx _build/src/ctypes/lDouble.cmx _build/src/ctypes/unsigned.cmx _build/src/ctypes/signed.cmx _build/src/ctypes/ctypes_ptr.cmx _build/src/ctypes/ctypes_bigarray_stubs.cmx _build/src/ctypes/complexL.cmx _build/src/ctypes/ctypes_primitive_types.cmx _build/src/ctypes/ctypes_primitives.cmx _build/src/ctypes/ctypes_roots_stubs.cmx _build/src/ctypes/ctypes_value_printing_stubs.cmx _build/src/ctypes/ctypes_memory_stubs.cmx _build/src/ctypes/ctypes_bigarray.cmx _build/src/ctypes/ctypes_static.cmx _build/src/ctypes/ctypes_std_view_stubs.cmx _build/src/ctypes/ctypes_structs.cmx _build/src/ctypes/ctypes_structs_computed.cmx _build/src/ctypes/ctypes_type_printing.cmx _build/src/ctypes/ctypes_memory.cmx _build/src/ctypes/ctypes_coerce.cmx _build/src/ctypes/ctypes_std_views.cmx _build/src/ctypes/ctypes_value_printing.cmx _build/src/ctypes/ctypes.cmx _build/src/ctypes/posixTypes.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/posixTypes.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_value_printing.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_std_views.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_coerce.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_memory.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_type_printing.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_structs_computed.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_structs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_std_view_stubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_static.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_bigarray.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_memory_stubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_value_printing_stubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_roots_stubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_primitives.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_primitive_types.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/complexL.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_bigarray_stubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_ptr.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/signed.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/unsigned.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/lDouble.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_path.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_unsigned_stubs.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_raw_pointer.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_primitives.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_complex_stubs.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_type_info_stubs.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_ldouble_stubs.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_managed_buffer_stubs.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_internals.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_cstubs_internals.h
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_types.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/posixTypes.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/complexL.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/lDouble.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/signed.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/unsigned.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/posixTypes.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/complexL.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/lDouble.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/signed.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/unsigned.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_structs.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_primitive_types.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_static.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_types.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/posixTypes.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/complexL.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/lDouble.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/signed.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/unsigned.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_types.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/posixTypes.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/complexL.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/lDouble.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/signed.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/unsigned.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/libctypes_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllctypes_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllctypes_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- ocamlfind  install -add ctypes -optional  _build/ctypes-top.cma   _build/ctypes-top.cmxa _build/ctypes-top.cmxs   _build/ctypes-top.a src/ctypes-top/ctypes_printers.mli _build/src/ctypes-top/ctypes_printers.cmi  _build/src/ctypes-top/ctypes_printers.cmt _build/src/ctypes-top/ctypes_printers.cmti  _build/src/ctypes-top/ctypes_printers.cmx _build/src/ctypes-top/install_ctypes_printers.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/install_ctypes_printers.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_printers.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_printers.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_printers.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_printers.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_printers.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-top.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-top.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-top.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-top.cma
+- ocamlfind  install -add ctypes -optional  _build/ctypes-foreign-base.cma _build/dllctypes-foreign-base_stubs.so  _build/ctypes-foreign-base.cmxa _build/ctypes-foreign-base.cmxs _build/libctypes-foreign-base_stubs.a  _build/ctypes-foreign-base.a src/ctypes-foreign-base/dl.mli src/ctypes-foreign-base/libffi_abi.mli _build/src/ctypes-foreign-base/dl.cmi _build/src/ctypes-foreign-base/libffi_abi.cmi  _build/src/ctypes-foreign-base/dl.cmt _build/src/ctypes-foreign-base/libffi_abi.cmt _build/src/ctypes-foreign-base/dl.cmti _build/src/ctypes-foreign-base/libffi_abi.cmti  _build/src/ctypes-foreign-base/ctypes_closure_properties.cmx _build/src/ctypes-foreign-base/ctypes_ffi_stubs.cmx _build/src/ctypes-foreign-base/ctypes_weak_ref.cmx _build/src/ctypes-foreign-base/dl.cmx _build/src/ctypes-foreign-base/libffi_abi.cmx _build/src/ctypes-foreign-base/ctypes_ffi.cmx _build/src/ctypes-foreign-base/ctypes_foreign_basis.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_foreign_basis.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_ffi.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/libffi_abi.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/dl.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_weak_ref.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_ffi_stubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes_closure_properties.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/libffi_abi.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/dl.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/libffi_abi.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/dl.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/libffi_abi.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/dl.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/libffi_abi.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/dl.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-foreign-base.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/libctypes-foreign-base_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-foreign-base.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-foreign-base.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-foreign-base.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllctypes-foreign-base_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllctypes-foreign-base_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- ocamlfind  install -add ctypes -optional  _build/ctypes-foreign-threaded.cma _build/dllctypes-foreign-threaded_stubs.so  _build/ctypes-foreign-threaded.cmxa _build/ctypes-foreign-threaded.cmxs _build/libctypes-foreign-threaded_stubs.a  _build/ctypes-foreign-threaded.a src/ctypes-foreign-threaded/foreign.mli _build/src/ctypes-foreign-threaded/foreign.cmi  _build/src/ctypes-foreign-threaded/foreign.cmt _build/src/ctypes-foreign-threaded/foreign.cmti  
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-foreign-threaded.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/libctypes-foreign-threaded_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-foreign-threaded.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-foreign-threaded.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-foreign-threaded.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllctypes-foreign-threaded_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllctypes-foreign-threaded_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+- ocamlfind  install -add ctypes -optional  _build/ctypes-foreign-unthreaded.cma   _build/ctypes-foreign-unthreaded.cmxa _build/ctypes-foreign-unthreaded.cmxs   _build/ctypes-foreign-unthreaded.a src/ctypes-foreign-unthreaded/foreign.mli _build/src/ctypes-foreign-unthreaded/foreign.cmi  _build/src/ctypes-foreign-unthreaded/foreign.cmt _build/src/ctypes-foreign-unthreaded/foreign.cmti  
+- ocamlfind: [WARNING] Overwriting file /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.cmti
+- ocamlfind: [WARNING] Overwriting file /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.cmt
+- ocamlfind: [WARNING] Overwriting file /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.cmi
+- ocamlfind: [WARNING] Overwriting file /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/foreign.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-foreign-unthreaded.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-foreign-unthreaded.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-foreign-unthreaded.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/ctypes-foreign-unthreaded.cma
+- ocamlfind  install -add ctypes -optional  _build/cstubs.cma   _build/cstubs.cmxa _build/cstubs.cmxs   _build/cstubs.a src/cstubs/cstubs_structs.mli src/cstubs/cstubs.mli src/cstubs/cstubs_inverted.mli _build/src/cstubs/cstubs_structs.cmi _build/src/cstubs/cstubs.cmi _build/src/cstubs/cstubs_inverted.cmi _build/src/cstubs/cstubs_internals.cmi _build/src/cstubs/cstubs_structs.cmt _build/src/cstubs/cstubs.cmt _build/src/cstubs/cstubs_inverted.cmt _build/src/cstubs/cstubs_structs.cmti _build/src/cstubs/cstubs.cmti _build/src/cstubs/cstubs_inverted.cmti  _build/src/cstubs/cstubs_analysis.cmx _build/src/cstubs/cstubs_errors.cmx _build/src/cstubs/cstubs_internals.cmx _build/src/cstubs/cstubs_public_name.cmx _build/src/cstubs/cstubs_generate_ml.cmx _build/src/cstubs/cstubs_c_language.cmx _build/src/cstubs/cstubs_emit_c.cmx _build/src/cstubs/cstubs_generate_c.cmx _build/src/cstubs/cstubs_inverted.cmx _build/src/cstubs/cstubs_structs.cmx _build/src/cstubs/cstubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_structs.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_inverted.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_generate_c.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_emit_c.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_c_language.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_generate_ml.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_public_name.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_internals.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_errors.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_analysis.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_inverted.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_structs.cmti
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_inverted.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_structs.cmt
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_internals.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_inverted.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_structs.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_inverted.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs_structs.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ctypes/cstubs.cma
+-> installed ctypes.0.11.2
+Processing 17/18: [argon2: ocaml]
++ ocaml "pkg/build.ml" "native=true" "native-dynlink=true" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/argon2.0.2)
+- File "pkg/topkg-ext.ml", line 42, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package 'ctypes result ppx_deriving.std' -modules src/argon2.ml > src/argon2.ml.depends
+- ocamlfind ocamldep -package 'ctypes result ppx_deriving.std' -modules src/argon2.mli > src/argon2.mli.depends
+- ocamlfind ocamlc -c -bin-annot -safe-string -short-paths -no-alias-deps -keep-locs -strict-sequence -package 'ctypes result ppx_deriving.std' -I src -I examples -o src/argon2.cmi src/argon2.mli
+- ocamlfind ocamlopt -c -bin-annot -safe-string -short-paths -no-alias-deps -keep-locs -strict-sequence -package 'ctypes result ppx_deriving.std' -I src -I examples -o src/argon2.cmx src/argon2.ml
+- ocamlfind ocamlopt -a -package 'ctypes ctypes.foreign result ppx_deriving.std' src/argon2.cmx -o src/argon2.cmxa
+- ocamlfind ocamlc -c -bin-annot -safe-string -short-paths -no-alias-deps -keep-locs -strict-sequence -package 'ctypes result ppx_deriving.std' -I src -I examples -o src/argon2.cmo src/argon2.ml
+- ocamlfind ocamlc -a -custom -package 'ctypes ctypes.foreign result ppx_deriving.std' src/argon2.cmo -o src/argon2.cma
+- ocamlfind ocamlopt -shared -package 'ctypes ctypes.foreign result ppx_deriving.std' src/argon2.cmx -o src/argon2.cmxs
+-> compiled  argon2.0.2
+-> installed argon2.0.2
+Done.
+# Run eval `opam env` to update the current shell environment
