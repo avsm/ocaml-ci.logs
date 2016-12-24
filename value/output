@@ -1,0 +1,156 @@
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - linux-headers
+#  - pkgconfig
+pkgconfig
+# The following new OS packages need to be installed: linux-headers
+The following command needs to be run through "sudo":
+    apk add linux-headers
+(1/1) Installing linux-headers (4.4.6-r1)
+OK: 428 MiB in 83 packages
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install conf-pkg-config   1.0                               [required by solo5-kernel-ukvm]
+  - install solo5-kernel-ukvm 0.1.1
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [solo5-kernel-ukvm.0.1.1: dl]
+[solo5-kernel-ukvm.0.1.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [conf-pkg-config: pkg-config]
++ pkg-config "--help" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-pkg-config.1.0)
+- usage: pkgconf [OPTIONS] [LIBRARIES]
+- 
+- basic options:
+- 
+-   --help                            this message
+-   --about                           print pkgconf version and license to stdout
+-   --version                         print supported pkg-config version to stdout
+-   --atleast-pkgconfig-version       check whether or not pkgconf is compatible
+-                                     with a specified pkg-config version
+-   --errors-to-stdout                print all errors on stdout instead of stderr
+-   --silence-errors                  explicitly be silent about errors
+-   --list-all                        list all known packages
+-   --list-package-names              list all known package names
+-   --simulate                        simulate walking the calculated dependency graph
+-   --no-cache                        do not cache already seen packages when
+-                                     walking the dependency graph
+- 
+- checking specific pkg-config database entries:
+- 
+-   --atleast-version                 require a specific version of a module
+-   --exact-version                   require an exact version of a module
+-   --max-version                     require a maximum version of a module
+-   --exists                          check whether or not a module exists
+-   --uninstalled                     check whether or not an uninstalled module will be used
+-   --no-uninstalled                  never use uninstalled modules when satisfying dependencies
+-   --maximum-traverse-depth          maximum allowed depth for dependency graph
+-   --static                          be more aggressive when computing dependency graph
+-                                     (for static linking)
+-   --env-only                        look only for package entries in PKG_CONFIG_PATH
+-   --ignore-conflicts                ignore 'conflicts' rules in modules
+-   --validate                        validate specific .pc files for correctness
+- 
+- querying specific pkg-config database fields:
+- 
+-   --define-variable=varname=value   define variable 'varname' as 'value'
+-   --variable=varname                print specified variable entry to stdout
+-   --cflags                          print required CFLAGS to stdout
+-   --cflags-only-I                   print required include-dir CFLAGS to stdout
+-   --cflags-only-other               print required non-include-dir CFLAGS to stdout
+-   --libs                            print required linker flags to stdout
+-   --libs-only-L                     print required LDPATH linker flags to stdout
+-   --libs-only-l                     print required LIBNAME linker flags to stdout
+-   --libs-only-other                 print required other linker flags to stdout
+-   --print-requires                  print required dependency frameworks to stdout
+-   --print-requires-private          print required dependency frameworks for static
+-                                     linking to stdout
+-   --print-variables                 print all known variables in module to stdout
+-   --digraph                         print entire dependency graph in graphviz 'dot' format
+-   --keep-system-cflags              keep -I/usr/include entries in cflags output
+-   --keep-system-libs                keep -L/usr/lib entries in libs output
+- 
+- report bugs to <http://github.com/pkgconf/pkgconf/issues>.
+-> compiled  conf-pkg-config.1.0
+-> installed conf-pkg-config.1.0
+Processing  3/4: [solo5-kernel-ukvm: make ukvm]
++ make "ukvm" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1)
+- make -C kernel ukvm
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/kernel'
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -c ee_printf.c -o ee_printf.o
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -c interrupts.c -o interrupts.o
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -c lib.c -o lib.o
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -c malloc.c -o malloc.o
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -c stubs.c -o stubs.o
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -c pvclock.c -o pvclock.o
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -c ukvm/gdt.c -o ukvm/gdt.o
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -c ukvm/io.c -o ukvm/io.o
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -c ukvm/kernel.c -o ukvm/kernel.o
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -c ukvm/low_level.c -o ukvm/low_level.o
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -c ukvm/low_level_interrupts.c -o ukvm/low_level_interrupts.o
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -c ukvm/mem.c -o ukvm/mem.o
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -c ukvm/time.c -o ukvm/time.o
+- bash gen_interrupts.bash > interrupt_vectors.s
+- as kernel.s -o kernel_s.o
+- as mem.s -o mem_s.o
+- as interrupts.s -o interrupts_s.o
+- ld -r -nostdlib -z max-page-size=0x1000 -static -o ukvm/solo5.o ee_printf.o interrupts.o lib.o malloc.o stubs.o pvclock.o ukvm/gdt.o ukvm/io.o ukvm/kernel.o ukvm/low_level.o ukvm/low_level_interrupts.o ukvm/mem.o ukvm/time.o kernel_s.o mem_s.o interrupts_s.o 
+- objcopy -w -G solo5_\* -G kernel_main ukvm/solo5.o ukvm/solo5.o
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/kernel'
+- make -C tests ukvm
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/tests'
+- make -C   test_hello ukvm
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/tests/test_hello'
+- ../Makefile.tests:20: Makefile.ukvm: No such file or directory
+- ../../ukvm/ukvm-configure ../../ukvm 
+- cc -nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow -std=gnu99 -Wall -Wextra -Werror -O2 -g -I../../kernel -c test_hello.c -o test_hello.o
+- ld -T ../../kernel/ukvm/solo5.lds \
+- 		 -nostdlib -z max-page-size=0x1000 -static -o test_hello.ukvm ../../kernel/ukvm/solo5.o test_hello.o 
+- mkdir -p _build-ukvm
+- cc -Wall -Werror -std=c99 -O2 -g -D__UKVM_HOST__  -c /home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/ukvm/ukvm-core.c -o _build-ukvm/ukvm-core.o
+- cc -o ukvm-bin -Wall -Werror -std=c99 -O2 -g -D__UKVM_HOST__  _build-ukvm/ukvm-core.o  -lpthread -lrt
+- rm test_hello.o
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/tests/test_hello'
+- make -C   test_ping_serve ukvm
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/tests/test_ping_serve'
+- make[2]: Nothing to be done for 'ukvm'.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/tests/test_ping_serve'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/tests'
+-> compiled  solo5-kernel-ukvm.0.1.1
+Processing  4/4: [solo5-kernel-ukvm: make opam-ukvm-install]
++ make "opam-ukvm-install" "PREFIX=/home/opam/.opam/ocaml-base-compiler.4.03.0" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1)
+- sed <solo5-kernel-ukvm.pc.in > solo5-kernel-ukvm.pc \
+-     -e 's#!CFLAGS!#-nostdinc -isystem /usr/lib/gcc/x86_64-alpine-linux-musl/5.3.0/include -ffreestanding -mno-red-zone -mno-3dnow#g;' \
+-     -e 's#!LDFLAGS!#-nostdlib -z max-page-size=0x1000 -static#g;'
+- make -C kernel ukvm
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/kernel'
+- make[1]: Nothing to be done for 'ukvm'.
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/kernel'
+- make -C tests ukvm
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/tests'
+- make -C   test_hello ukvm
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/tests/test_hello'
+- make[2]: Nothing to be done for 'ukvm'.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/tests/test_hello'
+- make -C   test_ping_serve ukvm
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/tests/test_ping_serve'
+- make[2]: Nothing to be done for 'ukvm'.
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/tests/test_ping_serve'
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/solo5-kernel-ukvm.0.1.1/tests'
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/include/solo5-kernel-ukvm/include /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/solo5-kernel-ukvm
+- cp kernel/solo5.h /home/opam/.opam/ocaml-base-compiler.4.03.0/include/solo5-kernel-ukvm/include/solo5.h
+- cp ukvm/ukvm.h /home/opam/.opam/ocaml-base-compiler.4.03.0/include/solo5-kernel-ukvm/include/ukvm.h
+- cp kernel/ukvm/solo5.o kernel/ukvm/solo5.lds /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/solo5-kernel-ukvm
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/solo5-kernel-ukvm/src
+- cp -R ukvm /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/solo5-kernel-ukvm/src
+- cp ukvm/ukvm-configure /home/opam/.opam/ocaml-base-compiler.4.03.0/bin
+- mkdir -p /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pkgconfig
+- cp solo5-kernel-ukvm.pc /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/pkgconfig
+-> installed solo5-kernel-ukvm.0.1.1
+Done.
+# Run eval `opam env` to update the current shell environment
