@@ -1,0 +1,50 @@
+=== opam depext -ivyj 2 termbox
+[2016-12-24 01:20.37] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install termbox 0.1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [termbox.0.1.0: dl]
+[termbox.0.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [termbox: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/termbox.0.1.0)
+- cd termbox && ./waf configure && ./waf
+- env: can't execute 'python': No such file or directory
+- Makefile:26: recipe for target 'termbox/build/src/libtermbox.a' failed
+- make: *** [termbox/build/src/libtermbox.a] Error 127
+[ERROR] The compilation of termbox failed at "make".
+
+#=== ERROR while compiling termbox.0.1.0 ======================================#
+# command              make
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/termbox.0.1.0
+# exit-code            2
+# env-file             /home/opam/.opam/log/termbox-1-d2d111.env
+# output-file          /home/opam/.opam/log/termbox-1-d2d111.out
+### output ###
+# cd termbox && ./waf configure && ./waf
+# env: can't execute 'python': No such file or directory
+# Makefile:26: recipe for target 'termbox/build/src/libtermbox.a' failed
+# make: *** [termbox/build/src/libtermbox.a] Error 127
+
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build termbox 0.1.0
++- 
+- No changes have been performed
+
+=-=- termbox.0.1.0 troubleshooting =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext termbox.0.1.0' may help you find the correct installation for your system.
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 termbox' failed.
+[2016-12-24 03:07.07] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:e1e6e7baf1b63f8ede9bc0d8f29be09cc90103563cdd629ff4e8e184f10fd8f9" "opam" "depext" "-ivyj" "2" "termbox" exited with status 4
