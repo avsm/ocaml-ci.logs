@@ -1,0 +1,86 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install sosa 0.2.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [sosa.0.2.0: dl]
+[sosa.0.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  2/2: [sosa: make build]
++ make "build" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sosa.0.2.0)
+- ocamlbuild -use-ocamlfind -cflag -safe-string -I src/lib sosa.cmx sosa.cma sosa.cmxa sosa.cmxs
+- ocamlfind ocamldep -modules src/lib/api.mli > src/lib/api.mli.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/api.cmi src/lib/api.mli
+- ocamlfind ocamldep -modules src/lib/functors.ml > src/lib/functors.ml.depends
+- ocamlfind ocamldep -modules src/lib/native_character.mli > src/lib/native_character.mli.depends
+- ocamlfind ocamldep -modules src/lib/sosa_pervasives.ml > src/lib/sosa_pervasives.ml.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/native_character.cmi src/lib/native_character.mli
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/sosa_pervasives.cmo src/lib/sosa_pervasives.ml
+- ocamlfind ocamldep -modules src/lib/native_character.ml > src/lib/native_character.ml.depends
+- ocamlfind ocamldep -modules src/lib/native_string.mli > src/lib/native_string.mli.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/native_string.cmi src/lib/native_string.mli
+- ocamlfind ocamldep -modules src/lib/native_string.ml > src/lib/native_string.ml.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/functors.cmo src/lib/functors.ml
+- ocamlfind ocamldep -modules src/lib/native_bytes.mli > src/lib/native_bytes.mli.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/native_bytes.cmi src/lib/native_bytes.mli
+- ocamlfind ocamldep -modules src/lib/native_bytes.ml > src/lib/native_bytes.ml.depends
+- ocamlfind ocamldep -modules src/lib/list_of.mli > src/lib/list_of.mli.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/list_of.cmi src/lib/list_of.mli
+- ocamlfind ocamldep -modules src/lib/list_of.ml > src/lib/list_of.ml.depends
+- ocamlfind ocamldep -modules src/lib/sosa_utilities.ml > src/lib/sosa_utilities.ml.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/sosa_utilities.cmo src/lib/sosa_utilities.ml
+- ocamlfind ocamldep -modules src/lib/of_mutable.mli > src/lib/of_mutable.mli.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/of_mutable.cmi src/lib/of_mutable.mli
+- ocamlfind ocamldep -modules src/lib/of_mutable.ml > src/lib/of_mutable.ml.depends
+- ocamlfind ocamldep -modules src/lib/int_utf8_character.mli > src/lib/int_utf8_character.mli.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/int_utf8_character.cmi src/lib/int_utf8_character.mli
+- ocamlfind ocamldep -modules src/lib/int_utf8_character.ml > src/lib/int_utf8_character.ml.depends
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/native_character.cmo src/lib/native_character.ml
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/native_string.cmo src/lib/native_string.ml
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/native_bytes.cmo src/lib/native_bytes.ml
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/list_of.cmo src/lib/list_of.ml
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/of_mutable.cmo src/lib/of_mutable.ml
+- ocamlfind ocamlc -c -safe-string -annot -bin-annot -principal -I src/lib -o src/lib/int_utf8_character.cmo src/lib/int_utf8_character.ml
+- ocamlfind ocamlc -pack -annot -bin-annot src/lib/api.cmi src/lib/native_character.cmo src/lib/functors.cmo src/lib/native_string.cmo src/lib/native_bytes.cmo src/lib/list_of.cmo src/lib/of_mutable.cmo src/lib/int_utf8_character.cmo -o src/lib/sosa.cmo
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/sosa_pervasives.cmx src/lib/sosa_pervasives.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/native_character.cmx src/lib/native_character.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/functors.cmx src/lib/functors.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/sosa_utilities.cmx src/lib/sosa_utilities.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/native_string.cmx src/lib/native_string.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/native_bytes.cmx src/lib/native_bytes.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/list_of.cmx src/lib/list_of.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/of_mutable.cmx src/lib/of_mutable.ml
+- ocamlfind ocamlopt -c -safe-string -annot -bin-annot -principal -for-pack Sosa -I src/lib -o src/lib/int_utf8_character.cmx src/lib/int_utf8_character.ml
+- touch src/lib/sosa.mli  ; if  ocamlfind ocamlopt -pack -annot -bin-annot -I src/lib src/lib/api.cmi src/lib/native_character.cmx src/lib/functors.cmx src/lib/native_string.cmx src/lib/native_bytes.cmx src/lib/list_of.cmx src/lib/of_mutable.cmx src/lib/int_utf8_character.cmx -o src/lib/sosa.cmx  ; then  rm -f src/lib/sosa.mli  ; else  rm -f src/lib/sosa.mli  ; exit 1; fi
+- ocamlfind ocamlc -a src/lib/sosa_pervasives.cmo src/lib/sosa_utilities.cmo src/lib/sosa.cmo -o src/lib/sosa.cma
+- ocamlfind ocamlopt -a src/lib/sosa_pervasives.cmx src/lib/sosa_utilities.cmx src/lib/sosa.cmx -o src/lib/sosa.cmxa
+- ocamlfind ocamlopt -shared src/lib/sosa.cmx -o src/lib/sosa.cmxs
+Processing  2/2: [sosa: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/sosa.0.2.0)
+- ocamlfind install sosa META \
+- 	_build/src/lib/sosa.cmi \
+- 	_build/src/lib/sosa.cmo \
+- 	_build/src/lib/sosa.cmx \
+- 	_build/src/lib/sosa.a \
+- 	_build/src/lib/sosa.o \
+- 	_build/src/lib/sosa.cma \
+- 	_build/src/lib/sosa.cmxa \
+- 	_build/src/lib/sosa.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sosa/sosa.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sosa/sosa.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sosa/sosa.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sosa/sosa.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sosa/sosa.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sosa/sosa.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sosa/sosa.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sosa/sosa.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/sosa/META
+-> installed sosa.0.2.0
+Done.
+# Run eval `opam env` to update the current shell environment
