@@ -1,0 +1,88 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - libassimp-dev
+#  - m4
+# The following new OS packages need to be installed: libassimp-dev
+The following command needs to be run through "sudo":
+    apt-get install -qq -yy libassimp-dev
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Selecting previously unselected package libminizip1:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 22908 files and directories currently installed.)
+Preparing to unpack .../libminizip1_1.1-8_amd64.deb ...
+Unpacking libminizip1:amd64 (1.1-8) ...
+Selecting previously unselected package libassimp3v5.
+Preparing to unpack .../libassimp3v5_3.2~dfsg-3_amd64.deb ...
+Unpacking libassimp3v5 (3.2~dfsg-3) ...
+Selecting previously unselected package libassimp-dev.
+Preparing to unpack .../libassimp-dev_3.2~dfsg-3_amd64.deb ...
+Unpacking libassimp-dev (3.2~dfsg-3) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+Setting up libminizip1:amd64 (1.1-8) ...
+Setting up libassimp3v5 (3.2~dfsg-3) ...
+Setting up libassimp-dev (3.2~dfsg-3) ...
+Processing triggers for libc-bin (2.23-0ubuntu5) ...
+# OS packages installation successful
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install result 1.2                                          [required by assimp]
+  - install assimp 0.3
+===== 2 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [assimp.0.3: dl]
+Processing  2/2: [assimp.0.3: dl] [result.1.2: dl]
+[assimp.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2: [result.1.2: dl]
+[result.1.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  2/2:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/4: [result: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/result.1.2)
+- cp `ocaml which_result.ml` result.ml
+- ocamlc -c result.ml
+- ocamlc -a -o result.cma result.cmo
+- ocamlopt -c result.ml
+- ocamlopt -a -o result.cmxa result.cmx
+- ocamlopt -shared -linkall -o result.cmxs result.cmxa || true
+- ocaml gen_result_install.ml
+-> compiled  result.1.2
+-> installed result.1.2
+Processing  3/4: [assimp: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/assimp.0.3)
+- ocamlfind c -package result -c assimp.mli
+- ocamlfind c -package result -c assimp.ml
+- ocamlfind c -c -ccopt "-std=gnu99 -ffast-math" ml_assimp.c
+- ocamlfind mklib -o _assimp_stubs ml_assimp.o -cclib -lassimp
+- ocamlfind c -package result -a -custom -o assimp.cma assimp.cmo \
+-        -dllib dll_assimp_stubs.so -dllib libassimp.so \
+-        -ccopt -L/usr/local/lib -cclib -l_assimp_stubs -cclib -lassimp
+- ocamlfind opt -package result -c assimp.ml
+- ocamlfind opt -package result -a -o assimp.cmxa assimp.cmx \
+-        -cclib -l_assimp_stubs -cclib -lassimp
+-> compiled  assimp.0.3
+Processing  4/4: [assimp: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/assimp.0.3)
+- ocamlfind install assimp assimp.a assimp.cmi assimp.cmo assimp.cma assimp.cmx assimp.cmxa assimp.ml assimp.mli lib_assimp_stubs.a dll_assimp_stubs.so META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/assimp/lib_assimp_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/assimp/assimp.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/assimp/assimp.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/assimp/assimp.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/assimp/assimp.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/assimp/assimp.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/assimp/assimp.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/assimp/assimp.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/assimp/assimp.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/assimp/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dll_assimp_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dll_assimp_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+-> installed assimp.0.3
+Done.
+# Run eval `opam env` to update the current shell environment
