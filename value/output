@@ -1,0 +1,46 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install stb_truetype 0.2
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [stb_truetype.0.2: dl]
+[stb_truetype.0.2] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [stb_truetype: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/stb_truetype.0.2)
+- ocamlc -c stb_truetype.mli
+- ocamlc -c stb_truetype.ml
+- ocamlc -c -ccopt "-O3 -ffast-math" ml_stb_truetype.c
+- ocamlmklib -o _stb_truetype_stubs ml_stb_truetype.o
+- ocamlc -a -custom -o stb_truetype.cma stb_truetype.cmo \
+-        -dllib dll_stb_truetype_stubs.so \
+-        -cclib -l_stb_truetype_stubs
+- ocamlopt -c stb_truetype.ml
+- ocamlopt -a -o stb_truetype.cmxa stb_truetype.cmx \
+-        -cclib -l_stb_truetype_stubs
+-> compiled  stb_truetype.0.2
+Processing  2/2: [stb_truetype: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/stb_truetype.0.2)
+- ocamlfind install stb_truetype stb_truetype.a stb_truetype.cmi stb_truetype.cmo stb_truetype.cma stb_truetype.cmx stb_truetype.cmxa stb_truetype.ml stb_truetype.mli lib_stb_truetype_stubs.a dll_stb_truetype_stubs.so META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_truetype/lib_stb_truetype_stubs.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_truetype/stb_truetype.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_truetype/stb_truetype.ml
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_truetype/stb_truetype.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_truetype/stb_truetype.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_truetype/stb_truetype.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_truetype/stb_truetype.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_truetype/stb_truetype.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_truetype/stb_truetype.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stb_truetype/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dll_stb_truetype_stubs.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs/dll_stb_truetype_stubs.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.03.0/lib/stublibs is not mentioned in ld.conf
+-> installed stb_truetype.0.2
+Done.
+# Run eval `opam env` to update the current shell environment
