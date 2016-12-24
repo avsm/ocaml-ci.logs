@@ -1,0 +1,47 @@
+=== opam depext -ivyj 2 wxOCaml
+[2016-12-24 01:19.00] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install typerex-build  1.99.17-beta                         [required by ocp-build]
+  - install conf-wxwidgets 3.0                                  [required by wxOCaml]
+  - install ocp-build      1.99.17-beta                         [required by wxOCaml]
+  - install wxOCaml        1.0.1       
+===== 4 to install =====
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  3/4: [typerex-build.1.99.17-beta: dl]
+Processing  4/4: [typerex-build.1.99.17-beta: dl] [wxOCaml.1.0.1: dl]
+[typerex-build.1.99.17-beta] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4: [wxOCaml.1.0.1: dl]
+[wxOCaml.1.0.1] downloaded from file:///home/opam/opam-repository/cache
+Processing  4/4:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/8: [conf-wxwidgets: wx-config]
++ wx-config "--libs" (CWD=/home/opam/.opam/ocaml-base-compiler.4.03.0/.opam-switch/build/conf-wxwidgets.3.0)
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+#=== ERROR while compiling typerex-build.1.99.17-beta =========================#
+opam: "open" failed on /home/opam/.opam/log/log-1-d0f245.out: No such file or directory
++- The following actions were aborted
+| - install ocp-build 1.99.17-beta
+| - install wxOCaml   1.0.1       
++- 
++- The following actions failed
+| - build conf-wxwidgets 3.0         
+| - build typerex-build  1.99.17-beta
++- 
+- No changes have been performed
+
+=-=- conf-wxwidgets.3.0 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package requires wxWidgets 3.0 development packages installed on your system
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 wxOCaml' failed.
+[2016-12-24 02:10.04] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:f2f4b741dceb99c0325e749650e77d6726517450d736ef827427d932d3fb29d1" "opam" "depext" "-ivyj" "2" "wxOCaml" exited with status 4
