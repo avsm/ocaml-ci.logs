@@ -1,0 +1,41 @@
+=== opam depext -ivyj 2 ocsfml
+[2016-12-24 01:20.10] Starting...
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install ocsfml 2.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [ocsfml.2.0: dl]
+[ocsfml.2.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [ocsfml: cmake .]
++ cmake "." (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocsfml.2.0)
+
+
+=-=- Error report -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
++- The following actions failed
+| - build ocsfml 2.0
++- 
+- No changes have been performed
+
+=-=- ocsfml.2.0 troubleshooting -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=> This package relies on external (system) dependencies that may be missing. `opam depext ocsfml.2.0' may help you find the correct installation for your system.
+[ERROR] The compilation of ocsfml failed at "cmake .".
+
+#=== ERROR while compiling ocsfml.2.0 =========================================#
+# command              cmake .
+# path                 /home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/ocsfml.2.0
+# exit-code            127
+# env-file             /home/opam/.opam/log/ocsfml-1-d2d111.env
+# output-file          /home/opam/.opam/log/ocsfml-1-d2d111.out
+
+# Run eval `opam env` to update the current shell environment
+'opam install --verbose --yes --jobs=2 ocsfml' failed.
+[2016-12-24 02:53.38] Failed: Command "docker" "run" "--rm" "--tmpfs" "/tmp" "-v" "opam2-archive:/home/opam/opam-repository/cache" "sha256:e1e6e7baf1b63f8ede9bc0d8f29be09cc90103563cdd629ff4e8e184f10fd8f9" "opam" "depext" "-ivyj" "2" "ocsfml" exited with status 4
