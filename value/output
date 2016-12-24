@@ -1,0 +1,58 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install agrep 1.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [agrep.1.0: dl]
+[agrep.1.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [agrep: patch]
+Processing  1/2: [agrep: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/agrep.1.0)
+- ocamlc -g -ccopt "-O -D_XOPEN_SOURCE=500" -c engine.c
+- ocamlmklib -o agrep engine.o
+- ocamlc -g -c agrep.mli
+- ocamlc -g -c agrep.ml
+- File "agrep.ml", line 83, characters 6-75:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "agrep.ml", line 89, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "agrep.ml", line 91, characters 8-52:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlmklib -o agrep agrep.cmo
+- ocamlopt -c agrep.ml
+- File "agrep.ml", line 83, characters 6-75:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "agrep.ml", line 89, characters 14-27:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "agrep.ml", line 91, characters 8-52:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- ocamlmklib -o agrep agrep.cmx
+-> compiled  agrep.1.0
+Processing  2/2: [agrep: make find-install]
++ make "find-install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/agrep.1.0)
+- ocamlfind install agrep \
+-   agrep.cma agrep.cmi agrep.cmxa libagrep.a dllagrep.so META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/agrep/libagrep.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/agrep/agrep.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/agrep/agrep.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/agrep/agrep.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/agrep/META
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllagrep.so
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs/dllagrep.so.owner
+- ocamlfind: [WARNING] You have installed DLLs but the directory /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/stublibs is not mentioned in ld.conf
+-> installed agrep.1.0
+Done.
+# Run eval `opam env` to update the current shell environment
