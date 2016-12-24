@@ -1,0 +1,1962 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install sibylfs-lem 0.4.0
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [sibylfs-lem.0.4.0: dl]
+[sibylfs-lem.0.4.0] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [sibylfs-lem: make]
++ make "-e" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0)
+- printf 'let v="%s"\n' `git describe --dirty --always` > src/version.ml
+- fatal: Not a git repository (or any of the parent directories): .git
+- echo let d=\"%{lib}%/sibylfs-lem\" > src/build_directory.ml
+- make -C src all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/src'
+- ocamlbuild -cflag -g main.native
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules main.ml > main.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules main.mli > main.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o main.cmi main.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ast.ml > ast.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulib/ulib.ml > ulib/ulib.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulib/batText.mli > ulib/batText.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulib/batUChar.mli > ulib/batUChar.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o ulib/batUChar.cmi ulib/batUChar.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulib/batUTF8.mli > ulib/batUTF8.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o ulib/batText.cmi ulib/batText.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o ulib/batUTF8.cmi ulib/batUTF8.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o ulib/ulib.cmo ulib/ulib.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o ast.cmo ast.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulib/batText.ml > ulib/batText.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulib/batReturn.ml > ulib/batReturn.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulib/batReturn.mli > ulib/batReturn.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o ulib/batReturn.cmi ulib/batReturn.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulib/batUChar.ml > ulib/batUChar.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ulib/batUTF8.ml > ulib/batUTF8.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o ulib/batUChar.cmx ulib/batUChar.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o ulib/batUChar.cmx ulib/batUChar.ml
+- File "ulib/batUChar.ml", line 53, characters 29-31:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o ulib/batReturn.cmx ulib/batReturn.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o ulib/batUTF8.cmx ulib/batUTF8.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o ulib/batUTF8.cmx ulib/batUTF8.ml
+- File "ulib/batUTF8.ml", line 200, characters 20-22:
+- Warning 3: deprecated: Pervasives.or
+- Use (||) instead.
+- File "ulib/batUTF8.ml", line 209, characters 2-13:
+- Warning 3: deprecated: String.copy
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o ulib/batText.cmx ulib/batText.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o ulib/batText.cmx ulib/batText.ml
+- File "ulib/batText.ml", line 46, characters 10-23:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o ulib/ulib.cmx ulib/ulib.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ast_util.ml > ast_util.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ast_util.mli > ast_util.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules name.mli > name.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules output.mli > output.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o output.cmi output.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules path.mli > path.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ident.mli > ident.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o name.cmi name.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o ident.cmi ident.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o path.cmi path.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o ast_util.cmi ast_util.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o ast.cmx ast.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ident.ml > ident.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules name.ml > name.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules output.ml > output.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules reporting_basic.ml > reporting_basic.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules reporting_basic.mli > reporting_basic.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o reporting_basic.cmi reporting_basic.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules pp.ml > pp.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules pp.mli > pp.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o pp.cmi pp.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o pp.cmx pp.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules util.ml > util.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules util.mli > util.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o util.cmi util.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o reporting_basic.cmx reporting_basic.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o reporting_basic.cmx reporting_basic.ml
+- File "reporting_basic.ml", line 73, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "reporting_basic.ml", line 75, characters 51-62:
+- Warning 3: deprecated: String.fill
+- Use Bytes.fill instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o util.cmx util.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o util.cmx util.ml
+- File "util.ml", line 293, characters 17-31:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "util.ml", line 294, characters 16-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- File "util.ml", line 303, characters 16-27:
+- Warning 3: deprecated: String.copy
+- File "util.ml", line 306, characters 10-21:
+- Warning 3: deprecated: String.copy
+- File "util.ml", line 311, characters 16-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o output.cmx output.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o name.cmx name.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o name.cmx name.ml
+- File "name.ml", line 182, characters 32-46:
+- Warning 3: deprecated: Char.lowercase
+- Use Char.lowercase_ascii instead.
+- File "name.ml", line 188, characters 32-46:
+- Warning 3: deprecated: Char.uppercase
+- Use Char.uppercase_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules path.ml > path.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o ident.cmx ident.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o path.cmx path.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules backend.ml > backend.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules backend.mli > backend.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules typed_ast.mli > typed_ast.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules finite_map.ml > finite_map.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules nvar.mli > nvar.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules seplist.mli > seplist.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules target.mli > target.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o finite_map.cmo finite_map.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules types.mli > types.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o nvar.cmi nvar.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o seplist.cmi seplist.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o target.cmi target.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules tyvar.mli > tyvar.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o tyvar.cmi tyvar.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o types.cmi types.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o typed_ast.cmi typed_ast.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o backend.cmi backend.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules backend_common.ml > backend_common.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules backend_common.mli > backend_common.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules macro_expander.mli > macro_expander.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o macro_expander.cmi macro_expander.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o backend_common.cmi backend_common.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules build_directory.ml > build_directory.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o build_directory.cmo build_directory.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules pattern_syntax.ml > pattern_syntax.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules pattern_syntax.mli > pattern_syntax.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o pattern_syntax.cmi pattern_syntax.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules seplist.ml > seplist.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules target.ml > target.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o finite_map.cmx finite_map.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules typed_ast.ml > typed_ast.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules nvar.ml > nvar.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o seplist.cmx seplist.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o target.cmx target.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules types.ml > types.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o nvar.cmx nvar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules tyvar.ml > tyvar.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o tyvar.cmx tyvar.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o types.cmx types.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o types.cmx types.ml
+- File "types.ml", line 1588, characters 12-28:
+- Warning 26: unused variable walk_constraints.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules typed_ast_syntax.ml > typed_ast_syntax.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules typed_ast_syntax.mli > typed_ast_syntax.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o typed_ast_syntax.cmi typed_ast_syntax.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules external_constants.ml > external_constants.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o external_constants.cmo external_constants.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o typed_ast.cmx typed_ast.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o external_constants.cmx external_constants.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o typed_ast_syntax.cmx typed_ast_syntax.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules precedence.ml > precedence.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules precedence.mli > precedence.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o precedence.cmi precedence.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules target_binding.ml > target_binding.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules target_binding.mli > target_binding.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o target_binding.cmi target_binding.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules macro_expander.ml > macro_expander.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o build_directory.cmx build_directory.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o pattern_syntax.cmx pattern_syntax.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o precedence.cmx precedence.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o precedence.cmx precedence.ml
+- File "precedence.ml", line 78, characters 14-15:
+- Warning 28: wildcard pattern given as argument to a constant constructor
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o target_binding.cmx target_binding.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o macro_expander.cmx macro_expander.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules coq_backend.ml > coq_backend.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules coq_backend_utils.ml > coq_backend_utils.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o coq_backend_utils.cmo coq_backend_utils.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o coq_backend.cmo coq_backend.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o backend_common.cmx backend_common.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o coq_backend_utils.cmx coq_backend_utils.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o coq_backend.cmx coq_backend.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules debug.ml > debug.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules pcombinators.mli > pcombinators.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules syntactic_tests.mli > syntactic_tests.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o pcombinators.cmi pcombinators.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o syntactic_tests.cmi syntactic_tests.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o debug.cmo debug.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules pcombinators.ml > pcombinators.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules syntactic_tests.ml > syntactic_tests.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules reporting.ml > reporting.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules reporting.mli > reporting.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o reporting.cmi reporting.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o backend.cmx backend.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o backend.cmx backend.ml
+- File "backend.ml", line 102, characters 57-74:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "backend.ml", line 3042, characters 25-39:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o reporting.cmx reporting.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o pcombinators.cmx pcombinators.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o pcombinators.cmx pcombinators.ml
+- File "pcombinators.ml", line 76, characters 15-28:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "pcombinators.ml", line 77, characters 35-45:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o syntactic_tests.cmx syntactic_tests.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules initial_env.ml > initial_env.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules initial_env.mli > initial_env.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o initial_env.cmi initial_env.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules process_file.ml > process_file.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules process_file.mli > process_file.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o process_file.cmi process_file.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamllex.opt -q lexer.mll
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lexer.ml > lexer.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlyacc parser.mly
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlyacc parser.mly
+- 5 rules never reduced
+- 2 shift/reduce conflicts, 2 reduce/reduce conflicts.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules parser.mli > parser.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o parser.cmi parser.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o lexer.cmo lexer.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o lexer.cmo lexer.ml
+- File "lexer.mll", line 57, characters 15-30:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules parser.ml > parser.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o parser.cmx parser.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules trans.ml > trans.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules trans.mli > trans.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o trans.cmi trans.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules patterns.ml > patterns.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules patterns.mli > patterns.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules def_trans.mli > def_trans.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o def_trans.cmi def_trans.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o patterns.cmi patterns.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules def_trans.ml > def_trans.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o def_trans.cmx def_trans.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o def_trans.cmx def_trans.ml
+- File "def_trans.ml", line 122, characters 32-55:
+- Warning 26: unused variable def.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o patterns.cmx patterns.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o patterns.cmx patterns.ml
+- File "patterns.ml", line 87, characters 35-77:
+- Warning 10: this expression should have type unit.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o lexer.cmx lexer.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o lexer.cmx lexer.ml
+- File "lexer.mll", line 57, characters 15-30:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o trans.cmx trans.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o process_file.cmx process_file.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o process_file.cmx process_file.ml
+- File "process_file.ml", line 176, characters 36-55:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "process_file.ml", line 235, characters 36-55:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules module_dependencies.ml > module_dependencies.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules module_dependencies.mli > module_dependencies.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o module_dependencies.cmi module_dependencies.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o ast_util.cmx ast_util.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules rename_top_level.ml > rename_top_level.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules rename_top_level.mli > rename_top_level.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o rename_top_level.cmi rename_top_level.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules target_trans.ml > target_trans.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules target_trans.mli > target_trans.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o target_trans.cmi target_trans.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules convert_relations.ml > convert_relations.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules typecheck_ctxt.mli > typecheck_ctxt.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o typecheck_ctxt.cmi typecheck_ctxt.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o convert_relations.cmo convert_relations.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o convert_relations.cmo convert_relations.ml
+- File "convert_relations.ml", line 739, characters 10-21:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a case that is not matched:
+- None
+- File "convert_relations.ml", line 1204, characters 10-39:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a case that is not matched:
+- ([], _, _)
+- File "convert_relations.ml", line 416, characters 12-15:
+- Warning 26: unused variable pat.
+- File "convert_relations.ml", line 702, characters 4-49:
+- Warning 26: unused variable m.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules typecheck_ctxt.ml > typecheck_ctxt.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o typecheck_ctxt.cmx typecheck_ctxt.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o rename_top_level.cmx rename_top_level.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules target_syntax.ml > target_syntax.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules target_syntax.mli > target_syntax.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o target_syntax.cmi target_syntax.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o convert_relations.cmx convert_relations.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o convert_relations.cmx convert_relations.ml
+- File "convert_relations.ml", line 739, characters 10-21:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a case that is not matched:
+- None
+- File "convert_relations.ml", line 1204, characters 10-39:
+- Warning 8: this pattern-matching is not exhaustive.
+- Here is an example of a case that is not matched:
+- ([], _, _)
+- File "convert_relations.ml", line 416, characters 12-15:
+- Warning 26: unused variable pat.
+- File "convert_relations.ml", line 702, characters 4-49:
+- Warning 26: unused variable m.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o target_syntax.cmx target_syntax.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules typecheck.ml > typecheck.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules typecheck.mli > typecheck.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o typecheck.cmi typecheck.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules version.ml > version.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -g -annot -I ulib -o version.cmo version.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o debug.cmx debug.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o initial_env.cmx initial_env.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o module_dependencies.cmx module_dependencies.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o module_dependencies.cmx module_dependencies.ml
+- File "module_dependencies.ml", line 77, characters 2-19:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- File "module_dependencies.ml", line 82, characters 2-21:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- File "module_dependencies.ml", line 113, characters 57-74:
+- Warning 3: deprecated: String.capitalize
+- Use String.capitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o target_trans.cmx target_trans.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o typecheck.cmx typecheck.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o typecheck.cmx typecheck.ml
+- File "typecheck.ml", line 911, characters 55-70:
+- Warning 52: Code should not depend on the actual values of
+- this constructor's arguments. They are only for information
+- and may change in future versions. (See manual section 8.5)
+- File "typecheck.ml", line 3392, characters 44-63:
+- Warning 3: deprecated: String.uncapitalize
+- Use String.uncapitalize_ascii instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o version.cmx version.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -g -annot -I ulib -o main.cmx main.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt str.cmxa ulib/batReturn.cmx ulib/batUChar.cmx ulib/batUTF8.cmx ulib/batText.cmx ulib/ulib.cmx ast.cmx pp.cmx reporting_basic.cmx util.cmx output.cmx name.cmx ident.cmx path.cmx ast_util.cmx build_directory.cmx external_constants.cmx finite_map.cmx nvar.cmx seplist.cmx target.cmx tyvar.cmx types.cmx typed_ast.cmx macro_expander.cmx typed_ast_syntax.cmx pattern_syntax.cmx precedence.cmx target_binding.cmx backend_common.cmx coq_backend_utils.cmx coq_backend.cmx backend.cmx def_trans.cmx reporting.cmx patterns.cmx typecheck_ctxt.cmx convert_relations.cmx pcombinators.cmx syntactic_tests.cmx debug.cmx parser.cmx lexer.cmx trans.cmx process_file.cmx initial_env.cmx module_dependencies.cmx rename_top_level.cmx target_syntax.cmx target_trans.cmx typecheck.cmx version.cmx main.cmx -o main.native
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/src'
+- ln -sf src/main.native lem
+- mkdir -p bin
+- cd bin; ln -sf ../src/main.native lem
+- make -C library
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/library'
+- make -C .. build-lem
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0'
+- printf 'let v="%s"\n' `git describe --dirty --always` > src/version.ml
+- fatal: Not a git repository (or any of the parent directories): .git
+- make -C src all
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/src'
+- ocamlbuild -cflag -g main.native
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/src'
+- ln -sf src/main.native lem
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0'
+- ../lem -ocaml -outdir ../ocaml-lib -wl ign -wl_auto_import err -wl_rename err pervasives_extra.lem pervasives.lem basic_classes.lem either.lem function.lem list.lem map.lem maybe.lem relation.lem set_helpers.lem sorting.lem tuple.lem function_extra.lem bool.lem list_extra.lem num.lem map_extra.lem set.lem set_extra.lem maybe_extra.lem string.lem string_extra.lem word.lem assert_extra.lem -auxiliary_level none -only_changed_output
+- make -C .. build-lem
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0'
+- printf 'let v="%s"\n' `git describe --dirty --always` > src/version.ml
+- fatal: Not a git repository (or any of the parent directories): .git
+- make -C src all
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/src'
+- ocamlbuild -cflag -g main.native
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/src'
+- ln -sf src/main.native lem
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0'
+- ../lem -hol -hol_remove_matches -outdir ../hol-lib -wl ign -wl_auto_import err -wl_rename err pervasives_extra.lem pervasives.lem basic_classes.lem either.lem function.lem list.lem map.lem maybe.lem relation.lem set_helpers.lem sorting.lem tuple.lem function_extra.lem bool.lem list_extra.lem num.lem map_extra.lem set.lem set_extra.lem maybe_extra.lem string.lem string_extra.lem word.lem assert_extra.lem -auxiliary_level none -only_changed_output
+- make -C .. build-lem
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0'
+- printf 'let v="%s"\n' `git describe --dirty --always` > src/version.ml
+- fatal: Not a git repository (or any of the parent directories): .git
+- make -C src all
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/src'
+- ocamlbuild -cflag -g main.native
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/src'
+- ln -sf src/main.native lem
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0'
+- ../lem -isa -outdir ../isabelle-lib -wl ign -wl_auto_import err -wl_rename err pervasives_extra.lem pervasives.lem basic_classes.lem either.lem function.lem list.lem map.lem maybe.lem relation.lem set_helpers.lem sorting.lem tuple.lem function_extra.lem bool.lem list_extra.lem num.lem map_extra.lem set.lem set_extra.lem maybe_extra.lem string.lem string_extra.lem word.lem assert_extra.lem -auxiliary_level none -only_changed_output
+- make -C .. build-lem
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0'
+- printf 'let v="%s"\n' `git describe --dirty --always` > src/version.ml
+- fatal: Not a git repository (or any of the parent directories): .git
+- make -C src all
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/src'
+- ocamlbuild -cflag -g main.native
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/src'
+- ln -sf src/main.native lem
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0'
+- ../lem -coq -outdir ../coq-lib -wl ign -wl_auto_import err pervasives_extra.lem pervasives.lem basic_classes.lem either.lem function.lem list.lem map.lem maybe.lem relation.lem set_helpers.lem sorting.lem tuple.lem function_extra.lem bool.lem list_extra.lem num.lem map_extra.lem set.lem set_extra.lem maybe_extra.lem string.lem string_extra.lem word.lem assert_extra.lem -auxiliary_level none -only_changed_output
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/library'
+Processing  1/2: [sibylfs-lem: make ocaml-libs]
++ make "ocaml-libs" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0)
+- make -C library ocaml-libs
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/library'
+- make -C .. build-lem
+- make[2]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0'
+- printf 'let v="%s"\n' `git describe --dirty --always` > src/version.ml
+- fatal: Not a git repository (or any of the parent directories): .git
+- make -C src all
+- make[3]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/src'
+- ocamlbuild -cflag -g main.native
+- make[3]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/src'
+- ln -sf src/main.native lem
+- make[2]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0'
+- ../lem -ocaml -outdir ../ocaml-lib -wl ign -wl_auto_import err -wl_rename err pervasives_extra.lem pervasives.lem basic_classes.lem either.lem function.lem list.lem map.lem maybe.lem relation.lem set_helpers.lem sorting.lem tuple.lem function_extra.lem bool.lem list_extra.lem num.lem map_extra.lem set.lem set_extra.lem maybe_extra.lem string.lem string_extra.lem word.lem assert_extra.lem -auxiliary_level none -only_changed_output
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/library'
+- make -C ocaml-lib all
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/ocaml-lib'
+- ocamlbuild extract.cmxa
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules nat_big_num.ml > nat_big_num.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules nat_big_num.mli > nat_big_num.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o nat_big_num.cmi nat_big_num.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules nat_num.ml > nat_num.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules nat_num.mli > nat_num.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o nat_num.cmi nat_num.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules pset.ml > pset.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules pset.mli > pset.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o pset.cmi pset.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules pmap.ml > pmap.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules pmap.mli > pmap.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o pmap.cmi pmap.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o pset.cmx pset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules vector.ml > vector.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules vector.mli > vector.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o vector.cmi vector.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o nat_num.cmx nat_num.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules bit.ml > bit.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules bit.mli > bit.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o bit.cmi bit.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules xstring.ml > xstring.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules xstring.mli > xstring.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o xstring.cmi xstring.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules either.ml > either.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o either.cmo either.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem.ml > lem.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem.cmo lem.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_assert_extra.ml > lem_assert_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_assert_extra.cmo lem_assert_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o xstring.cmx xstring.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o xstring.cmx xstring.ml
+- File "xstring.ml", line 7, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "xstring.ml", line 10, characters 14-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_basic_classes.ml > lem_basic_classes.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_bool.ml > lem_bool.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_bool.cmo lem_bool.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_basic_classes.cmo lem_basic_classes.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem.cmx lem.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_bool.cmx lem_bool.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_either.ml > lem_either.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_list.ml > lem_list.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_maybe.ml > lem_maybe.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_function.ml > lem_function.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_function.cmo lem_function.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_num.ml > lem_num.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_tuple.ml > lem_tuple.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_maybe.cmo lem_maybe.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_num.cmo lem_num.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_tuple.cmo lem_tuple.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_list.cmo lem_list.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_either.cmo lem_either.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o either.cmx either.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_basic_classes.cmx lem_basic_classes.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_function.cmx lem_function.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_maybe.cmx lem_maybe.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_num.cmx lem_num.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_tuple.cmx lem_tuple.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_list.cmx lem_list.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_function_extra.ml > lem_function_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_function_extra.cmo lem_function_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_list_extra.ml > lem_list_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_list_extra.cmo lem_list_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_assert_extra.cmx lem_assert_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_map.ml > lem_map.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_set.ml > lem_set.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_set_helpers.ml > lem_set_helpers.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_set_helpers.cmo lem_set_helpers.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_set.cmo lem_set.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_map.cmo lem_map.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_set_helpers.cmx lem_set_helpers.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o pmap.cmx pmap.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_set.cmx lem_set.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_map_extra.ml > lem_map_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_map_extra.cmo lem_map_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_map.cmx lem_map.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_maybe_extra.ml > lem_maybe_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_maybe_extra.cmo lem_maybe_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_pervasives.ml > lem_pervasives.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_string.ml > lem_string.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_word.ml > lem_word.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_string.cmo lem_string.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_word.cmo lem_word.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_pervasives.cmo lem_pervasives.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_either.cmx lem_either.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_string.cmx lem_string.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_word.cmx lem_word.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_pervasives_extra.ml > lem_pervasives_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_set_extra.ml > lem_set_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_sorting.ml > lem_sorting.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_sorting.cmo lem_sorting.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_string_extra.ml > lem_string_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_set_extra.cmo lem_set_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_string_extra.cmo lem_string_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_pervasives_extra.cmo lem_pervasives_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_function_extra.cmx lem_function_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_list_extra.cmx lem_list_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_map_extra.cmx lem_map_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_maybe_extra.cmx lem_maybe_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_pervasives.cmx lem_pervasives.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_sorting.cmx lem_sorting.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_set_extra.cmx lem_set_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_string_extra.cmx lem_string_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_relation.ml > lem_relation.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o lem_relation.cmo lem_relation.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o nat_big_num.cmx nat_big_num.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o vector.cmx vector.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o bit.cmx bit.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_pervasives_extra.cmx lem_pervasives_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -o lem_relation.cmx lem_relation.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -a nat_big_num.cmx nat_num.cmx pset.cmx pmap.cmx vector.cmx bit.cmx xstring.cmx either.cmx lem.cmx lem_assert_extra.cmx lem_bool.cmx lem_basic_classes.cmx lem_function.cmx lem_maybe.cmx lem_num.cmx lem_tuple.cmx lem_list.cmx lem_either.cmx lem_function_extra.cmx lem_list_extra.cmx lem_set_helpers.cmx lem_set.cmx lem_map.cmx lem_map_extra.cmx lem_maybe_extra.cmx lem_string.cmx lem_word.cmx lem_pervasives.cmx lem_sorting.cmx lem_set_extra.cmx lem_string_extra.cmx lem_pervasives_extra.cmx lem_relation.cmx -o extract.cmxa
+- ocamlbuild extract.cma
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o nat_big_num.cmo nat_big_num.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o nat_num.cmo nat_num.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o pset.cmo pset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o pmap.cmo pmap.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o vector.cmo vector.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o bit.cmo bit.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o xstring.cmo xstring.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -o xstring.cmo xstring.ml
+- File "xstring.ml", line 7, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "xstring.ml", line 10, characters 14-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -a nat_big_num.cmo nat_num.cmo pset.cmo pmap.cmo vector.cmo bit.cmo xstring.cmo either.cmo lem.cmo lem_assert_extra.cmo lem_bool.cmo lem_basic_classes.cmo lem_function.cmo lem_maybe.cmo lem_num.cmo lem_tuple.cmo lem_list.cmo lem_either.cmo lem_function_extra.cmo lem_list_extra.cmo lem_set_helpers.cmo lem_set.cmo lem_map.cmo lem_map_extra.cmo lem_maybe_extra.cmo lem_string.cmo lem_word.cmo lem_pervasives.cmo lem_sorting.cmo lem_set_extra.cmo lem_string_extra.cmo lem_pervasives_extra.cmo lem_relation.cmo -o extract.cma
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/ocaml-lib'
+- make -C library ocaml-lib-tests
+- make[1]: Entering directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/library'
+- lem_basic_classesAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_basic_classesAuxiliary.ml > lem_basic_classesAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem.ml > ocaml-lib/lem.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_basic_classes.ml > ocaml-lib/lem_basic_classes.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem.cmo ocaml-lib/lem.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_bool.ml > ocaml-lib/lem_bool.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_bool.cmo ocaml-lib/lem_bool.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_basic_classes.cmo ocaml-lib/lem_basic_classes.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_basic_classesAuxiliary.cmo lem_basic_classesAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem.cmx ocaml-lib/lem.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_bool.cmx ocaml-lib/lem_bool.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_basic_classes.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_basic_classesAuxiliary.cmx lem_basic_classesAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx lem_basic_classesAuxiliary.cmx -o lem_basic_classesAuxiliary.native
+- lem_boolAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_boolAuxiliary.ml > lem_boolAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_boolAuxiliary.cmo lem_boolAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_boolAuxiliary.cmx lem_boolAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem_bool.cmx lem_boolAuxiliary.cmx -o lem_boolAuxiliary.native
+- lem_eitherAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_eitherAuxiliary.ml > lem_eitherAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/either.ml > ocaml-lib/either.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_either.ml > ocaml-lib/lem_either.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/either.cmo ocaml-lib/either.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_list.ml > ocaml-lib/lem_list.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_maybe.ml > ocaml-lib/lem_maybe.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_function.ml > ocaml-lib/lem_function.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_function.cmo ocaml-lib/lem_function.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_num.ml > ocaml-lib/lem_num.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/nat_num.mli > ocaml-lib/nat_num.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/nat_num.cmi ocaml-lib/nat_num.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_tuple.ml > ocaml-lib/lem_tuple.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_maybe.cmo ocaml-lib/lem_maybe.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_num.cmo ocaml-lib/lem_num.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_tuple.cmo ocaml-lib/lem_tuple.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_list.cmo ocaml-lib/lem_list.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_either.cmo ocaml-lib/lem_either.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_eitherAuxiliary.cmo lem_eitherAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/either.cmx ocaml-lib/either.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_function.cmx ocaml-lib/lem_function.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/nat_num.ml > ocaml-lib/nat_num.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/nat_num.cmx ocaml-lib/nat_num.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_maybe.cmx ocaml-lib/lem_maybe.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_num.cmx ocaml-lib/lem_num.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_tuple.cmx ocaml-lib/lem_tuple.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_list.cmx ocaml-lib/lem_list.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_either.cmx ocaml-lib/lem_either.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_eitherAuxiliary.cmx lem_eitherAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/either.cmx ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx ocaml-lib/lem_tuple.cmx ocaml-lib/lem_list.cmx ocaml-lib/lem_either.cmx lem_eitherAuxiliary.cmx -o lem_eitherAuxiliary.native
+- lem_function_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_function_extraAuxiliary.ml > lem_function_extraAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_function_extra.ml > ocaml-lib/lem_function_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_function_extra.cmo ocaml-lib/lem_function_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_function_extraAuxiliary.cmo lem_function_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_function_extra.cmx ocaml-lib/lem_function_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_function_extraAuxiliary.cmx lem_function_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx ocaml-lib/lem_function_extra.cmx lem_function_extraAuxiliary.cmx -o lem_function_extraAuxiliary.native
+- lem_listAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_listAuxiliary.ml > lem_listAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_listAuxiliary.cmo lem_listAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_listAuxiliary.cmx lem_listAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx ocaml-lib/lem_tuple.cmx ocaml-lib/lem_list.cmx lem_listAuxiliary.cmx -o lem_listAuxiliary.native
+- lem_list_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_list_extraAuxiliary.ml > lem_list_extraAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_assert_extra.ml > ocaml-lib/lem_assert_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/xstring.mli > ocaml-lib/xstring.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/xstring.cmi ocaml-lib/xstring.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_list_extra.ml > ocaml-lib/lem_list_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_assert_extra.cmo ocaml-lib/lem_assert_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_list_extra.cmo ocaml-lib/lem_list_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_list_extraAuxiliary.cmo lem_list_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/xstring.ml > ocaml-lib/xstring.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/xstring.cmx ocaml-lib/xstring.ml
+- + /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/xstring.cmx ocaml-lib/xstring.ml
+- File "ocaml-lib/xstring.ml", line 7, characters 12-25:
+- Warning 3: deprecated: String.create
+- Use Bytes.create instead.
+- File "ocaml-lib/xstring.ml", line 10, characters 14-26:
+- Warning 3: deprecated: String.set
+- Use Bytes.set instead.
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_assert_extra.cmx ocaml-lib/lem_assert_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_list_extra.cmx ocaml-lib/lem_list_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_list_extraAuxiliary.cmx lem_list_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/xstring.cmx ocaml-lib/lem_assert_extra.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx ocaml-lib/lem_tuple.cmx ocaml-lib/lem_list.cmx ocaml-lib/lem_list_extra.cmx lem_list_extraAuxiliary.cmx -o lem_list_extraAuxiliary.native
+- lem_mapAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_mapAuxiliary.ml > lem_mapAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_map.ml > ocaml-lib/lem_map.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_set.ml > ocaml-lib/lem_set.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_set_helpers.ml > ocaml-lib/lem_set_helpers.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/pset.mli > ocaml-lib/pset.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_set_helpers.cmo ocaml-lib/lem_set_helpers.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/pset.cmi ocaml-lib/pset.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/pmap.mli > ocaml-lib/pmap.mli.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_set.cmo ocaml-lib/lem_set.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/pmap.cmi ocaml-lib/pmap.mli
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_map.cmo ocaml-lib/lem_map.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_mapAuxiliary.cmo lem_mapAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/pset.ml > ocaml-lib/pset.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_set_helpers.cmx ocaml-lib/lem_set_helpers.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/pset.cmx ocaml-lib/pset.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/pmap.ml > ocaml-lib/pmap.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_set.cmx ocaml-lib/lem_set.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/pmap.cmx ocaml-lib/pmap.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_map.cmx ocaml-lib/lem_map.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_mapAuxiliary.cmx lem_mapAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx ocaml-lib/lem_tuple.cmx ocaml-lib/lem_list.cmx ocaml-lib/lem_set_helpers.cmx ocaml-lib/pset.cmx ocaml-lib/lem_set.cmx ocaml-lib/pmap.cmx ocaml-lib/lem_map.cmx lem_mapAuxiliary.cmx -o lem_mapAuxiliary.native
+- lem_map_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_map_extraAuxiliary.ml > lem_map_extraAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_map_extra.ml > ocaml-lib/lem_map_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_map_extra.cmo ocaml-lib/lem_map_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_map_extraAuxiliary.cmo lem_map_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_map_extra.cmx ocaml-lib/lem_map_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_map_extraAuxiliary.cmx lem_map_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/xstring.cmx ocaml-lib/lem_assert_extra.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx ocaml-lib/lem_tuple.cmx ocaml-lib/lem_list.cmx ocaml-lib/lem_set_helpers.cmx ocaml-lib/pset.cmx ocaml-lib/lem_set.cmx ocaml-lib/pmap.cmx ocaml-lib/lem_map.cmx ocaml-lib/lem_map_extra.cmx lem_map_extraAuxiliary.cmx -o lem_map_extraAuxiliary.native
+- lem_maybeAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_maybeAuxiliary.ml > lem_maybeAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_maybeAuxiliary.cmo lem_maybeAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_maybeAuxiliary.cmx lem_maybeAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx lem_maybeAuxiliary.cmx -o lem_maybeAuxiliary.native
+- lem_numAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_numAuxiliary.ml > lem_numAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_numAuxiliary.cmo lem_numAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_numAuxiliary.cmx lem_numAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx lem_numAuxiliary.cmx -o lem_numAuxiliary.native
+- lem_relationAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_relationAuxiliary.ml > lem_relationAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_relation.ml > ocaml-lib/lem_relation.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_relation.cmo ocaml-lib/lem_relation.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_relationAuxiliary.cmo lem_relationAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_relation.cmx ocaml-lib/lem_relation.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_relationAuxiliary.cmx lem_relationAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx ocaml-lib/lem_tuple.cmx ocaml-lib/lem_list.cmx ocaml-lib/lem_set_helpers.cmx ocaml-lib/pset.cmx ocaml-lib/lem_set.cmx ocaml-lib/lem_relation.cmx lem_relationAuxiliary.cmx -o lem_relationAuxiliary.native
+- lem_setAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_setAuxiliary.ml > lem_setAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_setAuxiliary.cmo lem_setAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_setAuxiliary.cmx lem_setAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx ocaml-lib/lem_tuple.cmx ocaml-lib/lem_list.cmx ocaml-lib/lem_set_helpers.cmx ocaml-lib/pset.cmx ocaml-lib/lem_set.cmx lem_setAuxiliary.cmx -o lem_setAuxiliary.native
+- lem_set_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_set_extraAuxiliary.ml > lem_set_extraAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_set_extra.ml > ocaml-lib/lem_set_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_sorting.ml > ocaml-lib/lem_sorting.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_sorting.cmo ocaml-lib/lem_sorting.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_set_extra.cmo ocaml-lib/lem_set_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_set_extraAuxiliary.cmo lem_set_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_sorting.cmx ocaml-lib/lem_sorting.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_set_extra.cmx ocaml-lib/lem_set_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_set_extraAuxiliary.cmx lem_set_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx ocaml-lib/lem_tuple.cmx ocaml-lib/lem_list.cmx ocaml-lib/lem_set_helpers.cmx ocaml-lib/pset.cmx ocaml-lib/lem_set.cmx ocaml-lib/lem_sorting.cmx ocaml-lib/lem_set_extra.cmx lem_set_extraAuxiliary.cmx -o lem_set_extraAuxiliary.native
+- lem_sortingAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_sortingAuxiliary.ml > lem_sortingAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_sortingAuxiliary.cmo lem_sortingAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_sortingAuxiliary.cmx lem_sortingAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx ocaml-lib/lem_tuple.cmx ocaml-lib/lem_list.cmx ocaml-lib/lem_sorting.cmx lem_sortingAuxiliary.cmx -o lem_sortingAuxiliary.native
+- lem_stringAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_stringAuxiliary.ml > lem_stringAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_string.ml > ocaml-lib/lem_string.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_string.cmo ocaml-lib/lem_string.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_stringAuxiliary.cmo lem_stringAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_string.cmx ocaml-lib/lem_string.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_stringAuxiliary.cmx lem_stringAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx ocaml-lib/lem_tuple.cmx ocaml-lib/lem_list.cmx ocaml-lib/xstring.cmx ocaml-lib/lem_string.cmx lem_stringAuxiliary.cmx -o lem_stringAuxiliary.native
+- lem_string_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_string_extraAuxiliary.ml > lem_string_extraAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_string_extra.ml > ocaml-lib/lem_string_extra.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_string_extra.cmo ocaml-lib/lem_string_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_string_extraAuxiliary.cmo lem_string_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_string_extra.cmx ocaml-lib/lem_string_extra.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_string_extraAuxiliary.cmx lem_string_extraAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/xstring.cmx ocaml-lib/lem_assert_extra.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx ocaml-lib/lem_tuple.cmx ocaml-lib/lem_list.cmx ocaml-lib/lem_list_extra.cmx ocaml-lib/lem_string.cmx ocaml-lib/lem_string_extra.cmx lem_string_extraAuxiliary.cmx -o lem_string_extraAuxiliary.native
+- lem_tupleAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_tupleAuxiliary.ml > lem_tupleAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_tupleAuxiliary.cmo lem_tupleAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_tupleAuxiliary.cmx lem_tupleAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_tuple.cmx lem_tupleAuxiliary.cmx -o lem_tupleAuxiliary.native
+- lem_wordAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules lem_wordAuxiliary.ml > lem_wordAuxiliary.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamldep.opt -modules ocaml-lib/lem_word.ml > ocaml-lib/lem_word.ml.depends
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o ocaml-lib/lem_word.cmo ocaml-lib/lem_word.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlc.opt -c -I ocaml-lib -o lem_wordAuxiliary.cmo lem_wordAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o ocaml-lib/lem_word.cmx ocaml-lib/lem_word.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt -c -I ocaml-lib -o lem_wordAuxiliary.cmx lem_wordAuxiliary.ml
+- /home/opam/.opam/ocaml-base-compiler.4.04.0/bin/ocamlopt.opt nums.cmxa ocaml-lib/lem.cmx ocaml-lib/lem_bool.cmx ocaml-lib/lem_basic_classes.cmx ocaml-lib/lem_function.cmx ocaml-lib/lem_maybe.cmx ocaml-lib/nat_num.cmx ocaml-lib/lem_num.cmx ocaml-lib/lem_tuple.cmx ocaml-lib/lem_list.cmx ocaml-lib/lem_word.cmx lem_wordAuxiliary.cmx -o lem_wordAuxiliary.native
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_basic_classes
+- -e ***************************************************
+- 
+- ordering_cases_0: ok
+- ordering_cases_1: ok
+- ordering_cases_2: ok
+- ordering_match_1: ok
+- ordering_match_2: ok
+- ordering_match_3: ok
+- ordering_match_4: ok
+- ordering_match_5: ok
+- ordering_match_6: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_bool
+- -e ***************************************************
+- 
+- not_1: ok
+- not_2: ok
+- and_1: ok
+- and_2: ok
+- and_3: ok
+- and_4: ok
+- or_1: ok
+- or_2: ok
+- or_3: ok
+- or_4: ok
+- imp_1: ok
+- imp_2: ok
+- imp_3: ok
+- imp_4: ok
+- equiv_1: ok
+- equiv_2: ok
+- equiv_3: ok
+- equiv_4: ok
+- xor_1: ok
+- xor_2: ok
+- xor_3: ok
+- xor_4: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_either
+- -e ***************************************************
+- 
+- either_equal_1: ok
+- either_equal_2: ok
+- either_equal_3: ok
+- either_equal_4: ok
+- either_equal_5: ok
+- either_equal_6: ok
+- either_equal_7: ok
+- either_pattern_1: ok
+- either_pattern_2: ok
+- either_pattern_3: ok
+- either_pattern_4: ok
+- isLeft_1: ok
+- isLeft_2: ok
+- isRight_1: ok
+- isRight_2: ok
+- either_1: ok
+- either_2: ok
+- either_3: ok
+- either_4: ok
+- partitionEither_1: ok
+- lefts_1: ok
+- rights_1: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_function_extra
+- -e ***************************************************
+- 
+- id_0: ok
+- id_1: ok
+- id_2: ok
+- const_0: ok
+- const_1: ok
+- const_2: ok
+- comb_0: ok
+- comb_1: ok
+- apply_0: ok
+- apply_1: ok
+- flip_0: ok
+- flip_1: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_list
+- -e ***************************************************
+- 
+- null_simple_1: ok
+- null_simple_2: ok
+- null_simple_3: ok
+- length_0: ok
+- length_1: ok
+- length_2: ok
+- list_ord_1: ok
+- list_ord_2: ok
+- list_ord_3: ok
+- list_ord_4: ok
+- list_ord_5: ok
+- list_ord_6: ok
+- list_ord_7: ok
+- list_ord_8: ok
+- list_ord_9: ok
+- append_1: ok
+- snoc_1: ok
+- snoc_2: ok
+- snoc_3: ok
+- map_nil: ok
+- map_1: ok
+- map_4: ok
+- reverseAppend_1: ok
+- reverse_nil: ok
+- reverse_1: ok
+- reverse_2: ok
+- reverse_5: ok
+- foldl_0: ok
+- foldl_1: ok
+- foldl_4: ok
+- foldr_0: ok
+- foldr_1: ok
+- foldr_4: ok
+- concat_nil: ok
+- concat_1: ok
+- concat_2: ok
+- concat_3: ok
+- concatMap_nil: ok
+- concatMap_1: ok
+- concatMap_2: ok
+- concatMap_3: ok
+- all_0: ok
+- all_4: ok
+- all_4_neg: ok
+- any_0: ok
+- any_4: ok
+- any_4_neg: ok
+- dest_init_0: ok
+- dest_init_1: ok
+- dest_init_2: ok
+- index_0: ok
+- index_1: ok
+- index_2: ok
+- index_3: ok
+- index_4: ok
+- index_5: ok
+- index_6: ok
+- findIndices_1: ok
+- findIndices_2: ok
+- findIndices_3: ok
+- find_index0: ok
+- find_index1: ok
+- find_index2: ok
+- elemIndices_0: ok
+- elemIndices_1: ok
+- elemIndices_2: ok
+- elemIndex_0: ok
+- elemIndex_1: ok
+- elemIndex_2: ok
+- genlist_0: ok
+- genlist_1: ok
+- genlist_2: ok
+- genlist_3: ok
+- replicate_0: ok
+- replicate_1: ok
+- replicate_2: ok
+- replicate_3: ok
+- splitAt_1: ok
+- splitAt_2: ok
+- splitAt_3: ok
+- take_1: ok
+- take_2: ok
+- take_3: ok
+- drop_1: ok
+- drop_2: ok
+- drop_3: ok
+- dropWhile_0: ok
+- dropWhile_1: ok
+- dropWhile_2: ok
+- dropWhile_3: ok
+- takeWhile_0: ok
+- takeWhile_1: ok
+- takeWhile_2: ok
+- takeWhile_3: ok
+- isPrefixOf_0: ok
+- isPrefixOf_1: ok
+- isPrefixOf_2: ok
+- isPrefixOf_3: ok
+- isPrefixOf_4: ok
+- list_update_1: ok
+- list_update_2: ok
+- list_update_3: ok
+- list_update_4: ok
+- list_update_5: ok
+- elem_1: ok
+- elem_2: ok
+- elem_3: ok
+- elem_4: ok
+- find_1: ok
+- find_2: ok
+- find_3: ok
+- find_4: ok
+- lookup_1: ok
+- lookup_2: ok
+- lookup_3: ok
+- filter_0: ok
+- filter_1: ok
+- partition_0: ok
+- partition_1: ok
+- deleteFirst_1: ok
+- deleteFirst_2: ok
+- deleteFirst_3: ok
+- delete_1: ok
+- delete_2: ok
+- delete_3: ok
+- delete_4: ok
+- zip_1: ok
+- zip_2: ok
+- unzip_1: ok
+- unzip_2: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_list_extra
+- -e ***************************************************
+- 
+- head_simple_1: ok
+- head_simple_2: ok
+- tail_simple_1: ok
+- tail_simple_2: ok
+- tail_simple_3: ok
+- last_simple_1: ok
+- last_simple_2: ok
+- init_simple_1: ok
+- init_simple_2: ok
+- init_simple_3: ok
+- nth_0: ok
+- nth_1: ok
+- nth_2: ok
+- nth_3: ok
+- nth_4: ok
+- nth_5: ok
+- zipSameLength_1: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_map
+- -e ***************************************************
+- 
+- insert_equal_singleton: ok
+- commutative_insert_1: ok
+- commutative_insert_2: ok
+- empty_null: ok
+- lookup_insert_1: ok
+- lookup_insert_2: ok
+- lookup_insert_3: ok
+- lookup_empty_0: ok
+- find_insert_0: ok
+- fromList_0: ok
+- fromList_1: ok
+- toSet_0: ok
+- toSet_1: ok
+- toSet_2: ok
+- domain_0: ok
+- domain_1: ok
+- domain_2: ok
+- range_0: ok
+- range_1: ok
+- range_2: ok
+- member_insert_1: ok
+- member_insert_2: ok
+- member_insert_3: ok
+- any_0: ok
+- any_1: ok
+- any_2: ok
+- any_3: ok
+- all_0: ok
+- all_1: ok
+- all_2: ok
+- all_3: ok
+- delete_insert_1: ok
+- delete_insert_2: ok
+- delete_delete: ok
+- map_0: ok
+- empty_size: ok
+- singleton_size: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_map_extra
+- -e ***************************************************
+- 
+- find_insert_1: ok
+- find_insert_2: ok
+- fromSet_0: ok
+- fromSet_1: ok
+- fold_1: ok
+- fold_2: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_maybe
+- -e ***************************************************
+- 
+- maybe_eq_1: ok
+- maybe_eq_2: ok
+- maybe_eq_3: ok
+- maybe_eq_4: ok
+- maybe_1: ok
+- maybe_2: ok
+- maybe_3: ok
+- maybe_4: ok
+- isJust_1: ok
+- isJust_2: ok
+- isNothing_1: ok
+- isNothing_2: ok
+- fromMaybe_1: ok
+- fromMaybe_2: ok
+- fromMaybe_3: ok
+- fromMaybe_4: ok
+- map_1: ok
+- map_2: ok
+- map_3: ok
+- bind_1: ok
+- bind_2: ok
+- bind_3: ok
+- bind_4: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_num
+- -e ***************************************************
+- 
+- nat_test1: ok
+- nat_test2: ok
+- nat_test3: ok
+- nat_test4: ok
+- nat_test5: ok
+- nat_test6: ok
+- nat_test7: ok
+- nat_test8: ok
+- nat_test9: ok
+- nat_test10: ok
+- nat_test11: ok
+- nat_test12: ok
+- nat_test13: ok
+- nat_test14: ok
+- nat_test15: ok
+- nat_test16: ok
+- nat_test17: ok
+- nat_test18: ok
+- nat_test19: ok
+- nat_test20: ok
+- nat_test21: ok
+- nat_test22: ok
+- nat_test23: ok
+- nat_test24: ok
+- nat_test25: ok
+- nat_test26: ok
+- nat_test27: ok
+- nat_test28a: ok
+- nat_test28b: ok
+- natural_test1: ok
+- natural_test2: ok
+- natural_test3: ok
+- natural_test4: ok
+- natural_test5: ok
+- natural_test6: ok
+- natural_test7: ok
+- natural_test8: ok
+- natural_test9: ok
+- natural_test10: ok
+- natural_test11: ok
+- natural_test12: ok
+- natural_test13: ok
+- natural_test14: ok
+- natural_test15: ok
+- natural_test16: ok
+- natural_test17: ok
+- natural_test18: ok
+- natural_test19: ok
+- natural_test20: ok
+- natural_test21: ok
+- natural_test22: ok
+- natural_test23: ok
+- natural_test24: ok
+- natural_test25: ok
+- natural_test26: ok
+- natural_test27: ok
+- natural_test28a: ok
+- natural_test28b: ok
+- int_test1: ok
+- int_test2: ok
+- int_test3: ok
+- int_test4: ok
+- int_test5: ok
+- int_test6: ok
+- int_test6a: ok
+- int_test7: ok
+- int_test7a: ok
+- int_test8: ok
+- int_test8at: ok
+- int_test9: ok
+- int_test10: ok
+- int_test11: ok
+- int_test12: ok
+- int_test13: ok
+- int_test14: ok
+- int_test15: ok
+- int_test16: ok
+- int_test17: ok
+- int_test18: ok
+- int_test19: ok
+- int_test20: ok
+- int_test21: ok
+- int_test22: ok
+- int_test23: ok
+- int_test24: ok
+- int_test25: ok
+- int_test26: ok
+- int_test27: ok
+- int_test28: ok
+- int32_test1: ok
+- int32_test2: ok
+- int32_test3: ok
+- int32_test4: ok
+- int32_test5: ok
+- int32_test6: ok
+- int32_test7: ok
+- int32_test8: ok
+- int32_test9: ok
+- int32_test10: ok
+- int32_test11: ok
+- int32_test12: ok
+- int32_test13: ok
+- int32_test13a: ok
+- int32_test14: ok
+- int32_test15: ok
+- int32_test16: ok
+- int32_test17: ok
+- int32_test18: ok
+- int32_test19: ok
+- int32_test20: ok
+- int32_test21: ok
+- int32_test22: ok
+- int32_test23: ok
+- int32_test24: ok
+- int32_test25: ok
+- int32_test26: ok
+- int32_test27: ok
+- int32_test28: ok
+- int64_test1: ok
+- int64_test2: ok
+- int64_test3: ok
+- int64_test4: ok
+- int64_test5: ok
+- int64_test6: ok
+- int64_test7: ok
+- int64_test8: ok
+- int64_test9: ok
+- int64_test10: ok
+- int64_test11: ok
+- int64_test12: ok
+- int64_test13: ok
+- int64_test13a: ok
+- int64_test14: ok
+- int64_test15: ok
+- int64_test16: ok
+- int64_test17: ok
+- int64_test18: ok
+- int64_test19: ok
+- int64_test20: ok
+- int64_test21: ok
+- int64_test22: ok
+- int64_test23: ok
+- int64_test24: ok
+- int64_test25: ok
+- int64_test26: ok
+- int64_test27: ok
+- int64_test28: ok
+- integer_test1: ok
+- integer_test2: ok
+- integer_test3: ok
+- integer_test4: ok
+- integer_test5: ok
+- integer_test6: ok
+- integer_test6a: ok
+- integer_test7: ok
+- integer_test7a: ok
+- integer_test8: ok
+- integer_test8a: ok
+- integer_test9: ok
+- integer_test10: ok
+- integer_test11: ok
+- integer_test12: ok
+- integer_test13: ok
+- integer_test14: ok
+- integer_test15: ok
+- integer_test16: ok
+- integer_test17: ok
+- integer_test18: ok
+- integer_test19: ok
+- integer_test20: ok
+- integer_test21: ok
+- integer_test22: ok
+- integer_test23: ok
+- integer_test24: ok
+- integer_test25: ok
+- integer_test26: ok
+- integer_test27: ok
+- integer_test28: ok
+- integer_from_int_0: ok
+- integer_from_int_1: ok
+- integer_from_int_2: ok
+- integer_from_nat_0: ok
+- integer_from_nat_1: ok
+- integer_from_nat_2: ok
+- integerFromNatural_0: ok
+- integerFromNatural_1: ok
+- integerFromNatural_2: ok
+- integer_from_int32_0: ok
+- integer_from_int32_1: ok
+- integer_from_int32_2: ok
+- integer_from_int32_3: ok
+- integer_from_int32_4: ok
+- integer_from_int32_5: ok
+- integer_from_int64_0: ok
+- integer_from_int64_1: ok
+- integer_from_int64_2: ok
+- integer_from_int64_3: ok
+- integer_from_int64_4: ok
+- integer_from_int64_5: ok
+- natural_from_nat_0: ok
+- natural_from_nat_1: ok
+- natural_from_nat_2: ok
+- natural_from_integer_0: ok
+- natural_from_integer_1: ok
+- natural_from_integer_2: ok
+- int_from_integer_0: ok
+- int_from_integer_1: ok
+- int_from_integer_2: ok
+- int_from_nat_0: ok
+- int_from_nat_1: ok
+- int_from_nat_2: ok
+- nat_from_natural_0: ok
+- nat_from_natural_1: ok
+- nat_from_natural_2: ok
+- nat_from_int_0: ok
+- nat_from_int_1: ok
+- nat_from_int_2: ok
+- int32_from_nat_0: ok
+- int32_from_nat_1: ok
+- int32_from_nat_2: ok
+- int32_from_natural_0: ok
+- int32_from_natural_1: ok
+- int32_from_natural_2: ok
+- int32_from_integer_0: ok
+- int32_from_integer_1: ok
+- int32_from_integer_2: ok
+- int32_from_integer_3: ok
+- int32_from_integer_4: ok
+- int32_from_integer_5: ok
+- int32_from_int_0: ok
+- int32_from_int_1: ok
+- int32_from_int_2: ok
+- int32_from_int_3: ok
+- int32_from_int_4: ok
+- int32_from_int_5: ok
+- int32_from_int_64_0: ok
+- int32_from_int_64_1: ok
+- int32_from_int_64_2: ok
+- int32_from_int_64_3: ok
+- int32_from_int_64_4: ok
+- int32_from_int_64_5: ok
+- int64_from_nat_0: ok
+- int64_from_nat_1: ok
+- int64_from_nat_2: ok
+- int64_from_natural_0: ok
+- int64_from_natural_1: ok
+- int64_from_natural_2: ok
+- int64_from_integer_0: ok
+- int64_from_integer_1: ok
+- int64_from_integer_2: ok
+- int64_from_integer_3: ok
+- int64_from_integer_4: ok
+- int64_from_integer_5: ok
+- int64_from_int_0: ok
+- int64_from_int_1: ok
+- int64_from_int_2: ok
+- int64_from_int_3: ok
+- int64_from_int_4: ok
+- int64_from_int_5: ok
+- int64_from_int_33_0: ok
+- int64_from_int_32_1: ok
+- int64_from_int_32_2: ok
+- int64_from_int_32_3: ok
+- int64_from_int_32_4: ok
+- int64_from_int_32_5: ok
+- natural_from_int_0: ok
+- natural_from_int_1: ok
+- natural_from_int_2: ok
+- natural_from_int32_0: ok
+- natural_from_int32_1: ok
+- natural_from_int32_2: ok
+- natural_from_int64_0: ok
+- natural_from_int64_1: ok
+- natural_from_int64_2: ok
+- int_from_natural_0: ok
+- int_from_natural_1: ok
+- int_from_natural_2: ok
+- int_from_int32_0: ok
+- int_from_int32_1: ok
+- int_from_int32_2: ok
+- int_from_int64_0: ok
+- int_from_int64_1: ok
+- int_from_int64_2: ok
+- nat_from_integer_0: ok
+- nat_from_integer_1: ok
+- nat_from_integer_2: ok
+- nat_from_int32_0: ok
+- nat_from_int32_1: ok
+- nat_from_int32_2: ok
+- nat_from_int64_0: ok
+- nat_from_int64_1: ok
+- nat_from_int64_2: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_relation
+- -e ***************************************************
+- 
+- rel_basic_0: ok
+- rel_basic_1: ok
+- rel_basic_2: ok
+- in_rel_0: ok
+- in_rel_1: ok
+- in_rel_2: ok
+- in_rel_3: ok
+- relEmpty_0: ok
+- relEmpty_1: ok
+- relAdd_0: ok
+- relAdd_1: ok
+- relAdd_2: ok
+- relAdd_3: ok
+- rel_id_0: ok
+- rel_id_1: ok
+- rel_id_2: ok
+- rel_id_3: ok
+- rel_union_0: ok
+- rel_inter_0: ok
+- rel_comp_0: ok
+- rel_restrict_0: ok
+- rel_converse_0: ok
+- rel_domain_0: ok
+- rel_domain_1: ok
+- rel_domain_2: ok
+- rel_range_0: ok
+- rel_range_1: ok
+- rel_range_2: ok
+- rel_field_0: ok
+- rel_field_1: ok
+- rel_field_2: ok
+- rel_over_0: ok
+- rel_over_1: ok
+- rel_apply_0: ok
+- rel_apply_1: ok
+- is_subrel_0: ok
+- is_subrel_1: ok
+- is_subrel_2: ok
+- is_subrel_3: ok
+- is_reflexive_on_0: ok
+- is_reflexive_on_1: ok
+- is_reflexive_on_2: ok
+- is_irreflexive_on_0: ok
+- is_irreflexive_on_1: ok
+- is_irreflexive_on_2: ok
+- is_irreflexive_on_3: ok
+- is_irreflexive_0: ok
+- is_irreflexive_1: ok
+- is_symmetric_on_0: ok
+- is_symmetric_on_1: ok
+- is_symmetric_on_2: ok
+- is_symmetric_0: ok
+- is_symmetric_1: ok
+- is_antisymmetric_on_0: ok
+- is_antisymmetric_on_1: ok
+- is_antisymmetric_0: ok
+- is_antisymmetric_1: ok
+- is_transitive_on_0: ok
+- is_transitive_on_1: ok
+- is_transitive_0: ok
+- is_transitive_1: ok
+- is_total_on_0: ok
+- is_total_on_1: ok
+- is_trichotomous_on_0: ok
+- is_trichotomous_on_1: ok
+- is_single_valued_0: ok
+- is_single_valued_1: ok
+- is_equivalence_0: ok
+- is_equivalence_1: ok
+- is_equivalence_2: ok
+- is_preorder_0: ok
+- is_preorder_1: ok
+- is_preorder_2: ok
+- is_partialorder_0: ok
+- is_partialorder_1: ok
+- is_partialorder_2: ok
+- is_partialorder_3: ok
+- is_strict_partialorder_on_0: ok
+- is_strict_partialorder_on_1: ok
+- is_strict_partialorder_on_2: ok
+- is_strict_partialorder_on_3: ok
+- is_strict_partialorder_on_4: ok
+- is_strict_partialorder_0: ok
+- is_strict_partialorder_1: ok
+- is_strict_partialorder_2: ok
+- is_strict_partialorder_3: ok
+- is_strict_partialorder_4: ok
+- is_totalorder_on_0: ok
+- is_totalorder_on_1: ok
+- is_totalorder_on_2: ok
+- is_strict_totalorder_on_0: ok
+- is_strict_totalorder_on_1: ok
+- transitive_closure_0: ok
+- transitive_closure_1: ok
+- transitive_closure_add_0: ok
+- transitive_closure_add_1: ok
+- transitive_closure_add_2: ok
+- reflexiv_transitive_closure_0: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_set
+- -e ***************************************************
+- 
+- empty_0: ok
+- empty_1: ok
+- empty_2: ok
+- empty_3: ok
+- any_0: ok
+- any_1: ok
+- all_0: ok
+- all_1: ok
+- in_1: ok
+- in_2: ok
+- in_3: ok
+- in_4: ok
+- nin_1: ok
+- nin_2: ok
+- nin_3: ok
+- nin_4: ok
+- null_1: ok
+- null_2: ok
+- singleton_1: ok
+- singleton_2: ok
+- singleton_3: ok
+- singleton_4: ok
+- size_1: ok
+- size_2: ok
+- size_3: ok
+- size_4: ok
+- size_5: ok
+- set_patterns_0: ok
+- set_patterns_1: ok
+- set_patterns_2: ok
+- set_patterns_3: ok
+- set_patterns_4: ok
+- set_patterns_5: ok
+- set_patterns_6: ok
+- set_patterns_7: ok
+- set_patterns_8: ok
+- set_patterns_9: ok
+- set_patterns_10: ok
+- union_1: ok
+- insert_1: ok
+- insert_2: ok
+- insert_3: ok
+- filter_1: ok
+- filter_2: ok
+- isSubsetOf_1: ok
+- isSubsetOf_2: ok
+- isSubsetOf_3: ok
+- isProperSubsetOf_1: ok
+- isProperSubsetOf_2: ok
+- isProperSubsetOf_3: ok
+- bigunion_0: ok
+- bigunion_1: ok
+- bigunion_2: ok
+- bigunion_3: ok
+- difference_1: ok
+- intersection_1: ok
+- map_1: ok
+- map_2: ok
+- bigunionmap_0: ok
+- bigunionmap_1: ok
+- fromList_1: ok
+- fromList_2: ok
+- fromList_3: ok
+- Sigma_1: ok
+- cross_1: ok
+- lfp_empty_0: ok
+- lfp_empty_1: ok
+- lfp_saturate_neg_1: ok
+- lfp_saturate_neg_2: ok
+- lfp_saturate_mod_3: ok
+- lfp_saturate_mod_4: ok
+- lfp_saturate_mod_5: ok
+- lfp_termination: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_set_extra
+- -e ***************************************************
+- 
+- choose_0: ok
+- choose_1: ok
+- choose_2: ok
+- choose_3: ok
+- toList_0: ok
+- toList_1: ok
+- toList_2: ok
+- toOrderedList_0: ok
+- toOrderedList_1: ok
+- toOrderedList_2: ok
+- lfp_empty: ok
+- lfp_saturate_neg: ok
+- lfp_saturate_mod: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_sorting
+- -e ***************************************************
+- 
+- perm_1: ok
+- perm_2: ok
+- perm_3: ok
+- perm_4: ok
+- perm_5: ok
+- perm_6: ok
+- isSorted_1: ok
+- isSorted_2: ok
+- isSorted_3: ok
+- isSorted_4: ok
+- isSorted_5: ok
+- isSorted_6: ok
+- sort_1: ok
+- sort_2: ok
+- sort_3: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_string
+- -e ***************************************************
+- 
+- char_simple_0: ok
+- char_simple_1: ok
+- char_simple_2: ok
+- char_simple_3: ok
+- char_simple_4: ok
+- char_simple_5: ok
+- char_simple_6: ok
+- string_simple_0: ok
+- string_simple_1: ok
+- string_simple_2: ok
+- string_simple_3: ok
+- toCharList_0: ok
+- toCharList_1: ok
+- toString_0: ok
+- toString_1: ok
+- makeString_0: ok
+- makeString_1: ok
+- makeString_2: ok
+- stringLength_0: ok
+- stringLength_1: ok
+- stringLength_2: ok
+- stringAppend_0: ok
+- empty_string_0: ok
+- empty_string_1: ok
+- string_cons_0: ok
+- string_cons_1: ok
+- string_patterns_0: ok
+- string_patterns_1: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_string_extra
+- -e ***************************************************
+- 
+- string_compare_1: ok
+- string_compare_2: ok
+- string_compare_3: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_tuple
+- -e ***************************************************
+- 
+- fst_1: ok
+- fst_2: ok
+- snd_1: ok
+- snd_2: ok
+- curry_1: ok
+- uncurry_1: ok
+- swap_1: ok
+- -e 
+- 
+- 
+- 
+- -e ***************************************************
+- -e * Testing lem_word
+- -e ***************************************************
+- 
+- boolListFrombitSeq_0: ok
+- boolListFrombitSeq_1: ok
+- boolListFrombitSeq_2: ok
+- bitSeqFromBoolList_0: ok
+- bitSeqFromBoolList_1: ok
+- bitSeqFromBoolList_2: ok
+- cleanBitSeq_0: ok
+- cleanBitSeq_1: ok
+- cleanBitSeq_2: ok
+- resizeBitSeq_0: ok
+- resizeBitSeq_1: ok
+- resizeBitSeq_2: ok
+- resizeBitSeq_3: ok
+- resizeBitSeq_4: ok
+- bitSeqNot_0: ok
+- integerFromBoolList_0: ok
+- integerFromBoolList_1: ok
+- integerFromBoolList_2: ok
+- integerFromBoolList_3: ok
+- integerFromBoolList_4: ok
+- boolListFromInteger_0: ok
+- boolListFromInteger_1: ok
+- boolListFromInteger_2: ok
+- boolListFromInteger_3: ok
+- boolListFromInteger_4: ok
+- bitSeqFromInteger_0: ok
+- bitSeqFromInteger_1: ok
+- bitSeqFromInteger_2: ok
+- bitSeqFromInteger_3: ok
+- bitSeqFromInteger_4: ok
+- bitSeqFromInteger_5: ok
+- integerFromBitSeq_0: ok
+- integerFromBitSeq_1: ok
+- integerFromBitSeq_2: ok
+- integerFromBitSeq_3: ok
+- integerFromBitSeq_inv_0: ok
+- integerFromBitSeq_inv_1: ok
+- integerFromBitSeq_inv_2: ok
+- bitSequence_test1: ok
+- bitSequence_test2: ok
+- bitSequence_test3: ok
+- bitSequence_test4: ok
+- bitSequence_test5: ok
+- bitSequence_test6: ok
+- bitSequence_test6a: ok
+- bitSequence_test7: ok
+- bitSequence_test7a: ok
+- bitSequence_test8: ok
+- bitSequence_test8a: ok
+- bitSequence_test9: ok
+- bitSequence_test10: ok
+- bitSequence_test11: ok
+- bitSequence_test12: ok
+- bitSequence_test13: ok
+- bitSequence_test14: ok
+- bitSequence_test15: ok
+- bitSequence_test16: ok
+- bitSequence_test17: ok
+- bitSequence_test18: ok
+- bitSequence_test19: ok
+- bitSequence_test20: ok
+- bitSequence_test21: ok
+- bitSequence_test22: ok
+- bitSequence_test23: ok
+- bitSequence_test24: ok
+- bitSequence_test25: ok
+- bitSequence_test26: ok
+- bitSequence_bittest1: ok
+- bitSequence_bittest2: ok
+- bitSequence_bittest3: ok
+- bitSequence_bittest4: ok
+- bitSequence_bittest5: ok
+- bitSequence_bittest6: ok
+- bitSequence_bittest7: ok
+- bitSequence_bittest8: ok
+- bitSequence_bittest9: ok
+- bitSequence_bittest10: ok
+- bitSequence_bittest11: ok
+- bitSequence_bittest12: ok
+- bitSequence_bittest13: ok
+- bitSequence_bittest14: ok
+- bitSequence_bittest15: ok
+- bitSequence_bittest16: ok
+- bitSequence_bittest17: ok
+- bitSequence_bittest18: ok
+- bitSequence_bittest19: ok
+- bitSequence_bittest20: ok
+- bitSequence_bittest21: ok
+- bitSequence_bittest22: ok
+- bitSequence_bittest23: ok
+- bitSequence_bittest24: ok
+- int32_bittest1: ok
+- int32_bittest2: ok
+- int32_bittest3: ok
+- int32_bittest4: ok
+- int32_bittest5: ok
+- int32_bittest6: ok
+- int32_bittest7: ok
+- int32_bittest8: ok
+- int32_bittest9: ok
+- int32_bittest10: ok
+- int32_bittest11: ok
+- int32_bittest12: ok
+- int32_bittest13: ok
+- int32_bittest14: ok
+- int32_bittest15: ok
+- int32_bittest16: ok
+- int32_bittest17: ok
+- int32_bittest18: ok
+- int32_bittest19: ok
+- int32_bittest20: ok
+- int32_bittest21: ok
+- int32_bittest22: ok
+- int32_bittest23: ok
+- int32_bittest24: ok
+- int64_bittest1: ok
+- int64_bittest2: ok
+- int64_bittest3: ok
+- int64_bittest4: ok
+- int64_bittest5: ok
+- int64_bittest6: ok
+- int64_bittest7: ok
+- int64_bittest8: ok
+- int64_bittest9: ok
+- int64_bittest10: ok
+- int64_bittest11: ok
+- int64_bittest12: ok
+- int64_bittest13: ok
+- int64_bittest14: ok
+- int64_bittest15: ok
+- int64_bittest16: ok
+- int64_bittest17: ok
+- int64_bittest18: ok
+- int64_bittest19: ok
+- int64_bittest20: ok
+- int64_bittest21: ok
+- int64_bittest22: ok
+- int64_bittest23: ok
+- int64_bittest24: ok
+- integer_bittest1: ok
+- integer_bittest2: ok
+- integer_bittest3: ok
+- integer_bittest4: ok
+- integer_bittest5: ok
+- integer_bittest6: ok
+- integer_bittest7: ok
+- integer_bittest8: ok
+- integer_bittest9: ok
+- integer_bittest10: ok
+- integer_bittest11: ok
+- integer_bittest12: ok
+- integer_bittest13: ok
+- integer_bittest14: ok
+- integer_bittest15: ok
+- integer_bittest16: ok
+- integer_bittest17: ok
+- integer_bittest18: ok
+- integer_bittest19: ok
+- integer_bittest20: ok
+- integer_bittest22: ok
+- integer_bittest24: ok
+- int_bittest1: ok
+- int_bittest2: ok
+- int_bittest3: ok
+- int_bittest4: ok
+- int_bittest5: ok
+- int_bittest6: ok
+- int_bittest7: ok
+- int_bittest8: ok
+- int_bittest9: ok
+- int_bittest10: ok
+- int_bittest11: ok
+- int_bittest12: ok
+- int_bittest17: ok
+- int_bittest18: ok
+- int_bittest19: ok
+- int_bittest20: ok
+- int_bittest22: ok
+- int_bittest24: ok
+- natural_bittest1: ok
+- natural_bittest2: ok
+- natural_bittest3: ok
+- natural_bittest4: ok
+- natural_bittest5: ok
+- natural_bittest6: ok
+- natural_bittest9: ok
+- natural_bittest10: ok
+- natural_bittest11: ok
+- natural_bittest12: ok
+- natural_bittest13: ok
+- natural_bittest14: ok
+- natural_bittest15: ok
+- natural_bittest16: ok
+- natural_bittest17: ok
+- natural_bittest18: ok
+- natural_bittest19: ok
+- natural_bittest20: ok
+- nat_bittest1: ok
+- nat_bittest2: ok
+- nat_bittest3: ok
+- nat_bittest4: ok
+- nat_bittest5: ok
+- nat_bittest6: ok
+- nat_bittest9: ok
+- nat_bittest10: ok
+- nat_bittest11: ok
+- nat_bittest12: ok
+- nat_bittest17: ok
+- nat_bittest18: ok
+- nat_bittest19: ok
+- nat_bittest20: ok
+- make[1]: Leaving directory '/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0/library'
+Processing  1/2: [sibylfs-lem: sh]
++ sh "-ex" "./generate_install_manifest.sh" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0)
+- + echo bin: [
+- + echo   "src/main.native" {"lem"}
+- + printf ]\nlib: [\n
+- + sed -e s/\(.*\)/  "\1" \{ "\1" \}/
+- + ls -1 library/assert_extra.lem library/basic_classes.lem library/bool.lem library/build_all.py library/either.lem library/explanation.markdown library/function.lem library/function_extra.lem library/gen-isa-tests.sh library/list.lem library/list_extra.lem library/map.lem library/map_extra.lem library/maybe.lem library/maybe_extra.lem library/num.lem library/pervasives.lem library/pervasives_extra.lem library/relation.lem library/run-ocaml-tests.sh library/set.lem library/set_extra.lem library/set_helpers.lem library/sorting.lem library/string.lem library/string_extra.lem library/transform.lem library/tuple.lem library/word.lem hol-lib/lemLib.sml hol-lib/lemScript.sml hol-lib/lem_assert_extraScript.sml hol-lib/lem_basic_classesScript.sml hol-lib/lem_boolScript.sml hol-lib/lem_eitherScript.sml hol-lib/lem_functionScript.sml hol-lib/lem_function_extraScript.sml hol-lib/lem_listScript.sml hol-lib/lem_list_extraScript.sml hol-lib/lem_mapScript.sml hol-lib/lem_map_extraScript.sml hol-lib/lem_maybeScript.sml hol-lib/lem_maybe_extraScript.sml hol-lib/lem_numScript.sml hol-lib/lem_pervasivesScript.sml hol-lib/lem_pervasives_extraScript.sml hol-lib/lem_relationScript.sml hol-lib/lem_setScript.sml hol-lib/lem_set_extraScript.sml hol-lib/lem_set_helpersScript.sml hol-lib/lem_sortingScript.sml hol-lib/lem_stringScript.sml hol-lib/lem_string_extraScript.sml hol-lib/lem_tupleScript.sml hol-lib/lem_wordScript.sml isabelle-lib/Lem.thy isabelle-lib/LemExtraDefs.thy isabelle-lib/Lem_assert_extra.thy isabelle-lib/Lem_basic_classes.thy isabelle-lib/Lem_bool.thy isabelle-lib/Lem_either.thy isabelle-lib/Lem_function.thy isabelle-lib/Lem_function_extra.thy isabelle-lib/Lem_list.thy isabelle-lib/Lem_list_extra.thy isabelle-lib/Lem_map.thy isabelle-lib/Lem_map_extra.thy isabelle-lib/Lem_maybe.thy isabelle-lib/Lem_maybe_extra.thy isabelle-lib/Lem_num.thy isabelle-lib/Lem_pervasives.thy isabelle-lib/Lem_pervasives_extra.thy isabelle-lib/Lem_relation.thy isabelle-lib/Lem_set.thy isabelle-lib/Lem_set_extra.thy isabelle-lib/Lem_set_helpers.thy isabelle-lib/Lem_sorting.thy isabelle-lib/Lem_string.thy isabelle-lib/Lem_string_extra.thy isabelle-lib/Lem_tuple.thy isabelle-lib/Lem_word.thy coq-lib/coq_makefile.in coq-lib/coqharness.v coq-lib/lem_assert_extra.v coq-lib/lem_assert_extra_auxiliary.v coq-lib/lem_basic_classes.v coq-lib/lem_basic_classes_auxiliary.v coq-lib/lem_bool.v coq-lib/lem_bool_auxiliary.v coq-lib/lem_either.v coq-lib/lem_either_auxiliary.v coq-lib/lem_function.v coq-lib/lem_function_auxiliary.v coq-lib/lem_function_extra.v coq-lib/lem_function_extra_auxiliary.v coq-lib/lem_list.v coq-lib/lem_list_auxiliary.v coq-lib/lem_list_extra.v coq-lib/lem_list_extra_auxiliary.v coq-lib/lem_map.v coq-lib/lem_map_auxiliary.v coq-lib/lem_map_extra.v coq-lib/lem_map_extra_auxiliary.v coq-lib/lem_maybe.v coq-lib/lem_maybe_auxiliary.v coq-lib/lem_maybe_extra.v coq-lib/lem_maybe_extra_auxiliary.v coq-lib/lem_num.v coq-lib/lem_num_auxiliary.v coq-lib/lem_pervasives.v coq-lib/lem_pervasives_auxiliary.v coq-lib/lem_pervasives_extra.v coq-lib/lem_pervasives_extra_auxiliary.v coq-lib/lem_relation.v coq-lib/lem_relation_auxiliary.v coq-lib/lem_set.v coq-lib/lem_set_auxiliary.v coq-lib/lem_set_extra.v coq-lib/lem_set_extra_auxiliary.v coq-lib/lem_set_helpers.v coq-lib/lem_set_helpers_auxiliary.v coq-lib/lem_sorting.v coq-lib/lem_sorting_auxiliary.v coq-lib/lem_string.v coq-lib/lem_string_auxiliary.v coq-lib/lem_string_extra.v coq-lib/lem_string_extra_auxiliary.v coq-lib/lem_tuple.v coq-lib/lem_tuple_auxiliary.v coq-lib/lem_word.v coq-lib/lem_word_auxiliary.v ocaml-lib/bit.ml ocaml-lib/bit.mli ocaml-lib/either.ml ocaml-lib/extract.mllib ocaml-lib/lem.ml ocaml-lib/lem_assert_extra.ml ocaml-lib/lem_basic_classes.ml ocaml-lib/lem_bool.ml ocaml-lib/lem_either.ml ocaml-lib/lem_function.ml ocaml-lib/lem_function_extra.ml ocaml-lib/lem_list.ml ocaml-lib/lem_list_extra.ml ocaml-lib/lem_map.ml ocaml-lib/lem_map_extra.ml ocaml-lib/lem_maybe.ml ocaml-lib/lem_maybe_extra.ml ocaml-lib/lem_num.ml ocaml-lib/lem_pervasives.ml ocaml-lib/lem_pervasives_extra.ml ocaml-lib/lem_relation.ml ocaml-lib/lem_set.ml ocaml-lib/lem_set_extra.ml ocaml-lib/lem_set_helpers.ml ocaml-lib/lem_sorting.ml ocaml-lib/lem_string.ml ocaml-lib/lem_string_extra.ml ocaml-lib/lem_tuple.ml ocaml-lib/lem_word.ml ocaml-lib/nat_big_num.ml ocaml-lib/nat_big_num.mli ocaml-lib/nat_num.ml ocaml-lib/nat_num.mli ocaml-lib/pmap.ml ocaml-lib/pmap.mli ocaml-lib/pset.ml ocaml-lib/pset.mli ocaml-lib/pset_using_lists.ml ocaml-lib/vector.ml ocaml-lib/vector.mli ocaml-lib/xstring.ml ocaml-lib/xstring.mli
+- + echo ]
+-> compiled  sibylfs-lem.0.4.0
+Processing  2/2: [sibylfs-lem: sh]
++ sh "-ex" "./ocamlfind_install.sh" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/sibylfs-lem.0.4.0)
+- + ocamlfind install sibylfs-lem ocaml-lib/META ocaml-lib/_build/extract.a ocaml-lib/_build/extract.cma ocaml-lib/_build/extract.cmxa ocaml-lib/_build/bit.mli ocaml-lib/_build/nat_big_num.mli ocaml-lib/_build/nat_num.mli ocaml-lib/_build/pmap.mli ocaml-lib/_build/pset.mli ocaml-lib/_build/vector.mli ocaml-lib/_build/xstring.mli ocaml-lib/_build/bit.cmi ocaml-lib/_build/either.cmi ocaml-lib/_build/lem.cmi ocaml-lib/_build/lem_assert_extra.cmi ocaml-lib/_build/lem_basic_classes.cmi ocaml-lib/_build/lem_bool.cmi ocaml-lib/_build/lem_either.cmi ocaml-lib/_build/lem_function.cmi ocaml-lib/_build/lem_function_extra.cmi ocaml-lib/_build/lem_list.cmi ocaml-lib/_build/lem_list_extra.cmi ocaml-lib/_build/lem_map.cmi ocaml-lib/_build/lem_map_extra.cmi ocaml-lib/_build/lem_maybe.cmi ocaml-lib/_build/lem_maybe_extra.cmi ocaml-lib/_build/lem_num.cmi ocaml-lib/_build/lem_pervasives.cmi ocaml-lib/_build/lem_pervasives_extra.cmi ocaml-lib/_build/lem_relation.cmi ocaml-lib/_build/lem_set.cmi ocaml-lib/_build/lem_set_extra.cmi ocaml-lib/_build/lem_set_helpers.cmi ocaml-lib/_build/lem_sorting.cmi ocaml-lib/_build/lem_string.cmi ocaml-lib/_build/lem_string_extra.cmi ocaml-lib/_build/lem_tuple.cmi ocaml-lib/_build/lem_word.cmi ocaml-lib/_build/nat_big_num.cmi ocaml-lib/_build/nat_num.cmi ocaml-lib/_build/pmap.cmi ocaml-lib/_build/pset.cmi ocaml-lib/_build/vector.cmi ocaml-lib/_build/xstring.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/xstring.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/vector.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/pset.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/pmap.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/nat_num.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/nat_big_num.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_word.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_tuple.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_string_extra.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_string.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_sorting.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_set_helpers.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_set_extra.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_set.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_relation.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_pervasives_extra.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_pervasives.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_num.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_maybe_extra.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_maybe.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_map_extra.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_map.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_list_extra.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_list.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_function_extra.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_function.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_either.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_bool.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_basic_classes.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem_assert_extra.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/lem.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/either.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/bit.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/xstring.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/vector.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/pset.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/pmap.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/nat_num.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/nat_big_num.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/bit.mli
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/extract.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/extract.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/extract.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/sibylfs-lem/META
+-> installed sibylfs-lem.0.4.0
+Done.
+# Run eval `opam env` to update the current shell environment
