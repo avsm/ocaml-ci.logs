@@ -1,0 +1,118 @@
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - m4
+# All required OS packages found.
+# Now letting OPAM install the packages
+The following actions will be performed:
+  - install bau 0.0.3
+
+=-=- Gathering sources =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/1: [bau.0.0.3: dl]
+[bau.0.0.3] downloaded from file:///home/opam/opam-repository/cache
+Processing  1/1:
+
+=-=- Processing actions -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Processing  1/2: [bau: make]
++ make  (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/bau.0.0.3)
+- ocamlbuild -use-ocamlfind -pkg bigarray -I src/lib bau.cma bau.cmxa bau.cmxs
+- ocamlfind ocamlopt unix.cmxa -I /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuildlib.cmxa -linkpkg myocamlbuild.ml /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocamlbuild/ocamlbuild.cmx -o myocamlbuild
+- ocamlfind ocamldep -package bigarray -modules src/lib/bigarrayExt.ml > src/lib/bigarrayExt.ml.depends
+- ocamlfind ocamldep -package bigarray -modules src/lib/generators.mli > src/lib/generators.mli.depends
+- ocamlfind ocamlc -c -annot -bin-annot -principal -package bigarray -I src/lib -o src/lib/bigarrayExt.cmo src/lib/bigarrayExt.ml
+- ocamlfind ocamlc -c -annot -bin-annot -principal -package bigarray -I src/lib -o src/lib/generators.cmi src/lib/generators.mli
+- ocamlfind ocamldep -package bigarray -modules src/lib/generators.ml > src/lib/generators.ml.depends
+- ocamlfind ocamldep -package bigarray -modules src/lib/pp.ml > src/lib/pp.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -principal -package bigarray -I src/lib -o src/lib/generators.cmo src/lib/generators.ml
+- ocamlfind ocamlc -c -annot -bin-annot -principal -package bigarray -I src/lib -o src/lib/pp.cmo src/lib/pp.ml
+- ocamlfind ocamlc -a -package bigarray src/lib/bigarrayExt.cmo src/lib/generators.cmo src/lib/pp.cmo -o src/lib/bau.cma
+- ocamlfind ocamlopt -c -annot -bin-annot -principal -package bigarray -I src/lib -o src/lib/bigarrayExt.cmx src/lib/bigarrayExt.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -principal -package bigarray -I src/lib -o src/lib/generators.cmx src/lib/generators.ml
+- ocamlfind ocamlopt -c -annot -bin-annot -principal -package bigarray -I src/lib -o src/lib/pp.cmx src/lib/pp.ml
+- ocamlfind ocamlopt -a -package bigarray src/lib/bigarrayExt.cmx src/lib/generators.cmx src/lib/pp.cmx -o src/lib/bau.cmxa
+- ocamlfind ocamlopt -shared -package bigarray src/lib/bigarrayExt.cmx src/lib/generators.cmx src/lib/pp.cmx -o src/lib/bau.cmxs
+- ocamlbuild -use-ocamlfind -pkg bigarray -pkg compiler-libs -I src/lib bau_top.cma bau_top.cmxa bau_top.cmxs
+- ocamlfind ocamldep -package compiler-libs -package bigarray -modules src/lib/bigarrayExt.ml > src/lib/bigarrayExt.ml.depends
+- ocamlfind ocamldep -package compiler-libs -package bigarray -modules src/lib/generators.mli > src/lib/generators.mli.depends
+- ocamlfind ocamlc -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/bigarrayExt.cmo src/lib/bigarrayExt.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/bigarrayExt.cmo src/lib/bigarrayExt.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/generators.cmi src/lib/generators.mli
+- + ocamlfind ocamlc -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/generators.cmi src/lib/generators.mli
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamldep -package compiler-libs -package bigarray -modules src/lib/generators.ml > src/lib/generators.ml.depends
+- ocamlfind ocamldep -package compiler-libs -package bigarray -modules src/lib/pp.ml > src/lib/pp.ml.depends
+- ocamlfind ocamldep -package compiler-libs -package bigarray -modules src/lib/install_printers.ml > src/lib/install_printers.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/generators.cmo src/lib/generators.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/generators.cmo src/lib/generators.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/pp.cmo src/lib/pp.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/pp.cmo src/lib/pp.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/install_printers.cmo src/lib/install_printers.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/install_printers.cmo src/lib/install_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -a -package compiler-libs -package bigarray src/lib/bigarrayExt.cmo src/lib/generators.cmo src/lib/pp.cmo src/lib/install_printers.cmo -o src/lib/bau_top.cma
+- + ocamlfind ocamlc -a -package compiler-libs -package bigarray src/lib/bigarrayExt.cmo src/lib/generators.cmo src/lib/pp.cmo src/lib/install_printers.cmo -o src/lib/bau_top.cma
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/bigarrayExt.cmx src/lib/bigarrayExt.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/bigarrayExt.cmx src/lib/bigarrayExt.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/generators.cmx src/lib/generators.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/generators.cmx src/lib/generators.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/pp.cmx src/lib/pp.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/pp.cmx src/lib/pp.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/install_printers.cmx src/lib/install_printers.ml
+- + ocamlfind ocamlopt -c -annot -bin-annot -principal -package compiler-libs -package bigarray -I src/lib -o src/lib/install_printers.cmx src/lib/install_printers.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- File "_none_", line 1:
+- Warning 58: no cmx file was found in path for module Toploop, and its interface was not compiled with -opaque
+- ocamlfind ocamlopt -a -package compiler-libs -package bigarray src/lib/bigarrayExt.cmx src/lib/generators.cmx src/lib/pp.cmx src/lib/install_printers.cmx -o src/lib/bau_top.cmxa
+- + ocamlfind ocamlopt -a -package compiler-libs -package bigarray src/lib/bigarrayExt.cmx src/lib/generators.cmx src/lib/pp.cmx src/lib/install_printers.cmx -o src/lib/bau_top.cmxa
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlopt -shared -package compiler-libs -package bigarray src/lib/bigarrayExt.cmx src/lib/generators.cmx src/lib/pp.cmx src/lib/install_printers.cmx -o src/lib/bau_top.cmxs
+- + ocamlfind ocamlopt -shared -package compiler-libs -package bigarray src/lib/bigarrayExt.cmx src/lib/generators.cmx src/lib/pp.cmx src/lib/install_printers.cmx -o src/lib/bau_top.cmxs
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlbuild -use-ocamlfind -pkgs compiler-libs.common -I +compiler-libs -I src/fold_ppx fold_ppx.byte
+- ocamlfind ocamldep -package compiler-libs.common -modules src/fold_ppx/fold_ppx.ml > src/fold_ppx/fold_ppx.ml.depends
+- ocamlfind ocamlc -c -annot -bin-annot -principal -package compiler-libs.common -I src/fold_ppx -o src/fold_ppx/fold_ppx.cmo src/fold_ppx/fold_ppx.ml
+- + ocamlfind ocamlc -c -annot -bin-annot -principal -package compiler-libs.common -I src/fold_ppx -o src/fold_ppx/fold_ppx.cmo src/fold_ppx/fold_ppx.ml
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+- ocamlfind ocamlc -linkpkg -package compiler-libs.common src/fold_ppx/fold_ppx.cmo -o src/fold_ppx/fold_ppx.byte
+- + ocamlfind ocamlc -linkpkg -package compiler-libs.common src/fold_ppx/fold_ppx.cmo -o src/fold_ppx/fold_ppx.byte
+- findlib: [WARNING] Interface topdirs.cmi occurs in several directories: /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml, /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/ocaml/compiler-libs
+-> compiled  bau.0.0.3
+Processing  2/2: [bau: make install]
++ make "install" (CWD=/home/opam/.opam/ocaml-base-compiler.4.04.0/.opam-switch/build/bau.0.0.3)
+- ocamlfind install bau META _build/src/lib/*.cma _build/src/lib/*.cmxa _build/src/lib/*.cmxs _build/src/lib/*.a _build/src/lib/*.o _build/src/lib/*.cmi _build/src/lib/*.cmo _build/src/lib/*.cmx \
+- 	_build/src/fold_ppx/fold_ppx.byte
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/fold_ppx.byte
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/pp.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/install_printers.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/generators.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/bigarrayExt.cmx
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/pp.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/install_printers.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/generators.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/bigarrayExt.cmo
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/pp.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/install_printers.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/generators.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/bigarrayExt.cmi
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/pp.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/install_printers.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/generators.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/bigarrayExt.o
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/bau_top.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/bau.a
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/bau_top.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/bau.cmxs
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/bau_top.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/bau.cmxa
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/bau_top.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/bau.cma
+- Installed /home/opam/.opam/ocaml-base-compiler.4.04.0/lib/bau/META
+-> installed bau.0.0.3
+Done.
+# Run eval `opam env` to update the current shell environment
